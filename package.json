@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "A set of React UI components",
   "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production --config webpack.prod.js",
+    "lint": "eslint ./ --ext .jsx --ext .js"
+  },
   "repository": "https://github.com/Codebrahma/React-Lite-UI.git",
   "license": "ISC",
   "private": false,
