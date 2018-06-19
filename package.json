@@ -1,0 +1,10 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "A set of React UI components",
+  "main": "index.js",
+  "repository": "https://github.com/Codebrahma/React-Lite-UI.git",
+  "author": "Codebrahma",
+  "license": "y",
+  "private": false
+}
