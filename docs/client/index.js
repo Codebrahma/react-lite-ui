@@ -6,6 +6,6 @@ const App = () => (
   <div>
     Welcome to Docs
   </div>
-)
-ReactDOM.render((<App 
-/>), document.getElementById('app'));
+);
+
+ReactDOM.render((<App />), document.getElementById('app'));
