@@ -28,17 +28,26 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader'
+        use: 'babel-loader'
       }, {
         test: /\.(scss|css)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap')
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
+        include: [ path.join(__dirname, 'client')],
       }, {
         test: /\.(txt)$/,
-        loader: 'raw-loader',
+        use: 'raw-loader',
         include: path.resolve(__dirname, './app/components/layout/main/modules')
       }, {
         test: /\.(md)$/,
-        loader: 'html-loader!highlight-loader!markdown-loader'
+        use: 'html-loader!highlight-loader!markdown-loader'
       }
     ]
   },
