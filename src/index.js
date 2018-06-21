@@ -5,7 +5,11 @@ import Card from './card';
 const Index = () => (
   <div>
     <Card>
-      <span>SomeContent</span>
+      <span>Card Content</span>
+      <span>Card Content</span>
+
+      <span>Card Content</span>
+      
     </Card>
   </div>
 );
