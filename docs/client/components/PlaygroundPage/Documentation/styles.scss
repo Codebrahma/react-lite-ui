@@ -1,10 +1,28 @@
 :local(.documentation) {
   position: fixed;
-  top: 55%;
-  height: 40%;
-  width: 100%;
+  right: 0%;
+  top: 78px;
+  height: 100%;
+  width: 5%;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+  background: #ffffff;
   .header {
     font-size: 24px;
     font-weight: bold;
+    padding: 10px;
   }
+  button {
+    border-radius: 50%;
+    padding: 30px 25px;
+    position: absolute;
+    left: -45px;
+    top: 40%;
+  }
+  &.active {
+    width: 50%;
+    button {
+      left: -55px;
+    }
+  }
+  
 }
