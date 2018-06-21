@@ -58,7 +58,7 @@ class Navbar extends React.Component {
                   <span className={`${activeLink === 'playground' && 'active'}`}> Playground </span>
                 </Link>
               </Col>
-              <Col xs={2} className={`center-align ${activeLink === 'components' && 'active'}`}>
+              <Col xs={2} sm={2} className={`center-align ${activeLink === 'components' && 'active'}`}>
                 <Link
                   to="/components"
                   onClick={() => { this.handleNavClick('components') }}
