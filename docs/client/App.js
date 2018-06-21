@@ -9,8 +9,9 @@ import AppNavbar from './components/AppNavbar';
 const App = () => (
   <div>
     <AppNavbar />
-    <Route exact path="/home" component={HomePage} />
-    <Route exact path="/getting-started" component={GettingStartedPage} />
+    <Route exact path="/" component={HomePage} />
+    <Route exact path="/install" component={GettingStartedPage} />
+    <Route exact path="/playground" component={GettingStartedPage} />
     <Route exact path="/components" component={ComponentsPage} />
   </div>
 );

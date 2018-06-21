@@ -23,6 +23,7 @@ body {
   .parent-row {
     min-height: 75px;
   }
+  
   .nav-wrapper {
     display: flex;
     align-items: center;
@@ -34,7 +35,20 @@ body {
       font-size: 25px;
     }
     &.nav-link {
-
+      a {
+        color: $primary-white;
+        text-decoration: none;
+        &:focus, &:hover, &:visited, &:link, &:active {
+            text-decoration: none;
+        }
+        display: block;
+        min-height: 35px;
+        span {
+          &.active {
+            border-bottom: 4px solid $primary-yellow;
+          }
+        }
+      }
     }
   }
 }
