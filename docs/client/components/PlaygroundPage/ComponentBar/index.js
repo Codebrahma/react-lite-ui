@@ -1,20 +1,18 @@
 import React from 'react';
 import map from 'lodash/map';
+import { componentList } from '../../common/componentList';
+
 import styles from './styles.scss';
 
-const componentList = [
-  {
-    name: 'TextBox',
-  },
-  {
-    name: 'CheckBox',
-  },
-]
-const ComponentBarPage = ({ children }) => (
+const ComponentBarPage = ({ children, onClickComponent }) => (
   <div className={styles['component-bar']}>
     <aside className="component-sidebar">
       {map(componentList, component => (
-        <div>
+        <div
+          className="each-component-item"
+          key={component.name}
+          onClick={() => { onClickComponent(component.name) }}
+        >
           {component.name}
         </div>
       ))}
