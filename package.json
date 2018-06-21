@@ -42,7 +42,9 @@
   },
   "dependencies": {
     "babel-eslint": "^8.2.3",
+    "classnames": "^2.2.6",
     "react": "^16.3.2",
+    "react-css-themr": "^2.1.2",
     "react-dom": "^16.3.2"
   }
 }

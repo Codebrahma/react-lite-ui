@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Card from './card';
 
 const Index = () => (
   <div>
-    Hello React!
+    <Card>
+      <span>SomeContent</span>
+    </Card>
   </div>
 );
 
