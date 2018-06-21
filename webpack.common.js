@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -33,9 +34,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.s?[ac]ss$/,
+        test: /\.scss$/,
+        include: path.resolve(__dirname, 'docs'),
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
           'sass-loader',
         ],
