@@ -27,7 +27,7 @@ class Navbar extends React.Component {
     return (
       <div className={styles.navbar}>
         <Row className="full-height parent-row">
-          <Col xs={3} sm={3} md={3} lg={2}>
+          <Col xs={3} sm={2} md={1} lg={1}>
             <div className="nav-wrapper logo full-height">
               <img
                 alt="Codebrahma"
@@ -40,9 +40,9 @@ class Navbar extends React.Component {
               React Lite UI
             </div>
           </Col>
-          <Col xs={12} sm={5} md={6} lg={4}>
+          <Col xs={12} sm={6} mdOffset={1} md={5} lg={4} lgOffset={1}>
             <Row className="nav-wrapper nav-link full-height">
-              <Col xs={3} className="center-align">
+              <Col xs={3} sm={3}className="center-align">
                 <Link
                   to="/install"
                   onClick={() => { this.handleNavClick('install') }}
@@ -50,7 +50,7 @@ class Navbar extends React.Component {
                   <span className={`${activeLink === 'install' && 'active'}`}> Install </span>
                 </Link>
               </Col>
-              <Col xs={4} className={`center-align ${activeLink === 'playground' && 'active'}`}>
+              <Col xs={5} sm={6} className={`center-align ${activeLink === 'playground' && 'active'}`}>
                 <Link
                   to="/playground"
                   onClick={() => { this.handleNavClick('playground') }}
