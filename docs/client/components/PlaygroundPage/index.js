@@ -7,19 +7,41 @@ class PlaygroundPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: '',
+      isDocumentationOn: false,
+      activeComponent: '',
     };
+    this.expandDocumentation = this.expandDocumentation.bind(this);
+    this.handleClickComponent = this.handleClickComponent.bind(this);
+  }
+
+  expandDocumentation() {
+    this.setState({
+      isDocumentationOn: !this.state.isDocumentationOn,
+    });
+  }
+
+  handleClickComponent(activeComponent) {
+    this.setState({
+      activeComponent,
+    });
   }
 
   render() {
     return (
       <div>
-        <ComponentBar>
-          <PlaygroundWithPreview />
-          <Documentation />
+        <ComponentBar
+          onClickComponent={this.handleClickComponent}
+        >
+          <PlaygroundWithPreview
+            activeComponent={this.state.activeComponent}
+          />
+          <Documentation
+            isDocumentationOn={this.state.isDocumentationOn}
+            expandDocumentation={this.expandDocumentation}
+          />
         </ComponentBar>
       </div>
-    )
+    );
   }
 }
 
