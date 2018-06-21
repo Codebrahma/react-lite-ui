@@ -7,7 +7,7 @@ body {
 
 :local(.navbar) {
   position: fixed;
-  height: 75px;
+  min-height: 75px;
   width: 100%;
   background-color: $primary-blue;
   margin: 0;
@@ -16,6 +16,12 @@ body {
   font-weight: bold;
   .full-height {
     height: 100%;
+  }
+  .center-align {
+    text-align: center;
+  }
+  .parent-row {
+    min-height: 75px;
   }
   .nav-wrapper {
     display: flex;
@@ -26,6 +32,9 @@ body {
     &.title {
       margin-left: 10px;
       font-size: 25px;
+    }
+    &.nav-link {
+
     }
   }
 }

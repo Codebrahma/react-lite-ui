@@ -5,8 +5,8 @@ import styles from './styles.scss';
 
 const AppBar = () => (
   <div className={styles.navbar}>
-    <Row className="full-height">
-      <Col xs={1} className="full-height">
+    <Row className="full-height parent-row">
+      <Col xs={3} sm={3} md={3} lg={2}>
         <div className="nav-wrapper logo full-height">
           <img
             alt="Codebrahma"
@@ -14,20 +14,20 @@ const AppBar = () => (
           />
         </div>
       </Col>
-      <Col xs={3} className="title">
+      <Col xs={6} sm={4} md={3} lg={6} className="title">
         <div className="nav-wrapper title full-height">
           React Lite UI
         </div>
       </Col>
-      <Col xsOffset={4} xs={4}>
-        <Row className="nav-wrapper full-height">
-          <Col xs={3}>
+      <Col xs={12} sm={5} md={6} lg={4}>
+        <Row className="nav-wrapper nav-link full-height">
+          <Col xs={4} className="center-align">
             Install
           </Col>
-          <Col xs={5}>
+          <Col xs={4} className="center-align">
             Playground
           </Col>
-          <Col xs={2}>
+          <Col xs={4} className="center-align">
             API
           </Col>
         </Row>
