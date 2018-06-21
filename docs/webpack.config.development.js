@@ -36,7 +36,7 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
-        include: [ path.join(__dirname), /flexboxgrid/ ],
+        include: [ path.join(__dirname), /flexboxgrid/, /codemirror/ ],
       }, {
         test: /\.(txt)$/,
         use: 'raw-loader',

@@ -11,8 +11,9 @@
   "dependencies": {
     "babel-loader": "^7.1.4",
     "babel-standalone": "^6.7.7",
-    "classnames": "^2.2.5",
-    "codemirror": "^5.14.2",
+    "classnames": "^2.2.6",
+    "code-mirror-themes": "^1.0.0",
+    "codemirror": "^5.39.0",
     "css-loader": "^0.28.11",
     "history": "^2.1.1",
     "lodash": "^4.17.10",
