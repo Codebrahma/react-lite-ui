@@ -2,10 +2,4 @@ dist/
 node_modules/
 webpack.config.js
 
-docs/node_modules
-docs/public
-docs/.babelrc
-docs/index.js
-docs/package.json
-docs/server.js
-docs/webpack.config.development.js
+docs/

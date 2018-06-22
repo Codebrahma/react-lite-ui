@@ -9,14 +9,14 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       activeLink: '',
-    }
+    };
     this.handleNavClick = this.handleNavClick.bind(this);
   }
 
   handleNavClick(activeLink) {
     this.setState({
       activeLink,
-    })
+    });
   }
 
   render() {
