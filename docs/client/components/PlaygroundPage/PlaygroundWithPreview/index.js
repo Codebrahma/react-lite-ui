@@ -20,7 +20,7 @@ class PlaygroundWithPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      code: defaultCode,
+      code: props.defaultCode,
     };
   }
 
@@ -42,7 +42,7 @@ class PlaygroundWithPreview extends React.Component {
         </div>
         <div>
           <Playground
-            code={defaultCode}
+            code={this.props.defaultCode}
             onChange={this.handleOnChangeCode}
           />
           <Preview

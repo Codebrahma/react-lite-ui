@@ -20,9 +20,10 @@ class PlaygroundPage extends React.Component {
     });
   }
 
-  handleClickComponent(activeComponent) {
+  handleClickComponent(activeComponent, defaultCode) {
     this.setState({
       activeComponent,
+      defaultCode,
     });
   }
 
@@ -34,6 +35,7 @@ class PlaygroundPage extends React.Component {
         >
           <PlaygroundWithPreview
             activeComponent={this.state.activeComponent}
+            defaultCode={this.state.defaultCode}
           />
           <Documentation
             isDocumentationOn={this.state.isDocumentationOn}
