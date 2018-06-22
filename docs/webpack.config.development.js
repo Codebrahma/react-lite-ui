@@ -33,14 +33,10 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
+          'css-loader',
+          'sass-loader',
         ],
-        include: [ path.join(__dirname, 'client')],
+        include: [ path.join(__dirname), /flexboxgrid/, /codemirror/ ],
       }, {
         test: /\.(txt)$/,
         use: 'raw-loader',
