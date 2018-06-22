@@ -19,7 +19,15 @@ const defaultCode = `
 class PlaygroundWithPreview extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      code: defaultCode,
+    };
+  }
+
+  handleOnChangeCode = (code) => {
+    this.setState({
+      code,
+    });
   }
 
   render() {
@@ -32,13 +40,13 @@ class PlaygroundWithPreview extends React.Component {
         <div className="header">
           PlaygroundWithPreview
         </div>
-        
         <div>
           <Playground
             code={defaultCode}
+            onChange={this.handleOnChangeCode}
           />
           <Preview
-            code={defaultCode}
+            code={this.state.code}
           />
         </div>
         {activeComponent}

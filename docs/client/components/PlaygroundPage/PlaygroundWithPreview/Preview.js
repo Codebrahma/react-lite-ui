@@ -80,17 +80,6 @@ class Preview extends React.Component {
       </div>
     );
   }
-
-  // render() {
-  //   return (
-  //     <div className={styles.preview}>
-  //       <div className="header">
-  //         Preview
-  //       </div>
-  //       {code}
-  //     </div>
-  //   );
-  // }
 }
 
 Preview.propTypes = {

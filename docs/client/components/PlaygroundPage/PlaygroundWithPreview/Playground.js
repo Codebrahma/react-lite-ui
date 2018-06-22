@@ -23,7 +23,25 @@ class Playground extends React.Component {
       theme: 'custom',
       readOnly: false,
     });
+    this.editor.on('change', this.handleChange);
   }
+  
+  componentDidUpdate(prevProps) {
+    if (this.props.code !== prevProps.code) {
+      this.editor.setValue(this.props.code);
+    }
+  }
+
+  setCode = (code) => {
+    this.editor.getDoc().setValue(code);
+    this.handleChange();
+  }
+
+  handleChange = () => {
+    console.log('changed ', this.editor.getValue());
+    this.props.onChange(this.editor.getValue());
+  };
+
 
   render() {
     return (
