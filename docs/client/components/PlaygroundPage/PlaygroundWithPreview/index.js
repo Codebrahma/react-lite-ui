@@ -4,11 +4,16 @@ import Playground from './Playground';
 import styles from './styles.scss';
 
 const defaultCode = `
-  const Example = (
-    <div>
-      Example Component
-    </div>
-  );
+  class Example extends React.Component {
+    render() {
+      return (
+        <div>
+          Example
+        </div>
+      )
+    }
+  }
+  return <Example />;
 `;
 
 class PlaygroundWithPreview extends React.Component {
@@ -33,7 +38,7 @@ class PlaygroundWithPreview extends React.Component {
             code={defaultCode}
           />
           <Preview
-            
+            code={defaultCode}
           />
         </div>
         {activeComponent}

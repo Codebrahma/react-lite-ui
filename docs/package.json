@@ -19,6 +19,7 @@
     "lodash": "^4.17.10",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-flexbox-grid": "^2.1.2",
