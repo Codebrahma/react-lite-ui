@@ -17,7 +17,3 @@ const Index = () => (
 );
 
 ReactDOM.render(<Index />, document.getElementById('index'));
-
-export default {
-  Card,
-}
