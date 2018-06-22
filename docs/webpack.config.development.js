@@ -18,10 +18,16 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['*', '.scss', '.js', '.json', '.md'],
+    extensions: ['*', '.scss', '.css', '.js', '.json', '.md'],
     alias: {
-      'react-lite': path.resolve(__dirname + './../components')
+      'react-lite': path.resolve(__dirname + './../src')
     },
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, './node_modules'),
+      path.resolve(__dirname, '../node_modules'),
+      path.resolve(__dirname, '../src')
+    ]
   },
   module: {
     rules: [
@@ -30,20 +36,27 @@ module.exports = {
         exclude: /(node_modules)/,
         use: 'babel-loader'
       }, {
-        test: /\.(scss|css)$/,
+        test: /\.(css)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+        include: [ path.join(__dirname), /flexboxgrid/, /codemirror/ ],
+      }, {
+        test: /\.(scss)$/,
         use: [
           'style-loader',
           'css-loader',
           'sass-loader',
         ],
-        include: [ path.join(__dirname), /flexboxgrid/, /codemirror/ ],
+        include: [ path.join(__dirname), path.resolve(__dirname, '../src')],
       }, {
         test: /\.(txt)$/,
         use: 'raw-loader',
         include: path.resolve(__dirname, './app/components/layout/main/modules')
       }, {
         test: /\.(md)$/,
-        use: 'html-loader!highlight-loader!markdown-loader'
+        use: ['html-loader', 'highlight-loader', 'markdown-loader'],
       }
     ]
   },
