@@ -5,6 +5,7 @@
   .header {
     font-size: 24px;
     font-weight: bold;
+    margin-bottom: 20px;
   }
 }
 
@@ -12,7 +13,14 @@
   position: fixed;
   width: 40%;
   height: 100%;
-  border: 1px solid;
+  .doc-enabler {
+    margin: 40px auto;
+    width: 40%;
+    .switch {
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  }
 }
 
 :local(.preview) {
@@ -24,5 +32,4 @@
   left: 55%;
   width: 35%;
   height: 100%;
-  border: 1px solid;
 }

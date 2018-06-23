@@ -63,7 +63,7 @@ class Navbar extends React.Component {
                   to="/components"
                   onClick={() => { this.handleNavClick('components') }}
                 > 
-                  <span className={`${activeLink === 'components' && 'active'}`}>API</span> 
+                  <span className={`${activeLink === 'components' && 'active'}`}>Usage</span> 
                 </Link>
               </Col>
             </Row>

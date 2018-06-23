@@ -19,6 +19,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.scss', '.js', '.json', '.md'],
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, './node_modules'),
+      path.resolve(__dirname, './../node_modules'),
+      path.resolve(__dirname, './../src')
+    ],
     alias: {
       'react-lite': path.resolve(__dirname + './../components')
     },
@@ -36,14 +42,14 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
-        include: [ path.join(__dirname), /flexboxgrid/, /codemirror/ ],
+        include: [ path.join(__dirname), path.join(__dirname, '../src'), /flexboxgrid/, /codemirror/ ],
       }, {
         test: /\.(txt)$/,
         use: 'raw-loader',
         include: path.resolve(__dirname, './app/components/layout/main/modules')
       }, {
         test: /\.(md)$/,
-        use: 'html-loader!highlight-loader!markdown-loader'
+        use: ['html-loader', 'highlight-loader', 'markdown-loader']
       }
     ]
   },

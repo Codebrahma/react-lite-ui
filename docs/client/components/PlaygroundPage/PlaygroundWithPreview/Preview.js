@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { transform } from 'babel-standalone';
-
+import Card from '../../../../../src/Card';
+import theme from '../../../components/common/DefaultCode/theme.scss';
 import styles from './styles.scss';
 
 class Preview extends React.Component {
@@ -88,7 +89,7 @@ Preview.propTypes = {
 };
 
 Preview.defaultProps = {
-  scope: { React },
+  scope: { React, Card, theme },
 };
 
 export default Preview;

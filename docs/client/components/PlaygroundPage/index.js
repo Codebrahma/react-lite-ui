@@ -9,6 +9,7 @@ class PlaygroundPage extends React.Component {
     this.state = {
       isDocumentationOn: false,
       activeComponent: '',
+      activeDocs: '',
     };
     this.expandDocumentation = this.expandDocumentation.bind(this);
     this.handleClickComponent = this.handleClickComponent.bind(this);
@@ -20,9 +21,12 @@ class PlaygroundPage extends React.Component {
     });
   }
 
-  handleClickComponent(activeComponent) {
+  handleClickComponent(activeComponent, defaultCode, activeDocs) {
+    console.log('activeDocs ', activeDocs);
     this.setState({
       activeComponent,
+      defaultCode,
+      activeDocs,
     });
   }
 
@@ -34,11 +38,18 @@ class PlaygroundPage extends React.Component {
         >
           <PlaygroundWithPreview
             activeComponent={this.state.activeComponent}
-          />
-          <Documentation
-            isDocumentationOn={this.state.isDocumentationOn}
+            defaultCode={this.state.defaultCode}
             expandDocumentation={this.expandDocumentation}
+            isDocumentationOn={this.state.isDocumentationOn}
           />
+          {
+            this.state.isDocumentationOn && (
+              <Documentation
+                activeDocs={this.state.activeDocs}
+                isDocumentationOn={this.state.isDocumentationOn}
+              />
+            )
+          }
         </ComponentBar>
       </div>
     );
