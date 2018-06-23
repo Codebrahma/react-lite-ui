@@ -1,7 +1,7 @@
 import React from 'react';
 import Editor from 'codemirror';
 import 'codemirror/lib/codemirror.css';
-// import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/javascript/javascript';
 
 import styles from './styles.scss';
 
