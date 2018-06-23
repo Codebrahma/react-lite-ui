@@ -1,0 +1,178 @@
+.button {
+  align-content: center;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  margin: 2px;
+
+  @apply --reset;
+
+  &:active {
+    box-shadow:
+      0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &:focus:not(:active) {
+    box-shadow:
+      0 0 8px rgba(0, 0, 0, 0.18),
+      0 8px 16px rgba(0, 0, 0, 0.36);
+  }
+
+  & .icon {
+    font-size: 120%;
+  }
+
+  & .icon-left {
+    float: left;
+    margin-right: 6px;
+  }
+
+  & .icon-right {
+    margin-left: 6px;
+    float: right;
+  }
+
+  & > input {
+    height: 0.1px;
+    margin: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0.1px;
+    z-index: 0;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  & > span:not([data-react-toolbox='tooltip']) {
+    display: inline-block;
+    line-height: 36px;
+    vertical-align: middle;
+  }
+
+  & > svg {
+    display: inline-block;
+    fill: currentColor;
+    font-size: 120%;
+    height: 36px;
+    vertical-align: top;
+    width: 1em;
+    margin-right: 5px;
+  }
+
+  & > * {
+    pointer-events: none;
+  }
+
+  & > .rippleWrapper {
+    overflow: hidden;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.small {
+  font-size: 11px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 8px;
+  min-width: 70px;
+}
+
+.medium {
+  font-size: 13px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 12px;
+  min-width: 90px;
+}
+
+.large {
+  font-size: 18px;
+  height: 52px;
+  line-height: 52px;
+  padding: 0 20px;
+  min-width: 130px;
+}
+
+.default {
+  color: #000;
+  background-color: white;
+  border-color: white;
+}
+
+.primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.light {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
