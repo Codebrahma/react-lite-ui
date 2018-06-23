@@ -2,7 +2,7 @@
   &.CodeMirror {
     background: #282c34;
     color: #abb2bf;
-    height: 75%;
+    height: 60%;
   }
 
   & div.CodeMirror-selected {
