@@ -1,25 +1,9 @@
-import Card from '../../../../src/Card';
+import Card from '../../../../src/card';
 import CardReadme from '../../../../src/card/readMe.md';
 
-const CardDefaultCode =   `
-class Demo extends React.Component {
-  render() {
-    return (
-      <Card
-        header='Card String header'
-        wrapContent
-        noPadding
-        theme={customTheme}>
-        <span>Card Content</span>
-        <span>Card Content</span>
-        <span>Card Content</span>
-      </Card>
-    )
-  }
-}
-
-return <Demo />;
-`;
+import {
+  CardDefaultCode
+} from './DefaultCode';
 
 export const componentList = [
   {
