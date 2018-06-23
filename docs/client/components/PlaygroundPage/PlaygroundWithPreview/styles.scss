@@ -1,0 +1,28 @@
+:local(.playground-preview) {
+  position: fixed;
+  height: 100%;
+  width: 60%;
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+:local(.playground) {
+  position: fixed;
+  width: 40%;
+  height: 100%;
+  border: 1px solid;
+}
+
+:local(.preview) {
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  position: fixed;
+  left: 55%;
+  width: 35%;
+  height: 100%;
+  border: 1px solid;
+}
