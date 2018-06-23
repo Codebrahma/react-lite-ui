@@ -42,8 +42,16 @@
 
   & .icon {
     font-size: 120%;
+  }
+
+  & .icon-left {
+    float: left;
     margin-right: 6px;
-    vertical-align: middle;
+  }
+
+  & .icon-right {
+    margin-left: 6px;
+    float: right;
   }
 
   & > input {

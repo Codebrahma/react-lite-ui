@@ -13,7 +13,13 @@ const factory = (ripple, FontIcon) => {
       size: 'medium',
       className: '',
       href: '',
+      iconAlignment: 'left',
     };
+
+    getIcon = (icon, iconAlignment, theme) => {
+      const iconClasses = classnames(theme.icon, theme[`icon-${iconAlignment}`]);
+      return <FontIcon className={iconClasses} value={icon} />;
+    }
 
     handleMouseUp = (event) => {
       this.buttonNode.blur();
@@ -26,13 +32,12 @@ const factory = (ripple, FontIcon) => {
     };
 
     render() {
-      const { children, type, size, className, href, icon, theme, ...others } = this.props;
+      const {
+        children, type, size, className, href, icon, iconAlignment, theme, ...others
+      } = this.props;
       const element = href ? 'a' : 'button';
 
-      const classes = classnames(theme.button, {
-        [theme[type]]: true,
-        [theme[size]]: true,
-      }, className);
+      const classes = classnames(theme.button, theme[type], theme[size], className);
 
       const props = {
         ...others,
@@ -45,7 +50,7 @@ const factory = (ripple, FontIcon) => {
       };
 
       return React.createElement(element, props,
-        icon ? <FontIcon className={theme.icon} value={icon} /> : null,
+        icon ? this.getIcon(icon, iconAlignment, theme) : null,
         children,
       );
     }

@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { themr } from 'react-css-themr';
 
-const FontIcon = ({ alt, children, className, theme, value, ...other}) => ( // eslint-disable-line
-  <span
-    data-react-toolbox="font-icon"
-    aria-label={alt}
-    className={classnames({ 'material-icons': typeof value === 'string' || typeof children === 'string' }, className)}
-    {...other}
-  >
-    {value}
-    {children}
-  </span>
-);
+import iconTheme from './theme.scss';
+
+const FontIcon = ({ alt, children, className, theme, value, ...other}) => { // eslint-disable-line
+  const _classNames = classnames({
+    [iconTheme.materialIcons]: typeof value === 'string' || typeof children === 'string',
+  }, className);
+
+  return (
+    <span
+      aria-label={alt}
+      className={_classNames}
+      {...other}
+    >
+      {value}
+      {children}
+    </span>
+  );
+};
 
 FontIcon.propTypes = {
   alt: PropTypes.string,

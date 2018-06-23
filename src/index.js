@@ -17,10 +17,14 @@ const Index = () => (
     </Card>
 
     <div style={{ margin: '20px' }}>
-      <Button size="medium">Hello</Button>
+      <Button size="medium" icon="favorite">Hello</Button>
+      <Button type="danger" size="medium" icon="bookmark" iconAlignment="right">Hello</Button>
       <Button type="secondary" size="small">Hello</Button>
       <Button type="primary">Hello</Button>
       <Button type="success" size="large">Hello</Button>
+      <Button type="warning" size="small">Hello</Button>
+      <Button type="info" size="medium">Hello</Button>
+      <Button type="dark" size="large">Hello</Button>
     </div>
   </div>
 );
