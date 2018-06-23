@@ -39,11 +39,17 @@ class PlaygroundPage extends React.Component {
           <PlaygroundWithPreview
             activeComponent={this.state.activeComponent}
             defaultCode={this.state.defaultCode}
-          />
-          <Documentation
-            isDocumentationOn={this.state.isDocumentationOn}
             expandDocumentation={this.expandDocumentation}
+            isDocumentationOn={this.state.isDocumentationOn}
           />
+          {
+            this.state.isDocumentationOn && (
+              <Documentation
+                activeDocs={this.state.activeDocs}
+                isDocumentationOn={this.state.isDocumentationOn}
+              />
+            )
+          }
         </ComponentBar>
       </div>
     );

@@ -47,11 +47,10 @@ module.exports = {
         test: /\.(txt)$/,
         use: 'raw-loader',
         include: path.resolve(__dirname, './app/components/layout/main/modules')
-      }, 
-      // {
-      //   test: /\.(md)$/,
-      //   use: 'html-loader!highlight-loader!markdown-loader'
-      // }
+      }, {
+        test: /\.(md)$/,
+        use: ['html-loader', 'highlight-loader', 'markdown-loader']
+      }
     ]
   },
   plugins: [

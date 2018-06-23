@@ -1,5 +1,5 @@
 import Card from '../../../../src/card';
-// import CardReadme from '../../../../src/card/readMe.md';
+import CardReadme from '../../../../src/card/readMe.md';
 
 import {
   CardDefaultCode
@@ -7,8 +7,8 @@ import {
 
 export const componentList = [
   {
-    name: 'card',
-    // doc: CardReadme,
+    name: 'Card',
+    docs: CardReadme,
     component: Card,
     defaultCode: CardDefaultCode,
   },  

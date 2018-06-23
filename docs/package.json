@@ -28,6 +28,7 @@
     "react-dom": "^16.4.1",
     "react-flexbox-grid": "^2.1.2",
     "react-router-dom": "^4.3.1",
+    "react-switch": "^3.0.4",
     "sass-loader": "^7.0.3",
     "webpack": "^4.12.0"
   },
