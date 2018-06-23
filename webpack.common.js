@@ -38,8 +38,8 @@ module.exports = {
         include: path.resolve(__dirname, './src'),
         use: [
           'style-loader',
-          require.resolve('css-loader') + '?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          require.resolve('sass-loader') + '?sourceMap'
+          `${require.resolve('css-loader')}?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`,
+          `${require.resolve('sass-loader')}?sourceMap`,
         ],
       },
     ],

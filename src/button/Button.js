@@ -48,7 +48,8 @@ const factory = (ripple, FontIcon) => {
         onMouseLeave: this.handleMouseLeave,
       };
 
-      return React.createElement(element, props,
+      return React.createElement(
+        element, props,
         icon ? this.getIcon(icon, iconAlignment, theme) : null,
         children,
       );
