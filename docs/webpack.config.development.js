@@ -18,16 +18,16 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['*', '.scss', '.css', '.js', '.json', '.md'],
-    alias: {
-      'react-lite': path.resolve(__dirname + './../src')
-    },
+    extensions: ['*', '.scss', '.js', '.json', '.md'],
     modules: [
       'node_modules',
       path.resolve(__dirname, './node_modules'),
-      path.resolve(__dirname, '../node_modules'),
-      path.resolve(__dirname, '../src')
-    ]
+      path.resolve(__dirname, './../node_modules'),
+      path.resolve(__dirname, './../src')
+    ],
+    alias: {
+      'react-lite': path.resolve(__dirname + './../components')
+    },
   },
   module: {
     rules: [
@@ -36,28 +36,22 @@ module.exports = {
         exclude: /(node_modules)/,
         use: 'babel-loader'
       }, {
-        test: /\.(css)$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-        include: [ path.join(__dirname), /flexboxgrid/, /codemirror/ ],
-      }, {
-        test: /\.(scss)$/,
+        test: /\.(scss|css)$/,
         use: [
           'style-loader',
           'css-loader',
           'sass-loader',
         ],
-        include: [ path.join(__dirname), path.resolve(__dirname, '../src')],
+        include: [ path.join(__dirname), path.join(__dirname, '../src'), /flexboxgrid/, /codemirror/ ],
       }, {
         test: /\.(txt)$/,
         use: 'raw-loader',
         include: path.resolve(__dirname, './app/components/layout/main/modules')
-      }, {
-        test: /\.(md)$/,
-        use: ['html-loader', 'highlight-loader', 'markdown-loader'],
-      }
+      }, 
+      // {
+      //   test: /\.(md)$/,
+      //   use: 'html-loader!highlight-loader!markdown-loader'
+      // }
     ]
   },
   plugins: [
