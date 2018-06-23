@@ -36,7 +36,6 @@ const factory = (ripple, FontIcon) => {
         children, type, size, className, href, icon, iconAlignment, theme, ...others
       } = this.props;
       const element = href ? 'a' : 'button';
-
       const classes = classnames(theme.button, theme[type], theme[size], className);
 
       const props = {
