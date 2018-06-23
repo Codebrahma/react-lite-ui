@@ -1,6 +1,3 @@
-@import '../variables.scss';
-@import './config.scss';
-
 .rippleWrapper {
   bottom: 0;
   left: 0;
@@ -8,7 +5,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  z-index: var(--z-index-normal);
+  z-index: 1;
 }
 
 .ripple {
@@ -19,16 +16,16 @@
   position: absolute;
   top: 50%;
   transform-origin: 50% 50%;
-  transition-duration: var(--ripple-duration);
-  z-index: var(--z-index-high);
+  transition-duration: 800ms;
+  z-index: 100;
 
   &.rippleRestarting {
-    opacity: var(--ripple-final-opacity);
+    opacity: 0.3;
     transition-property: none;
   }
 
   &.rippleActive {
-    opacity: var(--ripple-final-opacity);
+    opacity: 0.3;
     transition-property: transform;
   }
 

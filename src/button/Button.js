@@ -2,71 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { themr } from 'react-css-themr';
+
 import InjectFontIcon from '../font_icon/FontIcon';
 import rippleFactory from '../ripple/Ripple';
 
 const factory = (ripple, FontIcon) => {
   class Button extends Component {
-    static propTypes = {
-      accent: PropTypes.bool,
-      children: PropTypes.node,
-      className: PropTypes.string,
-      disabled: PropTypes.bool,
-      flat: PropTypes.bool,
-      floating: PropTypes.bool,
-      href: PropTypes.string,
-      icon: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.element,
-      ]),
-      inverse: PropTypes.bool,
-      label: PropTypes.string,
-      mini: PropTypes.bool,
-      neutral: PropTypes.bool,
-      onMouseLeave: PropTypes.func,
-      onMouseUp: PropTypes.func,
-      primary: PropTypes.bool,
-      raised: PropTypes.bool,
-      theme: PropTypes.shape({
-        accent: PropTypes.string,
-        button: PropTypes.string,
-        flat: PropTypes.string,
-        floating: PropTypes.string,
-        icon: PropTypes.string,
-        inverse: PropTypes.string,
-        mini: PropTypes.string,
-        neutral: PropTypes.string,
-        primary: PropTypes.string,
-        raised: PropTypes.string,
-        rippleWrapper: PropTypes.string,
-        toggle: PropTypes.string,
-      }),
-      type: PropTypes.string,
-    };
-
     static defaultProps = {
-      accent: false,
+      type: 'default',
+      size: 'medium',
       className: '',
-      flat: false,
-      floating: false,
-      mini: false,
-      neutral: true,
-      primary: false,
-      raised: false,
-      type: 'button',
+      href: '',
     };
-
-    getLevel = () => {
-      if (this.props.primary) return 'primary';
-      if (this.props.accent) return 'accent';
-      return 'neutral';
-    }
-
-    getShape = () => {
-      if (this.props.raised) return 'raised';
-      if (this.props.floating) return 'floating';
-      return 'flat';
-    }
 
     handleMouseUp = (event) => {
       this.buttonNode.blur();
@@ -79,32 +26,12 @@ const factory = (ripple, FontIcon) => {
     };
 
     render() {
-      const {
-        accent,    // eslint-disable-line
-        children,
-        className,
-        flat,      // eslint-disable-line
-        floating,  // eslint-disable-line
-        href,
-        icon,
-        inverse,
-        label,
-        mini,
-        neutral,
-        primary,   // eslint-disable-line
-        raised,    // eslint-disable-line
-        theme,
-        type,
-        ...others
-      } = this.props;
+      const { children, type, size, className, href, icon, theme, ...others } = this.props;
       const element = href ? 'a' : 'button';
-      const level = this.getLevel();
-      const shape = this.getShape();
 
-      const classes = classnames(theme.button, [theme[shape]], {
-        [theme[level]]: neutral,
-        [theme.mini]: mini,
-        [theme.inverse]: inverse,
+      const classes = classnames(theme.button, {
+        [theme[type]]: true,
+        [theme[size]]: true,
       }, className);
 
       const props = {
@@ -115,13 +42,10 @@ const factory = (ripple, FontIcon) => {
         disabled: this.props.disabled,
         onMouseUp: this.handleMouseUp,
         onMouseLeave: this.handleMouseLeave,
-        type: !href ? type : null,
-        'data-react-toolbox': 'button',
       };
 
       return React.createElement(element, props,
         icon ? <FontIcon className={theme.icon} value={icon} /> : null,
-        label,
         children,
       );
     }

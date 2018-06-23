@@ -1,7 +1,3 @@
-@import '../colors.scss';
-@import '../variables.scss';
-@import './config.scss';
-
 .button {
   align-content: center;
   align-items: center;
@@ -9,25 +5,46 @@
   cursor: pointer;
   display: inline-block;
   flex-direction: row;
-  font-size: calc(1.4 * var(--unit));
   font-weight: 500;
-  height: var(--button-height);
   justify-content: center;
   letter-spacing: 0;
-  line-height: var(--button-height);
   outline: none;
-  padding: 0;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   transition:
-    box-shadow 0.2s var(--animation-curve-fast-out-linear-in),
-    background-color 0.2s var(--animation-curve-default),
-    color 0.2s var(--animation-curve-default);
+    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  margin: 2px;
 
   @apply --reset;
+
+  &:active {
+    box-shadow:
+      0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &:focus:not(:active) {
+    box-shadow:
+      0 0 8px rgba(0, 0, 0, 0.18),
+      0 8px 16px rgba(0, 0, 0, 0.36);
+  }
+
+  & .icon {
+    font-size: 120%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
 
   & > input {
     height: 0.1px;
@@ -46,7 +63,7 @@
 
   & > span:not([data-react-toolbox='tooltip']) {
     display: inline-block;
-    line-height: var(--button-height);
+    line-height: 36px;
     vertical-align: middle;
   }
 
@@ -54,9 +71,10 @@
     display: inline-block;
     fill: currentColor;
     font-size: 120%;
-    height: var(--button-height);
+    height: 36px;
     vertical-align: top;
     width: 1em;
+    margin-right: 5px;
   }
 
   & > * {
@@ -68,192 +86,85 @@
   }
 
   &[disabled] {
-    color: var(--button-disabled-text-color);
-    cursor: auto;
-    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 }
 
-.squared {
-  border-radius: var(--button-border-radius);
-  min-width: var(--button-squared-min-width);
-  padding: var(--button-squared-padding);
-
-  & .icon {
-    font-size: 120%;
-    margin-right: var(--button-squared-icon-margin);
-    vertical-align: middle;
-  }
-
-  & > svg {
-    margin-right: calc(0.5 * var(--unit));
-  }
+.small {
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 8px;
+  min-width: 70px;
 }
 
-.solid {
-  &[disabled] {
-    background-color: var(--button-disabled-background-color);
-    box-shadow: var(--shadow-2p);
-  }
-
-  &:active {
-    box-shadow: var(--shadow-2p);
-  }
-
-  &:focus:not(:active) {
-    box-shadow:
-      0 0 8px rgba(0, 0, 0, 0.18),
-      0 8px 16px rgba(0, 0, 0, 0.36);
-  }
+.medium {
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 12px;
+  min-width: 90px;
 }
 
-.raised {
-  box-shadow: var(--shadow-2p);
-  composes: button;
-  composes: squared;
-  composes: solid;
+.large {
+  font-size: 18px;
+  height: 52px;
+  line-height: 52px;
+  padding: 0 20px;
+  min-width: 130px;
 }
 
-.flat {
-  background: transparent;
-  composes: button;
-  composes: squared;
+.default {
+  color: #000;
+  background-color: white;
+  border-color: white;
 }
 
-.floating {
-  border-radius: 50%;
-  box-shadow:
-    0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
-    0 1px 1px 0 rgba(0, 0, 0, 0.24);
-  composes: button;
-  composes: solid;
-  font-size: var(--button-floating-font-size);
-  height: var(--button-floating-height);
-  width: var(--button-floating-height);
-
-  & .icon:not([data-react-toolbox='tooltip']) {
-    line-height: var(--button-floating-height);
-  }
-
-  & > .rippleWrapper {
-    border-radius: 50%;
-  }
-
-  &.mini {
-    font-size: var(--button-floating-mini-font-size);
-    height: var(--button-floating-mini-height);
-    width: var(--button-floating-mini-height);
-
-    & .icon {
-      line-height: var(--button-floating-mini-height);
-    }
-  }
+.primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
-.toggle {
-  background: transparent;
-  border-radius: 50%;
-  composes: button;
-  vertical-align: middle;
-  width: var(--button-height);
-
-  & > .icon,
-  & svg {
-    font-size: var(--button-toggle-font-size);
-    line-height: var(--button-height);
-    vertical-align: top;
-  }
-
-  & > .rippleWrapper {
-    border-radius: 50%;
-  }
+.secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
 
-.primary:not([disabled]) {
-  &.raised,
-  &.floating {
-    background: var(--button-primary-color);
-    color: var(--button-primary-color-contrast);
-  }
-
-  &.flat,
-  &.toggle {
-    color: var(--button-primary-color);
-
-    &:focus:not(:active) {
-      background: var(--button-primary-color-hover);
-    }
-  }
-
-  &.flat:hover {
-    background: var(--button-primary-color-hover);
-  }
+.success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
 }
 
-.accent:not([disabled]) {
-  &.raised,
-  &.floating {
-    background: var(--button-accent-color);
-    color: var(--button-accent-color-contrast);
-  }
-
-  &.flat,
-  &.toggle {
-    color: var(--button-accent-color);
-
-    &:focus:not(:active) {
-      background: var(--button-accent-color-hover);
-    }
-  }
-
-  &.flat:hover {
-    background: var(--button-accent-color-hover);
-  }
+.danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 
-.neutral:not([disabled]) {
-  &.raised,
-  &.floating {
-    background-color: var(--button-neutral-color);
-    color: var(--button-neutral-color-contrast);
-  }
-
-  &.flat,
-  &.toggle {
-    color: var(--button-neutral-color-contrast);
-
-    &:focus:not(:active) {
-      background: var(--button-neutral-color-hover);
-    }
-  }
-
-  &.flat:hover {
-    background: var(--button-neutral-color-hover);
-  }
-
-  &.inverse {
-    &.raised,
-    &.floating {
-      background-color: var(--button-neutral-color-contrast);
-      color: var(--button-neutral-color);
-    }
-
-    &.flat,
-    &.toggle {
-      color: var(--button-neutral-color);
-
-      &:focus:not(:active) {
-        background: var(--button-neutral-color-hover);
-      }
-    }
-
-    &.flat:hover {
-      background: var(--button-neutral-color-hover);
-    }
-  }
+.warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
 }
 
-.neutral.inverse[disabled] {
-  background-color: var(--button-disabled-background-inverse);
-  color: var(--button-disabled-text-color-inverse);
+.info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.light {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
 }
