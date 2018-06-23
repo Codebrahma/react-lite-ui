@@ -1,0 +1,24 @@
+:local(.code) {
+  width: 50%;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .sub-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .js-code {
+    padding: 20px;
+    background: #e2e2e2;
+    margin-bottom: 20px;
+    min-width: 300px;
+  }
+
+  .empty-div {
+    height: 200px;
+  }
+  
+}

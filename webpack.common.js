@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 const devMode = process.env.NODE_ENV !== 'production';
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
