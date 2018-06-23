@@ -5,24 +5,18 @@ import styles from './styles.scss';
 const DocumentationPage = ({
   isDocumentationOn,
   expandDocumentation,
+  activeDocs,
 }) => {
   const docStatusClass = isDocumentationOn ? 'active' : '';
-  return isDocumentationOn ? (
+  return (
     <div className={cx(styles.documentation, docStatusClass)}>
       <div className="header">
         Documentation
       </div>
-      <button
-        onClick={expandDocumentation}
-      > Let me try!!! </button>  
+      <div className="content" dangerouslySetInnerHTML={{ __html: activeDocs }} />
+      <div className="empty-div" />
     </div>
-  ) : (
-    <div className={cx(styles.documentation, docStatusClass)}>
-      <button
-        onClick={expandDocumentation}
-      > Props </button>  
-    </div>
-  )
+  );
 }
 
 
