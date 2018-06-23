@@ -7,7 +7,7 @@ import styles from './styles.scss';
 const ComponentsPage = () => (
   <div className={styles.usage}>
     <div dangerouslySetInnerHTML={{ __html: CardReadme }} />
-    <div style={{ height: '100px' }} />
+    <div style={{ height: '300px' }} />
   </div>
 );
 
