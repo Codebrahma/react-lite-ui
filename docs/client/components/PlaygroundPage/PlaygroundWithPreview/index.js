@@ -33,6 +33,8 @@ class PlaygroundWithPreview extends React.Component {
   render() {
     const {
       activeComponent,
+      expandDocumentation,
+      isDocumentationOn,
     } = this.props;
     
     return (
@@ -44,7 +46,11 @@ class PlaygroundWithPreview extends React.Component {
           <Playground
             code={this.props.defaultCode}
             onChange={this.handleOnChangeCode}
+            activeComponent={activeComponent}
+            expandDocumentation={expandDocumentation}
+            isDocumentationOn={isDocumentationOn}
           />
+          
           <Preview
             code={this.state.code}
           />
