@@ -1,8 +1,11 @@
 import Card from '../../../../src/card';
 import CardReadme from '../../../../src/card/readMe.md';
+import Button from '../../../../src/button';
+import ButtonReadme from '../../../../src/button/readMe.md';
 
 import {
-  CardDefaultCode
+  CardDefaultCode,
+  ButtonDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [

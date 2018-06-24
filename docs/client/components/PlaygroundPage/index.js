@@ -22,7 +22,6 @@ class PlaygroundPage extends React.Component {
   }
 
   handleClickComponent(activeComponent, defaultCode, activeDocs) {
-    console.log('activeDocs ', activeDocs);
     this.setState({
       activeComponent,
       defaultCode,
