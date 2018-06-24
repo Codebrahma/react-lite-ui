@@ -14,5 +14,11 @@ export const componentList = [
     docs: CardReadme,
     component: Card,
     defaultCode: CardDefaultCode,
-  },  
+  },
+  {
+    name: 'Button',
+    docs: ButtonReadme,
+    component: Button,
+    defaultCode: ButtonDefaultCode,
+  },
 ];

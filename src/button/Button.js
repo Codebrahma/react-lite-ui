@@ -47,6 +47,7 @@ const factory = (ripple, FontIcon) => {
     };
 
     render() {
+      console.log(this.props);
       const {
         children, type, size, className, href, icon, iconAlignment, theme, ...others
       } = this.props;
