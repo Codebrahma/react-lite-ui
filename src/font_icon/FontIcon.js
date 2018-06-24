@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { themr } from 'react-css-themr';
 
 import iconTheme from './theme.scss';
 
 const FontIcon = ({ alt, children, className, theme, value, ...other}) => { // eslint-disable-line
-  const classNames = classnames({
+  const _classNames = classnames({
     [iconTheme.materialIcons]: typeof value === 'string' || typeof children === 'string',
   }, className);
 
   return (
     <span
       aria-label={alt}
-      className={classNames}
+      className={_classNames}
       {...other}
     >
       {value}
@@ -29,11 +30,10 @@ FontIcon.propTypes = {
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
-  ]).isRequired,
+  ]),
 };
 
 FontIcon.defaultProps = {
-  children: null,
   alt: '',
   className: '',
 };

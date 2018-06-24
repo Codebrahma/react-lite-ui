@@ -28,17 +28,17 @@ function addPrefixesTo(style, property, value) {
 }
 
 function prefixer(style, defaultValue = {}) {
-  const newStyle = defaultValue;
+  const _style = defaultValue;
   for (const property in style) { // eslint-disable-line no-restricted-syntax
     if ({}.hasOwnProperty.call(style, property)) {
-      newStyle[property] = style[property];
+      _style[property] = style[property];
       if (properties[property]) {
-        addPrefixesTo(newStyle, property, style[property]);
+        addPrefixesTo(_style, property, style[property]);
       }
     }
   }
 
-  return newStyle;
+  return _style;
 }
 
 export default prefixer;

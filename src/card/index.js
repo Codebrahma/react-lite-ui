@@ -13,20 +13,17 @@ const Card = ({
   noPadding,
   header, ...other
 }) => {
-  const classes = classnames(theme.card, theme[`elevation-${elevation}`], {
+  const classes = classnames(theme.card, theme[`elevation-${elevation}`],{
     [theme.wrapContent]: wrapContent,
     [theme.noPadding]: noPadding,
   }, className);
   const headerClass = classnames(theme.cardHeader);
-
   let cardHeader;
   if (typeof header === 'string') {
-    cardHeader = (
-      <div className={headerClass}>
-        <span>{header}</span>
-      </div>
-    );
-  } else if (typeof header === 'function') {
+    cardHeader = (<div className={headerClass}>
+                    <span>{header}</span>
+                  </div>)
+  } else if(typeof header === 'function') {
     cardHeader = header();
   }
 
@@ -38,29 +35,16 @@ const Card = ({
   );
 };
 
-Card.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  theme: PropTypes.shape({
-    card: PropTypes.string,
-    cardHeader: PropTypes.string,
-  }),
+Card.prototype = {
+  theme: PropTypes.object,
   wrapContent: PropTypes.bool,
   noPadding: PropTypes.bool,
   elevation: PropTypes.oneOf(['low', 'medium', 'high']),
-  header: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
-};
+  header: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+}
 
 Card.defaultProps = {
-  className: null,
   elevation: 'low',
-  theme: {},
-  wrapContent: false,
-  noPadding: false,
-  header: null,
-};
+}
 
 export default themr('CBCard', defaultTheme)(Card);

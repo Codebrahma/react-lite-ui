@@ -30,7 +30,7 @@ const rippleFactory = (options = {}) => {
   return (ComposedComponent) => {
     class RippledComponent extends Component {
       static propTypes = {
-        children: PropTypes.node.isRequired,
+        children: PropTypes.node,
         disabled: PropTypes.bool,
         onMouseDown: PropTypes.func,
         onRippleEnded: PropTypes.func,
@@ -55,10 +55,6 @@ const rippleFactory = (options = {}) => {
         rippleClassName: defaultClassName,
         rippleMultiple: defaultMultiple,
         rippleSpread: defaultSpread,
-        onMouseDown: null,
-        onRippleEnded: null,
-        onTouchStart: null,
-        theme: {},
       };
 
       state = {
@@ -90,7 +86,7 @@ const rippleFactory = (options = {}) => {
       getDescriptor(x, y) {
         const {
           left, top, height, width,
-        } = ReactDOM.findDOMNode(this).getBoundingClientRect(); // eslint-disable-line
+        } = ReactDOM.findDOMNode(this).getBoundingClientRect();
         const { rippleCentered: centered, rippleSpread: spread } = this.props;
         return {
           left: centered ? 0 : x - left - (width / 2),
@@ -257,14 +253,14 @@ const rippleFactory = (options = {}) => {
       }) {
         const scale = restarting ? 0 : 1;
         const transform = `translate3d(${(-width / 2) + left}px, ${(-width / 2) + top}px, 0) scale(${scale})`;
-        const classNames = classnames(this.props.theme.ripple, {
+        const _className = classnames(this.props.theme.ripple, {
           [this.props.theme.rippleActive]: active,
           [this.props.theme.rippleRestarting]: restarting,
         }, className);
         return (
           <span key={key} data-react-toolbox="ripple" className={this.props.theme.rippleWrapper} {...props}>
             <span
-              className={classNames}
+              className={_className}
               ref={(node) => { if (node) this.rippleNodes[key] = node; }}
               style={prefixer({ transform }, { width, height: width })}
             />
