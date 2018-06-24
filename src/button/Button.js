@@ -8,12 +8,32 @@ import rippleFactory from '../ripple/Ripple';
 
 const factory = (ripple, FontIcon) => {
   class Button extends Component {
+    static propTypes = {
+      children: PropTypes.node.isRequired,
+      type: PropTypes.string,
+      size: PropTypes.string,
+      className: PropTypes.string,
+      href: PropTypes.string,
+      icon: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+      ]),
+      iconAlignment: PropTypes.string,
+      theme: PropTypes.shape({}),
+      disabled: PropTypes.bool,
+      onClick: PropTypes.func,
+    };
+
     static defaultProps = {
       type: 'default',
       size: 'medium',
       className: '',
       href: '',
+      icon: null,
       iconAlignment: 'left',
+      theme: {},
+      disabled: false,
+      onClick: null,
     };
 
     getIcon = (icon, iconAlignment, theme) => {
@@ -21,14 +41,9 @@ const factory = (ripple, FontIcon) => {
       return <FontIcon className={iconClasses} value={icon} />;
     }
 
-    handleMouseUp = (event) => {
-      this.buttonNode.blur();
-      if (this.props.onMouseUp) this.props.onMouseUp(event);
-    };
-
     handleMouseLeave = (event) => {
       this.buttonNode.blur();
-      if (this.props.onMouseLeave) this.props.onMouseLeave(event);
+      if (this.props.onClick) this.props.onClick(event);
     };
 
     render() {

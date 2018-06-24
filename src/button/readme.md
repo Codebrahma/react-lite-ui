@@ -10,8 +10,9 @@ The base button component.
 | `size` | `String` | `medium`  | Defines the size of the button. Possible values are 'small', 'medium', and 'large' |
 | `className` | `String` | `''` | Set a class to style the Component |
 | `href` | `String` | `null` | Creates a link for the button. |
-| `icon` | `String`/`Element` |  | Value of the icon |
+| `icon` | `String`/`Element` | `null` | Value of the icon |
 | `iconAlignment` | `String` | `left` | Set an alignment of the icon. Possible values are 'left', 'right' |
+| `onClick` | `Function` |  | Callback to be called when the button is clicked |
 
 ### Theme
 

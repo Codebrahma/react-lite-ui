@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import Card from './card';
 import customTheme from './customcard.scss';
 
-import Button from './button';
+import Button from './button'; // eslint-disable-line
 
 const Index = () => (
   <div>
     <Card
-      header='Card String header'
+      header="Card String header"
       wrapContent
-      theme={customTheme}>
+      theme={customTheme}
+    >
       <span>Card Content</span>
       <span>Card Content</span>
       <span>Card Content</span>
