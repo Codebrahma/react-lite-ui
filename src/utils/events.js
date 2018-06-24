@@ -1,5 +1,20 @@
 import keys from 'ramda/src/keys';
 
+const TRANSITIONS = {
+  transition: 'transitionend',
+  OTransition: 'oTransitionEnd',
+  MozTransition: 'transitionend',
+  WebkitTransition: 'webkitTransitionEnd',
+};
+
+function transitionEventNamesFor(element) {
+  return keys(TRANSITIONS).reduce((result, transition) => (
+    !result && (element && element.style[transition] !== undefined)
+      ? TRANSITIONS[transition]
+      : result
+  ), null);
+}
+
 export default {
   getMousePosition(event) {
     return {
@@ -55,18 +70,3 @@ export default {
     return true;
   },
 };
-
-const TRANSITIONS = {
-  transition: 'transitionend',
-  OTransition: 'oTransitionEnd',
-  MozTransition: 'transitionend',
-  WebkitTransition: 'webkitTransitionEnd',
-};
-
-function transitionEventNamesFor(element) {
-  return keys(TRANSITIONS).reduce((result, transition) => (
-    !result && (element && element.style[transition] !== undefined)
-      ? TRANSITIONS[transition]
-      : result
-  ), null);
-}
