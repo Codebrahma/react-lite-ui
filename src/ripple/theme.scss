@@ -1,4 +1,4 @@
-.rippleWrapper {
+:local(.rippleWrapper) {
   bottom: 0;
   left: 0;
   pointer-events: none;
@@ -8,7 +8,7 @@
   z-index: 1;
 }
 
-.ripple {
+:local(.ripple) {
   background-color: currentColor;
   border-radius: 50%;
   left: 50%;
