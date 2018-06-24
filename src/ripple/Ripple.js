@@ -30,11 +30,11 @@ const rippleFactory = (options = {}) => {
   return (ComposedComponent) => {
     class RippledComponent extends Component {
       static propTypes = {
-        children: PropTypes.node,
+        children: PropTypes.node.isRequired,
         disabled: PropTypes.bool,
-        onMouseDown: PropTypes.func,
-        onRippleEnded: PropTypes.func,
-        onTouchStart: PropTypes.func,
+        onMouseDown: PropTypes.func, // eslint-disable-line
+        onRippleEnded: PropTypes.func, // eslint-disable-line
+        onTouchStart: PropTypes.func, // eslint-disable-line
         ripple: PropTypes.bool,
         rippleCentered: PropTypes.bool,
         rippleClassName: PropTypes.string,
@@ -55,6 +55,7 @@ const rippleFactory = (options = {}) => {
         rippleClassName: defaultClassName,
         rippleMultiple: defaultMultiple,
         rippleSpread: defaultSpread,
+        theme: {},
       };
 
       state = {
@@ -86,7 +87,7 @@ const rippleFactory = (options = {}) => {
       getDescriptor(x, y) {
         const {
           left, top, height, width,
-        } = ReactDOM.findDOMNode(this).getBoundingClientRect();
+        } = ReactDOM.findDOMNode(this).getBoundingClientRect(); // eslint-disable-line
         const { rippleCentered: centered, rippleSpread: spread } = this.props;
         return {
           left: centered ? 0 : x - left - (width / 2),
@@ -253,14 +254,14 @@ const rippleFactory = (options = {}) => {
       }) {
         const scale = restarting ? 0 : 1;
         const transform = `translate3d(${(-width / 2) + left}px, ${(-width / 2) + top}px, 0) scale(${scale})`;
-        const _className = classnames(this.props.theme.ripple, {
+        const classNames = classnames(this.props.theme.ripple, {
           [this.props.theme.rippleActive]: active,
           [this.props.theme.rippleRestarting]: restarting,
         }, className);
         return (
           <span key={key} data-react-toolbox="ripple" className={this.props.theme.rippleWrapper} {...props}>
             <span
-              className={_className}
+              className={classNames}
               ref={(node) => { if (node) this.rippleNodes[key] = node; }}
               style={prefixer({ transform }, { width, height: width })}
             />
