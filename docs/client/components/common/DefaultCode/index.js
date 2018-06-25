@@ -1,3 +1,2 @@
-
-export { defaultCode as CardDefaultCode } from './card';
-export { defaultCode as ButtonDefaultCode } from './button';
+export { defaultCode as CardDefaultCode } from './Card';
+export { defaultCode as ButtonDefaultCode } from './Button';
