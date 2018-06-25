@@ -4,7 +4,7 @@
   "description": "Documentation of react-lite-ui",
   "author": "Codebrahma",
   "scripts": {
-    "start": "cross-env NODE_ENV=production UV_THREADPOOL_SIZE=100 node ./server",
+    "start": "cross-env UV_THREADPOOL_SIZE=100 node ./server",
     "build": "cross-env NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config ./webpack.config.production --colors --profile --progress",
     "deploy": "gh-pages -d build"
   },

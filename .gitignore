@@ -2,3 +2,4 @@ node_modules/
 yarn-error.log
 npm-error.log
 /docs/node_modules
+/docs/build
