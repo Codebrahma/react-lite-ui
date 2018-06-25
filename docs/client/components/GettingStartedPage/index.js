@@ -3,6 +3,12 @@ import React from 'react';
 import SampleCode from './sampleCode.md';
 import styles from './styles.scss';
 
+const usageStyle = {
+  height: '400px',
+  overflowY: 'scroll',
+  background: '#d2d2d2',
+};
+
 const GettingStartedPage = () => (
   <div className={styles.code}>
     <h2 className="header">
@@ -17,9 +23,7 @@ const GettingStartedPage = () => (
     <div className="sub-header">
       Usage
     </div>
-    <div className="js-code">
-      <div dangerouslySetInnerHTML={{ __html: SampleCode }} />
-    </div>
+    <div style={usageStyle} dangerouslySetInnerHTML={{ __html: SampleCode }} />
     <div className="empty-div" />
   </div>
 );
