@@ -16,7 +16,11 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(logger({ path: `./log/${process.env.NODE_ENV}.log` }));
-app.use(require('webpack-hot-middleware')(compiler));
+
+// Run webpack middleware only in dev environment
+if (process.env.NODE_ENV !== 'production') {
+  app.use(require('webpack-hot-middleware')(compiler));
+}
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, './public/index.html'));
