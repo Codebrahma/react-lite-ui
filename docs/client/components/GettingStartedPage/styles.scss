@@ -1,17 +1,21 @@
 :local(.code) {
   width: 50%;
-  padding-bottom: 200px;
+  padding: 1px;
   margin: 0 auto;
+
   .header {
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
   }
   .sub-header {
     font-size: 18px;
     font-weight: bold;
+    margin-bottom: 10px;
   }
+
   .js-code {
-    padding: 20px;
+    padding: 15px;
     background: #e2e2e2;
     margin-bottom: 20px;
     min-width: 300px;
@@ -20,5 +24,4 @@
   .empty-div {
     height: 200px;
   }
-  
 }

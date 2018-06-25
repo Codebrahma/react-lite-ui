@@ -5,14 +5,14 @@ The base button component.
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `children` | `Any` | `null` | All child component to be rendered inside a button |
-| `type` | `String` | `default` | Represents the style to be applied for the button. Possible values are 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', and 'dark' |
-| `size` | `String` | `medium`  | Defines the size of the button. Possible values are 'small', 'medium', and 'large' |
+| `children` | `Any` | `null` | All children components to be rendered inside the button |
+| `type` | `String` | `default` | Represents the style to be applied for the button. Possible values are `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, and `dark` |
+| `size` | `String` | `medium`  | Defines the size of the button. Possible values are `small`, `medium`, and `large` |
 | `className` | `String` | `''` | Set a class to style the Component |
 | `href` | `String` | `null` | Creates a link for the button. |
 | `icon` | `String`/`Element` | `null` | Value of the icon |
-| `iconAlignment` | `String` | `left` | Set an alignment of the icon. Possible values are 'left', 'right' |
-| `onClick` | `Function` |  | Callback to be called when the button is clicked |
+| `iconAlignment` | `String` | `left` | Set an alignment of the icon. Possible values are `left`, `right` |
+| `onClick` | `Function` | &nbsp; | Callback to be called when the button is clicked |
 
 ### Theme
 

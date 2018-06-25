@@ -1,16 +1,22 @@
 :local(.usage) {
   overflow: scroll;
   height: 800px;
-  padding: 5%;
+  padding: 0 5%;
 
   table, td, th {
+    padding: 10px;
     border: 1px solid #d2d2d2;
     border-collapse: collapse;
   }
   td {
-    padding: 5px;
-    font-size: 12px;
+    font-size: 14px;
     height: 40px;
+
+    code {
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px;
+    }
   }
   .hljs {
     padding: 15px 0px;
