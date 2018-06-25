@@ -11,7 +11,7 @@ import styles from './styles.scss';
 const renderHowItLooks = (ExampleComponent) => (
   <div>
     <h3>How it looks</h3>
-    <div>
+    <div className="example">
       <ExampleComponent />
     </div>
   </div>
@@ -19,11 +19,15 @@ const renderHowItLooks = (ExampleComponent) => (
 
 const ComponentsPage = () => (
   <div className={styles.usage}>
-    <div dangerouslySetInnerHTML={{ __html: CardReadme }} />
-    { renderHowItLooks(CardExample) }
-    <div dangerouslySetInnerHTML={{ __html: ButtonReadme }} />
-    { renderHowItLooks(ButtonExample) }
-    <div style={{ height: '300px' }} />
+    <div className="usage-section">
+      <div dangerouslySetInnerHTML={{ __html: CardReadme }} />
+      { renderHowItLooks(CardExample) }
+    </div>
+
+    <div className="usage-section">
+      <div dangerouslySetInnerHTML={{ __html: ButtonReadme }} />
+      { renderHowItLooks(ButtonExample) }
+    </div>
   </div>
 );
 
