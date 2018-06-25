@@ -6,7 +6,7 @@ import styles from './styles.scss';
 const usageStyle = {
   height: '400px',
   overflowY: 'scroll',
-  background: '#d2d2d2',
+  background: '#e2e2e2',
 };
 
 const GettingStartedPage = () => (
