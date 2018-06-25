@@ -5,9 +5,9 @@ import styles from './styles.scss';
 
 const GettingStartedPage = () => (
   <div className={styles.code}>
-    <div className="header">
-      GettingStarted Page
-    </div>
+    <h2 className="header">
+      Getting Started
+    </h2>
     <div className="sub-header">
       Installation
     </div>

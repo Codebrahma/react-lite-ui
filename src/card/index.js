@@ -47,8 +47,8 @@ Card.propTypes = {
   }),
   wrapContent: PropTypes.bool,
   noPadding: PropTypes.bool,
-  elevation: PropTypes.oneOf(['low', 'medium', 'high']),
-  header: PropTypes.oneOf([
+  elevation: PropTypes.oneOfType(['low', 'medium', 'high']),
+  header: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
   ]),

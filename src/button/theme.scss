@@ -1,4 +1,4 @@
-.button {
+:local(.button) {
   align-content: center;
   align-items: center;
   border: 0;
@@ -25,8 +25,6 @@
   border-radius: 2px;
   margin: 2px;
 
-  @apply --reset;
-
   &:active {
     box-shadow:
       0 2px 2px 0 rgba(0, 0, 0, 0.14),
@@ -38,20 +36,6 @@
     box-shadow:
       0 0 8px rgba(0, 0, 0, 0.18),
       0 8px 16px rgba(0, 0, 0, 0.36);
-  }
-
-  & .icon {
-    font-size: 120%;
-  }
-
-  & .icon-left {
-    float: left;
-    margin-right: 6px;
-  }
-
-  & .icon-right {
-    margin-left: 6px;
-    float: right;
   }
 
   & > input {
@@ -99,7 +83,21 @@
   }
 }
 
-.small {
+:local(.icon) {
+  font-size: 120%;
+}
+
+:local(.icon-left) {
+  float: left;
+  margin-right: 6px;
+}
+
+:local(.icon-right) {
+  margin-left: 6px;
+  float: right;
+}
+
+:local(.small) {
   font-size: 11px;
   height: 28px;
   line-height: 28px;
@@ -107,7 +105,7 @@
   min-width: 70px;
 }
 
-.medium {
+:local(.medium) {
   font-size: 13px;
   height: 36px;
   line-height: 36px;
@@ -115,7 +113,7 @@
   min-width: 90px;
 }
 
-.large {
+:local(.large) {
   font-size: 18px;
   height: 52px;
   line-height: 52px;
@@ -123,55 +121,55 @@
   min-width: 130px;
 }
 
-.default {
+:local(.default) {
   color: #000;
   background-color: white;
   border-color: white;
 }
 
-.primary {
+:local(.primary) {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
 
-.secondary {
+:local(.secondary) {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
 }
 
-.success {
+:local(.success) {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745;
 }
 
-.danger {
+:local(.danger) {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
 }
 
-.warning {
+:local(.warning) {
   color: #212529;
   background-color: #ffc107;
   border-color: #ffc107;
 }
 
-.info {
+:local(.info) {
   color: #fff;
   background-color: #17a2b8;
   border-color: #17a2b8;
 }
 
-.light {
+:local(.light) {
   color: #212529;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
 
-.dark {
+:local(.dark) {
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;

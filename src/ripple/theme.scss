@@ -1,4 +1,4 @@
-.rippleWrapper {
+:local(.rippleWrapper) {
   bottom: 0;
   left: 0;
   pointer-events: none;
@@ -6,9 +6,10 @@
   right: 0;
   top: 0;
   z-index: 1;
+  overflow: hidden;
 }
 
-.ripple {
+:local(.ripple) {
   background-color: currentColor;
   border-radius: 50%;
   left: 50%;
@@ -18,19 +19,19 @@
   transform-origin: 50% 50%;
   transition-duration: 800ms;
   z-index: 100;
+}
 
-  &.rippleRestarting {
-    opacity: 0.3;
-    transition-property: none;
-  }
+:local(.rippleRestarting) {
+  opacity: 0.3;
+  transition-property: none;
+}
 
-  &.rippleActive {
-    opacity: 0.3;
-    transition-property: transform;
-  }
+:local(.rippleActive) {
+  opacity: 0.3;
+  transition-property: transform;
+}
 
-  &:not(.rippleActive):not(.rippleRestarting) {
-    opacity: 0;
-    transition-property: opacity, transform;
-  }
+:local(.ripple:not(.rippleActive):not(.rippleRestarting)) {
+  opacity: 0;
+  transition-property: opacity, transform;
 }

@@ -32,9 +32,9 @@ const rippleFactory = (options = {}) => {
       static propTypes = {
         children: PropTypes.node.isRequired,
         disabled: PropTypes.bool,
-        onMouseDown: PropTypes.func,
-        onRippleEnded: PropTypes.func,
-        onTouchStart: PropTypes.func,
+        onMouseDown: PropTypes.func, // eslint-disable-line
+        onRippleEnded: PropTypes.func, // eslint-disable-line
+        onTouchStart: PropTypes.func, // eslint-disable-line
         ripple: PropTypes.bool,
         rippleCentered: PropTypes.bool,
         rippleClassName: PropTypes.string,
@@ -55,9 +55,6 @@ const rippleFactory = (options = {}) => {
         rippleClassName: defaultClassName,
         rippleMultiple: defaultMultiple,
         rippleSpread: defaultSpread,
-        onMouseDown: null,
-        onRippleEnded: null,
-        onTouchStart: null,
         theme: {},
       };
 
@@ -285,6 +282,7 @@ const rippleFactory = (options = {}) => {
           theme,
           ...other
         } = this.props;
+
         const { ripples } = this.state;
         const childRipples = Object.keys(ripples).map(key =>
           this.renderRipple(key, rippleClassName, ripples[key]));
