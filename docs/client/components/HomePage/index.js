@@ -20,28 +20,46 @@ const HomePage = () => (
     </div>
     <div className="advantage-section">
       <Row>
-        <Col xsOffset={1} xs={3} className="advantage">
-          <div className="header">
-            10+ UI components
-          </div>
-          <div className="content">
-            The collection has more than 10+ UI components which we use regularly
-          </div>
-        </Col>
-        <Col xsOffset={1} xs={3} className="advantage">
-          <div className="header">
-            Light Weight
-          </div>
-          <div className="content">
-            Total gzipped size is 20KB.
+        <Col xs={4} className="advantage-wrapper">
+          <div className="advantage">
+            <div className="header">
+              Complete Set of components
+            </div>
+            <div className="content">
+              <ul>
+                <li> 10+ UI components </li>
+                <li> Most commonly used </li>
+                <li> Responsive fit for all screen </li>
+              </ul>
+            </div>
           </div>
         </Col>
-        <Col xsOffset={1} xs={3} className="advantage">
-          <div className="header">
-            Highly Themeable
+        <Col xs={4} className="advantage-wrapper">
+          <div className="advantage">
+            <div className="header">
+              Light Weight
+            </div>
+            <div className="content">
+              <ul>
+                <li> Total gzipped size less than 20KB </li>
+                <li> Delta Increase for each Import</li>
+                <li> Blazingly fast </li>
+              </ul>
+            </div>
           </div>
-          <div className="content">
-            You can literally customize anything
+        </Col>
+        <Col xs={4} className="advantage-wrapper">
+          <div className="advantage">
+            <div className="header">
+              Highly Themeable
+            </div>
+            <div className="content">
+              <ul>
+                <li>Theme using SASS / SCSS</li>
+                <li>Have Global / Local Theming</li>
+                <li>Customization for all DOM elements</li>
+              </ul>
+            </div>
           </div>
         </Col>
       </Row>

@@ -3,13 +3,22 @@ import ComponentBar from './ComponentBar';
 import PlaygroundWithPreview from './PlaygroundWithPreview';
 import Documentation from './Documentation';
 
+import Card from '../../../../src/card';
+import CardReadme from '../../../../src/card/readMe.md';
+
+import {
+  CardDefaultCode,
+} from '../common/DefaultCode';
+
+
 class PlaygroundPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isDocumentationOn: false,
-      activeComponent: '',
-      activeDocs: '',
+      activeComponent: 'Card',
+      defaultCode: CardDefaultCode, 
+      activeDocs: CardReadme,
     };
     this.expandDocumentation = this.expandDocumentation.bind(this);
     this.handleClickComponent = this.handleClickComponent.bind(this);
@@ -33,6 +42,7 @@ class PlaygroundPage extends React.Component {
     return (
       <div>
         <ComponentBar
+          activeComponent={this.state.activeComponent}
           onClickComponent={this.handleClickComponent}
         >
           <PlaygroundWithPreview

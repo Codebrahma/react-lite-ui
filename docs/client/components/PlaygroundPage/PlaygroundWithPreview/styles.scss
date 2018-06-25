@@ -6,11 +6,13 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    margin: 10px 25px;
   }
 }
 
 :local(.playground) {
   position: fixed;
+  left: 15%;
   width: 40%;
   height: 100%;
   .doc-enabler {
@@ -29,7 +31,7 @@
     font-weight: bold;
   }
   position: fixed;
-  left: 55%;
+  left: 60%;
   width: 35%;
   height: 100%;
 }

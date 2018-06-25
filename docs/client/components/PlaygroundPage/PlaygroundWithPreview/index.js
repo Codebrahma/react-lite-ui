@@ -40,7 +40,7 @@ class PlaygroundWithPreview extends React.Component {
     return (
       <div className={styles['playground-preview']}>
         <div className="header">
-          PlaygroundWithPreview
+          Playground
         </div>
         <div>
           <Playground
@@ -55,7 +55,7 @@ class PlaygroundWithPreview extends React.Component {
             code={this.state.code}
           />
         </div>
-        {activeComponent}
+
       </div>
     );
   }
