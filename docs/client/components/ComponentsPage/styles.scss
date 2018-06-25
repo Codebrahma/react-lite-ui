@@ -1,7 +1,7 @@
 :local(.usage) {
   overflow: scroll;
-  height: 800px;
-  padding: 0 5%;
+  height: 100%;
+  padding: 0 1%;
 
   table, td, th {
     padding: 10px;
@@ -18,8 +18,29 @@
       border-radius: 4px;
     }
   }
+
   .hljs {
     padding: 15px 0px;
     background: #f1f1f1;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+  }
+
+  .usage-section {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .usage-section:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .example {
+    padding: 10px;
+    background: #fafafa;
   }
 }

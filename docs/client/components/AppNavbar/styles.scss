@@ -10,6 +10,7 @@ body {
   position: fixed;
   min-height: 75px;
   width: 100%;
+  top: 0;
   background-color: $primary-blue;
   margin: 0;
   color: $primary-white;
@@ -24,7 +25,7 @@ body {
   .parent-row {
     min-height: 75px;
   }
-  
+
   .nav-wrapper {
     display: flex;
     align-items: center;
