@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const config = require('./webpack.config.development');
+const logger = require('express-logger');
 
 const app = express();
 const compiler = webpack(config);
@@ -14,6 +15,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
   }
 }));
 
+app.use(logger({ path: `./log/${process.env.NODE_ENV}.log` }));
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function (req, res) {

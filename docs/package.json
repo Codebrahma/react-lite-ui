@@ -4,7 +4,7 @@
   "description": "Documentation of react-lite-ui",
   "author": "Codebrahma",
   "scripts": {
-    "start": "cross-env UV_THREADPOOL_SIZE=100 node ./server",
+    "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
     "build": "cross-env NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config ./webpack.config.production --colors --profile --progress",
     "deploy": "gh-pages -d build"
   },
@@ -15,6 +15,7 @@
     "code-mirror-themes": "^1.0.0",
     "codemirror": "^5.14.2",
     "css-loader": "^0.28.11",
+    "express-logger": "0.0.3",
     "highlight-loader": "^0.7.2",
     "history": "^2.1.1",
     "html-loader": "^0.5.5",
