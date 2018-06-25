@@ -282,6 +282,7 @@ const rippleFactory = (options = {}) => {
           theme,
           ...other
         } = this.props;
+
         const { ripples } = this.state;
         const childRipples = Object.keys(ripples).map(key =>
           this.renderRipple(key, rippleClassName, ripples[key]));
