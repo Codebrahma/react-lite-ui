@@ -18,8 +18,8 @@
         cursor: pointer;
       }
       &.active {
-        background-color: $primary-blue;
-        color: $primary-white
+        color: #007bff;
+        font-weight: bold;
       }
     }
   }

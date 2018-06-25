@@ -48,7 +48,8 @@ body {
         min-height: 35px;
         span {
           &.active {
-            border-bottom: 4px solid $primary-yellow;
+            padding-bottom: 2px;
+            border-bottom: 2px solid $primary-yellow;
           }
         }
       }

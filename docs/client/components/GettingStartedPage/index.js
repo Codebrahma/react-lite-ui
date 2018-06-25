@@ -4,9 +4,8 @@ import SampleCode from './sampleCode.md';
 import styles from './styles.scss';
 
 const usageStyle = {
-  height: '400px',
-  overflowY: 'scroll',
   background: '#e2e2e2',
+  padding: '10px',
 };
 
 const GettingStartedPage = () => (
@@ -18,7 +17,9 @@ const GettingStartedPage = () => (
       Installation
     </div>
     <div className="js-code">
-      npm install react-lite
+      <pre className="hlsjs">
+        npm install react-lite
+      </pre>
     </div>
     <div className="sub-header">
       Usage
