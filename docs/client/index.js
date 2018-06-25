@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 
 const Routes = () => (
-  <Router>
+  <Router basename="/react-lite-ui">
     <App />
   </Router>
 );
