@@ -54,37 +54,42 @@ class Preview extends React.Component {
   executeCode () {
     const mountNode = this.refs.mount;
     const scope = this.buildScope(mountNode);
-
+    if (this.state.error) {
+      this.setState({ error: null });
+    }
+    
     try {
       ReactDOM.unmountComponentAtNode(mountNode);
     } catch (e) {
-      console.log(e);
-    }
-    try {
       
+    }
+
+    try {
       const x = eval(this.compileCode())(...scope);
       ReactDOM.render(x, mountNode);
       if (this.state.error) {
         this.setState({ error: null });
       }
     } catch (err) {
-      console.log(err);
-      this.setTimeout(() => {
-        this.setState({ error: err.toString() });
-      }, 500);
+        this.setTimeout(() => {
+          this.setState({
+            error: err.message,
+          });
+        }, 100);
     }
   }
 
   render () {
-    if (this.state.error) {
-      return (
-        <div className={styles.error}>
-          {this.state.error}
-        </div>
-      )
-    }
+
     return (
       <div className={styles.preview}>
+        {
+          this.state.error !== null ? (
+            <div className="error">
+              {this.state.error}
+            </div>
+          ) : null
+        }
         <div ref="mount" />
       </div>
     );
