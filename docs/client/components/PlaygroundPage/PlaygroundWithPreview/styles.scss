@@ -35,3 +35,11 @@
   width: 35%;
   height: 100%;
 }
+
+:local(.error) {
+  position: fixed;
+  left: 60%;
+  width: 35%;
+  height: 100%;
+  color: red;
+}

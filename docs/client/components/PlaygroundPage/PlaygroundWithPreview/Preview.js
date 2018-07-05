@@ -76,7 +76,13 @@ class Preview extends React.Component {
   }
 
   render () {
-    console.log('theme ', theme);
+    if (this.state.error) {
+      return (
+        <div className={styles.error}>
+          {this.state.error}
+        </div>
+      )
+    }
     return (
       <div className={styles.preview}>
         <div ref="mount" />
