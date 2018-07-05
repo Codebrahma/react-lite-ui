@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { transform } from 'babel-standalone';
-import Card from '../../../../../src/card';
-import Button from '../../../../../src/button';
+import components from '../../../../../src';
 import theme from '../../../components/common/DefaultCode/theme.scss';
 import styles from './styles.scss';
+
+console.log('components ', components);
 
 class Preview extends React.Component {
   constructor(props) {
@@ -85,9 +86,14 @@ class Preview extends React.Component {
       <div className={styles.preview}>
         {
           this.state.error !== null ? (
-            <div className="error">
-              {this.state.error}
-            </div>
+            <React.Fragment>
+              <div className="header">
+                Error
+              </div>
+              <div className="error">
+                {this.state.error}
+              </div>
+            </React.Fragment>
           ) : null
         }
         <div ref="mount" />
@@ -102,7 +108,11 @@ Preview.propTypes = {
 };
 
 Preview.defaultProps = {
-  scope: { React, Card, Button, theme },
+  scope: { 
+    React, 
+    ...components,
+    theme,
+  },
 };
 
 export default Preview;
