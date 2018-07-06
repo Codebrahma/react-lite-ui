@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import classnames from 'classnames';
-import defaultTheme from './defaultTheme.scss';
+import defaultTheme from './theme.scss';
 
 const Card = ({
   children,

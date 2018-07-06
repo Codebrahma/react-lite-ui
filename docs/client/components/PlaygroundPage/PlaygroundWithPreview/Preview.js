@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { transform } from 'babel-standalone';
-import Card from '../../../../../src/card';
-import Button from '../../../../../src/button';
+import components from '../../../../../src';
 import theme from '../../../components/common/DefaultCode/theme.scss';
 import styles from './styles.scss';
+
+console.log('components ', components);
 
 class Preview extends React.Component {
   constructor(props) {
@@ -54,31 +55,47 @@ class Preview extends React.Component {
   executeCode () {
     const mountNode = this.refs.mount;
     const scope = this.buildScope(mountNode);
-
+    if (this.state.error) {
+      this.setState({ error: null });
+    }
+    
     try {
       ReactDOM.unmountComponentAtNode(mountNode);
     } catch (e) {
-      console.log(e);
-    }
-    try {
       
+    }
+
+    try {
       const x = eval(this.compileCode())(...scope);
       ReactDOM.render(x, mountNode);
       if (this.state.error) {
         this.setState({ error: null });
       }
     } catch (err) {
-      console.log(err);
-      this.setTimeout(() => {
-        this.setState({ error: err.toString() });
-      }, 500);
+        this.setTimeout(() => {
+          this.setState({
+            error: err.message,
+          });
+        }, 100);
     }
   }
 
   render () {
-    console.log('theme ', theme);
+
     return (
       <div className={styles.preview}>
+        {
+          this.state.error !== null ? (
+            <React.Fragment>
+              <div className="header">
+                Error
+              </div>
+              <div className="error">
+                {this.state.error}
+              </div>
+            </React.Fragment>
+          ) : null
+        }
         <div ref="mount" />
       </div>
     );
@@ -91,7 +108,11 @@ Preview.propTypes = {
 };
 
 Preview.defaultProps = {
-  scope: { React, Card, Button, theme },
+  scope: { 
+    React, 
+    ...components,
+    theme,
+  },
 };
 
 export default Preview;
