@@ -28,6 +28,7 @@ class CheckboxGroup extends React.Component {
     const {
       options,
       inline,
+      theme,
     } = this.props;
 
     const classNames = cx(styles['checkbox-group']);
@@ -39,6 +40,7 @@ class CheckboxGroup extends React.Component {
               {...option}
               checked={this.state.isChecked[option.label]}
               onClick={this.handleCheckListChange}
+              theme={theme}
             />
             <label className={styles['each-label']}>
               {option.label}

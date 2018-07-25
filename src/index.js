@@ -8,10 +8,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Checkbox from './checkbox';
 import CheckboxGroup from './checkboxGroup';
 
-// import themes from './theme.scss';
+import themes from './theme.scss';
 
 const options = [
   { label: 'Male' }, { label: 'female' }, { label: 'alpha' },
@@ -22,6 +21,7 @@ const CheckboxDemo = () => (
     <CheckboxGroup
       options={options}
       inline
+      theme={themes}
     />
   </React.Fragment>
 );
