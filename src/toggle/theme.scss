@@ -1,6 +1,10 @@
 :local(.toggle) {
   background-color: #ccc;
   padding: 2px;
+  display: inline-block;
+  width: 60px;
+  height: 35px;
+  position: relative;
   &:hover {
     cursor: pointer;
   }
@@ -8,24 +12,26 @@
     /* Disable the HTML input */
     opacity: 0;  
   }
+  &:before {
+    position: absolute;
+    content: "";
+    height: 70%;
+    width: 35%;
+    left: 10%;
+    top: 15%;
+    background-color: white;
+  }
 }
 
 :local(.toggled) {
-  background-color: #2196F3 !important;
-  height: 200px;
-  position: relative;
-  .toggle-item {
-    /* Toggle item class */
-    /* Builds a rectange with border width and rotates it 45 Degree */
+  background-color: #2196F3;
+  &:before {
     position: absolute;
-    left: 30%;
-    top: 10%;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    content: "";
+    height: 70%;
+    width: 35%;
+    left: 55%;
+    top: 15%;
+    background-color: white;
   }
 }
