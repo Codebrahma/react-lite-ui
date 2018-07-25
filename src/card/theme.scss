@@ -1,5 +1,7 @@
+@import '../globals/theme';
+
 :local(.card) {
-  background: #FFFFFF;
+  background: $original-white;
   border-radius: 3px;
   padding: 10px;
   margin: 5px;

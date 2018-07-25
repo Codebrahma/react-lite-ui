@@ -1,3 +1,5 @@
+@import '../globals/theme';
+
 :local(.button) {
   align-content: center;
   align-items: center;
@@ -63,55 +65,55 @@
 }
 
 :local(.default) {
-  color: #000;
-  background-color: white;
-  border-color: white;
+  color: $original-black;
+  background-color: $original-white;
+  border-color: $original-white;
 }
 
 :local(.primary) {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  color: $original-white;
+  background-color: $secondary-violet;
+  border-color: $secondary-violet;
 }
 
 :local(.secondary) {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  color: $original-white;
+  background-color: $secondary-grey;
+  border-color: $secondary-grey;
 }
 
 :local(.success) {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
+  color: $original-white;
+  background-color: $secondary-green;
+  border-color: $secondary-green;
 }
 
 :local(.danger) {
-  color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
+  color: $original-white;
+  background-color: $secondary-red;
+  border-color: $secondary-red;
 }
 
 :local(.warning) {
-  color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  color: $secondary-black;
+  background-color: $secondary-yellow;
+  border-color: $secondary-yellow;
 }
 
 :local(.info) {
-  color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  color: $original-white;
+  background-color: $secondary-blue;
+  border-color: $secondary-blue;
 }
 
 :local(.light) {
-  color: #212529;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  color: $secondary-black;
+  background-color: $secondary-white;
+  border-color: $secondary-white;
 }
 
 :local(.dark) {
-  color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  color: $original-white;
+  background-color: $secondary-black;
+  border-color: $secondary-black;
 }

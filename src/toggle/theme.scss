@@ -1,5 +1,7 @@
+@import '../globals/theme';
+
 :local(.toggle) {
-  background-color: #ccc;
+  background-color: $secondary-grey;
   padding: 2px;
   display: inline-block;
   width: 60px;
@@ -19,12 +21,12 @@
     width: 35%;
     left: 10%;
     top: 15%;
-    background-color: white;
+    background-color: $original-white;
   }
 }
 
 :local(.toggled) {
-  background-color: #2196F3;
+  background-color: $secondary-blue;
   &:before {
     position: absolute;
     content: "";
@@ -32,6 +34,6 @@
     width: 35%;
     left: 55%;
     top: 15%;
-    background-color: white;
+    background-color: $original-white;
   }
 }

@@ -1,6 +1,9 @@
+@import '../globals/theme.scss';
+
 :local(.checkbox) {
-  background-color: #ccc;
+  background-color: $secondary-white;
   padding: 2px;
+  border: 1px solid $secondary-black;
   &:hover {
     cursor: pointer;
   }
@@ -11,7 +14,7 @@
 }
 
 :local(.checked) {
-  background-color: #2196F3 !important;
+  background-color: $secondary-blue !important;
   height: 200px;
   position: relative;
   .check-item {
@@ -22,7 +25,7 @@
     top: 10%;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid $original-white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
