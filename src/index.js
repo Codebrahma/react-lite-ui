@@ -21,6 +21,7 @@ const CheckboxDemo = () => (
   <React.Fragment>
     <CheckboxGroup
       options={options}
+      inline
     />
   </React.Fragment>
 );
