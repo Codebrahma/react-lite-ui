@@ -1,20 +1,14 @@
 import React from 'react';
-import Preview from './Preview';
-import Playground from './Playground';
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview
+} from 'react-live';
+import Switch from 'react-switch';
+import components from '../../../../../src';
 import styles from './styles.scss';
-
-const defaultCode = `
-  class Example extends React.Component {
-    render() {
-      return (
-        <div>
-          Example
-        </div>
-      )
-    }
-  }
-  return <Example />;
-`;
+import theme from '../../../components/common/DefaultCode/theme.scss';
 
 class PlaygroundWithPreview extends React.Component {
   constructor(props) {
@@ -22,12 +16,6 @@ class PlaygroundWithPreview extends React.Component {
     this.state = {
       code: props.defaultCode,
     };
-  }
-
-  handleOnChangeCode = (code) => {
-    this.setState({
-      code,
-    });
   }
 
   render() {
@@ -42,20 +30,30 @@ class PlaygroundWithPreview extends React.Component {
         <div className="header">
           Playground
         </div>
-        <div>
-          <Playground
-            code={this.props.defaultCode}
-            onChange={this.handleOnChangeCode}
-            activeComponent={activeComponent}
-            expandDocumentation={expandDocumentation}
-            isDocumentationOn={isDocumentationOn}
-          />
-          
-          <Preview
-            code={this.state.code}
-          />
-        </div>
-
+        <LiveProvider 
+          scope={{ ...components, theme }}
+          code={this.props.defaultCode}
+        >
+          <div className="code-editor">
+            <LiveEditor />
+            <div className="doc-enabler">
+              <label htmlFor="normal-switch">
+                <div>Show Docs</div>
+                <Switch
+                  onChange={expandDocumentation}
+                  checked={isDocumentationOn}
+                  className="switch"
+                />
+              </label>
+            </div>
+          </div>
+          <div className="code-preview">
+            <LivePreview />
+            <div className="error">
+              <LiveError />
+            </div>
+          </div>
+        </LiveProvider>
       </div>
     );
   }
