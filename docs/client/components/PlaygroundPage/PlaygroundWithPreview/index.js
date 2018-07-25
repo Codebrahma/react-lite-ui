@@ -30,6 +30,9 @@ class PlaygroundWithPreview extends React.Component {
         <div className="header">
           Playground
         </div>
+        <div className="warning"> 
+          (Editor not available at this screen size) 
+        </div>
         <LiveProvider 
           scope={{ ...components, theme }}
           code={this.props.defaultCode}
