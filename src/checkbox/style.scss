@@ -1,23 +1,22 @@
 :local(.checkbox) {
   background-color: #ccc;
   padding: 2px;
-
+  cursor: pointer;
   input {
     /* Disable the HTML input */
     opacity: 0;  
-    cursor: pointer;
   }
 }
 
 :local(.checked) {
   background-color: #2196F3 !important;
   height: 200px;
+  position: relative;
   .check-item {
     /* Check Item adds the tick */
     /* Builds a rectange with border width and rotates it 45 Degree */
     position: absolute;
-    left: 15px;
-    top: 9px;
+    left: 7px;
     width: 5px;
     height: 10px;
     border: solid white;
