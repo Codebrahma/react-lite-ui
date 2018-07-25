@@ -1,40 +1,23 @@
 :local(.playground-preview) {
-  position: fixed;
-  height: 100%;
-  width: 60%;
-  .header {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin: 10px 25px;
+  .prism-code {
+    white-space: pre-wrap !important;
   }
-}
+  .code-editor {
+    width: 50%;
+    float: left;
+  }
 
-:local(.playground) {
-  position: fixed;
-  left: 15%;
-  width: 40%;
-  height: 100%;
-  .doc-enabler {
-    margin: 40px auto;
-    width: 40%;
-    .switch {
-      margin-left: 10px;
-      margin-top: 10px;
+  .code-preview {
+    width: 45%;
+    float: left;
+    margin-left: 15px;
+    .error {
+      color: red;  
     }
   }
-}
-
-:local(.preview) {
-  .header {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  position: fixed;
-  left: 60%;
-  width: 35%;
-  height: 100%;
-  .error {
-    color: red;
+  
+  .doc-enabler {
+    text-align: center;
+    margin-top: 40px;
   }
 }

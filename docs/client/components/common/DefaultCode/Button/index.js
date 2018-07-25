@@ -32,6 +32,4 @@ class Demo extends React.Component {
     )
   }
 }
-
-return <Demo />;
 `;
