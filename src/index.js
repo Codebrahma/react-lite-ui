@@ -13,7 +13,7 @@ import Checkbox from './checkbox';
 const CheckboxDemo = () => (
   <Checkbox
     checked
-    onClick={(e) => { console.log(e); }}
+    onClick={(e) => { console.log(e.currentTarget.value); }}
   />
 );
 
