@@ -1,0 +1,20 @@
+:local(.checkbox-container) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #ccc;
+  &.checked {
+    background-color: #2196F3 !important;
+    height: 200px;
+  }
+  .different-class {
+    font-size: 2px;
+  }
+  input {
+    opacity: 0;  
+    cursor: pointer;
+  }
+}
+
+

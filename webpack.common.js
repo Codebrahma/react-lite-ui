@@ -28,7 +28,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
           'css-loader',
         ],
       },
@@ -37,7 +36,7 @@ module.exports = {
         include: path.resolve(__dirname, './src'),
         use: [
           'style-loader',
-          `${require.resolve('css-loader')}?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`,
+          `${require.resolve('css-loader')}?sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`,
           `${require.resolve('sass-loader')}?sourceMap`,
         ],
       },
@@ -46,9 +45,9 @@ module.exports = {
   plugins: [
     htmlWebpackPlugin,
     // new BundleAnalyzerPlugin(),
-    new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: devMode ? '[name].css' : '[name].[hash].css',
+    //   chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    // }),
   ],
 };
