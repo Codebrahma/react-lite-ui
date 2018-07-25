@@ -6,12 +6,15 @@ import Checkbox from '../../../../src/checkbox';
 import CheckboxReadme from '../../../../src/checkbox/readMe.md';
 import CheckboxGroup from '../../../../src/checkbox';
 import CheckboxGroupReadme from '../../../../src/checkbox/readMe.md';
+import Toggle from '../../../../src/toggle';
+import ToggleReadme from '../../../../src/toggle/readMe.md';
 
 import {
   CardDefaultCode,
   ButtonDefaultCode,
   CheckboxDefaultCode,
   CheckboxGroupDefaultCode,
+  ToggleDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -38,5 +41,11 @@ export const componentList = [
     docs: CheckboxGroupReadme,
     component: CheckboxGroup,
     defaultCode: CheckboxGroupDefaultCode,
+  },
+  {
+    name: 'Toggle',
+    docs: CheckboxGroupReadme,
+    component: Toggle,
+    defaultCode: ToggleDefaultCode,
   },
 ];
