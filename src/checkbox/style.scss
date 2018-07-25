@@ -1,7 +1,9 @@
 :local(.checkbox) {
   background-color: #ccc;
   padding: 2px;
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
   input {
     /* Disable the HTML input */
     opacity: 0;  
