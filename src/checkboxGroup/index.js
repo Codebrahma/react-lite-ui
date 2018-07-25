@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Checkbox from '../checkbox';
 import cx from 'classnames';
-import styles from './style.scss';
+import Checkbox from '../checkbox';
+
+import styles from './theme.scss';
 
 class CheckboxGroup extends React.Component {
   constructor(props) {

@@ -1,29 +1,12 @@
-// import Button from './button';
-// import Card from './card';
-
-// export default {
-//   Button,
-//   Card,
-// }
-import React from 'react';
-import ReactDOM from 'react-dom';
-
+import Button from './button';
+import Card from './card';
+import Checkbox from './checkbox';
 import CheckboxGroup from './checkboxGroup';
 
-import themes from './theme.scss';
+export default {
+  Button,
+  Card,
+  Checkbox,
+  CheckboxGroup,
+};
 
-const options = [
-  { label: 'Male' }, { label: 'female' }, { label: 'alpha' },
-];
-
-const CheckboxDemo = () => (
-  <React.Fragment>
-    <CheckboxGroup
-      options={options}
-      inline
-      theme={themes}
-    />
-  </React.Fragment>
-);
-
-ReactDOM.render(<CheckboxDemo />, document.getElementById('index'));

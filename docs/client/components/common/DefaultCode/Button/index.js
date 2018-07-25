@@ -3,8 +3,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <h4>Buttons with diffent styles</h4>
+        <PreviewBlock header="Styled Buttons">
           <Button>Default</Button>
           <Button type="primary">Primary</Button>
           <Button type="secondary">Secondary</Button>
@@ -14,20 +13,27 @@ class Demo extends React.Component {
           <Button type="info">Info</Button>
           <Button type="light">Light</Button>
           <Button type="dark">Dark</Button>
-        </div>
-      
-        <div>
-          <h4>Buttons with diffent sizes</h4>
-          <Button type="primary" size="small">Small</Button>
-          <Button type="primary" size="medium">Medium</Button>
-          <Button type="primary" size="large">Large</Button>
-        </div>
-      
-        <div>
-          <h4>Buttons with Icon</h4>
-          <Button type="success" icon="done">Left Icon</Button>
-          <Button type="success" icon="done" iconAlignment="right">Right Icon</Button>
-        </div>
+        </PreviewBlock>
+        <PreviewBlock header="Sizable Buttons">
+          <Button 
+            type="primary"
+            size="small"
+          >
+            Small
+          </Button> 
+          <Button
+            type="primary"
+            size="medium"
+          >
+            Medium
+          </Button>
+          <Button 
+            type="primary"
+            size="large"
+          >
+            Large
+          </Button>
+        </PreviewBlock>
       </div>
     )
   }

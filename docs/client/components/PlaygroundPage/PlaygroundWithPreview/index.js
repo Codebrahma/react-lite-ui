@@ -10,6 +10,12 @@ import components from '../../../../../src';
 import styles from './styles.scss';
 import theme from '../../../components/common/DefaultCode/theme.scss';
 
+const PreviewBlock = ({ children, header }) => (
+  <div className="preview-block">
+    <div className="header">{header}</div>
+    {children}
+  </div>
+)
 class PlaygroundWithPreview extends React.Component {
   constructor(props) {
     super(props);
@@ -34,11 +40,13 @@ class PlaygroundWithPreview extends React.Component {
           (Editor not available at this screen size) 
         </div>
         <LiveProvider 
-          scope={{ ...components, theme }}
+          scope={{ ...components, PreviewBlock, theme }}
           code={this.props.defaultCode}
         >
           <div className="code-editor">
-            <LiveEditor />
+            <div className="editor-wrapper">
+              <LiveEditor />
+            </div>
             <div className="doc-enabler">
               <label htmlFor="normal-switch">
                 <div>Show Docs</div>

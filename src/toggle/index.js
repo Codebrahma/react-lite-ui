@@ -4,46 +4,48 @@ import { themr } from 'react-css-themr';
 import PropTypes from 'prop-types';
 import defaultTheme from './theme.scss';
 
-const Checkbox = ({
+const Toggle = ({
   label,
   value,
   onClick,
-  checked,
+  toggled,
   additionalClass,
   theme,
   ...props
 }) => {
-  const classNames = cx(theme.checkbox, {
-    [theme.checked]: checked,
+  const classNames = cx(theme.toggle, {
+    [theme.toggled]: toggled,
   }, additionalClass);
+
   return (
     <label className={classNames}>
       <input
         type="checkbox"
-        onClick={() => onClick(label, label)}
+        onClick={() => onClick(label, value)}
         {...props}
       />
-      <span className="check-item" />
+      <span className="toggle-item" />
     </label>
   );
 };
 
-Checkbox.propTypes = {
+Toggle.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   onClick: PropTypes.func,
-  checked: PropTypes.bool,
+  toggled: PropTypes.bool,
   additionalClass: PropTypes.string,
   theme: PropTypes.object, // eslint-disable-line
 };
 
-Checkbox.defaultProps = {
-  label: 'check', // Should send a name if they need the callback value
+Toggle.defaultProps = {
+  label: 'toggle', // Should send a name if they need the callback value
   onClick: () => {},
-  checked: false,
+  toggled: false,
   additionalClass: '',
   theme: defaultTheme,
   value: '',
 };
 
-export default themr('CBCheckbox', defaultTheme)(Checkbox);
+export default themr('CBToggle', defaultTheme)(Toggle);
+

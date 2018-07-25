@@ -1,0 +1,31 @@
+:local(.toggle) {
+  background-color: #ccc;
+  padding: 2px;
+  &:hover {
+    cursor: pointer;
+  }
+  input {
+    /* Disable the HTML input */
+    opacity: 0;  
+  }
+}
+
+:local(.toggled) {
+  background-color: #2196F3 !important;
+  height: 200px;
+  position: relative;
+  .toggle-item {
+    /* Toggle item class */
+    /* Builds a rectange with border width and rotates it 45 Degree */
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}

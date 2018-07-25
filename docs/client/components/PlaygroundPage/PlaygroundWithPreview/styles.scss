@@ -15,6 +15,11 @@
     }
     .code-editor {
       width: 50%;
+      .editor-wrapper {
+        height: 400px !important;
+        overflow-y: scroll;
+      }
+      
       float: left;
     }
   
@@ -62,4 +67,13 @@
     }
   }
   
+  .preview-block {
+    .header {
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    
+  }
 }
