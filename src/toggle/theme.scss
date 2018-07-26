@@ -1,0 +1,39 @@
+@import '../globals/theme';
+
+:local(.toggle) {
+  background-color: $secondary-grey;
+  padding: 2px;
+  display: inline-block;
+  width: 60px;
+  height: 35px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+  input {
+    /* Disable the HTML input */
+    opacity: 0;  
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    height: 70%;
+    width: 35%;
+    left: 10%;
+    top: 15%;
+    background-color: $original-white;
+  }
+}
+
+:local(.toggled) {
+  background-color: $secondary-blue;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 70%;
+    width: 35%;
+    left: 55%;
+    top: 15%;
+    background-color: $original-white;
+  }
+}

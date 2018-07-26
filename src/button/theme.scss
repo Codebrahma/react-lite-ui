@@ -1,3 +1,5 @@
+@import '../globals/theme';
+
 :local(.button) {
   align-content: center;
   align-items: center;
@@ -13,65 +15,6 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition:
-    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
-    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-  box-shadow:
-    0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 2px;
-  margin: 2px;
-
-  &:active {
-    box-shadow:
-      0 2px 2px 0 rgba(0, 0, 0, 0.14),
-      0 3px 1px -2px rgba(0, 0, 0, 0.2),
-      0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  }
-
-  &:focus:not(:active) {
-    box-shadow:
-      0 0 8px rgba(0, 0, 0, 0.18),
-      0 8px 16px rgba(0, 0, 0, 0.36);
-  }
-
-  & > input {
-    height: 0.1px;
-    margin: 0;
-    opacity: 0;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 0.1px;
-    z-index: 0;
-  }
-
-  &::-moz-focus-inner {
-    border: 0;
-  }
-
-  & > span:not([data-react-toolbox='tooltip']) {
-    display: inline-block;
-    line-height: 36px;
-    vertical-align: middle;
-  }
-
-  & > svg {
-    display: inline-block;
-    fill: currentColor;
-    font-size: 120%;
-    height: 36px;
-    vertical-align: top;
-    width: 1em;
-    margin-right: 5px;
-  }
-
-  & > * {
-    pointer-events: none;
-  }
 
   & > .rippleWrapper {
     overflow: hidden;
@@ -122,55 +65,55 @@
 }
 
 :local(.default) {
-  color: #000;
-  background-color: white;
-  border-color: white;
+  color: $original-black;
+  background-color: $original-white;
+  border-color: $original-white;
 }
 
 :local(.primary) {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  color: $original-white;
+  background-color: $secondary-violet;
+  border-color: $secondary-violet;
 }
 
 :local(.secondary) {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  color: $original-white;
+  background-color: $secondary-grey;
+  border-color: $secondary-grey;
 }
 
 :local(.success) {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
+  color: $original-white;
+  background-color: $secondary-green;
+  border-color: $secondary-green;
 }
 
 :local(.danger) {
-  color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
+  color: $original-white;
+  background-color: $secondary-red;
+  border-color: $secondary-red;
 }
 
 :local(.warning) {
-  color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  color: $secondary-black;
+  background-color: $secondary-yellow;
+  border-color: $secondary-yellow;
 }
 
 :local(.info) {
-  color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  color: $original-white;
+  background-color: $secondary-blue;
+  border-color: $secondary-blue;
 }
 
 :local(.light) {
-  color: #212529;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  color: $secondary-black;
+  background-color: $secondary-white;
+  border-color: $secondary-white;
 }
 
 :local(.dark) {
-  color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  color: $original-white;
+  background-color: $secondary-black;
+  border-color: $secondary-black;
 }

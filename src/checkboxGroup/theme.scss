@@ -1,0 +1,18 @@
+:local(.checkbox-group) {
+  
+  .clearfix {
+    clear: both;
+  }
+}
+
+:local(.each-check) {
+  &.inline {
+    float: left;
+    margin-right: 25px;
+  }
+  margin-bottom: 10px;
+}
+
+:local(.each-label) {
+  margin-left: 10px;
+}

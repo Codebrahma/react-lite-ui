@@ -1,0 +1,34 @@
+@import '../globals/theme.scss';
+
+:local(.checkbox) {
+  background-color: $secondary-white;
+  padding: 2px;
+  border: 1px solid $secondary-black;
+  &:hover {
+    cursor: pointer;
+  }
+  input {
+    /* Disable the HTML input */
+    opacity: 0;  
+  }
+}
+
+:local(.checked) {
+  background-color: $secondary-blue !important;
+  height: 200px;
+  position: relative;
+  .check-item {
+    /* Check Item adds the tick */
+    /* Builds a rectange with border width and rotates it 45 Degree */
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    width: 5px;
+    height: 10px;
+    border: solid $original-white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
