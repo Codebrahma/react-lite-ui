@@ -5,23 +5,19 @@ import Checkbox from '../checkbox';
 
 import styles from './theme.scss';
 
-class CheckboxGroup extends React.Component {
+class RadioButtonGroup extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isChecked: props.options.reduce((accumulator, { label, value }) => { 
-          accumulator[label] = false;
-          return accumulator;
-        }, {}),
-    }
+      currentlyActive: '',
+    };
   }
 
-  handleCheckListChange = (label) => {
-    const isChecked = this.state.isChecked;
-    isChecked[label] = !isChecked[label];
+  handleCheckListChange = (currentlyActive) => {
+    console.log(currentlyActive);
     this.setState({
-      isChecked,
+      currentlyActive,
     });
   }
 
@@ -32,17 +28,16 @@ class CheckboxGroup extends React.Component {
       theme,
     } = this.props;
 
-    const classNames = cx(styles['checkbox-group']);
+    const classNames = cx(styles['radio-group']);
     return options.map(option => (
       <React.Fragment key={option.label}>
         <div className={classNames}>
-          <div className={cx(styles['each-check'], { inline })}>
-            <Checkbox
-              {...option}
-              checked={this.state.isChecked[option.label]}
-              onClick={this.handleCheckListChange}
-              theme={theme}
-            />
+          <div className={cx(styles['each-check'], { inline })} onClick={() => { this.handleCheckListChange(option.label)}}>
+            <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
+              <label className={cx('inner', { checked: (option.label === this.state.currentlyActive) ? 'active' : '' })}>
+                <input type="radio" />
+              </label>
+            </label>
             <label className={styles['each-label']}>
               {option.label}
             </label>
@@ -54,15 +49,15 @@ class CheckboxGroup extends React.Component {
   }
 }
 
-CheckboxGroup.propTypes = {
+RadioButtonGroup.propTypes = {
   options: PropTypes.array.isRequired,
   inline: PropTypes.bool,
   theme: PropTypes.string,
 };
 
-CheckboxGroup.defaultProps = {
+RadioButtonGroup.defaultProps = {
   inline: false,
   theme: '',
 };
 
-export default CheckboxGroup;
+export default RadioButtonGroup;

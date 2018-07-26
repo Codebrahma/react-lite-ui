@@ -8,6 +8,7 @@ import CheckboxGroup from '../../../../src/checkbox';
 import CheckboxGroupReadme from '../../../../src/checkbox/readMe.md';
 import Toggle from '../../../../src/toggle';
 import ToggleReadme from '../../../../src/toggle/readMe.md';
+import RadioButtonGroup from '../../../../src/radioButtonGroup';
 
 import {
   CardDefaultCode,
@@ -15,6 +16,7 @@ import {
   CheckboxDefaultCode,
   CheckboxGroupDefaultCode,
   ToggleDefaultCode,
+  RadioButtonGroupDefaultCode
 } from './DefaultCode';
 
 export const componentList = [
@@ -47,5 +49,11 @@ export const componentList = [
     docs: CheckboxGroupReadme,
     component: Toggle,
     defaultCode: ToggleDefaultCode,
+  },
+  {
+    name: 'RadioButtonGroup',
+    docs: CheckboxGroupReadme,
+    component: RadioButtonGroup,
+    defaultCode: RadioButtonGroupDefaultCode,
   },
 ];
