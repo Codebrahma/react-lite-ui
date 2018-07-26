@@ -10,18 +10,14 @@ class CheckboxGroup extends React.Component {
     super(props);
 
     this.state = {
-      isChecked: props.options.reduce((accumulator, { label, value }) => { 
-          accumulator[label] = false;
-          return accumulator;
-        }, {}),
+      currentlyActive: '',
     }
   }
 
-  handleCheckListChange = (label) => {
-    const isChecked = this.state.isChecked;
-    isChecked[label] = !isChecked[label];
+  handleCheckListChange = (currentlyActive) => {
+    console.log(currentlyActive);
     this.setState({
-      isChecked,
+      currentlyActive,
     });
   }
 
@@ -36,8 +32,12 @@ class CheckboxGroup extends React.Component {
     return options.map(option => (
       <React.Fragment key={option.label}>
         <div className={classNames}>
-          <div className={cx(styles['each-check'], { inline })}>
-            <input type="radio" />
+          <div className={cx(styles['each-check'], { inline })} onClick={() => { this.handleCheckListChange(option.label)}}>
+            <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
+              <label className={cx('inner', { active: (option.label === this.state.currentlyActive) ? 'active' : '' })}>
+                <input type="radio" />
+              </label>
+            </label>
             <label className={styles['each-label']}>
               {option.label}
             </label>
@@ -52,10 +52,12 @@ class CheckboxGroup extends React.Component {
 CheckboxGroup.propTypes = {
   options: PropTypes.array.isRequired,
   inline: PropTypes.bool,
+  theme: PropTypes.string,
 };
 
 CheckboxGroup.defaultProps = {
   inline: false,
+  theme: '',
 };
 
 export default CheckboxGroup;

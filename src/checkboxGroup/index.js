@@ -57,10 +57,12 @@ class CheckboxGroup extends React.Component {
 CheckboxGroup.propTypes = {
   options: PropTypes.array.isRequired,
   inline: PropTypes.bool,
+  theme: PropTypes.string,
 };
 
 CheckboxGroup.defaultProps = {
   inline: false,
+  theme: '',
 };
 
 export default CheckboxGroup;
