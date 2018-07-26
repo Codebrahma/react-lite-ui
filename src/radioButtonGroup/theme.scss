@@ -29,7 +29,7 @@
   padding: 3px;
   .inner {
     border-radius: 50%;
-    &.active {
+    &.checked {
       background: $secondary-blue;
     }
   }

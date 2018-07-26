@@ -16,12 +16,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import RadioButtonGroup from './radioButtonGroup';
+import theme from './theme.scss';
 
 const options = [{ label: 'Alpha' }, { label: 'Beta' }, { label: 'Zheta' }]
 const RadioDisplay = () => (
   <div>
     <RadioButtonGroup
+      theme={theme}
       options={options}
+      inline
     />
   </div>
 );

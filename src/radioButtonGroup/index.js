@@ -5,13 +5,13 @@ import Checkbox from '../checkbox';
 
 import styles from './theme.scss';
 
-class CheckboxGroup extends React.Component {
+class RadioButtonGroup extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       currentlyActive: '',
-    }
+    };
   }
 
   handleCheckListChange = (currentlyActive) => {
@@ -34,7 +34,7 @@ class CheckboxGroup extends React.Component {
         <div className={classNames}>
           <div className={cx(styles['each-check'], { inline })} onClick={() => { this.handleCheckListChange(option.label)}}>
             <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
-              <label className={cx('inner', { active: (option.label === this.state.currentlyActive) ? 'active' : '' })}>
+              <label className={cx('inner', { checked: (option.label === this.state.currentlyActive) ? 'active' : '' })}>
                 <input type="radio" />
               </label>
             </label>
@@ -49,15 +49,15 @@ class CheckboxGroup extends React.Component {
   }
 }
 
-CheckboxGroup.propTypes = {
+RadioButtonGroup.propTypes = {
   options: PropTypes.array.isRequired,
   inline: PropTypes.bool,
   theme: PropTypes.string,
 };
 
-CheckboxGroup.defaultProps = {
+RadioButtonGroup.defaultProps = {
   inline: false,
   theme: '',
 };
 
-export default CheckboxGroup;
+export default RadioButtonGroup;
