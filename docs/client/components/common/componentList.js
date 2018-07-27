@@ -11,6 +11,8 @@ import ToggleReadme from '../../../../src/toggle/readMe.md';
 import RadioButtonGroup from '../../../../src/radioButtonGroup';
 import TextInput from '../../../../src/textInput';
 import TextInputReadme from '../../../../src/textInput/readMe.md';
+import Snackbar from '../../../../src/snackbar';
+import SnackbarReadme from '../../../../src/snackbar/readMe.md';
 
 import {
   CardDefaultCode,
@@ -20,6 +22,7 @@ import {
   ToggleDefaultCode,
   RadioButtonGroupDefaultCode,
   TextInputDefaultCode,
+  SnackbarDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -64,5 +67,11 @@ export const componentList = [
     docs: TextInputReadme,
     component: TextInput,
     defaultCode: TextInputDefaultCode,
+  },
+  {
+    name: 'Snackbar',
+    docs: SnackbarReadme,
+    component: Snackbar,
+    defaultCode: SnackbarDefaultCode,
   }
 ];

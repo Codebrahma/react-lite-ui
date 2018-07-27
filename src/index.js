@@ -22,14 +22,15 @@ import Snackbar from './snackbar';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// export default {
-//   Button,
-//   Card,
-//   Checkbox,
-//   CheckboxGroup,
-//   RadioButtonGroup,
-//   Toggle,
-// };
+export default {
+  Button,
+  Card,
+  Checkbox,
+  CheckboxGroup,
+  RadioButtonGroup,
+  Toggle,
+  Snackbar,
+};
 
 import theme from './theme.scss';
 
@@ -38,17 +39,34 @@ class SnackDisplay extends React.Component {
     super(props);
     this.state = {
       showSnackbar: false,
+      showTopSnackbar: false,
+      showIndefiniteSnackbar: false,
     }
   }
-  handleButtonClick = () => {
+
+  openBottomSnackbar = () => {
     this.setState({
       showSnackbar: !this.state.showSnackbar
     });
   }
+
+  openTopSnackbar = () => {
+    this.setState({
+      showTopSnackbar: !this.state.showTopSnackbar
+    });
+  }
+
+  openIndefiniteSnackbar = () => {
+    this.setState({
+      showIndefiniteSnackbar: !this.state.showIndefiniteSnackbar
+    });
+  }
+  
   
   handleSnackClose = () => {
     this.setState({
       showSnackbar: false,
+      showTopSnackbar: false,
     });
   }
 

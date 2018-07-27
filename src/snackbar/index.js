@@ -62,12 +62,14 @@ class Snackbar extends React.Component {
   }
 
   render() {
-    const { theme, additionaClasses, children } = this.props;
+    const { theme, additionaClasses, position, children } = this.props;
     const { active } = this.state;
-    const classes = classnames(theme.snackbar, active ? 'active' : '', additionaClasses)
+    const classes = classnames(theme.snackbar, additionaClasses)
     return (
-      <div className={classes}>
-        { children }
+      <div className={classnames(theme.snackbarWrapper, position, active ? 'active' : '')}>
+        <div className={classes}>
+          { children }
+        </div>
       </div>
     )
   }
@@ -78,12 +80,14 @@ Snackbar.propTypes = {
   timeout: PropTypes.number,
   onClose: PropTypes.func,
   autoClose: PropTypes.bool,
+  position: PropTypes.string,
 }
 
 Snackbar.defaultProps = {
   additionaClasses: null,
   timeout: 2000,
   autoClose: true,
+  position: 'bottom',
 };
 
 export default themr('CBSnackbar', defaultTheme)(Snackbar);
