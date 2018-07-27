@@ -9,6 +9,8 @@ import CheckboxGroupReadme from '../../../../src/checkbox/readMe.md';
 import Toggle from '../../../../src/toggle';
 import ToggleReadme from '../../../../src/toggle/readMe.md';
 import RadioButtonGroup from '../../../../src/radioButtonGroup';
+import TextInput from '../../../../src/textInput';
+import TextInputReadme from '../../../../src/textInput/readMe.md';
 
 import {
   CardDefaultCode,
@@ -16,7 +18,8 @@ import {
   CheckboxDefaultCode,
   CheckboxGroupDefaultCode,
   ToggleDefaultCode,
-  RadioButtonGroupDefaultCode
+  RadioButtonGroupDefaultCode,
+  TextInputDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -56,4 +59,10 @@ export const componentList = [
     component: RadioButtonGroup,
     defaultCode: RadioButtonGroupDefaultCode,
   },
+  {
+    name: 'TextInput',
+    docs: TextInputReadme,
+    component: TextInput,
+    defaultCode: TextInputDefaultCode,
+  }
 ];
