@@ -17,22 +17,39 @@ export default {
   Toggle,
   TextInput
 };
+import Snackbar from './snackbar';
 
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// import RadioButtonGroup from './radioButtonGroup';
-// import theme from './theme.scss';
+// export default {
+//   Button,
+//   Card,
+//   Checkbox,
+//   CheckboxGroup,
+//   RadioButtonGroup,
+//   Toggle,
+// };
 
-// const options = [{ label: 'Alpha' }, { label: 'Beta' }, { label: 'Zheta' }]
-// const RadioDisplay = () => (
-//   <div>
-//     <RadioButtonGroup
-//       theme={theme}
-//       options={options}
-//       inline
-//     />
-//   </div>
-// );
+import theme from './theme.scss';
+
+class SnackDisplay extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSnackbar: false,
+    }
+  }
+  handleButtonClick = () => {
+    this.setState({
+      showSnackbar: !this.state.showSnackbar
+    });
+  }
+  
+  handleSnackClose = () => {
+    this.setState({
+      showSnackbar: false,
+    });
+  }
 
 // ReactDOM.render(<RadioDisplay />, document.getElementById('index'));
