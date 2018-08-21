@@ -9,6 +9,7 @@ import RadioButtonGroup from './radioButtonGroup';
 import TextInput from './textInput';
 import Snackbar from './snackbar';
 import Avatar from './avatar';
+import Tooltip from './tooltip';
 
 export default {
   Button,
@@ -20,6 +21,7 @@ export default {
   TextInput,
   Snackbar,
   Avatar,
+  Tooltip,
 };
 
-// ReactDOM.render(<Avatar image="Https://placeimg.com/80/80/animals"/>, document.getElementById('index'));
+// ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));
