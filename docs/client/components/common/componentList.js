@@ -13,6 +13,8 @@ import TextInput from '../../../../src/textInput';
 import TextInputReadme from '../../../../src/textInput/readMe.md';
 import Snackbar from '../../../../src/snackbar';
 import SnackbarReadme from '../../../../src/snackbar/readMe.md';
+import Avatar from '../../../../src/avatar';
+import AvatarReadme from '../../../../src/avatar/readMe.md';
 
 import {
   CardDefaultCode,
@@ -23,6 +25,7 @@ import {
   RadioButtonGroupDefaultCode,
   TextInputDefaultCode,
   SnackbarDefaultCode,
+  AvatarDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -73,5 +76,11 @@ export const componentList = [
     docs: SnackbarReadme,
     component: Snackbar,
     defaultCode: SnackbarDefaultCode,
+  },
+  {
+    name: 'Avatar',
+    docs: AvatarReadme,
+    component: Avatar,
+    defaultCode: AvatarDefaultCode,
   }
 ];
