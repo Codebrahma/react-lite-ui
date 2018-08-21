@@ -15,6 +15,7 @@ import Snackbar from '../../../../src/snackbar';
 import SnackbarReadme from '../../../../src/snackbar/readMe.md';
 import Avatar from '../../../../src/avatar';
 import AvatarReadme from '../../../../src/avatar/readMe.md';
+import Tooltip from '../../../../src/avatar';
 
 import {
   CardDefaultCode,
@@ -26,6 +27,7 @@ import {
   TextInputDefaultCode,
   SnackbarDefaultCode,
   AvatarDefaultCode,
+  TooltipDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -82,5 +84,11 @@ export const componentList = [
     docs: AvatarReadme,
     component: Avatar,
     defaultCode: AvatarDefaultCode,
+  },
+  {
+    name: 'Tooltip',
+    docs: AvatarReadme,
+    component: Tooltip,
+    defaultCode: TooltipDefaultCode,
   }
 ];

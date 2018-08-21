@@ -1,0 +1,23 @@
+@import '../globals/theme';
+
+:local(.baseContent) {
+  cursor: pointer;
+}
+
+:local(.tip) {
+  position: relative;
+  cursor: pointer;
+  
+}
+
+:local(.tooltipContent) {
+  background: $secondary-grey;
+  font-size: 14px;
+  position: absolute;
+  top: 20px;
+  padding: 3px 5px;
+  color: $original-white;
+  &.top {
+    top: -60px;
+  }
+}
