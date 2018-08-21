@@ -6,3 +6,4 @@ export { defaultCode as ToggleDefaultCode } from './Toggle';
 export { defaultCode as RadioButtonGroupDefaultCode } from './RadioButtonGroup';
 export { defaultCode as TextInputDefaultCode } from './TextInput';
 export { defaultCode as SnackbarDefaultCode } from './Snackbar';
+export { defaultCode as AvatarDefaultCode } from './Avatar';

@@ -8,6 +8,7 @@ import Toggle from './toggle';
 import RadioButtonGroup from './radioButtonGroup';
 import TextInput from './textInput';
 import Snackbar from './snackbar';
+import Avatar from './avatar';
 
 export default {
   Button,
@@ -18,4 +19,7 @@ export default {
   Toggle,
   TextInput,
   Snackbar,
+  Avatar,
 };
+
+// ReactDOM.render(<Avatar image="Https://placeimg.com/80/80/animals"/>, document.getElementById('index'));
