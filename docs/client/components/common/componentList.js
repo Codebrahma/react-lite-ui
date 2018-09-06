@@ -34,6 +34,8 @@ import MultiSelectReadMe from '../../../../src/multiselect/readMe.md';
 import MultiSelect from "../../../../src/multiselect";
 import NavbarReadMe from '../../../../src/navbar/readMe.md';
 import Navbar from '../../../../src/navbar';
+import PreloaderReadme from '../../../../src/preloader/readMe.md';
+import Preloader from '../../../../src/preloader';
 
 import {
   CardDefaultCode,
@@ -55,6 +57,7 @@ import {
   ModalDefaultCode,
   MultiSelectDefaultCode,
   NavbarDefaultCode,
+  PreloaderDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -171,5 +174,11 @@ export const componentList = [
     docs: NavbarReadMe,
     component: Navbar,
     defaultCode: NavbarDefaultCode,
+  },
+  {
+    name: 'Preloader',
+    docs: PreloaderReadme,
+    component: Preloader,
+    defaultCode: PreloaderDefaultCode,
   }
 ];

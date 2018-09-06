@@ -1,0 +1,120 @@
+@import '../globals/theme.scss';
+
+:local(.loaderWrapper) {
+  background: $original-white;
+  width: 150px;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Circles */
+:local(.circlesLoader) {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border: 4px solid transparent;
+  border-top-color: $secondary-violet;
+  position: relative;
+  border-radius: 50%;
+  animation: spinner 2s linear infinite;
+  &:after {
+    content: '';
+    border: 4px solid transparent;
+    border-top-color: $secondary-blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    animation: spinner 1.5s linear infinite;
+  }
+  &:before {
+    content: '';
+    border: 4px solid transparent;
+    border-top-color: $secondary-yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    right: -14px;
+    bottom: -14px;
+    animation: spinner 3s linear infinite;
+  }
+  @keyframes spinner {
+    100% { transform: rotate(360deg); }
+  }
+}
+
+/* Dots */
+:local(.dotsLoader) {
+  & > span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin: 15px 8px;
+    &:nth-child(1) {
+      animation: bounce 1s ease-in-out infinite;
+      background-color: $secondary-red;
+    }
+    &:nth-child(2) {
+      animation: bounce 1s ease-in-out 0.25s infinite;
+      background-color: $secondary-blue;
+    }
+    &:nth-child(3) {
+      animation: bounce 1s ease-in-out 0.5s infinite;
+      background-color: $secondary-yellow;
+    }
+    &:nth-child(4) {
+      animation: bounce 1s ease-in-out 0.75s infinite;
+      background-color: $secondary-green;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* FadeAway */
+:local(.fadeAwayLoader) {
+  border-radius: 50%;
+  border: 5px dotted $secondary-green;
+  border-top-color: $secondary-blue;
+  border-bottom-color: $secondary-red;
+  border-left-color: $secondary-violet;
+  animation: fadeaway 1s linear infinite;
+  
+  @keyframes fadeaway {
+    0% { 
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+    }
+    100% {
+      width: 60px;
+      height: 60px;
+      opacity: 0.2;
+    }
+  }
+}
+
+/* oneCircleLoader */
+:local(.colorCircleLoader) {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border: 4px solid #eee;
+  border-top-color: $secondary-violet;
+  position: relative;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  @keyframes spin {
+    100% { transform: rotate(360deg);filter: hue-rotate(360deg) }
+  }
+}

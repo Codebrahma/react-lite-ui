@@ -10,7 +10,6 @@ import TextInput from './textInput';
 import Snackbar from './snackbar';
 import Avatar from './avatar';
 import Tooltip from './tooltip';
-<<<<<<< 965448439194f10047eb66744c4b5a4101f8fef4
 import AutoComplete from './autocomplete';
 import Badge from './badge';
 import Drawer from './drawer';
@@ -20,9 +19,8 @@ import Chip from './chip';
 import Menu from './menu';
 import Modal from './modal';
 import MultiSelect from './multiselect';
-=======
 import Navbar from './navbar';
->>>>>>> simple default navbar added
+import Preloader from './preloader';
 
 export default {
   Button,
@@ -35,7 +33,6 @@ export default {
   Snackbar,
   Avatar,
   Tooltip,
-<<<<<<< 965448439194f10047eb66744c4b5a4101f8fef4
   AutoComplete,
   Badge,
   Drawer,
@@ -45,12 +42,12 @@ export default {
   Menu,
   Modal,
   MultiSelect,
-=======
   Navbar,
->>>>>>> simple default navbar added
+  Preloader,
 };
 
 // ReactDOM.render(
 //   <Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>,
 //   document.getElementById('index')
 //   );
+
