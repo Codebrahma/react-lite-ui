@@ -18,9 +18,10 @@ const Loader = ({theme,classes}) => {
 }
 
 const Preloader = ({theme, size, loader}) => {
-  const classes = classnames(theme[loader], theme[size], {
+  const classes = classnames(theme[loader], theme[loader !== 'dotsLoader' ? size : `${size}Dots`], {
     [theme.circlesLoader]: !loader,
-    [theme.medium]: !size
+    [theme.medium]: !size,
+    [theme.mediumDots]: loader === 'dotsLoader' && !size
   })
   return (
     <Loader loader={loader} classes={classes} size={size} theme={theme}/>

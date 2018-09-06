@@ -1,7 +1,7 @@
 @import '../globals/theme.scss';
 
 :local(.loaderWrapper) {
-  background: $original-white;
+  background: transparent;
   width: 180px;
   height: 180px;
   display: flex;
@@ -22,9 +22,31 @@
   height: 105px;
 }
 
+:local(.smallDots) {
+  & > span {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+  }
+}
+:local(.mediumDots) {
+  width: 180px;
+  & > span {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+  }
+}
+:local(.largeDots) {
+  & > span {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+}
+
 /* Circles */
 :local(.circlesLoader) {
-  margin: 0 auto;
   border: 4px solid transparent;
   border-top-color: $secondary-violet;
   position: relative;
@@ -63,10 +85,7 @@
 :local(.dotsLoader) {
   & > span {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    margin: 15px 8px;
+    border-radius: 50%;
     &:nth-child(1) {
       animation: bounce 1s ease-in-out infinite;
       background-color: $secondary-red;
@@ -94,7 +113,7 @@
 /* FadeAway */
 :local(.fadeAwayLoader) {
   border-radius: 50%;
-  border: 5px dotted $secondary-green;
+  border: 5px solid $secondary-green;
   border-top-color: $secondary-blue;
   border-bottom-color: $secondary-red;
   border-left-color: $secondary-violet;
@@ -115,13 +134,15 @@
 
 /* colorCircleLoader */
 :local(.colorCircleLoader) {
-  margin: 0 auto;
   border: 4px solid #eee;
   border-top-color: $secondary-violet;
   position: relative;
   border-radius: 50%;
   animation: spin 1.5s linear infinite;
   @keyframes spin {
-    100% { transform: rotate(360deg);filter: hue-rotate(360deg) }
+    100% { 
+      transform: rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
   }
 }
