@@ -17,15 +17,13 @@ const Loader = ({theme,classes}) => {
   )
 }
 
-const Preloader = ({theme,loader}) => {
-  const classes = classnames({
+const Preloader = ({theme, size, loader}) => {
+  const classes = classnames(theme[loader], theme[size], {
     [theme.circlesLoader]: !loader,
-    [theme.dotsLoader]: loader === 'dots',
-    [theme.fadeAwayLoader]: loader === 'fadeAway',
-    [theme.colorCircleLoader]: loader === 'colorCircle'
+    [theme.medium]: !size
   })
   return (
-    <Loader loader={loader} classes={classes} theme={theme}/>
+    <Loader loader={loader} classes={classes} size={size} theme={theme}/>
   )
 }
 

@@ -5,30 +5,59 @@ class Demo extends React.Component {
       <div>
         { /* Preview Block-1 */ }
         <PreviewBlock header="Default Preloader">
-          <Preloader
-            theme={theme}
-          />
+          <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <Preloader size='small'/>
+            <Preloader />
+            <Preloader size='large' />
+          </div>
         </PreviewBlock>
         { /* Preview Block-2 */ }
         <PreviewBlock header="Preloader with dots">
-          <Preloader
-            loader="dots"
-            theme={theme}
-          />
+          <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <Preloader
+              loader='dotsLoader'
+              size='small'
+            />
+            <Preloader
+              loader='dotsLoader'
+            />
+            <Preloader 
+              loader='dotsLoader'            
+              size='large'
+            />
+          </div>
         </PreviewBlock>
         { /* Preview Block-3 */ }
         <PreviewBlock header="Preloader with fade-away effect">
-          <Preloader
-            loader="fadeAway"
-            theme={theme}
-          />
+          <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <Preloader
+              loader='fadeAwayLoader'
+              size='small'
+            />
+            <Preloader
+              loader='fadeAwayLoader'
+            />
+            <Preloader 
+              loader='fadeAwayLoader'            
+              size='large'
+            />
+          </div>
         </PreviewBlock>
         { /* Preview Block-4 */ }
         <PreviewBlock header="Preloader with color circle">
-          <Preloader
-            loader="colorCircle"
-            theme={theme}
-          />
+          <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <Preloader
+              loader='colorCircleLoader'
+              size='small'
+            />
+            <Preloader
+              loader='colorCircleLoader'
+            />
+            <Preloader
+              loader='colorCircleLoader'
+              size='large'
+            />
+          </div>
         </PreviewBlock>
       </div>
     )

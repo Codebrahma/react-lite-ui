@@ -2,18 +2,28 @@
 
 :local(.loaderWrapper) {
   background: $original-white;
-  width: 150px;
-  height: 100px;
-  padding: 20px;
+  width: 180px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+:local(.small) {
+  width: 40px;
+  height: 40px;
+}
+:local(.medium) {
+  width: 70px;
+  height: 70px;
+}
+:local(.large) {
+  width: 105px;
+  height: 105px;
+}
+
 /* Circles */
 :local(.circlesLoader) {
-  width: 60px;
-  height: 60px;
   margin: 0 auto;
   border: 4px solid transparent;
   border-top-color: $secondary-violet;
@@ -88,7 +98,7 @@
   border-top-color: $secondary-blue;
   border-bottom-color: $secondary-red;
   border-left-color: $secondary-violet;
-  animation: fadeaway 1s linear infinite;
+  animation: fadeaway 1.5s linear infinite;
   
   @keyframes fadeaway {
     0% { 
@@ -97,17 +107,14 @@
       opacity: 1;
     }
     100% {
-      width: 60px;
-      height: 60px;
-      opacity: 0.2;
+      margin: 0%;
+      opacity: 0;
     }
   }
 }
 
-/* oneCircleLoader */
+/* colorCircleLoader */
 :local(.colorCircleLoader) {
-  width: 60px;
-  height: 60px;
   margin: 0 auto;
   border: 4px solid #eee;
   border-top-color: $secondary-violet;
