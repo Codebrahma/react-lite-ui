@@ -24,7 +24,7 @@ class Demo extends React.Component {
           />
         </PreviewBlock>
         { /* Preview Block-4 */ }
-        <PreviewBlock header="Preloader with fade-away effect">
+        <PreviewBlock header="Preloader with color circle">
           <Preloader
             loader="colorCircle"
             theme={theme}
