@@ -17,17 +17,21 @@ class AutoComplete extends Component {
   }
 
   handleInput = ({ target }) => {
+    const { onChange } = this.props;
     this.setState({
       input: target.value,
     });
+    onChange(target.value);
   }
 
 
   selectItem = (input) => {
+    const { onChange } = this.props;
     this.setState({
       input,
       showSuggestions: false,
     });
+    onChange(input);
   }
 
   showSuggestions = () => {
@@ -97,12 +101,14 @@ AutoComplete.propTypes = {
   placeholder: Proptypes.string,
   theme: Proptypes.oneOfType([Proptypes.object]),
   className: Proptypes.string,
+  onChange: Proptypes.func,
 };
 
 AutoComplete.defaultProps = {
   placeholder: undefined,
   theme: defaultTheme,
   className: '',
+  onChange: () => {},
 };
 
 export default themr('CBAutoComplete', defaultTheme)(AutoComplete);
