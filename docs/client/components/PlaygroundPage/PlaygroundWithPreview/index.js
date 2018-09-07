@@ -16,6 +16,14 @@ const PreviewBlock = ({ children, header }) => (
     {children}
   </div>
 );
+)
+
+const PreviewElements = ({children}) => (
+  <div className="preview-elements">
+    {children}
+  </div>
+)
+
 class PlaygroundWithPreview extends React.Component {
   constructor(props) {
     super(props);
@@ -39,8 +47,8 @@ class PlaygroundWithPreview extends React.Component {
         <div className="warning">
           (Editor not available at this screen size)
         </div>
-        <LiveProvider
-          scope={{ ...components, PreviewBlock, theme }}
+        <LiveProvider 
+          scope={{ ...components, PreviewBlock, PreviewElements, theme }}
           code={this.props.defaultCode}
         >
           <div className="code-editor">

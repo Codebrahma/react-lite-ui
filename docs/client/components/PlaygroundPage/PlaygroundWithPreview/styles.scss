@@ -74,6 +74,10 @@
       margin-top: 10px;
       margin-bottom: 15px;
     }
-    
+    .preview-elements {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
   }
 }

@@ -4,60 +4,108 @@ class Demo extends React.Component {
     return (
       <div>
         { /* Preview Block-1 */ }
-        <PreviewBlock header="Default Preloader">
-          <div style={{display: 'flex', flexWrap: 'wrap'}}>
-            <Preloader size='small'/>
-            <Preloader />
-            <Preloader size='large' />
-          </div>
+        <PreviewBlock header="Default Preloader (size, color)">
+          <PreviewElements>
+            <span>
+              small, danger
+              <Preloader
+                size='small'
+                color='danger'  
+              />
+            </span>
+            <span>
+              default, default
+              <Preloader />
+            </span>
+            <span>
+              large, dark
+              <Preloader
+                size='large'
+                color='dark'
+              />
+            </span>
+          </PreviewElements>
         </PreviewBlock>
         { /* Preview Block-2 */ }
-        <PreviewBlock header="Preloader with dots">
-          <div style={{display: 'flex', flexWrap: 'wrap'}}>
-            <Preloader
-              loader='dotsLoader'
-              size='small'
-            />
-            <Preloader
-              loader='dotsLoader'
-            />
-            <Preloader 
-              loader='dotsLoader'            
-              size='large'
-            />
-          </div>
+        <PreviewBlock header="Preloader with dots (size, color)">
+          <PreviewElements>
+            <span>
+              small, warning
+              <Preloader
+                loader='dotsLoader'
+                size='small'
+                color='warning'
+              />
+            </span>
+            <span>
+              default, default
+              <Preloader
+                loader='dotsLoader'
+              />
+            </span>
+            <span>
+              large, primary
+              <Preloader 
+                loader='dotsLoader'            
+                size='large'
+                color='primary'
+              />
+            </span>
+          </PreviewElements>
         </PreviewBlock>
         { /* Preview Block-3 */ }
-        <PreviewBlock header="Preloader with fade-away effect">
-          <div style={{display: 'flex', flexWrap: 'wrap'}}>
-            <Preloader
-              loader='fadeAwayLoader'
-              size='small'
-            />
-            <Preloader
-              loader='fadeAwayLoader'
-            />
-            <Preloader 
-              loader='fadeAwayLoader'            
-              size='large'
-            />
-          </div>
+        <PreviewBlock header="Preloader with fade-away effect (size, color)">
+          <PreviewElements>
+          <span>
+            small, success
+              <Preloader
+                loader='fadeAwayLoader'
+                size='small'
+                color='success'
+              />
+            </span>
+            <span>
+              default, default
+              <Preloader
+                loader='fadeAwayLoader'
+              />
+            </span>
+            <span>
+              large, info
+              <Preloader 
+                loader='fadeAwayLoader'            
+                size='large'
+                color='info'
+              />
+            </span>
+          </PreviewElements>
         </PreviewBlock>
         { /* Preview Block-4 */ }
-        <PreviewBlock header="Preloader with color circle">
-          <div style={{display: 'flex', flexWrap: 'wrap'}}>
-            <Preloader
-              loader='colorCircleLoader'
-              size='small'
-            />
-            <Preloader
-              loader='colorCircleLoader'
-            />
-            <Preloader
-              loader='colorCircleLoader'
-              size='large'
-            />
-          </div>
+        <PreviewBlock header="Preloader with color circle (size, color)">
+          <PreviewElements>
+          <span>
+            small, secondary
+              <Preloader
+                loader='colorCircleLoader'
+                size='small'
+                color='secondary'
+              />
+            </span>
+            <span>
+              default, default
+              <Preloader
+                loader='colorCircleLoader'
+              />
+            </span>
+            <span>
+              large, danger
+              <Preloader
+                loader='colorCircleLoader'
+                size='large'
+                color='danger'
+              />
+            </span>
+          </PreviewElements>
         </PreviewBlock>
       </div>
     )
