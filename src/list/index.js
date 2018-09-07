@@ -8,7 +8,10 @@ import defaultTheme from './theme.scss';
 const List = ({
   children, className, theme, items,
 }) => {
-  const childrens = items.length ? items : children;
+  let childrens = items.length ? items : children;
+  childrens = (typeof childrens[0] === 'string')
+    ? childrens.map(child => <span>{child}</span>)
+    : childrens;
   const classes = cx(theme.list, className);
   return (
     <div className={classes}>
