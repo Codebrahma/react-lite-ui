@@ -22,6 +22,8 @@ import BadgeReadme from '../../../../src/badge/readMe.md';
 import Badge from '../../../../src/badge';
 import Drawer from '../../../../src/drawer';
 import DrawerReadme from '../../../../src/drawer/readMe.md';
+import List from '../../../../src/list';
+import ListReadMe from '../../../../src/list/readMe.md';
 
 import {
   CardDefaultCode,
@@ -37,6 +39,7 @@ import {
   AutoCompleteDefaultCode,
   BadgeDefaultCode,
   DrawerDefaultCode,
+  ListDefaultCode
 } from './DefaultCode';
 
 export const componentList = [
@@ -81,6 +84,12 @@ export const componentList = [
     docs: DrawerReadme,
     component: Drawer,
     defaultCode: DrawerDefaultCode,
+  },
+  {
+    name: 'List',
+    docs: ListReadMe,
+    component: List,
+    defaultCode: ListDefaultCode
   },
   {
     name: 'Toggle',

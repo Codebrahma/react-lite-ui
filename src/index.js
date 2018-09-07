@@ -13,6 +13,7 @@ import Tooltip from './tooltip';
 import AutoComplete from './autocomplete';
 import Badge from './badge';
 import Drawer from './drawer';
+import List from './list';
 
 export default {
   Button,
@@ -28,6 +29,7 @@ export default {
   AutoComplete,
   Badge,
   Drawer,
+  List,
 };
 
 // ReactDOM.render( <AutoComplete data={data}/> , document.getElementById('index'));
