@@ -6,13 +6,17 @@ import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
 const List = ({
-  children, className, theme, items,
+  children,
+  className,
+  theme,
+  items,
+  raised,
 }) => {
   let childrens = items.length ? items : children;
   childrens = (typeof childrens[0] === 'string')
     ? childrens.map(child => <span>{child}</span>)
     : childrens;
-  const classes = cx(theme.list, className);
+  const classes = cx(theme.list, theme[raised], className);
   return (
     <div className={classes}>
       {childrens}
@@ -25,6 +29,7 @@ List.propTypes = {
   className: PropTypes.string,
   theme: PropTypes.oneOfType([PropTypes.object]),
   items: PropTypes.oneOfType([PropTypes.array]),
+  raised: PropTypes.oneOf(['low', 'medium', 'high']),
 };
 
 List.defaultProps = {
@@ -32,6 +37,7 @@ List.defaultProps = {
   className: '',
   theme: defaultTheme,
   items: [],
+  raised: '',
 };
 
 export default themr('CBList', defaultTheme)(List);
