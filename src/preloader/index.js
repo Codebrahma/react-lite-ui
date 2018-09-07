@@ -1,7 +1,8 @@
 import React from 'react';
 import { themr } from 'react-css-themr';
-import defaultTheme from './theme.scss';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import defaultTheme from './theme.scss';
 
 
 const Loader = ({ theme, classes }) => (
@@ -25,7 +26,6 @@ const Preloader = ({theme, size, loader, color}) => {
     theme[((loader === 'colorCircleLoader') || !loader) && `${color}`],
     {
       [theme.circlesLoader]: !loader,
-      [theme.medium]: !size,
       [theme.mediumDots]: loader === 'dotsLoader' && !size 
     }
   )
@@ -33,5 +33,18 @@ const Preloader = ({theme, size, loader, color}) => {
     <Loader loader={loader} classes={classes} size={size} color={color} theme={theme}/>
   )
 }
+
+Preloader.propTypes = {
+  loader: PropTypes.string,
+  size: PropTypes.string,
+  color: PropTypes.string,
+  theme: PropTypes.oneOfType([PropTypes.object])
+};
+
+Preloader.defaultProps = {
+  loader: undefined,
+  size: 'medium',
+  color: undefined
+};
 
 export default themr('CBPreloader', defaultTheme)(Preloader);

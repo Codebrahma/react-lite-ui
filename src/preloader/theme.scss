@@ -163,6 +163,7 @@
 }
 
 /* Circles */
+:local(.circlesLoaderDefault),
 :local(.circlesLoader) {
   border: 4px solid transparent;
   border-top-color: $secondary-violet;
