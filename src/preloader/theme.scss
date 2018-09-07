@@ -47,37 +47,37 @@
   }
 }
 
-/* color variants */
+/* color variants for circlesLoader and colorCircleLoader*/
 :local(.primary) {
-  border-color: $secondary-violet !important;
+  border-top-color: $secondary-violet !important;
 }
 
 :local(.secondary) {
-  border-color: $secondary-grey !important;
+  border-top-color: $secondary-grey !important;
 }
 
 :local(.success) {
-  border-color: $secondary-green !important;
+  border-top-color: $secondary-green !important;
 }
 
 :local(.danger) {
-  border-color: $secondary-red !important;
+  border-top-color: $secondary-red !important;
 }
 
 :local(.warning) {
-  border-color: $secondary-yellow !important;
+  border-top-color: $secondary-yellow !important;
 }
 
 :local(.info) {
-  border-color: $secondary-blue !important;
+  border-top-color: $secondary-blue !important;
 }
 
 :local(.light) {
-  border-color: $secondary-white !important;
+  border-top-color: $secondary-white !important;
 }
 
 :local(.dark) {
-  border-color: $secondary-black !important;
+  border-top-color: $secondary-black !important;
 }
 
 /*  color variants for dot loader */
@@ -129,6 +129,39 @@
   }
 }
 
+/* color variants for fadeAwayLoader */
+:local(.primaryFade) {
+  border-color: $secondary-violet !important;
+}
+
+:local(.secondaryFade) {
+  border-color: $secondary-grey !important;
+}
+
+:local(.successFade) {
+  border-color: $secondary-green !important;
+}
+
+:local(.dangerFade) {
+  border-color: $secondary-red !important;
+}
+
+:local(.warningFade) {
+  border-color: $secondary-yellow !important;
+}
+
+:local(.infoFade) {
+  border-color: $secondary-blue !important;
+}
+
+:local(.lightFade) {
+  border-color: $secondary-white !important;
+}
+
+:local(.darkFade) {
+  border-color: $secondary-black !important;
+}
+
 /* Circles */
 :local(.circlesLoader) {
   border: 4px solid transparent;
@@ -165,7 +198,8 @@
   }
 }
 
-/* Dots */
+/* Dots Loader for user set and default colors */
+:local(.dotsLoaderDefault),
 :local(.dotsLoader) {
   & > span {
     display: inline-block;
@@ -194,15 +228,28 @@
   }
 }
 
-/* FadeAway */
+/* FadeAway Deafult with multi colors*/
+:local(.fadeAwayLoaderDefault),
 :local(.fadeAwayLoader) {
   border-radius: 50%;
-  border: 5px solid $secondary-green;
-  border-top-color: $secondary-blue;
-  border-bottom-color: $secondary-red;
-  border-left-color: $secondary-violet;
-  animation: fadeaway 1.5s linear infinite;
-  
+  border: 5px solid $secondary-violet;
+  animation: fadeawayDefault 1.5s linear infinite;  
+  @keyframes fadeawayDefault {
+    0% { 
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+    }
+    100% {
+      margin: 0%;
+      opacity: 0;
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+/* fadeAwayLoader with user set color */
+:local(.fadeAwayLoader) {
+  animation: fadeaway 1.5s linear infinite;  
   @keyframes fadeaway {
     0% { 
       width: 5px;
@@ -216,17 +263,26 @@
   }
 }
 
-/* colorCircleLoader */
+/* colorCircleLoader Default with multi colors */
+:local(.colorCircleLoaderDefault),
 :local(.colorCircleLoader) {
   border: 4px solid #eee;
   border-top-color: $secondary-violet;
-  position: relative;
   border-radius: 50%;
+  animation: spinDefault 1.5s linear infinite;
+  @keyframes spinDefault {
+    100% { 
+      transform: rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+/* colorCirclesLoader with user set color */
+:local(.colorCircleLoader) {
   animation: spin 1.5s linear infinite;
   @keyframes spin {
     100% { 
       transform: rotate(360deg);
-      filter: hue-rotate(360deg);
     }
   }
 }

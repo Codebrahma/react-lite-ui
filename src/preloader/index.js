@@ -16,14 +16,17 @@ const Loader = ({ theme, classes }) => (
   );
 
 const Preloader = ({theme, size, loader, color}) => {
+  const renderLoader = color ? loader : `${loader}Default`;
   const classes = classnames(
-    theme[loader],
+    theme[renderLoader],
     theme[loader === 'dotsLoader' ? `${size}Dots` : size],
-    theme[loader === 'dotsLoader' ? `${color}Dots` : color],
+    theme[loader === 'dotsLoader' && `${color}Dots`],
+    theme[loader === 'fadeAwayLoader' && `${color}Fade`],
+    theme[((loader === 'colorCircleLoader') || !loader) && `${color}`],
     {
       [theme.circlesLoader]: !loader,
       [theme.medium]: !size,
-      [theme.mediumDots]: loader === 'dotsLoader' && !size
+      [theme.mediumDots]: loader === 'dotsLoader' && !size 
     }
   )
   return (
