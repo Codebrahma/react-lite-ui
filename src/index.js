@@ -11,6 +11,7 @@ import Snackbar from './snackbar';
 import Avatar from './avatar';
 import Tooltip from './tooltip';
 import AutoComplete from './autocomplete';
+import Badge from './badge';
 
 export default {
   Button,
@@ -24,6 +25,7 @@ export default {
   Avatar,
   Tooltip,
   AutoComplete,
+  Badge,
 };
 
 // ReactDOM.render( <AutoComplete data={data}/> , document.getElementById('index'));

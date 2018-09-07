@@ -1,0 +1,52 @@
+:local(.badge-container) {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    padding: 1%;
+}
+
+:local(.badge-container-small) {
+    padding: 1%;
+}
+
+:local(.badge-container-medium) {
+    padding: 1.5%;
+}
+
+:local(.badge-container-large) {
+    padding: 2%;
+}
+
+:local(.badge) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    height: 15px;
+    width: 15px;
+    font-size: 0.8em;
+}
+
+:local(.small) {
+    height: 15px;
+    width: 15px;
+    font-size: 0.8em;
+}
+
+:local(.medium) {
+    height: 20px;
+    width: 20px;
+    font-size: 0.9em;
+}
+
+:local(.large) {
+    height: 25px;
+    width: 25px;
+    font-size: 1em;
+}

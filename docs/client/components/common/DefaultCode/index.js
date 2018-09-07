@@ -9,3 +9,4 @@ export { defaultCode as SnackbarDefaultCode } from './Snackbar';
 export { defaultCode as AvatarDefaultCode } from './Avatar';
 export { defaultCode as TooltipDefaultCode } from './Tooltip';
 export { defaultCode as AutoCompleteDefaultCode } from './AutoComplete';
+export { defaultCode as BadgeDefaultCode } from './Badge';

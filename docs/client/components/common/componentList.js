@@ -18,6 +18,8 @@ import AvatarReadme from '../../../../src/avatar/readMe.md';
 import Tooltip from '../../../../src/avatar';
 import AutoComplete from '../../../../src/autocomplete';
 import AutocompleteReadme from '../../../../src/autocomplete/readMe.md';
+import BadgeReadme from '../../../../src/badge/readMe.md';
+import Badge from '../../../../src/badge';
 
 import {
   CardDefaultCode,
@@ -31,6 +33,7 @@ import {
   AvatarDefaultCode,
   TooltipDefaultCode,
   AutoCompleteDefaultCode,
+  BadgeDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -39,6 +42,12 @@ export const componentList = [
     docs: AutocompleteReadme,
     component: AutoComplete,
     defaultCode: AutoCompleteDefaultCode
+  },
+  {
+    name: 'Badge',
+    docs: BadgeReadme,
+    component: Badge,
+    defaultCode: BadgeDefaultCode,
   },
   {
     name: 'Card',
