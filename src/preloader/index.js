@@ -15,15 +15,20 @@ const Loader = ({ theme, classes }) => (
     </div>
   );
 
-const Preloader = ({ theme, size, loader }) => {
-  const classes = classnames(theme[loader], theme[loader === 'dotsLoader' ? `${size}Dots` : size], {
-    [theme.circlesLoader]: !loader,
-    [theme.medium]: !size,
-    [theme.mediumDots]: loader === 'dotsLoader' && !size,
-  });
+const Preloader = ({theme, size, loader, color}) => {
+  const classes = classnames(
+    theme[loader],
+    theme[loader === 'dotsLoader' ? `${size}Dots` : size],
+    theme[loader === 'dotsLoader' ? `${color}Dots` : color],
+    {
+      [theme.circlesLoader]: !loader,
+      [theme.medium]: !size,
+      [theme.mediumDots]: loader === 'dotsLoader' && !size
+    }
+  )
   return (
-    <Loader loader={loader} classes={classes} size={size} theme={theme} />
-  );
-};
+    <Loader loader={loader} classes={classes} size={size} color={color} theme={theme}/>
+  )
+}
 
 export default themr('CBPreloader', defaultTheme)(Preloader);

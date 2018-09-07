@@ -9,6 +9,7 @@
   align-items: center;
 }
 
+/* size variants */
 :local(.small) {
   width: 40px;
   height: 40px;
@@ -22,6 +23,7 @@
   height: 105px;
 }
 
+/* size variants for dotsLoader */
 :local(.smallDots) {
   & > span {
     width: 10px;
@@ -42,6 +44,88 @@
     width: 30px;
     height: 30px;
     margin: 5px;
+  }
+}
+
+/* color variants */
+:local(.primary) {
+  border-color: $secondary-violet !important;
+}
+
+:local(.secondary) {
+  border-color: $secondary-grey !important;
+}
+
+:local(.success) {
+  border-color: $secondary-green !important;
+}
+
+:local(.danger) {
+  border-color: $secondary-red !important;
+}
+
+:local(.warning) {
+  border-color: $secondary-yellow !important;
+}
+
+:local(.info) {
+  border-color: $secondary-blue !important;
+}
+
+:local(.light) {
+  border-color: $secondary-white !important;
+}
+
+:local(.dark) {
+  border-color: $secondary-black !important;
+}
+
+/*  color variants for dot loader */
+:local(.primaryDots) {
+  & > span {
+    background-color: $secondary-violet !important;
+  }
+}
+
+:local(.secondaryDots) {
+  & > span {
+    background-color: $secondary-grey !important;
+  }
+}
+
+:local(.successDots) {
+  & > span {
+    background-color: $secondary-green !important;
+  }
+}
+
+:local(.dangerDots) {
+  & > span {
+    background-color: $secondary-red !important;
+  }
+}
+
+:local(.warningDots) {
+  & > span {
+    background-color: $secondary-yellow !important;
+  }
+}
+
+:local(.infoDots) {
+  & > span {
+    background-color: $secondary-blue !important;
+  }
+}
+
+:local(.lightDots) {
+  & > span {
+    background-color: $secondary-white !important;
+  }
+}
+
+:local(.darkDots) {
+  & > span {
+    background-color: $secondary-black !important;
   }
 }
 
