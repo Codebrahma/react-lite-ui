@@ -14,7 +14,7 @@ class Demo extends React.Component {
               />
             </span>
             <span>
-              default, default
+              medium, primary
               <Preloader />
             </span>
             <span>
@@ -38,7 +38,7 @@ class Demo extends React.Component {
               />
             </span>
             <span>
-              default, default
+              medium
               <Preloader
                 loader='dotsLoader'
               />
@@ -65,7 +65,7 @@ class Demo extends React.Component {
               />
             </span>
             <span>
-              default, default
+              medium
               <Preloader
                 loader='fadeAwayLoader'
               />
@@ -92,7 +92,7 @@ class Demo extends React.Component {
               />
             </span>
             <span>
-              default, default
+              medium
               <Preloader
                 loader='colorCircleLoader'
               />
