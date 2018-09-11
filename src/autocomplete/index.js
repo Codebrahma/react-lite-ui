@@ -55,11 +55,13 @@ class AutoComplete extends Component {
   }
 
   renderOptions = () => {
+    const { theme } = this.props;
     const { data } = this.state;
     return (data.filter(({ label }) => label.indexOf(this.state.input) !== -1)
     ).map(({ label }) => (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
+        className={theme['autocomplete-list-item']}
         onClick={() => this.selectItem(label)}
         key={label}
       >{label}
@@ -75,6 +77,7 @@ class AutoComplete extends Component {
     return (
       <div className={classes}>
         <input
+          className={theme['autocomplete-input']}
           type="text"
           value={this.state.input}
           placeholder={placeholder}
@@ -85,6 +88,7 @@ class AutoComplete extends Component {
         {
               showSuggestions &&
               <div
+                className={theme['autocomplete-list']}
                 onMouseEnter={() => this.blockOnBlur(true)}
                 onMouseLeave={() => this.blockOnBlur(false)}
               >

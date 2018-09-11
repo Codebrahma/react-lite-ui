@@ -1,6 +1,6 @@
 :local(.autocomplete) {
     width: 20vw;
-    input {
+    :local(.autocomplete-input) {
         width: 100%;
         border: none;
         border-bottom: 2px solid black;
@@ -10,10 +10,10 @@
             border-bottom: 2px solid blue;
         }
     }
-    div {
+    :local(.autocomplete-list) {
         box-sizing: border-box;
         box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
-        div {
+        :local(.autocomplete-list-item) {
             display: block;
             box-sizing: border-box;
             padding: 2% 2%;
