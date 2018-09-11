@@ -16,9 +16,10 @@ const Loader = ({ theme, classes }) => (
     </div>
   );
 
-const Preloader = ({theme, size, loader, color}) => {
+const Preloader = ({theme, size, loader, color, className}) => {
   const renderLoader = color ? loader : `${loader}Default`;
   const classes = classnames(
+    className,
     theme[renderLoader],
     theme[loader === 'dotsLoader' ? `${size}Dots` : size],
     theme[loader === 'dotsLoader' && `${color}Dots`],
