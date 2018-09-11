@@ -3,7 +3,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
-        <PreviewBlock header="Simple Avatar">
+        <PreviewBlock header="Simple List">
           <List />
         </PreviewBlock>
       </div>
