@@ -18,9 +18,23 @@
   padding: 0 10px;
 }
 
-:local(.avatar) {
-  height: 100%;
+:local(.smallAvatar) {
   overflow: hidden;
+  border-radius: 50%;
+  max-height: 28px;
+  max-width: 28px;
+}
+:local(.mediumAvatar) {
+  overflow: hidden;
+  border-radius: 50%;
+  max-height: 36px;
+  max-width: 36px;
+}
+:local(.largeAvatar) {
+  overflow: hidden;
+  border-radius: 50%;
+  max-height: 52px;
+  max-width: 52px;
 }
 
 :local(.deleteIcon) {
@@ -162,7 +176,7 @@
 
 :local(.lightOutlined) {
   color: $secondary-white;
-  background-color: $secondary-black;
+  background-color: transparent;
   border-color: $secondary-white;
 }
 

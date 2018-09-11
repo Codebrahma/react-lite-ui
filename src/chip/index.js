@@ -25,10 +25,12 @@ const Chip = ({
   let avatar = null;
   if(avatarElement && React.isValidElement(avatarElement)) {
     avatar = React.cloneElement(avatarElement, {
-      className: classnames(theme.avatar, avatarElement.props.className,
-        theme[`${color}Avatar`]
+      className: classnames(avatarElement.props.className,
+        theme[`${size}Avatar`]
       )
     })
+  } else if (typeof avatarElement === 'string' ) {
+    avatar = <img src={avatarElement} alt='A' className={classnames(theme[`${size}Avatar`])}/>
   }
 
   /* DeleteIcon related block */

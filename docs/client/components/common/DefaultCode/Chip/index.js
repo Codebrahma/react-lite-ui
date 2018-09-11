@@ -11,6 +11,7 @@ class Demo extends React.Component {
             size='small'
           />
           <Chip
+            avatar='https://unsplash.it/50x50'
             label='primary chip'
             color='primary'
           />
@@ -36,9 +37,18 @@ class Demo extends React.Component {
             outlined
           />
           <Chip
-            label='large info chip'
+            avatar='https://unsplash.it/50x50'
+            label='large avatar chip'
             color='info'
             size='large'
+            outlined
+          />
+          <Chip
+            avatar={<Avatar>K</Avatar>}
+            label='avatar info chip'
+            color='secondary'
+            size='medium'
+            handleDelete={() => alert('Clicked Delete Button')}
             outlined
           />
         </PreviewBlock>
