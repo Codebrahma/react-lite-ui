@@ -6,9 +6,10 @@ class Demo extends React.Component {
         <PreviewBlock header="Default Chip Component">
           <Chip />
           <Chip
-            label='small warning'
+            label='small clickable'
             color='warning'
             size='small'
+            handleChipClick={()=>alert('Clicked on Chip')}
           />
           <Chip
             avatar='https://unsplash.it/50x50'
@@ -45,10 +46,11 @@ class Demo extends React.Component {
           />
           <Chip
             avatar={<Avatar>K</Avatar>}
-            label='avatar info chip'
+            label='avatar click and delete'
             color='secondary'
             size='medium'
             handleDelete={() => alert('Clicked Delete Button')}
+            handleChipClick={() => alert('clicked on chip')}
             outlined
           />
         </PreviewBlock>

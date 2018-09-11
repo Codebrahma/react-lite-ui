@@ -4,9 +4,15 @@ import { themr } from 'react-css-themr';
 import classnames from 'classnames';
 import defaultTheme from './theme.scss';
 
-const DeleteIcon = ({classes, handleClick}) => (
-  <button onClick={handleClick} className={classes}>X</button>
-)
+const DeleteIcon = ({classes, handleClick}) => {
+  function handleDeleteClick(e) {
+    e.stopPropagation();
+    return handleClick(e);
+  }
+  return (
+    <button onClick={handleDeleteClick} className={classes}>X</button>
+  )
+}
 
 const Chip = ({
   theme,
@@ -16,10 +22,14 @@ const Chip = ({
   avatar: avatarElement,
   outlined,
   handleDelete,
+  handleChipClick,
   ...props
 }) => {
+  const Element = !handleChipClick ? 'div' : 'a';
+
   const classes = classnames(theme.chip, theme[size],
     theme[outlined ? `${color}Outlined` : color],
+    {[theme.clickable]: Element === 'a'}
   )
   /* Avatar related block */
   let avatar = null;
@@ -43,12 +53,13 @@ const Chip = ({
     deleteIcon =  <DeleteIcon classes={customClasses} handleClick={handleDelete}/>
   }
 
+
   return (
-    <div href='#' className={classes} {...props}>
+    <Element href='#' className={classes} {...props} onClick={Element === 'a' ? handleChipClick : ()=> {}}>
       { avatar }
       <span className={theme.label}>{ label }</span>
       { deleteIcon }
-    </div>
+    </Element>
   )
 }
 
