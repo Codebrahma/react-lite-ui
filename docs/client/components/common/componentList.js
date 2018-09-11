@@ -24,6 +24,8 @@ import Drawer from '../../../../src/drawer';
 import DrawerReadme from '../../../../src/drawer/readMe.md';
 import List from '../../../../src/list';
 import ListReadMe from '../../../../src/list/readMe.md';
+import ChipReadMe from '../../../../src/chip/readMe.md';
+import Chip from '../../../../src/chip';
 
 import {
   CardDefaultCode,
@@ -40,6 +42,7 @@ import {
   BadgeDefaultCode,
   DrawerDefaultCode,
   ListDefaultCode
+  ChipDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -127,4 +130,10 @@ export const componentList = [
     component: Tooltip,
     defaultCode: TooltipDefaultCode,
   },
+  {
+    name: 'Chip',
+    docs: ChipReadMe,
+    component: Chip,
+    defaultCode: ChipDefaultCode,
+  }
 ];

@@ -15,6 +15,7 @@ import Badge from './badge';
 import Drawer from './drawer';
 import List from './list';
 import ListItem from './listitem';
+import Chip from './chip';
 
 export default {
   Button,
@@ -32,8 +33,11 @@ export default {
   Drawer,
   List,
   ListItem,
+  Chip,
 };
 
 // ReactDOM.render( <AutoComplete data={data}/> , document.getElementById('index'));
 
 // ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));
+
+// ReactDOM.render(<Chips />, document.getElementById('index'));

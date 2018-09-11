@@ -1,0 +1,172 @@
+@import '../globals/theme.scss';
+
+:local(.chip) {
+  cursor: pointer;
+  display:  inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  margin: 5px;
+  border: 1px solid $secondary-black;
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+:local(.label) {
+  text-transform: capitalize;
+  padding: 0 10px;
+}
+
+:local(.avatar) {
+  height: 100%;
+  overflow: hidden;
+}
+
+:local(.deleteIcon) {
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+:local(.smallDelete) {
+  min-width: 20px;
+  min-height: 20px;
+  font-size: 10px;
+  margin: 0 4px;
+}
+:local(.mediumDelete) {
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 12px;
+  margin: 0 6px;
+}
+:local(.largeDelete) {
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 16px;
+  margin: 0 8px;
+}
+
+:local(.small) {
+  font-size: 11px;
+  line-height: 28px;
+  padding: 0;
+  min-width: 70px;
+}
+
+:local(.medium) {
+  font-size: 13px;
+  line-height: 36px;
+  border-radius: 30px;
+  padding: 0;
+  min-width: 90px;
+}
+
+:local(.large) {
+  font-size: 18px;
+  line-height: 52px;
+  border-radius: 40px;
+  padding: 0;
+  min-width: 130px;
+}
+
+:local(.primary) {
+  color: $original-white;
+  background-color: $secondary-violet;
+  border-color: $secondary-violet;
+}
+
+:local(.secondary) {
+  color: $original-white;
+  background-color: $secondary-grey;
+  border-color: $secondary-grey;
+}
+
+:local(.success) {
+  color: $original-white;
+  background-color: $secondary-green;
+  border-color: $secondary-green;
+}
+
+:local(.danger) {
+  color: $original-white;
+  background-color: $secondary-red;
+  border-color: $secondary-red;
+}
+
+:local(.warning) {
+  color: $secondary-black;
+  background-color: $secondary-yellow;
+  border-color: $secondary-yellow;
+}
+
+:local(.info) {
+  color: $original-white;
+  background-color: $secondary-blue;
+  border-color: $secondary-blue;
+}
+
+:local(.light) {
+  color: $secondary-black;
+  background-color: $secondary-white;
+  border-color: $secondary-white;
+}
+
+:local(.dark) {
+  color: $original-white;
+  background-color: $secondary-black;
+  border-color: $secondary-black;
+}
+
+/* Outlined */
+:local(.primaryOutlined) {
+  color: $secondary-violet;
+  background-color: $original-white;
+  border-color: $secondary-violet;
+}
+
+:local(.secondaryOutlined) {
+  color: $secondary-grey;
+  background-color: $original-white;
+  border-color: $secondary-grey;
+}
+
+:local(.successOutlined) {
+  color: $secondary-green;
+  background-color: $original-white;
+  border-color: $secondary-green;
+}
+
+:local(.dangerOutlined) {
+  color: $secondary-red;
+  background-color: $original-white;
+  border-color: $secondary-red;
+}
+
+:local(.warningOutlined) {
+  color: $secondary-yellow;
+  background-color: $secondary-black;
+  border-color: $secondary-yellow;
+}
+
+:local(.infoOutlined) {
+  color: $secondary-blue;
+  background-color: $original-white;
+  border-color: $secondary-blue;
+}
+
+:local(.lightOutlined) {
+  color: $secondary-white;
+  background-color: $secondary-black;
+  border-color: $secondary-white;
+}
+
+:local(.darkOutlined) {
+  color: $secondary-black;
+  background-color: $original-white;
+  border-color: $secondary-black;
+}
