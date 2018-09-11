@@ -15,6 +15,9 @@ A basic autocomplete component.
 | Name     | Description|
 |:---------|:-----------|
 | `autocomplete` | Class used for the autocomplete element.|
+| `autocomplete-input` | Class used for the text input element.|
+| `autocomplete-list` | Class used for the autocomplete list.|
+| `autocomplete-list-item` | Class used for the autocomplete list options.|
 
 ### Example Usage
 ```
