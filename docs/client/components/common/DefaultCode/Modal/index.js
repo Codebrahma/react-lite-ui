@@ -1,5 +1,4 @@
 export const defaultCode =   `
-
 class Demo extends React.Component {
 
   constructor(props) {
@@ -19,9 +18,9 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
-        <PreviewBlock header="Simple Avatar">
+        <PreviewBlock header="Simple Modal">
         <Button type="primary" onClick={this.toggleModal}>Click to Open Modal</Button>
-          <Modal open={this.state.open}/>
+          <Modal title="This is sample modal" open={this.state.open}/>
         </PreviewBlock>
       </div>
     )

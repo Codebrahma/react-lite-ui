@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     animation: fadein 0.2s linear;
+    box-sizing: border-box;
 
     @keyframes fadein {
         0% { opacity: 0; }
@@ -32,7 +33,32 @@
     width: 50%;
     height: 50%;
     position: relative;
+    flex-flow: column;
+    border-radius: 2px;
+    box-sizing: border-box;
+
+    :local(.modal-title) {
+        padding: 1% 0%;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+    
+    :local(.modal-body) {
+        background: yellow;
+        box-sizing: border-box;
+    }
+
+    :local(.modal-footer) {
+        width: 100%;
+        padding: 1% 2%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
 }
+
+
 
 :local(.d-block) {
     display: flex;
@@ -53,7 +79,7 @@
         content:'';
         position:absolute;
         width: 15px;
-        height: 2px;
+        height: 4px;
         background-color: #aaa;
         border-radius:2px;
         top: 8px;
