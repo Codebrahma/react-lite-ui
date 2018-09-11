@@ -55,13 +55,13 @@ Chip.propTypes = {
   color: PropTypes.string,
   size: PropTypes.string,
   outlined: PropTypes.bool,
+  handleDelete: PropTypes.func,
 };
 
 Chip.defaultProps = {
   label: 'default chip',
   color: 'secondary',
   size: 'medium',
-  outlined: false,
 };
 
 export default themr('CBChips', defaultTheme)(Chip);
