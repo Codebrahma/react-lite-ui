@@ -28,6 +28,8 @@ import ChipReadMe from '../../../../src/chip/readMe.md';
 import Chip from '../../../../src/chip';
 import Menu from "../../../../src/menu";
 import MenuReadme from '../../../../src/menu/readMe.md';
+import Modal from '../../../../src/modal';
+import ModalReadMe from '../../../../src/modal/readMe.md';
 
 import {
   CardDefaultCode,
@@ -46,6 +48,7 @@ import {
   ListDefaultCode
   ChipDefaultCode,
   MenuDefaultCode,
+  ModalDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -102,6 +105,12 @@ export const componentList = [
     docs: MenuReadme,
     component: Menu,
     defaultCode: MenuDefaultCode,
+  },
+  {
+    name: 'Modal',
+    docs: ModalReadMe,
+    component: Modal,
+    defaultCode: ModalDefaultCode,
   },
   {
     name: 'Toggle',

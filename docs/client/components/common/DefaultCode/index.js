@@ -14,3 +14,4 @@ export { defaultCode as DrawerDefaultCode } from './Drawer';
 export { defaultCode as ListDefaultCode } from './List';
 export { defaultCode as ChipDefaultCode } from './Chip';
 export { defaultCode as MenuDefaultCode } from './Menu';
+export { defaultCode as ModalDefaultCode } from './Modal';
