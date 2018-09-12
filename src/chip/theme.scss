@@ -74,6 +74,7 @@
   border-radius: 20px;
   padding: 0;
   min-width: 70px;
+  max-height: 28px;
 }
 
 :local(.medium) {
@@ -82,6 +83,7 @@
   border-radius: 30px;
   padding: 0;
   min-width: 90px;
+  max-height: 36px;
 }
 
 :local(.large) {
@@ -90,6 +92,7 @@
   border-radius: 40px;
   padding: 0;
   min-width: 130px;
+  max-height: 52px;
 }
 
 :local(.primary) {
