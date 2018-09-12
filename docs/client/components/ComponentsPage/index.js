@@ -8,7 +8,7 @@ import ButtonExample from '../../../../src/examples/button.js';
 
 import styles from './styles.scss';
 
-const renderHowItLooks = (ExampleComponent) => (
+const renderHowItLooks = ExampleComponent => (
   <div>
     <h3>How it looks</h3>
     <div className="example">

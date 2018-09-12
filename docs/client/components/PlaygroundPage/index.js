@@ -6,9 +6,7 @@ import Documentation from './Documentation';
 import Card from '../../../../src/card';
 import CardReadme from '../../../../src/card/readMe.md';
 
-import {
-  CardDefaultCode,
-} from '../common/DefaultCode';
+import { CardDefaultCode } from '../common/DefaultCode';
 
 
 class PlaygroundPage extends React.Component {
@@ -17,7 +15,7 @@ class PlaygroundPage extends React.Component {
     this.state = {
       isDocumentationOn: false,
       activeComponent: 'Card',
-      defaultCode: CardDefaultCode, 
+      defaultCode: CardDefaultCode,
       activeDocs: CardReadme,
     };
     this.expandDocumentation = this.expandDocumentation.bind(this);

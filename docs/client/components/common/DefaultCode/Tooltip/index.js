@@ -1,5 +1,5 @@
 
-export const defaultCode =   `
+export const defaultCode = `
 class Demo extends React.Component {
   constructor(props) {
     super(props);

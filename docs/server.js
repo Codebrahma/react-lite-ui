@@ -13,8 +13,8 @@ if (process.env.NODE_ENV !== 'production') {
     noInfo: true,
     publicPath: config.output.publicPath,
     stats: {
-      colors: true
-    }
+      colors: true,
+    },
   }));
   app.use(require('webpack-hot-middleware')(compiler));
 } else {
@@ -22,13 +22,13 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(express.static('build'));
 }
 
-app.get('*', function (req, res) {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 app.use(logger({ path: `./log/${process.env.NODE_ENV}.log` }));
 
-app.listen(8001, '0.0.0.0', function (err) {
+app.listen(8001, '0.0.0.0', (err) => {
   if (err) {
     console.log(err);
     return;

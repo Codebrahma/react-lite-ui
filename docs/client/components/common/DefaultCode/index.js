@@ -10,3 +10,4 @@ export { defaultCode as AvatarDefaultCode } from './Avatar';
 export { defaultCode as TooltipDefaultCode } from './Tooltip';
 export { defaultCode as AutoCompleteDefaultCode } from './AutoComplete';
 export { defaultCode as BadgeDefaultCode } from './Badge';
+export { defaultCode as DrawerDefaultCode } from './Drawer';

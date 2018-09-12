@@ -32,7 +32,7 @@ class RadioButtonGroup extends React.Component {
     return options.map(option => (
       <React.Fragment key={option.label}>
         <div className={classNames}>
-          <div className={cx(styles['each-check'], { inline })} onClick={() => { this.handleCheckListChange(option.label)}}>
+          <div className={cx(styles['each-check'], { inline })} onClick={() => { this.handleCheckListChange(option.label); }}>
             <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
               <label className={cx('inner', { checked: (option.label === this.state.currentlyActive) ? 'active' : '' })}>
                 <input type="radio" />

@@ -20,6 +20,8 @@ import AutoComplete from '../../../../src/autocomplete';
 import AutocompleteReadme from '../../../../src/autocomplete/readMe.md';
 import BadgeReadme from '../../../../src/badge/readMe.md';
 import Badge from '../../../../src/badge';
+import Drawer from '../../../../src/drawer';
+import DrawerReadme from '../../../../src/drawer/readMe.md';
 
 import {
   CardDefaultCode,
@@ -34,6 +36,7 @@ import {
   TooltipDefaultCode,
   AutoCompleteDefaultCode,
   BadgeDefaultCode,
+  DrawerDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -74,6 +77,12 @@ export const componentList = [
     defaultCode: CheckboxGroupDefaultCode,
   },
   {
+    name: 'Drawer',
+    docs: DrawerReadme,
+    component: Drawer,
+    defaultCode: DrawerDefaultCode,
+  },
+  {
     name: 'Toggle',
     docs: CheckboxGroupReadme,
     component: Toggle,
@@ -108,5 +117,5 @@ export const componentList = [
     docs: AvatarReadme,
     component: Tooltip,
     defaultCode: TooltipDefaultCode,
-  }
+  },
 ];

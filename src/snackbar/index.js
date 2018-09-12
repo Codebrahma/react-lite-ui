@@ -9,7 +9,7 @@ class Snackbar extends React.Component {
     super(props);
     this.state = {
       active: false,
-    }
+    };
   }
 
   componentDidMount() {
@@ -57,21 +57,23 @@ class Snackbar extends React.Component {
       active: false,
     });
     if (this.props.onClose) {
-      this.props.onClose()
+      this.props.onClose();
     }
   }
 
   render() {
-    const { theme, additionaClasses, position, children } = this.props;
+    const {
+      theme, additionaClasses, position, children,
+    } = this.props;
     const { active } = this.state;
-    const classes = classnames(theme.snackbar, additionaClasses)
+    const classes = classnames(theme.snackbar, additionaClasses);
     return (
       <div className={classnames(theme.snackbarWrapper, position, active ? 'active' : '')}>
         <div className={classes}>
           { children }
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -81,7 +83,7 @@ Snackbar.propTypes = {
   onClose: PropTypes.func,
   autoClose: PropTypes.bool,
   position: PropTypes.string,
-}
+};
 
 Snackbar.defaultProps = {
   additionaClasses: null,

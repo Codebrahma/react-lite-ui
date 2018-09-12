@@ -3,7 +3,7 @@ import {
   LiveProvider,
   LiveEditor,
   LiveError,
-  LivePreview
+  LivePreview,
 } from 'react-live';
 import Switch from 'react-switch';
 import components from '../../../../../src';
@@ -15,7 +15,7 @@ const PreviewBlock = ({ children, header }) => (
     <div className="header">{header}</div>
     {children}
   </div>
-)
+);
 class PlaygroundWithPreview extends React.Component {
   constructor(props) {
     super(props);
@@ -30,16 +30,16 @@ class PlaygroundWithPreview extends React.Component {
       expandDocumentation,
       isDocumentationOn,
     } = this.props;
-    
+
     return (
       <div className={styles['playground-preview']}>
         <div className="header">
           Playground
         </div>
-        <div className="warning"> 
-          (Editor not available at this screen size) 
+        <div className="warning">
+          (Editor not available at this screen size)
         </div>
-        <LiveProvider 
+        <LiveProvider
           scope={{ ...components, PreviewBlock, theme }}
           code={this.props.defaultCode}
         >

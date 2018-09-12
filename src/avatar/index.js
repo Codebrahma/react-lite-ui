@@ -14,7 +14,7 @@ const Avatar = ({
   ...other
 }) => {
   const classes = classnames(theme.avatar, className);
-  
+
   return (
     <div className={classes} {...other}>
       {
