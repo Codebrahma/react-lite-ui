@@ -36,6 +36,8 @@ import NavbarReadMe from '../../../../src/navbar/readMe.md';
 import Navbar from '../../../../src/navbar';
 import PreloaderReadme from '../../../../src/preloader/readMe.md';
 import Preloader from '../../../../src/preloader';
+import Select from '../../../../src/select';
+import SelectReadme from '../../../../src/select/readMe.md';
 
 import {
   CardDefaultCode,
@@ -58,6 +60,7 @@ import {
   MultiSelectDefaultCode,
   NavbarDefaultCode,
   PreloaderDefaultCode,
+  SelectDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -138,6 +141,12 @@ export const componentList = [
     docs: MultiSelectReadMe,
     component: MultiSelect,
     defaultCode: MultiSelectDefaultCode,
+  },
+  {
+    name: 'Select',
+    docs: SelectReadme,
+    component: Select,
+    defaultCode: SelectDefaultCode,
   },
   {
     name: 'TextInput',

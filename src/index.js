@@ -21,6 +21,7 @@ import Modal from './modal';
 import MultiSelect from './multiselect';
 import Navbar from './navbar';
 import Preloader from './preloader';
+import Select from './select';
 
 export default {
   Button,
@@ -44,6 +45,7 @@ export default {
   MultiSelect,
   Navbar,
   Preloader,
+  Select,
 };
 
 // ReactDOM.render(
@@ -51,3 +53,4 @@ export default {
 //   document.getElementById('index')
 //   );
 
+// ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));

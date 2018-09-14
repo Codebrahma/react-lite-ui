@@ -18,3 +18,4 @@ export { defaultCode as ModalDefaultCode } from './Modal';
 export { defaultCode as MultiSelectDefaultCode } from './MultiSelect';
 export { defaultCode as NavbarDefaultCode } from './Navbar';
 export { defaultCode as PreloaderDefaultCode } from './Preloader';
+export { defaultCode as SelectDefaultCode } from './Select';
