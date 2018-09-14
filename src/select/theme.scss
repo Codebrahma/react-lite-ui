@@ -1,0 +1,75 @@
+:local(.select) {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    width: 120px;
+    background-color: #ddd;
+    box-shadow: 0.5px 1px 2px 1px rgba(0,0,0,0.5);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+:local(.menu) {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+}
+
+:local(.option) {
+    width: 100;
+    padding: 2% 5%;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+:local(.show) {
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+:local(.hide) {
+    overflow: hidden;
+    height: 0;
+}
+
+:local(.selectInput) {
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    height: 2em;
+    flex-direction: row;
+    padding: 0 5%;
+    z-index: 2;
+}
+
+:local(.arrow) {
+    border: none;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 5px;
+    width: 5px;
+    transition: 0.3s ease;
+    align-self: center;
+}
+
+:local(.down) {
+    transform: rotate(45deg);
+}
+
+:local(.up) {
+    transform: rotate(-135deg);
+}
+
+:local(.selected) {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: black;
+    font-size: 1em;
+}
