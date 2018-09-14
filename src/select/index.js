@@ -8,13 +8,15 @@ class Select extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: '',
+      selected: { label: '' },
       open: false,
       showMenu: true,
     };
   }
 
   handleSelect = (selected) => {
+    const { onSelect } = this.props;
+    onSelect(selected);
     this.setState({
       selected,
       open: false,
@@ -74,7 +76,7 @@ class Select extends Component {
           onBlur={this.hideMenu}
           tabIndex={0}
         >
-          <input className={theme.selected} value={selected.label} disabled />
+          <input className={theme.selected} type="text" value={selected.label} disabled />
           <div className={arrowclass} />
         </div>
         <div
@@ -93,11 +95,13 @@ Select.propTypes = {
   options: PropTypes.oneOfType([PropTypes.array]),
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   className: PropTypes.string,
+  onSelect: PropTypes.func,
 };
 
 Select.defaultProps = {
   options: [],
   className: '',
+  onSelect: value => console.log(value),
 };
 
 export default themr('CBSelect', defaultTheme)(Select);
