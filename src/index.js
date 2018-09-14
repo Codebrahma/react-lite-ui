@@ -14,6 +14,7 @@ import AutoComplete from './autocomplete';
 import Badge from './badge';
 import Drawer from './drawer';
 import List from './list';
+import ListItem from './listitem';
 
 export default {
   Button,
@@ -30,6 +31,7 @@ export default {
   Badge,
   Drawer,
   List,
+  ListItem,
 };
 
 // ReactDOM.render( <AutoComplete data={data}/> , document.getElementById('index'));

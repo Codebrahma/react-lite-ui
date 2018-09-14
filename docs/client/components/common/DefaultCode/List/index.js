@@ -4,7 +4,10 @@ class Demo extends React.Component {
     return (
       <div>
         <PreviewBlock header="Simple List">
-          <List />
+          <List>
+            <ListItem>Item 1</ListItem>
+            <ListItem>Item 2</ListItem>
+          </List>
         </PreviewBlock>
       </div>
     )

@@ -24,7 +24,7 @@ A basic list component.
 <List 
   items=[
   'ListItem 1', 
-  'ListItem2'
+  'ListItem 2'
   ]
 
   raised="low"
