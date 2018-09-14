@@ -8,10 +8,31 @@
     padding: 1%;
 }
 
-:local(.left), :local(.right) {
+:local(.drawer-container) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+
+:local(.drawer-open) {
+    z-index: 1000;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+:local(.drawer-close) {
+    background-color: transparent;
+    z-index: -1000;
+}
+
+:local(.left),
+:local(.right) {
     position: absolute;
     height: 100%;
-    width: 30%;
+    width: 20%;
     top: 0;
 }
 
@@ -20,7 +41,7 @@
 }
 
 :local(.left-close) {
-    left: -30vh;
+    left: -20%;
 }
 
 :local(.right-open) {
@@ -28,10 +49,11 @@
 }
 
 :local(.right-close) {
-    right: -30vh;
+    right: -20%;
 }
 
-:local(.top), :local(.bottom) {
+:local(.top),
+:local(.bottom) {
     position: absolute;
     width: 100%;
     height: 30%;
@@ -43,7 +65,7 @@
 }
 
 :local(.top-close) {
-    top: -30vh;
+    top: -30%;
 }
 
 :local(.bottom-open) {
@@ -51,5 +73,5 @@
 }
 
 :local(.bottom-close) {
-    bottom: -30vh;
+    bottom: -30%;
 }
