@@ -10,7 +10,6 @@ class Select extends Component {
     this.state = {
       selected: { label: '' },
       open: false,
-      showMenu: true,
     };
   }
 
@@ -20,14 +19,12 @@ class Select extends Component {
     this.setState({
       selected,
       open: false,
-      showMenu: false,
     });
   }
 
   toggleMenu = () => {
     this.setState(prevState => ({
       open: !prevState.open,
-      showMenu: !prevState.open,
     }));
   }
 
@@ -35,7 +32,6 @@ class Select extends Component {
     if (!this.state.blockOnBlur) {
       this.setState({
         open: false,
-        showMenu: false,
       });
     }
   }
@@ -64,9 +60,9 @@ class Select extends Component {
 
   render() {
     const { options, theme, className } = this.props;
-    const { selected, open, showMenu } = this.state;
+    const { selected, open } = this.state;
     const classes = cx(theme.select, className);
-    const menuclass = cx(theme.menu, open && showMenu ? theme.show : theme.hide);
+    const menuclass = cx(theme.menu, open ? theme.show : theme.hide);
     const arrowclass = cx(theme.arrow, open ? theme.up : theme.down);
     return (
       <div className={classes}>
