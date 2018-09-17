@@ -16,6 +16,7 @@ import Drawer from './drawer';
 import List from './list';
 import ListItem from './listitem';
 import Chip from './chip';
+import Menu from './menu';
 
 export default {
   Button,
@@ -34,6 +35,7 @@ export default {
   List,
   ListItem,
   Chip,
+  Menu,
 };
 
 // ReactDOM.render( <AutoComplete data={data}/> , document.getElementById('index'));
@@ -41,3 +43,5 @@ export default {
 // ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));
 
 // ReactDOM.render(<Chips />, document.getElementById('index'));
+
+// ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));

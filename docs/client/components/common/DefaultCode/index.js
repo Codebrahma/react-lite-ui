@@ -13,3 +13,4 @@ export { defaultCode as BadgeDefaultCode } from './Badge';
 export { defaultCode as DrawerDefaultCode } from './Drawer';
 export { defaultCode as ListDefaultCode } from './List';
 export { defaultCode as ChipDefaultCode } from './Chip';
+export { defaultCode as MenuDefaultCode } from './Menu';

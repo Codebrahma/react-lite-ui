@@ -26,6 +26,8 @@ import List from '../../../../src/list';
 import ListReadMe from '../../../../src/list/readMe.md';
 import ChipReadMe from '../../../../src/chip/readMe.md';
 import Chip from '../../../../src/chip';
+import Menu from "../../../../src/menu";
+import MenuReadme from '../../../../src/menu/readMe.md';
 
 import {
   CardDefaultCode,
@@ -43,6 +45,7 @@ import {
   DrawerDefaultCode,
   ListDefaultCode
   ChipDefaultCode,
+  MenuDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -92,7 +95,13 @@ export const componentList = [
     name: 'List',
     docs: ListReadMe,
     component: List,
-    defaultCode: ListDefaultCode
+    defaultCode: ListDefaultCode,
+  },
+  {
+    name: 'Menu',
+    docs: MenuReadme,
+    component: Menu,
+    defaultCode: MenuDefaultCode,
   },
   {
     name: 'Toggle',
