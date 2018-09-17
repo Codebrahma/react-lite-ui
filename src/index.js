@@ -18,6 +18,7 @@ import ListItem from './listitem';
 import Chip from './chip';
 import Menu from './menu';
 import Modal from './modal';
+import MultiSelect from './multiselect';
 
 export default {
   Button,
@@ -38,6 +39,7 @@ export default {
   Chip,
   Menu,
   Modal,
+  MultiSelect,
 };
 
 // ReactDOM.render(

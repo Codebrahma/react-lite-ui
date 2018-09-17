@@ -30,6 +30,8 @@ import Menu from "../../../../src/menu";
 import MenuReadme from '../../../../src/menu/readMe.md';
 import Modal from '../../../../src/modal';
 import ModalReadMe from '../../../../src/modal/readMe.md';
+import MultiSelectReadMe from '../../../../src/multiselect/readMe.md';
+import MultiSelect from "../../../../src/multiselect";
 
 import {
   CardDefaultCode,
@@ -49,6 +51,7 @@ import {
   ChipDefaultCode,
   MenuDefaultCode,
   ModalDefaultCode,
+  MultiSelectDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -123,6 +126,12 @@ export const componentList = [
     docs: CheckboxGroupReadme,
     component: RadioButtonGroup,
     defaultCode: RadioButtonGroupDefaultCode,
+  },
+  {
+    name: 'MultiSelect',
+    docs: MultiSelectReadMe,
+    component: MultiSelect,
+    defaultCode: MultiSelectDefaultCode,
   },
   {
     name: 'TextInput',

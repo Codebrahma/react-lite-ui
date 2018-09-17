@@ -1,0 +1,91 @@
+:local(.select) {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    display: block;
+    max-width: 250px;
+    min-width: 150px;
+    box-shadow: 0.5px 0px 5px 0.5px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+:local(.menu) {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+}
+
+:local(.option) {
+    width: 100;
+    padding: 2% 5% 0% 5%;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+:local(.show) {
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+:local(.hide) {
+    overflow: hidden;
+    height: 0;
+}
+
+:local(.selectInput) {
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 2em;
+    padding: 0 5%;
+    z-index: 2;
+}
+
+:local(.close) {
+    height: 100%;
+    width: 20px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      border-left: 2px solid #aaa;
+      height: 10px;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+:local(.selected) {
+    padding: 2px;
+    box-sizing: border-box;
+    div {
+        flex-direction: row !important;
+        display: flex;
+        justify-items: space-between;
+        padding: 0 5% 0 10%;
+        background: #eee;
+        border-radius: 5px;
+        min-width: fit-content;
+    }
+}
+
+:local(.selected-option) {
+    background-color: #00b0ff;
+    color: white;
+}
