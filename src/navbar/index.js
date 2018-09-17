@@ -16,7 +16,7 @@ const Navbar = ({
     className,
     theme.navbarWrapper,
     theme[`${position}Position`],
-    theme[color ? `${color}Color` : 'defaultColor'],
+    theme[`${color}Color`],
   );
   return (
     <div className={classes} {...other}>
@@ -27,12 +27,15 @@ const Navbar = ({
 
 Navbar.propTypes = {
   position: PropTyes.oneOf(['fixed', 'absolute', 'sticky', 'static', 'relative']),
-  className: PropTyes.string,
   color: PropTyes.string,
+  className: PropTyes.string,
   theme: PropTyes.oneOfType([PropTyes.object]),
 };
 
 Navbar.defaultProps = {
+  position: 'static',
+  color: 'default',
+  className: '',
   theme: defaultTheme,
 };
 
