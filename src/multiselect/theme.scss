@@ -42,7 +42,6 @@
 :local(.selectInput) {
     box-sizing: border-box;
     outline: none;
-    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -58,6 +57,7 @@
     align-self: center;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     &:before, &:after {
       position: absolute;
       content: '';
@@ -73,6 +73,7 @@
   }
 
 :local(.selected) {
+    min-width: fit-content;
     padding: 2px;
     box-sizing: border-box;
     div {
