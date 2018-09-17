@@ -65,6 +65,8 @@ class MultiSelect extends Component {
           className={itemtheme}
           onClick={() => this.handleSelect(option)}
           key={option.label}
+          tabIndex={1}
+          onBlur={this.hideMenu}
         >
           <span>{option.label}</span>
         </span>
