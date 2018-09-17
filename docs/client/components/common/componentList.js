@@ -32,6 +32,8 @@ import Modal from '../../../../src/modal';
 import ModalReadMe from '../../../../src/modal/readMe.md';
 import MultiSelectReadMe from '../../../../src/multiselect/readMe.md';
 import MultiSelect from "../../../../src/multiselect";
+import NavbarReadMe from '../../../../src/navbar/readMe.md';
+import Navbar from '../../../../src/navbar';
 
 import {
   CardDefaultCode,
@@ -52,6 +54,7 @@ import {
   MenuDefaultCode,
   ModalDefaultCode,
   MultiSelectDefaultCode,
+  NavbarDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -162,5 +165,11 @@ export const componentList = [
     docs: ChipReadMe,
     component: Chip,
     defaultCode: ChipDefaultCode,
+  },
+  {
+    name: 'Navbar',
+    docs: NavbarReadMe,
+    component: Navbar,
+    defaultCode: NavbarDefaultCode,
   }
 ];
