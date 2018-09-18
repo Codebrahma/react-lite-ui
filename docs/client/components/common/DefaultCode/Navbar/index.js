@@ -40,15 +40,14 @@ class Demo extends React.Component {
         </PreviewBlock>
         { /* Preview Block-3 */ }
         <PreviewBlock header="Navbar with search field">
-          <Navbar style={{float: 'right'}}>
+          <Navbar>
             Input Navbar
             <TextInput placeholder='Search...' width='150px'/>
           </Navbar>
         </PreviewBlock>
         { /* Preview Block-4 */ }
         <PreviewBlock header="Navbar with menu button">
-          <Navbar>
-            <span onClick={() => alert('Menu button here!')}>X</span>
+          <Navbar onMenuClick={() => alert('Clicked Menu Button')}>
             Menu Navbar
           </Navbar>
         </PreviewBlock>
