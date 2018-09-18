@@ -8,13 +8,22 @@ class Select extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      /*
+      Set initially selected option label as empty string and dropdown
+      state as closed for initial render.
+      */
       selected: { label: '' },
       open: false,
     };
   }
 
+  // Handle the click event when user selects / clicks on an option from the dropdown.
   handleSelect = (selected) => {
     const { onSelect } = this.props;
+    /*
+    Update the state with the selected item and provide
+    the selected value to the user via callback.
+    */
     onSelect(selected);
     this.setState({
       selected,
@@ -22,12 +31,21 @@ class Select extends Component {
     });
   }
 
+  /*
+  Dropdown handle used to toggle open and closed states for the dropdown when user
+  clicks on select box / arrow.
+  */
   toggleMenu = () => {
     this.setState(prevState => ({
       open: !prevState.open,
     }));
   }
 
+  /*
+  Handle dropdown close when component loses focus completely, i.e, neither
+  select box nor any item from options list is in focus. Example - if user clicks
+  anywhere else on the screen, the dropdown should close.
+  */
   hideMenu = () => {
     if (!this.state.blockOnBlur) {
       this.setState({
@@ -36,12 +54,22 @@ class Select extends Component {
     }
   }
 
+  /*
+  Helper function which sets a boolean `blockOnBlur` property on the state.
+  When the user is hovering on the dropdown, the `blockOnBlur` property on state
+  is set to `true`, which is later used as a check before hiding the dropdown.
+  This state property is specific to solving some bugs which were introduced
+  due to default behaviour of javascript and html. Solves issues such as item not
+  getting selected even though clicked ( since dropdown is removed through css before
+  the onclick event happens ) and dropdown not closing even when component loses focus.
+  */
   blockOnBlur = (block) => {
     this.setState({
       blockOnBlur: block,
     });
   }
 
+  // Helper function to render options inside the dropdown.
   renderOptions = (options) => {
     const { theme } = this.props;
     return options
