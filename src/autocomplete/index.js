@@ -8,15 +8,19 @@ import defaultTheme from './theme.scss';
 class AutoComplete extends Component {
   constructor(props) {
     super(props);
+    /*
+    Initialise state with `input` property to control input value,
+    `showSuggestions` to toggle dropdown menu.
+    */
     this.state = {
       data: this.props.data,
       input: '',
       showSuggestions: false,
       blockOnBlur: false,
-      focus: 0,
     };
   }
 
+  // Handle user input change on typing.
   handleInput = ({ target }) => {
     const { onChange } = this.props;
     this.setState({
@@ -25,7 +29,7 @@ class AutoComplete extends Component {
     onChange(target.value);
   }
 
-
+  // Handle user input select from dropdown.
   selectItem = (input) => {
     const { onChange } = this.props;
     this.setState({
@@ -35,34 +39,48 @@ class AutoComplete extends Component {
     onChange(input);
   }
 
+  // Show the options in dropdown menu.
   showSuggestions = () => {
     this.setState({
       showSuggestions: true,
     });
   }
 
+  // Hide the options dropdown menu and clear keyboard focused element.
   hideSuggestions = () => {
     if (!this.state.blockOnBlur) {
       this.setState({
         showSuggestions: false,
-        focus: null,
+        focus: undefined,
       });
     }
   }
 
+  /*
+  Helper function which sets a boolean `blockOnBlur` property on the state.
+  When the user is hovering on the dropdown, the `blockOnBlur` property on state
+  is set to `true`, which is later used as a check before hiding the dropdown.
+  This state property is specific to solving some bugs which were introduced
+  due to default behaviour of javascript and html. Solves issues such as item not
+  getting selected even though clicked ( since dropdown is removed through css before
+  the onclick event happens ) and dropdown not closing even when component loses focus.
+  */
   blockOnBlur = (block) => {
     this.setState({
       blockOnBlur: block,
     });
   }
 
-
+  /*
+  Handle keydown events when input is focused for navigating between options
+  and selecting an option.
+  */
   handleKeyDown = ({ key }) => {
     const { data, focus } = this.state;
     switch (key) {
       case 'ArrowDown':
         this.setState(prevState => ({
-          focus: ((prevState.focus || 0) + 1) % (prevState.data.length),
+          focus: ((prevState.focus === undefined ? -1 : prevState.focus) + 1) % (prevState.data.length),
         }));
         break;
       case 'ArrowUp':
@@ -78,6 +96,7 @@ class AutoComplete extends Component {
     }
   }
 
+  // Render options from data provided as props to the component.
   renderOptions = () => {
     const { theme } = this.props;
     const { data, focus } = this.state;
