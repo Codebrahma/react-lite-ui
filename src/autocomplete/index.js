@@ -22,21 +22,21 @@ class AutoComplete extends Component {
 
   // Handle user input change on typing.
   handleInput = ({ target }) => {
-    const { onInputChange } = this.props;
+    const { onChange } = this.props;
     this.setState({
       input: { label: target.value },
     });
-    onInputChange({ label: target.value });
+    onChange({ label: target.value });
   }
 
   // Handle user input select from dropdown.
   selectItem = (input) => {
-    const { onInputChange } = this.props;
+    const { onChange } = this.props;
     this.setState({
       input,
       showSuggestions: false,
     });
-    onInputChange(input);
+    onChange(input);
   }
 
   // Show the options in dropdown menu.
@@ -124,7 +124,7 @@ class AutoComplete extends Component {
       placeholder,
       className,
       theme,
-      onInputChange,
+      onChange,
       ...rest
     } = this.props;
     const { showSuggestions } = this.state;
@@ -162,7 +162,7 @@ AutoComplete.propTypes = {
   placeholder: Proptypes.string,
   theme: Proptypes.oneOfType([Proptypes.object]),
   className: Proptypes.string,
-  onInputChange: Proptypes.func,
+  onChange: Proptypes.func,
   onKeyPress: Proptypes.func,
 };
 
@@ -170,7 +170,7 @@ AutoComplete.defaultProps = {
   placeholder: undefined,
   theme: defaultTheme,
   className: '',
-  onInputChange: (value) => {console.log(value)},
+  onChange: () => {},
   onKeyPress: () => {},
 };
 
