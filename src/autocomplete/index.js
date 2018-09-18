@@ -14,7 +14,7 @@ class AutoComplete extends Component {
     */
     this.state = {
       data: this.props.data,
-      input: '',
+      input: { label: '' },
       showSuggestions: false,
       blockOnBlur: false,
     };
@@ -22,21 +22,21 @@ class AutoComplete extends Component {
 
   // Handle user input change on typing.
   handleInput = ({ target }) => {
-    const { onChange } = this.props;
+    const { onInputChange } = this.props;
     this.setState({
-      input: target.value,
+      input: { label: target.value },
     });
-    onChange(target.value);
+    onInputChange({ label: target.value });
   }
 
   // Handle user input select from dropdown.
   selectItem = (input) => {
-    const { onChange } = this.props;
+    const { onInputChange } = this.props;
     this.setState({
       input,
       showSuggestions: false,
     });
-    onChange(input);
+    onInputChange(input);
   }
 
   // Show the options in dropdown menu.
@@ -89,7 +89,7 @@ class AutoComplete extends Component {
         }));
         break;
       case 'Enter':
-        this.selectItem(data[focus].label);
+        this.selectItem(data[focus]);
         break;
       default:
         break;
@@ -98,10 +98,10 @@ class AutoComplete extends Component {
 
   // Render options from data provided as props to the component.
   renderOptions = () => {
-    const { theme } = this.props;
-    const { data, focus } = this.state;
-    return (data.filter(({ label }) => label.indexOf(this.state.input) !== -1)
-    ).map(({ label }, index) => {
+    const { theme, data } = this.props;
+    const { focus } = this.state;
+    return (data.filter(({ label }) => label.indexOf(this.state.input.label) !== -1)
+    ).map((item, index) => {
       const classes = cx(
         theme['autocomplete-list-item'],
         { [`${theme['item-hover']}`]: (focus === index) },
@@ -111,9 +111,9 @@ class AutoComplete extends Component {
       return (
         <div
           className={classes}
-          onClick={() => this.selectItem(label)}
-          key={label}
-        >{label}
+          onClick={() => this.selectItem(item)}
+          key={item.label}
+        >{item.label}
         </div>
       );
     });
@@ -124,6 +124,7 @@ class AutoComplete extends Component {
       placeholder,
       className,
       theme,
+      onInputChange,
       ...rest
     } = this.props;
     const { showSuggestions } = this.state;
@@ -133,7 +134,7 @@ class AutoComplete extends Component {
         <input
           className={theme['autocomplete-input']}
           type="text"
-          value={this.state.input}
+          value={this.state.input.label}
           placeholder={placeholder}
           onFocus={this.showSuggestions}
           onBlur={this.hideSuggestions}
@@ -161,7 +162,7 @@ AutoComplete.propTypes = {
   placeholder: Proptypes.string,
   theme: Proptypes.oneOfType([Proptypes.object]),
   className: Proptypes.string,
-  onChange: Proptypes.func,
+  onInputChange: Proptypes.func,
   onKeyPress: Proptypes.func,
 };
 
@@ -169,7 +170,7 @@ AutoComplete.defaultProps = {
   placeholder: undefined,
   theme: defaultTheme,
   className: '',
-  onChange: () => {},
+  onInputChange: (value) => {console.log(value)},
   onKeyPress: () => {},
 };
 
