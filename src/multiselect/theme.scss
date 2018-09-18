@@ -2,13 +2,14 @@
     box-sizing: border-box;
     border: none;
     outline: none;
+    border: 1px solid #283593;
     display: block;
     max-width: 250px;
     min-width: 150px;
-    box-shadow: 0.5px 0px 5px 0.5px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
     display: flex;
     flex-direction: column;
+    padding: 0.5% 0 0 0;
 }
 
 :local(.menu) {
@@ -27,6 +28,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     outline: none;
+
+    &:hover {
+        background: rgba($color: #00b0ff, $alpha: 0.5);
+        color: white;
+    }
 }
 
 :local(.show) {
@@ -51,7 +57,7 @@
 }
 
 :local(.close) {
-    height: 100%;
+    height: 20px;
     width: 20px;
     display: flex;
     align-self: center;
@@ -88,6 +94,6 @@
 }
 
 :local(.selected-option) {
-    background-color: #00b0ff;
+    background-color: #00b0ff !important;
     color: white;
 }
