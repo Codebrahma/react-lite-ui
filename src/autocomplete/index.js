@@ -13,6 +13,7 @@ class AutoComplete extends Component {
       input: '',
       showSuggestions: false,
       blockOnBlur: false,
+      focus: 0,
     };
   }
 
@@ -44,6 +45,7 @@ class AutoComplete extends Component {
     if (!this.state.blockOnBlur) {
       this.setState({
         showSuggestions: false,
+        focus: null,
       });
     }
   }
@@ -54,24 +56,57 @@ class AutoComplete extends Component {
     });
   }
 
-  renderOptions = () => {
-    const { theme } = this.props;
-    const { data } = this.state;
-    return (data.filter(({ label }) => label.indexOf(this.state.input) !== -1)
-    ).map(({ label }) => (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
-      <div
-        className={theme['autocomplete-list-item']}
-        onClick={() => this.selectItem(label)}
-        key={label}
-      >{label}
-      </div>
-    ));
+
+  handleKeyDown = ({ key }) => {
+    const { data, focus } = this.state;
+    switch (key) {
+      case 'ArrowDown':
+        this.setState(prevState => ({
+          focus: ((prevState.focus || 0) + 1) % (prevState.data.length),
+        }));
+        break;
+      case 'ArrowUp':
+        this.setState(prevState => ({
+          focus: ((prevState.data.length) + ((prevState.focus || 0) - 1)) % (prevState.data.length),
+        }));
+        break;
+      case 'Enter':
+        this.selectItem(data[focus].label);
+        break;
+      default:
+        break;
+    }
   }
 
+  renderOptions = () => {
+    const { theme } = this.props;
+    const { data, focus } = this.state;
+    return (data.filter(({ label }) => label.indexOf(this.state.input) !== -1)
+    ).map(({ label }, index) => {
+      const classes = cx(
+        theme['autocomplete-list-item'],
+        { [`${theme['item-hover']}`]: (focus === index) },
+      );
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
+      /* eslint-disable jsx-a11y/click-events-have-key-events */
+      return (
+        <div
+          className={classes}
+          onClick={() => this.selectItem(label)}
+          key={label}
+        >{label}
+        </div>
+      );
+    });
+  }
 
   render() {
-    const { placeholder, className, theme } = this.props;
+    const {
+      placeholder,
+      className,
+      theme,
+      ...rest
+    } = this.props;
     const { showSuggestions } = this.state;
     const classes = cx(className, theme.autocomplete);
     return (
@@ -84,6 +119,8 @@ class AutoComplete extends Component {
           onFocus={this.showSuggestions}
           onBlur={this.hideSuggestions}
           onChange={this.handleInput}
+          onKeyDown={this.handleKeyDown}
+          {...rest}
         />
         {
               showSuggestions &&
@@ -106,6 +143,7 @@ AutoComplete.propTypes = {
   theme: Proptypes.oneOfType([Proptypes.object]),
   className: Proptypes.string,
   onChange: Proptypes.func,
+  onKeyPress: Proptypes.func,
 };
 
 AutoComplete.defaultProps = {
@@ -113,6 +151,7 @@ AutoComplete.defaultProps = {
   theme: defaultTheme,
   className: '',
   onChange: () => {},
+  onKeyPress: () => {},
 };
 
 export default themr('CBAutoComplete', defaultTheme)(AutoComplete);
