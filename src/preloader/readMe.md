@@ -5,10 +5,10 @@ The base Preloader component
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `loader` | `String` | `circlesLoader` | Defines the type 0f preloader to be rendered. Possible loaders are `dotsLoader`, `fadeAwayLoader` and `colorCircleLoader` |
+| `loader` | `String` | `circlesLoader` | Defines the type 0f preloader to be rendered. Possible loaders are `dotsLoader`, `fadeAwayLoader`, `linesLoader` and `colorCircleLoader` |
 | `color` | `String` | `default` | Represents the style to be applied for the button. Possible values are `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, and `dark` |
 | `size` | `String` | `medium`  | Defines the size of the button. Possible values are `small`, `medium`, and `large` |
-| `className` | `String` | `''` | Set a class to style the Component |
+| `className` | `String` | &nbsp; | Set a class to style the Component |
 
 ### Theme
 
@@ -18,6 +18,7 @@ The base Preloader component
 | `circlesLoader` | Class used for the default `circlesLoader`.|
 | `dotsLoader` | Class used for the `dotsLoader`.|
 | `fadeawayLoader` | Class used for the `fadeawayLoader`.|
+| `linesLoader` | Class used for the `linesLoader`.|
 | `colorCircleLoader` | Class used for the `colorCircleLoader`.|
 | `primary` | Class used for styling `primary` colored loaders |
 | `secondary` | Class used for styling `secondary` colored loaders |
