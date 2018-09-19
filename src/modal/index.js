@@ -29,13 +29,32 @@ class Modal extends Component {
       theme, className, body, title, footer, children,
     } = this.props;
     const { open } = this.state;
-    const classes = cx(theme.modal, open ? theme['d-block'] : theme['d-none'], className);
-    const backdrop = cx(theme['modal-backdrop'], open ? theme['d-block'] : theme['d-none']);
+    const classes = cx(theme.modal, open === true ? theme['d-block'] : theme['d-none'], className);
+    const backdrop = cx(theme['modal-backdrop'], open === true ? theme['d-block'] : theme['d-none']);
+    const childelements = title || footer
+      ? (
+        <div>
+          {
+            title
+            ? (
+              <div className={theme['modal-title']}>
+                { title || '' }
+              </div>
+            )
+            : null
+          }
+          {children}
+          { footer || null }
+        </div>
+      ) : children;
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
+    /* eslint-disable jsx-a11y/click-events-have-key-events */
     return (
       <div className={backdrop}>
         <div className={classes}>
           {
-           children || <div>
+           childelements ||
+           <div>
              <div className={theme['modal-title']}>
                { title || '' }
              </div>
@@ -58,7 +77,7 @@ Modal.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   className: PropTypes.string,
   open: PropTypes.bool.isRequired,
-  children: PropTypes.arrayOf([PropTypes.node, PropTypes.element]),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
   body: PropTypes.node,
   footer: PropTypes.node,
   title: PropTypes.string,
