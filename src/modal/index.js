@@ -33,7 +33,7 @@ class Modal extends Component {
     const backdrop = cx(theme['modal-backdrop'], open === true ? theme['d-block'] : theme['d-none']);
     const childelements = title || footer
       ? (
-        <div>
+        <div className={theme.classes}>
           {
             title
             ? (
@@ -44,7 +44,15 @@ class Modal extends Component {
             : null
           }
           {children}
-          { footer || null }
+          {
+            footer
+          ? (
+            <div className={theme['modal-footer']}>
+              { footer }
+            </div>
+          )
+          : null
+          }
         </div>
       ) : children;
     /* eslint-disable jsx-a11y/no-static-element-interactions */
