@@ -24,6 +24,7 @@ const Preloader = ({theme, size, loader, color, className}) => {
     theme[loader === 'dotsLoader' ? `${size}Dots` : size],
     theme[loader === 'dotsLoader' && `${color}Dots`],
     theme[loader === 'fadeAwayLoader' && `${color}Fade`],
+    theme[loader === 'linesLoader' && `${color}Lines`],
     theme[((loader === 'colorCircleLoader') || !loader) && `${color}`],
     {
       [theme.circlesLoader]: !loader,

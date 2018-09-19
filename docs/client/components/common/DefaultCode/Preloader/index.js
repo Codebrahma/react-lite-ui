@@ -65,7 +65,7 @@ class Demo extends React.Component {
               />
             </span>
             <span>
-              medium
+              medium, hue(360deg)
               <Preloader
                 loader='fadeAwayLoader'
               />
@@ -81,6 +81,33 @@ class Demo extends React.Component {
           </PreviewElements>
         </PreviewBlock>
         { /* Preview Block-4 */ }
+        <PreviewBlock header="Preloader with lines (size, color)">
+          <PreviewElements>
+          <span>
+            small, primary
+              <Preloader
+                loader='linesLoader'
+                size='small'
+                color='primary'
+              />
+            </span>
+            <span>
+              medium, hue(360deg)
+              <Preloader
+                loader='linesLoader'
+              />
+            </span>
+            <span>
+              large, success
+              <Preloader
+                loader='linesLoader'
+                size='large'
+                color='success'
+              />
+            </span>
+          </PreviewElements>
+        </PreviewBlock>
+        { /* Preview Block-5 */ }
         <PreviewBlock header="Preloader with color circle (size, color)">
           <PreviewElements>
           <span>
@@ -92,7 +119,7 @@ class Demo extends React.Component {
               />
             </span>
             <span>
-              medium
+              medium, hue(360deg)
               <Preloader
                 loader='colorCircleLoader'
               />

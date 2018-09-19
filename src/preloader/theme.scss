@@ -11,16 +11,25 @@
 
 /* size variants */
 :local(.small) {
-  width: 40px;
-  height: 40px;
+  width: 40px !important;
+  height: 40px !important;
+  & > span {
+    margin: 0 3px !important;
+  }
 }
 :local(.medium) {
-  width: 70px;
-  height: 70px;
+  width: 70px !important;
+  height: 70px !important;
+  & > span {
+    margin: 0 5px !important;
+  }
 }
 :local(.large) {
-  width: 105px;
-  height: 105px;
+  width: 105px !important;
+  height: 105px !important;
+  & > span {
+    margin: 0 7px !important;
+  }
 }
 
 /* size variants for dotsLoader */
@@ -80,52 +89,68 @@
   border-top-color: $secondary-black !important;
 }
 
-/*  color variants for dot loader */
-:local(.primaryDots) {
+/*  color variants for dots loader and lines loader*/
+:local(.primaryDots),
+:local(.primaryLines) {
   & > span {
     background-color: $secondary-violet !important;
+    border-color: $secondary-violet !important;
   }
 }
 
-:local(.secondaryDots) {
+:local(.secondaryDots),
+:local(.secondaryLines) {
   & > span {
     background-color: $secondary-grey !important;
+    border-color: $secondary-grey !important;
   }
 }
 
-:local(.successDots) {
+:local(.successDots),
+:local(.successLines) {
   & > span {
     background-color: $secondary-green !important;
+    border-color: $secondary-green !important;
   }
 }
 
-:local(.dangerDots) {
+:local(.dangerDots),
+:local(.dangerLines) {
   & > span {
     background-color: $secondary-red !important;
+    border-color: $secondary-red !important;
   }
 }
 
-:local(.warningDots) {
+:local(.warningDots),
+:local(.warningLines) {
   & > span {
     background-color: $secondary-yellow !important;
+    border-color: $secondary-yellow !important;
   }
 }
 
-:local(.infoDots) {
+:local(.infoDots),
+:local(.infoLines) {
   & > span {
     background-color: $secondary-blue !important;
+    border-color: $secondary-blue !important;
   }
 }
 
-:local(.lightDots) {
+:local(.lightDots),
+:local(.lightLines) {
   & > span {
     background-color: $secondary-white !important;
+    border-color: $secondary-white !important;
   }
 }
 
-:local(.darkDots) {
+:local(.darkDots),
+:local(.darkLines) {
   & > span {
     background-color: $secondary-black !important;
+    border-color: $secondary-black !important;
   }
 }
 
@@ -162,7 +187,7 @@
   border-color: $secondary-black !important;
 }
 
-/* Circles */
+/* Circles Loader */
 :local(.circlesLoaderDefault),
 :local(.circlesLoader) {
   border: 4px solid transparent;
@@ -285,5 +310,69 @@
     100% { 
       transform: rotate(360deg);
     }
+  }
+}
+
+/* Lines Loader */
+:local(.linesLoaderDefault),
+:local(.linesLoader) {
+  width: 100px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  & > span {
+    border-radius: 30px;
+    margin: 0 5px;
+    display: inline-block;
+    height: 50px;
+    border: 2px solid $secondary-violet;
+    &:nth-child(1) {
+      animation: linesDefault 1s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: linesDefault 1s linear 0.25s infinite;
+    }
+    &:nth-child(3) {
+      animation: linesDefault 1s linear 0.5s infinite;
+    }
+    &:nth-child(4) {
+      animation: linesDefault 1s linear 0.75s infinite;
+    }
+  }
+  @keyframes linesDefault {
+    0%,100% { height: 25%; }
+    50% {
+      height: 100%;
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+
+/* Lines Loader with user defined colors */
+:local(.linesLoader) {
+  & > span {
+    border-radius: 30px;
+    margin: 0 5px;
+    display: inline-block;
+    height: 50px;
+    border: 2px solid $secondary-violet;
+    &:nth-child(1) {
+      animation: lines 1s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: lines 1s linear 0.25s infinite;
+    }
+    &:nth-child(3) {
+      animation: lines 1s linear 0.5s infinite;
+    }
+    &:nth-child(4) {
+      animation: lines 1s linear 0.75s infinite;
+    }
+  }
+  @keyframes lines {
+    0%,100% { height: 25%; }
+    50% { height: 100%; }
   }
 }
