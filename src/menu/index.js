@@ -26,8 +26,10 @@ class Menu extends Component {
             className={theme.wrapper}
           >
             <div className={theme.submenu}>
-              <span className={theme.menuitem}>{props.title}</span>
-              <div className={theme.arrow} />
+              <span className={theme.menuitem}>
+                <span>{props.title}</span>
+                <div className={theme.arrow} />
+              </span>
             </div>
             {child}
           </div>
