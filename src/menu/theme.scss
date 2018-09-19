@@ -51,6 +51,7 @@
 }
 
 :local(.menuitem) {
+    margin: 0;
     padding: 3px 5px;
     white-space: nowrap;
     &:hover {
