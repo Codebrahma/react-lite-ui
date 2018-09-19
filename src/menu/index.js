@@ -9,10 +9,16 @@ class Menu extends Component {
     this.state = {};
   }
 
+  // Render all submenus and children of menu.
   renderChildren = (...children) => {
     const { theme } = this.props;
     return children.map((child) => {
       const { props } = child;
+      /*
+       If the child in current iteration is a submenu,
+       then render submenu title and a submenu popup to contain
+       all the childs of the submenu.
+      */
       if (props && props.submenu) {
         return (
           <div
@@ -21,12 +27,17 @@ class Menu extends Component {
           >
             <div className={theme.submenu}>
               <span className={theme.menuitem}>{props.title}</span>
-                <div className={theme.arrow} />
+              <div className={theme.arrow} />
             </div>
             {child}
           </div>
         );
       }
+      /*
+      Else if the child in current iteration is not a submenu, i.e.,
+      it is a menu item, then clone the element and pass the style
+      class and return the child.
+      */
       return React.cloneElement(child, { className: theme.menuitem });
     });
   };
