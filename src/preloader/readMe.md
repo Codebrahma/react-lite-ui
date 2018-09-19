@@ -17,7 +17,7 @@ The base Preloader component
 | `loaderWrapper` | Class used for the root element.|
 | `circlesLoader` | Class used for the default `circlesLoader`.|
 | `dotsLoader` | Class used for the `dotsLoader`.|
-| `fadeawayLoader` | Class used for the `fadeawayLoader`.|
+| `fadeAwayLoader` | Class used for the `fadeAwayLoader`.|
 | `linesLoader` | Class used for the `linesLoader`.|
 | `colorCircleLoader` | Class used for the `colorCircleLoader`.|
 | `primary` | Class used for styling `primary` colored loaders |
