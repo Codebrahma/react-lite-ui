@@ -32,10 +32,15 @@ class Menu extends Component {
   };
 
   render() {
-    const { theme, className, children } = this.props;
+    const {
+      theme,
+      className,
+      children,
+      title,
+    } = this.props;
     const menuclass = cx(theme.menu, className);
     return (
-      <div className={theme.wrapper}>
+      <div className={theme.wrapper} key={title || 'main-menu'}>
         <div className={menuclass}>
           {typeof children === 'object'
             ? this.renderChildren(...children)
@@ -50,12 +55,14 @@ Menu.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
+  title: PropTypes.string,
 };
 
 Menu.defaultProps = {
   theme: defaultTheme,
   className: '',
   children: null,
+  title: null,
 };
 
 export default Menu;
