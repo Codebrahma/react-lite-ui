@@ -150,7 +150,7 @@ class AutoComplete extends Component {
         {
               showSuggestions &&
               <div
-                className={theme['autocomplete-list']}
+                className={cx(theme['autocomplete-list'], 'autocomplete-list')}
                 onMouseEnter={() => this.blockOnBlur(true)}
                 onMouseLeave={() => this.blockOnBlur(false)}
               >

@@ -6,13 +6,18 @@ import AutoComplete from './index';
 /* eslint-disable no-undef */
 describe('AutoComplete Component test', () => {
   let wrappedComponent;
+  const data = [
+    { label: 'item 1' },
+    { label: 'item 2' },
+    { label: 'item 3' },
+  ];
+
+  const focusOnInput = () => {
+    wrappedComponent.find('input').simulate('focus');
+  };
+
   beforeEach(() => {
-    wrappedComponent = mount(<AutoComplete data={[
-        { label: 'item 1' },
-        { label: 'item 2' },
-        { label: 'item 3' },
-    ]}
-    />);
+    wrappedComponent = mount(<AutoComplete data={data} />);
   });
 
   afterEach(() => {
@@ -21,5 +26,15 @@ describe('AutoComplete Component test', () => {
 
   it('Successfully renders AutoComplete component', () => {
     expect(wrappedComponent.find(AutoComplete).length).equal(1);
+  });
+
+  it('Successfully renders menu on input focus', () => {
+    focusOnInput();
+    expect(wrappedComponent.find('.autocomplete-list').length).equal(1);
+  });
+
+  it('Successfully renders all data item provided.', () => {
+    focusOnInput();
+    expect(wrappedComponent.find('.autocomplete-list').children()).to.have.lengthOf(data.length);
   });
 });
