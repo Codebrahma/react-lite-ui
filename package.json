@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production --config webpack.prod.js",
-    "lint": "eslint ./ --ext .jsx --ext .js"
+    "lint": "eslint ./ --ext .jsx --ext .js",
+    "test": "mocha --require babel-core/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'"
   },
   "repository": "https://github.com/Codebrahma/React-Lite-UI.git",
   "license": "ISC",
@@ -23,7 +24,11 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
