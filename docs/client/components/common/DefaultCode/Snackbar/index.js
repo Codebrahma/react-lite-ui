@@ -72,4 +72,4 @@ class SnackDisplay extends React.Component {
     )
   }
 }
-`
+`;

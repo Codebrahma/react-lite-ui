@@ -11,6 +11,17 @@ import Snackbar from './snackbar';
 import Avatar from './avatar';
 import Tooltip from './tooltip';
 import AutoComplete from './autocomplete';
+import Badge from './badge';
+import Drawer from './drawer';
+import List from './list';
+import ListItem from './listitem';
+import Chip from './chip';
+import Menu from './menu';
+import Modal from './modal';
+import MultiSelect from './multiselect';
+import Navbar from './navbar';
+import Preloader from './preloader';
+import Select from './select';
 
 export default {
   Button,
@@ -24,6 +35,22 @@ export default {
   Avatar,
   Tooltip,
   AutoComplete,
+  Badge,
+  Drawer,
+  List,
+  ListItem,
+  Chip,
+  Menu,
+  Modal,
+  MultiSelect,
+  Navbar,
+  Preloader,
+  Select,
 };
 
-// ReactDOM.render( <AutoComplete data={data}/> , document.getElementById('index'));
+// ReactDOM.render(
+//   <Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>,
+//   document.getElementById('index')
+//   );
+
+// ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));

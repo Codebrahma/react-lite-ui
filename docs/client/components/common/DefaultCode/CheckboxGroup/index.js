@@ -1,4 +1,4 @@
-export const defaultCode =   `
+export const defaultCode = `
 class Demo extends React.Component {
   render() {
     const options = [

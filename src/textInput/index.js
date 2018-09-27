@@ -8,22 +8,22 @@ const TextInput = ({
   additionalClasses,
   theme,
   width,
-  ...others,
+  ...others
 }) => {
-  const wrapperClasses = classnames(theme.inputWrapper, additionalClasses); 
-  const inputElementProps = { 
+  const wrapperClasses = classnames(theme.inputWrapper, additionalClasses);
+  const inputElementProps = {
     ...others,
     style: {
-      width: width ? width : '100%',
+      width: width || '100%',
     },
     className: classnames(theme.inputElement),
-  }; 
-  return ( 
-    <div className={wrapperClasses}> 
-      {React.createElement('input', inputElementProps)} 
-    </div> 
-  )
-}
+  };
+  return (
+    <div className={wrapperClasses}>
+      {React.createElement('input', inputElementProps)}
+    </div>
+  );
+};
 
 TextInput.propTypes = {
   width: PropTypes.string,
@@ -36,4 +36,4 @@ TextInput.defaultProps = {
   theme: defaultTheme,
 };
 
-export default themr('CBInput', defaultTheme)(TextInput); 
+export default themr('CBInput', defaultTheme)(TextInput);

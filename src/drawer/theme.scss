@@ -1,0 +1,77 @@
+:local(.drawer) {
+    display: flex;
+    box-sizing: border-box;
+    flex-flow: column;
+    background: white;
+    z-index: 900;
+    transition: 0.3s ease-in-out;
+    padding: 1%;
+}
+
+:local(.drawer-container) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+
+:local(.drawer-open) {
+    z-index: 1000;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+:local(.drawer-close) {
+    background-color: transparent;
+    z-index: -1000;
+}
+
+:local(.left),
+:local(.right) {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    top: 0;
+}
+
+:local(.left-open) {
+    left: 0;
+}
+
+:local(.left-close) {
+    left: -20%;
+}
+
+:local(.right-open) {
+    right: 0;
+}
+
+:local(.right-close) {
+    right: -20%;
+}
+
+:local(.top),
+:local(.bottom) {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    left: 0;
+}
+
+:local(.top-open) {
+    top: 0;
+}
+
+:local(.top-close) {
+    top: -30%;
+}
+
+:local(.bottom-open) {
+    bottom: 0;
+}
+
+:local(.bottom-close) {
+    bottom: -30%;
+}

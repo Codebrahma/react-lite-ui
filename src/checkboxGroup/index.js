@@ -10,11 +10,11 @@ class CheckboxGroup extends React.Component {
     super(props);
 
     this.state = {
-      isChecked: props.options.reduce((accumulator, { label, value }) => { 
-          accumulator[label] = false;
-          return accumulator;
-        }, {}),
-    }
+      isChecked: props.options.reduce((accumulator, { label, value }) => {
+        accumulator[label] = false;
+        return accumulator;
+      }, {}),
+    };
   }
 
   handleCheckListChange = (label) => {
