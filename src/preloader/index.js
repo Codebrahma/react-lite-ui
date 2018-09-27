@@ -6,17 +6,19 @@ import defaultTheme from './theme.scss';
 
 
 const Loader = ({ theme, classes }) => (
-    <div className={theme.loaderWrapper}>
-      <div className={classes}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+  <div className={theme.loaderWrapper}>
+    <div className={classes}>
+      <span />
+      <span />
+      <span />
+      <span />
     </div>
-  );
+  </div>
+);
 
-const Preloader = ({theme, size, loader, color, className}) => {
+const Preloader = ({
+  theme, size, loader, color, className,
+}) => {
   const renderLoader = color ? loader : `${loader}Default`;
   const classes = classnames(
     className,
@@ -28,25 +30,33 @@ const Preloader = ({theme, size, loader, color, className}) => {
     theme[((loader === 'colorCircleLoader') || !loader) && `${color}`],
     {
       [theme.circlesLoader]: !loader,
-      [theme.mediumDots]: loader === 'dotsLoader' && !size 
-    }
-  )
+      [theme.mediumDots]: loader === 'dotsLoader' && !size,
+    },
+  );
   return (
-    <Loader loader={loader} classes={classes} size={size} color={color} theme={theme}/>
-  )
-}
+    <Loader loader={loader} classes={classes} size={size} color={color} theme={theme} />
+  );
+};
 
 Preloader.propTypes = {
   loader: PropTypes.string,
   size: PropTypes.string,
   color: PropTypes.string,
-  theme: PropTypes.oneOfType([PropTypes.object])
+  theme: PropTypes.oneOfType([PropTypes.object]),
+  className: PropTypes.string,
+};
+
+Loader.propTypes = {
+  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  classes: PropTypes.string.isRequired,
 };
 
 Preloader.defaultProps = {
   loader: undefined,
   size: 'medium',
-  color: undefined
+  color: undefined,
+  theme: defaultTheme,
+  className: '',
 };
 
 export default themr('CBPreloader', defaultTheme)(Preloader);

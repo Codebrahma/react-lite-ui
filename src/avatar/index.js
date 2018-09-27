@@ -36,7 +36,7 @@ const Avatar = ({
 Avatar.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  theme: PropTypes.object,
+  theme: PropTypes.oneOfType([PropTypes.object]),
   image: PropTypes.string,
   alt: PropTypes.string,
   title: PropTypes.string,

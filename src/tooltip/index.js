@@ -30,7 +30,12 @@ class Tooltip extends React.Component {
     } = this.props;
     const classes = classnames(theme.tooltip, className, theme.baseContent);
     return (
-      <div className={classes} {...other} onMouseEnter={this.enableTooltip} onMouseLeave={this.disableTooltip}>
+      <div
+        className={classes}
+        {...other}
+        onMouseEnter={this.enableTooltip}
+        onMouseLeave={this.disableTooltip}
+      >
         <div className={theme.contentWrapper}>
           {children}
         </div>
@@ -51,7 +56,7 @@ class Tooltip extends React.Component {
 Tooltip.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  theme: PropTypes.object,
+  theme: PropTypes.oneOfType([PropTypes.object]),
   image: PropTypes.string,
   alt: PropTypes.string,
   title: PropTypes.string,

@@ -29,8 +29,13 @@ class Snackbar extends React.Component {
     }
   }
 
-  scheduleTimeout = (props) => {
-    const { timeout } = props;
+
+  componentWillUnmount() {
+    clearTimeout(this.curTimeout);
+  }
+
+  scheduleTimeout = () => {
+    const { timeout } = this.props;
     if (this.curTimeout) clearTimeout(this.curTimeout);
     this.curTimeout = setTimeout(() => {
       this.dismissSnackbar();
@@ -38,13 +43,9 @@ class Snackbar extends React.Component {
     }, timeout);
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.curTimeout);
-  }
-
   showSnackbar = () => {
     if (this.props.autoClose) {
-      this.scheduleTimeout(this.props);
+      this.scheduleTimeout();
     }
     this.setState({
       active: true,
@@ -83,6 +84,9 @@ Snackbar.propTypes = {
   onClose: PropTypes.func,
   autoClose: PropTypes.bool,
   position: PropTypes.string,
+  active: PropTypes.bool,
+  children: PropTypes.node,
+  theme: PropTypes.oneOfType([PropTypes.object]),
 };
 
 Snackbar.defaultProps = {
@@ -90,6 +94,10 @@ Snackbar.defaultProps = {
   timeout: 2000,
   autoClose: true,
   position: 'bottom',
+  onClose: () => {},
+  active: false,
+  children: null,
+  theme: defaultTheme,
 };
 
 export default themr('CBSnackbar', defaultTheme)(Snackbar);

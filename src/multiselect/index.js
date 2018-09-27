@@ -98,6 +98,8 @@ class MultiSelect extends Component {
           className={itemtheme}
           onClick={() => this.handleSelect(option)}
           key={option.label}
+          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+          /* eslint-disable jsx-a11y/tabindex-no-positive */
           tabIndex={1}
           onBlur={this.hideMenu}
         >
@@ -115,7 +117,10 @@ class MultiSelect extends Component {
       <div className={theme.selected}>
         <div>
           <span>{option.label}</span>
-          <div className={theme.close} onClick={() => this.handleSelect(option)} />
+          <div
+            className={theme.close}
+            onClick={() => this.handleSelect(option)}
+          />
         </div>
       </div>
     ));
@@ -132,6 +137,7 @@ class MultiSelect extends Component {
           className={theme.selectInput}
           onClick={this.toggleMenu}
           onBlur={this.hideMenu}
+          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
           tabIndex={0}
         >
           {this.renderSelected()}

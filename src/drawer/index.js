@@ -32,6 +32,8 @@ class Drawer extends Component {
     const classes = cx(theme.drawer, className, theme[position], open ? theme[`${position}-open`] : theme[`${position}-close`]);
     const containerclass = cx(theme['drawer-container'], theme[`drawer-${open ? 'open' : 'close'}`]);
     return (
+      /* eslint-disable jsx-a11y/click-events-have-key-events */
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div className={containerclass} onClick={this.handleClose}>
         <div className={classes}>
           {children}

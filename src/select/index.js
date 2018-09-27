@@ -98,6 +98,7 @@ class Select extends Component {
           className={theme.selectInput}
           onClick={this.toggleMenu}
           onBlur={this.hideMenu}
+          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
           tabIndex={0}
         >
           <input className={theme.selected} type="text" value={selected.label} disabled />

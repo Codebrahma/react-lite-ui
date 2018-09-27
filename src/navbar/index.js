@@ -4,13 +4,15 @@ import classnames from 'classnames';
 import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
-const MenuIcon = ({theme, handleMenu}) => (
+const MenuIcon = ({ theme, handleMenu }) => (
+  /* eslint-disable jsx-a11y/click-events-have-key-events */
+  /* eslint-disable jsx-a11y/no-static-element-interactions */
   <div className={theme.menuIcon} onClick={handleMenu}>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span />
+    <span />
+    <span />
   </div>
-)
+);
 
 const Navbar = ({
   theme,
@@ -30,7 +32,7 @@ const Navbar = ({
   return (
     <div className={classes} {...other}>
       {children}
-      { onMenuClick && <MenuIcon theme={theme} handleMenu={onMenuClick}/> }
+      { onMenuClick && <MenuIcon theme={theme} handleMenu={onMenuClick} /> }
     </div>
   );
 };
@@ -40,6 +42,13 @@ Navbar.propTypes = {
   color: PropTyes.string,
   className: PropTyes.string,
   theme: PropTyes.oneOfType([PropTyes.object]),
+  children: PropTyes.node,
+  onMenuClick: PropTyes.func,
+};
+
+MenuIcon.propTypes = {
+  theme: PropTyes.oneOfType([PropTyes.object]).isRequired,
+  handleMenu: PropTyes.func.isRequired,
 };
 
 Navbar.defaultProps = {
@@ -47,6 +56,8 @@ Navbar.defaultProps = {
   color: 'default',
   className: '',
   theme: defaultTheme,
+  children: 'Navbar',
+  onMenuClick: null,
 };
 
 export default themr('CBNavbar', defaultTheme)(Navbar);

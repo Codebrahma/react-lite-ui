@@ -10,7 +10,8 @@ class CheckboxGroup extends React.Component {
     super(props);
 
     this.state = {
-      isChecked: props.options.reduce((accumulator, { label, value }) => {
+      isChecked: props.options.reduce((accumulator, { label }) => {
+        /* eslint-disable no-param-reassign */
         accumulator[label] = false;
         return accumulator;
       }, {}),
@@ -18,7 +19,7 @@ class CheckboxGroup extends React.Component {
   }
 
   handleCheckListChange = (label) => {
-    const isChecked = this.state.isChecked;
+    const { isChecked } = this.state;
     isChecked[label] = !isChecked[label];
     this.setState({
       isChecked,
@@ -55,7 +56,7 @@ class CheckboxGroup extends React.Component {
 }
 
 CheckboxGroup.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.oneOfType([PropTypes.array]).isRequired,
   inline: PropTypes.bool,
   theme: PropTypes.string,
 };
