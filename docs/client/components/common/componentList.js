@@ -53,7 +53,7 @@ import {
   AutoCompleteDefaultCode,
   BadgeDefaultCode,
   DrawerDefaultCode,
-  ListDefaultCode
+  ListDefaultCode,
   ChipDefaultCode,
   MenuDefaultCode,
   ModalDefaultCode,
