@@ -38,10 +38,16 @@ describe('AutoComplete Component test', () => {
     expect(wrappedComponent.find('.autocomplete-list').children()).to.have.lengthOf(data.length);
   });
 
-  it('Successfully remove dropdown on remove focus', () => {
+  it('Successfully removes dropdown on remove focus', () => {
     focusOnInput();
     expect(wrappedComponent.find('.autocomplete-list').length).equal(1);
     wrappedComponent.find('input').simulate('blur');
     expect(wrappedComponent.find('.autocomplete-list')).to.have.lengthOf(0);
+  });
+
+  it('Successfully filters dropdown items according to input', () => {
+    focusOnInput();
+    wrappedComponent.find('input').simulate('change', { target: { value: '1' } });
+    expect(wrappedComponent.find('.autocomplete-list').children()).to.have.lengthOf(1);
   });
 });
