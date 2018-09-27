@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 import Button from './button';
 import Card from './card';
 import Checkbox from './checkbox';
@@ -49,8 +49,8 @@ export default {
 };
 
 // ReactDOM.render(
-//   <Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>,
-//   document.getElementById('index')
-//   );
-
-// ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));
+//   <Tooltip tooltipText="Tooltip" top>
+//     Here it is
+//   </Tooltip>,
+//   document.getElementById('index'),
+// );

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Checkbox from '../checkbox';
 
 import styles from './theme.scss';
 
@@ -32,6 +31,8 @@ class RadioButtonGroup extends React.Component {
     return options.map(option => (
       <React.Fragment key={option.label}>
         <div className={classNames}>
+          {/* eslint-disable jsx-a11y/click-events-have-key-events */ }
+          { /* eslint-disable jsx-a11y/no-static-element-interactions */ }
           <div className={cx(styles['each-check'], { inline })} onClick={() => { this.handleCheckListChange(option.label); }}>
             <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
               <label className={cx('inner', { checked: (option.label === this.state.currentlyActive) ? 'active' : '' })}>
@@ -50,7 +51,7 @@ class RadioButtonGroup extends React.Component {
 }
 
 RadioButtonGroup.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.oneOfType([PropTypes.array]).isRequired,
   inline: PropTypes.bool,
   theme: PropTypes.string,
 };

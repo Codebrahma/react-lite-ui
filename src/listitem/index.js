@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import cx from 'classnames';
-import defaultTheme from "./theme.scss";
+import defaultTheme from './theme.scss';
 
 const ListItem = (props) => {
   function handleClick(e) {
@@ -12,6 +12,8 @@ const ListItem = (props) => {
   const { children, className, theme } = props;
   const classes = cx(theme.item, className);
   return (
+    /* eslint-disable jsx-a11y/click-events-have-key-events */
+  /* eslint-disable jsx-a11y/no-static-element-interactions */
     <div onClick={handleClick} className={classes}>
       {children}
     </div>

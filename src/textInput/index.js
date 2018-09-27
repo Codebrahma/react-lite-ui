@@ -27,13 +27,14 @@ const TextInput = ({
 
 TextInput.propTypes = {
   width: PropTypes.string,
-  additionalClass: PropTypes.string,
+  additionalClasses: PropTypes.string,
   theme: PropTypes.object, // eslint-disable-line
 };
 
 TextInput.defaultProps = {
-  additionalClass: '',
+  additionalClasses: '',
   theme: defaultTheme,
+  width: null,
 };
 
 export default themr('CBInput', defaultTheme)(TextInput);

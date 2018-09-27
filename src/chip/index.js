@@ -77,6 +77,17 @@ Chip.propTypes = {
   handleChipClick: PropTypes.func,
   avatar: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   className: PropTypes.string,
+  classes: PropTypes.string,
+  theme: PropTypes.oneOfType([PropTypes.object]),
+};
+
+DeleteIcon.propTypes = {
+  classes: PropTypes.string,
+  handleClick: PropTypes.func.isRequired,
+};
+
+DeleteIcon.defaultProps = {
+  classes: '',
 };
 
 Chip.defaultProps = {
@@ -88,6 +99,8 @@ Chip.defaultProps = {
   handleChipClick: null,
   avatar: null,
   className: '',
+  classes: '',
+  theme: defaultTheme,
 };
 
 export default themr('CBChips', defaultTheme)(Chip);

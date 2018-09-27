@@ -80,7 +80,12 @@ class AutoComplete extends Component {
     switch (key) {
       case 'ArrowDown':
         this.setState(prevState => ({
-          focus: ((prevState.focus === undefined ? -1 : prevState.focus) + 1) % (prevState.data.length),
+          focus: (
+            (prevState.focus === undefined
+              ? -1
+              : prevState.focus
+            ) + 1
+          ) % (prevState.data.length),
         }));
         break;
       case 'ArrowUp':
