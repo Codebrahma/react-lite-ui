@@ -37,4 +37,11 @@ describe('AutoComplete Component test', () => {
     focusOnInput();
     expect(wrappedComponent.find('.autocomplete-list').children()).to.have.lengthOf(data.length);
   });
+
+  it('Successfully remove dropdown on remove focus', () => {
+    focusOnInput();
+    expect(wrappedComponent.find('.autocomplete-list').length).equal(1);
+    wrappedComponent.find('input').simulate('blur');
+    expect(wrappedComponent.find('.autocomplete-list')).to.have.lengthOf(0);
+  });
 });
