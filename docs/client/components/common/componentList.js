@@ -71,22 +71,28 @@ export const componentList = [
     defaultCode: AutoCompleteDefaultCode
   },
   {
+    name: 'Avatar',
+    docs: AvatarReadme,
+    component: Avatar,
+    defaultCode: AvatarDefaultCode,
+  },
+  {
     name: 'Badge',
     docs: BadgeReadme,
     component: Badge,
     defaultCode: BadgeDefaultCode,
   },
   {
-    name: 'Card',
-    docs: CardReadme,
-    component: Card,
-    defaultCode: CardDefaultCode,
-  },
-  {
     name: 'Button',
     docs: ButtonReadme,
     component: Button,
     defaultCode: ButtonDefaultCode,
+  },
+  {
+    name: 'Card',
+    docs: CardReadme,
+    component: Card,
+    defaultCode: CardDefaultCode,
   },
   {
     name: 'Checkbox',
@@ -99,6 +105,12 @@ export const componentList = [
     docs: CheckboxGroupReadme,
     component: CheckboxGroup,
     defaultCode: CheckboxGroupDefaultCode,
+  },
+  {
+    name: 'Chip',
+    docs: ChipReadMe,
+    component: Chip,
+    defaultCode: ChipDefaultCode,
   },
   {
     name: 'Drawer',
@@ -125,58 +137,10 @@ export const componentList = [
     defaultCode: ModalDefaultCode,
   },
   {
-    name: 'Toggle',
-    docs: CheckboxGroupReadme,
-    component: Toggle,
-    defaultCode: ToggleDefaultCode,
-  },
-  {
-    name: 'RadioButtonGroup',
-    docs: CheckboxGroupReadme,
-    component: RadioButtonGroup,
-    defaultCode: RadioButtonGroupDefaultCode,
-  },
-  {
     name: 'MultiSelect',
     docs: MultiSelectReadMe,
     component: MultiSelect,
     defaultCode: MultiSelectDefaultCode,
-  },
-  {
-    name: 'Select',
-    docs: SelectReadme,
-    component: Select,
-    defaultCode: SelectDefaultCode,
-  },
-  {
-    name: 'TextInput',
-    docs: TextInputReadme,
-    component: TextInput,
-    defaultCode: TextInputDefaultCode,
-  },
-  {
-    name: 'Snackbar',
-    docs: SnackbarReadme,
-    component: Snackbar,
-    defaultCode: SnackbarDefaultCode,
-  },
-  {
-    name: 'Avatar',
-    docs: AvatarReadme,
-    component: Avatar,
-    defaultCode: AvatarDefaultCode,
-  },
-  {
-    name: 'Tooltip',
-    docs: AvatarReadme,
-    component: Tooltip,
-    defaultCode: TooltipDefaultCode,
-  },
-  {
-    name: 'Chip',
-    docs: ChipReadMe,
-    component: Chip,
-    defaultCode: ChipDefaultCode,
   },
   {
     name: 'Navbar',
@@ -189,5 +153,41 @@ export const componentList = [
     docs: PreloaderReadme,
     component: Preloader,
     defaultCode: PreloaderDefaultCode,
+  },
+  {
+    name: 'RadioButtonGroup',
+    docs: CheckboxGroupReadme,
+    component: RadioButtonGroup,
+    defaultCode: RadioButtonGroupDefaultCode,
+  },
+  {
+    name: 'Select',
+    docs: SelectReadme,
+    component: Select,
+    defaultCode: SelectDefaultCode,
+  },
+  {
+    name: 'Snackbar',
+    docs: SnackbarReadme,
+    component: Snackbar,
+    defaultCode: SnackbarDefaultCode,
+  },
+  {
+    name: 'TextInput',
+    docs: TextInputReadme,
+    component: TextInput,
+    defaultCode: TextInputDefaultCode,
+  },
+  {
+    name: 'Toggle',
+    docs: CheckboxGroupReadme,
+    component: Toggle,
+    defaultCode: ToggleDefaultCode,
+  },
+  {
+    name: 'Tooltip',
+    docs: AvatarReadme,
+    component: Tooltip,
+    defaultCode: TooltipDefaultCode,
   }
 ];
