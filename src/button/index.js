@@ -6,7 +6,6 @@ import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
 class Button extends Component {
-
   render() {
     const {
       children, type, size, className, href, icon, iconAlignment, theme, ...others

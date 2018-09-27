@@ -10,6 +10,7 @@ import TextInput from './textInput';
 import Snackbar from './snackbar';
 import Avatar from './avatar';
 import Tooltip from './tooltip';
+import AutoComplete from './autocomplete';
 
 export default {
   Button,
@@ -22,6 +23,7 @@ export default {
   Snackbar,
   Avatar,
   Tooltip,
+  AutoComplete,
 };
 
-// ReactDOM.render(<Tooltip tooltipText='Tooltip' top>Here it is</Tooltip>, document.getElementById('index'));
+// ReactDOM.render( <AutoComplete data={data}/> , document.getElementById('index'));

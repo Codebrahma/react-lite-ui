@@ -16,6 +16,8 @@ import SnackbarReadme from '../../../../src/snackbar/readMe.md';
 import Avatar from '../../../../src/avatar';
 import AvatarReadme from '../../../../src/avatar/readMe.md';
 import Tooltip from '../../../../src/avatar';
+import AutoComplete from '../../../../src/autocomplete';
+import AutocompleteReadme from '../../../../src/autocomplete/readMe.md';
 
 import {
   CardDefaultCode,
@@ -28,9 +30,16 @@ import {
   SnackbarDefaultCode,
   AvatarDefaultCode,
   TooltipDefaultCode,
+  AutoCompleteDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
+  {
+    name: 'Autocomplete',
+    docs: AutocompleteReadme,
+    component: AutoComplete,
+    defaultCode: AutoCompleteDefaultCode
+  },
   {
     name: 'Card',
     docs: CardReadme,
