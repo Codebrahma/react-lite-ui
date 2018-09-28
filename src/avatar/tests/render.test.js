@@ -5,16 +5,16 @@ import Avatar from '../index';
 
 /* eslint-disable no-undef */
 describe('Render Avatar Component', () => {
-  let wrapper;
+  let wrappedComponent;
   it('Should Render Avatar', () => {
-    wrapper = shallow(<Avatar />);
-    assert.strictEqual(wrapper.name(), 'Avatar');
+    wrappedComponent = shallow(<Avatar />);
+    assert.strictEqual(wrappedComponent.name(), 'Avatar');
   });
 
   describe('Render image avatar', () => {
 
     beforeEach(() => {
-      wrapper = mount(
+      wrappedComponent = mount(
         <Avatar 
           image="https://someurl.com/someimage"
           className="avatar-class"
@@ -23,25 +23,25 @@ describe('Render Avatar Component', () => {
     });
 
     afterEach(() => {
-      wrapper.unmount();
+      wrappedComponent.unmount();
     });
     
     it('image prop must be string', () => {
-      assert.strictEqual(wrapper.prop('image'), 'https://someurl.com/someimage');
+      assert.strictEqual(wrappedComponent.prop('image'), 'https://someurl.com/someimage');
     });
     it('should accept className prop', () => {
-      assert.strictEqual(wrapper.prop('className'), 'avatar-class');
+      assert.strictEqual(wrappedComponent.prop('className'), 'avatar-class');
     })
   });
 
   describe('Render text avatar', () => {
     it('should render avtar with a text', () => {
-      const wrapper = shallow(
+      const wrappedComponent = shallow(
         <Avatar>
           CB
         </Avatar>
       );
-      assert.strictEqual(wrapper.childAt(0).text(), 'CB');
+      assert.strictEqual(wrappedComponent.childAt(0).text(), 'CB');
     });
   });
 
