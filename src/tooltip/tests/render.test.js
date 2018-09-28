@@ -12,28 +12,21 @@ describe('Render Tooltip Component', () => {
   let expectedValueAfter;
 
   beforeEach(() => {
-    wrappedComponent = mount(
-      <Tooltip
-        tooltipText='CB tooltip text'
-        top
-      >
-        Tooltip Child
-      </Tooltip>
-    );
+    wrappedComponent = mount(<Tooltip tooltipText="CB tooltip text" top>Tooltip Child</Tooltip>);
   });
 
   afterEach(() => {
     wrappedComponent.unmount();
   });
 
-  const simulateComponent = (simulator) => wrappedComponent.find('#tooltip_wrapper').simulate(simulator);
+  const simulateComponent = simulator => wrappedComponent.find('#tooltip_wrapper').simulate(simulator);
 
   it('Should render Tooltip component', () => {
     expectedValue = 'Tooltip';
     actualValue = () => wrappedComponent.name();
     expect(actualValue(), expectedValue);
   });
-  
+
   it('Should have an id of tooltip_wrapper', () => {
     expectedValue = 1;
     actualValue = () => wrappedComponent.find('#tooltip_wrapper').length;
@@ -54,7 +47,7 @@ describe('Render Tooltip Component', () => {
     simulateComponent('mouseenter');
     expect(actualValue()).equal(expectedValueAfter);
   });
-  
+
   it('Should hide tooltip on mouse leave', () => {
     expectedValueBefore = 1;
     expectedValueAfter = 0;
@@ -86,5 +79,4 @@ describe('Render Tooltip Component', () => {
     actualValue = () => wrappedComponent.prop('tooltipText');
     expect(actualValue()).to.equal(expectedValue);
   });
-
 });

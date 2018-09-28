@@ -32,7 +32,7 @@ class Tooltip extends React.Component {
     return (
       <div
         className={classes}
-        id='tooltip_wrapper'
+        id="tooltip_wrapper"
         {...other}
         onMouseEnter={this.enableTooltip}
         onMouseLeave={this.disableTooltip}
@@ -42,7 +42,7 @@ class Tooltip extends React.Component {
         </div>
         {
           this.state.tooltipActive && (
-            <div className={theme.tip} id='tip'>
+            <div className={theme.tip} id="tip">
               <div className={classnames(theme.tooltipContent, { top })}>
                 {tooltipText}
               </div>
