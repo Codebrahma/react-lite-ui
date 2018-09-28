@@ -115,6 +115,7 @@ class AutoComplete extends Component {
       /* eslint-disable jsx-a11y/click-events-have-key-events */
       return (
         <div
+          aria-label={focus === index ? 'active' : 'inactive'}
           className={classes}
           onClick={() => this.selectItem(item)}
           key={item.label}
@@ -150,7 +151,7 @@ class AutoComplete extends Component {
         {
               showSuggestions &&
               <div
-                id='autocomplete-list'
+                id="autocomplete-list"
                 className={cx(theme['autocomplete-list'])}
                 onMouseEnter={() => this.blockOnBlur(true)}
                 onMouseLeave={() => this.blockOnBlur(false)}
