@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
-import Tooltip from './index';
+import Tooltip from '..';
 
 /* eslint-disable no-undef */
 describe('Render Tooltip Component', () => {

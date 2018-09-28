@@ -15,7 +15,8 @@ import Snackbar from '../../../../src/snackbar';
 import SnackbarReadme from '../../../../src/snackbar/readMe.md';
 import Avatar from '../../../../src/avatar';
 import AvatarReadme from '../../../../src/avatar/readMe.md';
-import Tooltip from '../../../../src/avatar';
+import Tooltip from '../../../../src/tooltip';
+import TooltipReadme from '../../../../src/tooltip/readMe.md';
 import AutoComplete from '../../../../src/autocomplete';
 import AutocompleteReadme from '../../../../src/autocomplete/readMe.md';
 import BadgeReadme from '../../../../src/badge/readMe.md';
@@ -180,13 +181,13 @@ export const componentList = [
   },
   {
     name: 'Toggle',
-    docs: CheckboxGroupReadme,
+    docs: ToggleReadme,
     component: Toggle,
     defaultCode: ToggleDefaultCode,
   },
   {
     name: 'Tooltip',
-    docs: AvatarReadme,
+    docs: TooltipReadme,
     component: Tooltip,
     defaultCode: TooltipDefaultCode,
   }
