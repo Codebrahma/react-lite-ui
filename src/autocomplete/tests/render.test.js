@@ -13,6 +13,7 @@ describe('AutoComplete Render tests', () => {
     { label: 'item 2' },
     { label: 'item 3' },
   ];
+  const AUTOCOMPLETE_LIST_SELECTOR = '#autocomplete-list';
 
   // Simulates focus on the input component.
   const focusOnInput = () => {
@@ -43,7 +44,7 @@ describe('AutoComplete Render tests', () => {
     // Expected value on focus.
     const expectedValue = 1;
     // Dropdown component on focus.
-    const simulatedValue = () => wrappedComponent.find('#autocomplete-list').length;
+    const simulatedValue = () => wrappedComponent.find(AUTOCOMPLETE_LIST_SELECTOR).length;
 
     // Simulate focus on input element which should render the dropdown.
     focusOnInput();
@@ -55,7 +56,7 @@ describe('AutoComplete Render tests', () => {
     // Expected number of list items.
     const expectedValue = data.length;
     // All list items rendered on focus.
-    const simulatedValue = () => wrappedComponent.find('#autocomplete-list').children();
+    const simulatedValue = () => wrappedComponent.find(AUTOCOMPLETE_LIST_SELECTOR).children();
 
     // Simulate focus on input element which should render all the children.
     focusOnInput();
@@ -69,7 +70,7 @@ describe('AutoComplete Render tests', () => {
     // Expected value after blur event on input component.
     const expectedValueAfterBlur = 0;
     // Length of the component before / after blur.
-    const simulatedValue = () => wrappedComponent.find('#autocomplete-list').length;
+    const simulatedValue = () => wrappedComponent.find(AUTOCOMPLETE_LIST_SELECTOR).length;
 
     // Simulate focus on input element.
     focusOnInput();
@@ -85,7 +86,7 @@ describe('AutoComplete Render tests', () => {
     // Expected value after applying filter on input change.
     const expectedValue = 1;
     // Child elements rendered after filter.
-    const simulatedValue = () => wrappedComponent.find('#autocomplete-list').children();
+    const simulatedValue = () => wrappedComponent.find(AUTOCOMPLETE_LIST_SELECTOR).children();
 
     // Simulate change on input component.
     focusOnInput();
