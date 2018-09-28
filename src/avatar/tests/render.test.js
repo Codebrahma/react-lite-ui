@@ -27,49 +27,35 @@ describe('Render Avatar Component', () => {
   it('Should have an id of avatar', () => {
     expectedValue = 1;
     actualValue = () => wrappedComponent.find('#avatar').length;
-    expect(actualValue()).equal(expectedValue);
+    assert.strictEqual(actualValue(), expectedValue);
   });
 
   // Test cases to check image rendering in avatar component
-  describe('Render image avatar', () => {
-
-    beforeEach(() => {
-      wrappedComponent = mount(
-        <Avatar 
-          image="https://someurl.com/someimage"
-          className="avatar-class"
-        />
-      )
-    });
-
-    afterEach(() => {
-      wrappedComponent.unmount();
-    });
-    
-    it('image prop must be string', () => {
-      expectedValue = 'https://someurl.com/someimage';
-      actualValue = () => wrappedComponent.prop('image');
-      assert.strictEqual(actualValue(), expectedValue);
-    });
-    it('should accept className prop', () => {
-      expectedValue = 'avatar-class';
-      actualValue = () => wrappedComponent.prop('className');
-      assert.strictEqual(actualValue(), expectedValue);
-    })
+  afterEach(() => {
+    wrappedComponent.unmount();
   });
+  
+  it('should render avatar with image', () => {
+    expectedValue = 'https://someurl.com/someimage';
+    actualValue = () => wrappedComponent.prop('image');
+    assert.strictEqual(actualValue(), expectedValue);
+  });
+
+  it('should accept className prop', () => {
+    expectedValue = 'avatar-class';
+    actualValue = () => wrappedComponent.prop('className');
+    assert.strictEqual(actualValue(), expectedValue);
+  })
 
   // Test cases to check text is rendered in avatar component
-  describe('Render text avatar', () => {
-    it('should render avatar with a text', () => {
-      const wrappedComponent = shallow(
-        <Avatar>
-          CB
-        </Avatar>
-      );
-      expectedValue = 'CB';
-      actualValue = () => wrappedComponent.childAt(0).text();
-      assert.strictEqual(actualValue(), expectedValue);
-    });
+  it('should render avatar with a text', () => {
+    wrappedComponent = shallow(
+      <Avatar>
+        CB
+      </Avatar>
+    );
+    expectedValue = 'CB';
+    actualValue = () => wrappedComponent.childAt(0).text();
+    assert.strictEqual(actualValue(), expectedValue);
   });
-
 });
