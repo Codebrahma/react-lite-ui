@@ -27,7 +27,7 @@ const Avatar = ({
         ) : null
       }
       <div className={theme.avatarContent}>
-        {children}
+        { title || children }
       </div>
     </div>
   );
