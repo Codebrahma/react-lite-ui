@@ -1,7 +1,7 @@
 import React from 'react';
 import { assert } from 'chai';
 import { shallow, mount } from 'enzyme';
-import Avatar from './index';
+import Avatar from '../index';
 
 /* eslint-disable no-undef */
 describe('Render Avatar Component', () => {
