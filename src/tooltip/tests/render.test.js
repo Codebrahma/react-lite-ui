@@ -14,7 +14,7 @@ describe('Render Tooltip Component', () => {
   beforeEach(() => {
     wrappedComponent = mount(
       <Tooltip
-        tooltipText='Some tip text'
+        tooltipText='CB tooltip text'
         top
       >
         Tooltip Child
@@ -73,6 +73,18 @@ describe('Render Tooltip Component', () => {
     expect(actualValue()).equal(expectedValueBefore);
     simulateComponent('mouseleave');
     expect(actualValue()).equal(expectedValueAfter);
+  });
+
+  it('Should accept the top prop as boolean', () => {
+    expectedValue = true;
+    actualValue = () => wrappedComponent.prop('top');
+    expect(actualValue()).to.equal(expectedValue);
+  });
+
+  it('Should accept tooltipProp as string', () => {
+    expectedValue = 'CB tooltip text';
+    actualValue = () => wrappedComponent.prop('tooltipText');
+    expect(actualValue()).to.equal(expectedValue);
   });
 
 });
