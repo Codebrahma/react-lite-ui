@@ -26,7 +26,7 @@ class Modal extends Component {
 
   render() {
     const {
-      theme, className, body, title, footer, children,
+      theme, className, body, title, footer, children, closeOnBackdropClick,
     } = this.props;
     const { open } = this.state;
     const classes = cx(theme.modal, open === true ? theme['d-block'] : theme['d-none'], className);
@@ -58,7 +58,7 @@ class Modal extends Component {
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     /* eslint-disable jsx-a11y/click-events-have-key-events */
     return (
-      <div className={backdrop}>
+      <div className={backdrop} onClick={closeOnBackdropClick ? this.closeModal : undefined}>
         <div className={classes}>
           {
            childelements ||
@@ -89,6 +89,7 @@ Modal.propTypes = {
   body: PropTypes.node,
   footer: PropTypes.node,
   title: PropTypes.string,
+  closeOnBackdropClick: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -98,6 +99,7 @@ Modal.defaultProps = {
   title: null,
   footer: null,
   children: null,
+  closeOnBackdropClick: true,
 };
 
 export default themr('CBModal', defaultTheme)(Modal);
