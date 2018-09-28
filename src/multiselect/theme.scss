@@ -37,6 +37,7 @@
 
 :local(.show) {
     overflow-y: auto;
+    border-top: 0.2px solid rgba(0,0,0,0.5);
     max-height: 200px;
 }
 
@@ -51,7 +52,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 2em;
+    height: 5em;
+    overflow-y: auto;
     padding: 0 5%;
     z-index: 2;
 }
