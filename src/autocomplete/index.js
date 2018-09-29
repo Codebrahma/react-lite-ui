@@ -48,12 +48,19 @@ class AutoComplete extends Component {
 
   // Hide the options dropdown menu and clear keyboard focused element.
   hideSuggestions = () => {
+    const { input, data } = this.state;
+    const inputlabel = input.label.toLowerCase();
     if (!this.state.blockOnBlur) {
       this.setState({
         showSuggestions: false,
         focus: undefined,
       });
     }
+    const isValid = data
+      .filter(item => item.label.toLowerCase().indexOf(inputlabel) >= 0);
+    this.setState({
+      input: isValid.length ? isValid[0] : { label: '' },
+    });
   }
 
   /*
@@ -104,17 +111,22 @@ class AutoComplete extends Component {
   // Render options from data provided as props to the component.
   renderOptions = () => {
     const { theme, data } = this.props;
-    const { focus } = this.state;
-    return (data.filter(({ label }) => label.indexOf(this.state.input.label) !== -1)
+    const { focus, input } = this.state;
+    const inputlabel = input.label.toLowerCase();
+    return (data.filter(({ label }) => {
+      const datalabel = label.toLowerCase();
+      return datalabel.indexOf(inputlabel) !== -1;
+    })
     ).map((item, index) => {
       const classes = cx(
         theme['autocomplete-list-item'],
         { [`${theme['item-hover']}`]: (focus === index) },
       );
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
-      /* eslint-disable jsx-a11y/click-events-have-key-events */
+        /* eslint-disable jsx-a11y/no-static-element-interactions */
+        /* eslint-disable jsx-a11y/click-events-have-key-events */
       return (
         <div
+          aria-label={focus === index ? 'active' : 'inactive'}
           className={classes}
           onClick={() => this.selectItem(item)}
           key={item.label}
@@ -150,7 +162,8 @@ class AutoComplete extends Component {
         {
               showSuggestions &&
               <div
-                className={theme['autocomplete-list']}
+                id="autocomplete-list"
+                className={cx(theme['autocomplete-list'])}
                 onMouseEnter={() => this.blockOnBlur(true)}
                 onMouseLeave={() => this.blockOnBlur(false)}
               >
