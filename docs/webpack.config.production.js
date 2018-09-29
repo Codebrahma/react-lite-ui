@@ -54,10 +54,6 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('docs.css', { allChunks: true }),
-    new TransferWebpackPlugin([{
-      from: 'public/images',
-      to: 'images',
-    }], path.resolve(__dirname, './')),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
