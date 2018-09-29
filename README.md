@@ -1,7 +1,5 @@
-# How to include in playground
+# Demo: https://react-lite-ui.netlify.com/
 
-Once the component is added in the ```src``` folder,
+Set of components which can be customizable / themeable and extendable.
 
-1. Add default code in ```client/common/DefaultCode```
-2. Import it in the ```index.js``` file of ```DefaultCode folder```
-3. Import these components in the ```common/componentList.js```
+Uses SASS theming support.
