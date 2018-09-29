@@ -16,7 +16,7 @@ const Avatar = ({
   const classes = classnames(theme.avatar, className);
 
   return (
-    <div className={classes} {...other}>
+    <div className={classes} id='avatar' {...other}>
       {
         typeof image === 'string' ? (
           <img
