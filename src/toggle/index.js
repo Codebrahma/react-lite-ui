@@ -22,6 +22,7 @@ const Toggle = ({
       <input
         type="checkbox"
         onClick={() => onClick(label, value)}
+        name={label}
         {...props}
       />
       <span className="toggle-item" />
