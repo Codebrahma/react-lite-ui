@@ -204,7 +204,7 @@ class MultiSelect extends Component {
 }
 
 MultiSelect.propTypes = {
-  options: PropTypes.oneOfType([PropTypes.array]),
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   className: PropTypes.string,
   // User callback for getting selected values - gives array of values
@@ -213,7 +213,6 @@ MultiSelect.propTypes = {
 };
 
 MultiSelect.defaultProps = {
-  options: [],
   className: '',
   onSelect: value => console.log(value),
 };
