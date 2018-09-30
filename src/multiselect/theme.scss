@@ -36,7 +36,6 @@
 
 :local(.show) {
     overflow-y: auto;
-    border-top: 0.2px solid rgba(0,0,0,0.5);
     max-height: 200px;
 }
 
@@ -45,16 +44,25 @@
   height: 0;
 }
 
-:local(.selectInput) {
+:local(.selectedInput) {
+    border-bottom: 0.2px solid rgba(0,0,0,0.5);
     box-sizing: border-box;
     outline: none;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 5em;
+    max-height: 5em;
     overflow-y: auto;
     padding: 0 5%;
     z-index: 2;
+}
+
+:local(.selectInput) {
+    border: none;
+    box-shadow: none;
+    height: 1.3rem;
+    outline: none;
+    padding: 0 5%;
 }
 
 :local(.close) {
@@ -93,7 +101,18 @@
     background: #eee;
     border-radius: 5px;
     min-width: fit-content;
-  }
+    padding: 2px;
+    position: relative;
+    box-sizing: border-box;
+    div {
+        flex-direction: row !important;
+        display: flex;
+        justify-items: space-between;
+        padding: 0 5% 0 10%;
+        background: #eee;
+        border-radius: 5px;
+        min-width: fit-content;
+    }
 }
 
 :local(.selected-option) {
