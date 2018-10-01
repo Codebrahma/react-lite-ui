@@ -2,51 +2,51 @@
     display: flex;
     position: relative;
     width: fit-content;
+    box-sizing: border-box;
     padding: 1%;
 }
 
 :local(.badge-container-small) {
-    padding: 1%;
-}
-
-:local(.badge-container-medium) {
     padding: 1.5%;
 }
 
+:local(.badge-container-medium) {
+    padding: 3%;
+}
+
 :local(.badge-container-large) {
-    padding: 2%;
+    padding: 5%;
 }
 
 :local(.badge) {
-    display: flex;
-    align-items: center;
+    display:inline-flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     border-radius: 50%;
     background-color: red;
     position: absolute;
     top: 0;
     right: 0;
     color: white;
-    height: 15px;
-    width: 15px;
-    font-size: 0.8em;
+    min-width: fit-content;
+    padding: 1px;
+    font-family: 'Helvetica';
 }
 
 :local(.small) {
-    height: 15px;
-    width: 15px;
-    font-size: 0.8em;
+    font-size: 0.7em;
+    height: 1.4em;
+    width: 1.4em;
 }
 
 :local(.medium) {
-    height: 20px;
-    width: 20px;
-    font-size: 0.9em;
+    font-size: 0.85em;
+    height: 1.7em;
+    width: 1.7em;
 }
 
 :local(.large) {
-    height: 25px;
-    width: 25px;
     font-size: 1em;
+    height: 2em;
+    width: 2em;
 }
