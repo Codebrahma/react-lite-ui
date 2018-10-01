@@ -18,6 +18,8 @@
     flex-direction: column;
     width: 100%;
     background-color: white;
+    max-height: 150px;
+    overflow: auto;
 }
 
 :local(.option) {
@@ -28,6 +30,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     outline: none;
+    min-height: fit-content;
 
     &:hover {
         background: rgba($color: #00b0ff, $alpha: 0.5);
@@ -36,24 +39,32 @@
 }
 
 :local(.show) {
-    overflow-y: auto;
-    max-height: 200px;
+    display: flex;
 }
 
 :local(.hide) {
-    overflow: hidden;
-    height: 0;
+    display: none;
 }
 
-:local(.selectInput) {
+:local(.selectedInput) {
+    border-bottom: 0.2px solid rgba(0,0,0,0.5);
     box-sizing: border-box;
     outline: none;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 2em;
+    max-height: 5em;
+    overflow-y: auto;
     padding: 0 5%;
     z-index: 2;
+}
+
+:local(.selectInput) {
+    border: none;
+    box-shadow: none;
+    height: 1.3rem;
+    outline: none;
+    padding: 0 5%;
 }
 
 :local(.close) {
@@ -81,6 +92,7 @@
 :local(.selected) {
     min-width: fit-content;
     padding: 2px;
+    position: relative;
     box-sizing: border-box;
     div {
         flex-direction: row !important;
