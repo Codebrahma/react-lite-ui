@@ -1,5 +1,5 @@
 import React from 'react';
-import { assert, expect } from 'chai';
+import { assert } from 'chai';
 import { shallow, mount } from 'enzyme';
 import Avatar from '../index';
 
@@ -10,14 +10,12 @@ describe('Render Avatar Component', () => {
   let actualValue;
 
   beforeEach(() => {
-    wrappedComponent = mount(
-      <Avatar 
-        image="https://someurl.com/someimage"
-        className="avatar-class"
-      />
-    )
+    wrappedComponent = mount(<Avatar
+      image="https://someurl.com/someimage"
+      className="avatar-class"
+    />);
   });
-  
+
   it('Should Render Avatar', () => {
     expectedValue = 'ThemedAvatar';
     actualValue = () => wrappedComponent.name();
@@ -34,7 +32,7 @@ describe('Render Avatar Component', () => {
   afterEach(() => {
     wrappedComponent.unmount();
   });
-  
+
   it('should render avatar with image', () => {
     expectedValue = 'https://someurl.com/someimage';
     actualValue = () => wrappedComponent.prop('image');
@@ -45,15 +43,11 @@ describe('Render Avatar Component', () => {
     expectedValue = 'avatar-class';
     actualValue = () => wrappedComponent.prop('className');
     assert.strictEqual(actualValue(), expectedValue);
-  })
+  });
 
   // Test cases to check text is rendered in avatar component
   it('should render avatar with a text', () => {
-    wrappedComponent = shallow(
-      <Avatar>
-        CB
-      </Avatar>
-    );
+    wrappedComponent = shallow(<Avatar>CB</Avatar>);
     expectedValue = 'CB';
     actualValue = () => wrappedComponent.childAt(0).text();
     assert.strictEqual(actualValue(), expectedValue);
