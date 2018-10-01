@@ -19,10 +19,9 @@ describe('Toggle accessibility tests', () => {
       this.state = {
         toggled: false,
       };
-      this.handleToggle = this.handleToggle.bind(this);
     }
 
-    handleToggle() {
+    handleToggle = () => {
       this.setState(prevState => ({
         toggled: !prevState.toggled,
       }));
@@ -49,7 +48,7 @@ describe('Toggle accessibility tests', () => {
 
   const simulateComponent = () => wrappedComponent.find('input').simulate('click');
 
-  it('Should toggle the className toggled onClick', () => {
+  it('Should toggle the id toggled onClick', () => {
     expectedValueBefore = 0;
     expectedValueAfter = 1;
     actualValue = () => wrappedComponent.find('#toggled').length;
@@ -72,10 +71,13 @@ describe('Toggle accessibility tests', () => {
   });
 
   it('Should accept name prop and overwrite any other value set by label prop as default', () => {
-    wrappedComponent = shallow(<Toggle name="toggle_name" label="input_toggle" />);
-    expectedValue = 'toggle_name';
-    actualValue = () => wrappedComponent.prop('name');
-    expect(actualValue()).equal(expectedValue);
+    wrappedComponent = mount(<Toggle label="input_toggle" />);
+    expectedValueBefore = 'input_toggle';
+    expectedValueAfter = 'toggle_name';
+    actualValue = () => wrappedComponent.find('input').props().name;
+    expect(actualValue()).to.equal(expectedValueBefore);
+    wrappedComponent.setProps({ name: 'toggle_name' });
+    expect(actualValue()).to.equal(expectedValueAfter);
   });
 
   it('Should callback the same number of times its clicked', () => {

@@ -8,7 +8,7 @@ The base toggle component.
 | `toggled` | `boolean` | `false` | Prop that sends in the state of toggle |
 | `onClick` | `Function` | &nbsp; | Callback to be called when toggled |
 | `additionalClass` | `String` | &nbsp; | Prop to send additional classNames for styling |
-| `label` | `String` | `toggle` | Prop to bind label and input element in component |
+| `label` | `String` | `toggle` | Prop to send when a callback value is required onClick |
 | &nbsp; | `any` | &nbsp; | Any additional props passed will be spreaded on input element |
 
 
