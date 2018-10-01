@@ -14,27 +14,27 @@ describe('Toggle accessibility tests', () => {
   class App extends React.Component {
     constructor(props) {
       super(props);
-  
+
       this.state = {
         toggled: false,
       };
       this.handleToggle = this.handleToggle.bind(this);
     }
-  
+
     handleToggle() {
       this.setState(prevState => ({
         toggled: !prevState.toggled,
       }));
     }
-  
+
     render() {
       return (
         <Toggle
           toggled={this.state.toggled}
           onClick={this.handleToggle}
-          label='input_toggle'
+          label="input_toggle"
         />
-      )
+      );
     }
   }
 
@@ -58,7 +58,7 @@ describe('Toggle accessibility tests', () => {
   });
 
   it('Should accept label prop', () => {
-    wrappedComponent = shallow(<Toggle label='input_toggle' />)
+    wrappedComponent = shallow(<Toggle label="input_toggle" />);
     expectedValue = 'input_toggle';
     actualValue = () => wrappedComponent.prop('label');
     expect(actualValue()).equal(expectedValue);
@@ -71,7 +71,7 @@ describe('Toggle accessibility tests', () => {
   });
 
   it('Should accept name prop and overwrite any other value set by label prop as default', () => {
-    wrappedComponent = shallow(<Toggle name='toggle_name' label='input_toggle' />)
+    wrappedComponent = shallow(<Toggle name="toggle_name" label="input_toggle" />);
     expectedValue = 'toggle_name';
     actualValue = () => wrappedComponent.prop('name');
     expect(actualValue()).equal(expectedValue);

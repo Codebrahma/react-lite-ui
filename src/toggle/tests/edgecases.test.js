@@ -20,7 +20,7 @@ describe('Toggle edge case tests', () => {
   });
 
   const simulateComponent = () => wrappedComponent.find('input').simulate('click');
-  
+
   it('Should do  nothing when clicked', () => {
     expectedValueBefore = 0;
     expectedValueAfter = 0;

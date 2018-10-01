@@ -21,11 +21,11 @@ const Toggle = ({
     <label
       className={classNames}
       htmlFor={label}
-      id='toggle_component'
-      >
+      id="toggle_component"
+    >
       <input
         type="checkbox"
-        name={label} //when name prop isn't passed, name sets to same value as label prop
+        name={label} // when name prop isn't passed, name sets to same value as label prop
         id={label}
         onClick={() => onClick(label, value)}
         className={toggled ? 'toggled-tests' : undefined}
