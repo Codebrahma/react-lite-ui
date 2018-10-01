@@ -59,11 +59,13 @@ class CheckboxGroup extends React.Component {
 CheckboxGroup.propTypes = {
   options: PropTypes.oneOfType([PropTypes.array]).isRequired,
   inline: PropTypes.bool,
+  onClick: PropTypes.func,
   theme: PropTypes.string,
 };
 
 CheckboxGroup.defaultProps = {
   inline: false,
+  onClick: () => {},
   theme: '',
 };
 
