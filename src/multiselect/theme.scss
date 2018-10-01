@@ -18,21 +18,24 @@
     flex-direction: column;
     width: 100%;
     background-color: white;
-    max-height: 200px;
+    max-height: 150px;
+    overflow: auto;
 }
 
 :local(.option) {
-  width: 100;
-  padding: 2% 5% 0% 5%;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  outline: none;
-  &:hover {
-    background: rgba($color: #00b0ff, $alpha: 0.5);
-    color: white;
-  }
+    width: 100;
+    padding: 2% 5% 0% 5%;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: none;
+    min-height: fit-content;
+
+    &:hover {
+        background: rgba($color: #00b0ff, $alpha: 0.5);
+        color: white;
+    }
 }
 
 :local(.show) {
