@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
+import sinon from 'sinon';
 import Toggle from '..';
 
 /* eslint-disable no-undef */
@@ -75,5 +76,16 @@ describe('Toggle accessibility tests', () => {
     expectedValue = 'toggle_name';
     actualValue = () => wrappedComponent.prop('name');
     expect(actualValue()).equal(expectedValue);
+  });
+
+  it('Should callback the same number of times its clicked', () => {
+    expectedValueBefore = 0;
+    expectedValueAfter = 2;
+    const onClick = sinon.spy();
+    wrappedComponent = mount(<Toggle onClick={onClick} />);
+    expect(onClick).to.have.property('callCount', expectedValueBefore);
+    simulateComponent();
+    simulateComponent();
+    expect(onClick).to.have.property('callCount', expectedValueAfter);
   });
 });
