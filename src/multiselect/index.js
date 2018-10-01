@@ -52,7 +52,11 @@ class MultiSelect extends Component {
   handleKeyPress = (e) => {
     const { options } = this.props;
     const { input, selected } = this.state;
-    const isValid = (options.filter(opt => opt.label.toLowerCase().indexOf(input.toLowerCase()) !== -1));
+    const isValid = (options
+      .filter(opt =>
+        opt.label
+          .toLowerCase()
+          .indexOf(input.toLowerCase()) !== -1));
     switch (e.key) {
       case 'Enter':
         if (isValid.length) {
@@ -121,7 +125,11 @@ class MultiSelect extends Component {
     const { selected, input } = this.state;
     let filteredOptions;
     if (input.length) {
-      filteredOptions = options.filter(opt => opt.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
+      filteredOptions = options
+        .filter(opt =>
+          opt.label
+            .toLowerCase()
+            .indexOf(input.toLowerCase()) !== -1);
     } else {
       filteredOptions = options;
     }
@@ -155,7 +163,7 @@ class MultiSelect extends Component {
     const { theme } = this.props;
     const { selected } = this.state;
     return selected.map(option => (
-      <div className={theme.selected}>
+      <div className={theme.selected} key={option.label}>
         <div>
           <span>{option.label}</span>
           <div
@@ -175,6 +183,7 @@ class MultiSelect extends Component {
     return (
       <div className={classes}>
         <div
+          id="selected-options"
           className={theme.selectedInput}
           onClick={this.toggleMenu}
           onBlur={this.hideMenu}
@@ -191,13 +200,17 @@ class MultiSelect extends Component {
           onBlur={this.hideMenu}
           onKeyDown={this.handleKeyPress}
         />
-        <div
-          className={menuclass}
-          onMouseEnter={() => this.blockOnBlur(true)}
-          onMouseLeave={() => this.blockOnBlur(false)}
-        >
-          {this.renderOptions(options)}
-        </div>
+        {
+          open &&
+          <div
+            id="dropdown-options"
+            className={menuclass}
+            onMouseEnter={() => this.blockOnBlur(true)}
+            onMouseLeave={() => this.blockOnBlur(false)}
+          >
+            {this.renderOptions(options)}
+          </div>
+        }
       </div>
     );
   }
