@@ -18,10 +18,15 @@ const Toggle = ({
   }, additionalClass);
 
   return (
-    <label className={classNames}>
+    <label
+      className={classNames}
+      id="toggle_component"
+    >
       <input
         type="checkbox"
+        name={label} // when name prop isn't passed, name sets to same value as label prop
         onClick={() => onClick(label, value)}
+        id={toggled ? 'toggled' : undefined}
         {...props}
       />
       <span className="toggle-item" />
