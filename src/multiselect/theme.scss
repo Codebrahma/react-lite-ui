@@ -18,6 +18,7 @@
     flex-direction: column;
     width: 100%;
     background-color: white;
+    max-height: 200px;
 }
 
 :local(.option) {
@@ -36,13 +37,11 @@
 }
 
 :local(.show) {
-    overflow-y: auto;
-    max-height: 200px;
+    display: flex;
 }
 
 :local(.hide) {
-    overflow: hidden;
-    height: 0;
+    display: none;
 }
 
 :local(.selectedInput) {
