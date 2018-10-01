@@ -51,7 +51,7 @@ describe('Toggle accessibility tests', () => {
   it('Should toggle the className toggled onClick', () => {
     expectedValueBefore = 0;
     expectedValueAfter = 1;
-    actualValue = () => wrappedComponent.find('.toggled-tests').length;
+    actualValue = () => wrappedComponent.find('#toggled').length;
     expect(actualValue()).equal(expectedValueBefore);
     simulateComponent();
     expect(actualValue()).equal(expectedValueAfter);
