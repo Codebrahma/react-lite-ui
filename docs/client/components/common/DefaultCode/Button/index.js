@@ -4,6 +4,8 @@ class Demo extends React.Component {
     return (
       <div>
         <PreviewBlock header="Styled Buttons">
+        <div style={{display: 'grid',
+        gridTemplateColumns: 'auto auto auto', gridGap: 20}} >
           <Button>Default</Button>
           <Button type="primary">Primary</Button>
           <Button type="secondary">Secondary</Button>
@@ -13,8 +15,11 @@ class Demo extends React.Component {
           <Button type="info">Info</Button>
           <Button type="light">Light</Button>
           <Button type="dark">Dark</Button>
+          </div>
         </PreviewBlock>
         <PreviewBlock header="Sizable Buttons">
+        <div style={{display: 'grid',
+        gridTemplateColumns: 'auto auto auto', gridGap: 20, alignItems: 'center'}} >
           <Button 
             type="primary"
             size="small"
@@ -33,6 +38,7 @@ class Demo extends React.Component {
           >
             Large
           </Button>
+          </div>
         </PreviewBlock>
       </div>
     )
