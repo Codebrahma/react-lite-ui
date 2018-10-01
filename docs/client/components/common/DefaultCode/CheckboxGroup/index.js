@@ -30,7 +30,6 @@ class Demo extends React.Component {
           <CheckboxGroup
             inline
             options={options}
-            onClick={this.handleCheckListClick}
           />
         </PreviewBlock>
       </div>

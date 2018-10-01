@@ -19,13 +19,14 @@ class CheckboxGroup extends React.Component {
   }
 
   handleCheckListChange = (label) => {
+    const { onClick } = this.props;
     const { isChecked } = this.state;
     isChecked[label] = !isChecked[label];
     this.setState({
       isChecked,
     });
-    this.props.onClick(label);
-  }
+    if (onClick) { onClick(label); }
+  };
 
   render() {
     const {
