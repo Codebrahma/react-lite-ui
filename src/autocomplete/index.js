@@ -13,8 +13,8 @@ class AutoComplete extends Component {
     `showSuggestions` to toggle dropdown menu.
     */
     this.state = {
-      data: this.props.data,
-      input: { label: '' },
+      data: props.data,
+      input: { [`${props.labelKey}`]: '', [`${props.valueKey}`]: null },
       showSuggestions: false,
       blockOnBlur: false,
     };
@@ -22,11 +22,13 @@ class AutoComplete extends Component {
 
   // Handle user input change on typing.
   handleInput = ({ target }) => {
-    const { onChange } = this.props;
-    this.setState({
-      input: { label: target.value },
+    const { onChange, labelKey } = this.props;
+    this.setState((prevState) => {
+      onChange({ ...prevState.input, [`${labelKey}`]: target.value });
+      return {
+        input: { ...prevState.input, [`${labelKey}`]: target.value },
+      };
     });
-    onChange({ label: target.value });
   }
 
   // Handle user input select from dropdown.
@@ -76,8 +78,11 @@ class AutoComplete extends Component {
   and selecting an option.
   */
   handleKeyDown = ({ key }) => {
-    const { data, focus, input } = this.state;
-    const inputlabel = input.label.toLowerCase();
+    const {
+      data, focus, input,
+    } = this.state;
+    const { labelKey, onChange } = this.props;
+    const inputlabel = input[`${labelKey}`].toLowerCase();
     let isValid;
     switch (key) {
       case 'ArrowDown':
@@ -100,10 +105,13 @@ class AutoComplete extends Component {
           this.selectItem(data[focus]);
         } else {
           isValid = data
-            .filter(item => item.label.toLowerCase().indexOf(inputlabel) >= 0);
+            .filter(item => item[`${labelKey}`].toLowerCase().indexOf(inputlabel) >= 0);
           if (isValid.length) {
-            this.setState({
-              input: isValid[0],
+            this.setState(() => {
+              onChange(isValid[0]);
+              return {
+                input: isValid[0],
+              };
             });
           }
         }
@@ -115,11 +123,11 @@ class AutoComplete extends Component {
 
   // Render options from data provided as props to the component.
   renderOptions = () => {
-    const { theme, data } = this.props;
+    const { theme, data, labelKey } = this.props;
     const { focus, input } = this.state;
-    const inputlabel = input.label.toLowerCase();
-    return (data.filter(({ label }) => {
-      const datalabel = label.toLowerCase();
+    const inputlabel = input[`${labelKey}`].toLowerCase();
+    return (data.filter((item) => {
+      const datalabel = item[`${labelKey}`].toLowerCase();
       return datalabel.indexOf(inputlabel) !== -1;
     })
     ).map((item, index) => {
@@ -134,8 +142,8 @@ class AutoComplete extends Component {
           aria-label={focus === index ? 'active' : 'inactive'}
           className={classes}
           onClick={() => this.selectItem(item)}
-          key={item.label}
-        >{item.label}
+          key={item[`${labelKey}`]}
+        >{item[`${labelKey}`]}
         </div>
       );
     });
@@ -147,6 +155,8 @@ class AutoComplete extends Component {
       className,
       theme,
       onChange,
+      labelKey,
+      valueKey,
       ...rest
     } = this.props;
     const { showSuggestions } = this.state;
@@ -156,7 +166,7 @@ class AutoComplete extends Component {
         <input
           className={theme['autocomplete-input']}
           type="text"
-          value={this.state.input.label}
+          value={this.state.input[`${labelKey}`]}
           placeholder={placeholder}
           onFocus={this.showSuggestions}
           onBlur={this.hideSuggestions}
@@ -187,12 +197,16 @@ AutoComplete.propTypes = {
   className: Proptypes.string,
   onChange: Proptypes.func,
   onKeyPress: Proptypes.func,
+  labelKey: Proptypes.string,
+  valueKey: Proptypes.string,
 };
 
 AutoComplete.defaultProps = {
   placeholder: undefined,
   theme: defaultTheme,
   className: '',
+  labelKey: 'label',
+  valueKey: 'value',
   onChange: () => {},
   onKeyPress: () => {},
 };
