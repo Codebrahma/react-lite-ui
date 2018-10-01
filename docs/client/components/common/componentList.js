@@ -5,7 +5,7 @@ import ButtonReadme from '../../../../src/button/readMe.md';
 import Checkbox from '../../../../src/checkbox';
 import CheckboxReadme from '../../../../src/checkbox/readMe.md';
 import CheckboxGroup from '../../../../src/checkbox';
-import CheckboxGroupReadme from '../../../../src/checkbox/readMe.md';
+import CheckboxGroupReadme from '../../../../src/checkboxGroup/readMe.md';
 import Toggle from '../../../../src/toggle';
 import ToggleReadme from '../../../../src/toggle/readMe.md';
 import RadioButtonGroup from '../../../../src/radioButtonGroup';
