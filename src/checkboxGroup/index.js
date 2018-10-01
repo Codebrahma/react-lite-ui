@@ -24,6 +24,7 @@ class CheckboxGroup extends React.Component {
     this.setState({
       isChecked,
     });
+    this.props.onClick(label);
   }
 
   render() {
