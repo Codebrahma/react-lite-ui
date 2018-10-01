@@ -2,6 +2,8 @@
     width: 20vw;
     :local(.autocomplete-input) {
         width: 100%;
+        font-size: 1rem;
+        padding: 0 2%;
         border: none;
         border-bottom: 2px solid black;
         outline: none;
@@ -17,6 +19,7 @@
         :local(.autocomplete-list-item) {
             display: block;
             box-sizing: border-box;
+            cursor: pointer;
             padding: 2% 2%;
             box-shadow: none;
             &:hover {

@@ -48,19 +48,12 @@ class AutoComplete extends Component {
 
   // Hide the options dropdown menu and clear keyboard focused element.
   hideSuggestions = () => {
-    const { input, data } = this.state;
-    const inputlabel = input.label.toLowerCase();
     if (!this.state.blockOnBlur) {
       this.setState({
         showSuggestions: false,
         focus: undefined,
       });
     }
-    const isValid = data
-      .filter(item => item.label.toLowerCase().indexOf(inputlabel) >= 0);
-    this.setState({
-      input: isValid.length ? isValid[0] : { label: '' },
-    });
   }
 
   /*
@@ -83,7 +76,9 @@ class AutoComplete extends Component {
   and selecting an option.
   */
   handleKeyDown = ({ key }) => {
-    const { data, focus } = this.state;
+    const { data, focus, input } = this.state;
+    const inputlabel = input.label.toLowerCase();
+    let isValid;
     switch (key) {
       case 'ArrowDown':
         this.setState(prevState => ({
@@ -101,7 +96,17 @@ class AutoComplete extends Component {
         }));
         break;
       case 'Enter':
-        this.selectItem(data[focus]);
+        if (focus) {
+          this.selectItem(data[focus]);
+        } else {
+          isValid = data
+            .filter(item => item.label.toLowerCase().indexOf(inputlabel) >= 0);
+          if (isValid.length) {
+            this.setState({
+              input: isValid[0],
+            });
+          }
+        }
         break;
       default:
         break;
