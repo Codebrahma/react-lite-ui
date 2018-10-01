@@ -18,3 +18,8 @@
     border-bottom-color: $primary-color;
   }
 }
+
+:local(.disabled) {
+  border-bottom: 3px solid rgba($color: #000000, $alpha: 0.3); 
+  cursor: not-allowed;
+}

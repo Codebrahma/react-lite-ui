@@ -8,15 +8,17 @@ const TextInput = ({
   additionalClasses,
   theme,
   width,
+  disabled,
   ...others
 }) => {
   const wrapperClasses = classnames(theme.inputWrapper, additionalClasses);
   const inputElementProps = {
     ...others,
+    disabled,
     style: {
       width: width || '100%',
     },
-    className: classnames(theme.inputElement),
+    className: classnames(theme.inputElement, { [`${theme.disabled}`]: disabled }),
   };
   return (
     <div className={wrapperClasses}>
@@ -28,13 +30,15 @@ const TextInput = ({
 TextInput.propTypes = {
   width: PropTypes.string,
   additionalClasses: PropTypes.string,
-  theme: PropTypes.object, // eslint-disable-line
+  theme: PropTypes.oneOfType([PropTypes.object]),
+  disabled: PropTypes.bool, // eslint-disable-line
 };
 
 TextInput.defaultProps = {
   additionalClasses: '',
   theme: defaultTheme,
   width: null,
+  disabled: false,
 };
 
 export default themr('CBInput', defaultTheme)(TextInput);
