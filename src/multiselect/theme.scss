@@ -18,7 +18,8 @@
     flex-direction: column;
     width: 100%;
     background-color: white;
-    max-height: 200px;
+    max-height: 150px;
+    overflow: auto;
 }
 
 :local(.option) {
@@ -29,6 +30,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     outline: none;
+    min-height: fit-content;
 
     &:hover {
         background: rgba($color: #00b0ff, $alpha: 0.5);
