@@ -163,7 +163,11 @@ class MultiSelect extends Component {
     const { theme } = this.props;
     const { selected } = this.state;
     return selected.map(option => (
-      <div className={theme.selected} key={option.label}>
+      <div
+        className={theme.selected}
+        aria-label={option.label}
+        key={option.label}
+      >
         <div>
           <span>{option.label}</span>
           <div

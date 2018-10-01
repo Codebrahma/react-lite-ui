@@ -80,6 +80,6 @@ describe('MultiSelect render test', () => {
           .simulate('click'));
     expect(wrappedComponent
       .find('#selected-options')
-      .children()).length(expectedValueAfterSelection);
+      .children().length).to.equal(expectedValueAfterSelection);
   });
 });
