@@ -90,7 +90,7 @@ Snackbar.propTypes = {
 };
 
 Snackbar.defaultProps = {
-  additionaClasses: null,
+  additionaClasses: '',
   timeout: 2000,
   autoClose: true,
   position: 'bottom',
