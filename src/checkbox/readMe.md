@@ -6,7 +6,7 @@ The base checkbox component.
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
 | `checked` | `boolean` | `false` | Prop that sends in the state of toggle |
-| `onClick` | `Function` | &nbsp; | Callback to be called when checked |
+| `onClick` | `Function` | &nbsp; | Callback to be called when checked or unchecked |
 | `additionalClass` | `String` | &nbsp; | Prop to send additional classNames for styling |
 | `label` | `String` | `check` | Prop to send when a callback value is required onClick |
 | &nbsp; | `any` | &nbsp; | Any additional props passed will be spreaded on input element |

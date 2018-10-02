@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
+import sinon from 'sinon';
 import Checkbox from '..';
 
 /* eslint-disable no-undef */
@@ -48,9 +49,9 @@ describe('Checkbox accessibility tests', () => {
   const simulateComponent = () => wrappedComponent.find('input').simulate('click');
 
   it('Should toggle the id checked onClick', () => {
-    expectedValueBefore = 0;
-    expectedValueAfter = 1;
-    actualValue = () => wrappedComponent.find('#checked').length;
+    expectedValueBefore = false;
+    expectedValueAfter = true;
+    actualValue = () => wrappedComponent.find('Checkbox').prop('checked');
     expect(actualValue()).equal(expectedValueBefore);
     simulateComponent();
     expect(actualValue()).equal(expectedValueAfter);
@@ -77,5 +78,16 @@ describe('Checkbox accessibility tests', () => {
     expect(actualValue()).to.equal(expectedValueBefore);
     wrappedComponent.setProps({ name: 'check_name' });
     expect(actualValue()).to.equal(expectedValueAfter);
+  });
+
+  it('Should callback the same number of times its clicked', () => {
+    expectedValueBefore = 0;
+    expectedValueAfter = 2;
+    const onClick = sinon.spy();
+    wrappedComponent = mount(<Checkbox onClick={onClick} />);
+    expect(onClick).to.have.property('callCount', expectedValueBefore);
+    simulateComponent();
+    simulateComponent();
+    expect(onClick).to.have.property('callCount', expectedValueAfter);
   });
 });
