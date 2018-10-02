@@ -49,9 +49,9 @@ describe('Toggle accessibility tests', () => {
   const simulateComponent = () => wrappedComponent.find('input').simulate('click');
 
   it('Should toggle the id toggled onClick', () => {
-    expectedValueBefore = 0;
-    expectedValueAfter = 1;
-    actualValue = () => wrappedComponent.find('#toggled').length;
+    expectedValueBefore = false;
+    expectedValueAfter = true;
+    actualValue = () => wrappedComponent.find('Toggle').prop('toggled');
     expect(actualValue()).equal(expectedValueBefore);
     simulateComponent();
     expect(actualValue()).equal(expectedValueAfter);
