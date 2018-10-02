@@ -5,7 +5,7 @@ The base RadioButtonGroup component.
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `options` | `Array` | &nbsp; | Options to render checkboxes for. |
+| `options` | `Array` | &nbsp; | Options to render radio buttons for. |
 | `onClick` | `Function` | &nbsp; | Callback function to be called when the radio button is clicked |
 | `inline` | `boolean` | `false` | Prop to define the alignment of radio button group |
 
@@ -15,7 +15,7 @@ The base RadioButtonGroup component.
 |:---------|:-----------|
 | `radio-group`   | Class used for the root element.|
 | `customized-radio`   | Class used for the radio button element.|
-| `each-check`   | Class used for the checkbox element.|
+| `each-radio`   | Class used for the radio button wrapper element.|
 | `each-label`   | Class used for the label element.|
 
 ### Usage
