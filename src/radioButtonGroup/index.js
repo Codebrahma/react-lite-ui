@@ -13,13 +13,13 @@ class RadioButtonGroup extends React.Component {
     };
   }
 
-  handleCheckListChange = (e, option) => {
+  handleRadioBtnChange = (e, option) => {
     const { onClick } = this.props;
     e.stopPropagation();
     this.setState({
       currentlyActive: option.label,
     });
-    if (onClick) { onClick(option); }
+    onClick(option);
   };
 
   render() {
@@ -30,14 +30,20 @@ class RadioButtonGroup extends React.Component {
     } = this.props;
 
     const classNames = cx(styles['radio-group']);
+
+    const isChecked = label => label === this.state.currentlyActive ? 'active' : '';
+
     return options.map(option => (
       <React.Fragment key={option.label}>
         <div className={classNames}>
           {/* eslint-disable jsx-a11y/click-events-have-key-events */ }
           { /* eslint-disable jsx-a11y/no-static-element-interactions */ }
-          <div className={cx(styles['each-check'], { inline })} onClick={(e) => { this.handleCheckListChange(e, option); }}>
+          <div
+            className={cx(styles['each-radio'], { inline })}
+            onClick={(e) => { this.handleRadioBtnChange(e, option); }}
+          >
             <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
-              <label className={cx('inner', { checked: (option.label === this.state.currentlyActive) ? 'active' : '' })}>
+              <label className={cx('inner', { checked: isChecked(option.label) })}>
                 <input type="radio" />
               </label>
             </label>
