@@ -1,4 +1,4 @@
-## Button
+## Snackbar
 
 The base Snackbar component.
 
@@ -10,6 +10,7 @@ The base Snackbar component.
 | `autoClose` | `Boolean` | true | Prop to decide whether the snackbar should close automatically after the given timeout or not |
 | `onClose` | `function` | null | The callback function to be called when the snackbar closes |
 | `position` | `String` | `bottom` | The position at which the snackbar should be show. The possible values are `top`, `bottom` |
+| `additionalClasses` | `String` | &nbsp; | Prop to send in additional classNames for styling the component |
 
 ### Theme
 

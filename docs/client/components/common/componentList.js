@@ -5,10 +5,11 @@ import ButtonReadme from '../../../../src/button/readMe.md';
 import Checkbox from '../../../../src/checkbox';
 import CheckboxReadme from '../../../../src/checkbox/readMe.md';
 import CheckboxGroup from '../../../../src/checkbox';
-import CheckboxGroupReadme from '../../../../src/checkbox/readMe.md';
+import CheckboxGroupReadme from '../../../../src/checkboxGroup/readMe.md';
 import Toggle from '../../../../src/toggle';
 import ToggleReadme from '../../../../src/toggle/readMe.md';
 import RadioButtonGroup from '../../../../src/radioButtonGroup';
+import RadioButtonGroupReadme from '../../../../src/radioButtonGroup/readMe.md';
 import TextInput from '../../../../src/textInput';
 import TextInputReadme from '../../../../src/textInput/readMe.md';
 import Snackbar from '../../../../src/snackbar';
@@ -157,7 +158,7 @@ export const componentList = [
   },
   {
     name: 'RadioButtonGroup',
-    docs: CheckboxGroupReadme,
+    docs: RadioButtonGroupReadme,
     component: RadioButtonGroup,
     defaultCode: RadioButtonGroupDefaultCode,
   },

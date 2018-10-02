@@ -8,8 +8,6 @@ describe('Checkbox edge case tests', () => {
   let wrappedComponent;
   let expectedValue;
   let actualValue;
-  let expectedValueBefore;
-  let expectedValueAfter;
 
   beforeEach(() => {
     wrappedComponent = mount(<Checkbox />);
@@ -21,13 +19,12 @@ describe('Checkbox edge case tests', () => {
 
   const simulateComponent = () => wrappedComponent.find('input').simulate('click');
 
-  it('Should do nothing when clicked', () => {
-    expectedValueBefore = 0;
-    expectedValueAfter = 0;
-    actualValue = () => wrappedComponent.find('#checked').length;
-    expect(actualValue()).equal(expectedValueBefore);
+  it('Should do nothing when clicked without passing any checked state', () => {
+    expectedValue = false;
+    actualValue = () => wrappedComponent.find('Checkbox').prop('checked');
+    expect(actualValue()).equal(expectedValue);
     simulateComponent();
-    expect(actualValue()).equal(expectedValueAfter);
+    expect(actualValue()).equal(expectedValue);
   });
 
   it('checked prop must be false by default', () => {
