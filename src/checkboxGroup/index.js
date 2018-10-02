@@ -19,12 +19,14 @@ class CheckboxGroup extends React.Component {
   }
 
   handleCheckListChange = (label) => {
+    const { onClick } = this.props;
     const { isChecked } = this.state;
     isChecked[label] = !isChecked[label];
     this.setState({
       isChecked,
     });
-  }
+    onClick(label);
+  };
 
   render() {
     const {
@@ -58,11 +60,13 @@ class CheckboxGroup extends React.Component {
 CheckboxGroup.propTypes = {
   options: PropTypes.oneOfType([PropTypes.array]).isRequired,
   inline: PropTypes.bool,
+  onClick: PropTypes.func,
   theme: PropTypes.string,
 };
 
 CheckboxGroup.defaultProps = {
   inline: false,
+  onClick: () => {},
   theme: '',
 };
 
