@@ -1,5 +1,5 @@
 ```
-import { Card } from 'react-lite;
+import { Card } from 'react-lite-ui';
 import theme from './theme.scss';
 
 const App = (
