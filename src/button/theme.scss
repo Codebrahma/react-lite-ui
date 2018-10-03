@@ -1,6 +1,7 @@
 @import '../globals/theme';
 
 :local(.button) {
+  border-radius: 2px;
   align-content: center;
   align-items: center;
   border: 0;
@@ -68,52 +69,79 @@
   color: $original-black;
   background-color: $original-white;
   border-color: $original-white;
+  &:hover {
+    background-color: darken($original-white, 5%);
+  }
 }
 
 :local(.primary) {
   color: $original-white;
   background-color: $secondary-violet;
   border-color: $secondary-violet;
+  &:hover {
+    background-color: darken($secondary-violet, 5%);
+  }
 }
 
 :local(.secondary) {
   color: $original-white;
   background-color: $secondary-grey;
   border-color: $secondary-grey;
+  &:hover {
+    background-color: darken($secondary-grey, 5%);
+  }
 }
 
 :local(.success) {
   color: $original-white;
   background-color: $secondary-green;
   border-color: $secondary-green;
+  &:hover {
+    background-color: darken($secondary-green, 5%);
+  }
 }
 
 :local(.danger) {
   color: $original-white;
   background-color: $secondary-red;
   border-color: $secondary-red;
+  &:hover {
+    background-color: darken($secondary-red, 5%);
+  }
 }
 
 :local(.warning) {
   color: $secondary-black;
   background-color: $secondary-yellow;
   border-color: $secondary-yellow;
+  &:hover {
+    background-color: darken($secondary-yellow, 5%);
+  }
 }
 
 :local(.info) {
   color: $original-white;
   background-color: $secondary-blue;
   border-color: $secondary-blue;
+  &:hover {
+    background-color: darken($secondary-blue, 5%);
+  }
 }
 
 :local(.light) {
   color: $secondary-black;
   background-color: $secondary-white;
   border-color: $secondary-white;
+  &:hover {
+    background-color: darken($secondary-white, 5%);
+  }
 }
 
 :local(.dark) {
   color: $original-white;
   background-color: $secondary-black;
   border-color: $secondary-black;
+  &:hover {
+    background-color: lighten($secondary-black, 5%);
+  }
 }

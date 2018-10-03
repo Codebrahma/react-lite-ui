@@ -1,13 +1,11 @@
 :local(.select) {
     box-sizing: border-box;
-    border: none;
     outline: none;
     border: 1px solid #283593;
     display: block;
     max-width: 250px;
     min-width: 150px;
     border-radius: 2px;
-    display: flex;
     flex-direction: column;
     padding: 0.5% 0 0 0;
 }
@@ -20,9 +18,12 @@
     background-color: white;
 }
 
+:local(.options_wrapper){
+    height: 100%;
+}
+
 :local(.option) {
-    width: 100;
-    padding: 2% 5% 0% 5%;
+    padding: 10px 15px;
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
@@ -31,7 +32,7 @@
 
     &:hover {
         background: rgba($color: #00b0ff, $alpha: 0.5);
-        color: white;
+        color: #3a3a44;
     }
 }
 
@@ -53,6 +54,7 @@
     width: 100%;
     min-height: 2em;
     padding: 0 5%;
+    border-bottom: 1px solid #ddd;
     z-index: 2;
 }
 
@@ -85,7 +87,7 @@
     div {
         flex-direction: row !important;
         display: flex;
-        justify-items: space-between;
+        justify-items: center;
         padding: 0 5% 0 10%;
         background: #eee;
         border-radius: 5px;
