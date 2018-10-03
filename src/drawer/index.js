@@ -44,7 +44,7 @@ class Drawer extends Component {
 }
 
 Drawer.propTypes = {
-  children: PropTypes.arrayOf([PropTypes.node, PropTypes.element]),
+  children: PropTypes.node,
   theme: PropTypes.oneOfType([PropTypes.object]),
   className: PropTypes.string,
   position: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
