@@ -2,6 +2,7 @@
 
 :local(.snackbarWrapper) {
   position: fixed;
+  z-index: 9999;
   width: 100%;
   right: 0;
   &.top {
@@ -9,7 +10,7 @@
     &:not(.active) {
       transform: translateY(-1000%);
     }
-  
+
     &.active {
       transform: translateY(0%);
     }
@@ -19,7 +20,7 @@
     &:not(.active) {
       transform: translateY(1000%);
     }
-  
+
     &.active {
       transform: translateY(0%);
     }
@@ -29,7 +30,8 @@
 :local(.snackbar) {
   background: $primary-color;
   border-radius: 3px;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 0 auto;
   width: 40%;
+  box-shadow: 2px 2px 4px #33333352;
 }
