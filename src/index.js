@@ -1,5 +1,5 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Button from './button';
 import Card from './card';
 import Checkbox from './checkbox';
@@ -22,6 +22,7 @@ import MultiSelect from './multiselect';
 import Navbar from './navbar';
 import Preloader from './preloader';
 import Select from './select';
+
 
 export default {
   Button,
@@ -48,9 +49,56 @@ export default {
   Select,
 };
 
-// ReactDOM.render(
-//   <Tooltip tooltipText="Tooltip" top>
-//     Here it is
-//   </Tooltip>,
-//   document.getElementById('index'),
-// );
+ReactDOM.render(
+  <div>
+    <Chip />
+    <Chip
+      label='small clickable'
+      color='warning'
+      size='small'
+      handleChipClick={() => alert('Clicked on Chip')}
+      handleDelete={() => alert('Clicked Delete Button')}
+    />
+    <Chip
+      avatar='https://unsplash.it/50x50'
+      label='primary chip'
+      color='primary'
+    />
+    <Chip
+      label='large deletable'
+      color='info'
+      size='large'
+      handleDelete={() => alert('Clicked Delete Button')}
+    />
+    <Chip outlined />
+    <Chip
+      label='small success'
+      color='success'
+      size='small'
+      outlined
+    />
+    <Chip
+      label='danger deletable'
+      color='danger'
+      handleDelete={() => alert('Clicked Delete Button')}
+      outlined
+    />
+    <Chip
+      avatar='https://unsplash.it/50x50'
+      label='large avatar chip'
+      color='info'
+      size='large'
+      outlined
+    />
+    <Chip
+      avatar={<Avatar>K</Avatar>}
+      label='avatar click and delete'
+      color='secondary'
+      size='medium'
+      handleDelete={() => alert('Clicked Delete Button')}
+      handleChipClick={() => alert('clicked on chip')}
+      outlined
+    />
+  </div>,
+  document.getElementById('index'),
+);
