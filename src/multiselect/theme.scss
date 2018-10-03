@@ -1,99 +1,100 @@
 :local(.select) {
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    border: 1px solid #283593;
-    display: block;
-    max-width: 250px;
-    min-width: 150px;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5% 0 0 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  border: 1px solid #283593;
+  display: block;
+  max-width: 250px;
+  min-width: 150px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5% 0 0 0;
 }
 
 :local(.menu) {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
 }
 
 :local(.option) {
-    width: 100;
-    padding: 2% 5% 0% 5%;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    outline: none;
-
-    &:hover {
-        background: rgba($color: #00b0ff, $alpha: 0.5);
-        color: white;
-    }
+  width: 100;
+  padding: 2% 5% 0% 5%;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+  &:hover {
+    background: rgba($color: #00b0ff, $alpha: 0.5);
+    color: white;
+  }
 }
 
 :local(.show) {
-    overflow-y: auto;
-    max-height: 200px;
+  overflow-y: auto;
+  max-height: 200px;
 }
 
 :local(.hide) {
-    overflow: hidden;
-    height: 0;
+  overflow: hidden;
+  height: 0;
 }
 
 :local(.selectInput) {
-    box-sizing: border-box;
-    outline: none;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    min-height: 2em;
-    padding: 0 5%;
-    z-index: 2;
+  box-sizing: border-box;
+  outline: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 2em;
+  padding: 0 5%;
+  z-index: 2;
 }
 
 :local(.close) {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &:before, &:after {
-      position: absolute;
-      content: '';
-      border-left: 2px solid #aaa;
-      height: 10px;
-    }
-    &:before {
-      transform: rotate(45deg);
-    }
-    &:after {
-      transform: rotate(-45deg);
-    }
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    z-index: 2;
+    border-left: 2px solid #aaa;
+    height: 10px;
   }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
 
 :local(.selected) {
+  min-width: fit-content;
+  padding: 2px;
+  box-sizing: border-box;
+  div {
+    flex-direction: row !important;
+    display: flex;
+    justify-items: space-between;
+    padding: 0 5% 0 10%;
+    background: #eee;
+    border-radius: 5px;
     min-width: fit-content;
-    padding: 2px;
-    box-sizing: border-box;
-    div {
-        flex-direction: row !important;
-        display: flex;
-        justify-items: space-between;
-        padding: 0 5% 0 10%;
-        background: #eee;
-        border-radius: 5px;
-        min-width: fit-content;
-    }
+  }
 }
 
 :local(.selected-option) {
-    background-color: #00b0ff !important;
-    color: white;
+  background-color: #00b0ff !important;
+  color: white;
 }
