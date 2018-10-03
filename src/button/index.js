@@ -31,7 +31,7 @@ class Button extends Component {
 }
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   type: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,
@@ -47,6 +47,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  children: 'Button',
   type: 'default',
   size: 'medium',
   className: '',
