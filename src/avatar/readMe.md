@@ -1,6 +1,6 @@
 ## Avatar
 
-The base avatar component.
+A basic avatar component.
 
 ### Properties
 | Name | Type | Default | Description |

@@ -7,7 +7,7 @@ The base Tooltip component.
 |:-----|:-----|:-----|:-----|
 | `className` | `String` | &nbsp; | Set a class to style the component |
 | `children` | `String` | `null` | Children to be rendred as base content  |
-| `tooltipText` | `String` | &nbsp; | Prop to render in text in tooltip |
+| `tooltipText` | `String` | &nbsp; | Prop to render in text in tooltip.( `Required` ) |
 | `top` | `bool` | `undefined` | Prop defining the top positioned tooltip |
 
 ### Theme

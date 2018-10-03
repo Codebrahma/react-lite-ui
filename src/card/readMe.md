@@ -1,11 +1,11 @@
 ## Card
 
-The base card component.
+A basic card component.
 
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `children` | `Any` | &nbsp; | All children components to be rendered inside a cardview |
+| `children` | `Any` | &nbsp; | All children components to be rendered inside a cardview. ( `Required` ) |
 | `className` | `String` | &nbsp; | Additional class(es) for custom styling. These classes will be added along with library specific styles |
 | `wrapContent` | `Boolean` | `false`  | If `true` sets the width of the parent card to width of its content else sets width to maximum available width inside its parent  |
 | `elevation` | `String` | `low`  | This set elevation/depth of shadow of the card. The possible values are `low`, `medium`, `high`  |

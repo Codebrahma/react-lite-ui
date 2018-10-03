@@ -5,7 +5,7 @@ The base CheckboxGroup component.
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `options` | `Array` | &nbsp; | Options to render checkboxes for. |
+| `options` | `Array` | &nbsp; | Options to render checkboxes for. ( `Required` ) |
 | `onClick` | `Function` | &nbsp; | Callback function to be called when the checkbox is clicked, receives the label as argument |
 | `inline` | `boolean` | `false` | Prop to define the alignment of checkbox group |
 
