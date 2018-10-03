@@ -18,9 +18,12 @@
     transition: max-height 0.3s ease-in-out;
 }
 
+:local(.options_wrapper){
+    height: 100%;
+}
+
 :local(.option) {
-    width: 100;
-    padding: 2% 5%;
+    padding: 5%;
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
@@ -47,7 +50,7 @@
     display: flex;
     height: 2em;
     flex-direction: row;
-    padding: 0 5%;
+    padding: 0 15px;
 }
 
 :local(.arrow) {
@@ -56,6 +59,7 @@
     border-bottom: 2px solid #1A237E;
     height: 5px;
     width: 5px;
+    margin-right: -5px;
     transition: 0.3s ease;
     align-self: center;
 }
