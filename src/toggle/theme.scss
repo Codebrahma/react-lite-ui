@@ -25,6 +25,7 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: $original-white;
+    transition: all 200ms ease-out;
   }
 }
 
@@ -40,5 +41,6 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: $original-white;
+    transition: all 200ms ease-out;
   }
 }
