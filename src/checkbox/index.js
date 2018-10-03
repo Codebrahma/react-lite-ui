@@ -16,16 +16,19 @@ const Checkbox = ({
   const classNames = cx(theme.checkbox, {
     [theme.checked]: checked,
   }, additionalClass);
+  /*  eslint-disable jsx-a11y/click-events-have-key-events  */
+  /*  eslint-disable jsx-a11y/no-static-element-interactions */
   return (
-    <label className={classNames}>
-      <input
-        type="checkbox"
-        name={label} // when name prop isn't passed, name sets to same value as label prop
-        onClick={() => onClick(label, label)}
-        {...props}
-      />
-      <span className="check-item" />
-    </label>
+    <span onClick={() => onClick(label, value)}>
+      <span className={classNames}>
+        <input
+          type="checkbox"
+          {...props}
+        />
+        <span className="check-item" />
+      </span>
+      {label && <span className={theme.label}>{label}</span>}
+    </span>
   );
 };
 
@@ -39,7 +42,7 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-  label: 'check', // Should send a name if they need the callback value
+  label: null, // Should send a name if they need the callback value
   onClick: () => {},
   checked: false,
   additionalClass: '',

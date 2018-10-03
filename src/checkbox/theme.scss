@@ -14,6 +14,11 @@
   }
 }
 
+:local(.label) {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 :local(.checked) {
   background-color: $secondary-blue !important;
   height: 200px;
