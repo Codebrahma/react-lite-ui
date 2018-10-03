@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
+
 class MultiSelect extends Component {
   constructor(props) {
     super(props);
@@ -94,7 +95,7 @@ class MultiSelect extends Component {
           : '',
       );
       return (
-        <span
+        <div
           className={itemtheme}
           onClick={() => this.handleSelect(option)}
           key={option.label}
@@ -104,7 +105,7 @@ class MultiSelect extends Component {
           onBlur={this.hideMenu}
         >
           <span>{option.label}</span>
-        </span>
+        </div>
       );
     });
   };
@@ -147,7 +148,9 @@ class MultiSelect extends Component {
           onMouseEnter={() => this.blockOnBlur(true)}
           onMouseLeave={() => this.blockOnBlur(false)}
         >
-          {this.renderOptions(options)}
+          <div className={cx(theme.options_wrapper)}>
+            {this.renderOptions(options)}
+          </div>
         </div>
       </div>
     );
