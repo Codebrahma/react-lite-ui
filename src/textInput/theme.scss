@@ -1,17 +1,18 @@
 @import '../globals/theme';
 
-:local(.inputWrapper) { 
-  padding: 5px; 
+:local(.inputWrapper) {
+  padding: 5px;
 }
 
-:local(.inputElement) { 
-  background-color: var(--input-text-background-color); 
-  border-bottom: 3px solid $original-black; 
-  border-left: 0; 
-  border-right: 0; 
-  border-top: 0; 
-  font-size: 16px; 
-  display: block; 
+:local(.inputElement) {
+  padding-bottom: 10px;
+  background-color: var(--input-text-background-color);
+  border-bottom: 1px solid $original-black;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  font-size: 16px;
+  display: block;
   outline: none;
 
   &:focus {
@@ -20,6 +21,6 @@
 }
 
 :local(.disabled) {
-  border-bottom: 3px solid rgba($color: #000000, $alpha: 0.3); 
+  border-bottom: 3px solid rgba($color: #000000, $alpha: 0.3);
   cursor: not-allowed;
 }
