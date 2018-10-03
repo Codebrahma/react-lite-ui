@@ -15,7 +15,6 @@ The base CheckboxGroup component.
 |:---------|:-----------|
 | `checkbox-group`   | Class used for the root element.|
 | `each-check`   | Class used for the checkbox element.|
-| `each-label`   | Class used for the label element.|
 
 ### Usage
 ```

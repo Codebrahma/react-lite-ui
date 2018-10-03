@@ -46,9 +46,6 @@ class CheckboxGroup extends React.Component {
               onClick={this.handleCheckListChange}
               theme={theme}
             />
-            <label className={styles['each-label']}>
-              {option.label}
-            </label>
           </div>
         </div>
         <div className="clearfix" />
