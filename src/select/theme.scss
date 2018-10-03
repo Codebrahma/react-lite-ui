@@ -10,11 +10,11 @@
 
 :local(.menu) {
     box-sizing: border-box;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     background-color: white;
-    height: fit-content;
+    max-height: 200px;
     transition: max-height 0.3s ease-in-out;
 }
 
@@ -23,7 +23,9 @@
 }
 
 :local(.option) {
-    padding: 5%;
+    width: 100;
+    min-height: fit-content;
+    padding: 2% 5%;
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
@@ -36,12 +38,7 @@
 
 :local(.show) {
     overflow-y: auto;
-    max-height: 200px;
-}
-
-:local(.hide) {
-    overflow: hidden;
-    max-height: 0;
+    display: flex;
 }
 
 :local(.selectInput) {
