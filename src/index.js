@@ -51,54 +51,12 @@ export default {
 
 ReactDOM.render(
   <div>
-    <Chip />
-    <Chip
-      label='small clickable'
-      color='warning'
-      size='small'
-      handleChipClick={() => alert('Clicked on Chip')}
-      handleDelete={() => alert('Clicked Delete Button')}
-    />
-    <Chip
-      avatar='https://unsplash.it/50x50'
-      label='primary chip'
-      color='primary'
-    />
-    <Chip
-      label='large deletable'
-      color='info'
-      size='large'
-      handleDelete={() => alert('Clicked Delete Button')}
-    />
-    <Chip outlined />
-    <Chip
-      label='small success'
-      color='success'
-      size='small'
-      outlined
-    />
-    <Chip
-      label='danger deletable'
-      color='danger'
-      handleDelete={() => alert('Clicked Delete Button')}
-      outlined
-    />
-    <Chip
-      avatar='https://unsplash.it/50x50'
-      label='large avatar chip'
-      color='info'
-      size='large'
-      outlined
-    />
-    <Chip
-      avatar={<Avatar>K</Avatar>}
-      label='avatar click and delete'
-      color='secondary'
-      size='medium'
-      handleDelete={() => alert('Clicked Delete Button')}
-      handleChipClick={() => alert('clicked on chip')}
-      outlined
-    />
+    <Card
+      header='Card String header'
+      wrapContent
+      >
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </Card>
   </div>,
   document.getElementById('index'),
 );
