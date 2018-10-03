@@ -3,19 +3,18 @@ import ComponentBar from "./ComponentBar";
 import PlaygroundWithPreview from "./PlaygroundWithPreview";
 import Documentation from "./Documentation";
 import { componentList } from '../common/componentList';
-import Card from "../../../../src/card";
-import CardReadme from "../../../../src/card/readMe.md";
+import AutoCompleteReadme from "../../../../src/autocomplete/readMe.md";
 
-import { CardDefaultCode } from "../common/DefaultCode";
+import { AutoCompleteDefaultCode } from "../common/DefaultCode";
 
 class PlaygroundPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isDocumentationOn: false,
-      activeComponent: "Card",
-      defaultCode: CardDefaultCode,
-      activeDocs: CardReadme
+      activeComponent: "Autocomplete",
+      defaultCode: AutoCompleteDefaultCode,
+      activeDocs: AutoCompleteReadme
     };
     this.expandDocumentation = this.expandDocumentation.bind(this);
     this.handleClickComponent = this.handleClickComponent.bind(this);
@@ -24,12 +23,14 @@ class PlaygroundPage extends React.Component {
   componentDidMount() {
     const url = window.location.href;
     const currentRoute = url.substring(url.lastIndexOf('/')+1);
-    const queryComponent = componentList.filter(component => component.name.toLowerCase() === currentRoute)[0];
-    this.setState({
-      activeComponent: queryComponent.name,
-      defaultCode: queryComponent.defaultCode,
-      activeDocs: queryComponent.docs,
-    });
+    const queryComponent = componentList.filter(component => component.name.toLowerCase() === currentRoute);
+    if(queryComponent.length) {
+      this.setState({
+        activeComponent: queryComponent[0].name,
+        defaultCode: queryComponent[0].defaultCode,
+        activeDocs: queryComponent[0].docs,
+      });
+    }
   }
 
   expandDocumentation() {
