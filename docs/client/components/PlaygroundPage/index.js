@@ -20,8 +20,14 @@ class PlaygroundPage extends React.Component {
     this.handleClickComponent = this.handleClickComponent.bind(this);
   }
 
+
+  /**
+   * This is required for direct visit of component through url.
+   * @memberof PlaygroundPage
+   */
   componentDidMount() {
-    const url = window.location.href;
+    const { history } = this.props;
+    const url = history.location.pathname;
     const currentRoute = url.substring(url.lastIndexOf('/')+1);
     const queryComponent = componentList.filter(component => component.name.toLowerCase() === currentRoute);
     if(queryComponent.length) {
@@ -40,10 +46,9 @@ class PlaygroundPage extends React.Component {
   }
 
   handleClickComponent(activeComponent, defaultCode, activeDocs) {
-    window.history.pushState(
-      "",
-      activeComponent,
-      `/react-lite-ui/playground/${activeComponent.toLowerCase()}`
+    const { history } = this.props;
+    history.push(
+      `/playground/${activeComponent.toLowerCase()}`,
     );
     this.setState({
       activeComponent,
@@ -65,12 +70,14 @@ class PlaygroundPage extends React.Component {
             expandDocumentation={this.expandDocumentation}
             isDocumentationOn={this.state.isDocumentationOn}
           />
-          {this.state.isDocumentationOn && (
+          {
+            this.state.isDocumentationOn && (
             <Documentation
               activeDocs={this.state.activeDocs}
               isDocumentationOn={this.state.isDocumentationOn}
             />
-          )}
+            )
+          }
         </ComponentBar>
       </div>
     );

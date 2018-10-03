@@ -29,6 +29,7 @@
     "react-css-themr": "^2.1.2",
     "react-dom": "^16.4.1",
     "react-flexbox-grid": "^2.1.2",
+    "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-switch": "^3.0.4",
     "sass-loader": "^7.0.3",
