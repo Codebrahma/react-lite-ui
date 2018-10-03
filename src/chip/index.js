@@ -10,7 +10,7 @@ const DeleteIcon = ({ classes, handleClick }) => {
     return handleClick(e);
   }
   return (
-    <button onClick={handleDeleteClick} className={classes}>X</button>
+    <button onClick={handleDeleteClick} className={classes}>&times;</button>
   );
 };
 
