@@ -31,7 +31,7 @@ class RadioButtonGroup extends React.Component {
 
     const classNames = cx(styles['radio-group']);
 
-    const isChecked = label => label === this.state.currentlyActive ? 'active' : '';
+    const isChecked = label => (label === this.state.currentlyActive ? 'active' : '');
 
     return options.map(option => (
       <React.Fragment key={option.label}>
