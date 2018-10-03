@@ -14,7 +14,14 @@ const Badge = ({
 }) => {
   const classes = cx(theme.badge, theme[size], className);
   const badgeclass = cx(theme['badge-container'], theme[`badge-container-${size}`]);
-  return <div className={badgeclass}>{children}<span className={classes}>{badgeCount}</span></div>;
+  return (
+    <div className={badgeclass}>
+      {children}
+      <span className={classes} id="badge_count">
+        {badgeCount}
+      </span>
+    </div>
+  );
 };
 
 Badge.propTypes = {
