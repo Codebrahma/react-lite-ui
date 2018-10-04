@@ -3,11 +3,16 @@ class Demo extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      checked: false,
+    }
     this.handleCheckClick = this.handleCheckClick.bind(this);
   }
 
   handleCheckClick () {
-    alert('Clicked one of the checkbox');
+    this.setState({
+      checked: !this.state.checked,
+    })
   }
   render() {
     return (
@@ -16,23 +21,21 @@ class Demo extends React.Component {
         <PreviewBlock header="Normal Checkbox">
           <Checkbox 
             onClick={this.handleCheckClick}
+            checked={this.state.checked}
           />
         </PreviewBlock>
         {/* PreviewBlock 2 */}
         <PreviewBlock header="Checked by default">
           <Checkbox 
-            onClick={this.handleCheckClick}
+            label='default checked'
             checked
           />
         </PreviewBlock>
         {/* PreviewBlock 3 */}
         <PreviewBlock header="Checkbox with label">
-          <Checkbox 
-            onClick={this.handleCheckClick}
+          <Checkbox
+            label='labelled checkbox'
           />
-          <span style={{ marginLeft: '10px' }}>
-            Label for the checkbox
-          </span>
         </PreviewBlock>
       </div>
     )

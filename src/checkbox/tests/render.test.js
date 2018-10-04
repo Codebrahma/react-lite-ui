@@ -29,9 +29,9 @@ describe('Render Checkbox Component tests', () => {
     expect(actualValue()).equal(expectedValue);
   });
 
-  it('Should have a span with className check-item', () => {
-    expectedValue = true;
-    actualValue = () => wrappedComponent.find('span').hasClass('check-item');
+  it('Should have a className check-item', () => {
+    expectedValue = 1;
+    actualValue = () => wrappedComponent.find('.check-item').length;
     expect(actualValue()).to.equal(expectedValue);
   });
 });

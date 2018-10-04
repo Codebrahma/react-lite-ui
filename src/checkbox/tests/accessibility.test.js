@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import sinon from 'sinon';
 import Checkbox from '..';
 
@@ -58,21 +58,15 @@ describe('Checkbox accessibility tests', () => {
   });
 
   it('Should accept label prop', () => {
-    wrappedComponent = shallow(<Checkbox label="input_check" />);
+    wrappedComponent.setProps({ label: 'input_check' });
     expectedValue = 'input_check';
     actualValue = () => wrappedComponent.prop('label');
     expect(actualValue()).equal(expectedValue);
   });
 
-  it('Should set the label prop value to name attribute when no name prop is passed', () => {
-    expectedValue = 'input_check';
-    actualValue = () => wrappedComponent.find('input').props().name;
-    expect(actualValue()).to.equal(expectedValue);
-  });
-
-  it('Should accept name prop and overwrite any other value set by label prop as default', () => {
-    wrappedComponent = mount(<Checkbox label="input_check" />);
-    expectedValueBefore = 'input_check';
+  it('Should accept name prop', () => {
+    wrappedComponent = mount(<Checkbox />);
+    expectedValueBefore = undefined;
     expectedValueAfter = 'check_name';
     actualValue = () => wrappedComponent.find('input').props().name;
     expect(actualValue()).to.equal(expectedValueBefore);

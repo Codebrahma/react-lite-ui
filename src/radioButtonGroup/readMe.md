@@ -5,7 +5,7 @@ The base RadioButtonGroup component.
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `options` | `Array` | &nbsp; | Options to render radio buttons for. |
+| `options` | `Array` | &nbsp; | Options to render radio buttons for. ( `Required` ) |
 | `onClick` | `Function` | &nbsp; | Callback function to be called when the radio button is clicked |
 | `inline` | `boolean` | `false` | Prop to define the alignment of radio button group |
 
