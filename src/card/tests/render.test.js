@@ -26,7 +26,7 @@ describe('Card Render tests', () => {
       .children()
       .childAt(0)
       .prop('aria-label')).to.equal('card-header');
-      
+
     expect(wrappedComponent
       .find(Card)
       .childAt(0)

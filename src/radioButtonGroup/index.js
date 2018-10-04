@@ -41,6 +41,7 @@ class RadioButtonGroup extends React.Component {
           <div
             className={cx(styles['each-radio'], { inline })}
             onClick={(e) => { this.handleRadioBtnChange(e, option); }}
+            id="radio_button"
           >
             <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
               <label className={cx('inner', { checked: isChecked(option.label) })}>
