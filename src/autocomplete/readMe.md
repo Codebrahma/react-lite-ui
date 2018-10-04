@@ -5,11 +5,11 @@ A basic autocomplete component.
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `data` | `Array` | `Required` | An array of options for autocompletion |
+| `data` | `Array` | &nbsp; | An array of options for autocompletion. ( `Required` ) |
 | `placeholder` | `String` | `undefined` | Set a placeholder for the input component. |
 | `className` | `String` | `''` | Set a class to style the Component |
-| `onChange` | `function` | `` | An input change listener which returns the input value on any changes. ( Optional ) |
-| `onKeyPress` | `function` | `` | A keypress listener on the input field. ( Optional ) |
+| `onChange` | `function` | `` | An input change listener which returns the input value on any changes. |
+| `onKeyPress` | `function` | `` | A keypress listener on the input field. |
 
 ### Theme
 

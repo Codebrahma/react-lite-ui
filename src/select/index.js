@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
+
 class Select extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +30,7 @@ class Select extends Component {
       selected,
       open: false,
     });
-  }
+  };
 
   /*
   Dropdown handle used to toggle open and closed states for the dropdown when user
@@ -39,7 +40,7 @@ class Select extends Component {
     this.setState(prevState => ({
       open: !prevState.open,
     }));
-  }
+  };
 
   /*
   Handle dropdown close when component loses focus completely, i.e, neither
@@ -52,7 +53,7 @@ class Select extends Component {
         open: false,
       });
     }
-  }
+  };
 
   /*
   Helper function which sets a boolean `blockOnBlur` property on the state.
@@ -67,7 +68,7 @@ class Select extends Component {
     this.setState({
       blockOnBlur: block,
     });
-  }
+  };
 
   // Helper function to render options inside the dropdown.
   renderOptions = (options) => {
@@ -76,15 +77,15 @@ class Select extends Component {
       .map(option => (
         /* eslint-disable jsx-a11y/click-events-have-key-events */
         /* eslint-disable jsx-a11y/no-static-element-interactions */
-        <span
+        <div
           className={theme.option}
           onClick={() => this.handleSelect(option)}
           key={option.label}
         >
           {option.label}
-        </span>
+        </div>
       ));
-  }
+  };
 
   render() {
     const { options, theme, className } = this.props;
@@ -109,7 +110,9 @@ class Select extends Component {
           onMouseEnter={() => this.blockOnBlur(true)}
           onMouseLeave={() => this.blockOnBlur(false)}
         >
-          {this.renderOptions(options)}
+          <div className={cx(theme.options_wrapper)}>
+            {this.renderOptions(options)}
+          </div>
         </div>
       </div>
     );

@@ -5,7 +5,7 @@ A basic badge component.
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `children` | `Any` | `null` | `Required` A child component to apply badge. |
+| `children` | `Any` | `null` | `Required` A child component to apply badge. ( `Required` ) |
 | `className` | `String` | `''` | Set a class to style the Component. |
 | `badgeCount` | `Number` | `0` | Counter value to be displayed on badge.  |
 | `size` | `String` | `''` | Change the size of the badge component. Possible values are - **'*small* '**, **'*medium* '** and **'*large* '** |

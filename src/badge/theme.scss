@@ -4,6 +4,10 @@
     width: fit-content;
     box-sizing: border-box;
     padding: 1%;
+    /* For IE bug on badge position ( due to container spreading
+    *  across the available width ) since IE doesn't support fit-content for width. 
+    */
+    float: left; 
 }
 
 :local(.badge-container-small) {

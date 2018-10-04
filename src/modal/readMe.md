@@ -10,7 +10,7 @@ A basic modal component.
 | `body` | `Any` | `null` | Modal Body / Content section. ( Displayed only when no children are passed. ) |
 | `footer` | `Any` | `null` | Footer content for modal. ( Displayed only when no children are passed. ) |
 | `className` | `String` | `''` | Set a class to style the Component |
-| `open` | `boolean` | `false` | Toggle modal show / hide |
+| `open` | `boolean` | `false` | Toggle modal show / hide. ( `Required` ) |
 
 ### Theme
 

@@ -8,38 +8,46 @@ import defaultTheme from './theme.scss';
 class Button extends Component {
   render() {
     const {
-      children, type, size, className, href, icon, iconAlignment, theme, ...others
+      children,
+      type,
+      size,
+      className,
+      href,
+      icon,
+      iconAlignment,
+      theme,
+      ...others
     } = this.props;
     const Element = href ? 'a' : 'button';
-    const classes = classnames(theme.button, theme[type], theme[size], className);
+    const classes = classnames(
+      theme.button,
+      theme[type],
+      theme[size],
+      className,
+    );
 
     const props = {
       ...others,
       href,
-      ref: (node) => { this.buttonNode = node; },
+      ref: (node) => {
+        this.buttonNode = node;
+      },
       className: classes,
       disabled: this.props.disabled,
       onMouseUp: this.handleMouseUp,
       onMouseLeave: this.handleMouseLeave,
     };
-    return (
-      <Element {...props}>
-        {children}
-      </Element>
-    );
+    return <Element {...props}>{children}</Element>;
   }
 }
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   type: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,
   href: PropTypes.string,
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   iconAlignment: PropTypes.string,
   theme: PropTypes.shape({}),
   disabled: PropTypes.bool,
@@ -47,6 +55,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  children: 'Button',
   type: 'default',
   size: 'medium',
   className: '',
