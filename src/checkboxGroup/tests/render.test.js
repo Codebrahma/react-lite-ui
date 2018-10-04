@@ -10,9 +10,9 @@ describe('CheckboxGroup render tests', () => {
   let actualValue;
 
   const options = [
-    { label: 'Alpha' }, 
-    { label: 'Beta'}, 
-    { label: 'Zheta' }
+    { label: 'Alpha' },
+    { label: 'Beta' },
+    { label: 'Zheta' },
   ];
 
   beforeEach(() => {

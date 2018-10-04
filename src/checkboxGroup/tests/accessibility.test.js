@@ -11,9 +11,9 @@ describe('CheckboxGroup accessibility tests', () => {
   let actualValue;
 
   const options = [
-    { label: 'Alpha' }, 
-    { label: 'Beta'}, 
-    { label: 'Zheta' }
+    { label: 'Alpha' },
+    { label: 'Beta' },
+    { label: 'Zheta' },
   ];
 
   beforeEach(() => {
@@ -44,7 +44,7 @@ describe('CheckboxGroup accessibility tests', () => {
 
   it('Should set the inline prop to true when passed, which is false by default', () => {
     expectedValueBefore = false;
-    expectedValueAfter= true;
+    expectedValueAfter = true;
     actualValue = () => wrappedComponent.prop('inline');
     expect(actualValue()).equal(expectedValueBefore);
     wrappedComponent.setProps({ inline: true });
