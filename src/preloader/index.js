@@ -27,9 +27,8 @@ const Preloader = ({
     theme[loader === 'dotsLoader' && `${color}Dots`],
     theme[loader === 'fadeAwayLoader' && `${color}Fade`],
     theme[loader === 'linesLoader' && `${color}Lines`],
-    theme[((loader === 'colorCircleLoader') || !loader) && `${color}`],
+    theme[((loader === 'colorCircleLoader' || 'circlesLoader')) && `${color}`],
     {
-      [theme.circlesLoader]: !loader,
       [theme.mediumDots]: loader === 'dotsLoader' && !size,
     },
   );
@@ -52,7 +51,7 @@ Loader.propTypes = {
 };
 
 Preloader.defaultProps = {
-  loader: undefined,
+  loader: 'circlesLoader',
   size: 'medium',
   color: undefined,
   theme: defaultTheme,
