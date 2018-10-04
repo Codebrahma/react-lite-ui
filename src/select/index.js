@@ -32,6 +32,11 @@ class Select extends Component {
     });
   };
 
+
+  /**
+   * Handles key down events on select component for keyboard navigation.
+   * @memberof Select
+   */
   handleKeyDown = ({ key }) => {
     const { focus } = this.state;
     const { options } = this.props;
@@ -80,19 +85,23 @@ class Select extends Component {
     if (!this.state.blockOnBlur) {
       this.setState({
         open: false,
+        focus: undefined,
       });
     }
   };
 
-  /*
-  Helper function which sets a boolean `blockOnBlur` property on the state.
-  When the user is hovering on the dropdown, the `blockOnBlur` property on state
-  is set to `true`, which is later used as a check before hiding the dropdown.
-  This state property is specific to solving some bugs which were introduced
-  due to default behaviour of javascript and html. Solves issues such as item not
-  getting selected even though clicked ( since dropdown is removed through css before
-  the onclick event happens ) and dropdown not closing even when component loses focus.
-  */
+  /**
+   * Helper function which sets a boolean `blockOnBlur` property on the state.
+   * When the user is hovering on the dropdown, the `blockOnBlur` property on state
+   *    is set to `true`, which is later used as a check before hiding the dropdown.
+   * This state property is specific to solving some bugs which were introduced
+   * due to default behaviour of javascript and html. Solves issues such as item not
+   * getting selected even though clicked ( since dropdown is removed through css before
+   * the onclick event happens ) and dropdown not closing even when component loses focus.
+   *
+   * @param block Boolean true or false for blocking and unblocking onBlur event handler.
+   * @memberof Select
+   */
   blockOnBlur = (block) => {
     this.setState({
       blockOnBlur: block,
