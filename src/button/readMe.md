@@ -5,7 +5,7 @@ The base button component.
 ### Properties
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
-| `children` | `Any` | `null` | All children components to be rendered inside the button |
+| `children` | `Any` | `Button` | All children components to be rendered inside the button |
 | `type` | `String` | `default` | Represents the style to be applied for the button. Possible values are `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, and `dark` |
 | `size` | `String` | `medium`  | Defines the size of the button. Possible values are `small`, `medium`, and `large` |
 | `className` | `String` | `''` | Set a class to style the Component |
