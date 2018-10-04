@@ -36,6 +36,10 @@
     }
 }
 
+:local(.option-hover) {
+    background-color: #eee;
+}
+
 :local(.show) {
     overflow-y: auto;
     display: flex;

@@ -11,7 +11,11 @@ describe('Select Render tests', () => {
   const SELECT_LIST_SELECTOR = '#select-dropdown';
 
   const focusOnInput = () => {
-    wrappedComponent.find('#select').simulate('click');
+    wrappedComponent
+      .childAt(0)
+      .children()
+      .childAt(0)
+      .simulate('click');
   };
 
   beforeEach(() => {

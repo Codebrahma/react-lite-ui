@@ -32,6 +32,35 @@ class Select extends Component {
     });
   };
 
+  handleKeyDown = ({ key }) => {
+    const { focus } = this.state;
+    const { options } = this.props;
+    switch (key) {
+      case 'ArrowDown':
+        this.setState(prevState => ({
+          focus: (
+            (prevState.focus === undefined
+              ? -1
+              : prevState.focus
+            ) + 1
+          ) % (options.length),
+        }));
+        break;
+      case 'ArrowUp':
+        this.setState(prevState => ({
+          focus: ((options.length) + ((prevState.focus || 0) - 1)) % (options.length),
+        }));
+        break;
+      case 'Enter':
+        if (focus) {
+          this.handleSelect(options[focus]);
+        }
+        break;
+      default:
+        break;
+    }
+  }
+
   /*
   Dropdown handle used to toggle open and closed states for the dropdown when user
   clicks on select box / arrow.
@@ -73,11 +102,12 @@ class Select extends Component {
   // Helper function to render options inside the dropdown.
   renderOptions = (options) => {
     const { theme } = this.props;
-    return options.map(option => (
+    const { focus } = this.state;
+    return options.map((option, index) => (
       /* eslint-disable jsx-a11y/click-events-have-key-events */
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <span
-        className={theme.option}
+        className={cx(theme.option, { [`${theme['option-hover']}`]: (focus === index) })}
         onClick={() => this.handleSelect(option)}
         key={option.label}
       >
@@ -99,6 +129,7 @@ class Select extends Component {
           className={theme.selectInput}
           onClick={this.toggleMenu}
           onBlur={this.hideMenu}
+          onKeyDown={this.handleKeyDown}
           /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
           tabIndex={0}
         >
