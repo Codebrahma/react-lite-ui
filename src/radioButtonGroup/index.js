@@ -35,7 +35,7 @@ class RadioButtonGroup extends React.Component {
 
     return options.map(option => (
       <React.Fragment key={option.label}>
-        <div className={classNames}>
+        <div className={classNames} id="radio_group">
           {/* eslint-disable jsx-a11y/click-events-have-key-events */ }
           { /* eslint-disable jsx-a11y/no-static-element-interactions */ }
           <div
