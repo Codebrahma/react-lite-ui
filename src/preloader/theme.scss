@@ -1,0 +1,378 @@
+@import '../globals/theme.scss';
+
+:local(.loaderWrapper) {
+  background: transparent;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* size variants */
+:local(.small) {
+  width: 40px !important;
+  height: 40px !important;
+  & > span {
+    margin: 0 3px !important;
+  }
+}
+:local(.medium) {
+  width: 70px !important;
+  height: 70px !important;
+  & > span {
+    margin: 0 5px !important;
+  }
+}
+:local(.large) {
+  width: 105px !important;
+  height: 105px !important;
+  & > span {
+    margin: 0 7px !important;
+  }
+}
+
+/* size variants for dotsLoader */
+:local(.smallDots) {
+  & > span {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+  }
+}
+:local(.mediumDots) {
+  width: 180px;
+  & > span {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+  }
+}
+:local(.largeDots) {
+  & > span {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+}
+
+/* color variants for circlesLoader and colorCircleLoader*/
+:local(.primary) {
+  border-top-color: $secondary-violet !important;
+}
+
+:local(.secondary) {
+  border-top-color: $secondary-grey !important;
+}
+
+:local(.success) {
+  border-top-color: $secondary-green !important;
+}
+
+:local(.danger) {
+  border-top-color: $secondary-red !important;
+}
+
+:local(.warning) {
+  border-top-color: $secondary-yellow !important;
+}
+
+:local(.info) {
+  border-top-color: $secondary-blue !important;
+}
+
+:local(.light) {
+  border-top-color: $secondary-white !important;
+}
+
+:local(.dark) {
+  border-top-color: $secondary-black !important;
+}
+
+/*  color variants for dots loader and lines loader*/
+:local(.primaryDots),
+:local(.primaryLines) {
+  & > span {
+    background-color: $secondary-violet !important;
+    border-color: $secondary-violet !important;
+  }
+}
+
+:local(.secondaryDots),
+:local(.secondaryLines) {
+  & > span {
+    background-color: $secondary-grey !important;
+    border-color: $secondary-grey !important;
+  }
+}
+
+:local(.successDots),
+:local(.successLines) {
+  & > span {
+    background-color: $secondary-green !important;
+    border-color: $secondary-green !important;
+  }
+}
+
+:local(.dangerDots),
+:local(.dangerLines) {
+  & > span {
+    background-color: $secondary-red !important;
+    border-color: $secondary-red !important;
+  }
+}
+
+:local(.warningDots),
+:local(.warningLines) {
+  & > span {
+    background-color: $secondary-yellow !important;
+    border-color: $secondary-yellow !important;
+  }
+}
+
+:local(.infoDots),
+:local(.infoLines) {
+  & > span {
+    background-color: $secondary-blue !important;
+    border-color: $secondary-blue !important;
+  }
+}
+
+:local(.lightDots),
+:local(.lightLines) {
+  & > span {
+    background-color: $secondary-white !important;
+    border-color: $secondary-white !important;
+  }
+}
+
+:local(.darkDots),
+:local(.darkLines) {
+  & > span {
+    background-color: $secondary-black !important;
+    border-color: $secondary-black !important;
+  }
+}
+
+/* color variants for fadeAwayLoader */
+:local(.primaryFade) {
+  border-color: $secondary-violet !important;
+}
+
+:local(.secondaryFade) {
+  border-color: $secondary-grey !important;
+}
+
+:local(.successFade) {
+  border-color: $secondary-green !important;
+}
+
+:local(.dangerFade) {
+  border-color: $secondary-red !important;
+}
+
+:local(.warningFade) {
+  border-color: $secondary-yellow !important;
+}
+
+:local(.infoFade) {
+  border-color: $secondary-blue !important;
+}
+
+:local(.lightFade) {
+  border-color: $secondary-white !important;
+}
+
+:local(.darkFade) {
+  border-color: $secondary-black !important;
+}
+
+/* Circles Loader */
+:local(.circlesLoaderDefault),
+:local(.circlesLoader) {
+  border: 4px solid transparent;
+  border-top-color: $secondary-violet;
+  position: relative;
+  border-radius: 50%;
+  animation: spinner 2s linear infinite;
+  &:after {
+    content: '';
+    border: 4px solid transparent;
+    border-top-color: $secondary-blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    animation: spinner 1.5s linear infinite;
+  }
+  &:before {
+    content: '';
+    border: 4px solid transparent;
+    border-top-color: $secondary-yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    right: -14px;
+    bottom: -14px;
+    animation: spinner 3s linear infinite;
+  }
+  @keyframes spinner {
+    100% { transform: rotate(360deg); }
+  }
+}
+
+/* Dots Loader for user set and default colors */
+:local(.dotsLoaderDefault),
+:local(.dotsLoader) {
+  & > span {
+    display: inline-block;
+    border-radius: 50%;
+    &:nth-child(1) {
+      animation: bounce 1s ease-in-out infinite;
+      background-color: $secondary-red;
+    }
+    &:nth-child(2) {
+      animation: bounce 1s ease-in-out 0.25s infinite;
+      background-color: $secondary-blue;
+    }
+    &:nth-child(3) {
+      animation: bounce 1s ease-in-out 0.5s infinite;
+      background-color: $secondary-yellow;
+    }
+    &:nth-child(4) {
+      animation: bounce 1s ease-in-out 0.75s infinite;
+      background-color: $secondary-green;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* FadeAway Deafult with multi colors*/
+:local(.fadeAwayLoaderDefault),
+:local(.fadeAwayLoader) {
+  border-radius: 50%;
+  border: 5px solid $secondary-violet;
+  animation: fadeawayDefault 1.5s linear infinite;  
+  @keyframes fadeawayDefault {
+    0% { 
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+    }
+    100% {
+      margin: 0%;
+      opacity: 0;
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+/* fadeAwayLoader with user set color */
+:local(.fadeAwayLoader) {
+  animation: fadeaway 1.5s linear infinite;  
+  @keyframes fadeaway {
+    0% { 
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+    }
+    100% {
+      margin: 0%;
+      opacity: 0;
+    }
+  }
+}
+
+/* colorCircleLoader Default with multi colors */
+:local(.colorCircleLoaderDefault),
+:local(.colorCircleLoader) {
+  border: 4px solid #eee;
+  border-top-color: $secondary-violet;
+  border-radius: 50%;
+  animation: spinDefault 1.5s linear infinite;
+  @keyframes spinDefault {
+    100% { 
+      transform: rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+/* colorCirclesLoader with user set color */
+:local(.colorCircleLoader) {
+  animation: spin 1.5s linear infinite;
+  @keyframes spin {
+    100% { 
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Lines Loader */
+:local(.linesLoaderDefault),
+:local(.linesLoader) {
+  width: 100px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  & > span {
+    border-radius: 30px;
+    margin: 0 5px;
+    display: inline-block;
+    height: 50px;
+    border: 2px solid $secondary-violet;
+    &:nth-child(1) {
+      animation: linesDefault 1s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: linesDefault 1s linear 0.25s infinite;
+    }
+    &:nth-child(3) {
+      animation: linesDefault 1s linear 0.5s infinite;
+    }
+    &:nth-child(4) {
+      animation: linesDefault 1s linear 0.75s infinite;
+    }
+  }
+  @keyframes linesDefault {
+    0%,100% { height: 25%; }
+    50% {
+      height: 100%;
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+
+/* Lines Loader with user defined colors */
+:local(.linesLoader) {
+  & > span {
+    border-radius: 30px;
+    margin: 0 5px;
+    display: inline-block;
+    height: 50px;
+    border: 2px solid $secondary-violet;
+    &:nth-child(1) {
+      animation: lines 1s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: lines 1s linear 0.25s infinite;
+    }
+    &:nth-child(3) {
+      animation: lines 1s linear 0.5s infinite;
+    }
+    &:nth-child(4) {
+      animation: lines 1s linear 0.75s infinite;
+    }
+  }
+  @keyframes lines {
+    0%,100% { height: 25%; }
+    50% { height: 100%; }
+  }
+}

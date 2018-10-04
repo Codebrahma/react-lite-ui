@@ -10,13 +10,13 @@ const Avatar = ({
   theme,
   image,
   alt,
-  title,
+  alphabet,
   ...other
 }) => {
   const classes = classnames(theme.avatar, className);
-  
+
   return (
-    <div className={classes} {...other}>
+    <div className={classes} id="avatar" {...other}>
       {
         typeof image === 'string' ? (
           <img
@@ -27,7 +27,7 @@ const Avatar = ({
         ) : null
       }
       <div className={theme.avatarContent}>
-        {children}
+        { alphabet || children }
       </div>
     </div>
   );
@@ -36,10 +36,10 @@ const Avatar = ({
 Avatar.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  theme: PropTypes.object,
+  theme: PropTypes.oneOfType([PropTypes.object]),
   image: PropTypes.string,
   alt: PropTypes.string,
-  title: PropTypes.string,
+  alphabet: PropTypes.string,
 };
 
 Avatar.defaultProps = {
@@ -48,7 +48,7 @@ Avatar.defaultProps = {
   theme: defaultTheme,
   image: null,
   alt: '',
-  title: '',
+  alphabet: '',
 };
 
 export default themr('CBAvatar', defaultTheme)(Avatar);

@@ -8,14 +8,14 @@ module.exports = {
   mode: 'development',
   entry: [
     'webpack-hot-middleware/client',
-    './client/index.js'
+    './client/index.js',
   ],
   context: __dirname,
-	devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'docs.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     extensions: ['*', '.scss', '.js', '.json', '.md'],
@@ -23,10 +23,10 @@ module.exports = {
       'node_modules',
       path.resolve(__dirname, './node_modules'),
       path.resolve(__dirname, './../node_modules'),
-      path.resolve(__dirname, './../src')
+      path.resolve(__dirname, './../src'),
     ],
     alias: {
-      'react-lite': path.resolve(__dirname + './../components')
+      'react-lite': path.resolve(`${__dirname}./../components`),
     },
   },
   module: {
@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       }, {
         test: /\.(scss|css)$/,
         use: [
@@ -42,22 +42,22 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
-        include: [ path.join(__dirname), path.join(__dirname, '../src'), /flexboxgrid/, /codemirror/ ],
+        include: [path.join(__dirname), path.join(__dirname, '../src'), /flexboxgrid/, /codemirror/],
       }, {
         test: /\.(txt)$/,
         use: 'raw-loader',
-        include: path.resolve(__dirname, './app/components/layout/main/modules')
+        include: path.resolve(__dirname, './app/components/layout/main/modules'),
       }, {
         test: /\.(md)$/,
-        use: ['html-loader', 'highlight-loader', 'markdown-loader']
-      }
-    ]
+        use: ['html-loader', 'highlight-loader', 'markdown-loader'],
+      },
+    ],
   },
   plugins: [
     new ExtractTextPlugin('docs.css', { allChunks: true }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
-  ]
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
+  ],
 };

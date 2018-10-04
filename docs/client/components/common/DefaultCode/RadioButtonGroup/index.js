@@ -1,10 +1,19 @@
-export const defaultCode =   `
+export const defaultCode = `
 class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleRadioButtonClick = this.handleRadioButtonClick.bind(this);
+  }
+  
+  handleRadioButtonClick ({label,value}) {
+    alert('Clicked on, label: ' + label + ', value: ' + value);
+  };
+
   render() {
     const options = [
-      { label: 'Alpha' }, 
-      { label: 'Beta'}, 
-      { label: 'Zheta' }
+      { label: 'Alpha', value: 'Value-alpha' }, 
+      { label: 'Beta', value: 'Value-beta'}, 
+      { label: 'Zheta', value: 'Value-zheta' }
     ];
     return (
       <div>
@@ -12,6 +21,7 @@ class Demo extends React.Component {
         <PreviewBlock header="Default RadioButton group">
           <RadioButtonGroup
             options={options}
+            onClick={this.handleRadioButtonClick}
           />
         </PreviewBlock>
         {/* Preview Block 2 */}

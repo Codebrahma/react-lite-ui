@@ -8,32 +8,37 @@ const TextInput = ({
   additionalClasses,
   theme,
   width,
-  ...others,
+  disabled,
+  ...others
 }) => {
-  const wrapperClasses = classnames(theme.inputWrapper, additionalClasses); 
-  const inputElementProps = { 
+  const wrapperClasses = classnames(theme.inputWrapper, additionalClasses);
+  const inputElementProps = {
     ...others,
+    disabled,
     style: {
-      width: width ? width : '100%',
+      width: width || '100%',
     },
-    className: classnames(theme.inputElement),
-  }; 
-  return ( 
-    <div className={wrapperClasses}> 
-      {React.createElement('input', inputElementProps)} 
-    </div> 
-  )
-}
+    className: classnames(theme.inputElement, { [`${theme.disabled}`]: disabled }),
+  };
+  return (
+    <div className={wrapperClasses}>
+      {React.createElement('input', inputElementProps)}
+    </div>
+  );
+};
 
 TextInput.propTypes = {
   width: PropTypes.string,
-  additionalClass: PropTypes.string,
-  theme: PropTypes.object, // eslint-disable-line
+  additionalClasses: PropTypes.string,
+  theme: PropTypes.oneOfType([PropTypes.object]),
+  disabled: PropTypes.bool, // eslint-disable-line
 };
 
 TextInput.defaultProps = {
-  additionalClass: '',
+  additionalClasses: '',
   theme: defaultTheme,
+  width: null,
+  disabled: false,
 };
 
-export default themr('CBInput', defaultTheme)(TextInput); 
+export default themr('CBInput', defaultTheme)(TextInput);

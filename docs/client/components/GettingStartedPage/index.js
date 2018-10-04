@@ -18,7 +18,7 @@ const GettingStartedPage = () => (
     </div>
     <div className="js-code">
       <pre className="hlsjs">
-        npm install react-lite
+        npm install react-lite-ui
       </pre>
     </div>
     <div className="sub-header">

@@ -11,28 +11,30 @@ const Card = ({
   wrapContent,
   elevation,
   noPadding,
-  header, ...other
+  header,
+  ...other
 }) => {
-  const classes = classnames(theme.card, theme[`elevation-${elevation}`], {
-    [theme.wrapContent]: wrapContent,
-    [theme.noPadding]: noPadding,
-  }, className);
+  const classes = classnames(
+    theme.card,
+    theme[`elevation-${elevation}`],
+    {
+      [theme.wrapContent]: wrapContent,
+      [theme.noPadding]: noPadding,
+    },
+    className,
+  );
   const headerClass = classnames(theme.cardHeader);
 
   let cardHeader;
   if (typeof header === 'string') {
-    cardHeader = (
-      <div className={headerClass}>
-        <span>{header}</span>
-      </div>
-    );
+    cardHeader = <span>{header}</span>;
   } else if (typeof header === 'function') {
     cardHeader = header();
   }
 
   return (
     <div data-react-toolbox="card" className={classes} {...other}>
-      {cardHeader}
+      <div className={headerClass} aria-label="card-header">{cardHeader}</div>
       {children}
     </div>
   );
@@ -47,11 +49,8 @@ Card.propTypes = {
   }),
   wrapContent: PropTypes.bool,
   noPadding: PropTypes.bool,
-  elevation: PropTypes.oneOfType(['low', 'medium', 'high']),
-  header: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  elevation: PropTypes.oneOf(['low', 'medium', 'high']),
+  header: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
 Card.defaultProps = {

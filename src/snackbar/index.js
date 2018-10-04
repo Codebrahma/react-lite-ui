@@ -9,7 +9,7 @@ class Snackbar extends React.Component {
     super(props);
     this.state = {
       active: false,
-    }
+    };
   }
 
   componentDidMount() {
@@ -29,8 +29,13 @@ class Snackbar extends React.Component {
     }
   }
 
-  scheduleTimeout = (props) => {
-    const { timeout } = props;
+
+  componentWillUnmount() {
+    clearTimeout(this.curTimeout);
+  }
+
+  scheduleTimeout = () => {
+    const { timeout } = this.props;
     if (this.curTimeout) clearTimeout(this.curTimeout);
     this.curTimeout = setTimeout(() => {
       this.dismissSnackbar();
@@ -38,13 +43,9 @@ class Snackbar extends React.Component {
     }, timeout);
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.curTimeout);
-  }
-
   showSnackbar = () => {
     if (this.props.autoClose) {
-      this.scheduleTimeout(this.props);
+      this.scheduleTimeout();
     }
     this.setState({
       active: true,
@@ -57,21 +58,23 @@ class Snackbar extends React.Component {
       active: false,
     });
     if (this.props.onClose) {
-      this.props.onClose()
+      this.props.onClose();
     }
   }
 
   render() {
-    const { theme, additionaClasses, position, children } = this.props;
+    const {
+      theme, additionaClasses, position, children,
+    } = this.props;
     const { active } = this.state;
-    const classes = classnames(theme.snackbar, additionaClasses)
+    const classes = classnames(theme.snackbar, additionaClasses);
     return (
       <div className={classnames(theme.snackbarWrapper, position, active ? 'active' : '')}>
         <div className={classes}>
           { children }
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -81,13 +84,20 @@ Snackbar.propTypes = {
   onClose: PropTypes.func,
   autoClose: PropTypes.bool,
   position: PropTypes.string,
-}
+  active: PropTypes.bool,
+  children: PropTypes.node,
+  theme: PropTypes.oneOfType([PropTypes.object]),
+};
 
 Snackbar.defaultProps = {
-  additionaClasses: null,
+  additionaClasses: '',
   timeout: 2000,
   autoClose: true,
   position: 'bottom',
+  onClose: () => {},
+  active: false,
+  children: null,
+  theme: defaultTheme,
 };
 
 export default themr('CBSnackbar', defaultTheme)(Snackbar);

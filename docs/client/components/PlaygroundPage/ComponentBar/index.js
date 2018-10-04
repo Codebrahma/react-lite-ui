@@ -11,7 +11,7 @@ const ComponentBarPage = ({ children, onClickComponent, activeComponent }) => (
         <div
           className={`each-component-item ${activeComponent === component.name ? 'active' : ''}`}
           key={component.name}
-          onClick={() => { onClickComponent(component.name, component.defaultCode, component.docs) }}
+          onClick={() => { onClickComponent(component.name, component.defaultCode, component.docs); }}
         >
           {component.name}
         </div>

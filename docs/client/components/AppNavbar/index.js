@@ -45,7 +45,7 @@ class Navbar extends React.Component {
               <Col xs={3} sm={3}className="center-align">
                 <Link
                   to="/install"
-                  onClick={() => { this.handleNavClick('install') }}
+                  onClick={() => { this.handleNavClick('install'); }}
                 >
                   <span className={`${activeLink === 'install' && 'active'}`}> Install </span>
                 </Link>
@@ -53,7 +53,7 @@ class Navbar extends React.Component {
               <Col xs={5} sm={6} className={`center-align ${activeLink === 'playground' && 'active'}`}>
                 <Link
                   to="/playground"
-                  onClick={() => { this.handleNavClick('playground') }}
+                  onClick={() => { this.handleNavClick('playground'); }}
                 >
                   <span className={`${activeLink === 'playground' && 'active'}`}> Playground </span>
                 </Link>
@@ -61,9 +61,9 @@ class Navbar extends React.Component {
               <Col xs={2} sm={2} className={`center-align ${activeLink === 'components' && 'active'}`}>
                 <Link
                   to="/components"
-                  onClick={() => { this.handleNavClick('components') }}
-                > 
-                  <span className={`${activeLink === 'components' && 'active'}`}>Usage</span> 
+                  onClick={() => { this.handleNavClick('components'); }}
+                >
+                  <span className={`${activeLink === 'components' && 'active'}`}>Usage</span>
                 </Link>
               </Col>
             </Row>

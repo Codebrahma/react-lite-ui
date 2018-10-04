@@ -20,6 +20,7 @@ const Checkbox = ({
     <label className={classNames}>
       <input
         type="checkbox"
+        name={label} // when name prop isn't passed, name sets to same value as label prop
         onClick={() => onClick(label, label)}
         {...props}
       />

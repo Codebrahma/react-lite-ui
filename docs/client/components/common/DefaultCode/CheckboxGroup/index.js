@@ -1,5 +1,15 @@
-export const defaultCode =   `
+export const defaultCode = `
 class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleCheckListClick = this.handleCheckListClick.bind(this);
+  }
+
+  handleCheckListClick (label) {
+    alert('Clicked on ' + label);
+  };
+
   render() {
     const options = [
       { label: 'Alpha' }, 
@@ -12,6 +22,7 @@ class Demo extends React.Component {
         <PreviewBlock header="Default Checkbox group">
           <CheckboxGroup
             options={options}
+            onClick={this.handleCheckListClick}
           />
         </PreviewBlock>
         {/* Preview Block 2 */}

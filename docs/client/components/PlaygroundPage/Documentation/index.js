@@ -17,7 +17,7 @@ const DocumentationPage = ({
       <div className="empty-div" />
     </div>
   );
-}
+};
 
 
 export default DocumentationPage;
