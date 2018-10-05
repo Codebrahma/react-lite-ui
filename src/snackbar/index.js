@@ -69,7 +69,7 @@ class Snackbar extends React.Component {
     const { active } = this.state;
     const classes = classnames(theme.snackbar, additionaClasses);
     return (
-      <div className={classnames(theme.snackbarWrapper, position, active ? 'active' : '')}>
+      <div aria-label="snackbar" className={classnames(theme.snackbarWrapper, position, active ? 'active' : '')}>
         <div className={classes}>
           { children }
         </div>
