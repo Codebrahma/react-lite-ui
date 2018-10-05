@@ -8,7 +8,7 @@ describe('Preloader accesibility tests', () => {
   let wrappedComponent;
   let expectedValueBefore;
   let expectedValueAfter;
-  let actualValue = prop => wrappedComponent.find('Loader').prop(prop);
+  const actualValue = prop => wrappedComponent.find('Loader').prop(prop);
 
   beforeEach(() => {
     wrappedComponent = mount(<Preloader />);
@@ -29,16 +29,16 @@ describe('Preloader accesibility tests', () => {
   it('Should accept a color prop', () => {
     expectedValueBefore = undefined;
     expectedValueAfter = 'success';
-    expect(actualValue('color')).to.equal(expectedValueBefore); 
+    expect(actualValue('color')).to.equal(expectedValueBefore);
     wrappedComponent.setProps({ color: 'success' });
-    expect(actualValue('color')).to.equal(expectedValueAfter); 
+    expect(actualValue('color')).to.equal(expectedValueAfter);
   });
 
   it('Should accept a size prop', () => {
     expectedValueBefore = 'medium';
     expectedValueAfter = 'large';
-    expect(actualValue('size')).to.equal(expectedValueBefore); 
+    expect(actualValue('size')).to.equal(expectedValueBefore);
     wrappedComponent.setProps({ size: 'large' });
-    expect(actualValue('size')).to.equal(expectedValueAfter); 
+    expect(actualValue('size')).to.equal(expectedValueAfter);
   });
 });
