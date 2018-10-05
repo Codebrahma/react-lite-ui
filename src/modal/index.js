@@ -59,7 +59,7 @@ class Modal extends Component {
               </div>
             ) : null}
             <div className={theme['modal-body']} aria-label="card-body">
-              {body || children || null}
+              {children || body || null}
             </div>
             {footer ? (
               <div className={theme['modal-footer']} aria-label="card-footer">
