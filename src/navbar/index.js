@@ -30,29 +30,37 @@ const Navbar = ({
   /* eslint-disable jsx-a11y/click-events-have-key-events */
   /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-  const renderLeftIcon = () => leftIcon && (
-    <div className={theme.leftIcon} onClick={onLeftIconClick}>
-      {leftIcon}
+  const renderLeftContent = () => (
+    <div className={theme.leftContent}>
+      { leftIcon && (
+        <div className={theme.leftIcon} onClick={onLeftIconClick}>
+          {leftIcon}
+        </div>)
+      }
+      {
+        typeof title === 'string'
+        ? <span className={theme.title}>{title}</span>
+        : title
+      }
     </div>
   );
 
-  const renderRightIcon = () => rightIcon && (
-    <div className={theme.rightIcon} onClick={onRightIconClick}>
-      {rightIcon}
+  const renderRightContent = () => (
+    <div className={theme.rightContent}>
+      { children }
+      { rightIcon && (
+        <div className={theme.rightIcon} onClick={onRightIconClick}>
+          {rightIcon}
+        </div>)
+      }
     </div>
   );
-
-  const renderTitle = () => (typeof title === 'string'
-    ? <span className={theme.title}>{title}</span>
-    : title);
 
   return (
     <div className={classes} {...other}>
       <div className={theme.innerWrapper}>
-        {renderLeftIcon()}
-        {renderTitle()}
-        {children}
-        {renderRightIcon()}
+        {renderLeftContent()}
+        {renderRightContent()}
       </div>
       <div className="clearfix" />
     </div>

@@ -11,16 +11,22 @@
 }
 :local(.innerWrapper) {
   display: flex;
+  justify-content: space-between;
   text-transform: capitalize;
   align-items: center;
   min-height: 65px;
   width: 100%;
   position: relative;
 }
+:local(.leftContent),
+:local(.rightContent) {
+  display: flex;
+  align-items: center;
+}
 :local(.title) {
   font-size: 24px;
   font-weight: 600;
-  margin-right: 1.5%;
+  margin: 0 2%;
 }
 :local(.leftIcon),
 :local(.rightIcon) {
@@ -34,14 +40,10 @@
   }
 }
 :local(.leftIcon) {
-  margin-right: 1.5%;
+  margin-right: 2%;
 }
 :local(.rightIcon) {
-  margin-left: 1.5%;
-  margin-right: auto;
-  position: absolute;
-  right: 0;
-  left: auto;
+  margin-left: 2%;
 }
 :local(.fixedPosition) {
   position: fixed;
