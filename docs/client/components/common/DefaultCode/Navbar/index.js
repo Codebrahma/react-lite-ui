@@ -6,18 +6,11 @@ class Demo extends React.Component {
       toggled: false,
     };
     this.handleToggle = this.handleToggle.bind(this);
-    this.handleModal = this.handleModal.bind(this);
   }
   handleToggle() {
     this.setState(prevState => ({
       toggled: !prevState.toggled,
     }));
-  }
-
-  handleModal() {
-    this.setState({
-      opened: true,
-    });
   }
 
   render() {
