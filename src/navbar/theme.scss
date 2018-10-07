@@ -1,15 +1,47 @@
 @import '../globals/theme';
-
 :local(.navbarWrapper) {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
   min-height: 65px;
-  text-transform: capitalize;
   padding-left: 3%;
   padding-right: 3%;
+  .clearfix {
+    clear: both;
+  }
+}
+:local(.innerWrapper) {
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  min-height: 65px;
+  width: 100%;
+  position: relative;
+}
+:local(.title) {
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 1.5%;
+}
+:local(.leftIcon),
+:local(.rightIcon) {
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+  svg {
+    max-width: 20px;
+    max-height: 20px;
+    fill: $original-white;
+  }
+}
+:local(.leftIcon) {
+  margin-right: 1.5%;
+}
+:local(.rightIcon) {
+  margin-left: 1.5%;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  left: auto;
 }
 :local(.fixedPosition) {
   position: fixed;
@@ -33,18 +65,10 @@
   position: relative;
 }
 :local(.defaultColor) {
-  background-color: $secondary-blue;
+  background-color: $secondary-violet;
   color: $original-white;
   box-shadow: 0px 5px 8px -2px $secondary-grey;
 }
-:local(.menuIcon) {
-  margin: auto 5px;
-  cursor: pointer;
-  span {
-    display: block;
-    width: 15px;
-    height: 0;
-    border: 1px solid $original-white;
-    margin: 4px;
-  }
+:local(.flat) {
+  box-shadow: none;
 }
