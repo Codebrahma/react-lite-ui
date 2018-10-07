@@ -22,11 +22,13 @@
 :local(.rightContent) {
   display: flex;
   align-items: center;
+
 }
 :local(.title) {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  margin: 0 2%;
+  margin-right: 15px;
+  white-space: nowrap;
 }
 :local(.leftIcon),
 :local(.rightIcon) {
@@ -40,10 +42,10 @@
   }
 }
 :local(.leftIcon) {
-  margin-right: 2%;
+  margin-right: 15px;
 }
 :local(.rightIcon) {
-  margin-left: 2%;
+  margin-left: 15px;
 }
 :local(.fixedPosition) {
   position: fixed;
