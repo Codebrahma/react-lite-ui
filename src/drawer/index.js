@@ -19,9 +19,11 @@ class Drawer extends Component {
   }
 
   handleClose = () => {
+    const { onClose } = this.props;
     this.setState({
       open: false,
     });
+    onClose();
   }
 
   render() {
@@ -44,11 +46,12 @@ class Drawer extends Component {
 }
 
 Drawer.propTypes = {
-  children: PropTypes.arrayOf([PropTypes.node, PropTypes.element]),
+  children: PropTypes.node,
   theme: PropTypes.oneOfType([PropTypes.object]),
   className: PropTypes.string,
   position: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
   open: PropTypes.bool,
+  onClose: PropTypes.func,
 };
 
 Drawer.defaultProps = {
@@ -57,6 +60,7 @@ Drawer.defaultProps = {
   position: 'left',
   children: null,
   open: false,
+  onClose: () => {},
 };
 
 export default themr('CBDrawer', defaultTheme)(Drawer);
