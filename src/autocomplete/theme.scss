@@ -1,3 +1,5 @@
+@import '../globals/_colors';
+
 :local(.autocomplete) {
     width: 20vw;
     :local(.autocomplete-input) {
@@ -5,10 +7,10 @@
         font-size: 1rem;
         padding: 2% 2%;
         border: none;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid $original-black;
         outline: none;
         &:focus {
-            border-bottom: 2px solid blue;
+            border-bottom: 2px solid $secondary-violet;
         }
     }
     :local(.autocomplete-list) {
