@@ -1,9 +1,10 @@
+@import '../globals/colors';
 :local(.item) {
     cursor: pointer;
     padding: 1%;
     transition: 0.45s ease-in-out;
 
     &:hover {
-        background-color: #eee;
+        background-color: $primary-hover;
     }
 }
