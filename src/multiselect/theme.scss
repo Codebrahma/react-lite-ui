@@ -80,7 +80,7 @@
     position: absolute;
     content: "";
     z-index: 2;
-    border-left: 2px solid #aaa;
+    border-left: 2px solid $secondary-grey;
     height: 10px;
   }
   &:before {
@@ -100,7 +100,7 @@
     display: flex;
     justify-items: space-between;
     padding: 0 5% 0 10%;
-    background: #eee;
+    background: $secondary-light-grey;
     border-radius: 5px;
     min-width: fit-content;
     padding: 2px;
@@ -111,7 +111,7 @@
         display: flex;
         justify-items: space-between;
         padding: 0 5% 0 10%;
-        background: #eee;
+        background: $secondary-light-grey;
         border-radius: 5px;
         min-width: fit-content;
     }
@@ -119,6 +119,6 @@
 }
 
 :local(.selected-option) {
-  background-color: #00b0ff !important;
-  color: white;
+  background-color: $primary-color !important;
+  color: $original-white;
 }

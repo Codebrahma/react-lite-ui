@@ -1,5 +1,6 @@
+@import '../globals/_colors';
 :local(.modal-backdrop) {
-    background: rgba(0,0,0,0.5);
+    background: rgba($color: $original-black, $alpha: 0.5);
     position: absolute;
     top: 0;
     left: 0;
@@ -28,7 +29,7 @@
 
 :local(.modal) {
     padding: 1%;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 5px rgba($color: $original-black, $alpha: 0.5);
     background: white;
     width: 50%;
     height: 50%;
@@ -44,7 +45,7 @@
     }
     
     :local(.modal-body) {
-        background: yellow;
+        background: $secondary-yellow;
         box-sizing: border-box;
     }
 
@@ -80,11 +81,11 @@
         position:absolute;
         width: 15px;
         height: 4px;
-        background-color: #aaa;
+        background-color: $secondary-grey;
         border-radius:2px;
         top: 8px;
         right: 0;
-        box-shadow:0 0 2px 0 #ccc;
+        box-shadow:0 0 2px 0 $secondary-light-grey;
     }
     
     &::before{

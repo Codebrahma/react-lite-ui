@@ -1,3 +1,4 @@
+@import '../globals/_colors';
 :local(.drawer) {
     display: flex;
     box-sizing: border-box;
@@ -20,7 +21,7 @@
 
 :local(.drawer-open) {
     z-index: 1000;
-    background-color: rgba($color: #000000, $alpha: 0.5);
+    background-color: rgba($color: $original-black, $alpha: 0.5);
 }
 
 :local(.drawer-close) {

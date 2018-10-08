@@ -1,3 +1,4 @@
+@import '../globals/_colors';
 :local(.badge-container) {
     display: flex;
     position: relative;
@@ -27,7 +28,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: red;
+    background-color: $secondary-red;
     position: absolute;
     top: 0;
     right: 0;
