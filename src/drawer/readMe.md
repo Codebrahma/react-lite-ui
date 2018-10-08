@@ -9,6 +9,7 @@ A basic drawer component.
 | `position` | `String` | `left` | Set a position for drawer. Possible values are: **_top_**, **_right_**, **_bottom_** or **_left_** |
 | `className` | `String` | `''` | Set a class to style the Component |
 | `open` | `boolean` | `false` | Toggle drawer show / hide |
+| `onClose` | `function` | `` | Callback for close event in drawer. |
 
 ### Theme
 

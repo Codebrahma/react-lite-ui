@@ -77,14 +77,15 @@ class AutoComplete extends Component {
   Handle keydown events when input is focused for navigating between options
   and selecting an option.
   */
-  handleKeyDown = ({ key }) => {
+  handleKeyDown = (e) => {
+    e.stopPropagation();
     const {
       data, focus, input,
     } = this.state;
     const { labelKey, onChange } = this.props;
     const inputlabel = input[`${labelKey}`].toLowerCase();
     let isValid;
-    switch (key) {
+    switch (e.key) {
       case 'ArrowDown':
         this.setState(prevState => ({
           focus: (
