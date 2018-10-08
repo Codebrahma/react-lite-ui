@@ -12,7 +12,7 @@ The base navbar component.
 | `color` | `String` | `default` | Prop to define color of the navbar. |
 | `title` | `String or Element` | `navbar` | Prop to render logo or logo text of the navbar. |
 | `leftIcon` | `Element` | `null` | Prop to render icon on very left of the navbar. |
-| `righticon` | `Element` | `null` | Prop to render icon on very right of the navbar. |
+| `rightIcon` | `Element` | `null` | Prop to render icon on very right of the navbar. |
 | `onLeftIconClick` | `function` | &nbsp; | Callback to be called when leftIcon is clicked. |
 | `onRightIconClick` | `function` | &nbsp; | Callback to be called when rightIcon is clicked. |
 
