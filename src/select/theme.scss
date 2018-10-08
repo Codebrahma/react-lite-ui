@@ -1,6 +1,8 @@
+@import '../globals/colors';
+
 :local(.select) {
     box-sizing: border-box;
-    border: 1px solid #283593;
+    border: 1px solid $select-border;
     outline: none;
     width: 120px;
     border-radius: 2px;
@@ -13,8 +15,8 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: white;
-    max-height: 200px;
+    background-color: $original-white;
+    height: fit-content;
     transition: max-height 0.3s ease-in-out;
 }
 
@@ -32,7 +34,7 @@
     text-overflow: ellipsis;
 
     &:hover {
-        background-color: #eee;
+        background-color: $primary-hover;
     }
 }
 
@@ -78,6 +80,6 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: black;
+    color: $original-black;
     font-size: 1em;
 }

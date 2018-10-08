@@ -1,3 +1,5 @@
+@import '../globals/colors';
+
 :local(.list) {
     display: flex;
     flex-flow: column;
@@ -5,13 +7,13 @@
 }
 
 :local(.low) {
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 2px rgba($color: $original-black, $alpha: 0.5);
 }
 
 :local(.medium) {
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 8px rgba($color: $original-black, $alpha: 0.5);
 }
 
 :local(.high) {
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 15px rgba($color: $original-black, $alpha: 0.5);
 }

@@ -4,7 +4,7 @@
   box-sizing: border-box;
   border: none;
   outline: none;
-  border: 1px solid #283593;
+  border: 1px solid $select-border;
   display: block;
   max-width: 250px;
   min-width: 150px;
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: white;
+    background-color: $original-white;
     max-height: 150px;
     overflow: auto;
 }
@@ -35,8 +35,8 @@
     min-height: fit-content;
 
     &:hover {
-        background: rgba($color: #00b0ff, $alpha: 0.5);
-        color: white;
+        background: rgba($color: $secondary-hover, $alpha: 0.5);
+        color: $original-white;
     }
 }
 
@@ -49,7 +49,7 @@
 }
 
 :local(.selectedInput) {
-    border-bottom: 0.2px solid rgba(0,0,0,0.5);
+    border-bottom: 0.2px solid rgba($color: $original-black, $alpha: 0.5);
     box-sizing: border-box;
     outline: none;
     display: flex;
