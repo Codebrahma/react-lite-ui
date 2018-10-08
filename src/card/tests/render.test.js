@@ -8,7 +8,7 @@ describe('Card Render tests', () => {
   let wrappedComponent;
 
   beforeEach(() => {
-    wrappedComponent = mount(<Card />);
+    wrappedComponent = mount(<Card >This is card body</Card>);
   });
 
   it('Successfully renders card component.', () => {
@@ -36,7 +36,7 @@ describe('Card Render tests', () => {
   });
 
   it('Successfully renders all children of the component.', () => {
-    wrappedComponent = mount(<Card header="Card Header">This is card body</Card>);
+    wrappedComponent.setProps({ header: 'Card Header' });
     const simulatedValue = wrappedComponent
       .find(Card)
       .childAt(0)
