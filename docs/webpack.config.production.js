@@ -61,11 +61,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    new webpack.DllPlugin({
-      path: path.join(__dirname, "manifest.json"),
-      name: "[name]_[hash]",
-      context: __dirname
-    }),
   ],
   optimization: {
     minimizer: [
