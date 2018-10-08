@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -10,11 +11,11 @@ module.exports = {
     './client/index.js',
   ],
   context: __dirname,
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'docs.js',
-    publicPath: '/',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['*', '.scss', '.js', '.json', '.md'],
@@ -33,7 +34,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader?cacheDirectory=true',
+        },
       }, {
         test: /\.(scss|css)$/,
         use: [
@@ -59,4 +62,31 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true,
+        sourceMap: true,
+        cache: true,
+        uglifyOptions: {
+          compress: false
+        }
+      }),
+    ],
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        },
+        styles: {
+          test: /\.css$/,
+          name: 'style',
+          chunks: 'all',
+        }
+      }
+    }
+  },
 };
