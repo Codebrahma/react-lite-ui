@@ -1,3 +1,4 @@
+@import '../globals/_colors';
 :local(.menu) {
     border-radius: 4px;
     display: flex;
@@ -24,8 +25,8 @@
 
 :local(.arrow) {
     border: none;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    border-right: 2px solid $original-black;
+    border-bottom: 2px solid $original-black;
     height: 5px;
     width: 5px;
     align-self: center;
@@ -35,7 +36,7 @@
 
 :local(.submenu) {
     &:hover {
-        background-color: #ddd;
+        background-color: $primary-hover;
     }
     &+* {
         display: none;
@@ -60,6 +61,6 @@
     width: -moz-available;
     justify-content: space-between;
     &:hover {
-        background-color: #ddd;
+        background-color: $primary-hover;
     }
 }
