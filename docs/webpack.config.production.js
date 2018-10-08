@@ -89,10 +89,9 @@ module.exports = {
         styles: {
           test: /\.css$/,
           name: 'style',
-          chunks: 'all'
+          chunks: 'all',
         }
       }
     }
   },
-  recordsPath: path.join(__dirname, 'records.json')
 };
