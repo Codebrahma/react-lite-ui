@@ -5,19 +5,21 @@ class Demo extends React.Component {
     this.state = {
       open: false,
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleDrawer = this.handleDrawer.bind(this);
   }
 
-  handleClick() {
-    this.setState(prevState => ({ open: !prevState.open }) );
+  handleDrawer(open) {
+    this.setState({
+      open,
+    });
   }
 
   render() {
     return (
       <div>
         <PreviewBlock header="Simple Drawer">
-          <Button onClick={this.handleClick} type="primary">click to open drawer</Button>
-          <Drawer open={this.state.open}>
+          <Button onClick={() => this.handleDrawer(true)} type="primary">click to open drawer</Button>
+          <Drawer open={this.state.open} onClose={() => this.handleDrawer(false)} >
             <div>Item 1</div>
             <div>Item 2</div>
             <div>Item 3</div>
