@@ -24,6 +24,30 @@ class Modal extends Component {
     });
   };
 
+  renderModalTitle = (title) => {
+    const { theme } = this.props;
+    if (title) {
+      return (
+        <div className={theme['modal-title']} aria-label="card-header">
+          {title || ''}
+        </div>
+      );
+    }
+    return null;
+  }
+
+  renderModalFooter = (footer) => {
+    const { theme } = this.props;
+    if (footer) {
+      return (
+        <div className={theme['modal-footer']} aria-label="card-footer">
+          {footer}
+        </div>
+      );
+    }
+    return null;
+  }
+
   render() {
     const {
       theme,
@@ -37,12 +61,12 @@ class Modal extends Component {
     const { open } = this.state;
     const classes = cx(
       theme.modal,
-      open === true ? theme['d-block'] : theme['d-none'],
+      open ? theme['d-block'] : theme['d-none'],
       className,
     );
     const backdrop = cx(
       theme['modal-backdrop'],
-      open === true ? theme['d-block'] : theme['d-none'],
+      open ? theme['d-block'] : theme['d-none'],
     );
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -53,19 +77,11 @@ class Modal extends Component {
       >
         {open && (
           <div id="modal" className={classes}>
-            {title ? (
-              <div className={theme['modal-title']} aria-label="card-header">
-                {title || ''}
-              </div>
-            ) : null}
+            {this.renderModalTitle(title)}
             <div className={theme['modal-body']} aria-label="card-body">
               {children || body || null}
             </div>
-            {footer ? (
-              <div className={theme['modal-footer']} aria-label="card-footer">
-                {footer}
-              </div>
-            ) : null}
+            {this.renderModalFooter(footer)}
             <div className={theme.close} onClick={this.closeModal} />
           </div>
         )}
