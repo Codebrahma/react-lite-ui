@@ -69,7 +69,7 @@ module.exports = {
         sourceMap: true,
         cache: true,
         uglifyOptions: {
-          compress: false
+          compress: {}
         }
       }),
     ],
