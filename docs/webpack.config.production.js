@@ -75,5 +75,20 @@ module.exports = {
         cache: true,
       }),
     ],
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        },
+        styles: {
+          test: /\.css$/,
+          name: 'style',
+          chunks: 'all',
+        }
+      }
+    }
   },
 };
