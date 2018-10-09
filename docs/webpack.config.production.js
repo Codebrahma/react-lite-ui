@@ -58,7 +58,6 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('docs.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
@@ -72,20 +71,5 @@ module.exports = {
         cache: true,
       }),
     ],
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        },
-        styles: {
-          test: /\.css$/,
-          name: 'style',
-          chunks: 'all',
-        }
-      }
-    }
   },
 };
