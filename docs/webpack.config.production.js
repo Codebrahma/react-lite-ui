@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   mode: 'production',
@@ -11,7 +12,7 @@ module.exports = {
     './client/index.js',
   ],
   context: __dirname,
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'docs.js',
@@ -61,6 +62,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    new CompressionPlugin(),
   ],
   optimization: {
     minimizer: [
@@ -68,9 +70,6 @@ module.exports = {
         parallel: true,
         sourceMap: true,
         cache: true,
-        uglifyOptions: {
-          compress: {}
-        }
       }),
     ],
     splitChunks: {
