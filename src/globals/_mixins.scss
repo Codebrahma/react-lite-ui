@@ -1,0 +1,47 @@
+/**
+ * Sets values for spacing in properties like
+ * height, width, padding, font-size, etc.
+ *
+ * @mixin spacing
+ * @param $coeff - units of spacing (calculated to multiples of 8).
+ * @param $prop - property name.
+ * @param $unit - unit of spacing. defaults to `px`.
+ */
+@mixin spacing($coeff, $prop, $unit:px) {
+    #{$prop}: #{($coeff * 8)}#{$unit};
+}
+
+/**
+ * @mixin border
+ * @param $pos - sets border position. pass `null` if you
+ * need to set border property for all sides.
+ * @param $borderWidth - sets border width
+ * @param $style - rest of the values like border style, color, etc.
+ */
+@mixin border($pos, $borderWidth, $style...) {
+    $rest: '';
+    @each $var in $style {
+        $rest: #{$rest} #{$var}
+    }
+    @if $pos==null {
+        border: #{($borderWidth * 8)}px $rest;
+    }
+    @else {
+        border-#{$pos}: #{($borderWidth * 8)}px $rest;
+    }
+}
+
+/**
+ * Sets flex property on element when no params are passed.
+ *
+ * @mixin flex
+ * @param $inline - sets inline flex when true is passed.
+ */
+@mixin flex($inline:false) {
+    @if $inline {
+        display: inline-flex;
+    } else {
+        display: -webkit-flex;
+        display: flex;
+    }
+}
