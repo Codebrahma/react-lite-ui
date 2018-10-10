@@ -12,7 +12,7 @@
 
 :local(.menu) {
     box-sizing: border-box;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     background-color: $original-white;
@@ -25,7 +25,9 @@
 }
 
 :local(.option) {
-    padding: 5%;
+    width: 100;
+    min-height: fit-content;
+    padding: 2% 5%;
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
@@ -36,14 +38,13 @@
     }
 }
 
-:local(.show) {
-    overflow-y: auto;
-    max-height: 200px;
+:local(.option-hover) {
+    background-color: #eee;
 }
 
-:local(.hide) {
-    overflow: hidden;
-    max-height: 0;
+:local(.show) {
+    overflow-y: auto;
+    display: flex;
 }
 
 :local(.selectInput) {
