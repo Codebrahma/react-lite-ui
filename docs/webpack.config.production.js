@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -58,11 +59,13 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('docs.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new CompressionPlugin(),
+    new HTMLWebpackPlugin({
+      template: './public/index.html'
+    }),
   ],
   optimization: {
     minimizer: [

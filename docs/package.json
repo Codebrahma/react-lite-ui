@@ -54,7 +54,7 @@
     "highlight-loader": "git://github.com/javivelasco/highlight-loader.git#master",
     "highlight.js": "^9.3.0",
     "html-loader": "^0.4.3",
-    "html-webpack-plugin": "^2.16.1",
+    "html-webpack-plugin": "^3.2.0",
     "markdown-loader": "^0.1.7",
     "node-sass": "^3.7.0",
     "postcss-loader": "^2.1.5",
