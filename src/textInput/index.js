@@ -15,7 +15,7 @@ const TextInput = ({
   const innerWrapperProps = {
     className: 'innerWrapper',
     style: {
-      width: width || '100%',
+      width: width || '200px',
     },
   };
   const inputElementProps = {
