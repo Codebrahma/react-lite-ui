@@ -2,21 +2,34 @@
 
 :local(.inputWrapper) {
   padding: 5px;
+  .innerWrapper {
+    position: relative;
+  }
 }
 
 :local(.inputElement) {
   padding-bottom: 10px;
   background-color: var(--input-text-background-color);
-  border-bottom: 1px solid $original-black;
+  border-bottom: 2px solid $original-black;
   border-left: 0;
   border-right: 0;
   border-top: 0;
+  width: 100%;
   font-size: 16px;
   display: block;
   outline: none;
-
-  &:focus {
-    border-bottom-color: $primary-color;
+  + .input-focus {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $secondary-blue;
+    transition: 0.4s;
+  }
+  &:focus + .input-focus {
+    width: 100%;
+    transition: 0.4s;
   }
 }
 
