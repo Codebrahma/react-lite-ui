@@ -8,7 +8,8 @@
     "build": "webpack --mode production --config webpack.prod.js",
     "build-demo": "npm install && cd docs && npm install && npm run build",
     "lint": "eslint ./ --ext .jsx --ext .js",
-    "test": "mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'"
+    "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": "https://github.com/Codebrahma/React-Lite-UI.git",
   "license": "ISC",
@@ -40,6 +41,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.8.3",
+    "nyc": "^13.0.1",
     "optimize-css-assets-webpack-plugin": "^4.0.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
