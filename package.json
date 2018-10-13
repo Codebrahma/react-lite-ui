@@ -11,6 +11,20 @@
     "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 90,
+    "statements": 90,
+    "functions": 90,
+    "branches": 90,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.test.js"
+    ]
+  },
   "repository": "https://github.com/Codebrahma/React-Lite-UI.git",
   "license": "ISC",
   "private": false,
