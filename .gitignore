@@ -5,3 +5,5 @@ npm-error.log
 /docs/node_modules
 /docs/log/*.log
 /docs/build
+coverage
+.nyc_output
