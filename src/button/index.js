@@ -27,6 +27,7 @@ class Button extends Component {
       theme[size],
       className,
       (noShadow || bordered) && 'noShadow',
+      theme[bordered ? `${type}Bordered` : ''],
     );
 
     const props = {
@@ -54,6 +55,8 @@ Button.propTypes = {
   iconAlignment: PropTypes.string,
   theme: PropTypes.shape({}),
   disabled: PropTypes.bool,
+  noShadow: PropTypes.bool,
+  bordered: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
@@ -67,6 +70,8 @@ Button.defaultProps = {
   iconAlignment: 'left',
   theme: {},
   disabled: false,
+  noShadow: false,
+  bordered: false,
   onClick: null,
 };
 
