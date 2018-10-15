@@ -1,3 +1,6 @@
+@import '../globals/_theme.scss';
+@import '../globals/animations.scss';
+
 :local(.autocomplete) {
     width: 20vw;
     :local(.input-container) {
@@ -9,10 +12,10 @@
             width: 100%;
             font-size: 1rem;
             border: none;
-            border-bottom: 2px solid #6c757d;
+            border-bottom: 2px solid $input-bottom-border;
             outline: none;
             &:focus {
-                border-bottom: 2px solid #d8d8d8;
+                border-bottom: 2px solid $secondary-input-active-border;
             }
         }
     }
@@ -21,7 +24,7 @@
         max-height: 20vh;
         width: 100%;
         overflow-y: auto;
-        box-shadow: 1px 1px 1px 2px rgba(233, 226, 226, 0.5);
+        box-shadow: 1px 1px 1px 2px $dropdown-menu-shadow;
         border-radius: 2px;
         :local(.autocomplete-list-item) {
             display: block;
@@ -30,11 +33,11 @@
             padding: 2% 2%;
             box-shadow: none;
             &:hover {
-                background-color: rgba(71, 233, 243, 0.2);
+                background-color: $input-active-item;
             }
         }
         :local(.item-hover) {
-            background-color: rgba(71, 233, 243, 0.2);
+            background-color: $input-active-item;
         }
     }
 }
@@ -43,19 +46,11 @@
     &::after {
         content: '';
         display: block;
-        background-color: #47e9f3 !important;
+        background-color: $primary-input-active-border !important;
         height: 2px;
-        animation: animateFocus 0.4s linear;
+        @include inputFocus();
+        animation-duration: 0.4s;
+        animation-timing-function: linear;
         margin-top: -2px;
-    }
-
-    @keyframes animateFocus {
-        0% {
-            width: 0%;
-        }
-
-        100% {
-            width: 100%;
-        }
     }
 }
