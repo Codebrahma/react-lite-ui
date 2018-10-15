@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Proptypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import cx from 'classnames';
@@ -18,6 +19,9 @@ class AutoComplete extends Component {
       showSuggestions: false,
       blockOnBlur: false,
     };
+
+    this.listRef = null;
+    this.focusedElement = null;
   }
 
   // Handle user input change on typing.
@@ -88,9 +92,9 @@ class AutoComplete extends Component {
 
   getScrollState = () => {
     const threshold =
-      document.getElementById('autocomplete-list').offsetTop +
-      document.getElementById('autocomplete-list').offsetHeight;
-    const focusedItem = document.getElementById('focused');
+      ReactDOM.findDOMNode(this.listRef).offsetTop +
+      ReactDOM.findDOMNode(this.listRef).offsetHeight;
+    const focusedItem = ReactDOM.findDOMNode(this.focusedElement);
     return { threshold, focusedItem };
   };
 
@@ -115,12 +119,13 @@ class AutoComplete extends Component {
           () => {
             const { threshold, focusedItem } = this.getScrollState();
             if (
-              (focusedItem &&
-              focusedItem.offsetHeight + focusedItem.offsetTop > threshold)
+              focusedItem &&
+              focusedItem.offsetHeight + focusedItem.offsetTop > threshold
             ) {
-              document.getElementById('autocomplete-list').scrollTop += focusedItem.offsetHeight;
+              ReactDOM.findDOMNode(this.listRef).scrollTop +=
+                focusedItem.offsetHeight;
             } else if (!this.state.focus) {
-              document.getElementById('autocomplete-list').scrollTop = 0;
+              ReactDOM.findDOMNode(this.listRef).scrollTop = 0;
             }
           },
         );
@@ -136,11 +141,12 @@ class AutoComplete extends Component {
             const { threshold, focusedItem } = this.getScrollState();
             if (
               focusedItem &&
-              ((focusedItem.offsetHeight * this.state.focus) - document.getElementById('autocomplete-list').offsetTop) < document.getElementById('autocomplete-list').offsetHeight
+              ((ReactDOM.findDOMNode(this.listRef).scrollTop + ReactDOM.findDOMNode(this.listRef).offsetTop) > focusedItem.offsetTop)
             ) {
-              document.getElementById('autocomplete-list').scrollTop -= focusedItem.offsetHeight;
+              ReactDOM.findDOMNode(this.listRef).scrollTop -=
+                focusedItem.offsetHeight;
             } else if (this.state.focus === this.state.data.length - 1) {
-              document.getElementById('autocomplete-list').scrollTop = threshold;
+                ReactDOM.findDOMNode(this.listRef).scrollTop = threshold;
             }
           },
         );
@@ -187,7 +193,11 @@ class AutoComplete extends Component {
         /* eslint-disable jsx-a11y/click-events-have-key-events */
         return (
           <div
-            id={focus === index ? 'focused' : undefined}
+            ref={(ref) => {
+              if (focus === index) {
+                this.focusedElement = ref;
+              }
+            }}
             aria-label={focus === index ? 'active' : 'inactive'}
             className={classes}
             onClick={() => this.selectItem(item)}
@@ -233,6 +243,9 @@ class AutoComplete extends Component {
         {showSuggestions && (
           <div
             id="autocomplete-list"
+            ref={(ref) => {
+              this.listRef = ref;
+            }}
             className={cx(theme['autocomplete-list'])}
             onMouseEnter={() => this.blockOnBlur(true)}
             onMouseLeave={() => this.blockOnBlur(false)}
