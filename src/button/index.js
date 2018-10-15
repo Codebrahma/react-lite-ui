@@ -16,6 +16,8 @@ class Button extends Component {
       icon,
       iconAlignment,
       theme,
+      noShadow,
+      bordered,
       ...others
     } = this.props;
     const Element = href ? 'a' : 'button';
@@ -24,6 +26,7 @@ class Button extends Component {
       theme[type],
       theme[size],
       className,
+      (noShadow || bordered) && 'noShadow',
     );
 
     const props = {
@@ -56,8 +59,8 @@ Button.propTypes = {
 
 Button.defaultProps = {
   children: 'Button',
-  type: 'default',
-  size: 'medium',
+  type: 'primary',
+  size: 'small',
   className: '',
   href: '',
   icon: null,
