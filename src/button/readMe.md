@@ -6,13 +6,18 @@ The base button component.
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
 | `children` | `Any` | `Button` | All children components to be rendered inside the button |
-| `type` | `String` | `default` | Represents the style to be applied for the button. Possible values are `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, and `dark` |
+| `type` | `String` | `primary` | Represents the style to be applied for the button. Possible values are `primary`, `secondary`, `success`, `danger`, `warning`, `info`, and `dark` |
 | `size` | `String` | `medium`  | Defines the size of the button. Possible values are `small`, `medium`, and `large` |
 | `className` | `String` | `''` | Set a class to style the Component |
 | `href` | `String` | `null` | Creates a link for the button. |
 | `icon` | `String`/`Element` | `null` | Value of the icon |
 | `iconAlignment` | `String` | `left` | Set an alignment of the icon. Possible values are `left`, `right` |
 | `onClick` | `Function` | &nbsp; | Callback to be called when the button is clicked |
+| `disabled` | `Boolean` | `false` | Prop to disable the button |
+| `bordered` | `Boolean` | `false` | Prop to render bordered button |
+| `borderless` | `Boolean` | `false` | Prop to render borderless button |
+| `flat` | `Boolean` | `false` | Prop to render flat button |
+
 
 ### Theme
 
@@ -25,8 +30,8 @@ The base button component.
 | `danger` | Class used for styling `danger` type buttons |
 | `warning` | Class used for styling `warning` type buttons |
 | `info` | Class used for styling `info` type buttons |
-| `light` | Class used for styling `light` type buttons |
 | `dark` | Class used for styling `dark` type buttons |
+| `${type}Bordered` | Class used for styling `bordered` buttons of specific type |
 | `small` | Class used for styling `small` sized buttons |
 | `medium` | Class used for styling `medium` sized buttons |
 | `large` | Class used for styling `large` sized buttons |
