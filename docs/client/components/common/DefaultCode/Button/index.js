@@ -15,15 +15,24 @@ class Demo extends React.Component {
       <div>
         <PreviewBlock header="Styled Buttons">
           <div style={this.style.buttonContainer}>
-            <Button>Default</Button>
-            <Button type="primary">Primary</Button>
+            <Button>Primary</Button>
             <Button type="secondary">Secondary</Button>
             <Button type="success">Success</Button>
             <Button type="danger">Danger</Button>
             <Button type="warning">Warning</Button>
             <Button type="info">Info</Button>
-            <Button type="light">Light</Button>
             <Button type="dark">Dark</Button>
+          </div>
+        </PreviewBlock>
+        <PreviewBlock header="Bordered Buttons">
+          <div style={this.style.buttonContainer}>
+            <Button bordered>Primary</Button>
+            <Button type="secondary" bordered>Secondary</Button>
+            <Button type="success" bordered>Success</Button>
+            <Button type="danger" bordered>Danger</Button>
+            <Button type="warning" bordered>Warning</Button>
+            <Button type="info" bordered>Info</Button>
+            <Button type="dark" bordered>Dark</Button>
           </div>
         </PreviewBlock>
         <PreviewBlock header="Sizable Buttons">
