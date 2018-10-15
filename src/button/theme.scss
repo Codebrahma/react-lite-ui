@@ -138,65 +138,86 @@
 }
 
 /* Bordered Buttons */
-:local(.primaryBordered) {
+:local(.primaryBordered),
+:local(.primaryBorderless) {
   color: var(--cool-blue);
   background-color: var(--white);
-  border: 1px solid var(--cool-blue);
   &:hover {
     background-color: var(--cool-blue-21);
   }
 }
+:local(.primaryBordered) {
+  border: 1px solid var(--cool-blue);
+}
 
-:local(.secondaryBordered) {
+:local(.secondaryBordered),
+:local(.secondaryBorderless) {
   color: var(--charcoal-grey);
   background-color: var(--white);
-  border: 1px solid var(--brown-grey);
   &:hover {
     background-color: var(--very-light-pink-50);
   }
 }
+:local(.secondaryBordered) {
+  border: 1px solid var(--brown-grey);
+}
 
-:local(.successBordered) {
+:local(.successBordered),
+:local(.successBorderless) {
   color: var(--cool-green);
   background-color: var(--white);
-  border: 1px solid var(--cool-green);
   &:hover {
     background-color: var(--cool-green-20);
   }
 }
+:local(.successBordered) {
+  border: 1px solid var(--cool-green);
+}
 
-:local(.dangerBordered) {
+:local(.dangerBordered),
+:local(.dangerBorderless) {
   color: var(--dark-hot-pink);
   background-color: var(--white);
-  border: 1px solid var(--dark-hot-pink);
   &:hover {
     background-color: var(--dark-hot-pink-20);
   }
 }
+:local(.dangerBordered) {
+  border: 1px solid var(--dark-hot-pink);
+}
 
-:local(.warningBordered) {
+:local(.warningBordered),
+:local(.warningBorderless) {
   color: var(--orange-yellow);
   background-color: var(--white);
-  border: 1px solid var(--orange-yellow);
   &:hover {
     background-color: var(--orange-yellow-20);
   }
 }
+:local(.warningBordered) {
+  border: 1px solid var(--orange-yellow);
+}
 
-:local(.infoBordered) {
+:local(.infoBordered),
+:local(.infoBorderless) {
   color: var(--bright-cyan);
   background-color: var(--white);
-  border: 1px solid var(--bright-cyan);
   &:hover {
     background-color: var(--bright-cyan-20);
   }
 }
+:local(.infoBordered) {
+  border: 1px solid var(--bright-cyan);
+}
 
-:local(.darkBordered) {
+:local(.darkBordered),
+:local(.darkBorderless) {
   color: var(--battleship-grey);
   background-color: var(--white);
-  border: 1px solid var(--battleship-grey);
   &:hover {
     background-color: var(--battleship-grey-20);
   }
+}
+:local(.darkBordered) {
+  border: 1px solid var(--battleship-grey);
 }

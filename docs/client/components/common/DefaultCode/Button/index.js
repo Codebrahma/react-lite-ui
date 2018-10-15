@@ -13,6 +13,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
+        { /* Preview Block-1 */ }
         <PreviewBlock header="Styled Buttons">
           <div style={this.style.buttonContainer}>
             <Button>Primary</Button>
@@ -24,17 +25,31 @@ class Demo extends React.Component {
             <Button type="dark">Dark</Button>
           </div>
         </PreviewBlock>
+        { /* Preview Block-2 */ }
         <PreviewBlock header="Bordered Buttons">
           <div style={this.style.buttonContainer}>
             <Button bordered>Primary</Button>
             <Button type="secondary" bordered>Secondary</Button>
             <Button type="success" bordered>Success</Button>
-            <Button type="danger" bordered>Danger</Button>
-            <Button type="warning" bordered>Warning</Button>
-            <Button type="info" bordered>Info</Button>
-            <Button type="dark" bordered>Dark</Button>
           </div>
         </PreviewBlock>
+        { /* Preview Block-3 */ }
+        <PreviewBlock header="Borderless Buttons">
+          <div style={this.style.buttonContainer}>
+            <Button type="danger" borderless>Danger</Button>
+            <Button type="warning" borderless>Warning</Button>
+            <Button type="info" borderless>Info</Button>
+          </div>
+        </PreviewBlock>
+        { /* Preview Block-4 */ }
+        <PreviewBlock header="Flat Buttons">
+          <div style={this.style.buttonContainer}>
+            <Button type="success" flat>Success</Button>
+            <Button type="danger" flat>Danger</Button>
+            <Button type="warning" flat>Warning</Button>
+          </div>
+        </PreviewBlock>
+        { /* Preview Block-5 */ }
         <PreviewBlock header="Sizable Buttons">
           <div
             style={{
