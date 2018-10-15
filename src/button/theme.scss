@@ -7,7 +7,7 @@
   cursor: pointer;
   display: inline-block;
   flex-direction: row;
-  font-weight: 500;
+  font-weight: bold;
   justify-content: center;
   letter-spacing: 0;
   outline: none;
@@ -15,24 +15,16 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  box-shadow: 1px 0px 8px 1px rgba($color: #000000, $alpha: 0.5);
-  border-radius: 3px;
-
-  &:hover {
-    box-shadow: 1px 0px 11px 2px rgba($color: #000000, $alpha: 0.5);
-  }
+  box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.07),
+              0 2px 4px 0 rgba(163, 152, 152, 0.5),
+              0 3px 4px 0 rgba(168, 160, 160, 0.5);
+  border-radius: 6px;
 
   &:active {
-    box-shadow: 1px 0px 5px 1px rgba($color: #000000, $alpha: 0.5);
-    &::after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      background: rgba($color: #000000, $alpha: 0.27);
-    }
+    // box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.07),
+    //             0 2px 6px 0 rgba(163, 152, 152, 0.5),
+    //             -5px 8px 10px 0 rgba(168, 160, 160, 0.5);
+    box-shadow: none;
   }
 
   & > .rippleWrapper {
@@ -42,6 +34,9 @@
   &[disabled] {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+  &.noShadow {
+    box-shadow: none;
   }
 }
 
@@ -60,79 +55,102 @@
 }
 
 :local(.small) {
-  font-size: 11px;
-  height: 28px;
-  line-height: 28px;
-  padding: 0 8px;
-  min-width: 70px;
+  font-size: 14px;
+  min-height: 33px;
+  line-height: 19px;
+  padding: 7px 22px;
+  min-width: 100px;
 }
 
 :local(.medium) {
-  font-size: 13px;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 12px;
-  min-width: 90px;
+  font-size: 16px;
+  min-height: 44px;
+  line-height: 19px;
+  padding: 11px 26px;
+  min-width: 125px;
 }
 
 :local(.large) {
   font-size: 18px;
-  height: 52px;
-  line-height: 52px;
-  padding: 0 20px;
-  min-width: 130px;
-}
-
-:local(.default) {
-  color: $original-black;
-  background-color: $original-white;
-  border-color: $original-white;
+  min-height: 60px;
+  line-height: 19px;
+  padding: 15px 30px;
+  min-width: 150px;
 }
 
 :local(.primary) {
   color: $original-white;
-  background-color: $secondary-violet;
-  border-color: $secondary-violet;
+  background-color: var(--cool-blue);
+  &:hover {
+    background-color: var(--light-navy);
+  }
+  &:active {
+    background-color: var(--light-navy);
+  }
 }
 
 :local(.secondary) {
-  color: $original-white;
-  background-color: $secondary-grey;
-  border-color: $secondary-grey;
+  color: $original-black;
+  background-color: var(--very-light-pink);
+  &:hover {
+    background-color: var(--brown-grey);
+  }
+  &:active {
+    background-color: var(--brown-grey);
+  }
 }
 
 :local(.success) {
   color: $original-white;
-  background-color: $secondary-green;
-  border-color: $secondary-green;
+  background-color: var(--cool-green);
+  &:hover {
+    background-color: var(--darkish-green);
+  }
+  &:active {
+    background-color: var(--darkish-green);
+  }
 }
 
 :local(.danger) {
   color: $original-white;
-  background-color: $secondary-red;
-  border-color: $secondary-red;
+  background-color: var(--dark-hot-pink);
+  &:hover {
+    background-color: var(--cranberry);
+  }
+  &:active {
+    background-color: var(--cranberry);
+  }
 }
 
 :local(.warning) {
   color: $secondary-black;
-  background-color: $secondary-yellow;
-  border-color: $secondary-yellow;
+  background-color: var(--orange-yellow);
+  &:hover {
+    background-color: var(--golden-brown);
+  }
+  &:active {
+    background-color: var(--golden-brown);
+  }
 }
 
 :local(.info) {
   color: $original-white;
-  background-color: $secondary-blue;
-  border-color: $secondary-blue;
-}
-
-:local(.light) {
-  color: $secondary-black;
-  background-color: $secondary-white;
-  border-color: $secondary-white;
+  background-color: var(--bright-cyan);
+  &:hover {
+    background-color: var(--aqua);
+  }
+  &:active {
+    background-color: var(--aqua);
+  }
 }
 
 :local(.dark) {
   color: $original-white;
-  background-color: $secondary-black;
-  border-color: $secondary-black;
+  background-color: var(--battleship-grey);
+  &:hover {
+    background-color: var(--charcoal-grey);
+  }
+  &:active {
+    background-color: var(--charcoal-grey);
+  }
 }
