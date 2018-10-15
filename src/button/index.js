@@ -18,6 +18,7 @@ class Button extends Component {
       theme,
       flat,
       bordered,
+      borderless,
       ...others
     } = this.props;
     const Element = href ? 'a' : 'button';
@@ -26,8 +27,9 @@ class Button extends Component {
       theme[type],
       theme[size],
       className,
-      (flat || bordered) && 'flat',
+      (flat || bordered || borderless) && 'flat',
       theme[bordered ? `${type}Bordered` : ''],
+      theme[borderless ? `${type}Borderless` : ''],
     );
 
     const props = {
