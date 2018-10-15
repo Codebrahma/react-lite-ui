@@ -55,7 +55,7 @@ class AutoComplete extends Component {
     const { data, input } = this.state;
     const { labelKey } = this.props;
     const matchedItem = data.filter(item => item[`${labelKey}`].indexOf(input[`${labelKey}`]) !== -1);
-    if (matchedItem.length) {
+    if (input[`${labelKey}`].length && matchedItem.length) {
       this.setState({
         input: { [`${labelKey}`]: matchedItem[0][`${labelKey}`] },
       });
@@ -86,6 +86,14 @@ class AutoComplete extends Component {
     });
   };
 
+  getScrollState = () => {
+    const threshold =
+      document.getElementById('autocomplete-list').offsetTop +
+      document.getElementById('autocomplete-list').offsetHeight;
+    const focusedItem = document.getElementById('focused');
+    return { threshold, focusedItem };
+  };
+
   /*
   Handle keydown events when input is focused for navigating between options
   and selecting an option.
@@ -98,18 +106,44 @@ class AutoComplete extends Component {
     let isValid;
     switch (e.key) {
       case 'ArrowDown':
-        this.setState(prevState => ({
-          focus:
-            ((prevState.focus === undefined ? -1 : prevState.focus) + 1) %
-            prevState.data.length,
-        }));
+        this.setState(
+          prevState => ({
+            focus:
+              ((prevState.focus === undefined ? -1 : prevState.focus) + 1) %
+              prevState.data.length,
+          }),
+          () => {
+            const { threshold, focusedItem } = this.getScrollState();
+            if (
+              (focusedItem &&
+              focusedItem.offsetHeight + focusedItem.offsetTop > threshold)
+            ) {
+              document.getElementById('autocomplete-list').scrollTop += focusedItem.offsetHeight;
+            } else if (!this.state.focus) {
+              document.getElementById('autocomplete-list').scrollTop = 0;
+            }
+          },
+        );
         break;
       case 'ArrowUp':
-        this.setState(prevState => ({
-          focus:
-            (prevState.data.length + ((prevState.focus || 0) - 1)) %
-            prevState.data.length,
-        }));
+        this.setState(
+          prevState => ({
+            focus:
+              (prevState.data.length + ((prevState.focus || 0) - 1)) %
+              prevState.data.length,
+          }),
+          () => {
+            const { threshold, focusedItem } = this.getScrollState();
+            if (
+              focusedItem &&
+              ((focusedItem.offsetHeight * this.state.focus) - document.getElementById('autocomplete-list').offsetTop) < document.getElementById('autocomplete-list').offsetHeight
+            ) {
+              document.getElementById('autocomplete-list').scrollTop -= focusedItem.offsetHeight;
+            } else if (this.state.focus === this.state.data.length - 1) {
+              document.getElementById('autocomplete-list').scrollTop = threshold;
+            }
+          },
+        );
         break;
       case 'Enter':
         if (focus) {
@@ -153,6 +187,7 @@ class AutoComplete extends Component {
         /* eslint-disable jsx-a11y/click-events-have-key-events */
         return (
           <div
+            id={focus === index ? 'focused' : undefined}
             aria-label={focus === index ? 'active' : 'inactive'}
             className={classes}
             onClick={() => this.selectItem(item)}
