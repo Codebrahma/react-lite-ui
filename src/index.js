@@ -13,8 +13,6 @@ import Tooltip from './tooltip';
 import AutoComplete from './autocomplete';
 import Badge from './badge';
 import Drawer from './drawer';
-import List from './list';
-import ListItem from './listitem';
 import Chip from './chip';
 import Menu from './menu';
 import Modal from './modal';
@@ -37,8 +35,6 @@ export default {
   AutoComplete,
   Badge,
   Drawer,
-  List,
-  ListItem,
   Chip,
   Menu,
   Modal,

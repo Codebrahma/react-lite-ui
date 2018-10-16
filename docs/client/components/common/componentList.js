@@ -24,8 +24,6 @@ import BadgeReadme from '../../../../src/badge/readMe.md';
 import Badge from '../../../../src/badge';
 import Drawer from '../../../../src/drawer';
 import DrawerReadme from '../../../../src/drawer/readMe.md';
-import List from '../../../../src/list';
-import ListReadMe from '../../../../src/list/readMe.md';
 import ChipReadMe from '../../../../src/chip/readMe.md';
 import Chip from '../../../../src/chip';
 import Menu from "../../../../src/menu";
@@ -55,7 +53,6 @@ import {
   AutoCompleteDefaultCode,
   BadgeDefaultCode,
   DrawerDefaultCode,
-  ListDefaultCode,
   ChipDefaultCode,
   MenuDefaultCode,
   ModalDefaultCode,
@@ -119,12 +116,6 @@ export const componentList = [
     docs: DrawerReadme,
     component: Drawer,
     defaultCode: DrawerDefaultCode,
-  },
-  {
-    name: 'List',
-    docs: ListReadMe,
-    component: List,
-    defaultCode: ListDefaultCode,
   },
   {
     name: 'Menu',
