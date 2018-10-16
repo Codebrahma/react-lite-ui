@@ -32,6 +32,7 @@ const Chip = ({
     theme.chip,
     theme[size],
     theme[outlined ? `${color}Outlined` : color],
+    avatarElement && 'avatarMarginLeft',
     { [theme.clickable]: Element === 'a' },
     className,
   );
