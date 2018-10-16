@@ -6,6 +6,7 @@ import cx from 'classnames';
 
 import defaultTheme from './theme.scss';
 
+/* eslint-disable react/no-find-dom-node */
 class AutoComplete extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +22,28 @@ class AutoComplete extends Component {
     };
 
     this.listRef = null;
+    this.listWrapperRef = null;
     this.focusedElement = null;
+    this.stopScroll = false;
   }
+
+  getScrollState = () => {
+    const threshold =
+      ReactDOM.findDOMNode(this.listRef).offsetTop +
+      ReactDOM.findDOMNode(this.listRef).offsetHeight;
+    const focusedItem = ReactDOM.findDOMNode(this.focusedElement);
+    return { threshold, focusedItem };
+  };
+
+  getScrollArrowState = () => {
+    const threshhold =
+      ReactDOM.findDOMNode(this.listWrapperRef).offsetTop +
+      ReactDOM.findDOMNode(this.listWrapperRef).offsetHeight;
+    const children = ReactDOM.findDOMNode(this.listWrapperRef).childNodes[0]
+      .childNodes;
+    const lastChild = children[children.length - 1];
+    return lastChild.offsetTop + lastChild.offsetHeight > threshhold;
+  };
 
   // Handle user input change on typing.
   handleInput = ({ target }) => {
@@ -48,10 +69,17 @@ class AutoComplete extends Component {
 
   // Show the options in dropdown menu.
   showSuggestions = () => {
-    this.setState({
-      focused: true,
-      showSuggestions: true,
-    });
+    this.setState(
+      {
+        focused: true,
+        showSuggestions: true,
+      },
+      () => {
+        this.setState({
+          showScrollArrow: this.getScrollArrowState(),
+        });
+      },
+    );
   };
 
   // Hide the options dropdown menu and clear keyboard focused element.
@@ -68,6 +96,7 @@ class AutoComplete extends Component {
       this.setState({
         showSuggestions: false,
         focus: undefined,
+        showScrollArrow: false,
       });
     }
     this.setState({
@@ -88,14 +117,6 @@ class AutoComplete extends Component {
     this.setState({
       blockOnBlur: block,
     });
-  };
-
-  getScrollState = () => {
-    const threshold =
-      ReactDOM.findDOMNode(this.listRef).offsetTop +
-      ReactDOM.findDOMNode(this.listRef).offsetHeight;
-    const focusedItem = ReactDOM.findDOMNode(this.focusedElement);
-    return { threshold, focusedItem };
   };
 
   /*
@@ -141,12 +162,14 @@ class AutoComplete extends Component {
             const { threshold, focusedItem } = this.getScrollState();
             if (
               focusedItem &&
-              ((ReactDOM.findDOMNode(this.listRef).scrollTop + ReactDOM.findDOMNode(this.listRef).offsetTop) > focusedItem.offsetTop)
+              ReactDOM.findDOMNode(this.listRef).scrollTop +
+                ReactDOM.findDOMNode(this.listRef).offsetTop >
+                focusedItem.offsetTop
             ) {
               ReactDOM.findDOMNode(this.listRef).scrollTop -=
                 focusedItem.offsetHeight;
             } else if (this.state.focus === this.state.data.length - 1) {
-                ReactDOM.findDOMNode(this.listRef).scrollTop = threshold;
+              ReactDOM.findDOMNode(this.listRef).scrollTop = threshold;
             }
           },
         );
@@ -173,6 +196,27 @@ class AutoComplete extends Component {
       default:
         break;
     }
+  };
+
+  startScrolling = () => {
+    const { threshold } = this.getScrollState();
+    const lastListItem = ReactDOM.findDOMNode(this.listRef).childNodes[
+      ReactDOM.findDOMNode(this.listRef).childElementCount - 1
+    ];
+    while (lastListItem.offsetHeight + lastListItem.offsetTop > threshold) {
+      const time = Date.now();
+      const delay = 500;
+      while (Date.now() < (time + delay)) {};
+      ReactDOM.findDOMNode(this.listRef).scrollTop += lastListItem.offsetHeight;
+      if (this.stopScroll) {
+        this.stopScroll = false;
+        return;
+      }
+    }
+  };
+
+  stopScrolling = () => {
+    this.stopScroll = true;
   };
 
   // Render options from data provided as props to the component.
@@ -219,8 +263,9 @@ class AutoComplete extends Component {
       valueKey,
       ...rest
     } = this.props;
-    const { showSuggestions, focused } = this.state;
+    const { showSuggestions, focused, showScrollArrow } = this.state;
     const classes = cx(className, theme.autocomplete);
+    console.log(showScrollArrow);
     return (
       <div className={classes}>
         <span
@@ -240,17 +285,33 @@ class AutoComplete extends Component {
             {...rest}
           />
         </span>
-        {showSuggestions && (
+        {true && (
           <div
-            id="autocomplete-list"
+            className={theme.dropdownWrapper}
             ref={(ref) => {
-              this.listRef = ref;
+              this.listWrapperRef = ref;
             }}
-            className={cx(theme['autocomplete-list'])}
-            onMouseEnter={() => this.blockOnBlur(true)}
-            onMouseLeave={() => this.blockOnBlur(false)}
           >
-            {this.renderOptions()}
+            <div
+              id="autocomplete-list"
+              ref={(ref) => {
+                this.listRef = ref;
+              }}
+              className={cx(theme['autocomplete-list'])}
+              onMouseEnter={() => { this.blockOnBlur(true); }}
+              onMouseLeave={() => { this.blockOnBlur(false); }}
+            >
+              {this.renderOptions()}
+            </div>
+            {true && (
+              <div
+                onMouseEnter={this.startScrolling}
+                onMouseLeave={this.stopScrolling}
+                className={theme.scrollArrow}
+              >
+                hover to scroll
+              </div>
+            )}
           </div>
         )}
       </div>

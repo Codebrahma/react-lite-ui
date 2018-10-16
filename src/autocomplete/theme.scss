@@ -3,9 +3,9 @@
 
 :local(.autocomplete) {
     width: 20vw;
+    position: relative;
     :local(.input-container) {
         min-width: 100%;
-        position: relative;
         :local(.autocomplete-input) {
             box-sizing: border-box;
             padding: 2% 2%;
@@ -20,12 +20,9 @@
         }
     }
     :local(.autocomplete-list) {
-        box-sizing: border-box;
-        max-height: 20vh;
-        width: 100%;
-        overflow-y: auto;
-        box-shadow: 1px 1px 1px 2px $dropdown-menu-shadow;
+        max-height: 80%;
         border-radius: 2px;
+        overflow-y: auto;
         :local(.autocomplete-list-item) {
             display: block;
             box-sizing: border-box;
@@ -42,6 +39,15 @@
     }
 }
 
+:local(.dropdownWrapper) {
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px 2px $dropdown-menu-shadow;
+    max-height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 :local(.border-animation) {
     &::after {
         content: '';
@@ -53,4 +59,11 @@
         animation-timing-function: linear;
         margin-top: -2px;
     }
+}
+
+:local(.scrollArrow) {
+    width: 100%;
+    height: fit-content;
+    bottom: 0;
+    background: $secondary-white;
 }
