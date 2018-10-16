@@ -22,7 +22,7 @@ class MultiSelect extends Component {
     this.setState({
       input: target.value,
     });
-  }
+  };
 
   // Handle the click event when user selects / clicks on an option from the dropdown.
   handleSelect = (selectedOption) => {
@@ -52,15 +52,15 @@ class MultiSelect extends Component {
   handleKeyPress = (e) => {
     const { options } = this.props;
     const { input, selected } = this.state;
-    const isValid = (options
-      .filter(opt =>
-        opt.label
-          .toLowerCase()
-          .indexOf(input.toLowerCase()) !== -1));
+    const isValid =
+      options
+        .filter(opt => opt.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
     switch (e.key) {
       case 'Enter':
         if (isValid.length) {
-          if (!selected.filter(item => item.label === isValid[0].label).length) {
+          if (
+            !selected.filter(item => item.label === isValid[0].label).length
+          ) {
             this.setState({
               selected: [...selected, isValid[0]],
             });
@@ -73,7 +73,7 @@ class MultiSelect extends Component {
       default:
         break;
     }
-  }
+  };
 
   /*
   Dropdown handle used to toggle open and closed states for the dropdown when user
@@ -98,12 +98,6 @@ class MultiSelect extends Component {
     }
   };
 
-  showMenu = () => {
-    this.setState({
-      open: true,
-    });
-  }
-
   /*
   Helper function which sets a boolean `blockOnBlur` property on the state.
   When the user is hovering on the dropdown, the `blockOnBlur` property on state
@@ -125,11 +119,9 @@ class MultiSelect extends Component {
     const { selected, input } = this.state;
     let filteredOptions;
     if (input.length) {
-      filteredOptions = options
-        .filter(opt =>
-          opt.label
-            .toLowerCase()
-            .indexOf(input.toLowerCase()) !== -1);
+      filteredOptions =
+        options
+          .filter(opt => opt.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
     } else {
       filteredOptions = options;
     }
@@ -187,25 +179,19 @@ class MultiSelect extends Component {
     return (
       <div className={classes}>
         <div
-          id="selected-options"
-          className={theme.selectedInput}
+          className={theme.selectInputWrapper}
           onClick={this.toggleMenu}
           onBlur={this.hideMenu}
+          onKeyDown={this.handleKeyPress}
           /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
           tabIndex={0}
         >
-          {this.renderSelected()}
+          <div id="selected-options" className={theme.selectedInput}>
+            {this.renderSelected()}
+          </div>
+          <div className={cx(theme.arrow, open ? theme.up : theme.down)} />
         </div>
-        <input
-          className={theme.selectInput}
-          onChange={this.handleInput}
-          value={this.state.input}
-          onFocus={this.showMenu}
-          onBlur={this.hideMenu}
-          onKeyDown={this.handleKeyPress}
-        />
-        {
-          open &&
+        {open && (
           <div
             id="dropdown-options"
             className={menuclass}
@@ -214,7 +200,7 @@ class MultiSelect extends Component {
           >
             {this.renderOptions(options)}
           </div>
-        }
+        )}
       </div>
     );
   }
