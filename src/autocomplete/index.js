@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Proptypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import cx from 'classnames';
 
 import defaultTheme from './theme.scss';
 
+/* eslint-disable react/no-find-dom-node */
 class AutoComplete extends Component {
   constructor(props) {
     super(props);
@@ -18,18 +20,41 @@ class AutoComplete extends Component {
       showSuggestions: false,
       blockOnBlur: false,
     };
+
+    this.listRef = null;
+    this.listWrapperRef = null;
+    this.focusedElement = null;
+    this.stopScroll = false;
   }
+
+  getScrollState = () => {
+    const threshold =
+      ReactDOM.findDOMNode(this.listRef).offsetTop +
+      ReactDOM.findDOMNode(this.listRef).offsetHeight;
+    const focusedItem = ReactDOM.findDOMNode(this.focusedElement);
+    return { threshold, focusedItem };
+  };
+
+  getScrollArrowState = () => {
+    const threshhold =
+      ReactDOM.findDOMNode(this.listWrapperRef).offsetTop +
+      ReactDOM.findDOMNode(this.listWrapperRef).offsetHeight;
+    const children = ReactDOM.findDOMNode(this.listWrapperRef).childNodes[0]
+      .childNodes;
+    const lastChild = children[children.length - 1];
+    return lastChild.offsetTop + lastChild.offsetHeight > threshhold;
+  };
 
   // Handle user input change on typing.
   handleInput = ({ target }) => {
     const { onChange, labelKey } = this.props;
-    this.setState((prevState) => {
-      onChange({ ...prevState.input, [`${labelKey}`]: target.value });
+    this.setState(() => {
+      onChange({ [`${labelKey}`]: target.value });
       return {
-        input: { ...prevState.input, [`${labelKey}`]: target.value },
+        input: { [`${labelKey}`]: target.value },
       };
     });
-  }
+  };
 
   // Handle user input select from dropdown.
   selectItem = (input) => {
@@ -37,26 +62,47 @@ class AutoComplete extends Component {
     this.setState({
       input,
       showSuggestions: false,
+      focused: false,
     });
     onChange(input);
-  }
+  };
 
   // Show the options in dropdown menu.
   showSuggestions = () => {
-    this.setState({
-      showSuggestions: true,
-    });
-  }
+    this.setState(
+      {
+        focused: true,
+        showSuggestions: true,
+      },
+      () => {
+        this.setState({
+          showScrollArrow: this.getScrollArrowState(),
+        });
+      },
+    );
+  };
 
   // Hide the options dropdown menu and clear keyboard focused element.
   hideSuggestions = () => {
+    const { data, input } = this.state;
+    const { labelKey } = this.props;
+    const matchedItem = data.filter(item => item[`${labelKey}`].indexOf(input[`${labelKey}`]) !== -1);
+    if (input[`${labelKey}`].length && matchedItem.length) {
+      this.setState({
+        input: { [`${labelKey}`]: matchedItem[0][`${labelKey}`] },
+      });
+    }
     if (!this.state.blockOnBlur) {
       this.setState({
         showSuggestions: false,
         focus: undefined,
+        showScrollArrow: false,
       });
     }
-  }
+    this.setState({
+      focused: false,
+    });
+  };
 
   /*
   Helper function which sets a boolean `blockOnBlur` property on the state.
@@ -71,7 +117,7 @@ class AutoComplete extends Component {
     this.setState({
       blockOnBlur: block,
     });
-  }
+  };
 
   /*
   Handle keydown events when input is focused for navigating between options
@@ -79,39 +125,69 @@ class AutoComplete extends Component {
   */
   handleKeyDown = (e) => {
     e.stopPropagation();
-    const {
-      data, focus, input,
-    } = this.state;
+    const { data, focus, input } = this.state;
     const { labelKey, onChange } = this.props;
     const inputlabel = input[`${labelKey}`].toLowerCase();
     let isValid;
     switch (e.key) {
       case 'ArrowDown':
-        this.setState(prevState => ({
-          focus: (
-            (prevState.focus === undefined
-              ? -1
-              : prevState.focus
-            ) + 1
-          ) % (prevState.data.length),
-        }));
+        this.setState(
+          prevState => ({
+            focus:
+              ((prevState.focus === undefined ? -1 : prevState.focus) + 1) %
+              prevState.data.length,
+          }),
+          () => {
+            const { threshold, focusedItem } = this.getScrollState();
+            if (
+              focusedItem &&
+              focusedItem.offsetHeight + focusedItem.offsetTop > threshold
+            ) {
+              ReactDOM.findDOMNode(this.listRef).scrollTop +=
+                focusedItem.offsetHeight;
+            } else if (!this.state.focus) {
+              ReactDOM.findDOMNode(this.listRef).scrollTop = 0;
+            }
+          },
+        );
         break;
       case 'ArrowUp':
-        this.setState(prevState => ({
-          focus: ((prevState.data.length) + ((prevState.focus || 0) - 1)) % (prevState.data.length),
-        }));
+        this.setState(
+          prevState => ({
+            focus:
+              (prevState.data.length + ((prevState.focus || 0) - 1)) %
+              prevState.data.length,
+          }),
+          () => {
+            const { threshold, focusedItem } = this.getScrollState();
+            if (
+              focusedItem &&
+              ReactDOM.findDOMNode(this.listRef).scrollTop +
+                ReactDOM.findDOMNode(this.listRef).offsetTop >
+                focusedItem.offsetTop
+            ) {
+              ReactDOM.findDOMNode(this.listRef).scrollTop -=
+                focusedItem.offsetHeight;
+            } else if (this.state.focus === this.state.data.length - 1) {
+              ReactDOM.findDOMNode(this.listRef).scrollTop = threshold;
+            }
+          },
+        );
         break;
       case 'Enter':
         if (focus) {
-          this.selectItem(data[focus]);
+          this.setState({
+            input: data[focus],
+            showSuggestions: false,
+          });
         } else {
-          isValid = data
-            .filter(item => item[`${labelKey}`].toLowerCase().indexOf(inputlabel) >= 0);
+          isValid = data.filter(item => item[`${labelKey}`].toLowerCase().indexOf(inputlabel) >= 0);
           if (isValid.length) {
             this.setState(() => {
               onChange(isValid[0]);
               return {
                 input: isValid[0],
+                showSuggestions: false,
               };
             });
           }
@@ -120,35 +196,62 @@ class AutoComplete extends Component {
       default:
         break;
     }
-  }
+  };
+
+  startScrolling = () => {
+    const { threshold } = this.getScrollState();
+    const lastListItem = ReactDOM.findDOMNode(this.listRef).childNodes[
+      ReactDOM.findDOMNode(this.listRef).childElementCount - 1
+    ];
+    while (lastListItem.offsetHeight + lastListItem.offsetTop > threshold) {
+      const time = Date.now();
+      const delay = 500;
+      while (Date.now() < (time + delay)) {};
+      ReactDOM.findDOMNode(this.listRef).scrollTop += lastListItem.offsetHeight;
+      if (this.stopScroll) {
+        this.stopScroll = false;
+        return;
+      }
+    }
+  };
+
+  stopScrolling = () => {
+    this.stopScroll = true;
+  };
 
   // Render options from data provided as props to the component.
   renderOptions = () => {
     const { theme, data, labelKey } = this.props;
     const { focus, input } = this.state;
     const inputlabel = input[`${labelKey}`].toLowerCase();
-    return (data.filter((item) => {
-      const datalabel = item[`${labelKey}`].toLowerCase();
-      return datalabel.indexOf(inputlabel) !== -1;
-    })
-    ).map((item, index) => {
-      const classes = cx(
-        theme['autocomplete-list-item'],
-        { [`${theme['item-hover']}`]: (focus === index) },
-      );
+    return data
+      .filter((item) => {
+        const datalabel = item[`${labelKey}`].toLowerCase();
+        return datalabel.indexOf(inputlabel) !== -1;
+      })
+      .map((item, index) => {
+        const classes = cx(theme['autocomplete-list-item'], {
+          [`${theme['item-hover']}`]: focus === index,
+        });
         /* eslint-disable jsx-a11y/no-static-element-interactions */
         /* eslint-disable jsx-a11y/click-events-have-key-events */
-      return (
-        <div
-          aria-label={focus === index ? 'active' : 'inactive'}
-          className={classes}
-          onClick={() => this.selectItem(item)}
-          key={item[`${labelKey}`]}
-        >{item[`${labelKey}`]}
-        </div>
-      );
-    });
-  }
+        return (
+          <div
+            ref={(ref) => {
+              if (focus === index) {
+                this.focusedElement = ref;
+              }
+            }}
+            aria-label={focus === index ? 'active' : 'inactive'}
+            className={classes}
+            onClick={() => this.selectItem(item)}
+            key={item[`${labelKey}`]}
+          >
+            {item[`${labelKey}`]}
+          </div>
+        );
+      });
+  };
 
   render() {
     const {
@@ -160,32 +263,57 @@ class AutoComplete extends Component {
       valueKey,
       ...rest
     } = this.props;
-    const { showSuggestions } = this.state;
+    const { showSuggestions, focused, showScrollArrow } = this.state;
     const classes = cx(className, theme.autocomplete);
+    console.log(showScrollArrow);
     return (
       <div className={classes}>
-        <input
-          className={theme['autocomplete-input']}
-          type="text"
-          value={this.state.input[`${labelKey}`]}
-          placeholder={placeholder}
-          onFocus={this.showSuggestions}
-          onBlur={this.hideSuggestions}
-          onChange={this.handleInput}
-          onKeyDown={this.handleKeyDown}
-          {...rest}
-        />
-        {
-              showSuggestions &&
+        <span
+          className={cx(theme['input-container'], {
+            [`${theme['border-animation']}`]: focused,
+          })}
+        >
+          <input
+            className={theme['autocomplete-input']}
+            type="text"
+            value={this.state.input[`${labelKey}`]}
+            placeholder={placeholder}
+            onFocus={this.showSuggestions}
+            onBlur={this.hideSuggestions}
+            onChange={this.handleInput}
+            onKeyDown={this.handleKeyDown}
+            {...rest}
+          />
+        </span>
+        {true && (
+          <div
+            className={theme.dropdownWrapper}
+            ref={(ref) => {
+              this.listWrapperRef = ref;
+            }}
+          >
+            <div
+              id="autocomplete-list"
+              ref={(ref) => {
+                this.listRef = ref;
+              }}
+              className={cx(theme['autocomplete-list'])}
+              onMouseEnter={() => { this.blockOnBlur(true); }}
+              onMouseLeave={() => { this.blockOnBlur(false); }}
+            >
+              {this.renderOptions()}
+            </div>
+            {true && (
               <div
-                id="autocomplete-list"
-                className={cx(theme['autocomplete-list'])}
-                onMouseEnter={() => this.blockOnBlur(true)}
-                onMouseLeave={() => this.blockOnBlur(false)}
+                onMouseEnter={this.startScrolling}
+                onMouseLeave={this.stopScrolling}
+                className={theme.scrollArrow}
               >
-                { this.renderOptions() }
+                hover to scroll
               </div>
-            }
+            )}
+          </div>
+        )}
       </div>
     );
   }
