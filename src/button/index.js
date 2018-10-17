@@ -21,7 +21,7 @@ class Button extends Component {
       borderless,
       ...others
     } = this.props;
-    const Element = href ? 'a' : 'button';
+    const Element = href ? 'a' : 'div';
     const classes = classnames(
       theme.button,
       theme[type],
@@ -34,7 +34,6 @@ class Button extends Component {
 
     const props = {
       ...others,
-      href,
       ref: (node) => {
         this.buttonNode = node;
       },
@@ -43,7 +42,13 @@ class Button extends Component {
       onMouseUp: this.handleMouseUp,
       onMouseLeave: this.handleMouseLeave,
     };
-    return <Element {...props}>{children}</Element>;
+    return (
+      <Element href={!href ? undefined : href}>
+        <button {...props}>
+          {children}
+        </button>
+      </Element>
+    );
   }
 }
 
