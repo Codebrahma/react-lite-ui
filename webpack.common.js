@@ -37,6 +37,7 @@ module.exports = {
         use: [
           'style-loader',
           `${require.resolve('css-loader')}?sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`,
+          'postcss-loader',
           `${require.resolve('sass-loader')}?sourceMap`,
         ],
       },
