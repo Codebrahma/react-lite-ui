@@ -32,19 +32,23 @@ class Button extends Component {
       theme[borderless ? `${type}Borderless` : ''],
     );
 
-    const props = {
+    const rootProps = {
       ...others,
+      href: !href ? undefined : href,
+      onMouseUp: this.handleMouseUp,
+      onMouseLeave: this.handleMouseLeave,
+    };
+
+    const buttonProps = {
       ref: (node) => {
         this.buttonNode = node;
       },
       className: classes,
       disabled: this.props.disabled,
-      onMouseUp: this.handleMouseUp,
-      onMouseLeave: this.handleMouseLeave,
     };
     return (
-      <Element href={!href ? undefined : href}>
-        <button {...props}>
+      <Element {...rootProps}>
+        <button {...buttonProps}>
           {children}
         </button>
       </Element>
