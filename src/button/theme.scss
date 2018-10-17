@@ -55,26 +55,26 @@
 
 :local(.small) {
   font-size: 14px;
-  min-height: 33px;
+  height: 33px;
   line-height: 19px;
   padding: 7px 22px;
-  min-width: 100px;
+  width: fit-content;
 }
 
 :local(.medium) {
   font-size: 16px;
-  min-height: 44px;
+  height: 44px;
   line-height: 19px;
   padding: 11px 26px;
-  min-width: 125px;
+  width: fit-content;
 }
 
 :local(.large) {
   font-size: 18px;
-  min-height: 60px;
+  height: 60px;
   line-height: 19px;
   padding: 15px 30px;
-  min-width: 150px;
+  width: fit-content;
 }
 
 :local(.primary) {
