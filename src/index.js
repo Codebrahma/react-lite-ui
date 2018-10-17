@@ -22,6 +22,7 @@ import MultiSelect from './multiselect';
 import Navbar from './navbar';
 import Preloader from './preloader';
 import Select from './select';
+import Slider from './slider';
 
 export default {
   Button,
@@ -46,6 +47,7 @@ export default {
   Navbar,
   Preloader,
   Select,
+  Slider,
 };
 
 // ReactDOM.render(

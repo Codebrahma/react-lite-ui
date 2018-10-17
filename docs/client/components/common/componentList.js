@@ -40,6 +40,8 @@ import PreloaderReadme from '../../../../src/preloader/readMe.md';
 import Preloader from '../../../../src/preloader';
 import Select from '../../../../src/select';
 import SelectReadme from '../../../../src/select/readMe.md';
+import Slider from '../../../../src/slider';
+import SliderReadMe from '../../../../src/slider/readMe.md';
 
 import {
   CardDefaultCode,
@@ -63,6 +65,7 @@ import {
   NavbarDefaultCode,
   PreloaderDefaultCode,
   SelectDefaultCode,
+  SliderDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -167,6 +170,12 @@ export const componentList = [
     docs: SelectReadme,
     component: Select,
     defaultCode: SelectDefaultCode,
+  },
+  {
+    name: 'Slider',
+    docs: SliderReadMe,
+    component: Slider,
+    defaultCode: SliderDefaultCode,
   },
   {
     name: 'Snackbar',

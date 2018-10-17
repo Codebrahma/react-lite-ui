@@ -1,0 +1,30 @@
+:local(.slider) {
+    height: 5px;
+    border-radius: 5px;
+    width: 20vw;
+    background-color: #d8d8d8;
+    display: flex;
+    padding: 0;
+}
+
+:local(.slider-button) {
+    align-self: center;
+    border-radius: 50%;
+    min-height: 7px !important;
+    min-width: 7px !important;
+    background-color: white;
+    border: 2px solid #91d5ff;
+    cursor: pointer;
+    &:active {
+        min-height: 9px !important;
+        min-width: 9px !important;
+    }
+}
+
+:local(.slider-tracker) {
+    display: flex;
+    height: 100%;
+    width: 0;
+    justify-content: flex-end;
+    background-color: #91d5ff;
+}
