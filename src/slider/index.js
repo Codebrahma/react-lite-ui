@@ -18,22 +18,40 @@ class Slider extends React.Component {
     };
   }
 
+
+  /**
+   * Update slider handle position according to drag position.
+   * @memberof Slider
+   * @param e: Event object.
+   */
   handleDrag = (e) => {
     this.sliderTracker.style.width = `${e.clientX -
       findNode(this.sliderTracker).offsetLeft}px`;
   };
 
+
+  /**
+   * Calculate and update state with current value and pass the
+   * new value to onChange callback.
+   * @memberof Slider
+   */
   handleDrop = () => {
-    const { min, max, onChange } = this.props;
+    const {
+      min, max, onChange, step,
+    } = this.props;
+
+    // Calculate steps according to bar size 
     const barStep = findNode(this.sliderBar).getBoundingClientRect()
-      .width / 100;
+      .width / (step ? (100 / step) : 100);
     const relativeValue =
     Math.round(findNode(this.sliderTracker).getBoundingClientRect().width / barStep);
-    const currentValue = ((max - min) * (relativeValue / 100)) + min;
+    const currentValue = ((max - min) * (relativeValue / (step ? (100 / step) : 100))) + min;
     this.setState({
       value: Math.round(currentValue),
     }, () => {
       onChange(this.state.value);
+      this.sliderTracker.style.width = `${(relativeValue / (step ? (100 / step) : 100)) * findNode(this.sliderBar).getBoundingClientRect()
+        .width}px`;
     });
   };
 
@@ -74,6 +92,7 @@ Slider.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
+  step: PropTypes.number,
 };
 
 Slider.defaultProps = {
@@ -81,6 +100,7 @@ Slider.defaultProps = {
   max: 100,
   theme: defaultTheme,
   disabled: false,
+  step: null,
   onChange: (val) => { console.log(val); },
 };
 
