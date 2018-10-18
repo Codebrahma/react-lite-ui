@@ -57,7 +57,7 @@ class Slider extends React.Component {
      * is updated accordingly ( by updating the sliderTracker width ).
      * Else, only update @member this.sliderTracker width since right handle was moved.
      */
-    if (left && e.clientX && ( e.clientX <= (findNode(this.sliderTracker).offsetLeft +
+    if (left && e.clientX && (e.clientX < (findNode(this.sliderTracker).offsetLeft +
     this.getNodeWidth(this.sliderTracker)))) {
       // Calculate offset for right handle / bubble from the left of the slider bar.
       const rightHandleOffset =
@@ -74,7 +74,7 @@ class Slider extends React.Component {
       this.sliderTracker.style.width = `${((rightHandleOffset - e.clientX) /
         this.getNodeWidth(this.sliderBar)) *
         100}%`;
-    } else {
+    } else if (left === false) {
       // Update slider tracker width.
       this.sliderTracker.style.width = `${((e.clientX -
         (findNode(this.sliderOffset).offsetLeft +
