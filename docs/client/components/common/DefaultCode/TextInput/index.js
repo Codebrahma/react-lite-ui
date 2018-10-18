@@ -13,7 +13,7 @@ class Demo extends React.Component {
         </PreviewBlock>
         {/* Preview Block 3 */}
         <PreviewBlock header="Controlled width TextInput">
-          <TextInput width='200px' placeholder="type here..."/>
+          <TextInput width='300px' placeholder="type here..."/>
         </PreviewBlock>
         <PreviewBlock header="Password TextInput">
           <TextInput type="password" placeholder="Enter password..."/>          

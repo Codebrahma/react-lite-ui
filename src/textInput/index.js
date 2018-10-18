@@ -12,17 +12,24 @@ const TextInput = ({
   ...others
 }) => {
   const wrapperClasses = classnames(theme.inputWrapper, additionalClasses);
+  const innerWrapperProps = {
+    className: 'innerWrapper',
+    style: {
+      width: width || '200px',
+    },
+  };
   const inputElementProps = {
     ...others,
     disabled,
-    style: {
-      width: width || '100%',
-    },
     className: classnames(theme.inputElement, { [`${theme.disabled}`]: disabled }),
   };
   return (
     <div className={wrapperClasses}>
-      {React.createElement('input', inputElementProps)}
+      {React.createElement(
+        'div', innerWrapperProps,
+        React.createElement('input', inputElementProps),
+        React.createElement('span', { className: 'input-focus' }),
+      )}
     </div>
   );
 };
