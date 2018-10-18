@@ -3,6 +3,9 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -10,11 +13,11 @@ module.exports = {
     './client/index.js',
   ],
   context: __dirname,
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'docs.js',
-    publicPath: '/',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['*', '.scss', '.js', '.json', '.md'],
@@ -33,7 +36,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader?cacheDirectory=true',
+        },
       }, {
         test: /\.(scss|css)$/,
         use: [
@@ -54,9 +59,36 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('docs.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    new CompressionPlugin(),
+    new HTMLWebpackPlugin({
+      template: './public/index.html'
+    }),
   ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true,
+        sourceMap: true,
+        cache: true,
+      }),
+    ],
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        },
+        styles: {
+          test: /\.css$/,
+          name: 'style',
+          chunks: 'all',
+        }
+      }
+    }
+  },
 };

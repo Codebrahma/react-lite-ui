@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - "node"
+
+cache:
+  directories:
+  - node_modules
+
+install:
+  - npm i -g codecov
+
+script:
+  - npm run build-demo
+  - npm run test
+
+after_success: npm run coverage

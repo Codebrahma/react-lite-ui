@@ -11,10 +11,12 @@ const Checkbox = ({
   checked,
   additionalClass,
   theme,
+  inverted,
   ...props
 }) => {
   const classNames = cx(theme.checkbox, {
     [theme.checked]: checked,
+    [theme.inverted]: inverted,
   }, additionalClass);
   /*  eslint-disable jsx-a11y/click-events-have-key-events  */
   /*  eslint-disable jsx-a11y/no-static-element-interactions */
@@ -25,7 +27,7 @@ const Checkbox = ({
           type="checkbox"
           {...props}
         />
-        <span className="check-item" />
+        <span className={`${cx({ [theme['check-item-inverted']]: inverted && checked })} check-item`} />
       </span>
       {label && <span className={theme.label}>{label}</span>}
     </span>
@@ -39,6 +41,7 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   additionalClass: PropTypes.string,
   theme: PropTypes.object, // eslint-disable-line
+  inverted: PropTypes.bool,
 };
 
 Checkbox.defaultProps = {
@@ -48,6 +51,7 @@ Checkbox.defaultProps = {
   additionalClass: '',
   theme: defaultTheme,
   value: '',
+  inverted: false,
 };
 
 export default themr('CBCheckbox', defaultTheme)(Checkbox);

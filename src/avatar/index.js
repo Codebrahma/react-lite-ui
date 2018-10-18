@@ -10,10 +10,11 @@ const Avatar = ({
   theme,
   image,
   alt,
+  bgColor,
   alphabet,
   ...other
 }) => {
-  const classes = classnames(theme.avatar, className);
+  const classes = classnames(theme.avatar, theme[bgColor], className);
 
   return (
     <div className={classes} id="avatar" {...other}>
@@ -39,6 +40,7 @@ Avatar.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   image: PropTypes.string,
   alt: PropTypes.string,
+  bgColor: PropTypes.string,
   alphabet: PropTypes.string,
 };
 
@@ -48,6 +50,7 @@ Avatar.defaultProps = {
   theme: defaultTheme,
   image: null,
   alt: '',
+  bgColor: 'darkGrey',
   alphabet: '',
 };
 

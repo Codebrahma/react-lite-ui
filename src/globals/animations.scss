@@ -1,0 +1,14 @@
+@mixin inputFocus() {
+    -o-animation-name: animateFocus;
+    -moz-animation-name: animateFocus;
+    -webkit-animation-name: animateFocus;
+    animation-name: animateFocus;
+    @keyframes animateFocus {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+}

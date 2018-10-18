@@ -11,20 +11,43 @@
 
 /* size variants */
 :local(.small) {
+  width: 40px;
+  height: 40px;
+  & > span {
+    margin: 0 3px;
+  }
+}
+:local(.medium) {
+  width: 70px;
+  height: 70px;
+  & > span {
+    margin: 0 5px;
+  }
+}
+:local(.large) {
+  width: 105px;
+  height: 105px;
+  & > span {
+    margin: 0 7px;
+  }
+}
+
+/* size variants for linesLoader */
+:local(.smallLines) {
   width: 40px !important;
   height: 40px !important;
   & > span {
     margin: 0 3px !important;
   }
 }
-:local(.medium) {
+:local(.mediumLines) {
   width: 70px !important;
   height: 70px !important;
   & > span {
     margin: 0 5px !important;
   }
 }
-:local(.large) {
+:local(.largeLines) {
   width: 105px !important;
   height: 105px !important;
   & > span {

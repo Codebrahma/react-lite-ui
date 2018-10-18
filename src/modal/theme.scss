@@ -44,7 +44,6 @@
     }
     
     :local(.modal-body) {
-        background: yellow;
         box-sizing: border-box;
     }
 
@@ -57,8 +56,6 @@
         box-sizing: border-box;
     }
 }
-
-
 
 :local(.d-block) {
     display: flex;

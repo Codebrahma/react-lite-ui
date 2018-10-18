@@ -40,7 +40,10 @@ class Menu extends Component {
       it is a menu item, then clone the element and pass the style
       class and return the child.
       */
-      return React.cloneElement(child, { className: theme.menuitem });
+      return React.cloneElement(child, {
+        className: theme.menuitem,
+        key: `menu-item-${child.props.children}`,
+      });
     });
   };
 
@@ -53,7 +56,7 @@ class Menu extends Component {
     } = this.props;
     const menuclass = cx(theme.menu, className);
     return (
-      <div className={theme.wrapper} key={title || 'main-menu'}>
+      <div className={theme.wrapper} data-key={title || 'main-menu'}>
         <div className={menuclass}>
           {typeof children === 'object'
             ? this.renderChildren(...children)
