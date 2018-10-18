@@ -12,11 +12,10 @@
   display: flex;
   flex-direction: column;
   white-space: nowrap;
+  max-width: 100px;
   border-radius: 5px;
   background-color: $secondary-white;
   position: absolute;
-  top: 50px;
-  left: 0%;
   box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.3);
   z-index: 999; // render on top of any content
 }
@@ -36,57 +35,113 @@
   display: inline-block;
   min-width: 12px;
   min-height: 12px;
-  background-color: $secondary-grey; 
+  background-color: $secondary-white; 
 }
 /* top positions */
-:local(.topLeftArrow) {
-  top: 0%;
-  left: 20px;
+:local(.topLeftPopover),
+:local(.topPopover),
+:local(.topRightPopover) {
+  bottom: calc(100% + 10px); // sets the popover to top of content
+  :local(.popoverArrow) {
+    bottom: 0%; // sets the arrow to bottom of popover
+  }
 }
-:local(.topArrow) {
-  top: 0%;
-  left: 50%;
+:local(.topLeftPopover) {
+  left: 0%;
+  :local(.popoverArrow) {
+    left: 20px;
+  }
 }
-:local(.topRightArrow) {
-  top: 0%;
-  right: 20px;
+:local(.topPopover) {
+  margin-left: -50%;
+  :local(.popoverArrow) {
+    left: 50%;
+  }
+}
+:local(.topRightPopover) {
+  right: 0%;
+  :local(.popoverArrow) {
+    right: 20px;
+  }
 }
 /* bottom positions */
-:local(.bottomLeftArrow) {
-  bottom: 0%;
-  left: 20px;
+:local(.bottomLeftPopover),
+:local(.bottomPopover),
+:local(.bottomRightPopover) {
+  top: calc(100% + 10px); // sets the popover to bottom of content
+  :local(.popoverArrow) {
+    top: 0%; // sets the arrow to bottom of popover
+  }
 }
-:local(.bottomArrow) {
-  bottom: 0%;
-  left: 50%;
+:local(.bottomLeftPopover) {
+  left: 0%;
+  :local(.popoverArrow) {
+    left: 20px;
+  }
 }
-:local(.bottomRightArrow) {
-  bottom: 0%;
-  right: 20px;
+:local(.bottomPopover) {
+  margin-left: -50%;
+  :local(.popoverArrow) {
+    left: 50%;
+  }
+}
+:local(.bottomRightPopover) {
+  right: 0%;
+  :local(.popoverArrow) {
+    right: 20px;
+  }
 }
 /* left positions */
-:local(.leftTopArrow) {
-  left: 0%;
-  top: 20px;
+:local(.leftTopPopover),
+:local(.leftPopover),
+:local(.leftBottomPopover) {
+  right: calc(100% + 10px); // sets the popover to left of content
+  :local(.popoverArrow) {
+    right: 0%; // sets the arrow to right of popover
+  }
 }
-:local(.leftArrow) {
-  left: 0%;
-  top: 50%;
+:local(.leftTopPopover) {
+  top: 0%;
+  :local(.popoverArrow) {
+    top: 20px;
+  }
 }
-:local(.leftBottomArrow) {
-  left: 0%;
-  bottom: 20px;
+:local(.leftPopover) {
+  margin-top: -50%;
+  :local(.popoverArrow) {
+    top: 50%;
+  }
+}
+:local(.leftBottomPopover) {
+  bottom: 0%;
+  :local(.popoverArrow) {
+    bottom: 20px;
+  }
 }
 /* right positions */
-:local(.rightTopArrow) {
-  right: 0%;
-  top: 20px;
+:local(.rightTopPopover),
+:local(.rightPopover),
+:local(.rightBottomPopover) {
+  left: calc(100% + 10px); // sets the popover to right of content
+  :local(.popoverArrow) {
+    left: 0%; // sets the arrow to left of popover
+  }
 }
-:local(.rightArrow) {
-  right: 0%;
-  top: 50%;
+:local(.rightTopPopover) {
+  top: 0%;
+  :local(.popoverArrow) {
+    top: 20px;
+  }
 }
-:local(.rightBottomArrow) {
-  right: 0%;
-  bottom: 20px;
+:local(.rightPopover) {
+  margin-top: -50%;
+  :local(.popoverArrow) {
+    top: 50%;
+  }
+}
+:local(.rightBottomPopover) {
+  bottom: 0%;
+  :local(.popoverArrow) {
+    bottom: 20px;
+  }
 }

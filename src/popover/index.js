@@ -33,7 +33,7 @@ class Popover extends React.Component {
       ...other
     } = this.props;
     const classes = classnames(theme.popover, className);
-    const arrowClasses = classnames(theme[`${position}Arrow`], theme.popoverArrow);
+    const popoverClasses = classnames(theme[`${position}Popover`], theme.popoverWrapper);
     return (
       <div
         className={classes}
@@ -45,13 +45,13 @@ class Popover extends React.Component {
           {children}
         </div>
         {
-          true && (
-            <div className={theme.popoverWrapper}>
+          this.state.isOpen && (
+            <div className={popoverClasses}>
               {title && <span className={theme.title}>{title}</span>}
               <div className={classnames(theme.popoverContent)}>
                 {content}
               </div>
-              <span className={arrowClasses} />
+              <span className={theme.popoverArrow} />
             </div>
           )
         }
@@ -75,7 +75,7 @@ Popover.defaultProps = {
   children: null,
   content: 'content here',
   title: '',
-  position: 'top',
+  position: 'bottomLeft',
 };
 
 export default themr('CBPopover', defaultTheme)(Popover);
