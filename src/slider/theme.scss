@@ -18,6 +18,9 @@
     &:active {
         min-height: 9px !important;
         min-width: 9px !important;
+        & + div {
+            display: flex;
+        }
     }
 }
 
@@ -27,6 +30,7 @@
     width: 0;
     justify-content: flex-end;
     background-color: #91d5ff;
+    position: relative;
 }
 
 :local(.slider-offset) {
@@ -34,4 +38,31 @@
     height: 100%;
     width: 0;
     justify-content: flex-end;
+    position: relative;
+}
+
+:local(.tooltip) {
+    box-sizing: border-box;
+    display: none;
+    flex-flow: column;
+    position: absolute;
+    background-color: rgba($color: #000000, $alpha: 0.65);
+    color: white;
+    z-index: 2;
+    top: -35px;
+    padding: 0 2%;
+    border-radius: 5px;
+    width: 1.5em;
+    text-align: center;
+
+    div {
+        height: 0;
+        width: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid rgba($color: #000000, $alpha: 0.65);
+        position: absolute;
+        left: 25%;
+        bottom: -5px;
+    }
 }

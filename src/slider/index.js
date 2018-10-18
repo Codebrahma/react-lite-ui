@@ -34,7 +34,6 @@ class Slider extends React.Component {
     };
   }
 
-
   /**
    * Returns current width of element in DOM.
    * @memberof Slider
@@ -58,21 +57,21 @@ class Slider extends React.Component {
      * is updated accordingly ( by updating the sliderTracker width ).
      * Else, only update @member this.sliderTracker width since right handle was moved.
      */
-    if (left && e.clientX) {
+    if (left && e.clientX && ( e.clientX <= (findNode(this.sliderTracker).offsetLeft +
+    this.getNodeWidth(this.sliderTracker)))) {
       // Calculate offset for right handle / bubble from the left of the slider bar.
       const rightHandleOffset =
-          findNode(this.sliderTracker).offsetLeft +
-          this.getNodeWidth(this.sliderTracker);
+        findNode(this.sliderTracker).offsetLeft +
+        this.getNodeWidth(this.sliderTracker);
 
       // Update sliderOffset width.
       this.sliderOffset.style.width = `${((e.clientX -
-          findNode(this.sliderOffset).offsetLeft) /
-          this.getNodeWidth(this.sliderBar)) *
-          100}%`;
+        findNode(this.sliderOffset).offsetLeft) /
+        this.getNodeWidth(this.sliderBar)) *
+        100}%`;
 
       // Update sliderTracker width.
-      this.sliderTracker.style.width = `${((rightHandleOffset -
-        e.clientX) /
+      this.sliderTracker.style.width = `${((rightHandleOffset - e.clientX) /
         this.getNodeWidth(this.sliderBar)) *
         100}%`;
     } else {
@@ -83,16 +82,10 @@ class Slider extends React.Component {
         this.getNodeWidth(this.sliderBar)) *
         100}%`;
     }
-  };
-
-  /**
-   * Calculate and update state with current value and pass the
-   * new value to onChange callback.
-   * @memberof Slider
-   * @param left: Boolean to identify the handle ( `true` for left
-   * handle and `false` for right ) .
-   */
-  handleDrop = (_, left) => {
+    /**
+     * Calculate and update state with current value and pass the
+     * new value to onChange callback.
+     */
     const {
       min, max, onChange, step,
     } = this.props;
@@ -110,9 +103,12 @@ class Slider extends React.Component {
     // Calculate current value according to the position of handle.
     if (left) {
       relativeValueOffset = Math.round(this.getNodeWidth(this.sliderOffset) / barStep);
-      currentValueOffset = ((max - min) * (relativeValueOffset / (step ? 100 / step : 100))) + min;
+      currentValueOffset =
+       ((max - min) * (relativeValueOffset / (step ? 100 / step : 100))) + min;
     } else {
-      relativeValue = Math.round((this.getNodeWidth(this.sliderTracker) + this.getNodeWidth(this.sliderOffset)) / barStep);
+      relativeValue = Math.round((this.getNodeWidth(this.sliderTracker) +
+          this.getNodeWidth(this.sliderOffset)) /
+          barStep);
       currentValue =
         ((max - min) * (relativeValue / (step ? 100 / step : 100))) + min;
     }
@@ -122,19 +118,12 @@ class Slider extends React.Component {
     this.setState(
       prevState => ({
         valueMax: currentValue ? Math.round(currentValue) : prevState.valueMax,
-        valueMin: currentValueOffset ? Math.round(currentValueOffset) : prevState.valueMin,
+        valueMin: currentValueOffset
+          ? Math.round(currentValueOffset)
+          : prevState.valueMin,
       }),
       () => {
         onChange(this.state.valueMax, this.state.valueMin);
-        if (relativeValueOffset) {
-          this.sliderOffset.style.width = `${(relativeValueOffset /
-              (step ? 100 / step : 100)) *
-              this.getNodeWidth(this.sliderBar)}px`;
-        } else {
-          this.sliderTracker.style.width = `${(relativeValue /
-            (step ? 100 / step : 100)) *
-            this.getNodeWidth(this.sliderBar)}px`;
-        }
       },
     );
   };
@@ -151,8 +140,9 @@ class Slider extends React.Component {
         {range && (
           <div
             className={theme['slider-offset']}
-          // onDragOver has been disabled using an empty function block to avoid unnecessary callbacks.
-          // Drag event is being registered through the onDrag event. Same on line 176.
+            // onDragOver has been disabled using an empty function block
+            // to avoid unnecessary callbacks.
+            // Drag event is being registered through the onDrag event. Same on line 176.
             onDragOver={disabled ? undefined : () => {}}
             ref={(ref) => {
               this.sliderOffset = ref;
@@ -161,7 +151,6 @@ class Slider extends React.Component {
             <span
               className={theme['slider-button']}
               draggable={!disabled}
-              onDragEnd={(e) => { this.handleDrop(e, true); }}
               onDrag={(e) => {
                 this.handleDrag(e, true);
               }}
@@ -169,6 +158,10 @@ class Slider extends React.Component {
                 this.sliderLowerRange = ref;
               }}
             />
+            <div className={theme.tooltip}>
+              <span>{this.state.valueMin}</span>
+              <div />
+            </div>
           </div>
         )}
         <div
@@ -181,7 +174,6 @@ class Slider extends React.Component {
           <span
             className={theme['slider-button']}
             draggable={!disabled}
-            onDragEnd={(e) => { this.handleDrop(e, false); }}
             onDrag={(e) => {
               this.handleDrag(e, false);
             }}
@@ -189,6 +181,10 @@ class Slider extends React.Component {
               this.sliderUpperRange = ref;
             }}
           />
+          <div className={theme.tooltip}>
+            <span>{this.state.valueMax}</span>
+            <div />
+          </div>
         </div>
       </div>
     );
