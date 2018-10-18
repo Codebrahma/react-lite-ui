@@ -1,10 +1,12 @@
 @import '../globals/_colors';
+@import '../globals/_mixins';
+
 :local(.badge-container) {
-    display: flex;
+    @include flex;
     position: relative;
     width: fit-content;
     box-sizing: border-box;
-    padding: 1%;
+    @include spacing(1/8, padding, '%');
     /* For IE bug on badge position ( due to container spreading
     *  across the available width ) since IE doesn't support fit-content for width. 
     */
@@ -12,19 +14,19 @@
 }
 
 :local(.badge-container-small) {
-    padding: 1.5%;
+    @include spacing(0.16, padding, '%');
 }
 
 :local(.badge-container-medium) {
-    padding: 3%;
+    @include spacing(0.3, padding, '%');
 }
 
 :local(.badge-container-large) {
-    padding: 5%;
+    @include spacing(0.4, padding, '%');
 }
 
 :local(.badge) {
-    display:inline-flex;
+    @include flex(true);
     justify-content: center;
     align-items: center;
     border-radius: 50%;
@@ -39,19 +41,19 @@
 }
 
 :local(.small) {
-    font-size: 0.7em;
-    height: 1.4em;
-    width: 1.4em;
+    @include spacing(0.1, font-size, em);
+    @include spacing(0.16, height, em);
+    @include spacing(0.16, width, em);
 }
 
 :local(.medium) {
-    font-size: 0.85em;
-    height: 1.7em;
-    width: 1.7em;
+    @include spacing(0.11, font-size, em);
+    @include spacing(0.2, height, em);
+    @include spacing(0.2, width, em);
 }
 
 :local(.large) {
-    font-size: 1em;
-    height: 2em;
-    width: 2em;
+    @include spacing(0.1, font-size, em);
+    @include spacing(0.24, height, em);
+    @include spacing(0.24, width, em);
 }
