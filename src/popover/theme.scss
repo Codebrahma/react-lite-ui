@@ -1,0 +1,92 @@
+@import '../globals/theme';
+
+:local(.popover) {
+  position: relative;
+  width: fit-content;
+}
+
+:local(.popoverWrapper) {
+  margin: 2% 1%;
+  padding: 15px;
+  min-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  border-radius: 5px;
+  background-color: $secondary-white;
+  position: absolute;
+  top: 50px;
+  left: 0%;
+  box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.3);
+  z-index: 999; // render on top of any content
+}
+
+:local(.title) {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+:local(.popoverArrow) {
+  position: absolute;
+  margin: -6px;
+  transform: rotate(-45deg);
+  display: inline-block;
+  min-width: 12px;
+  min-height: 12px;
+  background-color: $secondary-grey; 
+}
+/* top positions */
+:local(.topLeftArrow) {
+  top: 0%;
+  left: 20px;
+}
+:local(.topArrow) {
+  top: 0%;
+  left: 50%;
+}
+:local(.topRightArrow) {
+  top: 0%;
+  right: 20px;
+}
+/* bottom positions */
+:local(.bottomLeftArrow) {
+  bottom: 0%;
+  left: 20px;
+}
+:local(.bottomArrow) {
+  bottom: 0%;
+  left: 50%;
+}
+:local(.bottomRightArrow) {
+  bottom: 0%;
+  right: 20px;
+}
+/* left positions */
+:local(.leftTopArrow) {
+  left: 0%;
+  top: 20px;
+}
+:local(.leftArrow) {
+  left: 0%;
+  top: 50%;
+}
+:local(.leftBottomArrow) {
+  left: 0%;
+  bottom: 20px;
+}
+/* right positions */
+:local(.rightTopArrow) {
+  right: 0%;
+  top: 20px;
+}
+:local(.rightArrow) {
+  right: 0%;
+  top: 50%;
+}
+:local(.rightBottomArrow) {
+  right: 0%;
+  bottom: 20px;
+}

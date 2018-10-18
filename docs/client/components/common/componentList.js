@@ -34,6 +34,8 @@ import MultiSelectReadMe from '../../../../src/multiselect/readMe.md';
 import MultiSelect from "../../../../src/multiselect";
 import NavbarReadMe from '../../../../src/navbar/readMe.md';
 import Navbar from '../../../../src/navbar';
+import PopoverReadme from '../../../../src/popover/readMe.md';
+import Popover from '../../../../src/popover';
 import PreloaderReadme from '../../../../src/preloader/readMe.md';
 import Preloader from '../../../../src/preloader';
 import Select from '../../../../src/select';
@@ -58,6 +60,7 @@ import {
   ModalDefaultCode,
   MultiSelectDefaultCode,
   NavbarDefaultCode,
+  PopoverDefaultCode,
   PreloaderDefaultCode,
   SelectDefaultCode,
 } from './DefaultCode';
@@ -140,6 +143,12 @@ export const componentList = [
     docs: NavbarReadMe,
     component: Navbar,
     defaultCode: NavbarDefaultCode,
+  },
+  {
+    name: 'Popover',
+    docs: PopoverReadme,
+    component: Popover,
+    defaultCode: PopoverDefaultCode,
   },
   {
     name: 'Preloader',
