@@ -3,6 +3,7 @@
 
 :local(.autocomplete) {
     width: 20vw;
+    font-family: Roboto;
     :local(.input-container) {
         min-width: 100%;
         position: relative;
@@ -49,7 +50,7 @@
         background-color: $primary-input-active-border !important;
         height: 2px;
         @include inputFocus();
-        animation-duration: 0.4s;
+        animation-duration: 0.3s;
         animation-timing-function: linear;
         margin-top: -2px;
     }
