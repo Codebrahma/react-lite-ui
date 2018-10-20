@@ -20,7 +20,10 @@ class AutoComplete extends Component {
       blockOnBlur: false,
     };
 
+    // Ref for targeting list items
     this.listRef = null;
+
+    // Currently focused element
     this.focusedElement = null;
   }
 
@@ -57,13 +60,25 @@ class AutoComplete extends Component {
   // Hide the options dropdown menu and clear keyboard focused element.
   hideSuggestions = () => {
     const { data, input } = this.state;
-    const { labelKey } = this.props;
-    const matchedItem = data.filter(item => item[`${labelKey}`].indexOf(input[`${labelKey}`]) !== -1);
+    const { labelKey, valueKey } = this.props;
+
+    // Only if a valid option is typed then allow to remain without clicking
+    const matchedItem = data
+      .filter(item => item[`${labelKey}`] === input[`${labelKey}`]);
     if (input[`${labelKey}`].length && matchedItem.length) {
       this.setState({
         input: { [`${labelKey}`]: matchedItem[0][`${labelKey}`] },
       });
+    } else if (matchedItem.length === 0) {
+      // Else clear
+      this.setState({
+        input: {
+          [`${labelKey}`]: '',
+          [`${valueKey}`]: null,
+        },
+      });
     }
+
     if (!this.state.blockOnBlur) {
       this.setState({
         showSuggestions: false,
@@ -110,6 +125,7 @@ class AutoComplete extends Component {
     let isValid;
     switch (e.key) {
       case 'ArrowDown':
+        // Change focus to the subsequent element
         this.setState(
           prevState => ({
             focus:
@@ -118,6 +134,7 @@ class AutoComplete extends Component {
           }),
           () => {
             const { threshold, focusedItem } = this.getScrollState();
+            // Handles cyclic focus
             if (
               focusedItem &&
               focusedItem.offsetHeight + focusedItem.offsetTop > threshold
@@ -158,7 +175,8 @@ class AutoComplete extends Component {
             showSuggestions: false,
           });
         } else {
-          isValid = data.filter(item => item[`${labelKey}`].toLowerCase().indexOf(inputlabel) >= 0);
+          isValid = data
+            .filter(item => item[`${labelKey}`].toLowerCase().indexOf(inputlabel) >= 0);
           if (isValid.length) {
             this.setState(() => {
               onChange(isValid[0]);
@@ -186,6 +204,7 @@ class AutoComplete extends Component {
         return datalabel.indexOf(inputlabel) !== -1;
       })
       .map((item, index) => {
+        // Assign each item a class to customize
         const classes = cx(theme['autocomplete-list-item'], {
           [`${theme['item-hover']}`]: focus === index,
         });
