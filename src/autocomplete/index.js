@@ -259,13 +259,13 @@ class AutoComplete extends Component {
             {...rest}
           />
         </span>
-        {showSuggestions && (
+        {(
           <div
             id="autocomplete-list"
             ref={(ref) => {
               this.listRef = ref;
             }}
-            className={cx(theme['autocomplete-list'])}
+            className={cx(theme['autocomplete-list'], { enabled: this.state.showSuggestions })}
             onMouseEnter={() => this.blockOnBlur(true)}
             onMouseLeave={() => this.blockOnBlur(false)}
           >

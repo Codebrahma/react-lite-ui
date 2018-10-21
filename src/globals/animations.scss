@@ -12,3 +12,15 @@
         }
     }
 }
+
+@mixin sectionEntry($duration) {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(0,10px) perspective(200px) rotateX(-2deg);
+  &.enabled {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility $duration, opacity $duration,transform $duration;
+    transform: translate(0,0);
+  }
+}
