@@ -3,7 +3,7 @@
     src: url("./fontello.woff");
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "fontello";
     font-style: normal;
     font-weight: normal;
@@ -28,4 +28,20 @@
 
 .icon-cross:before {
     content: "\e807";
+}
+
+.icon-menu:before {
+    content: '\e800';
+}
+
+.icon-expand-more:before {
+    content: '\e803';
+}
+
+.icon-tick:before {
+    content: '\e806';
+}
+
+.icon-expand-less:before {
+    content: '\e808';
 }
