@@ -66,11 +66,12 @@ describe('AutoComplete Render tests', () => {
 
   it('Successfully removes dropdown on remove focus', () => {
     // Expected value on focus / before blur event on input component.
-    const expectedValueBeforeBlur = 1;
+    const expectedValueBeforeBlur = 'enabled';
     // Expected value after blur event on input component.
-    const expectedValueAfterBlur = 0;
+    const expectedValueAfterBlur = '';
     // Length of the component before / after blur.
-    const simulatedValue = () => wrappedComponent.find(AUTOCOMPLETE_LIST_SELECTOR).length;
+    const simulatedValue =
+      () => wrappedComponent.find(AUTOCOMPLETE_LIST_SELECTOR).props().className;
 
     // Simulate focus on input element.
     focusOnInput();

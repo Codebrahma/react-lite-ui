@@ -22,15 +22,20 @@
             }
         }
     }
+
+
     :local(.autocomplete-list) {
+
         box-sizing: border-box;
-        max-height: 40vh;
-        min-height: 20vh;
+        height: 45vh;
         width: 100%;
         overflow-y: auto;
         box-shadow: $dropdown-menu-shadow;
         border-radius: 2px;
         margin-top: 10px;
+
+        @include sectionEntry(0.25s);
+        
         :local(.autocomplete-list-item) {
             display: block;
             box-sizing: border-box;
