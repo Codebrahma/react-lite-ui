@@ -6,6 +6,8 @@ import cx from 'classnames';
 
 import defaultTheme from './theme.scss';
 
+const { findDOMNode: findNode } = ReactDOM;
+
 class AutoComplete extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,16 @@ class AutoComplete extends Component {
     // Currently focused element
     this.focusedElement = null;
   }
+
+
+  getScrollState = () => {
+    const threshold =
+      findNode(this.listRef).offsetTop +
+      findNode(this.listRef).offsetHeight;
+    const focusedItem = findNode(this.focusedElement);
+    return { threshold, focusedItem };
+  };
+
 
   // Handle user input change on typing.
   handleInput = ({ target }) => {
@@ -105,14 +117,6 @@ class AutoComplete extends Component {
     });
   };
 
-  getScrollState = () => {
-    const threshold =
-      ReactDOM.findDOMNode(this.listRef).offsetTop +
-      ReactDOM.findDOMNode(this.listRef).offsetHeight;
-    const focusedItem = ReactDOM.findDOMNode(this.focusedElement);
-    return { threshold, focusedItem };
-  };
-
   /*
   Handle keydown events when input is focused for navigating between options
   and selecting an option.
@@ -139,10 +143,10 @@ class AutoComplete extends Component {
               focusedItem &&
               focusedItem.offsetHeight + focusedItem.offsetTop > threshold
             ) {
-              ReactDOM.findDOMNode(this.listRef).scrollTop +=
+              findNode(this.listRef).scrollTop +=
                 focusedItem.offsetHeight;
             } else if (!this.state.focus) {
-              ReactDOM.findDOMNode(this.listRef).scrollTop = 0;
+              findNode(this.listRef).scrollTop = 0;
             }
           },
         );
@@ -158,12 +162,13 @@ class AutoComplete extends Component {
             const { threshold, focusedItem } = this.getScrollState();
             if (
               focusedItem &&
-              ((ReactDOM.findDOMNode(this.listRef).scrollTop + ReactDOM.findDOMNode(this.listRef).offsetTop) > focusedItem.offsetTop)
+              ((findNode(this.listRef).scrollTop
+              + findNode(this.listRef).offsetTop) > focusedItem.offsetTop)
             ) {
-              ReactDOM.findDOMNode(this.listRef).scrollTop -=
+              findNode(this.listRef).scrollTop -=
                 focusedItem.offsetHeight;
             } else if (this.state.focus === this.state.data.length - 1) {
-                ReactDOM.findDOMNode(this.listRef).scrollTop = threshold;
+              findNode(this.listRef).scrollTop = threshold;
             }
           },
         );
@@ -265,7 +270,7 @@ class AutoComplete extends Component {
             ref={(ref) => {
               this.listRef = ref;
             }}
-            className={cx(theme['autocomplete-list'], { enabled: this.state.showSuggestions })}
+            className={cx(theme['autocomplete-list'], { enabled: showSuggestions })}
             onMouseEnter={() => this.blockOnBlur(true)}
             onMouseLeave={() => this.blockOnBlur(false)}
           >
