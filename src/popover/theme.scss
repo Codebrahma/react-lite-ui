@@ -3,6 +3,7 @@
 :local(.popover) {
   position: relative;
   width: fit-content;
+  display: flex;
 }
 
 :local(.popoverWrapper) {
@@ -107,7 +108,7 @@
   }
 }
 :local(.leftPopover) {
-  margin-top: -50%;
+  align-self: center;
   :local(.popoverArrow) {
     top: 50%;
   }
@@ -134,7 +135,7 @@
   }
 }
 :local(.rightPopover) {
-  margin-top: -50%;
+  align-self: center;
   :local(.popoverArrow) {
     top: 50%;
   }
