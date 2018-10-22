@@ -1,11 +1,10 @@
 @font-face {
-    font-family: "arrow-icon";
-    src: url("./left-arrow.woff");
+    font-family: "fontello";
+    src: url("./fontello.woff");
 }
 
-.icon-left,
-.icon-right {
-    font-family: "arrow-icon";
+[class^="icon-"], [class*=" icon-"] {
+    font-family: "fontello";
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -20,9 +19,13 @@
 }
 
 .icon-left:before {
-    content: "\e800";
+    content: "\e802";
 }
 
 .icon-right:before {
-    content: "\e800";
+    content: "\e802";
+}
+
+.icon-cross:before {
+    content: "\e807";
 }
