@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "arrow-icon";
+    src: url("./left-arrow.woff");
+}
+
+.icon-left,
+.icon-right {
+    font-family: "arrow-icon";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-right {
+    transform: scale(-1);
+}
+
+.icon-left:before {
+    content: "\e800";
+}
+
+.icon-right:before {
+    content: "\e800";
+}
