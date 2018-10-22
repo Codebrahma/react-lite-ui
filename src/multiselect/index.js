@@ -75,14 +75,27 @@ class MultiSelect extends Component {
     }
   };
 
+  showMenu = () => {
+    this.setState({
+      open: true,
+      blockClickEvent: true,
+    });
+  }
+
   /*
   Dropdown handle used to toggle open and closed states for the dropdown when user
   clicks on select box / arrow.
   */
   toggleMenu = () => {
-    this.setState(prevState => ({
-      open: !prevState.open,
-    }));
+    if (!this.state.blockClickEvent) {
+      this.setState(prevState => ({
+        open: !prevState.open,
+      }));
+    } else {
+      this.setState({
+        blockClickEvent: false,
+      });
+    }
   };
 
   /*
@@ -180,11 +193,13 @@ class MultiSelect extends Component {
       <div className={classes}>
         <div
           className={theme.selectInputWrapper}
+          onFocus={this.showMenu}
           onClick={this.toggleMenu}
           onBlur={this.hideMenu}
           onKeyDown={this.handleKeyPress}
           /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
           tabIndex={0}
+          id="multiselect-input"
         >
           <div id="selected-options" className={theme.selectedInput}>
             {this.renderSelected()}
