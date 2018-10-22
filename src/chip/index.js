@@ -10,7 +10,9 @@ const DeleteIcon = ({ classes, handleClick }) => {
     return handleClick(e);
   }
   return (
-    <button onClick={handleDeleteClick} className={classes}>&times;</button>
+    <button onClick={handleDeleteClick} className={classes}>
+      <i className="icon-cross" />
+    </button>
   );
 };
 
@@ -55,7 +57,7 @@ const Chip = ({
     const customClasses = classnames(
       theme.deleteIcon,
       theme[size && `${size}Delete`],
-      theme[outlined ? color : `${color}Outlined`],
+      theme[!outlined ? color : `${color}Outlined`],
     );
     deleteIcon = <DeleteIcon classes={customClasses} handleClick={handleDelete} />;
   }
