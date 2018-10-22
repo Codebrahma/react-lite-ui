@@ -1,0 +1,22 @@
+@import './theme';
+
+@mixin customScroll() {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $secondary-white; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $secondary-grey; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $secondary-black; 
+  }
+}

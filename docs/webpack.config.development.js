@@ -51,6 +51,10 @@ module.exports = {
         test: /\.(md)$/,
         use: ['html-loader', 'highlight-loader', 'markdown-loader'],
       },
+      {
+        test: /\.(woff)$/,
+        use: 'file-loader',
+      },
     ],
   },
   plugins: [

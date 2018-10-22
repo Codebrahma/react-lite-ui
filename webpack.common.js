@@ -40,6 +40,10 @@ module.exports = {
           `${require.resolve('sass-loader')}?sourceMap`,
         ],
       },
+      {
+        test: /\.(woff)$/,
+        use: 'file-loader',
+      },
     ],
   },
   plugins: [

@@ -26,7 +26,7 @@ describe('MultiSelect render test', () => {
   });
 
   const focusOnInput = () => {
-    wrappedComponent.find('input').simulate('focus');
+    wrappedComponent.find('#multiselect-input').simulate('focus');
   };
 
   it('Successfully renders MultiSelect component', () => {
@@ -59,7 +59,7 @@ describe('MultiSelect render test', () => {
 
     focusOnInput();
     expect(simulatedValue()).equal(expectedValueBeforeBlur);
-    wrappedComponent.find('input').simulate('blur');
+    wrappedComponent.find('#multiselect-input').simulate('blur');
     expect(simulatedValue()).equal(expectedValueAfterBlur);
   });
 

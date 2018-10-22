@@ -1,8 +1,9 @@
 @import '../globals/theme';
 
 .sizing {
-  width: 50px;
-  height: 50px;
+  width: 61px;
+  height: 61px;
+  object-fit: contain;
   border-radius: 50%;
 }
 
@@ -20,6 +21,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 24px;
+  font-weight: bold;
   color: $secondary-white;
+  fill: $secondary-white; // if element provided is SVG
+}
+
+:local(.darkBlue) {
+  background-color: $secondary-violet;
+}
+:local(.green) {
+  background-color: $secondary-green;
+}
+:local(.lightBlue) {
+  background-color: $secondary-blue;
+}
+:local(.orange) {
+  background-color: $secondary-yellow;
+  :local(.avatarContent) {
+    color: $secondary-grey;
+    fill: $secondary-grey;
+  }
+}
+:local(.lightRed) {
+  background-color: $secondary-red;
+}
+:local(.white) {
+  background-color: $original-white;
+  :local(.avatarContent) {
+    color: $secondary-grey;
+    fill: $secondary-grey;
+  }
+}
+:local(.grey) {
+  background-color: $secondary-white;
+  :local(.avatarContent) {
+    color: $secondary-grey;
+    fill: $secondary-grey;
+  }
+}
+:local(.darkGrey) {
+  background-color: $secondary-grey;
 }
