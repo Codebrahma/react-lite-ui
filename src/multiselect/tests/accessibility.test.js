@@ -26,52 +26,8 @@ describe('MultiSelect accessibility test', () => {
   });
 
   const focusOnInput = () => {
-    wrappedComponent.find('input').simulate('focus');
+    wrappedComponent.find('#multiselect-input').simulate('focus');
   };
-
-  it('Successfully updates input on changing input value.', () => {
-    const expectedValueBeforeChange = '';
-    const expectedValueAfterChange = 'some random text';
-    const simulatedValue = () => wrappedComponent.find('input').props().value;
-
-    expect(simulatedValue()).to.equal(expectedValueBeforeChange);
-    wrappedComponent.find('input').simulate('change', { target: { value: expectedValueAfterChange } });
-    expect(simulatedValue()).to.equal(expectedValueAfterChange);
-  });
-
-  it('Successfully filters dropdown options according to input', () => {
-    const expectedValue = 1;
-    const simulatedValue = () => wrappedComponent.find(DROPDOWN_MENU).children();
-
-    focusOnInput();
-    wrappedComponent.find('input').simulate('change', { target: { value: 'lorem' } });
-    expect(simulatedValue()).to.have.lengthOf(expectedValue);
-  });
-
-  it('Successfully selects first matching option on pressing Enter key.', () => {
-    const inputValue = 'ip';
-    const simulatedValue = () => wrappedComponent.find('#selected-options').childAt(0);
-
-    const expectedValue = (data.filter(opt =>
-      opt.label
-        .toLowerCase()
-        .indexOf(inputValue.toLowerCase()) !== -1)[0].label);
-
-    focusOnInput();
-    wrappedComponent
-      .find('input')
-      .simulate(
-        'change',
-        { target: { value: inputValue } },
-      );
-    wrappedComponent
-      .find('input')
-      .simulate('keydown', {
-        key: 'Enter',
-        keyCode: 13,
-      });
-    expect(simulatedValue().prop('aria-label')).to.equal(expectedValue);
-  });
 
   it('Successfully selects option on click', () => {
     const expectedValueBeforeSelection = 0;
