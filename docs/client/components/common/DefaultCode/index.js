@@ -18,3 +18,4 @@ export { defaultCode as MultiSelectDefaultCode } from './MultiSelect';
 export { defaultCode as NavbarDefaultCode } from './Navbar';
 export { defaultCode as PreloaderDefaultCode } from './Preloader';
 export { defaultCode as SelectDefaultCode } from './Select';
+export { defaultCode as CarouselDefaultCode } from './Carousel';

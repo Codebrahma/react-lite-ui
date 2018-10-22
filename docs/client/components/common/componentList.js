@@ -38,6 +38,8 @@ import PreloaderReadme from '../../../../src/preloader/readMe.md';
 import Preloader from '../../../../src/preloader';
 import Select from '../../../../src/select';
 import SelectReadme from '../../../../src/select/readMe.md';
+import Carousel from '../../../../src/carousel';
+import CarouselReadme from '../../../../src/carousel/readMe.md';
 
 import {
   CardDefaultCode,
@@ -60,6 +62,7 @@ import {
   NavbarDefaultCode,
   PreloaderDefaultCode,
   SelectDefaultCode,
+  CarouselDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -92,6 +95,12 @@ export const componentList = [
     docs: CardReadme,
     component: Card,
     defaultCode: CardDefaultCode,
+  },
+  {
+    name: 'Carousel',
+    docs: CarouselReadme,
+    component: Carousel,
+    defaultCode: CarouselDefaultCode,
   },
   {
     name: 'Checkbox',
