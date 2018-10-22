@@ -6,19 +6,26 @@ import defaultTheme from './theme.scss';
 
 class Popover extends React.Component {
   state = {
-    isOpen: false,
+    hoverOpen: false,
+    clickOpen: false,
   }
 
   showPopover = () => {
     this.setState({
-      isOpen: true,
+      hoverOpen: true,
     });
   }
 
   hidePopover = () => {
     this.setState({
-      isOpen: false,
+      hoverOpen: false,
     });
+  }
+
+  handleClick = () => {
+    this.setState(prevState => ({
+      clickOpen: !prevState.clickOpen,
+    }));
   }
 
   render() {
@@ -29,23 +36,27 @@ class Popover extends React.Component {
       children,
       title,
       position,
-      popoverWidth,
+      openOn,
       ...other
     } = this.props;
+    const { hoverOpen, clickOpen } = this.state;
     const classes = classnames(theme.popover, className);
     const popoverClasses = classnames(theme[`${position}Popover`], theme.popoverWrapper);
+    /*  eslint-disable jsx-a11y/click-events-have-key-events  */
+    /*  eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <div
         className={classes}
         {...other}
-        onMouseEnter={this.showPopover}
-        onMouseLeave={this.hidePopover}
+        onMouseEnter={(openOn === 'hover') ? this.showPopover : null}
+        onMouseLeave={(openOn === 'hover') ? this.hidePopover : null}
+        onClick={(openOn === 'click') ? this.handleClick : null}
       >
         <div className={theme.contentWrapper}>
           {children}
         </div>
         {
-          this.state.isOpen && (
+          (hoverOpen || clickOpen) && (
             <div className={popoverClasses}>
               {title && <span className={theme.title}>{title}</span>}
               <div className={classnames(theme.popoverContent)}>
@@ -67,6 +78,7 @@ Popover.propTypes = {
   content: PropTyes.oneOfType([PropTyes.node, PropTyes.element]),
   title: PropTyes.string,
   position: PropTyes.string,
+  openOn: PropTyes.string,
 };
 
 Popover.defaultProps = {
@@ -76,6 +88,7 @@ Popover.defaultProps = {
   content: 'content here',
   title: '',
   position: 'bottomLeft',
+  openOn: 'hover',
 };
 
 export default themr('CBPopover', defaultTheme)(Popover);
