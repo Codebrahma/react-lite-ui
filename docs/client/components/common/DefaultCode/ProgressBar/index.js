@@ -16,7 +16,7 @@ class Demo extends React.Component {
             progress: (prevState.progress + 1) % 100,
           }));
         },
-        20
+        75
       );
     }
     
@@ -24,7 +24,7 @@ class Demo extends React.Component {
       return (
         <div>
           <PreviewBlock header="Progress bar">
-            <ProgressBar progress={this.state.progress}/>
+            <ProgressBar progress={this.state.progress} showProgressText={true}/>
           </PreviewBlock>
         </div>
       )

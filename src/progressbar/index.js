@@ -22,11 +22,13 @@ class ProgressBar extends React.Component {
   }
 
   render() {
-    const { theme, type } = this.props;
+    const { theme, type, showProgressText } = this.props;
     const classes = classnames(theme.bar);
     const progress = classnames(theme.progress, theme[type]);
     return (
       <div className={classes}>
+        { showProgressText &&
+          <div className="text"><strong>{ `${this.state.progress}%` }</strong></div> }
         <div
           className={progress}
           ref={(ref) => {
@@ -42,12 +44,14 @@ ProgressBar.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   type: PropTypes.string,
   progress: PropTypes.number,
+  showProgressText: PropTypes.bool,
 };
 
 ProgressBar.defaultProps = {
   theme: defaultTheme,
   type: 'primary',
   progress: 0,
+  showProgressText: false,
 };
 
 export default themr('CBProgressBar', defaultTheme)(ProgressBar);
