@@ -21,10 +21,11 @@
 
 :local(.each-label) {
   margin-left: 10px;
+  cursor: pointer;
 }
 
 :local(.customized-radio) {
-  border: 1px solid $secondary-grey;
+  border: 3px solid $secondary-grey;
   border-radius: 50%;
   padding: 3px;
   .inner {
