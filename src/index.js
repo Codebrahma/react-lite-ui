@@ -22,6 +22,7 @@ import Popover from './popover';
 import Preloader from './preloader';
 import Select from './select';
 import Carousel from './carousel';
+import ProgressBar from './progressbar';
 
 export default {
   Button,
@@ -46,6 +47,7 @@ export default {
   Preloader,
   Select,
   Carousel,
+  ProgressBar,
 };
 
 // ReactDOM.render(
