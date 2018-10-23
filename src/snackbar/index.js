@@ -18,17 +18,29 @@ class Snackbar extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.active === this.state.active) {
-      return;
+  static getDerivedStateFromProps(props, state) {
+    if (!state) {
+      return {
+        active: props.active,
+      };
     }
-    if (nextProps.active) {
-      this.showSnackbar();
-    } else {
-      this.dismissSnackbar();
+    if (props.active === state.active) {
+      return null;
     }
+    return {
+      active: props.active,
+    };
   }
 
+  componentDidUpdate(_, state) {
+    if (state.active !== this.state.active) {
+      if (this.props.active) {
+        this.showSnackbar();
+      } else {
+        this.dismissSnackbar();
+      }
+    }
+  }
 
   componentWillUnmount() {
     clearTimeout(this.curTimeout);
@@ -41,7 +53,7 @@ class Snackbar extends React.Component {
       this.dismissSnackbar();
       this.curTimeout = null;
     }, timeout);
-  }
+  };
 
   showSnackbar = () => {
     if (this.props.autoClose) {
@@ -50,7 +62,7 @@ class Snackbar extends React.Component {
     this.setState({
       active: true,
     });
-  }
+  };
 
   dismissSnackbar = () => {
     clearTimeout(this.curTimeout);
@@ -60,7 +72,7 @@ class Snackbar extends React.Component {
     if (this.props.onClose) {
       this.props.onClose();
     }
-  }
+  };
 
   render() {
     const {
@@ -69,10 +81,15 @@ class Snackbar extends React.Component {
     const { active } = this.state;
     const classes = classnames(theme.snackbar, additionaClasses);
     return (
-      <div aria-label="snackbar" className={classnames(theme.snackbarWrapper, position, active ? 'active' : '')}>
-        <div className={classes}>
-          { children }
-        </div>
+      <div
+        aria-label="snackbar"
+        className={classnames(
+          theme.snackbarWrapper,
+          position,
+          active ? 'active' : '',
+        )}
+      >
+        <div className={classes}>{children}</div>
       </div>
     );
   }
