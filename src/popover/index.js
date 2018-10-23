@@ -6,26 +6,39 @@ import defaultTheme from './theme.scss';
 
 class Popover extends React.Component {
   state = {
-    hoverOpen: false,
-    clickOpen: false,
+    isVisible: false,
   }
 
-  showPopover = () => {
-    this.setState({
-      hoverOpen: true,
-    });
+  togglePopoverClick = () => {
+    this.setState(prevState => ({
+      isVisible: !prevState.isVisible,
+    }));
   }
 
   hidePopover = () => {
-    this.setState({
-      hoverOpen: false,
-    });
+    setTimeout(() => {
+      this.setState({
+        isVisible: false,
+      });
+    }, 100);
   }
 
-  handleClick = () => {
-    this.setState(prevState => ({
-      clickOpen: !prevState.clickOpen,
-    }));
+  /*  eslint-disable jsx-a11y/click-events-have-key-events  */
+  /*  eslint-disable jsx-a11y/no-static-element-interactions */
+  renderActionContent = () => {
+    const { theme, actionContent, onConfirm } = this.props;
+    return (
+      <span
+        className={theme.actionWrapper}
+        onClick={onConfirm}
+      >
+        {
+          typeof actionContent === 'string'
+            ? <span className={theme.actionContent}>{ actionContent }</span>
+            : actionContent
+        }
+      </span>
+    );
   }
 
   render() {
@@ -36,32 +49,32 @@ class Popover extends React.Component {
       children,
       title,
       position,
-      openOn,
+      onConfirm,
+      noAction,
+      actionContent,
       ...other
     } = this.props;
-    const { hoverOpen, clickOpen } = this.state;
+    const { isVisible } = this.state;
     const classes = classnames(theme.popover, className);
     const popoverClasses = classnames(theme[`${position}Popover`], theme.popoverWrapper);
-    /*  eslint-disable jsx-a11y/click-events-have-key-events  */
-    /*  eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <div
-        className={classes}
-        {...other}
-        onMouseEnter={(openOn === 'hover') ? this.showPopover : null}
-        onMouseLeave={(openOn === 'hover') ? this.hidePopover : null}
-        onClick={(openOn === 'click') ? this.handleClick : null}
-      >
-        <div className={theme.contentWrapper}>
+      <div className={classes}>
+        <div
+          className={theme.contentWrapper}
+          onClick={this.togglePopoverClick}
+          onBlur={this.hidePopover}
+          {...other}
+        >
           {children}
         </div>
         {
-          (hoverOpen || clickOpen) && (
+          isVisible && (
             <div className={popoverClasses}>
               {title && <span className={theme.title}>{title}</span>}
               <div className={classnames(theme.popoverContent)}>
                 {content}
               </div>
+              { !noAction && this.renderActionContent() }
               <span className={theme.popoverArrow} />
             </div>
           )
@@ -78,7 +91,9 @@ Popover.propTypes = {
   content: PropTyes.oneOfType([PropTyes.node, PropTyes.element]),
   title: PropTyes.string,
   position: PropTyes.string,
-  openOn: PropTyes.string,
+  onConfirm: PropTyes.func,
+  noAction: PropTyes.bool,
+  actionContent: PropTyes.oneOfType([PropTyes.element, PropTyes.string]),
 };
 
 Popover.defaultProps = {
@@ -88,7 +103,9 @@ Popover.defaultProps = {
   content: 'content here',
   title: '',
   position: 'bottomLeft',
-  openOn: 'hover',
+  onConfirm: () => {},
+  noAction: false,
+  actionContent: 'confirm',
 };
 
 export default themr('CBPopover', defaultTheme)(Popover);
