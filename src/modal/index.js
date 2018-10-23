@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import cx from 'classnames';
 import defaultTheme from './theme.scss';
+import '../globals/fonts.scss';
 
 class Modal extends Component {
   constructor(props) {
@@ -82,7 +83,7 @@ class Modal extends Component {
               {children || body || null}
             </div>
             {this.renderModalFooter(footer)}
-            <div className={theme.close} onClick={this.closeModal} />
+            <i className={cx(theme.close, 'icon-cross')} onClick={this.closeModal} />
           </div>
         )}
       </div>

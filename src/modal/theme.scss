@@ -1,5 +1,5 @@
 :local(.modal-backdrop) {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.51);
     position: absolute;
     top: 0;
     left: 0;
@@ -27,14 +27,13 @@
 }
 
 :local(.modal) {
-    padding: 1%;
+    padding: 2%;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     background: white;
     width: 50%;
     height: 50%;
     position: relative;
     flex-flow: column;
-    border-radius: 2px;
     box-sizing: border-box;
 
     :local(.modal-title) {
@@ -68,30 +67,10 @@
 :local(.close) {
     width: fit-content;
     position: absolute;
-    top: 1%;
-    right: 1%;
+    top: 2.5%;
+    right: 2%;
     cursor: pointer;
-    
-    &::before, &::after{
-        content:'';
-        position:absolute;
-        width: 15px;
-        height: 4px;
-        background-color: #aaa;
-        border-radius:2px;
-        top: 8px;
-        right: 0;
-        box-shadow:0 0 2px 0 #ccc;
-    }
-    
-    &::before{
-        -webkit-transform:rotate(45deg);
-        -moz-transform:rotate(45deg);
-        transform:rotate(45deg);
-    }
-    &::after{
-        -webkit-transform:rotate(-45deg);
-        -moz-transform:rotate(-45deg);
-        transform:rotate(-45deg);
-    }
+    font-size: 0.7rem;
+    background-color: black;
+    color: white;
 }
