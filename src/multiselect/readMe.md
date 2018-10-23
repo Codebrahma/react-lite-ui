@@ -17,7 +17,7 @@ The base multiselect component.
 | `menu` |  Class used for the dropdown menu. |
 | `option` | Class used for dropdown items. |
 | `selectedInput` | Class used for wrapper container of selected items. | 
-| `selectInput` | Class used for input component. |
+| `selectInputWrapper` | Class used for the wrapper container multiselect component ( Note: Multiselect dropdown menu is not wrapped by this wrapper element. ). |
 | `selected` | Class for selected chip items. |
 | `selected-option` | Class for selected options in the dropdown menu. |
 

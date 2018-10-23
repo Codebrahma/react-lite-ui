@@ -16,6 +16,7 @@ A basic select component.
 | `select` | Class used for wrapper component. |
 | `menu` | Class used for dropdown menu. |
 | `option` | Class used for dropdown menu items. |
+| `option-hover` | Class used for item on which mouse is hovering. |
 | `selectInput` | Class used for input box |
 | `selected` | Class used for highlighting selected option. |
 | `arrow` | Class used for arrow icon. |
