@@ -1,4 +1,4 @@
-## AutoComplete
+## Carousel
 
 A basic Carousel component.
 
