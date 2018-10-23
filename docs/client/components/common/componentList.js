@@ -40,6 +40,8 @@ import Select from '../../../../src/select';
 import SelectReadme from '../../../../src/select/readMe.md';
 import Carousel from '../../../../src/carousel';
 import CarouselReadme from '../../../../src/carousel/readMe.md';
+import ProgressBar from '../../../../src/progressbar';
+import ProgressBarReadme from '../../../../src/progressbar/readMe.md';
 
 import {
   CardDefaultCode,
@@ -63,6 +65,7 @@ import {
   PreloaderDefaultCode,
   SelectDefaultCode,
   CarouselDefaultCode,
+  ProgressBarDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -155,6 +158,12 @@ export const componentList = [
     docs: PreloaderReadme,
     component: Preloader,
     defaultCode: PreloaderDefaultCode,
+  },
+  {
+    name: 'ProgressBar',
+    docs: ProgressBarReadme,
+    component: ProgressBar,
+    defaultCode: ProgressBarDefaultCode,
   },
   {
     name: 'RadioButtonGroup',
