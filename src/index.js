@@ -18,6 +18,7 @@ import Menu from './menu';
 import Modal from './modal';
 import MultiSelect from './multiselect';
 import Navbar from './navbar';
+import Popover from './popover';
 import Preloader from './preloader';
 import Select from './select';
 import Carousel from './carousel';
@@ -41,6 +42,7 @@ export default {
   Modal,
   MultiSelect,
   Navbar,
+  Popover,
   Preloader,
   Select,
   Carousel,
