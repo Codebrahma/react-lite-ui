@@ -32,11 +32,6 @@ const Navbar = ({
 
   const renderLeftContent = () => (
     <div className={theme.leftContent}>
-      { leftIcon && (
-        <div className={theme.leftIcon} onClick={onLeftIconClick}>
-          {leftIcon}
-        </div>)
-      }
       {
         typeof title === 'string'
         ? <span className={theme.title}>{title}</span>
@@ -48,19 +43,26 @@ const Navbar = ({
   const renderRightContent = () => (
     <div className={theme.rightContent}>
       { children }
-      { rightIcon && (
-        <div className={theme.rightIcon} onClick={onRightIconClick}>
-          {rightIcon}
-        </div>)
-      }
     </div>
   );
 
   return (
     <div className={classes} {...other}>
       <div className={theme.innerWrapper}>
-        {renderLeftContent()}
-        {renderRightContent()}
+        { leftIcon && (
+          <div className={theme.leftIcon} onClick={onLeftIconClick}>
+            {leftIcon}
+          </div>)
+        }
+        <div className={theme.navbarContent}>
+          {renderLeftContent()}
+          {renderRightContent()}
+        </div>
+        { rightIcon && (
+          <div className={theme.rightIcon} onClick={onRightIconClick}>
+            {rightIcon}
+          </div>)
+        }
       </div>
       <div className="clearfix" />
     </div>

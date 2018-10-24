@@ -1,7 +1,4 @@
 @import '../globals/theme';
-* {
-  margin: 0;
-}
 :local(.navbarWrapper) {
   box-sizing: border-box;
   width: 100%;
@@ -16,11 +13,14 @@
 :local(.innerWrapper) {
   display: flex;
   justify-content: space-between;
-  text-transform: capitalize;
-  align-items: center;
   height: 100%;
   width: 100%;
   position: relative;
+}
+:local(.navbarContent) {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
 }
 :local(.leftContent),
 :local(.rightContent) {
@@ -35,11 +35,16 @@
   & > * {
     display: flex;
     align-items: center;
+    box-sizing: content-box;
     cursor: pointer;
     padding: 6px 10px;
     height: 36px;
     margin: auto 12px;
-    &:hover {
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover,
+    &:active {
       background-color: rgba(0, 0, 0, 0.29);
     }
   }
