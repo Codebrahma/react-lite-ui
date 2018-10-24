@@ -6,7 +6,8 @@ class Demo extends React.Component {
       buttonContainer: {
         display: "grid",
         gridTemplateColumns: "auto auto auto",
-        gridGap: 20
+        gridGap: 20,
+        alignItems: "center"
       }
     };
   }
@@ -51,22 +52,26 @@ class Demo extends React.Component {
         </PreviewBlock>
         { /* Preview Block-5 */ }
         <PreviewBlock header="Sizable Buttons">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "auto auto auto",
-              gridGap: 20,
-              alignItems: "center"
-            }}
-          >
-            <Button type="primary" size="small">
+          <div style={this.style.buttonContainer}>
+            <Button size="small">
               Small
             </Button>
-            <Button type="primary" size="medium">
+            <Button size="medium">
               Medium
             </Button>
-            <Button type="primary" size="large">
+            <Button size="large">
               Large
+            </Button>
+          </div>
+        </PreviewBlock>
+        { /* Preview Block-5 */ }
+        <PreviewBlock header="Buttons with icons and text">
+          <div style={this.style.buttonContainer}>
+            <Button type="warning" icon="icon-left">
+              icon left
+            </Button>
+            <Button type="success" icon="icon-right" iconAlignment="right">
+              icon right
             </Button>
           </div>
         </PreviewBlock>

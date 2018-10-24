@@ -38,14 +38,14 @@
 :local(.icon-left) {
     flex-direction: row;
     & > *:first-child {
-      margin-right: 5px;
+      margin-right: 8px;
     }
 }
 
 :local(.icon-right) {
     flex-direction: row-reverse;
     & > *:last-child {
-      margin-left: 5px;
+      margin-left: 8px;
     }
 }
 
