@@ -82,7 +82,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  position: 'static',
+  position: 'fixed',
   color: 'default',
   className: '',
   theme: defaultTheme,
