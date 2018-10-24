@@ -12,6 +12,7 @@ The base button component.
 | `href` | `String` | `null` | Creates a link for the button. |
 | `icon` | `String`/`Element` | `null` | Value of the icon |
 | `iconAlignment` | `String` | `left` | Set an alignment of the icon. Possible values are `left`, `right` |
+| `iconButton` | `Boolean` | `false` | Prop to be sent for rendering icon only type button |
 | `onClick` | `Function` | &nbsp; | Callback to be called when the button is clicked |
 | `disabled` | `Boolean` | `false` | Prop to disable the button |
 | `bordered` | `Boolean` | `false` | Prop to render bordered button |
@@ -35,6 +36,8 @@ The base button component.
 | `small` | Class used for styling `small` sized buttons |
 | `medium` | Class used for styling `medium` sized buttons |
 | `large` | Class used for styling `large` sized buttons |
+| `iconButtonWrapper` | Class used for styling root element of icon only buttons |
+| `iconButton` | Class used for styling icon only buttons |
 
 ### Usage
 ```
@@ -54,15 +57,20 @@ The base button component.
 
     <div>
       <h4>Buttons with diffent sizes</h4>
-      <Button type="primary" size="small">Small</Button>
-      <Button type="primary" size="medium">Medium</Button>
-      <Button type="primary" size="large">Large</Button>
+      <Button size="small">Small</Button>
+      <Button size="medium">Medium</Button>
+      <Button size="large">Large</Button>
     </div>
 
     <div>
       <h4>Buttons with Icon</h4>
       <Button type="success" icon="done">Left Icon</Button>
       <Button type="success" icon="done" iconAlignment="right">Right Icon</Button>
+    </div>
+
+    <div>
+      <h4>Icon Only Button</h4>
+      <Button type="success" icon="icon-cross" iconButton />
     </div>
   </div>
 ```
