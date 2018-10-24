@@ -34,12 +34,6 @@
 :local(.iconButtonWrapper) {
   width: 58px !important;
   height: 58px !important;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5) !important;
-  &:active  {
-    box-shadow: 0 2px 9px 4px var(--very-light-pink-75), 0 2px 4px 2px rgba(0, 0, 0, 0.5) !important;
-  }
 }
 :local(.iconButton) {
   width: 100%;
@@ -49,6 +43,11 @@
   justify-content: center !important;
   padding: 18px;
   box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5) !important;
+  &:active  {
+    box-shadow: 0 2px 9px 4px var(--very-light-pink-75), 0 2px 4px 2px rgba(0, 0, 0, 0.5) !important;
+  }
   & > * {
     max-height: 30px;
     max-width: 30px;
@@ -163,6 +162,7 @@
 :local(.primaryBordered),
 :local(.primaryBorderless) {
     color: var(--cool-blue);
+    fill: var(--cool-blue);
     background-color: var(--white);
     &:hover {
         background-color: var(--cool-blue-21);
@@ -176,6 +176,7 @@
 :local(.secondaryBordered),
 :local(.secondaryBorderless) {
     color: var(--charcoal-grey);
+    fill: var(--charcoal-grey);
     background-color: var(--white);
     &:hover {
         background-color: var(--very-light-pink-50);
