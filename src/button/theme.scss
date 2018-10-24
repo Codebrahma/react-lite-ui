@@ -41,7 +41,6 @@
   display: flex;
   align-items: center !important;
   justify-content: center !important;
-  padding: 18px;
   box-sizing: border-box;
   border-radius: 50%;
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5) !important;
@@ -77,16 +76,22 @@
 }
 
 :local(.small) {
+    height: 33px;
+    min-width: 100px;
     font-size: 0.9rem;
     padding: 0.5em 1em;
 }
 
 :local(.medium) {
+    height: 44px;
+    min-width: 125px;
     font-size: 1rem;
     padding: 0.7em 1.6em;
 }
 
 :local(.large) {
+    height: 60px;
+    min-width: 150px;
     font-size: 1.1rem;
     padding: 0.9em 1.9em;
 }
