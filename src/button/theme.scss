@@ -1,138 +1,258 @@
 @import '../globals/theme';
-
 :local(.button) {
-  align-content: center;
-  align-items: center;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  flex-direction: row;
-  font-weight: 500;
-  justify-content: center;
-  letter-spacing: 0;
-  outline: none;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  box-shadow: 1px 0px 8px 1px rgba($color: #000000, $alpha: 0.5);
-  border-radius: 3px;
-
-  &:hover {
-    box-shadow: 1px 0px 11px 2px rgba($color: #000000, $alpha: 0.5);
-  }
-
-  &:active {
-    box-shadow: 1px 0px 5px 1px rgba($color: #000000, $alpha: 0.5);
-    &::after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      background: rgba($color: #000000, $alpha: 0.27);
+    align-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 0;
+    outline: none;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px 0 rgba(163, 152, 152, 0.5), 0 3px 4px 0 rgba(168, 160, 160, 0.5);
+    border-radius: 6px;
+    &:active {
+        box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.07), 0 2px 6px 0 rgba(163, 152, 152, 0.5), -5px 8px 10px 0 rgba(168, 160, 160, 0.5);
     }
-  }
+    &>.rippleWrapper {
+        overflow: hidden;
+    }
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+    &.flat {
+        box-shadow: none;
+    }
+}
 
-  & > .rippleWrapper {
-    overflow: hidden;
+:local(.iconButtonWrapper) {
+  width: 58px !important;
+  height: 58px !important;
+}
+:local(.iconButton) {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 18px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5) !important;
+  &:active  {
+    box-shadow: 0 2px 9px 4px var(--very-light-pink-75), 0 2px 4px 2px rgba(0, 0, 0, 0.5) !important;
   }
-
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: 0.6;
+  & > * {
+    max-height: 30px;
+    max-width: 30px;
+  }
+  // reset the default margin added by icon-left class
+  & > *:first-child {
+    margin-right: 0 !important;
   }
 }
 
 :local(.icon) {
-  font-size: 120%;
+    font-size: 0.65em;
 }
 
 :local(.icon-left) {
-  float: left;
-  margin-right: 6px;
+    flex-direction: row;
+    & > *:first-child {
+      margin-right: 8px;
+    }
 }
 
 :local(.icon-right) {
-  margin-left: 6px;
-  float: right;
+    flex-direction: row-reverse;
+    & > *:last-child {
+      margin-left: 8px;
+    }
 }
 
 :local(.small) {
-  font-size: 11px;
-  height: 28px;
-  line-height: 28px;
-  padding: 0 8px;
-  min-width: 70px;
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
 }
 
 :local(.medium) {
-  font-size: 13px;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 12px;
-  min-width: 90px;
+    font-size: 1rem;
+    padding: 0.7em 1.6em;
 }
 
 :local(.large) {
-  font-size: 18px;
-  height: 52px;
-  line-height: 52px;
-  padding: 0 20px;
-  min-width: 130px;
-}
-
-:local(.default) {
-  color: $original-black;
-  background-color: $original-white;
-  border-color: $original-white;
+    font-size: 1.1rem;
+    padding: 0.9em 1.9em;
 }
 
 :local(.primary) {
-  color: $original-white;
-  background-color: $secondary-violet;
-  border-color: $secondary-violet;
+    color: var(--white);
+    fill: var(--white);
+    background-color: var(--cool-blue);
+    &:hover {
+        background-color: var(--light-navy);
+    }
 }
 
 :local(.secondary) {
-  color: $original-white;
-  background-color: $secondary-grey;
-  border-color: $secondary-grey;
+    color: var(--charcoal-grey);
+    fill: var(--charcoal-grey);
+    background-color: var(--very-light-pink);
+    &:hover {
+        background-color: var(--brown-grey);
+    }
 }
 
 :local(.success) {
-  color: $original-white;
-  background-color: $secondary-green;
-  border-color: $secondary-green;
+    color: var(--white);
+    fill: var(--white);
+    background-color: var(--cool-green);
+    &:hover {
+        background-color: var(--darkish-green);
+    }
 }
 
 :local(.danger) {
-  color: $original-white;
-  background-color: $secondary-red;
-  border-color: $secondary-red;
+    color: var(--white);
+    fill: var(--white);
+    background-color: var(--dark-hot-pink);
+    &:hover {
+        background-color: var(--cranberry);
+    }
 }
 
 :local(.warning) {
-  color: $secondary-black;
-  background-color: $secondary-yellow;
-  border-color: $secondary-yellow;
+    color: var(--charcoal-grey);
+    fill: var(--charcoal-grey);
+    background-color: var(--orange-yellow);
+    &:hover {
+        background-color: var(--golden-brown);
+    }
 }
 
 :local(.info) {
-  color: $original-white;
-  background-color: $secondary-blue;
-  border-color: $secondary-blue;
-}
-
-:local(.light) {
-  color: $secondary-black;
-  background-color: $secondary-white;
-  border-color: $secondary-white;
+    color: var(--white);
+    fill: var(--white);
+    background-color: var(--bright-cyan);
+    &:hover {
+        background-color: var(--aqua);
+    }
 }
 
 :local(.dark) {
-  color: $original-white;
-  background-color: $secondary-black;
-  border-color: $secondary-black;
+    color: var(--white);
+    fill: var(--white);
+    background-color: var(--battleship-grey);
+    &:hover {
+        background-color: var(--charcoal-grey);
+    }
+    &:active {
+        background-color: var(--charcoal-grey);
+    }
+}
+
+/* Bordered Buttons */
+
+:local(.primaryBordered),
+:local(.primaryBorderless) {
+    color: var(--cool-blue);
+    fill: var(--cool-blue);
+    background-color: var(--white);
+    &:hover {
+        background-color: var(--cool-blue-21);
+    }
+}
+
+:local(.primaryBordered) {
+    border: 1px solid var(--cool-blue);
+}
+
+:local(.secondaryBordered),
+:local(.secondaryBorderless) {
+    color: var(--charcoal-grey);
+    fill: var(--charcoal-grey);
+    background-color: var(--white);
+    &:hover {
+        background-color: var(--very-light-pink-50);
+    }
+}
+
+:local(.secondaryBordered) {
+    border: 1px solid var(--brown-grey);
+}
+
+:local(.successBordered),
+:local(.successBorderless) {
+    color: var(--cool-green);
+    fill: var(--cool-green);
+    background-color: var(--white);
+    &:hover {
+        background-color: var(--cool-green-20);
+    }
+}
+
+:local(.successBordered) {
+    border: 1px solid var(--cool-green);
+}
+
+:local(.dangerBordered),
+:local(.dangerBorderless) {
+    color: var(--dark-hot-pink);
+    fill: var(--dark-hot-pink);
+    background-color: var(--white);
+    &:hover {
+        background-color: var(--dark-hot-pink-20);
+    }
+}
+
+:local(.dangerBordered) {
+    border: 1px solid var(--dark-hot-pink);
+}
+
+:local(.warningBordered),
+:local(.warningBorderless) {
+    color: var(--orange-yellow);
+    fill: var(--orange-yellow);
+    background-color: var(--white);
+    &:hover {
+        background-color: var(--orange-yellow-20);
+    }
+}
+
+:local(.warningBordered) {
+    border: 1px solid var(--orange-yellow);
+}
+
+:local(.infoBordered),
+:local(.infoBorderless) {
+    color: var(--bright-cyan);
+    fill: var(--bright-cyan);
+    background-color: var(--white);
+    &:hover {
+        background-color: var(--bright-cyan-20);
+    }
+}
+
+:local(.infoBordered) {
+    border: 1px solid var(--bright-cyan);
+}
+
+:local(.darkBordered),
+:local(.darkBorderless) {
+    color: var(--battleship-grey);
+    fill: var(--battleship-grey);
+    background-color: var(--white);
+    &:hover {
+        background-color: var(--battleship-grey-20);
+    }
+}
+
+:local(.darkBordered) {
+    border: 1px solid var(--battleship-grey);
 }
