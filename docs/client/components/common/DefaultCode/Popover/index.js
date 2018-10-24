@@ -48,7 +48,12 @@ class Demo extends React.Component {
           onConfirm={this.handleDelete}
           position="right"
         >
-          <Button type={deleted ? 'danger' : 'warning'}>{deleted ? 'deleted' : 'delete'}</Button>
+          <Button
+            type={deleted ? 'danger' : 'warning'}
+            disabled={deleted}
+          >
+            {deleted ? 'deleted' : 'delete'}
+          </Button>
         </Popover>
       </PreviewBlock>
       <PreviewBlock header="Popover with various positions">
