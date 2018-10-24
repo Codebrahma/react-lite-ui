@@ -27,7 +27,7 @@ class Button extends Component {
     const classes = classnames(
       theme.button,
       theme[type],
-      theme[size],
+      theme[!iconButton && size], // size will not take effect on ICON ONLY BUTTON type
       theme[`icon-${iconAlignment}`],
       className,
       (flat || bordered || borderless) && 'flat',
