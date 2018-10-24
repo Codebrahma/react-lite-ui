@@ -20,6 +20,7 @@ class Button extends Component {
       flat,
       bordered,
       borderless,
+      iconButton,
       ...others
     } = this.props;
     const Element = href ? 'a' : 'div';
@@ -33,6 +34,7 @@ class Button extends Component {
       {
         [theme[`${type}Bordered`]]: bordered,
         [theme[`${type}Borderless`]]: borderless,
+        [theme.iconButton]: iconButton,
       },
     );
 
@@ -49,6 +51,7 @@ class Button extends Component {
     const rootProps = {
       ...others,
       href: !href ? undefined : href,
+      className: classnames({ [theme.iconButtonWrapper]: iconButton }),
       onMouseUp: this.handleMouseUp,
       onMouseLeave: this.handleMouseLeave,
     };
@@ -72,7 +75,7 @@ class Button extends Component {
 }
 
 Button.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   type: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,
@@ -85,10 +88,11 @@ Button.propTypes = {
   bordered: PropTypes.bool,
   borderless: PropTypes.bool,
   onClick: PropTypes.func,
+  iconButton: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  children: 'Button',
+  children: null,
   type: 'primary',
   size: 'small',
   className: '',
@@ -101,6 +105,7 @@ Button.defaultProps = {
   bordered: false,
   borderless: false,
   onClick: null,
+  iconButton: false,
 };
 
 export default themr('CBBUTTON', defaultTheme)(Button);

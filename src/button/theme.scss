@@ -31,6 +31,34 @@
     }
 }
 
+:local(.iconButtonWrapper) {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5) !important;
+  &:active  {
+    box-shadow: 0 2px 9px 4px var(--very-light-pink-75), 0 2px 4px 2px rgba(0, 0, 0, 0.5) !important;
+  }
+}
+:local(.iconButton) {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 18px;
+  box-sizing: border-box;
+  & > * {
+    max-height: 30px;
+    max-width: 30px;
+  }
+  // reset the default margin added by icon-left class
+  & > *:first-child {
+    margin-right: 0 !important;
+  }
+}
+
 :local(.icon) {
     font-size: 0.65em;
 }
@@ -66,6 +94,7 @@
 
 :local(.primary) {
     color: var(--white);
+    fill: var(--white);
     background-color: var(--cool-blue);
     &:hover {
         background-color: var(--light-navy);
@@ -74,6 +103,7 @@
 
 :local(.secondary) {
     color: var(--charcoal-grey);
+    fill: var(--charcoal-grey);
     background-color: var(--very-light-pink);
     &:hover {
         background-color: var(--brown-grey);
@@ -82,6 +112,7 @@
 
 :local(.success) {
     color: var(--white);
+    fill: var(--white);
     background-color: var(--cool-green);
     &:hover {
         background-color: var(--darkish-green);
@@ -90,6 +121,7 @@
 
 :local(.danger) {
     color: var(--white);
+    fill: var(--white);
     background-color: var(--dark-hot-pink);
     &:hover {
         background-color: var(--cranberry);
@@ -98,6 +130,7 @@
 
 :local(.warning) {
     color: var(--charcoal-grey);
+    fill: var(--charcoal-grey);
     background-color: var(--orange-yellow);
     &:hover {
         background-color: var(--golden-brown);
@@ -106,6 +139,7 @@
 
 :local(.info) {
     color: var(--white);
+    fill: var(--white);
     background-color: var(--bright-cyan);
     &:hover {
         background-color: var(--aqua);
@@ -114,6 +148,7 @@
 
 :local(.dark) {
     color: var(--white);
+    fill: var(--white);
     background-color: var(--battleship-grey);
     &:hover {
         background-color: var(--charcoal-grey);
@@ -154,6 +189,7 @@
 :local(.successBordered),
 :local(.successBorderless) {
     color: var(--cool-green);
+    fill: var(--cool-green);
     background-color: var(--white);
     &:hover {
         background-color: var(--cool-green-20);
@@ -167,6 +203,7 @@
 :local(.dangerBordered),
 :local(.dangerBorderless) {
     color: var(--dark-hot-pink);
+    fill: var(--dark-hot-pink);
     background-color: var(--white);
     &:hover {
         background-color: var(--dark-hot-pink-20);
@@ -180,6 +217,7 @@
 :local(.warningBordered),
 :local(.warningBorderless) {
     color: var(--orange-yellow);
+    fill: var(--orange-yellow);
     background-color: var(--white);
     &:hover {
         background-color: var(--orange-yellow-20);
@@ -193,6 +231,7 @@
 :local(.infoBordered),
 :local(.infoBorderless) {
     color: var(--bright-cyan);
+    fill: var(--bright-cyan);
     background-color: var(--white);
     &:hover {
         background-color: var(--bright-cyan-20);
@@ -206,6 +245,7 @@
 :local(.darkBordered),
 :local(.darkBorderless) {
     color: var(--battleship-grey);
+    fill: var(--battleship-grey);
     background-color: var(--white);
     &:hover {
         background-color: var(--battleship-grey-20);
