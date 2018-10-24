@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { themr } from 'react-css-themr';
 
+import '../globals/fonts.scss';
 import defaultTheme from './theme.scss';
 
 class Button extends Component {
@@ -26,11 +27,24 @@ class Button extends Component {
       theme.button,
       theme[type],
       theme[size],
+      theme[`icon-${iconAlignment}`],
       className,
       (flat || bordered || borderless) && 'flat',
-      theme[bordered ? `${type}Bordered` : ''],
-      theme[borderless ? `${type}Borderless` : ''],
+      {
+        [theme[`${type}Bordered`]]: bordered,
+        [theme[`${type}Borderless`]]: borderless,
+      },
     );
+
+    let Icon;
+
+    if (icon) {
+      if (typeof icon === 'string') {
+        Icon = () => <i className={classnames(theme.icon, icon)} />;
+      } else {
+        Icon = () => icon;
+      }
+    }
 
     const rootProps = {
       ...others,
@@ -49,6 +63,7 @@ class Button extends Component {
     return (
       <Element {...rootProps}>
         <button {...buttonProps}>
+          { icon !== null && <Icon /> }
           {children}
         </button>
       </Element>
@@ -68,6 +83,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   flat: PropTypes.bool,
   bordered: PropTypes.bool,
+  borderless: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
@@ -83,6 +99,7 @@ Button.defaultProps = {
   disabled: false,
   flat: false,
   bordered: false,
+  borderless: false,
   onClick: null,
 };
 
