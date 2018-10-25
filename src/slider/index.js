@@ -57,8 +57,13 @@ class Slider extends React.Component {
      * is updated accordingly ( by updating the sliderTracker width ).
      * Else, only update @member this.sliderTracker width since right handle was moved.
      */
-    if (left && e.clientX && (e.clientX < (findNode(this.sliderTracker).offsetLeft +
-    this.getNodeWidth(this.sliderTracker)))) {
+    if (
+      left &&
+      e.clientX &&
+      e.clientX <
+        findNode(this.sliderTracker).offsetLeft +
+          this.getNodeWidth(this.sliderTracker)
+    ) {
       // Calculate offset for right handle / bubble from the left of the slider bar.
       const rightHandleOffset =
         findNode(this.sliderTracker).offsetLeft +
@@ -74,11 +79,13 @@ class Slider extends React.Component {
       this.sliderTracker.style.width = `${((rightHandleOffset - e.clientX) /
         this.getNodeWidth(this.sliderBar)) *
         100}%`;
-    } else if (left === false) {
+
+      return;
+    }
+    if (left === false) {
       // Update slider tracker width.
       this.sliderTracker.style.width = `${((e.clientX -
-        (findNode(this.sliderOffset).offsetLeft +
-          this.getNodeWidth(this.sliderOffset))) /
+        findNode(this.sliderTracker).offsetLeft) /
         this.getNodeWidth(this.sliderBar)) *
         100}%`;
     }
@@ -101,16 +108,22 @@ class Slider extends React.Component {
     let currentValueOffset = null;
 
     // Calculate current value according to the position of handle.
-    if (left) {
-      relativeValueOffset = Math.round(this.getNodeWidth(this.sliderOffset) / barStep);
-      currentValueOffset =
-       ((max - min) * (relativeValueOffset / (step ? 100 / step : 100))) + min;
+    if (this.props.range) {
+      if (left) {
+        relativeValueOffset = Math.round(this.getNodeWidth(this.sliderOffset) / barStep);
+        currentValueOffset =
+          ((max - min) * (relativeValueOffset / (step ? 100 / step : 100))) + min;
+      } else {
+        relativeValue = Math.round((this.getNodeWidth(this.sliderTracker) +
+            this.getNodeWidth(this.sliderOffset)) /
+            barStep);
+        currentValue =
+          ((max - min) * (relativeValue / (step ? 100 / step : 100))) + min;
+      }
     } else {
-      relativeValue = Math.round((this.getNodeWidth(this.sliderTracker) +
-          this.getNodeWidth(this.sliderOffset)) /
-          barStep);
-      currentValue =
-        ((max - min) * (relativeValue / (step ? 100 / step : 100))) + min;
+      relativeValue =
+        Math.round(findNode(this.sliderTracker).getBoundingClientRect().width / barStep);
+      currentValue = ((max - min) * (relativeValue / 100)) + min;
     }
 
     // Update state with current values, send the value to callback
@@ -207,7 +220,7 @@ Slider.defaultProps = {
   theme: defaultTheme,
   disabled: false,
   step: null,
-  range: true,
+  range: false,
   onChange: (max, min) => {
     console.log({ min, max });
   },
