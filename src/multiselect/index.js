@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
+
+const { findDOMNode: findNode } = ReactDOM;
 
 class MultiSelect extends Component {
   constructor(props) {
@@ -16,7 +19,18 @@ class MultiSelect extends Component {
       open: false,
       input: '',
     };
+
+    this.listRef = null;
+    this.focusedElement = null;
   }
+
+  getScrollState = () => {
+    const threshold =
+      findNode(this.listRef).offsetTop +
+      findNode(this.listRef).offsetHeight;
+    const focusedItem = findNode(this.focusedElement);
+    return { threshold, focusedItem };
+  };
 
   handleInput = ({ target }) => {
     this.setState({
@@ -51,7 +65,7 @@ class MultiSelect extends Component {
 
   handleKeyPress = (e) => {
     const { options } = this.props;
-    const { input, selected } = this.state;
+    const { input, selected, focus } = this.state;
     const isValid =
       options
         .filter(opt =>
@@ -60,7 +74,56 @@ class MultiSelect extends Component {
             .toLowerCase()
             .indexOf(input.toLowerCase()) !== -1);
     switch (e.key) {
+      case 'ArrowDown':
+        this.setState(
+          prevState => ({
+            focus: (
+              (prevState.focus === undefined
+                ? -1
+                : prevState.focus
+              ) + 1
+            ) % (options.length),
+          }),
+          () => {
+            const { threshold, focusedItem } = this.getScrollState();
+            // Handles cyclic focus
+            if (
+              focusedItem &&
+            focusedItem.offsetHeight + focusedItem.offsetTop > threshold
+            ) {
+              findNode(this.listRef).scrollTop +=
+              focusedItem.offsetHeight;
+            } else if (!this.state.focus) {
+              findNode(this.listRef).scrollTop = 0;
+            }
+          },
+        );
+        break;
+      case 'ArrowUp':
+        this.setState(
+          prevState => ({
+            focus: ((options.length) + ((prevState.focus || 0) - 1)) % (options.length),
+          }),
+          () => {
+            const { threshold, focusedItem } = this.getScrollState();
+            if (
+              focusedItem &&
+            ((findNode(this.listRef).scrollTop
+            + findNode(this.listRef).offsetTop) > focusedItem.offsetTop)
+            ) {
+              findNode(this.listRef).scrollTop -=
+              focusedItem.offsetHeight;
+            } else if (this.state.focus === this.props.options.length - 1) {
+              findNode(this.listRef).scrollTop = threshold;
+            }
+          },
+        );
+        break;
       case 'Enter':
+        if (focus) {
+          this.handleSelect(options[focus]);
+          break;
+        }
         if (isValid.length) {
           if (
             !selected.filter(item => item.label === isValid[0].label).length
@@ -133,7 +196,7 @@ class MultiSelect extends Component {
   // Helper function to render options inside the dropdown.
   renderOptions = (options) => {
     const { theme } = this.props;
-    const { selected, input } = this.state;
+    const { selected, input, focus } = this.state;
     let filteredOptions;
     if (input.length) {
       filteredOptions =
@@ -146,7 +209,7 @@ class MultiSelect extends Component {
     } else {
       filteredOptions = options;
     }
-    return filteredOptions.map((option) => {
+    return filteredOptions.map((option, index) => {
       /* eslint-disable jsx-a11y/click-events-have-key-events */
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       const itemtheme = cx(
@@ -154,9 +217,15 @@ class MultiSelect extends Component {
         selected.filter(item => item.label === option.label).length
           ? theme['selected-option']
           : '',
+        { [theme['item-hover']]: focus === index },
       );
       return (
         <span
+          ref={(ref) => {
+            if (focus === index) {
+              this.focusedElement = ref;
+            }
+          }}
           className={itemtheme}
           onClick={() => this.handleSelect(option)}
           key={option.label}
@@ -219,6 +288,9 @@ class MultiSelect extends Component {
         {open && (
           <div
             id="dropdown-options"
+            ref={(ref) => {
+              this.listRef = ref;
+            }}
             className={menuclass}
             onMouseEnter={() => this.blockOnBlur(true)}
             onMouseLeave={() => this.blockOnBlur(false)}
