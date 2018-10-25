@@ -10,14 +10,13 @@
 :local(.slider-button) {
     align-self: center;
     border-radius: 50%;
-    min-height: 7px !important;
-    min-width: 7px !important;
-    background-color: white;
-    border: 2px solid #91d5ff;
+    min-height: 15px !important;
+    min-width: 15px !important;
+    background-color: #47e9f3;
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5);
     cursor: pointer;
     &:active {
-        min-height: 9px !important;
-        min-width: 9px !important;
+        box-shadow: 0 1px 7px 2px rgba(0, 0, 0, 0.5);
         & + div {
             display: flex;
         }
@@ -29,7 +28,7 @@
     height: 100%;
     width: 0;
     justify-content: flex-end;
-    background-color: #91d5ff;
+    background-color: #47e9f3;
     position: relative;
 }
 
