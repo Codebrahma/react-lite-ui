@@ -1,6 +1,7 @@
 @import '../globals/theme';
 
 :local(.card) {
+  display: flex;
   box-sizing: border-box;
   background: $original-white;
   border-radius: 3px;
@@ -45,22 +46,48 @@
 :local(.cardFooter) {
   width: 100%;
   margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
   padding: 1%;
   font-size: 0.8rem;
+}
 
-  span {
-    float: right;
+:local(.card-actions) {
+  float: left;
+  align-self: center;
+  height: 100%;
+  width: 50%;
+}
+
+:local(.more-icon) {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 1em;
+  &:hover {
     cursor: pointer;
-    font-weight: 700;
-    color: #2c87d7;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    border-left: 2px solid #454a4f;
+    border-bottom: 2px solid #454a4f;
+    height: 8px;
+    width: 8px;
+    top: 0.4em;
+    left: 30%;
+    transform: rotate(-45deg);
+    transition: 0.3s ease-in-out;
   }
 }
 
-:local(.collapsed) {
-  transition: 1s ease-in-out;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 7;
-  -webkit-box-orient: vertical;
+:local(.less-icon) {
+  &::after {
+    top: 0.7em;
+    transform: rotate(135deg);
+  }
 }
