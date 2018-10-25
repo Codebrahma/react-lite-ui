@@ -54,7 +54,11 @@ class MultiSelect extends Component {
     const { input, selected } = this.state;
     const isValid =
       options
-        .filter(opt => opt.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
+        .filter(opt =>
+          opt
+            .label
+            .toLowerCase()
+            .indexOf(input.toLowerCase()) !== -1);
     switch (e.key) {
       case 'Enter':
         if (isValid.length) {
@@ -80,7 +84,7 @@ class MultiSelect extends Component {
       open: true,
       blockClickEvent: true,
     });
-  }
+  };
 
   /*
   Dropdown handle used to toggle open and closed states for the dropdown when user
@@ -134,7 +138,11 @@ class MultiSelect extends Component {
     if (input.length) {
       filteredOptions =
         options
-          .filter(opt => opt.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
+          .filter(opt =>
+            opt
+              .label
+              .toLowerCase()
+              .indexOf(input.toLowerCase()) !== -1);
     } else {
       filteredOptions = options;
     }
@@ -192,7 +200,9 @@ class MultiSelect extends Component {
     return (
       <div className={classes}>
         <div
-          className={theme.selectInputWrapper}
+          className={cx(theme.selectInputWrapper, {
+            [theme['border-animation']]: open,
+          })}
           onFocus={this.showMenu}
           onClick={this.toggleMenu}
           onBlur={this.hideMenu}
