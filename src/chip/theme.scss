@@ -5,11 +5,14 @@
   align-items: center;
   justify-content: space-between;
   height: auto;
-  margin: 5px;
-  border: 1px solid $secondary-black;
+  border: 1px solid $secondary-white;
+  box-sizing: border-box;
   &[disabled] {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+  &.avatarMarginLeft {
+    margin-left: 0.5%;
   }
 }
 :local(.clickable) {
@@ -18,7 +21,7 @@
 }
 :local(.label) {
   text-transform: capitalize;
-  padding: 0 10px;
+  padding: 6px 12px;
 }
 
 :local(.smallAvatar) {
@@ -26,75 +29,82 @@
   border-radius: 50%;
   max-height: 28px;
   max-width: 28px;
+  object-fit: contain;
+  margin-left: -2%;
 }
 :local(.mediumAvatar) {
   overflow: hidden;
   border-radius: 50%;
   max-height: 36px;
   max-width: 36px;
+  object-fit: contain;
+  margin-left: -2%;
 }
 :local(.largeAvatar) {
   overflow: hidden;
   border-radius: 50%;
   max-height: 52px;
   max-width: 52px;
+  object-fit: contain;
+  margin-left: -2%;
 }
 
 :local(.deleteIcon) {
   font-weight: bold;
-  padding: 5px;
+  padding: 2px;
   border-radius: 50%;
   cursor: pointer;
   outline: none;
   border: none;
+  overflow: hidden;
 }
 
 :local(.smallDelete) {
-  min-width: 20px;
-  min-height: 20px;
+  width: 16px;
+  height: 16px;
   font-size: 10px;
   margin: 0 4px;
 }
 :local(.mediumDelete) {
-  min-width: 28px;
-  min-height: 28px;
-  font-size: 14px;
-  line-height: 14px;
+  width: 19px;
+  height: 19px;
+  font-size: 12px;
+  line-height: 16px;
   margin: 0 6px;
 }
 :local(.largeDelete) {
-  min-width: 35px;
-  min-height: 35px;
-  font-size: 20px;
-  line-height: 18px;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  line-height: 20px;
   margin: 0 8px;
 }
 
 :local(.small) {
-  font-size: 11px;
-  line-height: 28px;
-  border-radius: 20px;
+  font-size: 10px;
+  line-height: 11px;
+  border-radius: 34px;
   padding: 0;
-  min-width: 70px;
-  max-height: 28px;
+  min-width: 55px;
+  height: 22px;
 }
 
 :local(.medium) {
-  font-size: 13px;
-  line-height: 36px;
-  border-radius: 30px;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 34px;
   padding: 0;
   min-width: 90px;
-  max-height: 36px;
+  height: 30px;
 }
 
 :local(.large) {
   font-size: 18px;
-  line-height: 52px;
-  border-radius: 40px;
+  line-height: 20px;
+  border-radius: 34px;
   padding: 0;
-  min-width: 130px;
-  max-height: 52px;
+  min-width: 105px;
+  height: 45px;
 }
 
 :local(.primary) {
