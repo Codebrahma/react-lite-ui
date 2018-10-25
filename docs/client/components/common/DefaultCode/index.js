@@ -22,3 +22,4 @@ export { defaultCode as SelectDefaultCode } from './Select';
 export { defaultCode as SliderDefaultCode } from './Slider';
 export { defaultCode as CarouselDefaultCode } from './Carousel';
 export { defaultCode as ProgressBarDefaultCode } from './ProgressBar';
+export { defaultCode as TableDefaultCode } from './Table';

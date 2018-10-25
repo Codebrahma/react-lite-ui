@@ -46,6 +46,8 @@ import Carousel from '../../../../src/carousel';
 import CarouselReadme from '../../../../src/carousel/readMe.md';
 import ProgressBar from '../../../../src/progressbar';
 import ProgressBarReadme from '../../../../src/progressbar/readMe.md';
+import Table from '../../../../src/table';
+import TableReadme from '../../../../src/table/readMe.md';
 
 import {
   CardDefaultCode,
@@ -72,6 +74,7 @@ import {
   SliderDefaultCode,
   CarouselDefaultCode,
   ProgressBarDefaultCode,
+  TableDefaultCode,
 } from './DefaultCode';
 
 export const componentList = [
@@ -200,6 +203,12 @@ export const componentList = [
     docs: SnackbarReadme,
     component: Snackbar,
     defaultCode: SnackbarDefaultCode,
+  },
+  {
+    name: 'Table',
+    docs: TableReadme,
+    component: Table,
+    defaultCode: TableDefaultCode,
   },
   {
     name: 'TextInput',
