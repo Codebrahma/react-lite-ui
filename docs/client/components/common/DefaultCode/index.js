@@ -19,5 +19,6 @@ export { defaultCode as NavbarDefaultCode } from './Navbar';
 export { defaultCode as PopoverDefaultCode } from './Popover';
 export { defaultCode as PreloaderDefaultCode } from './Preloader';
 export { defaultCode as SelectDefaultCode } from './Select';
+export { defaultCode as SliderDefaultCode } from './Slider';
 export { defaultCode as CarouselDefaultCode } from './Carousel';
 export { defaultCode as ProgressBarDefaultCode } from './ProgressBar';

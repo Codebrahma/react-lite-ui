@@ -40,6 +40,8 @@ import PreloaderReadme from '../../../../src/preloader/readMe.md';
 import Preloader from '../../../../src/preloader';
 import Select from '../../../../src/select';
 import SelectReadme from '../../../../src/select/readMe.md';
+import Slider from '../../../../src/slider';
+import SliderReadMe from '../../../../src/slider/readMe.md';
 import Carousel from '../../../../src/carousel';
 import CarouselReadme from '../../../../src/carousel/readMe.md';
 import ProgressBar from '../../../../src/progressbar';
@@ -67,6 +69,7 @@ import {
   PopoverDefaultCode,
   PreloaderDefaultCode,
   SelectDefaultCode,
+  SliderDefaultCode,
   CarouselDefaultCode,
   ProgressBarDefaultCode,
 } from './DefaultCode';
@@ -185,6 +188,12 @@ export const componentList = [
     docs: SelectReadme,
     component: Select,
     defaultCode: SelectDefaultCode,
+  },
+  {
+    name: 'Slider',
+    docs: SliderReadMe,
+    component: Slider,
+    defaultCode: SliderDefaultCode,
   },
   {
     name: 'Snackbar',

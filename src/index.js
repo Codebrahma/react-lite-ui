@@ -21,6 +21,7 @@ import Navbar from './navbar';
 import Popover from './popover';
 import Preloader from './preloader';
 import Select from './select';
+import Slider from './slider';
 import Carousel from './carousel';
 import ProgressBar from './progressbar';
 
@@ -46,6 +47,7 @@ export default {
   Popover,
   Preloader,
   Select,
+  Slider,
   Carousel,
   ProgressBar,
 };
