@@ -6,11 +6,41 @@ class Demo extends React.Component {
       toggled: false,
     };
     this.handleToggle = this.handleToggle.bind(this);
+    this.renderMenu = this.renderMenu.bind(this);
+    this.renderDesktopView = this.renderDesktopView.bind(this);
   }
   handleToggle() {
     this.setState(prevState => ({
       toggled: !prevState.toggled,
     }));
+  }
+
+  renderMenu() {
+    return (
+      <div className="navlinks">
+        <span>home</span>
+        <span>dashboard</span>
+        <span>contact</span>
+      </div>
+    )
+  }
+
+  renderDesktopView() {
+    return (
+      <div className="navbarMenu">
+        { this.renderMenu() }
+      </div>
+    )
+  }
+
+  renderMobileView() {
+    return (
+      <div className="navbarMobileMenu">
+        <Popover content={ this.renderMenu() } position="bottomRight" noAction>
+          <span className="icon-menu" />
+        </Popover>
+      </div>
+    )
   }
 
   render() {
@@ -27,18 +57,16 @@ class Demo extends React.Component {
         </PreviewBlock>
         { /* Preview Block-2 */ }
         <PreviewBlock header="Navbar with icon on left">
-          <Navbar leftIcon={<MenuIcon />}>
-            <span>home</span>
-            <span>dashboard</span>
-            <span>contact</span>
+          <Navbar leftIcon={<MenuIcon />} theme={theme} title="logo">
+            {this.renderDesktopView()}
+            {this.renderMobileView()}
           </Navbar>
         </PreviewBlock>
         { /* Preview Block-3 */ }
         <PreviewBlock header="Navbar with title as image or logo and flat (No box-shadow)">
-          <Navbar flat title={<img src="https://picsum.photos/100/30" />} rightIcon={<MenuIcon />}>
-            <span>home</span>
-            <span>dashboard</span>
-            <span>contact</span>
+          <Navbar flat title={<img src="https://picsum.photos/100/30" />}>
+            {this.renderDesktopView()}
+            {this.renderMobileView()}
           </Navbar>
         </PreviewBlock>
         { /* Preview Block-4 */ }

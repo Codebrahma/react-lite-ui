@@ -30,7 +30,7 @@ const Navbar = ({
   /* eslint-disable jsx-a11y/click-events-have-key-events */
   /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-  const renderLeftContent = () => (
+  const renderLeftContent = () => title && (
     <div className={theme.leftContent}>
       {
         typeof title === 'string'
@@ -89,7 +89,7 @@ Navbar.defaultProps = {
   className: '',
   theme: defaultTheme,
   children: null,
-  title: 'navbar',
+  title: null,
   leftIcon: null,
   rightIcon: null,
   onLeftIconClick: () => {},
