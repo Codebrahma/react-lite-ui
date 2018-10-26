@@ -104,8 +104,12 @@
       background-color: rgba(0, 0, 0, 0.29);
     }
   }
-  @media only screen and (max-width: 768px) {
-    display: flex;
+}
+.navbarMobileMenu {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .navlinks {
     flex-direction: column;
     color: $original-black;
     background-color: $secondary-white;
@@ -117,15 +121,10 @@
       }
     }
   }
-}
-.navbarMenu {
-  @media only screen and (max-width: 768px) {
+  .navbarMenu {
     display: none;
   }
-}
-.navbarMobileMenu {
-  display: none;
-  @media only screen and (max-width: 768px) {
+  .navbarMobileMenu {
     display: flex;
     flex-direction: column;
     fill: var(--white);

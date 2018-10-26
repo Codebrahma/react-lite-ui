@@ -8,6 +8,7 @@ class Demo extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.renderMenu = this.renderMenu.bind(this);
     this.renderDesktopView = this.renderDesktopView.bind(this);
+    this.renderMobileView = this.renderMobileView.bind(this);
   }
   handleToggle() {
     this.setState(prevState => ({
@@ -57,7 +58,7 @@ class Demo extends React.Component {
         </PreviewBlock>
         { /* Preview Block-2 */ }
         <PreviewBlock header="Navbar with icon on left">
-          <Navbar leftIcon={<MenuIcon />} theme={theme} title="logo">
+          <Navbar leftIcon={<MenuIcon />} title="logo">
             {this.renderDesktopView()}
             {this.renderMobileView()}
           </Navbar>
