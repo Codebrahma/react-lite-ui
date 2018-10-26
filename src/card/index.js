@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import classnames from 'classnames';
 import defaultTheme from './theme.scss';
+import '../globals/fonts.scss';
 
 class Card extends React.Component {
   constructor(props) {
@@ -17,6 +18,78 @@ class Card extends React.Component {
       expanded: !prevState.expanded,
     }));
   };
+
+  renderFooter = () => {
+    const { theme, actions, footer } = this.props;
+    const { expanded } = this.state;
+
+    if (footer !== null) {
+      return (
+        <div className={classnames(theme.cardFooter)}>
+          { footer }
+        </div>
+      );
+    }
+
+    const iconProps = {
+      onClick: this.toggleCard,
+      className: classnames(
+        theme['more-icon'],
+        { [theme['less-icon']]: expanded },
+      ),
+    };
+
+    return (
+      <div className={classnames(theme.cardFooter)}>
+        <div className={theme['card-actions']}>
+          {
+            actions !== null &&
+            actions
+          }
+        </div>
+        {/* eslint-disable jsx-a11y/click-events-have-key-events */}
+        {/* eslint-disable jsx-a11y/no-static-element-interactions */}
+        <div {...iconProps} />
+      </div>
+    );
+  }
+
+  renderContent = () => {
+    const { children } = this.props;
+
+    const contentAreaProps = {
+      'aria-label': 'card-content',
+    };
+
+    return (
+      <div {...contentAreaProps}>
+        {children}
+      </div>
+    );
+  }
+
+  renderHeader = () => {
+    const { theme, header } = this.props;
+
+    const headerProps = {
+      'aria-label': 'card-header',
+      className: classnames(theme.cardHeader),
+    };
+
+    let cardHeader = null;
+    if (typeof header === 'string') {
+      cardHeader = <span>{header}</span>;
+    } else if (typeof header === 'function') {
+      cardHeader = header();
+    }
+
+    return (
+      <div {...headerProps}>
+        {cardHeader}
+      </div>
+    );
+  }
+
   render() {
     const {
       children,
@@ -25,48 +98,39 @@ class Card extends React.Component {
       wrapContent,
       elevation,
       noPadding,
-      header,
+      expandedContent,
       ...other
     } = this.props;
 
     const { expanded } = this.state;
-    const classes = classnames(
-      theme.card,
-      theme[`elevation-${elevation}`],
-      {
-        [theme.wrapContent]: wrapContent,
-        [theme.noPadding]: noPadding,
-      },
-      className,
-    );
-    const headerClass = classnames(theme.cardHeader);
-
-    let cardHeader;
-    if (typeof header === 'string') {
-      cardHeader = <span>{header}</span>;
-    } else if (typeof header === 'function') {
-      cardHeader = header();
+    let HiddenContent;
+    if (typeof expandedContent === 'function') {
+      HiddenContent = expandedContent;
+    } else {
+      HiddenContent = () => expandedContent;
     }
 
+    const rootProps = {
+      'data-react-toolbox': 'card',
+      className: classnames(
+        theme.card,
+        theme[`elevation-${elevation}`],
+        {
+          [theme.wrapContent]: wrapContent,
+          [theme.noPadding]: noPadding,
+        },
+        className,
+      ),
+      ...other,
+    };
+
     return (
-      <div data-react-toolbox="card" className={classes} {...other}>
-        <div className={headerClass} aria-label="card-header">
-          {cardHeader}
-        </div>
-        <div
-          className={classnames({
-            [`${theme.collapsed}`]: !expanded,
-          })}
-        >
-          {children}
-        </div>
-        <div className={classnames(theme.cardFooter)}>
-          {/* eslint-disable jsx-a11y/click-events-have-key-events */}
-          {/* eslint-disable jsx-a11y/no-static-element-interactions */}
-          <span onClick={this.toggleCard}>
-            {expanded ? 'Collapse' : 'Expand'}
-          </span>
-        </div>
+      <div {...rootProps}>
+        { this.renderHeader() }
+        { this.renderContent() }
+        { this.renderFooter() }
+        { (expandedContent !== null && expanded)
+            && <HiddenContent /> }
       </div>
     );
   }
@@ -83,6 +147,12 @@ Card.propTypes = {
   noPadding: PropTypes.bool,
   elevation: PropTypes.oneOf(['low', 'medium', 'high']),
   header: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  expandedContent: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+  ]),
+  actions: PropTypes.node,
+  footer: PropTypes.node,
 };
 
 Card.defaultProps = {
@@ -92,6 +162,9 @@ Card.defaultProps = {
   wrapContent: false,
   noPadding: false,
   header: null,
+  expandedContent: null,
+  actions: null,
+  footer: null,
 };
 
 export default themr('CBCard', defaultTheme)(Card);
