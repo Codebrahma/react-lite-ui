@@ -112,6 +112,7 @@ class Select extends Component {
   renderOptions = (options) => {
     const { theme } = this.props;
     const { focus } = this.state;
+
     return options.map((option, index) => (
       /* eslint-disable jsx-a11y/click-events-have-key-events */
       /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -128,35 +129,42 @@ class Select extends Component {
   render() {
     const { options, theme, className } = this.props;
     const { selected, open } = this.state;
+
+    const selectInputWrapperProps = {
+      id: 'select',
+      className: cx(
+        theme.selectInput,
+        { [theme['border-animation']]: open },
+      ),
+      onClick: this.toggleMenu,
+      onBlur: this.hideMenu,
+      onKeyDown: this.handleKeyDown,
+      tabIndex: 0,
+    };
+
+    const dropdownProps = {
+      id: 'select-dropdown',
+      className: cx(theme.menu, theme.show),
+      onMouseEnter: () => this.blockOnBlur(true),
+      onMouseLeave: () => this.blockOnBlur(false),
+    };
+
     const classes = cx(theme.select, className);
-    const menuclass = cx(theme.menu, theme.show);
     const arrowclass = cx(theme.arrow, open ? theme.up : theme.down);
     return (
       <div className={classes}>
-        <div
-          id="select"
-          className={theme.selectInput}
-          onClick={this.toggleMenu}
-          onBlur={this.hideMenu}
-          onKeyDown={this.handleKeyDown}
-          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-          tabIndex={0}
-        >
-          <input
-            className={theme.selected}
-            type="text"
-            value={selected.label}
-            disabled
-          />
+        <div {...selectInputWrapperProps} >
+          <div className={theme.selected}>
+            <input
+              type="text"
+              value={selected.label}
+              disabled
+            />
+          </div>
           <div className={arrowclass} />
         </div>
         {open && (
-          <div
-            id="select-dropdown"
-            className={menuclass}
-            onMouseEnter={() => this.blockOnBlur(true)}
-            onMouseLeave={() => this.blockOnBlur(false)}
-          >
+          <div {...dropdownProps} >
             {this.renderOptions(options)}
           </div>
         )}
