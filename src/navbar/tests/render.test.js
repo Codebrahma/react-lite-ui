@@ -12,7 +12,7 @@ describe('Navbar Render tests', () => {
   let actualValue;
 
   beforeEach(() => {
-    wrappedComponent = mount(<Navbar>nav item</Navbar>);
+    wrappedComponent = mount(<Navbar title="navbar">nav item</Navbar>);
   });
 
   afterEach(() => {
