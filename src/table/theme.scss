@@ -3,29 +3,34 @@
   overflow-x: auto;
 }
 :local(.table) {
+  display: table;
   border-collapse: collapse;
 }
-:local(.tableHead) {
+:local(.tableHeader) {
+  display: table-header-group;
   background-color: var(--cool-blue);
   color: var(--white);
   font-size: 18px;
 }
 :local(.tableBody) {
+  display: table-row-group;
   font-size: 16px;
 }
 :local(.tableBodyRow) {
-  background-color: var(--white); 
+  display: table-row;
+  background-color: var(--white);
   border-bottom: 2px solid #dfdfdf;
   &:hover {
     background-color: #d6eff9; 
   }
 }
-:local(.tableHeadCell) {
-  white-space: nowrap;
-}
-:local(.tableHeadCell),
+:local(.tableHeaderCell),
 :local(.tableBodyCell) {
+  display: table-cell;
   padding: 12px 16px;
   text-align: left;
   min-width: 100px;
+}
+:local(.tableHeaderCell) {
+  white-space: nowrap;
 }

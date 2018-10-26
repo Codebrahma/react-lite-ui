@@ -13,47 +13,41 @@ class Table extends React.Component {
   renderTableHeader = () => {
     const { columns, theme } = this.props;
     return (
-      <thead className={theme.tableHead}>
-        <tr className={theme.tableHeadRow}>
-          { columns && columns.map(({
-              key, title, colSpan, rowSpan, ...other
-            }) => (
-              <th
-                key={`${key}-${title}`}
-                colSpan={colSpan}
-                rowSpan={rowSpan}
-                className={theme.tableHeadCell}
-                {...other}
-              >
-                {title}
-              </th>
-            ))
-          }
-        </tr>
-      </thead>
+      <div className={theme.tableHeader}>
+        { columns && columns.map(({
+            key, title, ...other
+          }) => (
+            <div
+              key={`${key}-${title}`}
+              className={theme.tableHeaderCell}
+              {...other}
+            >
+              {title}
+            </div>
+          ))
+        }
+      </div>
     );
   }
 
   /*
    *  This function renders the content of each row of the  table.
   */
-  renderTableRow = (eachData, key) => {
+  renderTableRow = (eachData, rowKey) => {
     const { columns, theme } = this.props;
     return (
-      <tr className={theme.tableBodyRow} key={key}>
+      <div className={theme.tableBodyRow} key={rowKey}>
         {
-          columns && columns.map(column => (
-            <td
-              key={`${column.title}-${eachData[column.key]}`}
-              colSpan={column.colSpan}
-              rowSpan={column.rowSpan}
+          columns && columns.map(({ title, key }) => (
+            <div
+              key={`${title}-${eachData[key]}`}
               className={theme.tableBodyCell}
             >
-              {eachData[column.key]}
-            </td>
+              {eachData[key]}
+            </div>
           ))
         }
-      </tr>
+      </div>
     );
   }
 
@@ -66,11 +60,11 @@ class Table extends React.Component {
   renderTableBody = () => {
     const { data, theme } = this.props;
     return (
-      <tbody className={theme.tableBody}>
+      <div className={theme.tableBody}>
         {
           data && data.map((eachData, index) => this.renderTableRow(eachData, index))
         }
-      </tbody>
+      </div>
     );
   }
 
@@ -80,10 +74,10 @@ class Table extends React.Component {
     } = this.props;
     return (
       <div className={classnames(theme.tableWrapper)}>
-        <table className={theme.table}>
+        <div className={theme.table}>
           { this.renderTableHeader() }
           { this.renderTableBody() }
-        </table>
+        </div>
       </div>
     );
   }
