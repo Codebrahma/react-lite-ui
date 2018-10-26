@@ -6,6 +6,7 @@
     z-index: 900;
     transition: 0.3s ease-in-out;
     padding: 1%;
+    box-shadow: 0 0 7px 2px rgba(0,0,0,0.21);
 }
 
 :local(.drawer-container) {
@@ -14,17 +15,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    display: block;
-    transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    transition: 0.4s ease-in-out;
 }
 
 :local(.drawer-open) {
     z-index: 1000;
-    background-color: rgba($color: #000000, $alpha: 0.5);
 }
 
 :local(.drawer-close) {
-    background-color: transparent;
     z-index: -1000;
 }
 
@@ -33,7 +33,7 @@
     position: absolute;
     height: 100%;
     width: 20%;
-    top: 0;
+    align-self: center;
 }
 
 :local(.left-open) {
@@ -57,7 +57,6 @@
     position: absolute;
     width: 100%;
     height: 30%;
-    left: 0;
 }
 
 :local(.top-open) {
