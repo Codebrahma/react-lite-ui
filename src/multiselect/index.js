@@ -193,6 +193,14 @@ class MultiSelect extends Component {
     });
   };
 
+  removeOption = (e, option) => {
+    e.stopPropagation();
+    const { selected } = this.state;
+    this.setState({
+      selected: selected.filter(item => item.label !== option.label),
+    });
+  }
+
   // Helper function to render options inside the dropdown.
   renderOptions = (options) => {
     const { theme } = this.props;
@@ -254,7 +262,7 @@ class MultiSelect extends Component {
           <span>{option.label}</span>
           <div
             className={theme.close}
-            onClick={() => this.handleSelect(option)}
+            onClick={e => this.removeOption(e, option)}
           />
         </div>
       </div>
