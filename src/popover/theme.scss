@@ -18,6 +18,7 @@
   background-color: $secondary-white;
   position: absolute;
   box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.3);
+  outline: none;
   z-index: 999; // render on top of any content
 }
 
