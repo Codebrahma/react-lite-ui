@@ -167,7 +167,7 @@ class Select extends Component {
         onClick={() => this.handleSelect(option)}
         key={option.label}
       >
-        {option.label}
+        <span>{option.label}</span>
       </span>
     ));
   };
