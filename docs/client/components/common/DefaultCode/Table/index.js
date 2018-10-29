@@ -12,31 +12,26 @@ class Demo extends React.Component {
     ];
     const data = [
       {
-        serialNo: 1,
         name: 'Name-1',
         defaultValue: 'first value',
         description: 'dolor sit amet, consectetur adipiscing elit, dolor sit amet, consectetur adipiscing elit.',
       },
       {
-        serialNo: 2,
         name: 'Name-2',
         defaultValue: 'second value',
         description: 'amet, consectetur dolor sit amet, consectetur adipiscing elit adipiscing elit.',
       },
       {
-        serialNo: 3,
         name: 'Name-3',
         defaultValue: 'third value',
         description: 'consectetur adipiscing elit, dolor sit amet, .',
       },
       {
-        serialNo: 4,
         name: 'Name-4',
         defaultValue: 'fourth value',
         description: 'bense dolor sit amet, consectetur adipiscing elit ctetur adipiscing elit, dolor sit amet.',
       },
       {
-        serialNo: 5,
         name: 'Name-5',
         defaultValue: 'fifth value',
         description: 'ectetur adipiscing elit, dolor sit amet.',

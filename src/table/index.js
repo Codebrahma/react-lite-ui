@@ -37,14 +37,37 @@ class Table extends React.Component {
     });
   };
 
+  /*  eslint-disable jsx-a11y/click-events-have-key-events  */
+  /*  eslint-disable jsx-a11y/no-static-element-interactions */
+  renderSortArrow = (key) => {
+    const { theme } = this.props;
+    const isCurrentKey = this.state.sortTitle === key;
+    return (
+      <div className={theme.sortArrow}>
+        <span
+          className={
+            (isCurrentKey && this.state[`${key}Ascending`])
+              ? `${theme.sortedAscending}`
+              : null
+          }
+          onClick={() => this.sortAscending(key)}
+        />
+        <span
+          className={
+            (isCurrentKey && this.state[`${key}Descending`])
+              ? `${theme.sortedDescending}`
+              : null
+          }
+          onClick={() => this.sortDescending(key)}
+        />
+      </div>
+    );
+  }
   /*
    *  the table header content will be rendered from accepting columns prop as array,
    *  the number of columns in table is directly proportional to
-   *  length of columns array length from prop
+   *  length of columns array from prop
   */
-
-  /*  eslint-disable jsx-a11y/click-events-have-key-events  */
-  /*  eslint-disable jsx-a11y/no-static-element-interactions */
   renderTableHeader = () => {
     const { columns, theme, sort } = this.props;
     return (
@@ -59,27 +82,7 @@ class Table extends React.Component {
             >
               <div className={theme.tableHeadCellContent}>
                 {title}
-                {sort && (
-                  <div className={theme.sortArrow}>
-                    <span
-                      className={
-                        ((this.state.sortTitle === key)
-                          && this.state[`${key}Ascending`])
-                          && `${theme.sortedAscending}`
-                      }
-                      onClick={() => this.sortAscending(key)}
-                    />
-                    <span
-                      className={
-                        ((this.state.sortTitle === key)
-                          && this.state[`${key}Descending`])
-                          && `${theme.sortedDescending}`
-                      }
-                      onClick={() => this.sortDescending(key)}
-                    />
-                  </div>
-                )
-                }
+                {sort && this.renderSortArrow(key)}
               </div>
             </div>
           ))
@@ -112,7 +115,7 @@ class Table extends React.Component {
   /*
    *  This function renders the body content of the  table.
    *  Number of rows of table is directly proportional to length
-   *  of data array length from props.
+   *  of data array from props.
    *  data is iterated to pass every item as argument to renderTableRow function.
   */
   renderTableBody = () => {
