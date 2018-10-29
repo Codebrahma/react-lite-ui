@@ -34,3 +34,34 @@
 :local(.tableHeaderCell) {
   white-space: nowrap;
 }
+:local(.tableHeadCellContent) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+:local(.sortArrow) {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-left: 15px;
+  span {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    transform: rotate(45deg);
+    border: 2px solid;
+    &:first-child {
+      border-bottom: 0;
+      border-right: 0;
+    }
+    &:last-child {
+      top: 7px;
+      border-top: 0;
+      border-left: 0; 
+    }
+  }
+}

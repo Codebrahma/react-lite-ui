@@ -5,13 +5,42 @@ import PropTypes from 'prop-types';
 import defaultTheme from './theme.scss';
 
 class Table extends React.Component {
+  state = {
+    tableData: this.props.data,
+  }
+
+  /*
+   *  Function to sort the column data in ascending order
+  */
+  sortAscending = (key) => {
+    const { tableData } = this.state;
+    const sortedData = tableData.sort((a, b) => (a[key] < b[key] ? -1 : 1));
+    this.setState({
+      tableData: sortedData,
+    });
+  };
+
+  /*
+   *  Function to sort the column data in descending order
+  */
+  sortDescending = (key) => {
+    const { tableData } = this.state;
+    const sortedData = tableData.sort((a, b) => (a[key] < b[key] ? 1 : -1));
+    this.setState({
+      tableData: sortedData,
+    });
+  };
+
   /*
    *  the table header content will be rendered from accepting columns prop as array,
    *  the number of columns in table is directly proportional to
    *  length of columns array length from prop
-   */
+  */
+
+  /*  eslint-disable jsx-a11y/click-events-have-key-events  */
+  /*  eslint-disable jsx-a11y/no-static-element-interactions */
   renderTableHeader = () => {
-    const { columns, theme } = this.props;
+    const { columns, theme, sort } = this.props;
     return (
       <div className={theme.tableHeader}>
         { columns && columns.map(({
@@ -22,7 +51,16 @@ class Table extends React.Component {
               className={theme.tableHeaderCell}
               {...other}
             >
-              {title}
+              <div className={theme.tableHeadCellContent}>
+                {title}
+                {sort && (
+                  <div className={theme.sortArrow}>
+                    <span className="up" onClick={() => this.sortAscending(key)} />
+                    <span className="down" onClick={() => this.sortDescending(key)} />
+                  </div>
+                )
+                }
+              </div>
             </div>
           ))
         }
@@ -58,11 +96,12 @@ class Table extends React.Component {
    *  data is iterated to pass every item as argument to renderTableRow function.
   */
   renderTableBody = () => {
-    const { data, theme } = this.props;
+    const { theme } = this.props;
+    const { tableData } = this.state;
     return (
       <div className={theme.tableBody}>
         {
-          data && data.map((eachData, index) => this.renderTableRow(eachData, index))
+          tableData && tableData.map((eachData, index) => this.renderTableRow(eachData, index))
         }
       </div>
     );
@@ -87,10 +126,12 @@ Table.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   columns: PropTypes.oneOfType([PropTypes.array]).isRequired,
   data: PropTypes.oneOfType([PropTypes.array]).isRequired,
+  sort: PropTypes.bool,
 };
 
 Table.defaultProps = {
   theme: defaultTheme,
+  sort: false,
 };
 
 export default themr('CBTable', defaultTheme)(Table);

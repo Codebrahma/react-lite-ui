@@ -21,7 +21,7 @@ class Demo extends React.Component {
         serialNo: 2,
         name: 'Name-2',
         defaultValue: 'second value',
-        description: 'dolor sit amet, consectetur dolor sit amet, consectetur adipiscing elit adipiscing elit.',
+        description: 'amet, consectetur dolor sit amet, consectetur adipiscing elit adipiscing elit.',
       },
       {
         serialNo: 3,
@@ -33,18 +33,18 @@ class Demo extends React.Component {
         serialNo: 4,
         name: 'Name-4',
         defaultValue: 'fourth value',
-        description: 'conse dolor sit amet, consectetur adipiscing elit ctetur adipiscing elit, dolor sit amet.',
+        description: 'bense dolor sit amet, consectetur adipiscing elit ctetur adipiscing elit, dolor sit amet.',
       },
       {
         serialNo: 5,
         name: 'Name-5',
         defaultValue: 'fifth value',
-        description: 'consectetur adipiscing elit, dolor sit amet.',
+        description: 'ectetur adipiscing elit, dolor sit amet.',
       },
     ];
     return (
       <PreviewBlock header="Default Table">
-        <Table columns={columns} data={data} />
+        <Table columns={columns} data={data} sort />
       </PreviewBlock>
     )
   }
