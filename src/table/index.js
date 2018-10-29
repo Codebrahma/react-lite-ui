@@ -47,7 +47,7 @@ class Table extends React.Component {
         <span
           className={
             (isCurrentKey && this.state[`${key}Ascending`])
-              ? `${theme.sortedAscending}`
+              ? 'sortedAscending'
               : null
           }
           onClick={() => this.sortAscending(key)}
@@ -55,7 +55,7 @@ class Table extends React.Component {
         <span
           className={
             (isCurrentKey && this.state[`${key}Descending`])
-              ? `${theme.sortedDescending}`
+              ? 'sortedDescending'
               : null
           }
           onClick={() => this.sortDescending(key)}
