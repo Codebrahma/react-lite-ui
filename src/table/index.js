@@ -16,6 +16,9 @@ class Table extends React.Component {
     const { tableData } = this.state;
     const sortedData = tableData.sort((a, b) => (a[key] < b[key] ? -1 : 1));
     this.setState({
+      sortTitle: key,
+      [`${key}Ascending`]: true,
+      [`${key}Descending`]: false,
       tableData: sortedData,
     });
   };
@@ -27,6 +30,9 @@ class Table extends React.Component {
     const { tableData } = this.state;
     const sortedData = tableData.sort((a, b) => (a[key] < b[key] ? 1 : -1));
     this.setState({
+      sortTitle: key,
+      [`${key}Ascending`]: false,
+      [`${key}Descending`]: true,
       tableData: sortedData,
     });
   };
@@ -55,8 +61,22 @@ class Table extends React.Component {
                 {title}
                 {sort && (
                   <div className={theme.sortArrow}>
-                    <span className="up" onClick={() => this.sortAscending(key)} />
-                    <span className="down" onClick={() => this.sortDescending(key)} />
+                    <span
+                      className={
+                        ((this.state.sortTitle === key)
+                          && this.state[`${key}Ascending`])
+                          && `${theme.sortedAscending}`
+                      }
+                      onClick={() => this.sortAscending(key)}
+                    />
+                    <span
+                      className={
+                        ((this.state.sortTitle === key)
+                          && this.state[`${key}Descending`])
+                          && `${theme.sortedDescending}`
+                      }
+                      onClick={() => this.sortDescending(key)}
+                    />
                   </div>
                 )
                 }

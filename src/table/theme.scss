@@ -64,4 +64,15 @@
       border-left: 0; 
     }
   }
+  :local(.sortedAscending),
+  :local(.sortedDescending) {
+    border-color: var(--bright-cyan);
+  }
+
+  :local(.sortedAscending) {
+    box-shadow: -1px -1px 1px 0px #000;
+  }
+  :local(.sortedDescending) {
+    box-shadow: 1px 1px 1px 0px #000;
+  }
 }
