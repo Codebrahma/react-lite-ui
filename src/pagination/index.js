@@ -45,7 +45,7 @@ class Pagination extends Component {
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       return (
         <div
-          className={classnames(theme.paginationSteps, {
+          className={classnames(theme['pagination-steps'], {
             [theme.active]: page === currentActive,
           })}
           key={page}
@@ -58,7 +58,7 @@ class Pagination extends Component {
 
     return [
       <div
-        className={classnames(theme.paginationSteps, {
+        className={classnames(theme['pagination-steps'], {
           [theme.active]: currentActive === 1,
         })}
         key={1}
@@ -70,7 +70,7 @@ class Pagination extends Component {
       steps,
       currentActive < total - 1 ? this.renderDots() : null,
       <div
-        className={classnames(theme.paginationSteps, {
+        className={classnames(theme['pagination-steps'], {
           [theme.active]: total === currentActive,
         })}
         key={total}
@@ -93,11 +93,13 @@ class Pagination extends Component {
   };
 
   render() {
-    const { theme, navigationButtons, total } = this.props;
+    const {
+      theme, navigationButtons, total, className,
+    } = this.props;
     const { currentActive } = this.state;
 
     const rootProps = {
-      className: theme.paginationWrapper,
+      className: classnames(theme['pagination-wrapper'], className),
     };
 
     const paginationProps = {
@@ -137,12 +139,14 @@ Pagination.propTypes = {
   defaultActive: PropTypes.number,
   total: PropTypes.number.isRequired,
   navigationButtons: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 Pagination.defaultProps = {
   theme: defaultTheme,
   defaultActive: 1,
   navigationButtons: false,
+  className: '',
 };
 
 export default themr('CBPagination', defaultTheme)(Pagination);
