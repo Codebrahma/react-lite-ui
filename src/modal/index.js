@@ -77,7 +77,7 @@ class Modal extends Component {
         onClick={closeOnBackdropClick ? this.closeModal : undefined}
       >
         {open && (
-          <div id="modal" className={classes}>
+          <div id="modal" className={classes} onClick={(e) => e.stopPropagation()}>
             {this.renderModalTitle(title)}
             <div className={theme['modal-body']} aria-label="card-body">
               {children || body || null}
