@@ -11,6 +11,7 @@ A basic modal component.
 | `footer` | `Any` | `null` | Footer content for modal. ( Displayed only when no children are passed. ) |
 | `className` | `String` | `''` | Set a class to style the Component |
 | `open` | `boolean` | `false` | Toggle modal show / hide. ( `Required` ) |
+| `closeOnBackdropClick` | `boolean` | `true` | Set wether to allow modal to close on clicking modal backdrop. |
 
 ### Theme
 
