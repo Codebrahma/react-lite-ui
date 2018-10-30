@@ -1,5 +1,6 @@
 :local(.tableWrapper) {
   max-width: fit-content;
+  max-width: -moz-fit-content;
   overflow-x: auto;
 }
 :local(.table) {
