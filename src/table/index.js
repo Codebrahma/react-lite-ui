@@ -73,9 +73,10 @@ class Table extends React.Component {
     return (
       <div className={theme.tableHeader}>
         { columns && columns.map(({
-            key, title, ...other
+            key, title, colWidth, ...other
           }) => (
             <div
+              style={{ width: colWidth || 'fit-content' }}
               key={`${key}-${title}`}
               className={theme.tableHeaderCell}
               {...other}

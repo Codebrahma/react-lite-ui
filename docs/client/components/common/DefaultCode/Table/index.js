@@ -6,7 +6,7 @@ class Demo extends React.Component {
 
   render() {
     const columns = [
-      { title: 'Name', key: 'name' },
+      { title: 'Name', key: 'name', colWidth: '150px' },
       { title: 'Default Value', key: 'defaultValue' },
       { title: 'Description', key: 'description' },
     ];
