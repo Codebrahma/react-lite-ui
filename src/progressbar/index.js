@@ -28,8 +28,9 @@ class ProgressBar extends React.Component {
     return (
       <div className={classes}>
         { showProgressText &&
-          <div className="text"><strong>{ `${this.state.progress}%` }</strong></div> }
+          <div className="text" aria-label="progress-text"><strong>{ `${this.state.progress}%` }</strong></div> }
         <div
+          aria-label="progress"
           className={progress}
           ref={(ref) => {
             this.progress = ref;
