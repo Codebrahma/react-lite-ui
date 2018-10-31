@@ -55,7 +55,7 @@ class Carousel extends React.Component {
             {index}
           </CarouselItem>
         ))}
-        <div className={theme.dot}>
+        <div id="indicator" className={theme.dot}>
           {data.map((_, index) => (
             <span
               key={`carousel-indicator-${index + 1}`}
