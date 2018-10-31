@@ -79,10 +79,7 @@ class Slider extends React.Component {
       this.sliderTracker.style.width = `${((rightHandleOffset - e.clientX) /
         this.getNodeWidth(this.sliderBar)) *
         100}%`;
-
-      return;
-    }
-    if (left === false) {
+    } else if (left === false) {
       // Update slider tracker width.
       this.sliderTracker.style.width = `${((e.clientX -
         findNode(this.sliderTracker).offsetLeft) /
