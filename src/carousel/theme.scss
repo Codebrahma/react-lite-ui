@@ -17,6 +17,7 @@
     opacity: 0;
     transition: 1.5s ease-in-out;
     position: absolute;
+    left: 0;
   }
   &.current {
     opacity: 1;
@@ -31,13 +32,14 @@
 :local(.dot) {
   position: absolute;
   bottom: 10%;
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   & > span {
     cursor: pointer;
     height: 5px;
     width: 5px;
+    margin: 2px;
     border: 1px solid white;
     border-radius: 50%;
     background-color: transparent;
@@ -48,18 +50,17 @@
   }
 }
 
-:local(.left-control) {
-  z-index: 1;
-  position: absolute;
-  left: 2%;
-  align-self: center;
-  cursor: pointer;
-}
-
+:local(.left-control),
 :local(.right-control) {
   z-index: 1;
   position: absolute;
-  right: 2%;
+  top: 45%;
   align-self: center;
   cursor: pointer;
+}
+:local(.left-control) {
+  left: 2%;
+}
+:local(.right-control) {
+  right: 2%;
 }
