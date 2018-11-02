@@ -20,6 +20,7 @@ The table component.
 | `tableHeader`   | Class used for the table header element.|
 | `tableHeaderCell`   | Class used for the cells in table header element.|
 | `tableHeadCellContent`   | Class used for the content in table header cells.|
+| `tableBodyCellContent`   | Class used for the content in table body cells.|
 | `tableBody`   | Class used for the table body element.|
 | `tableBodyRow`   | Class used for the rows in table body element.|
 | `tableBodyCell`   | Class used for the cells in table body element.|

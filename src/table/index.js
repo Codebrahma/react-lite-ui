@@ -105,7 +105,9 @@ class Table extends React.Component {
               key={`${title}-${eachData[key]}`}
               className={theme.tableBodyCell}
             >
-              {eachData[key]}
+              <div className={theme.tableBodyCellContent}>
+                {eachData[key]}
+              </div>
             </div>
           ))
         }
