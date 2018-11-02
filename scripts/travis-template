@@ -1,0 +1,10 @@
+[![Dependencies](https://img.shields.io/david/Codebrahma/react-lite-ui.svg)](https://david-dm.org/Codebrahma/react-lite-ui)
+[![devDependencies](https://img.shields.io/david/dev/Codebrahma/react-lite-ui.svg)](https://david-dm.org/Codebrahma/react-lite-ui?type=dev)
+[![Travis (.org)](https://img.shields.io/travis/Codebrahma/react-lite-ui/{current_branch}.svg)](https://travis-ci.org/Codebrahma/react-lite-ui)
+
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Codebrahma/react-lite-ui.svg)](https://github.com/Codebrahma/react-lite-ui/)
+[![codecov](https://codecov.io/gh/Codebrahma/react-lite-ui/branch/{current_branch}/graph/badge.svg)](https://codecov.io/gh/Codebrahma/react-lite-ui)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2286/badge)](https://bestpractices.coreinfrastructure.org/projects/2286)
+
+[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/Codebrahma/react-lite-ui.svg)](http://isitmaintained.com/project/Codebrahma/react-lite-ui)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
