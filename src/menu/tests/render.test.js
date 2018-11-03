@@ -8,7 +8,7 @@ describe('Menu Render tests', () => {
   let wrappedComponent;
 
   beforeEach(() => {
-    wrappedComponent = mount(
+    wrappedComponent = mount( //eslint-disable-line
       <Menu>
         <span>Option 1</span>
         <Menu submenu title="Submenu 1">
@@ -29,8 +29,8 @@ describe('Menu Render tests', () => {
         </Menu>
         <span>Option 2</span>
         <span>Option 3</span>
-      </Menu>
-    );
+      </Menu>,
+    );  //eslint-disable-line
   });
 
   afterEach(() => {
