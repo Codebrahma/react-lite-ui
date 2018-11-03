@@ -47,6 +47,7 @@ class Carousel extends React.Component {
         }
         {data.map((item, index) => (
           <CarouselItem
+            key={`carousel-item-${index + 1}`}
             theme={theme}
             active={index === active ? true : undefined}
             imageUrl={item}
@@ -54,9 +55,10 @@ class Carousel extends React.Component {
             {index}
           </CarouselItem>
         ))}
-        <div className={theme.dot}>
+        <div id="indicator" className={theme.dot}>
           {data.map((_, index) => (
             <span
+              key={`carousel-indicator-${index + 1}`}
               onClick={() => this.setActiveItem(index)}
               className={cx({ active: active === index })}
             />
