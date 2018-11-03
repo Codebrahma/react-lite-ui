@@ -24,6 +24,7 @@ import Select from './select';
 import Slider from './slider';
 import Carousel from './carousel';
 import ProgressBar from './progressbar';
+import Table from './table';
 
 export default {
   Button,
@@ -50,6 +51,7 @@ export default {
   Slider,
   Carousel,
   ProgressBar,
+  Table,
 };
 
 // const MenuIcon = () => (
