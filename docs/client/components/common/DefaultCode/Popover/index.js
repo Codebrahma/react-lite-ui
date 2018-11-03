@@ -11,7 +11,8 @@ class Demo extends React.Component {
   handleDelete() {
     this.setState({
       deleted: true,
-    })
+    });
+    return true;
   }
 
   render() {
