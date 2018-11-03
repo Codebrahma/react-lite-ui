@@ -2,9 +2,10 @@
 :local(.navbarWrapper) {
   box-sizing: border-box;
   width: 100%;
-  min-height: 65px;
-  padding-left: 3%;
-  padding-right: 3%;
+  height: 81px;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
   .clearfix {
     clear: both;
   }
@@ -12,35 +13,46 @@
 :local(.innerWrapper) {
   display: flex;
   justify-content: space-between;
-  text-transform: capitalize;
-  align-items: center;
-  min-height: 65px;
+  height: 100%;
   width: 100%;
   position: relative;
+}
+:local(.navbarContent) {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
 }
 :local(.leftContent),
 :local(.rightContent) {
   display: flex;
   align-items: center;
-
 }
 :local(.title) {
-  font-size: 20px;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  height: 33px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--white);
   margin-right: 15px;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 :local(.leftIcon),
 :local(.rightIcon) {
   margin-top: auto;
   margin-bottom: auto;
+  font-size: 24px;
   display: flex;
   align-items: center;
   cursor: pointer;
   svg {
-    max-width: 20px;
-    max-height: 20px;
-    fill: $original-white;
+    max-width: 24px;
+    max-height: 24px;
+    color: var(--white);
+    fill: var(--white);
   }
 }
 :local(.leftIcon) {
@@ -71,10 +83,50 @@
   position: relative;
 }
 :local(.defaultColor) {
-  background-color: $secondary-violet;
-  color: $original-white;
-  box-shadow: 0px 5px 8px -2px $secondary-grey;
+  background-color: var(--cool-blue);
 }
 :local(.flat) {
   box-shadow: none;
+}
+.navlinks {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  & > * {
+    cursor: pointer;
+    padding: 6px 10px;
+    margin: auto 12px;
+    &:hover,
+    &:active {
+      background-color: rgba(0, 0, 0, 0.29);
+    }
+  }
+}
+.navbarMobileMenu {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .navlinks {
+    flex-direction: column;
+    color: $original-black;
+    background-color: $secondary-white;
+    font-size: 18px;
+    & > * {
+      width: 100%;
+      &:hover {
+        background-color: var(--cool-blue-21);
+      }
+    }
+  }
+  .navbarMenu {
+    display: none;
+  }
+  .navbarMobileMenu {
+    display: flex;
+    flex-direction: column;
+    fill: var(--white);
+  }
 }
