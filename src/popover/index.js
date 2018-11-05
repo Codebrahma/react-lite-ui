@@ -46,7 +46,11 @@ class Popover extends React.Component {
   renderActionContent = () => {
     const { theme, actionContent } = this.props;
     return (
-      <span className={theme.actionWrapper} onClick={this.defaultActionClick}>
+      <span
+        className={theme.actionWrapper}
+        onClick={this.defaultActionClick}
+        aria-label="action-content"
+      >
         {typeof actionContent === 'string' ? (
           <span className={theme.actionContent}>{actionContent}</span>
         ) : (
@@ -92,9 +96,11 @@ class Popover extends React.Component {
             onMouseEnter={() => this.blockBlurEvent(true)}
             onMouseLeave={() => this.blockBlurEvent(false)}
             onBlur={this.hidePopover}
+            aria-label="popover-content"
+            id="popover-test"
             tabIndex={0}
           >
-            {title && <span className={theme.title}>{title}</span>}
+            {title && <span className={theme.title} aria-label="popover-title">{title}</span>}
             <div className={classnames(theme.popoverContent)}>{content}</div>
             {!noAction && this.renderActionContent()}
             <span className={theme.popoverArrow} />
@@ -121,7 +127,7 @@ Popover.defaultProps = {
   theme: defaultTheme,
   className: '',
   children: null,
-  title: '',
+  title: null,
   position: 'bottomLeft',
   onConfirm: () => true,
   noAction: false,
