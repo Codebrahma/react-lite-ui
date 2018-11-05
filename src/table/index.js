@@ -71,7 +71,7 @@ class Table extends React.Component {
   renderTableHeader = () => {
     const { columns, theme, sort } = this.props;
     return (
-      <div className={theme.tableHeader}>
+      <div className={theme.tableHeader} aria-label="table-header">
         { columns && columns.map(({
             key, title, colWidth, ...other
           }) => (
@@ -98,7 +98,7 @@ class Table extends React.Component {
   renderTableRow = (eachData, rowKey) => {
     const { columns, theme } = this.props;
     return (
-      <div className={theme.tableBodyRow} key={rowKey}>
+      <div className={theme.tableBodyRow} key={rowKey} aria-label="table-row">
         {
           columns && columns.map(({ title, key }) => (
             <div
@@ -125,7 +125,7 @@ class Table extends React.Component {
     const { theme } = this.props;
     const { tableData } = this.state;
     return (
-      <div className={theme.tableBody}>
+      <div className={theme.tableBody} aria-label="table-body">
         {
           tableData && tableData.map((eachData, index) => this.renderTableRow(eachData, index))
         }
@@ -139,7 +139,7 @@ class Table extends React.Component {
     } = this.props;
     return (
       <div className={classnames(theme.tableWrapper)}>
-        <div className={theme.table}>
+        <div className={theme.table} aria-label="table">
           { this.renderTableHeader() }
           { this.renderTableBody() }
         </div>
