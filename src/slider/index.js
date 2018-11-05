@@ -12,8 +12,6 @@ class Slider extends React.Component {
     super(props);
     this.sliderTracker = null;
     this.sliderBar = null;
-    this.sliderUpperRange = null;
-    this.dragEventWithData = null;
     this.state = {
       // valueMax : used as max value selected in a range slider.
       // and is default store for normal slider max value.
@@ -24,10 +22,20 @@ class Slider extends React.Component {
     };
   }
 
+
+  /**
+   * Simulate the drag event on slider.
+   * @memberof Slider
+   * @param e : Event object.
+   * @param left : Boolean to check if left or right button is being dragged.
+   */
   dragEvent = (e, left) => {
     if (this.props.range) {
       if (left) {
+        // Current width of the tracker between the buttons.
         const sliderTrackerWidth = findNode(this.sliderTracker).getBoundingClientRect().width;
+        // If the mouse pointer is between the left end of slider bar and
+        // right button, move the slider button - else do nothing.
         if (
           e.clientX <=
             findNode(this.sliderOffset).getBoundingClientRect().width +
@@ -37,15 +45,20 @@ class Slider extends React.Component {
         ) {
           const prevWidth = findNode(this.sliderOffset).getBoundingClientRect()
             .width;
+          // Calculate new width for offset according to mouse position.
           const width =
             (e.clientX - findNode(this.sliderBar).offsetLeft) /
             findNode(this.sliderBar).getBoundingClientRect().width;
+          // Update offset width.
           findNode(this.sliderOffset).style.width = `${width * 100}%`;
+          // Calculate new width for tracker according to mouse position.
           const trackerWidth =
             (findNode(this.sliderTracker).getBoundingClientRect().width -
               (e.clientX - findNode(this.sliderBar).offsetLeft - prevWidth)) /
             findNode(this.sliderBar).getBoundingClientRect().width;
+          // Update tracker width.
           findNode(this.sliderTracker).style.width = `${trackerWidth * 100}%`;
+          // Update state and pass values to the onChange callback.
           this.setState(
             {
               valueMin: Math.round(width * this.props.max),
@@ -58,14 +71,17 @@ class Slider extends React.Component {
           );
         }
       } else {
+        // If the right slider button is being dragged, then execute this block.
         const sliderBarWidth = findNode(this.sliderBar).getBoundingClientRect()
           .width;
+        // If mouse pointer is between the left slider and right end of the slider bar.
         if (
-          e.clientX <= findNode(this.sliderBar).offsetLeft + sliderBarWidth &&
-          e.clientX >=
+          (e.clientX <= findNode(this.sliderBar).offsetLeft + sliderBarWidth) &&
+          (e.clientX >=
             findNode(this.sliderBar).offsetLeft +
-              findNode(this.sliderOffset).getBoundingClientRect().width
+              findNode(this.sliderOffset).getBoundingClientRect().width)
         ) {
+          // Calculate and update tracker width.
           const width =
             ((e.clientX -
               findNode(this.sliderBar).offsetLeft -
@@ -75,6 +91,7 @@ class Slider extends React.Component {
           findNode(this.sliderTracker).style.width = `${width}%`;
           const maxValue =
             (e.clientX - findNode(this.sliderBar).offsetLeft) / sliderBarWidth;
+          // Update state and pass values to the onChange callback.
           this.setState(
             {
               valueMax: Math.round(maxValue * this.props.max),
@@ -88,6 +105,7 @@ class Slider extends React.Component {
         }
       }
     } else {
+      // When simple slider is being used, execute this block.
       const sliderBarWidth = findNode(this.sliderBar).getBoundingClientRect()
         .width;
       if (
@@ -98,6 +116,7 @@ class Slider extends React.Component {
           ((e.clientX - findNode(this.sliderBar).offsetLeft) / sliderBarWidth) *
           100;
         findNode(this.sliderTracker).style.width = `${width}%`;
+        // Update state and pass values to the onChange callback.
         this.setState(
           {
             valueMax: Math.round((width / 100) * this.props.max),
@@ -113,63 +132,61 @@ class Slider extends React.Component {
   };
 
   startDrag = (_, left) => {
-    this.dragEventWithData = e => this.dragEvent(e, left);
-    document.body.addEventListener('mouseup', this.stopDrag);
-    document.body.addEventListener('mousemove', this.dragEventWithData);
+    const dragEventWithData = e => this.dragEvent(e, left);
+    document.body.addEventListener('mouseup', () => this.stopDrag(dragEventWithData));
+    document.body.addEventListener('mousemove', dragEventWithData);
   };
 
-  stopDrag = () => {
-    document.body.removeEventListener('mousemove', this.dragEventWithData);
+  stopDrag = (eventCallback) => {
+    document.body.removeEventListener('mousemove', eventCallback);
   };
 
   render() {
     const { theme, disabled, range } = this.props;
+    const rootProps = {
+      className: theme.slider,
+      ref: !disabled ? (ref) => {
+        this.sliderBar = ref;
+      } : undefined,
+    };
+    const sliderOffsetProps = {
+      className: theme['slider-offset'],
+      ref: !disabled ? (ref) => {
+        this.sliderOffset = ref;
+      } : undefined,
+    };
+    const sliderTrackerProps = {
+      className: theme['slider-tracker'],
+      ref: !disabled ? (ref) => {
+        this.sliderTracker = ref;
+      } : undefined,
+    };
+    const leftButtonProps = {
+      className: theme['slider-button'],
+      onMouseDown: !disabled ? (e) => {
+        this.startDrag(e, true);
+      } : undefined,
+    };
+    const rightButtonProps = {
+      className: theme['slider-button'],
+      onMouseDown: !disabled ? (e) => {
+        this.startDrag(e, false);
+      } : undefined,
+    };
     return (
-      <div
-        className={theme.slider}
-        ref={(ref) => {
-          this.sliderBar = ref;
-        }}
-      >
+      <div {...rootProps}>
         {range && (
-          <div
-            className={theme['slider-offset']}
-            ref={(ref) => {
-              this.sliderOffset = ref;
-            }}
-          >
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-            <span
-              className={theme['slider-button']}
-              onMouseDown={(e) => {
-                this.startDrag(e, true);
-              }}
-              ref={(ref) => {
-                this.sliderLowerRange = ref;
-              }}
-            />
+          <div {...sliderOffsetProps}>
+            <span {...leftButtonProps} />
             <div className={theme.tooltip}>
               <span>{this.state.valueMin}</span>
               <div />
             </div>
           </div>
         )}
-        <div
-          className={theme['slider-tracker']}
-          ref={(ref) => {
-            this.sliderTracker = ref;
-          }}
-        >
+        <div {...sliderTrackerProps}>
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-          <span
-            className={theme['slider-button']}
-            onMouseDown={(e) => {
-              this.startDrag(e, false);
-            }}
-            ref={(ref) => {
-              this.sliderUpperRange = ref;
-            }}
-          />
+          <span {...rightButtonProps} />
           <div className={theme.tooltip}>
             <span>{this.state.valueMax}</span>
             <div />
@@ -186,7 +203,6 @@ Slider.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
-  step: PropTypes.number,
   range: PropTypes.bool,
 };
 
@@ -195,7 +211,6 @@ Slider.defaultProps = {
   max: 100,
   theme: defaultTheme,
   disabled: false,
-  step: null,
   range: false,
   onChange: (min, max) => {
     console.log({ min, max });
