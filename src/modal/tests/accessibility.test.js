@@ -78,16 +78,10 @@ describe('Modal accessibility tests', () => {
 
     toggleModal();
     expect(simulatedValue()).equals(expectedValueBeforeClosing);
-    const { length } = wrappedComponent
-      .find(Modal)
-      .childAt(0)
-      .childAt(0)
-      .children(); // Get the length of children elements.
     wrappedComponent
-      .find(Modal)
-      .childAt(0)
-      .childAt(0)
-      .childAt(length - 1)
+      .find('#modal')
+      .children()
+      .last()
       .simulate('click'); // Get the last child element, i.e, close icon.
     expect(simulatedValue()).equals(expectedValueAfterClosing);
   });
