@@ -43,7 +43,7 @@ class Table extends React.Component {
     const { theme } = this.props;
     const isCurrentKey = this.state.sortTitle === key;
     return (
-      <div className={theme.sortArrow}>
+      <div className={theme.sortArrow} id="table-sort">
         <span
           className={
             (isCurrentKey && this.state[`${key}Ascending`])
@@ -98,7 +98,7 @@ class Table extends React.Component {
   renderTableRow = (eachData, rowKey) => {
     const { columns, theme } = this.props;
     return (
-      <div className={theme.tableBodyRow} key={rowKey} aria-label="table-row">
+      <div className={theme.tableBodyRow} key={rowKey} id="table-row">
         {
           columns && columns.map(({ title, key }) => (
             <div
