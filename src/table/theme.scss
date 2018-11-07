@@ -1,3 +1,5 @@
+@import '../globals/theme';
+
 :local(.tableWrapper) {
   max-width: fit-content;
   max-width: -moz-fit-content;
@@ -9,8 +11,8 @@
 }
 :local(.tableHeader) {
   display: table-header-group;
-  background-color: var(--cool-blue);
-  color: var(--white);
+  background-color: $cool-blue;
+  color: $white;
   font-size: 18px;
 }
 :local(.tableBody) {
@@ -19,7 +21,7 @@
 }
 :local(.tableBodyRow) {
   display: table-row;
-  background-color: var(--white);
+  background-color: $white;
   border-bottom: 2px solid #dfdfdf;
   &:hover {
     background-color: #d6eff9; 
@@ -71,7 +73,7 @@
   }
   .sortedAscending,
   .sortedDescending {
-    border-color: var(--bright-cyan);
+    border-color: $bright-cyan;
   }
   .sortedAscending {
     box-shadow: -1px -1px 1px 0px #000;
