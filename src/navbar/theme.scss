@@ -132,11 +132,7 @@
     & > * {
       width: 100%;
       &:hover {
-<<<<<<< HEAD
         background: rgba(0, 0, 0, 0.1);
-=======
-        background-color: $cool-blue-21;
->>>>>>> 💄 updated the components with SASS variables
       }
     }
   }
@@ -149,7 +145,6 @@
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-<<<<<<< HEAD
     background-color: var(--cool-blue);
     fill: var(--white);
     padding: 2%;
@@ -159,8 +154,5 @@
     top: 100%;
     outline: none;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
-=======
-    fill: $white;
->>>>>>> 💄 updated the components with SASS variables
   }
 }
