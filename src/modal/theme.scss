@@ -8,16 +8,16 @@
     width: 100vw;
     align-items: center;
     justify-content: center;
-    animation: fadein 0.2s linear;
     box-sizing: border-box;
+  }
 
-    @keyframes fadein {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-}
-
-:local(.modal) {
+  .animation {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  :local(.modal) {
+    display: none;
     padding: 2%;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     background: white;
@@ -49,6 +49,11 @@
 
 :local(.d-block) {
     display: flex;
+    animation: fadein 0.3s linear;
+    @keyframes fadein {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
 }
 
 :local(.d-none) {
