@@ -129,8 +129,9 @@ class Card extends React.Component {
         { this.renderHeader() }
         { this.renderContent() }
         { this.renderFooter() }
-        { (expandedContent !== null && expanded)
-            && <HiddenContent /> }
+        <div className={`expandedContent ${expanded ? 'expanded' : 'collapsed'}`}>
+          {(expandedContent !== null) && <HiddenContent />}
+        </div>
       </div>
     );
   }
