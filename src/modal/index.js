@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import cx from 'classnames';
+import { transitionEndEventName } from '../globals/helper';
 import defaultTheme from './theme.scss';
 import '../globals/fonts.scss';
 
@@ -22,31 +23,12 @@ class Modal extends Component {
     return { open: props.open };
   }
 
-  transitionEndEventName = () => {
-    const el = document.createElement('div');
-
-    const transEndEventNames = {
-      WebkitTransition: 'webkitTransitionEnd',
-      MozTransition: 'transitionend',
-      OTransition: 'oTransitionEnd otransitionend',
-      transition: 'transitionend',
-    };
-    /* eslint-disable no-restricted-syntax */
-    for (const name in transEndEventNames) {
-      if (el.style[name] !== undefined) {
-        return transEndEventNames[name];
-      }
-    }
-
-    return false; // explicit for ie8
-  }
-
   closeModal = () => {
     const modalWrapper = getDOMNode(this.modalWrapperRef);
     const modal = getDOMNode(this.modalRef);
     modalWrapper.classList.add('animation');
     modal.classList.add('animation');
-    const transitionEnd = this.transitionEndEventName();
+    const transitionEnd = transitionEndEventName();
     modalWrapper.addEventListener(transitionEnd, this.removeModal, false);
   };
 
