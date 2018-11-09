@@ -69,7 +69,10 @@ describe('Modal accessibility tests', () => {
       .find(Modal)
       .childAt(0)
       .simulate('click');
-    expect(simulatedValue()).equals(expectedValueAfterClosing);
+    setTimeout(() => {
+      expect(simulatedValue()).equals(expectedValueAfterClosing);
+      done();
+    }, 500);
   });
 
   it('Successfully closes modal on clicking close icon', () => {
@@ -80,10 +83,11 @@ describe('Modal accessibility tests', () => {
     toggleModal();
     expect(simulatedValue()).equals(expectedValueBeforeClosing);
     wrappedComponent
-      .find('#modal')
-      .children()
-      .last()
+      .find('i.icon-cross')
       .simulate('click'); // Get the last child element, i.e, close icon.
-    expect(simulatedValue()).equals(expectedValueAfterClosing);
+    setTimeout(() => {
+      expect(simulatedValue()).equals(expectedValueAfterClosing);
+      done();
+    }, 500);
   });
 });

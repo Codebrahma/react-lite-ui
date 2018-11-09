@@ -28,11 +28,11 @@ class Modal extends Component {
     modalWrapper.classList.add('animation');
     modal.classList.add('animation');
     setTimeout(() => {
+      modalWrapper.classList.remove('animation');
+      modal.classList.remove('animation');
       this.setState({
         open: false,
       });
-      modalWrapper.classList.remove('animation');
-      modal.classList.remove('animation');
     }, 300);
   };
 
