@@ -22,19 +22,43 @@ class Modal extends Component {
     return { open: props.open };
   }
 
+  transitionEndEventName = () => {
+    const el = document.createElement('div');
+
+    const transEndEventNames = {
+      WebkitTransition: 'webkitTransitionEnd',
+      MozTransition: 'transitionend',
+      OTransition: 'oTransitionEnd otransitionend',
+      transition: 'transitionend',
+    };
+    /* eslint-disable no-restricted-syntax */
+    for (const name in transEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return transEndEventNames[name];
+      }
+    }
+
+    return false; // explicit for ie8
+  }
+
   closeModal = () => {
     const modalWrapper = getDOMNode(this.modalWrapperRef);
     const modal = getDOMNode(this.modalRef);
     modalWrapper.classList.add('animation');
     modal.classList.add('animation');
-    setTimeout(() => {
-      modalWrapper.classList.remove('animation');
-      modal.classList.remove('animation');
-      this.setState({
-        open: false,
-      });
-    }, 300);
+    const transitionEnd = this.transitionEndEventName();
+    modalWrapper.addEventListener(transitionEnd, this.removeModal, false);
   };
+
+  removeModal = () => {
+    const modalWrapper = getDOMNode(this.modalWrapperRef);
+    const modal = getDOMNode(this.modalRef);
+    modalWrapper.classList.remove('animation');
+    modal.classList.remove('animation');
+    this.setState({
+      open: false,
+    });
+  }
 
   renderModalTitle = (title) => {
     const { theme } = this.props;
