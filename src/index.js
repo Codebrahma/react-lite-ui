@@ -62,6 +62,24 @@ export default {
 //     <span>home</span>
 //     <span>dashboard</span>
 //     <span>contact</span>
+<<<<<<< HEAD
 //   </Navbar>,
 //   document.getElementById('index'),
+=======
+//   </div>
+// );
+
+// const DesktopView = () => (
+//   <div className="navbarMenu">
+//     { <NavbarMenu /> }
+//   </div>
+// );
+
+// const MobileView = () => (
+//   <div className="navbarMobileMenu">
+//     <Popover content={<NavbarMenu />} position="bottomRight" noAction>
+//       <span className="icon-menu" />
+//     </Popover>
+//   </div>
+>>>>>>> 💄  (src/badge)-update badge animation
 // );

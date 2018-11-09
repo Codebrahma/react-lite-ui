@@ -39,6 +39,15 @@
     min-width: fit-content;
     padding: 1px;
     font-family: 'Helvetica';
+
+    & > .fadeOut {
+        opacity: 0;
+    }
+    
+    & > span {
+        opacity: 1;
+        transition: opacity 200ms ease-in-out;
+    }
 }
 
 :local(.small) {
