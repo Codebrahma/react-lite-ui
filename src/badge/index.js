@@ -1,8 +1,9 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
 import cx from 'classnames';
+import { themr } from 'react-css-themr';
+import { transitionEndEventName } from '../globals/helper';
 import defaultTheme from './theme.scss';
 
 const getNode = findDOMNode;
@@ -19,32 +20,11 @@ class Badge extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.badgeCount !== prevProps.badgeCount) {
       const countEle = getNode(this.animRef);
-      countEle.addEventListener(this.transitionEndEvent(), this.updateCount, false);
+      countEle.addEventListener(transitionEndEventName(), this.updateCount, false);
       countEle.classList.add('fadeOut');
       // eslint-disable-next-line react/no-did-update-set-state
     }
   }
-
-  transitionEndEvent = () => {
-    const el = document.createElement('div');
-
-    const transEndEventNames = {
-      WebkitTransition: 'webkitTransitionEnd',
-      MozTransition: 'transitionend',
-      OTransition: 'oTransitionEnd otransitionend',
-      transition: 'transitionend',
-    };
-
-    // eslint-disable-next-line no-restricted-syntax
-    for (const name in transEndEventNames) {
-      if (el.style[name] !== undefined) {
-        return transEndEventNames[name];
-      }
-    }
-
-    return false;
-  }
-
 
   updateCount = () => {
     const countEle = getNode(this.animRef);
