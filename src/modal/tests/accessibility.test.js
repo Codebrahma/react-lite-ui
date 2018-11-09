@@ -58,7 +58,7 @@ describe('Modal accessibility tests', () => {
     expect(simulatedValue()).equals(expectedValueAfterToggle);
   });
 
-  it('Successfully closes modal on clicking backdrop', () => {
+  it('Successfully closes modal on clicking backdrop', (done) => {
     const expectedValueBeforeClosing = 1;
     const expectedValueAfterClosing = 0;
     const simulatedValue = () => wrappedComponent.find('#modal').length;
@@ -71,11 +71,11 @@ describe('Modal accessibility tests', () => {
       .simulate('click');
     setTimeout(() => {
       expect(simulatedValue()).equals(expectedValueAfterClosing);
-      done();
     }, 500);
+    done();
   });
 
-  it('Successfully closes modal on clicking close icon', () => {
+  it('Successfully closes modal on clicking close icon', (done) => {
     const expectedValueBeforeClosing = 1;
     const expectedValueAfterClosing = 0;
     const simulatedValue = () => wrappedComponent.find('#modal').length;
@@ -87,7 +87,7 @@ describe('Modal accessibility tests', () => {
       .simulate('click'); // Get the last child element, i.e, close icon.
     setTimeout(() => {
       expect(simulatedValue()).equals(expectedValueAfterClosing);
-      done();
     }, 500);
+    done();
   });
 });
