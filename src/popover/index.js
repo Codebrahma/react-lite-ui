@@ -10,7 +10,14 @@ class Popover extends React.Component {
     blockBlurEvent: false,
   };
 
-  togglePopoverClick = () => {
+  togglePopoverClick = (e) => {
+    /*
+     *  In safari the element is not retaining focus after click,
+     *  so, Blur event is never called for hiding popover.
+     *  To resolve the element is focussed manually when clicked,
+     *  which triggers blur when clicked outside popover.
+    */
+    e.target.focus();
     this.setState(prevState => ({
       isVisible: !prevState.isVisible,
     }));
@@ -79,7 +86,7 @@ class Popover extends React.Component {
       <div className={classes}>
         <div
           className={theme.contentWrapper}
-          onClick={this.togglePopoverClick}
+          onClick={e => this.togglePopoverClick(e)}
           onBlur={this.hidePopover}
           {...other}
         >
