@@ -46,6 +46,11 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    alias: {
+      'react-css-themr': '@friendsofreactjs/react-css-themr',
+    },
+  },
   plugins: [
     htmlWebpackPlugin,
     // new BundleAnalyzerPlugin(),
