@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 
 import * as components from '../../../src';
 import Layout from '../components/layout'
+import './index.scss';
+import liteLogo from '../images/match.svg';
 
 const {
   TextInput,
@@ -10,7 +12,15 @@ const {
 
 const IndexPage = () => (
   <Layout>
-    Site will come here
+    <div className="hero-container" role="main">
+      <div>
+      <img src={liteLogo} />
+      <div>
+        <h2>React Lite UI</h2><br/>
+        <p>A set of light wright React Components</p>
+      </div>
+      </div>
+    </div>
   </Layout>
 )
 

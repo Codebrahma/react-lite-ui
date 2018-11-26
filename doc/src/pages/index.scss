@@ -1,0 +1,44 @@
+.hero-container {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    justify-content: center;
+    background-image: linear-gradient(110deg, #0d37c9, rgba(36, 181, 205, 0.94) 67%, #34427a);
+
+    img {
+        height: 129px;
+        width: 119px;
+    }
+    
+    div {
+        text-align: center;
+        color: white;
+        position: absolute;
+        width: 100vw;
+        height: 70%;
+        top: 25%;
+        font-family: 'Roboto';
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+
+        h2 {
+            font-size: 55px;
+            letter-spacing: 0.1px;
+            margin: 0;
+            margin-top: 0.5em;
+        }
+
+        p {
+            margin: 0;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: normal;
+        }
+    }
+}
+
+body {
+    margin: 0;
+}
