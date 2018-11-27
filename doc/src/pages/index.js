@@ -13,13 +13,14 @@ const {
 const IndexPage = () => (
   <Layout>
     <div className="hero-container" role="main">
-      <div>
+      <div className="hero-content">
       <img src={liteLogo} />
       <div>
         <h2>React Lite UI</h2><br/>
         <p>A set of light wright React Components</p>
       </div>
       </div>
+    <div className="hero-bottom"></div>
     </div>
   </Layout>
 )
