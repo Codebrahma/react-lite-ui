@@ -1,0 +1,39 @@
+.landing-main {
+    padding-top: 5rem;
+    font-family: 'Roboto';
+    .row {
+        padding: 1.5em;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+
+        .col {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            color: #454a4f;
+
+            h2 {
+                margin: 0;
+            }
+
+            p {
+                font-size: 1em;
+                font-weight: bold;
+            }
+
+            img {
+                height: 120px;
+                width: 120px;
+                margin: auto;
+            }
+        }
+
+    }
+
+    .row:nth-child(2) {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}

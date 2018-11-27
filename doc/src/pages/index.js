@@ -4,9 +4,13 @@ import './index.scss';
 import liteLogo from '../images/match.svg';
 import LandingMain from '../templates/landing-main';
 
+const registerScroll = (e) => {
+  console.log(e);
+};
+
 const IndexPage = () => (
   <Layout>
-    <div className="hero-container" role="main">
+    <div onScroll={registerScroll} className="hero-container" role="main">
       <div className="hero-content">
         <img src={liteLogo} alt="react-lite-ui-logo" />
         <div>
