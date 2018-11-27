@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .hero-container {
     display: flex;
     width: 100vw;
@@ -18,23 +20,20 @@
         position: absolute;
         width: 100vw;
         height: 70%;
-        top: 25%;
+        top: 23%;
         font-family: 'Roboto';
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-
+        
         h2 {
-            font-size: 55px;
+            font-size: 2.5em;
             letter-spacing: 0.1px;
             margin: 0;
             margin-top: 0.5em;
+            font-weight: 500;
         }
 
         p {
             margin: 0;
-            font-size: 30px;
+            font-size: 1.4em;
             font-weight: bold;
             letter-spacing: normal;
         }
