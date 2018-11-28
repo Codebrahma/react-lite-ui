@@ -36,4 +36,27 @@
         padding-left: 15%;
         padding-right: 15%;
     }
+
+    .screens {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        padding: 5rem 10rem 1rem 10rem;
+
+        img {
+            height: auto;
+            width: auto;
+        }
+
+        &+.row {
+            p {
+                margin: 0;
+                font-family: 'Roboto';
+                font-size: 1.5em;
+                font-weight: bold;
+                letter-spacing: 0.1rem;
+            }
+        }
+    }
 }
