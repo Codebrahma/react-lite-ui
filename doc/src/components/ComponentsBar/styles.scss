@@ -1,0 +1,100 @@
+@import '../common/styles.scss';
+
+.component-bar {
+  .component-sidebar {
+    position: fixed;
+    top: 76px;
+    bottom: 0;
+    // left: 0;
+    overflow: auto;
+    width: fit-content;
+    padding-top: 25px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+    .each-component-item {
+      font-size: 24px;
+      line-height: 30px;
+      color: $primary-dark-font;
+      padding: 10px 5px 10px 16px;
+      font-weight: normal;
+      color: $battleship-grey;
+      &:hover {
+        background-color: $bright-cyan-20;
+        cursor: pointer;
+      }
+      &.active {
+        background-color: $bright-cyan-20;
+        font-weight: bold;
+      }
+    }
+  }
+  .playground-content {
+    width: fit-content;
+    padding-left: 260px;
+    padding-top: 100px; // can be removed once the app bar is added
+    .mb-10 {
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
+    .sub-title {
+      font-size: 18px;
+      line-height: 38px;
+      font-weight: bold;
+      color: #525356;
+      padding: 10px 0;
+    }
+    .html-structure {
+      border-radius: 5px;
+      overflow: hidden;
+      max-width: 720px;
+      font-size: 14px;
+      .html-header {
+        display: flex;
+        align-items: center;
+        height: 33px;
+        background-color: #eef1f5;
+        .action-icon {
+          display: inline-block;
+          position: relative;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: #edc04a;
+          margin-left: 35px;
+          &:after {
+            content: '';
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            left: 20px;
+            background-color: #97d272;
+          }
+          &:before {
+            content: '';
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            right: 20px;
+            margin-left: 15px;
+            background-color: #ef534a;
+          }
+        }
+        .html-header-content {
+          width: 100%;
+          text-align: center;
+          color: #525356;
+        }
+      }
+      .html-content {
+        background-color: #353b46;
+        color: #e2e7ed;
+        pre {
+          padding: 20px 15px;
+          margin: 0;
+          overflow-X: auto;
+        }
+      }
+    }
+  }
+}
