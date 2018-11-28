@@ -1,92 +1,105 @@
 import React from 'react';
+import { LiveProvider, LivePreview, LiveError } from 'react-live';
 import { Link } from 'gatsby';
 
 import * as components from '../../../src';
-import WithComponentBar from '../components/ComponentsBar/componentBar';
+import WithComponentBar from '../components/ComponentsBar/WithComponentBar';
+import { AvatarDefaultCode } from '../components/common/DefaultCode';
+import theme from '../components/common/DefaultCode/Table/theme.scss';
 
 const {
-  Avatar,
+  Button,
   Table,
 } = components.default;
 
-const columns = [
+const propColumns = [
   { title: 'Prop', key: 'prop', colWidth: '100px' },
+  { title: 'Type', key: 'type', colWidth: '100px' },
   { title: 'Default Value', key: 'defaultValue', colWidth: '136px' },
   { title: 'Description', key: 'description', colWidth: '311px' },
 ];
-const data = [
-  {
-    prop: 'prop-1',
-    defaultValue: 'first value',
-    description: 'dolor sit amet, consectetur amet, scing elit.',
-  },
-  {
-    prop: 'prop-2',
-    defaultValue: 'second value',
-    description: 'dolor sit amet, consectetur amet, scing elit.',
-  },
-  {
-    prop: 'prop-3',
-    defaultValue: 'third value',
-    description: 'dolor sit amet, consectetur amet, scing elit.',
-  },
+const themeColumns = [
+  { title: 'Name', key: 'name', colWidth: '200px' },
+  { title: 'Description', key: 'description', colWidth: '350px' },
 ];
 
 class Documentaion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      CurrentComponent: Avatar,
       activeComponent: 'Avatar',
+      defaultCode: AvatarDefaultCode,
     }
   }
 
-  onClickComponent = (name, component, defaultCode) => {
-    console.log('history', this.props.location)
-    console.log(name, component);
-    const Component = component;
+  onClickComponent = (name, defaultCode) => {
     this.setState({
-      CurrentComponent: Component,
       activeComponent: name,
       defaultCode,
     })
   }
 
-  renderHtml = (defaultCode) => {
+  renderBasicComponent = (basicComponent) => (
+    <LiveProvider 
+      scope={{ ...components.default }}
+      code={basicComponent}
+    >
+      <div className="code-preview">
+        <LivePreview />
+        <div className="error">
+          <LiveError />
+        </div>
+      </div>
+    </LiveProvider>
+  );
+
+  renderDocsTable = (columns, data) => (
+    <Table columns={columns} data={data} theme={theme}/>
+  );
+
+  renderHtml = (htmlStructure) => {
     return (
       <div className="html-content">
         <pre>
-          {defaultCode}
+          {htmlStructure}
         </pre>
       </div>
     );
-  }
+  };
+
   render() {
-    const { CurrentComponent, activeComponent, defaultCode } = this.state;
+    const { activeComponent, defaultCode } = this.state;
     return (
       <WithComponentBar
         onClickComponent={this.onClickComponent}
         activeComponent={activeComponent}  
       >
-        <span className="sub-title">Component</span>
-        <div className="component mb-10">
-          {/* <CurrentComponent /> */}
-        </div>
-        <span className="sub-title">Props</span>
-        <div className="props mb-10">
-          <Table columns={columns} data={data} />
-        </div>
-        <span className="sub-title">HTML Structure</span>
-        <div className="html-structure mb-10">
-          <div className="html-header">
-            <span className="action-icon" />
-            <span className="html-header-content">HTML Structure</span>
+        <div>
+          <span className="sub-title">Component</span>
+          <div className="component mb-10">
+            { this.renderBasicComponent(defaultCode.basicComponent) }
           </div>
-          {this.renderHtml(defaultCode)}
-        </div>
-        <span className="sub-title">Themes</span>
-        <div className="themes mb-10">
-          <Table columns={columns} data={data} />
+          <span className="sub-title">Props</span>
+          <div className="props mb-10">
+            { this.renderDocsTable(propColumns, defaultCode.propsData) }
+          </div>
+          <span className="sub-title">HTML Structure</span>
+          <div className="html-structure mb-10">
+            <div className="html-header">
+              <span className="action-icon" />
+              <span className="html-header-content">HTML Structure</span>
+            </div>
+            {this.renderHtml(defaultCode.htmlStructure)}
+          </div>
+          <span className="sub-title">Themes</span>
+          <div className="themes mb-10">
+            { this.renderDocsTable(themeColumns, defaultCode.themesData) }
+          </div>
+          <div className="link-to-playground">
+            <Link to='/playground'>
+              <Button bordered type='primary'>Open in playground</Button>
+            </Link>
+          </div>
         </div>
       </WithComponentBar>
     )

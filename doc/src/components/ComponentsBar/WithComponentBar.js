@@ -11,13 +11,13 @@ const WithComponentBar = ({ children, onClickComponent, activeComponent }) => (
         <div
           className={`each-component-item ${activeComponent === component.name ? 'active' : ''}`}
           key={component.name}
-          onClick = {() => onClickComponent(component.name, component.component, component.defaultCode, component.componentProps, component.componentTheme)}
+          onClick = {() => onClickComponent(component.name, component.defaultCode)}
         >
           {component.name}
         </div>
       ))}
     </aside>
-    <div className="playground-content">
+    <div className="documentation-content">
       {children}
     </div>
   </div>

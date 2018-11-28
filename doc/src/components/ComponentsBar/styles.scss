@@ -27,7 +27,7 @@
       }
     }
   }
-  .playground-content {
+  .documentation-content {
     width: fit-content;
     padding-left: 260px;
     padding-top: 100px; // can be removed once the app bar is added
@@ -41,6 +41,19 @@
       font-weight: bold;
       color: #525356;
       padding: 10px 0;
+    }
+    .code-preview {
+      .error {
+        color: red;  
+      }
+    }
+    .link-to-playground {
+      position: absolute;
+      right: 30px;
+      top: 125px;
+      a {
+        text-decoration: none;
+      }
     }
     .html-structure {
       border-radius: 5px;

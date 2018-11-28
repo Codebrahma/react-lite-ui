@@ -1,23 +1,36 @@
-
-export const defaultCode = `
-class Demo extends React.Component {
-  constructor(props) {
-    super(props);
+export const defaultCode = {
+  htmlStructure: 
+  `class Demo extends React.Component {
+    render() {
+      return <Tooltip>C</Tooltip>;
+    }
   }
-
-  render() {
-    return (
-      <div>
-        {/* Preview Block 1 */}
-        <PreviewBlock header="Default Tooltip">
-          <Tooltip tooltipText='Normal Tooltip'>Look down</Tooltip>
-        </PreviewBlock>
-        {/* Preview Block 2 */}
-        <PreviewBlock header="Tooltip at top">
-          <Tooltip tooltipText='Top Tooltip' top>Look up</Tooltip>
-        </PreviewBlock>
-      </div>
-    )
-  }
-}
-`;
+  `,
+  propsData: [
+    {
+      prop: 'Tooltip  prop',
+      type: 'String',
+      defaultValue: 'default prop Tooltip ',
+      description: 'I am Tooltip ing default description for component',
+    },
+    {
+      prop: 'Tooltip  some prop',
+      type: 'String',
+      defaultValue: 'some default prop Tooltip ',
+      description: 'I am some Tooltip ing default description for component',
+    },
+  ],  
+  themesData: [
+    {
+      name: 'default theme',
+      description: 'Tooltip ing description',
+    },
+    {
+      name: 'default some theme',
+      description: 'Tooltip ing some description',
+    },
+  ],
+  basicComponent: `
+    <Tooltip tooltipText='Normal Tooltip'>Look down</Tooltip>
+  `,
+};

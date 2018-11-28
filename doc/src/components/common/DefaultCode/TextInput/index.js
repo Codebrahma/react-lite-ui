@@ -1,25 +1,34 @@
-export const defaultCode = `
-class Demo extends React.Component {
-   render() {
-    return (
-      <div>
-        {/* Preview Block 1 */}
-        <PreviewBlock header="Default TextInput">
-          <TextInput />
-        </PreviewBlock>
-        {/* Preview Block 2 */}
-        <PreviewBlock header="Disabled TextInput">
-          <TextInput disabled={true}/>
-        </PreviewBlock>
-        {/* Preview Block 3 */}
-        <PreviewBlock header="Controlled width TextInput">
-          <TextInput width='300px' placeholder="type here..."/>
-        </PreviewBlock>
-        <PreviewBlock header="Password TextInput">
-          <TextInput type="password" placeholder="Enter password..."/>          
-        </PreviewBlock>
-      </div>
-    )
+export const defaultCode = {
+  htmlStructure: 
+  `class Demo extends React.Component {
+    render() {
+      return <TextInput>C</TextInput>;
+    }
   }
-}
-`;
+  `,
+  propsData: [
+    {
+      prop: 'TextInput  prop',
+      defaultValue: 'default prop TextInput ',
+      description: 'I am TextInput ing default description for component',
+    },
+    {
+      prop: 'TextInput  some prop',
+      defaultValue: 'some default prop TextInput ',
+      description: 'I am some TextInput ing default description for component',
+    },
+  ],  
+  themesData: [
+    {
+      name: 'default theme',
+      description: 'TextInput ing description',
+    },
+    {
+      name: 'default some theme',
+      description: 'TextInput ing some description',
+    },
+  ],
+  basicComponent: `
+    <TextInput />
+  `,
+};
