@@ -9,6 +9,14 @@ class Table extends React.Component {
     tableData: this.props.data,
   }
 
+  componentDidUpdate() {
+    if (this.props.data !== this.state.tableData) {
+      this.setState({ // eslint-disable-line
+        tableData: this.props.data,
+      });
+    }
+  }
+
   /*
    *  Function to sort the column data in ascending order
   */
