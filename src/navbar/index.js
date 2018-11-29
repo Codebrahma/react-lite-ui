@@ -51,7 +51,7 @@ const Navbar = ({
       <div className={theme.innerWrapper}>
         { leftIcon && (
           <div className={theme.leftIcon} onClick={onLeftIconClick}>
-            {leftIcon}
+            {React.isValidElement(leftIcon) ? leftIcon : <img src={leftIcon} alt="navbar-left-logo" />}
           </div>)
         }
         <div className={theme.navbarContent}>
@@ -60,7 +60,7 @@ const Navbar = ({
         </div>
         { rightIcon && (
           <div className={theme.rightIcon} onClick={onRightIconClick}>
-            {rightIcon}
+            {React.isValidElement(rightIcon) ? rightIcon : <img src={rightIcon} alt="navbar-right-logo" />}
           </div>)
         }
       </div>
