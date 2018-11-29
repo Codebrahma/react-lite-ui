@@ -26,6 +26,7 @@ import Carousel from './carousel';
 import ProgressBar from './progressbar';
 import Table from './table';
 import './globals/fonts/Roboto/index.scss';
+import './globals/fonts/PTSans/index.scss';
 
 export default {
   Button,
