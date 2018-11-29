@@ -15,7 +15,6 @@ class DocumentaionPage extends React.Component {
   }
   
   componentDidMount() {
-    navigate(`/documentation?component=${this.state.activeComponent.toLowerCase()}`);
     const url = this.props.location.search;
     const currentUrl = url.substring(url.lastIndexOf('=')+1);
     const queryComponent = componentList.filter(({ name }) => name.toLowerCase() === currentUrl);
