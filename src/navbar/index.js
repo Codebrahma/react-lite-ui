@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
-
 const Navbar = ({
   theme,
   position,

@@ -56,7 +56,7 @@ module.exports = {
         use: ['html-loader', 'highlight-loader', 'markdown-loader'],
       },
       {
-        test: /\.(woff)$/,
+        test: /\.(woff|woff2)$/,
         use: 'file-loader',
       },
     ],
