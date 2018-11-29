@@ -1,109 +1,58 @@
 import React from 'react';
-import { LiveProvider, LivePreview, LiveError } from 'react-live';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby-link';
+import { componentList } from '../components/common/componentList';
+import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
+import Documentation from '../components/WithComponentsBar/Documentation';
+import { AutoCompleteDefaultCode } from '../components/common/DefaultCode';
 
-import * as components from '../../../src';
-import WithComponentBar from '../components/ComponentsBar/WithComponentBar';
-import { AvatarDefaultCode } from '../components/common/DefaultCode';
-import theme from '../components/common/DefaultCode/Table/theme.scss';
-
-const {
-  Button,
-  Table,
-} = components.default;
-
-const propColumns = [
-  { title: 'Prop', key: 'prop', colWidth: '100px' },
-  { title: 'Type', key: 'type', colWidth: '100px' },
-  { title: 'Default Value', key: 'defaultValue', colWidth: '136px' },
-  { title: 'Description', key: 'description', colWidth: '311px' },
-];
-const themeColumns = [
-  { title: 'Name', key: 'name', colWidth: '200px' },
-  { title: 'Description', key: 'description', colWidth: '350px' },
-];
-
-class Documentaion extends React.Component {
+class DocumentaionPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeComponent: 'Avatar',
-      defaultCode: AvatarDefaultCode,
+      activeComponent: 'AutoComplete',
+      defaultCode: AutoCompleteDefaultCode,
+    }
+  }
+  
+  componentDidMount() {
+    navigate(`/documentation?component=${this.state.activeComponent.toLowerCase()}`);
+    const url = this.props.location.search;
+    const currentUrl = url.substring(url.lastIndexOf('=')+1);
+    const queryComponent = componentList.filter(({ name }) => name.toLowerCase() === currentUrl);
+    if(queryComponent.length) {
+      this.setState({
+        activeComponent: queryComponent[0].name,
+        defaultCode: queryComponent[0].defaultCode,
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.location.search !== prevProps.location.search) {
+      navigate(`/documentation?component=${this.state.activeComponent.toLowerCase()}`)
     }
   }
 
   onClickComponent = (name, defaultCode) => {
+    navigate(`/documentation?component=${name.toLowerCase()}`);
+    console.log(this.props.location, 'location')
     this.setState({
       activeComponent: name,
       defaultCode,
     })
   }
 
-  renderBasicComponent = (basicComponent) => (
-    <LiveProvider 
-      scope={{ ...components.default }}
-      code={basicComponent}
-    >
-      <div className="code-preview">
-        <LivePreview />
-        <div className="error">
-          <LiveError />
-        </div>
-      </div>
-    </LiveProvider>
-  );
-
-  renderDocsTable = (columns, data) => (
-    <Table columns={columns} data={data} theme={theme}/>
-  );
-
-  renderHtml = (htmlStructure) => {
-    return (
-      <div className="html-content">
-        <pre>
-          {htmlStructure}
-        </pre>
-      </div>
-    );
-  };
-
   render() {
     const { activeComponent, defaultCode } = this.state;
     return (
       <WithComponentBar
         onClickComponent={this.onClickComponent}
-        activeComponent={activeComponent}  
+        activeComponent={activeComponent}
       >
-        <div>
-          <span className="sub-title">Component</span>
-          <div className="component mb-10">
-            { this.renderBasicComponent(defaultCode.basicComponent) }
-          </div>
-          <span className="sub-title">Props</span>
-          <div className="props mb-10">
-            { this.renderDocsTable(propColumns, defaultCode.propsData) }
-          </div>
-          <span className="sub-title">HTML Structure</span>
-          <div className="html-structure mb-10">
-            <div className="html-header">
-              <span className="action-icon" />
-              <span className="html-header-content">HTML Structure</span>
-            </div>
-            {this.renderHtml(defaultCode.htmlStructure)}
-          </div>
-          <span className="sub-title">Themes</span>
-          <div className="themes mb-10">
-            { this.renderDocsTable(themeColumns, defaultCode.themesData) }
-          </div>
-          <div className="link-to-playground">
-            <Link to='/playground'>
-              <Button bordered type='primary'>Open in playground</Button>
-            </Link>
-          </div>
-        </div>
+        <Documentation defaultCode={defaultCode} />
       </WithComponentBar>
     )
   }
 }
 
-export default Documentaion;
+export default DocumentaionPage;

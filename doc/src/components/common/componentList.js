@@ -54,7 +54,7 @@ import {
 
 export const componentList = [
   {
-    name: 'Autocomplete',
+    name: 'AutoComplete',
     component: AutoComplete,
     defaultCode: AutoCompleteDefaultCode
   },
