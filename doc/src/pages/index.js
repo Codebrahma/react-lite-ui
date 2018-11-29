@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Navbar from '../../../src/navbar';
 import Layout from '../components/layout';
 import './index.scss';
 import liteLogo from '../images/match.svg';
@@ -52,7 +53,7 @@ class IndexPage extends Component {
   render() {
     return (
       <Layout>
-        <div className="navbar">Navbar content</div>
+        <Navbar className="navbar" position="fixed" flat leftIcon={liteLogo} />
         <div className="hero-container" role="main">
           <div className="hero-content">
             <img src={liteLogo} alt="react-lite-ui-logo" />
