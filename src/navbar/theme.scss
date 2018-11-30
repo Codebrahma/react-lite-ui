@@ -44,15 +44,18 @@
 }
 :local(.leftIcon),
 :local(.rightIcon) {
+  box-sizing: border-box;
+  padding: 0.5rem;
   margin-top: auto;
   margin-bottom: auto;
+  height: 100%;
   font-size: 24px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  svg {
-    max-width: 24px;
-    max-height: 24px;
+  svg, img {
+    width: auto;
+    height: 100%;
     color: var(--white);
     fill: var(--white);
   }
