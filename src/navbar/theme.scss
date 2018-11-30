@@ -58,8 +58,8 @@
   svg, img {
     width: auto;
     height: 100%;
-    color: var(--white);
-    fill: var(--white);
+    color: $white;
+    fill: $white;
   }
 }
 :local(.leftIcon) {
