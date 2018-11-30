@@ -16,9 +16,9 @@ class ContributionSection extends Component {
         <div className="row">
           <Card
             theme={theme}
-            header="SOMETHING TO BUILD ?"
+            header="SOMETHING TO BUILD?"
             footer={
-              <Button type="warning">Contact Us</Button>
+              <Button flat theme={theme}>Contact Us</Button>
             }
             elevation="medium"
           >
@@ -30,7 +30,7 @@ class ContributionSection extends Component {
             theme={theme}
             header="FOR DEVELOPERS"
             footer={
-              <Button type="warning">Contact Us</Button>
+              <Button type="primary" bordered>Apply for job</Button>
             }
             elevation="medium"
           >
@@ -42,7 +42,7 @@ class ContributionSection extends Component {
             theme={theme}
             header="TO CONTRIBUTE"
             footer={
-              <Button type="warning">Contact Us</Button>
+              <Button type="primary" bordered>Create a PR</Button>
             }
             elevation="medium"
           >

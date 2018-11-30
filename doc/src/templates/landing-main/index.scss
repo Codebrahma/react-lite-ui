@@ -1,6 +1,7 @@
 .landing-main {
     padding-top: 2rem;
     font-family: 'Roboto';
+    z-index: 2;
     .row {
         padding: 1.5em;
         display: flex;
@@ -13,6 +14,7 @@
             justify-content: center;
             align-items: center;
             color: #454a4f;
+            z-index: 2;
 
             h2 {
                 margin: 0;
@@ -47,6 +49,7 @@
         img {
             height: auto;
             width: auto;
+            z-index: 2;
         }
 
         &+.row {
@@ -63,17 +66,18 @@
         box-sizing: border-box;
         background-image: linear-gradient(110deg, #0d37c9, rgba(36, 181, 205, 0.94) 100%, #34427a);
         margin-top: 3rem;
+        position: relative;
         
         .overlay {
-            height: 5rem;
+            height: 22rem;
+            margin-top: -8rem;
+            width: 100%;
+            position: absolute;
+            top: 0;
             background-color: white;
-            transform:skew(0deg,5deg);
-            -ms-transform:skew(0deg,10deg);
-            -webkit-transform:skew(0deg,5deg); 
-        }
-
-        .card-content {
-
+            transform:skew(0deg,10deg);
+            -ms-transform:skew(0deg,15deg);
+            -webkit-transform:skew(0deg,10deg); 
         }
     }
 }
