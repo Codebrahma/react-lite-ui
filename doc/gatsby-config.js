@@ -4,7 +4,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
