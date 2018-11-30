@@ -3,8 +3,7 @@ import { LiveProvider, LivePreview, LiveError } from 'react-live';
 import { Link } from 'gatsby';
 
 import * as components from '../../../../src';
-import { AvatarDefaultCode } from '../common/DefaultCode';
-import theme from '../common/DefaultCode/Table/theme.scss';
+import { AvatarComponentData } from '../common/componentData';
 
 const {
   Button,
@@ -27,14 +26,14 @@ class Documentaion extends React.Component {
     super(props);
     this.state = {
       activeComponent: 'Avatar',
-      defaultCode: AvatarDefaultCode,
+      componentData: AvatarComponentData,
     }
   }
 
-  onClickComponent = (name, defaultCode) => {
+  onClickComponent = (name, componentData) => {
     this.setState({
       activeComponent: name,
-      defaultCode,
+      componentData,
     })
   }
 
@@ -53,7 +52,7 @@ class Documentaion extends React.Component {
   );
 
   renderDocsTable = (columns, data) => (
-    <Table columns={columns} data={data} theme={theme}/>
+    <Table columns={columns} data={data} />
   );
 
   renderHtml = (htmlStructure) => {
@@ -67,16 +66,16 @@ class Documentaion extends React.Component {
   };
 
   render() {
-    const { defaultCode } = this.props;
+    const { componentData } = this.props;
     return (
       <div className="documentation-content">
         <span className="sub-title">Component</span>
         <div className="component mb-10">
-          { this.renderBasicComponent(defaultCode.basicComponent) }
+          { this.renderBasicComponent(componentData.basicComponent) }
         </div>
         <span className="sub-title">Props</span>
         <div className="props mb-10">
-          { this.renderDocsTable(propColumns, defaultCode.propsData) }
+          { this.renderDocsTable(propColumns, componentData.propsData) }
         </div>
         <span className="sub-title">HTML Structure</span>
         <div className="html-structure mb-10">
@@ -84,11 +83,11 @@ class Documentaion extends React.Component {
             <span className="action-icon" />
             <span className="html-header-content">HTML Structure</span>
           </div>
-          {this.renderHtml(defaultCode.htmlStructure)}
+          {this.renderHtml(componentData.htmlStructure)}
         </div>
         <span className="sub-title">Themes</span>
         <div className="themes mb-10">
-          { this.renderDocsTable(themeColumns, defaultCode.themesData) }
+          { this.renderDocsTable(themeColumns, componentData.themesData) }
         </div>
         <div className="link-to-playground">
           <Link to='/playground'>
