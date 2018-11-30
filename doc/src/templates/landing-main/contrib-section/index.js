@@ -5,8 +5,7 @@ import engineerImage from '../../../images/engineer.svg';
 import developerImage from '../../../images/man-in-office-desk-with-computer.svg';
 import contributeImage from '../../../images/triple-arrow-merging-to-one.svg';
 import theme from './index.scss';
-
-console.log('theme ', theme)
+import FooterSection from './footer';
 
 class ContributionSection extends Component {
   render() {
@@ -51,6 +50,7 @@ class ContributionSection extends Component {
             </div>
           </Card>
         </div>
+        <FooterSection />
       </div>
     );
   }

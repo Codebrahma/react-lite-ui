@@ -1,6 +1,6 @@
 :local(.cardFooter) {
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
     align-self: baseline;
 }
 
@@ -8,12 +8,12 @@
     color: #0c549c;
     margin-bottom: 2rem;
     text-align: center;
-    height: 2rem;
+    height: 3rem;
 }
 
 :local(.card) {
     flex: 1;
-    margin: 2rem;
+    margin: 3rem;
     padding: 1.5rem;
     z-index: 2;
     height: fit-content;

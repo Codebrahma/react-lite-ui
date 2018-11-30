@@ -34,11 +34,6 @@
 
     }
 
-    .row:nth-child(2) {
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-
     .screens {
         box-sizing: border-box;
         display: flex;
@@ -78,6 +73,43 @@
             transform:skew(0deg,10deg);
             -ms-transform:skew(0deg,15deg);
             -webkit-transform:skew(0deg,10deg); 
+        }
+
+        .row:nth-child(2) {
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+
+        .row:nth-child(3) {
+            box-sizing: border-box;
+
+            .row {
+                background: white;
+
+                .divider {
+                    width: 2px;
+                    background: #d2d2d2;
+                }
+                .col {
+                    padding: 1rem;
+                    flex: 1;
+                    margin-bottom: 7.5rem;
+
+                    p {
+                        font-weight: 500;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        text-align: center;
+                    }
+                    
+                    .row {
+                        padding: 1rem;
+                    }
+                }
+            }
+
         }
     }
 }
