@@ -8,24 +8,50 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Snackbar  prop',
-      defaultValue: 'default prop Snackbar ',
-      description: 'I am Snackbar ing default description for component',
+      prop: 'children',
+      type: 'Any',
+      defaultValue: 'null',
+      description: 'All children components to be rendered inside the Snackbar',
     },
     {
-      prop: 'Snackbar  some prop',
-      defaultValue: 'some default prop Snackbar ',
-      description: 'I am some Snackbar ing default description for component',
+      prop: 'timeout',
+      type: 'Number',
+      defaultValue: '2000',
+      description: 'Timeout to auto hide the snackbar',
+    },
+    {
+      prop: 'autoClose',
+      type: 'Boolean',
+      defaultValue: 'true',
+      description: 'Prop to decide whether the snackbar should close automatically after the given timeout or not',
+    },
+    {
+      prop: 'onClose',
+      type: 'Function',
+      defaultValue: 'null',
+      description: 'The callback function to be called when the snackbar closes',
+    },
+    {
+      prop: 'position',
+      type: 'String',
+      defaultValue: 'bottom',
+      description: 'he position at which the snackbar should be show. The possible values are top, bottom',
+    },
+    {
+      prop: 'additionalClasses',
+      type: 'String',
+      defaultValue: '',
+      description: 'Prop to send in additional classNames for styling the component',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Snackbar ing description',
+      name: 'snackbar',
+      description: 'Class used for the snackbar element.',
     },
     {
-      name: 'default some theme',
-      description: 'Snackbar ing some description',
+      name: 'snackbarWrapper',
+      description: 'Class used for snackbar wrapper element',
     },
   ],
   basicComponent: `

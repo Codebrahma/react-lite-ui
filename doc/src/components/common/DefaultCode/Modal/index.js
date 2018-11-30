@@ -8,24 +8,68 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Modal  prop',
-      defaultValue: 'default prop Modal ',
-      description: 'I am Modal ing default description for component',
+      prop: 'children',
+      type: 'Any',
+      defaultValue: 'null',
+      description: 'All children components to be rendered inside the modal. Note: children is given preference over title, body and footer props',
     },
     {
-      prop: 'Modal  some prop',
-      defaultValue: 'some default prop Modal ',
-      description: 'I am some Modal ing default description for component',
+      prop: 'title',
+      type: 'String',
+      defaultValue: '',
+      description: 'Title for modal. ( Displayed only when no children are passed.)',
+    },
+    {
+      prop: 'body',
+      type: 'Any',
+      defaultValue: 'null',
+      description: 'Modal Body / Content section. ( Displayed only when no children are passed. )',
+    },
+    {
+      prop: 'footer',
+      type: 'Any',
+      defaultValue: 'null',
+      description: 'Footer content for modal. ( Displayed only when no children are passed. )',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the Component',
+    },
+    {
+      prop: 'open',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Toggle modal show / hide. ( Required )',
+    },
+    {
+      prop: 'closeOnBackdropClick',
+      type: 'Boolean',
+      defaultValue: 'true',
+      description: 'Set wether to allow modal to close on clicking modal backdrop.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Modal ing description',
+      name: 'modal-backdrop',
+      description: 'Class used for the modal backdrop element.',
     },
     {
-      name: 'default some theme',
-      description: 'Modal ing some description',
+      name: 'modal',
+      description: 'Class used for the modal element.',
+    },
+    {
+      name: 'modal-title',
+      description: 'Class used for the default modal title element when title prop is passed.',
+    },
+    {
+      name: 'modal-body',
+      description: 'Class used for the default modal content element when body prop is passed',
+    },
+    {
+      name: 'modal-footer',
+      description: 'Class used for the default modal footer element when footer prop is passed.',
     },
   ],
   basicComponent: `

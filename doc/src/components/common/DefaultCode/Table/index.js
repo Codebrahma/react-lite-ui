@@ -8,24 +8,64 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Table  prop',
-      defaultValue: 'default prop Table ',
-      description: 'I am Table ing default description for component',
+      prop: 'columns',
+      type: 'Array',
+      defaultValue: '',
+      description: 'Array of data to be render as table column headers (Required)',
     },
     {
-      prop: 'Table  some prop',
-      defaultValue: 'some default prop Table ',
-      description: 'I am some Table ing default description for component',
+      prop: 'data',
+      type: 'Array',
+      defaultValue: '',
+      description: 'Array of data to be rendered as table body cells (Required).',
+    },
+    {
+      prop: 'sort',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Prop to be sent, If sorting functionality is required.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Table ing description',
+      name: 'tableWrapper',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'Table ing some description',
+      name: 'table',
+      description: '	Class used for the div wrapping all the rows and columns element.',
+    },
+    {
+      name: 'tableHeader',
+      description: 'Class used for the table header element.',
+    },
+    {
+      name: 'tableHeaderCell',
+      description: 'Class used for the cells in table header element.',
+    },
+    {
+      name: 'tableHeadCellContent',
+      description: 'Class used for the content in table header cells.',
+    },
+    {
+      name: 'tableBodyCellContent',
+      description: 'Class used for the content in table body cells.',
+    },
+    {
+      name: 'tableBody',
+      description: 'Class used for the table body element.',
+    },
+    {
+      name: 'tableBodyRow',
+      description: 'Class used for the rows in table body element.',
+    },
+    {
+      name: 'tableBodyCell',
+      description: 'Class used for the cells in table body element.',
+    },
+    {
+      name: 'sortArrow',
+      description: 'Class used for the sorting arrows in table header cells.',
     },
   ],
   basicComponent: `

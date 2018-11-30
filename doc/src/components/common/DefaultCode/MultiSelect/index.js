@@ -8,24 +8,52 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'MultiSelect  prop',
-      defaultValue: 'default prop MultiSelect ',
-      description: 'I am MultiSelect ing default description for component',
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Additional class(es) for custom styling. These classes will be added along with library specific styles',
     },
     {
-      prop: 'MultiSelect  some prop',
-      defaultValue: 'some default prop MultiSelect ',
-      description: 'I am some MultiSelect ing default description for component',
+      prop: 'options',
+      type: 'Array',
+      defaultValue: '',
+      description: 'Array of objects to display options (Required) .',
+    },
+    {
+      prop: 'onSelect',
+      type: 'Function',
+      defaultValue: '',
+      description: 'Callback when an option is selected.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'MultiSelect ing description',
+      name: 'select',
+      description: 'Class used for the wrapper component.',
     },
     {
-      name: 'default some theme',
-      description: 'MultiSelect ing some description',
+      name: 'menu',
+      description: 'Class used for the dropdown menu.',
+    },
+    {
+      name: 'option',
+      description: 'Class used for dropdown items.',
+    },
+    {
+      name: 'selectedInput',
+      description: 'Class used for wrapper container of selected items.',
+    },
+    {
+      name: 'selectInputWrapper',
+      description: 'Class used for the wrapper container multiselect component ( Note: Multiselect dropdown menu is not wrapped by this wrapper element. ).',
+    },
+    {
+      name: 'selected',
+      description: 'Class for selected chip items.',
+    },
+    {
+      name: 'selected-option',
+      description: 'Class for selected options in the dropdown menu.',
     },
   ],
   basicComponent: `

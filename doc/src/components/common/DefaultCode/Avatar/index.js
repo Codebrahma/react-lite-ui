@@ -8,26 +8,50 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'avatar  prop',
+      prop: 'children',
       type: 'String',
-      defaultValue: 'default prop avatar ',
-      description: 'I am avatar ing default description for component',
+      defaultValue: 'null',
+      description: '	Children as a string to render an avatar with alphabet',
     },
     {
-      prop: 'avatar  some prop',
+      prop: 'alphabet',
       type: 'String',
-      defaultValue: 'some default prop avatar ',
-      description: 'I am some avatar ing default description for component',
+      defaultValue: '',
+      description: 'Prop to render avatar with alphabet',
+    },
+    {
+      prop: 'image',
+      type: 'String',
+      defaultValue: 'null',
+      description: '	Prop to render avatar with image',
+    },
+    {
+      prop: 'alt',
+      type: 'String',
+      defaultValue: '',
+      description: 'Alternate text for image',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the component',
+    },
+    {
+      prop: 'bgColor',
+      type: 'String',
+      defaultValue: 'darkGrey',
+      description: 'Set a class to apply background color to the component. Possible vales are darkBlue, lightBlue, green, orange, lightRed, white, grey and darkGrey',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'avatar ing description',
+      name: 'avatar',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'avatar ing some description',
+      name: 'avatarComtent',
+      description: 'Class used for the child element.',
     },
   ],
   basicComponent: `

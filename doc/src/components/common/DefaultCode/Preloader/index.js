@@ -8,24 +8,46 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Preloader  prop',
-      defaultValue: 'default prop Preloader ',
-      description: 'I am Preloader ing default description for component',
+      prop: 'loader',
+      type: 'String',
+      defaultValue: 'circlesLoader',
+      description: 'Defines the type 0f preloader to be rendered. Possible loaders are dotsLoader, fadeAwayLoader, linesLoader and colorCircleLoader',
     },
     {
-      prop: 'Preloader  some prop',
-      defaultValue: 'some default prop Preloader ',
-      description: 'I am some Preloader ing default description for component',
+      prop: 'color',
+      type: 'String',
+      defaultValue: 'default',
+      description: 'Represents the style to be applied for the button. Possible values are primary, secondary, success, danger, warning, info, light, and dark',
+    },
+    {
+      prop: 'size',
+      type: 'String',
+      defaultValue: 'medium',
+      description: 'Defines the size of the button. Possible values are small, medium, and large',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the Component',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Preloader ing description',
+      name: 'loaderWrapper',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'Preloader ing some description',
+      name: '${loader}',
+      description: 'Class used for the loaders (circlesLoader, dotsLoader, fadeAwayLoader, linesLoader, colorCircleLoader).',
+    },
+    {
+      name: '${color}',
+      description: 'Class used for styling (primary, secondary, success, danger, warning, info, light, dark) colored loaders',
+    },
+    {
+      name: '${size}',
+      description: 'Class used for styling (small, medium, large) sized loaders',
     },
   ],
   basicComponent: `

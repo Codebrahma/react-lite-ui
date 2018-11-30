@@ -8,26 +8,32 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'CheckboxGroup  prop',
-      type: 'String',
-      defaultValue: 'default prop CheckboxGroup ',
-      description: 'I am CheckboxGroup ing default description for component',
+      prop: 'options',
+      type: 'Array',
+      defaultValue: '',
+      description: 'Options to render checkboxes for. ( Required )',
     },
     {
-      prop: 'CheckboxGroup  some prop',
-      type: 'String',
-      defaultValue: 'some default prop CheckboxGroup ',
-      description: 'I am some CheckboxGroup ing default description for component',
+      prop: 'onClick',
+      type: 'Function',
+      defaultValue: '',
+      description: 'Callback function to be called when the checkbox is clicked, receives the label as argument',
+    },
+    {
+      prop: 'inline',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Prop to define the alignment of checkbox group',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'CheckboxGroup ing description',
+      name: 'checkbox-group',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'CheckboxGroup ing some description',
+      name: 'each-check',
+      description: 'Class used for the checkbox element.',
     },
   ],
   basicComponent: `

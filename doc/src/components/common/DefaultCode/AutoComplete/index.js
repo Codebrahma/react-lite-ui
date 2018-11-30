@@ -8,26 +8,68 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'AutoComplete  prop',
-      type: 'String',
-      defaultValue: 'default prop AutoComplete ',
-      description: 'I am AutoComplete ing default description for component',
+      prop: 'data',
+      type: 'Array',
+      defaultValue: '',
+      description: 'An array of options for autocompletion. ( Required )',
     },
     {
-      prop: 'AutoComplete  some prop',
+      prop: 'placeholder',
       type: 'String',
-      defaultValue: 'some default prop AutoComplete ',
-      description: 'I am some AutoComplete ing default description for component',
+      defaultValue: 'undefined',
+      description: 'Set a placeholder for the input component.',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the Component',
+    },
+    {
+      prop: 'onChange',
+      type: 'Function',
+      defaultValue: '',
+      description: 'An input change listener which returns the input value on any changes.',
+    },
+    {
+      prop: 'onKeyPress',
+      type: 'Function',
+      defaultValue: '',
+      description: 'A keypress listener on the input field.',
+    },
+    {
+      prop: 'labelKey',
+      type: 'String',
+      defaultValue: 'label',
+      description: 'A string representing the key for item\'s label.',
+    },
+    {
+      prop: 'valueKey',
+      type: 'String',
+      defaultValue: 'value',
+      description: 'A string representing the key for item\'s value.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'AutoComplete ing description',
+      name: 'autocomplete',
+      description: 'Class used for the autocomplete element.',
     },
     {
-      name: 'default some theme',
-      description: 'AutoComplete ing some description',
+      name: 'autocomplete-input',
+      description: 'Class used for the text input element.',
+    },
+    {
+      name: 'autocomplete-list',
+      description: '	Class used for the autocomplete list.',
+    },
+    {
+      name: 'autocomplete-list-item',
+      description: '	Class used for the autocomplete list options.',
+    },
+    {
+      name: 'border-animation',
+      description: 'Class used for animating of input component when focused.',
     },
   ],
   basicComponent: `

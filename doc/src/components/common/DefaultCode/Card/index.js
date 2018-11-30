@@ -8,26 +8,50 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Card  prop',
-      type: 'String',
-      defaultValue: 'default prop Card ',
-      description: 'I am Card ing default description for component',
+      prop: 'children',
+      type: 'Any',
+      defaultValue: '',
+      description: 'All children components to be rendered inside a cardview. ( Required )',
     },
     {
-      prop: 'Card  some prop',
+      prop: 'className',
       type: 'String',
-      defaultValue: 'some default prop Card ',
-      description: 'I am some Card ing default description for component',
+      defaultValue: '',
+      description: 'Additional class(es) for custom styling. These classes will be added along with library specific styles',
+    },
+    {
+      prop: 'wrapContent',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'If true sets the width of the parent card to width of its content else sets width to maximum available width inside its parent',
+    },
+    {
+      prop: 'elevation',
+      type: 'String',
+      defaultValue: 'low',
+      description: 'This set elevation/depth of shadow of the card. The possible values are low, medium, high',
+    },
+    {
+      prop: 'noPadding',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'If true card container will not give padding by default',
+    },
+    {
+      prop: 'header',
+      type: 'String / Component',
+      defaultValue: '',
+      description: 'If a string is supplied, it will set as title of card with library specific styling. If a React component is supplied that component will be renderd as a header',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Card ing description',
+      name: 'card',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'Card ing some description',
+      name: 'cardHeader',
+      description: 'Class used for header component if card renders header by itself',
     },
   ],
   basicComponent: `

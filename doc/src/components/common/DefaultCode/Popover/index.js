@@ -8,24 +8,90 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Popover  prop',
-      defaultValue: 'default prop Popover ',
-      description: 'I am Popover ing default description for component',
+      prop: 'children',
+      type: 'Any',
+      defaultValue: 'null',
+      description: 'children to be rendered with popover. ( Required )',
     },
     {
-      prop: 'Popover  some prop',
-      defaultValue: 'some default prop Popover ',
-      description: 'I am some Popover ing default description for component',
+      prop: 'title',
+      type: 'String',
+      defaultValue: '',
+      description: 'Prop to set the title of popover.',
+    },
+    {
+      prop: 'content',
+      type: 'Any',
+      defaultValue: '',
+      description: 'Prop to render the content of popover. (Required)',
+    },
+    {
+      prop: 'actionContent',
+      type: 'Any',
+      defaultValue: 'confirm',
+      description: 'Prop to render the content of action in popover.',
+    },
+    {
+      prop: 'position',
+      type: 'String',
+      defaultValue: 'bottomLeft',
+      description: 'Prop to set the position of popover. Possible positions are topLeft, top, topRight, bottomLeft, bottom, bottomRight, leftTop, left, leftBottom, rightTop, right and rightBottom',
+    },
+    {
+      prop: 'onConfirm',
+      type: 'Funtion',
+      defaultValue: '',
+      description: 'Callback to be called when clicked on action button.',
+    },
+    {
+      prop: 'noAction',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Prop to be sent when no action is required from popover.',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the component.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Popover ing description',
+      name: 'popover',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'Popover ing some description',
+      name: 'popoverWrapper',
+      description: 'Class used for the popover element.',
+    },
+    {
+      name: '${position}Popover',
+      description: 'Class used for the positioning the popover element.',
+    },
+    {
+      name: 'contentWrapper',
+      description: 'Class used for the children.',
+    },
+    {
+      name: 'title',
+      description: 'Class used for the title of popover.',
+    },
+    {
+      name: 'popoverContent',
+      description: 'Class used for the content of popover.',
+    },
+    {
+      name: 'popoverArrow',
+      description: 'Class used for the arrow of popover.',
+    },
+    {
+      name: 'actionWrapper',
+      description: 'Class used for the root of action element.',
+    },
+    {
+      name: 'actionContent',
+      description: 'Class used for the content of action element.',
     },
   ],
   basicComponent: `
