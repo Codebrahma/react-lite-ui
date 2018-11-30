@@ -23,7 +23,7 @@ class WithComponentBar extends React.Component {
               className={`each-component-item ${activeComponent === component.name ? 'active' : ''}`}
               key={component.name}
               ref={(activeComponent === component.name) && 'scrollInto'}
-              onClick = {() => onClickComponent(component.name, component.defaultCode)}
+              onClick = {() => onClickComponent(component.name, component.componentData)}
             >
               {component.name}
             </div>

@@ -3,14 +3,14 @@ import { navigate } from 'gatsby-link';
 import { componentList } from '../components/common/componentList';
 import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
 import Documentation from '../components/WithComponentsBar/Documentation';
-import { AutoCompleteDefaultCode } from '../components/common/DefaultCode';
+import { AutoCompleteComponentData } from '../components/common/componentData';
 
 class DocumentaionPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeComponent: 'AutoComplete',
-      defaultCode: AutoCompleteDefaultCode,
+      componentData: AutoCompleteComponentData,
     }
   }
   
@@ -21,7 +21,7 @@ class DocumentaionPage extends React.Component {
     if(queryComponent.length) {
       this.setState({
         activeComponent: queryComponent[0].name,
-        defaultCode: queryComponent[0].defaultCode,
+        componentData: queryComponent[0].componentData,
       });
     }
   }
@@ -32,23 +32,23 @@ class DocumentaionPage extends React.Component {
     }
   }
 
-  onClickComponent = (name, defaultCode) => {
+  onClickComponent = (name, componentData) => {
     navigate(`/documentation?component=${name.toLowerCase()}`);
     console.log(this.props.location, 'location')
     this.setState({
       activeComponent: name,
-      defaultCode,
+      componentData,
     })
   }
 
   render() {
-    const { activeComponent, defaultCode } = this.state;
+    const { activeComponent, componentData } = this.state;
     return (
       <WithComponentBar
         onClickComponent={this.onClickComponent}
         activeComponent={activeComponent}
       >
-        <Documentation defaultCode={defaultCode} />
+        <Documentation componentData={componentData} />
       </WithComponentBar>
     )
   }
