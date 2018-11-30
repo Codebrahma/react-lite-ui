@@ -13,6 +13,7 @@ class ContributionSection extends Component {
       <div className="contrib-section">
         <div className="overlay" />
         <div className="row">
+          <div className="col">
           <Card
             theme={theme}
             header="SOMETHING TO BUILD?"
@@ -25,6 +26,8 @@ class ContributionSection extends Component {
               <img src={engineerImage} />
             </div>
           </Card>
+          </div>
+          <div className="col">
           <Card
             theme={theme}
             header="FOR DEVELOPERS"
@@ -37,6 +40,8 @@ class ContributionSection extends Component {
               <img src={developerImage} />
             </div>
           </Card>
+          </div>
+          <div className="col">
           <Card
             theme={theme}
             header="TO CONTRIBUTE"
@@ -49,6 +54,7 @@ class ContributionSection extends Component {
               <img src={contributeImage} />
             </div>
           </Card>
+          </div>
         </div>
         <FooterSection />
       </div>

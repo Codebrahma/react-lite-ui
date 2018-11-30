@@ -64,7 +64,7 @@
         position: relative;
         
         .overlay {
-            height: 22rem;
+            height: 24rem;
             margin-top: -8rem;
             width: 100%;
             position: absolute;
@@ -78,6 +78,16 @@
         .row:nth-child(2) {
             padding-left: 5rem;
             padding-right: 5rem;
+
+            .col {
+                flex: 1;
+                padding: 0;
+                margin: 1rem 3rem;
+
+                &:hover>div {
+                    margin-top: -8rem;
+                }
+            }
         }
 
         .row:nth-child(3) {
