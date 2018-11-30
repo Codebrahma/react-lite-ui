@@ -37,8 +37,6 @@
   align-items: center;
   height: 33px;
   font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
   color: var(--white);
   margin-right: 15px;
   white-space: nowrap;
@@ -100,8 +98,6 @@
   align-items: center;
   color: var(--white);
   font-size: 20px;
-  font-weight: bold;
-  text-transform: capitalize;
   & > * {
     cursor: pointer;
     padding: 6px 10px;
