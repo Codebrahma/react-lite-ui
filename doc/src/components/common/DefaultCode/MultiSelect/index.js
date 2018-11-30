@@ -1,10 +1,26 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <MultiSelect>C</MultiSelect>;
-    }
-  }
+  htmlStructure: `
+    <div class="select">
+      <div id="multiselect-input" class="selectInputWrapper border-animation">
+        <div class="selected-options selectedInput">
+          <div class="selected" aria-label="Lorem">
+            <div>
+              <span>Lorem</span>
+              <div class="close" />
+            </div>
+          </div>
+        </div>
+        <div class="arrow up"/>
+      </div>
+      <div id="dropdown-options" class="menu show">
+        <span class="option selected-option">
+          <span>Lorem</span>
+        </span>
+        <span class="option">
+          <span>Ipsum</span>
+        </span>
+      </div>
+    </div>
   `,
   propsData: [
     {

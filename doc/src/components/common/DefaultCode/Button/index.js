@@ -1,10 +1,10 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Button>C</Button>;
-    }
-  }
+  htmlStructure: `
+    <div>
+      <button class="button primary icon-left">
+       primary
+      </button>
+    </div>
   `,
   propsData: [
     {

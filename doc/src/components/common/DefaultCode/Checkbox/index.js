@@ -1,10 +1,12 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Checkbox>C</Checkbox>;
-    }
-  }
+  htmlStructure: `
+    <span>
+      <span class="checkbox">
+        <input type="checkbox" />
+        <span class="check-item" />
+      </span>
+      <span class="label">checkbox label</span>
+    </span>
   `,
   propsData: [
     {

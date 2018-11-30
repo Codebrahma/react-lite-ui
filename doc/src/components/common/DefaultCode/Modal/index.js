@@ -1,10 +1,25 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Modal>C</Modal>;
-    }
-  }
+  htmlStructure: `
+    <div>
+      <button class="button primary">
+        Open Modal
+      </button>
+    </div>
+    <div class="modal-backdrop d-block">
+      <div id="modal" class="modal d-block">
+        <div class="modal-title" aria-label="card-header">
+          Optional Header content renders the content from ttile Prop
+        </div>
+        <div class="modal-body" aria-label="card-body">
+          Renders the content from body Porp or children of component
+          Lorem ipsum is simply some dummy content generator
+        </div>
+        <div class="modal-footer" aria-label="card-footer">
+          Optional footer content from footer Prop
+        </div>
+        <i class="icon-cross" />
+      </div>
+    <div>
   `,
   propsData: [
     {

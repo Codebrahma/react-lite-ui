@@ -1,10 +1,18 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Drawer>C</Drawer>;
-    }
-  }
+  htmlStructure: `
+    <div>
+      <button class="button primary">
+        Open Drawer
+      </button>
+    </div>
+    <div class="drawer-container drawer-close">
+      <div class="drawer left left-close">
+        <div>
+          <span>Drawer Item</span>
+          <span>Drawer Item</span>
+        </div>
+      </div>
+    </div>
   `,
   propsData: [
     {

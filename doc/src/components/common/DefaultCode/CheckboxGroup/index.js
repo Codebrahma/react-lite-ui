@@ -1,10 +1,24 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <CheckboxGroup>C</CheckboxGroup>;
-    }
-  }
+  htmlStructure: `
+    <div class="checkbox-group">
+      <div class="each-check">
+        <span>
+          <span class="checkbox checked">
+            <input type="checkbox" />
+            <span class="check-item" />
+          </span>
+          <span class="label">checkbox label</span>
+        </span>
+        <span>
+          <span class="checkbox">
+            <input type="checkbox" />
+            <span class="check-item" />
+          </span>
+          <span class="label">checkbox label</span>
+        </span>
+      </div>
+      <div class="clearfix" />
+    </div>
   `,
   propsData: [
     {

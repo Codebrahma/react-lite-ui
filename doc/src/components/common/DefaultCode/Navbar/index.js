@@ -1,10 +1,27 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Navbar>C</Navbar>;
-    }
-  }
+  htmlStructure: `
+    <div class="navbarWrapper staticPosition defaultColor">
+      <div class="innerWrapper">
+        <!-- Optional left Icon -->
+        <div class="leftIcon">
+          <img src="/link is passed as prop" alt="navbar-left-logo" />
+        </div>
+        <div class="navbarContent">
+          <div class="leftContent">
+            <span class="title">Title</span>
+          </div>
+          <div class="rightContent">
+            <!-- Children passed to component -->
+            <span>Nav Item 01</span>
+            <span>Nav Item 02</span>
+          </div>
+        </div>
+        <!-- Optional right Icon -->
+        <div class="rightIcon">
+          <img src="/link is passed as prop" alt="navbar-left-logo" />
+        </div>
+      </div>
+    </div>
   `,
   propsData: [
     {
