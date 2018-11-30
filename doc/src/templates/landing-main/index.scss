@@ -1,5 +1,5 @@
 .landing-main {
-    padding-top: 5rem;
+    padding-top: 2rem;
     font-family: 'Roboto';
     .row {
         padding: 1.5em;
@@ -51,12 +51,29 @@
 
         &+.row {
             p {
-                margin: 0;
+                margin-top: 0;
                 font-family: 'Roboto';
                 font-size: 1.5em;
                 font-weight: bold;
                 letter-spacing: 0.1rem;
             }
+        }
+    }
+    .contrib-section {
+        box-sizing: border-box;
+        background-image: linear-gradient(110deg, #0d37c9, rgba(36, 181, 205, 0.94) 100%, #34427a);
+        margin-top: 3rem;
+        
+        .overlay {
+            height: 5rem;
+            background-color: white;
+            transform:skew(0deg,5deg);
+            -ms-transform:skew(0deg,10deg);
+            -webkit-transform:skew(0deg,5deg); 
+        }
+
+        .card-content {
+
         }
     }
 }
