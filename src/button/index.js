@@ -51,7 +51,7 @@ class Button extends Component {
     const rootProps = {
       ...others,
       href: !href ? undefined : href,
-      className: classnames({ [theme.iconButtonWrapper]: iconButton }),
+      className: classnames(theme.buttonWrapper, { [theme.iconButtonWrapper]: iconButton }),
       onMouseUp: this.handleMouseUp,
       onMouseLeave: this.handleMouseLeave,
     };

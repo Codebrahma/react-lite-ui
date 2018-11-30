@@ -30,6 +30,10 @@
     }
 }
 
+:local(.buttonWrapper) {
+    text-decoration: none;
+}
+
 :local(.iconButtonWrapper) {
   width: 58px !important;
   height: 58px !important;
