@@ -1,10 +1,10 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Avatar>C</Avatar>;
-    }
-  }
+  htmlStructure: `
+    <div id="avatar" class="avatar darkGrey">
+      <div class="avatarContent">
+        C
+      </div>
+    </div>
   `,
   propsData: [
     {

@@ -1,10 +1,13 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Badge>C</Badge>;
-    }
-  }
+  htmlStructure:`
+    <div class="badge-container badge-container-small">
+      <button class="button primary icon-left">
+        default
+      </button>
+      <span id="badge_count" class="badge small">
+        0
+      </span>
+    </div>
   `,
   propsData: [
     {
@@ -22,7 +25,7 @@ export const defaultCode = {
     {
       prop: 'size',
       type: 'String',
-      defaultValue: '',
+      defaultValue: 'small',
       description: 'Change the size of the badge component. Possible values are - \'small\', \'medium\' and \'large\'',
     },
     {

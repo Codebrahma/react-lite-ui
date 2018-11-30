@@ -1,10 +1,12 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Chip>C</Chip>;
-    }
-  }
+  htmlStructure: `
+    <div class="chip small primary">
+      <!-- Avatar element, if passed in props -->
+      <span class="label">label</span>
+      <button class="deleteIcon smallDelete primary">
+        <i class="icon-cross" />
+      </button>
+    </div>
   `,
   propsData: [
     {

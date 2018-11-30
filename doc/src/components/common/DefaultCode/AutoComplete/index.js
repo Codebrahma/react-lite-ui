@@ -1,10 +1,16 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <AutoComplete />;
-    }
-  }
+  htmlStructure: `
+    <div class="autocomplete">
+      <input class="autocomplete-input" type="text">
+      <div id="autocomplete-list" class="autocomplete-list">
+          <div aria-label="inactive" class="autocomplete-list-item">
+            lorem
+          </div>
+          <div aria-label="inactive" class="autocomplete-list-item">
+            ipsum
+          </div>
+      </div>
+    </div>
   `,
   propsData: [
     {

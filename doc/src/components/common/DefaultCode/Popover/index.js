@@ -1,10 +1,25 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Popover>C</Popover>;
-    }
-  }
+  htmlStructure: `
+    <div class="popover">
+      <div class="contentWrapper">
+        <div>
+          <button class="button warning">
+            Delete
+          </button>
+        </div>
+      </div>
+      <!-- Conditionally rendered -->
+      <div class="popoverWrapper rightPopover">
+        <span class="title">optional popover title</span>
+        <div class="popoverContent">
+          Are you sure to delete?
+        </div>
+        <span class="actionWrapper">
+          <span class="actionContent">Confirm</span>
+        </span>
+        <span class="popoverArrow"/>
+      </div>
+    </div>
   `,
   propsData: [
     {

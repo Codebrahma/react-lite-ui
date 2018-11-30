@@ -1,10 +1,19 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Carousel>C</Carousel>;
-    }
-  }
+  htmlStructure: `
+    <div class="carousel-container">
+      <i class="left-control icon-left" />
+      <div class="carousel-item active">
+        <img src="/your image source" alt="carousel-item" />
+      </div>
+      <div class="carousel-item">
+        <img src="/your image source" alt="carousel-item" />
+      </div>
+      <div id="indicator">
+        <span class="active" />
+        <span class="" />
+      </div>
+      <i class="right-control icon-right" />
+    </div>
   `,
   propsData: [
     {

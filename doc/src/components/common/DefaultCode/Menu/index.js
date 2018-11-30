@@ -1,10 +1,21 @@
 export const defaultCode = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Menu>C</Menu>;
-    }
-  }
+  htmlStructure: `
+    <div class="wrapper" data-key="main-menu">
+      <div class="menu">
+        <div class="wrapper">
+          <span class="menuitem">Option-1</span>
+          <div class="submenu">
+            <span class="menuitem">
+              <span>Submenu</span>
+              <div class="arrow" />
+            </span>
+          </div>
+          <span>Item-1</span>
+          <span>Item-2</span>
+          <span>Item-3</span>
+        </div>
+      </div>
+    </div>
   `,
   propsData: [
     {
