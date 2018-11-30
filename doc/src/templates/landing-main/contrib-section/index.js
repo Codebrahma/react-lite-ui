@@ -18,7 +18,7 @@ class ContributionSection extends Component {
             theme={theme}
             header="SOMETHING TO BUILD?"
             footer={
-              <Button flat theme={theme}>Contact Us</Button>
+              <Button href="https://codebrahma.com/contact/" flat theme={theme}>Contact Us</Button>
             }
             elevation="medium"
           >
@@ -32,7 +32,7 @@ class ContributionSection extends Component {
             theme={theme}
             header="FOR DEVELOPERS"
             footer={
-              <Button type="primary" bordered>Apply for job</Button>
+              <Button href="https://codebrahma.com/careers/" type="primary" bordered>Apply for job</Button>
             }
             elevation="medium"
           >
@@ -46,7 +46,7 @@ class ContributionSection extends Component {
             theme={theme}
             header="TO CONTRIBUTE"
             footer={
-              <Button type="primary" bordered>Create a PR</Button>
+              <Button href="https://github.com/Codebrahma/react-lite-ui" type="primary" bordered>Create a PR</Button>
             }
             elevation="medium"
           >
