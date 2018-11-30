@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import Navbar from '../../../src/navbar';
 import liteLogo from '../images/match.svg';
-
-import Header from './header'
+import './styles.scss';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -29,7 +28,11 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Navbar className="navbar" position="fixed" flat leftIcon={liteLogo} />
+        <Navbar className="navbar" position="fixed" flat title="React Lite UI" leftIcon={liteLogo}>
+          <Link to="/documentation" >Documentation</Link>
+          <Link to="/usage" >Usage</Link>
+          <Link to="/playground" >Playground</Link>
+        </Navbar>
         <div id="layout">
           {children}
         </div>
@@ -42,4 +45,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Layout;
