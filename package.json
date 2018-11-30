@@ -10,7 +10,7 @@
     "lint": "eslint ./ --ext .jsx --ext .js",
     "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "postinstall": "gitmoji -i"
+    "postinstall": "gitmoji -i && node .githooks"
   },
   "nyc": {
     "check-coverage": true,
@@ -55,6 +55,8 @@
     "gitmoji-cli": "^1.9.2",
     "jsdom": "12.0.0",
     "jsdom-global": "3.0.2",
+    "markdown-magic": "^0.1.25",
+    "markdown-magic-branch-badge": "0.0.2",
     "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.8.3",

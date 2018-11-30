@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+
+if [ "$3" -eq 0 ]
+then 
+  exit
+fi
+
+BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
+NUM_CHECKOUTS=$(git reflog --date=local | grep -o ${BRANCH_NAME} | wc -l)
+
+if [ "$NUM_CHECKOUTS" -eq 1 ]
+then
+    node ./scripts/update-readme.js
+fi
