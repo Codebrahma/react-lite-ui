@@ -8,24 +8,38 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Menu  prop',
-      defaultValue: 'default prop Menu ',
-      description: 'I am Menu ing default description for component',
+      prop: 'children',
+      type: 'Any',
+      defaultValue: '',
+      description: 'All children components to be rendered inside a cardview',
     },
     {
-      prop: 'Menu  some prop',
-      defaultValue: 'some default prop Menu ',
-      description: 'I am some Menu ing default description for component',
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Additional class(es) for custom styling. These classes will be added along with library specific styles',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Menu ing description',
+      name: 'menu',
+      description: 'Class used for the menu component.',
     },
     {
-      name: 'default some theme',
-      description: 'Menu ing some description',
+      name: 'wrapper',
+      description: 'Class used for the parent wrapper of menu component. Applies flex property to the wrapper',
+    },
+    {
+      name: 'arrow',
+      description: 'Class used for arrow on dropdown.',
+    },
+    {
+      name: 'submenu',
+      description: 'Class used for nested menus.',
+    },
+    {
+      name: 'menuitem',
+      description: 'Class used for nested menu items.',
     },
   ],
   basicComponent: `

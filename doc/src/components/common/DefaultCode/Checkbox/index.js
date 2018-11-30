@@ -8,26 +8,42 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Checkbox  prop',
-      type: 'String',
-      defaultValue: 'default prop Checkbox ',
-      description: 'I am Checkbox ing default description for component',
+      prop: 'checked',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Prop that sends in the state of toggle',
     },
     {
-      prop: 'Checkbox  some prop',
+      prop: 'onClick',
+      type: 'Function',
+      defaultValue: '',
+      description: 'Callback to be called when checked or unchecked',
+    },
+    {
+      prop: 'additionalClass',
       type: 'String',
-      defaultValue: 'some default prop Checkbox ',
-      description: 'I am some Checkbox ing default description for component',
+      defaultValue: '',
+      description: 'Prop to send additional classNames for styling',
+    },
+    {
+      prop: 'label',
+      type: 'String',
+      defaultValue: 'null',
+      description: 'Prop to attach text next to the checkbox element.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Checkbox ing description',
+      name: 'checkbox',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'Checkbox ing some description',
+      name: 'checked',
+      description: 'Class used for the element when checked.',
+    },
+    {
+      name: 'label',
+      description: 'Class used for the label text.',
     },
   ],
   basicComponent: `

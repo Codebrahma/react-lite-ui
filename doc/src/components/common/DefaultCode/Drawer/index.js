@@ -8,24 +8,64 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Drawer  prop',
-      defaultValue: 'default prop Drawer ',
-      description: 'I am Drawer ing default description for component',
+      prop: 'children',
+      type: 'Any',
+      defaultValue: 'null',
+      description: 'All children components to be rendered inside the drawer.',
     },
     {
-      prop: 'Drawer  some prop',
-      defaultValue: 'some default prop Drawer ',
-      description: 'I am some Drawer ing default description for component',
+      prop: 'position',
+      type: 'String',
+      defaultValue: 'left',
+      description: '	Set a position for drawer. Possible values are: top, right, bottom or left',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the Component',
+    },
+    {
+      prop: 'open',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Toggle drawer show / hide',
+    },
+    {
+      prop: 'onClose',
+      type: 'Function',
+      defaultValue: '',
+      description: 'Callback for close event in drawer.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Drawer ing description',
+      name: 'drawer-container',
+      description: 'Class used for the drawer container / backdrop element.',
     },
     {
-      name: 'default some theme',
-      description: 'Drawer ing some description',
+      name: 'drawer-open',
+      description: 'Class used for the drawer container / backdrop element in open state.',
+    },
+    {
+      name: 'drawer-close',
+      description: 'Class used for the drawer container / backdrop element in closed state.',
+    },
+    {
+      name: 'drawer',
+      description: 'Class used for the drawer element.',
+    },
+    {
+      name: '${position}',
+      description: 'Class used for the drawer element in (top, bottom, left, right) position.',
+    },
+    {
+      name: '${position}-open',
+      description: 'Class used for the drawer element in provided position ( top, right, bottom or left ) for open states.',
+    },
+    {
+      name: '${position}-close',
+      description: 'Class used for the drawer element in provided position ( top, right, bottom or left ) for closed states.',
     },
   ],
   basicComponent: `

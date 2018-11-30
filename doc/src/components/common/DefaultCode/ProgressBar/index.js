@@ -8,24 +8,36 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'ProgressBar  prop',
-      defaultValue: 'default prop ProgressBar ',
-      description: 'I am ProgressBar ing default description for component',
+      prop: 'progress',
+      type: 'Number',
+      defaultValue: '0',
+      description: 'A number ( range 0 - 100 ) indicating the progress.',
     },
     {
-      prop: 'ProgressBar  some prop',
-      defaultValue: 'some default prop ProgressBar ',
-      description: 'I am some ProgressBar ing default description for component',
+      prop: 'type',
+      type: 'String',
+      defaultValue: 'primary',
+      description: 'Color / theme preset for the progress bar. Valid options are \'primary\', \'secondary\' and \'success\'',
+    },
+    {
+      prop: 'showProgressText',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Set a boolean to indicate wether progress bar should display the progress percentage.',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'ProgressBar ing description',
+      name: 'bar',
+      description: 'Class used for the wrapper / main bar.',
     },
     {
-      name: 'default some theme',
-      description: 'ProgressBar ing some description',
+      name: 'progress',
+      description: 'Class used for the progress bar.',
+    },
+    {
+      name: '${type}',
+      description: 'Class used for applying different color (primary, secondary, success) presets.',
     },
   ],
   basicComponent: `

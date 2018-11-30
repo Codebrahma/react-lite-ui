@@ -8,24 +8,40 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'RadioButtonGroup  prop',
-      defaultValue: 'default prop RadioButtonGroup ',
-      description: 'I am RadioButtonGroup ing default description for component',
+      prop: 'options',
+      type: 'Array',
+      defaultValue: '',
+      description: 'Options to render radio buttons for. ( Required )',
     },
     {
-      prop: 'RadioButtonGroup  some prop',
-      defaultValue: 'some default prop RadioButtonGroup ',
-      description: 'I am some RadioButtonGroup ing default description for component',
+      prop: 'onClick',
+      type: 'Function',
+      defaultValue: '',
+      description: 'Callback function to be called when the radio button is clicked',
+    },
+    {
+      prop: 'inline',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Prop to define the alignment of radio button group',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'RadioButtonGroup ing description',
+      name: 'radio-group',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'RadioButtonGroup ing some description',
+      name: 'customized-radio',
+      description: 'Class used for the radio button element.',
+    },
+    {
+      name: 'each-radio',
+      description: 'Class used for the radio button wrapper element.',
+    },
+    {
+      name: 'each-label',
+      description: 'Class used for the label element.',
     },
   ],
   basicComponent: `

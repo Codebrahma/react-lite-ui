@@ -8,24 +8,26 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'TextInput  prop',
-      defaultValue: 'default prop TextInput ',
-      description: 'I am TextInput ing default description for component',
+      prop: 'width',
+      type: 'String',
+      defaultValue: 'null',
+      description: 'Cutsom width to be set to the input component',
     },
     {
-      prop: 'TextInput  some prop',
-      defaultValue: 'some default prop TextInput ',
-      description: 'I am some TextInput ing default description for component',
+      prop: 'additionalClass',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the Component',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'TextInput ing description',
+      name: 'inputWrapper',
+      description: 'Class used for the root wrapper element.',
     },
     {
-      name: 'default some theme',
-      description: 'TextInput ing some description',
+      name: 'inputElement',
+      description: 'Class used for the input element.',
     },
   ],
   basicComponent: `

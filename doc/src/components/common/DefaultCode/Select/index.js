@@ -8,24 +8,56 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Select  prop',
-      defaultValue: 'default prop Select ',
-      description: 'I am Select ing default description for component',
+      prop: 'data',
+      type: 'Array',
+      defaultValue: '',
+      description: 'An array of options for options. ( Required )',
     },
     {
-      prop: 'Select  some prop',
-      defaultValue: 'some default prop Select ',
-      description: 'I am some Select ing default description for component',
+      prop: 'onSelect',
+      type: 'Function',
+      defaultValue: '',
+      description: 'A change listener which returns the selected value on any changes. ( Optional )',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the Component',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Select ing description',
+      name: 'select',
+      description: 'Class used for wrapper component.',
     },
     {
-      name: 'default some theme',
-      description: 'Select ing some description',
+      name: 'menu',
+      description: 'Class used for dropdown menu.',
+    },
+    {
+      name: 'option',
+      description: 'Class used for dropdown menu items.',
+    },
+    {
+      name: 'option-hover',
+      description: 'Class used for item on which mouse is hovering.',
+    },
+    {
+      name: 'selectInput',
+      description: '	Class used for input box',
+    },
+    {
+      name: 'selected',
+      description: 'Class used for highlighting selected option.',
+    },
+    {
+      name: 'arrow',
+      description: 'Class used for arrow icon.',
+    },
+    {
+      name: 'up, down',
+      description: 'Class used for arrow icon states.',
     },
   ],
   basicComponent: `

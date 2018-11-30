@@ -8,26 +8,50 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Tooltip  prop',
+      prop: 'children',
       type: 'String',
-      defaultValue: 'default prop Tooltip ',
-      description: 'I am Tooltip ing default description for component',
+      defaultValue: 'null',
+      description: 'Children to be rendred as base content',
     },
     {
-      prop: 'Tooltip  some prop',
+      prop: 'tooltipText',
       type: 'String',
-      defaultValue: 'some default prop Tooltip ',
-      description: 'I am some Tooltip ing default description for component',
+      defaultValue: '',
+      description: 'Prop to render in text in tooltip.( Required )',
+    },
+    {
+      prop: 'top',
+      type: 'Boolean',
+      defaultValue: 'undefined',
+      description: 'Prop defining the top positioned tooltip',
+    },
+    {
+      prop: 'className',
+      type: 'String',
+      defaultValue: '',
+      description: 'Set a class to style the component',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Tooltip ing description',
+      name: 'tooltip',
+      description: 'Class used for the root wrapper element.',
     },
     {
-      name: 'default some theme',
-      description: 'Tooltip ing some description',
+      name: 'baseContent',
+      description: 'Class used for the base content.',
+    },
+    {
+      name: 'tip',
+      description: 'Class used for the tooltip wrapper.',
+    },
+    {
+      name: 'tooltipContent',
+      description: 'Class used for the tooltip content.',
+    },
+    {
+      name: 'top',
+      description: 'Class used for the top positioned tooltip.',
     },
   ],
   basicComponent: `

@@ -8,24 +8,38 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Toggle  prop',
-      defaultValue: 'default prop Toggle ',
-      description: 'I am Toggle ing default description for component',
+      prop: 'toggled',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: '	Prop that sends in the state of toggle',
     },
     {
-      prop: 'Toggle  some prop',
-      defaultValue: 'some default prop Toggle ',
-      description: 'I am some Toggle ing default description for component',
+      prop: 'onClick',
+      type: 'Function',
+      defaultValue: '',
+      description: 'Callback to be called when toggled or untoggled',
+    },
+    {
+      prop: 'label',
+      type: 'String',
+      defaultValue: 'toggle',
+      description: 'Prop to send when a callback value is required onClick',
+    },
+    {
+      prop: 'additionalClass',
+      type: 'String',
+      defaultValue: '',
+      description: 'Prop to send additional classNames for styling',
     },
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Toggle ing description',
+      name: 'toggle',
+      description: 'Class used for the root element.',
     },
     {
-      name: 'default some theme',
-      description: 'Toggle ing some description',
+      name: 'toggled',
+      description: 'Class used for the element when toggled.',
     },
   ],
   basicComponent: `

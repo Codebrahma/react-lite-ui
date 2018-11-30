@@ -8,26 +8,36 @@ export const defaultCode = {
   `,
   propsData: [
     {
-      prop: 'Carousel  prop',
-      type: 'String',
-      defaultValue: 'default prop Carousel ',
-      description: 'I am Carousel ing default description for component',
+      prop: 'data',
+      type: 'Array',
+      defaultValue: '',
+      description: '	An array of image urls or custom children. ( Required )',
     },
     {
-      prop: 'Carousel  some prop',
-      type: 'String',
-      defaultValue: 'some default prop Carousel ',
-      description: 'I am some Carousel ing default description for component',
+      prop: 'interval',
+      type: 'Number',
+      defaultValue: '4000',
+      description: 'Set an interval ( in ms ) for switching between carousel items.',
     },
+    {
+      prop: 'controls',
+      type: 'Boolean',
+      defaultValue: 'true',
+      description: 'Set boolean for showing / hiding left and right controls.',
+    }
   ],  
   themesData: [
     {
-      name: 'default theme',
-      description: 'Carousel ing description',
+      name: 'carousel-container',
+      description: 'Class used for the main wrapper component of carousel.',
     },
     {
-      name: 'default some theme',
-      description: 'Carousel ing some description',
+      name: 'carousel-item',
+      description: '	Class used for a carousel item / slide.',
+    },
+    {
+      name: 'dot',
+      description: 'Class used for the dots for tracking the current page / slide / item.',
     },
   ],
   basicComponent: `

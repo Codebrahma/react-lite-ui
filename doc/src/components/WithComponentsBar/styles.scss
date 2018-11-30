@@ -36,11 +36,13 @@
       margin-top: 5px;
     }
     .sub-title {
+      display: inline-block;
       font-size: 18px;
       line-height: 38px;
       font-weight: bold;
       color: #525356;
       padding: 10px 0;
+      margin-top: 15px;
     }
     .code-preview {
       .error {
