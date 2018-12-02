@@ -1,6 +1,6 @@
 @import '../common/styles.scss';
 
-.component-bar {
+.with-component-bar {
   .component-sidebar {
     position: fixed;
     top: 76px;
@@ -27,17 +27,28 @@
       }
     }
   }
+  .component-content {
+    padding-top: 100px;
+    margin-right: 250px;
+    margin-left: 250px;
+    position: relative;
+    .link-to-playground {
+      position: absolute;
+      right: 20px;
+      top: 130px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
   .documentation-content {
-    width: fit-content;
-    padding-left: 260px;
-    padding-top: 100px; // can be removed once the app bar is added
     .mb-10 {
       margin-bottom: 10px;
       margin-top: 5px;
     }
     .sub-title {
       display: inline-block;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 38px;
       font-weight: bold;
       color: #525356;
@@ -47,14 +58,6 @@
     .code-preview {
       .error {
         color: red;  
-      }
-    }
-    .link-to-playground {
-      position: absolute;
-      right: 30px;
-      top: 125px;
-      a {
-        text-decoration: none;
       }
     }
     .html-structure {
@@ -110,6 +113,22 @@
           overflow-X: auto;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .with-component-bar {
+    .component-content {
+      margin-right: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .with-component-bar {
+    .component-content {
+      margin-right: 30px;
     }
   }
 }

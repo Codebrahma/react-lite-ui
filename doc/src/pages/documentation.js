@@ -34,7 +34,6 @@ class DocumentaionPage extends React.Component {
 
   onClickComponent = (name, componentData) => {
     navigate(`/documentation?component=${name.toLowerCase()}`);
-    console.log(this.props.location, 'location')
     this.setState({
       activeComponent: name,
       componentData,

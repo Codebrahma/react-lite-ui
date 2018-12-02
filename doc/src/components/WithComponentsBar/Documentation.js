@@ -1,24 +1,22 @@
 import React from 'react';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
-import { Link } from 'gatsby';
 
 import * as components from '../../../../src';
 import { AvatarComponentData } from '../common/componentData';
 
 const {
-  Button,
   Table,
 } = components.default;
 
 const propColumns = [
-  { title: 'Prop', key: 'prop', colWidth: '100px' },
+  { title: 'Prop', key: 'prop', colWidth: '120px' },
   { title: 'Type', key: 'type', colWidth: '100px' },
-  { title: 'Default Value', key: 'defaultValue', colWidth: '136px' },
-  { title: 'Description', key: 'description', colWidth: '311px' },
+  { title: 'Default Value', key: 'defaultValue', colWidth: '120px' },
+  { title: 'Description', key: 'description', colWidth: '350px' },
 ];
 const themeColumns = [
   { title: 'Name', key: 'name', colWidth: '200px' },
-  { title: 'Description', key: 'description', colWidth: '350px' },
+  { title: 'Description', key: 'description', colWidth: '400px' },
 ];
 
 class Documentaion extends React.Component {
@@ -88,11 +86,6 @@ class Documentaion extends React.Component {
         <span className="sub-title">Themes</span>
         <div className="themes mb-10">
           { this.renderDocsTable(themeColumns, componentData.themesData) }
-        </div>
-        <div className="link-to-playground">
-          <Link to='/playground'>
-            <Button bordered type='primary'>Open in playground</Button>
-          </Link>
         </div>
       </div>
     )

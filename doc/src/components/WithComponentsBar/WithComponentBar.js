@@ -1,7 +1,10 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
+import { Link } from 'gatsby';
+
 import map from 'lodash/map';
 import { componentList } from '../common/componentList';
+import Button from '../../../../src/button';
 
 import './styles.scss';
 
@@ -16,7 +19,7 @@ class WithComponentBar extends React.Component {
   render() {
     const { children, onClickComponent, activeComponent } = this.props;
     return (
-        <div className="component-bar">
+      <div className="with-component-bar">
         <aside className="component-sidebar">
           {map(componentList, component => (
             <div
@@ -29,7 +32,12 @@ class WithComponentBar extends React.Component {
             </div>
           ))}
         </aside>
-        <div>
+        <div className="component-content">
+          <div className="link-to-playground">
+            <Link to='/playground'>
+              <Button bordered type='primary'>Open in playground</Button>
+            </Link>
+          </div>
           {children}
         </div>
       </div>
