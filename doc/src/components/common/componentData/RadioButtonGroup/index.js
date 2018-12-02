@@ -55,7 +55,6 @@ export const componentData = {
         return (
           <div>
             <RadioButtonGroup
-              inline
               options={options}
             />
           </div>
