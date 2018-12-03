@@ -17,10 +17,10 @@ class WithComponentBar extends React.Component {
   }
 
   render() {
-    const { children, onClickComponent, activeComponent } = this.props;
+    const { children, onClickComponent, activeComponent, componentBarVisible } = this.props;
     return (
       <div className="with-component-bar">
-        <aside className="component-sidebar">
+        <aside className={`component-sidebar ${componentBarVisible && 'component-sidebar-mobile'}`}>
           {map(componentList, component => (
             <div
               className={`each-component-item ${activeComponent === component.name ? 'active' : ''}`}
