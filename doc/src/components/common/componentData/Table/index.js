@@ -1,10 +1,49 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Table>C</Table>;
-    }
-  }
+  htmlStructure: `
+    <div class="tableWrapper">
+      <div class="table">
+        <div class="tableHeader">
+          <div class="tableHeaderCell" style="width: 150px;">
+            <div class="tableHeadCellContent">
+              Name
+            </div>
+          </div>
+          <div class="tableHeaderCell" style="width: fit-content;">
+            <div class="tableHeadCellContent">
+              Description
+            </div>
+          </div>
+        </div>
+        <div class="tableBody">
+          <div class="tableBodyRow">
+            <div class="tableBodycell">
+              <div class="tableBodyCellContent">
+                Some Name
+              </div>
+            </div>
+            <div class="tableBodycell">
+              <div class="tableBodyCellContent">
+                dolor sit amet, consectetur adipiscing elit, dolor
+                sit amet
+              </div>
+            </div>
+          </div>
+          <div class="tableBodyRow">
+            <div class="tableBodycell">
+              <div class="tableBodyCellContent">
+                Some Other Name
+              </div>
+            </div>
+            <div class="tableBodycell">
+              <div class="tableBodyCellContent">
+                amet, consectetur dolor sit amet, consectetur
+                adipiscing elit adipiscing elit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   `,
   propsData: [
     {

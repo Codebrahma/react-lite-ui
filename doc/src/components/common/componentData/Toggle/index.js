@@ -1,10 +1,9 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Toggle>C</Toggle>;
-    }
-  }
+  htmlStructure: `
+    <label class="toggle toggled" id="toggle_component">
+      <input type="checkbox" name="toggle" />
+      <span class="toggle-item"></span>
+    </label>
   `,
   propsData: [
     {

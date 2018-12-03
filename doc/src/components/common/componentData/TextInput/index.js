@@ -1,10 +1,11 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <TextInput>C</TextInput>;
-    }
-  }
+  htmlStructure: `
+    <div class="inputWrapper">
+      <div class="innerWrapper" style="width: 200px;">
+        <input class="inputElement" />
+        <span class="input-focus"></span>
+      </div>
+    </div>
   `,
   propsData: [
     {
