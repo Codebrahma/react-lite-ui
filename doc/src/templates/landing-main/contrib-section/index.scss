@@ -23,3 +23,28 @@
     background: #f9552a;
     color: white;
 }
+
+@media only screen and (max-width: 630px) {
+    .row {
+        flex-flow: column !important;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .row {
+        padding: 2rem !important;
+    }
+}
+
+
+.col {
+    margin: 1rem !important;
+    flex-flow: column;
+}
+
+.card-content {
+    img {
+        max-width: 100% !important;
+        height: auto;
+    }
+}

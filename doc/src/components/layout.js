@@ -5,6 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby';
 import Navbar from '../../../src/navbar';
 import liteLogo from '../images/match.svg';
 import './styles.scss';
+import theme from './theme.scss';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,7 +29,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Navbar className="navbar" position="fixed" flat title="React Lite UI" leftIcon={liteLogo}>
+        <Navbar theme={theme} className="navbar" position="fixed" flat title="React Lite UI" leftIcon={liteLogo}>
           <Link to="/documentation" >Documentation</Link>
           <Link to="/usage" >Usage</Link>
           <Link to="/playground" >Playground</Link>

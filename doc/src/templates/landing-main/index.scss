@@ -37,14 +37,34 @@
     .screens {
         box-sizing: border-box;
         display: flex;
-        justify-content: space-around;
-        align-items: baseline;
-        padding: 5rem 10rem 1rem 10rem;
+        padding: 0;
 
-        img {
-            height: auto;
-            width: auto;
-            z-index: 2;
+        div {
+            display: flex;
+            justify-content: space-around;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: baseline;
+            max-width: 80%;
+            padding: 2rem 0;
+
+            div:nth-child(1) {
+                flex: 1;
+            }
+    
+            div:nth-child(2) {
+                flex: 2;
+            }
+    
+            div:nth-child(3) {
+                flex: 5;
+            }
+
+            img {
+                height: auto;
+                max-width: 100%;
+                z-index: 2;
+            }
         }
 
         &+.row {

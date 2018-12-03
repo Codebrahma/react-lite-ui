@@ -14,9 +14,17 @@ class LandingMain extends Component {
       <div className="landing-main">
         <FeaturesSection />
         <div className="row screens">
-          <img src={iphone} />
-          <img src={ipad} />
-          <img src={desktop} />
+          <div className="image-container">
+          <div>
+            <img src={iphone} />
+          </div>
+          <div>
+            <img src={ipad} />
+          </div>
+          <div>
+            <img src={desktop} />
+          </div>
+          </div>
         </div>
         <div className="row">
           <div className="col">
