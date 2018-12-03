@@ -71,8 +71,9 @@ class Navbar extends React.Component {
         onMouseEnter={this.blockBlur}
         onMouseLeave={this.blockBlur}
       >
-        {children}
-
+        <div className="navlinks">
+          {children}
+        </div>
       </div>
     );
   }
@@ -82,7 +83,9 @@ class Navbar extends React.Component {
 
     return (
       <div className="navbarMenu">
-        {children}
+        <div className="navlinks">
+          {children}
+        </div>
       </div>
     );
   }

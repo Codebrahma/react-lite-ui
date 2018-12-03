@@ -57,17 +57,11 @@ export default {
 };
 
 
-const NavbarMenu = () => (
-  <div className="navlinks">
+ReactDOM.render(
+  <Navbar title="logo">
     <span>home</span>
     <span>dashboard</span>
     <span>contact</span>
-  </div>
-);
-
-ReactDOM.render(
-  <Navbar title="logo">
-    <NavbarMenu />
   </Navbar>,
   document.getElementById('index'),
 );
