@@ -116,6 +116,7 @@
 
 .icon-menu {
   display: none;
+  outline: none;
 }
 @media only screen and (max-width: 768px) {
   .icon-menu {
@@ -148,6 +149,7 @@
     position: absolute;
     left: 0;
     top: 100%;
+    outline: none;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
   }
 }

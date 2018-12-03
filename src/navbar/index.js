@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import PropTyes from 'prop-types';
 import classnames from 'classnames';
@@ -9,7 +12,28 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       showMenu: false,
+      blockBlur: false,
     };
+  }
+
+  blockBlur = () => {
+    this.setState(prevState => ({
+      blockBlur: !prevState.blockBlur,
+    }));
+  }
+
+  hideMenu = () => {
+    if (!this.state.blockBlur) {
+      this.setState({
+        showMenu: false,
+      });
+    }
+  }
+
+  showMenu = () => {
+    this.setState({
+      showMenu: true,
+    });
   }
 
   toggleMenu = () => {
@@ -26,7 +50,12 @@ class Navbar extends React.Component {
       <div className={theme.rightContent}>
         {this.renderDesktopView()}
         {showMenu && this.renderMobileView()}
-        <span className="icon-menu" onClick={this.toggleMenu} />
+        <span
+          tabIndex={0}
+          className="icon-menu"
+          onClick={this.toggleMenu}
+          onBlur={this.hideMenu}
+        />
       </div>
     );
   }
@@ -35,7 +64,13 @@ class Navbar extends React.Component {
     const { children } = this.props;
 
     return (
-      <div className="navbarMobileMenu">
+      <div
+        className="navbarMobileMenu"
+        tabIndex={0}
+        onBlur={this.hideMenu}
+        onMouseEnter={this.blockBlur}
+        onMouseLeave={this.blockBlur}
+      >
         {children}
 
       </div>
