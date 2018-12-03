@@ -1,0 +1,16 @@
+:local(.tableWrapper) {
+  width: 850px;
+  @media only screen and (max-width: 992px) {
+    min-width: 100%;
+  }
+}
+:local(.table) {
+  width: 100%;
+}
+:local(.tableHeaderCell) {
+  @media only screen and (max-width: 992px) {
+    &:last-child {
+      min-width: 300px;
+    }
+  }
+}
