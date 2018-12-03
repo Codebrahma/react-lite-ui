@@ -4,6 +4,9 @@ import { componentList } from '../components/common/componentList';
 import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
 import Documentation from '../components/WithComponentsBar/Documentation';
 import { AutoCompleteComponentData } from '../components/common/componentData';
+import * as components from '../../../src';
+
+const { Navbar } = components.default;
 
 class DocumentaionPage extends React.Component {
   constructor(props) {
@@ -11,6 +14,7 @@ class DocumentaionPage extends React.Component {
     this.state = {
       activeComponent: 'AutoComplete',
       componentData: AutoCompleteComponentData,
+      componentBarVisible: false,
     }
   }
   
@@ -37,18 +41,36 @@ class DocumentaionPage extends React.Component {
     this.setState({
       activeComponent: name,
       componentData,
+      componentBarVisible: false,
     })
   }
 
+  handleComponentBar = () => {
+    this.setState(prevState => ({
+      componentBarVisible: !prevState.componentBarVisible,
+    }));
+  }
+
   render() {
-    const { activeComponent, componentData } = this.state;
+    const { activeComponent, componentData, componentBarVisible } = this.state;
     return (
-      <WithComponentBar
-        onClickComponent={this.onClickComponent}
-        activeComponent={activeComponent}
-      >
-        <Documentation componentData={componentData} />
-      </WithComponentBar>
+      <>
+        <Navbar
+          title="react lite ui"
+          flat
+          position="fixed"
+          leftIcon={
+            <i className={`icon-${componentBarVisible ? 'cross' : 'menu'} menu-mobile`} onClick={this.handleComponentBar} />
+          }
+        />
+        <WithComponentBar
+          onClickComponent={this.onClickComponent}
+          activeComponent={activeComponent}
+          componentBarVisible={componentBarVisible}
+        >
+          <Documentation componentData={componentData} activeComponent={activeComponent}/>
+        </WithComponentBar>
+      </>
     )
   }
 }

@@ -2,8 +2,10 @@
 
 .with-component-bar {
   .component-sidebar {
+    z-index: 999;
+    background-color: white; 
     position: fixed;
-    top: 80px;
+    top: 81px;
     bottom: 0;
     left: 0;
     overflow: auto;
@@ -47,6 +49,9 @@
     .mb-10 {
       margin-bottom: 10px;
       margin-top: 5px;
+    }
+    .component-title {
+      font-size: 26px !important;
     }
     .sub-title {
       display: inline-block;
@@ -119,6 +124,10 @@
   }
 }
 
+.menu-mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 1300px) {
   .with-component-bar {
     .component-content {
@@ -136,14 +145,27 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .menu-mobile {
+    display: block;
+  }
   .with-component-bar {
+    .component-sidebar {
+      transform: translateX(-250px);
+      transition: all 0.6s;
+    }
+    .component-sidebar-mobile {
+      transform: translateX(0);
+      transition: all 0.6s;
+    }
     .component-content {
-      margin-right: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+      transition: all 0.6s;
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 528px) {
   .with-component-bar {
     .component-content {
       padding-top: 150px;

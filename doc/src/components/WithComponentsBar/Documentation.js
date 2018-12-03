@@ -20,20 +20,6 @@ const themeColumns = [
 ];
 
 class Documentaion extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeComponent: 'Avatar',
-      componentData: AvatarComponentData,
-    }
-  }
-
-  onClickComponent = (name, componentData) => {
-    this.setState({
-      activeComponent: name,
-      componentData,
-    })
-  }
 
   renderBasicComponent = (basicComponent) => (
     <LiveProvider 
@@ -64,10 +50,10 @@ class Documentaion extends React.Component {
   };
 
   render() {
-    const { componentData } = this.props;
+    const { componentData, activeComponent } = this.props;
     return (
       <div className="documentation-content">
-        <span className="sub-title">Component</span>
+        <span className="sub-title component-title">{activeComponent}</span>
         <div className="component mb-10">
           { this.renderBasicComponent(componentData.basicComponent) }
         </div>
