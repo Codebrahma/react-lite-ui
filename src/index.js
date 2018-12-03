@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 import Button from './button';
 import Card from './card';
 import Checkbox from './checkbox';
@@ -57,11 +57,11 @@ export default {
 };
 
 
-ReactDOM.render(
-  <Navbar title="logo">
-    <span>home</span>
-    <span>dashboard</span>
-    <span>contact</span>
-  </Navbar>,
-  document.getElementById('index'),
-);
+// ReactDOM.render(
+//   <Navbar title="logo">
+//     <span>home</span>
+//     <span>dashboard</span>
+//     <span>contact</span>
+//   </Navbar>,
+//   document.getElementById('index'),
+// );
