@@ -4,7 +4,7 @@
   z-index: 2;
   box-sizing: border-box;
   width: 100%;
-  height: 81px;
+  height: fit-content;
   font-family: 'Roboto';
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
   .clearfix {
@@ -125,13 +125,12 @@
   }
   .navlinks {
     flex-direction: column;
-    color: $original-black;
-    background-color: $secondary-white;
+    color: var(--white);
     font-size: 18px;
     & > * {
       width: 100%;
       &:hover {
-        background-color: var(--cool-blue-21);
+        background: rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -140,11 +139,15 @@
   }
   .navbarMobileMenu {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
+    background-color: var(--cool-blue);
     fill: var(--white);
+    padding: 2%;
     width: 100%;
     position: absolute;
     left: 0;
     top: 100%;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
   }
 }

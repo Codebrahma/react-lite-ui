@@ -5,19 +5,40 @@ import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
 class Navbar extends React.Component {
-  renderLeftContent = () => {
-    const { title, theme } = this.props;
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMenu: false,
+    };
+  }
+
+  toggleMenu = () => {
+    this.setState(prevState => ({
+      showMenu: !prevState.showMenu,
+    }));
+  }
+
+  renderRightContent = () => {
+    const { theme } = this.props;
+    const { showMenu } = this.state;
 
     return (
-      title && (
-        <div className={theme.leftContent}>
-          {
-            typeof title === 'string'
-              ? <span className={theme.title}>{title}</span>
-              : title
-          }
-        </div>
-      )
+      <div className={theme.rightContent}>
+        {this.renderDesktopView()}
+        {showMenu && this.renderMobileView()}
+        <span className="icon-menu" onClick={this.toggleMenu} />
+      </div>
+    );
+  }
+
+  renderMobileView = () => {
+    const { children } = this.props;
+
+    return (
+      <div className="navbarMobileMenu">
+        {children}
+
+      </div>
     );
   }
 
@@ -31,26 +52,19 @@ class Navbar extends React.Component {
     );
   }
 
-  renderMobileView = () => {
-    const { children } = this.props;
+  renderLeftContent = () => {
+    const { title, theme } = this.props;
 
     return (
-      <div className="navbarMobileMenu">
-        {children}
-        
-      </div>
-    );
-  }
-
-  renderRightContent = () => {
-    const { theme } = this.props;
-
-    return (
-      <div className={theme.rightContent}>
-        {this.renderDesktopView()}
-        {this.renderMobileView()}
-        <span className="icon-menu" />
-      </div>
+      title && (
+        <div className={theme.leftContent}>
+          {
+            typeof title === 'string'
+              ? <span className={theme.title}>{title}</span>
+              : title
+          }
+        </div>
+      )
     );
   }
 
