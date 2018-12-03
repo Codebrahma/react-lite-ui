@@ -1,10 +1,10 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Snackbar>C</Snackbar>;
-    }
-  }
+  htmlStructure: `
+    <div aria-label="snackbar" class="snackbarWrappper bottom active">
+      <div class="snackbar">
+        <span>This is a bottom snackbar</span>
+      </div>
+    </div>
   `,
   propsData: [
     {

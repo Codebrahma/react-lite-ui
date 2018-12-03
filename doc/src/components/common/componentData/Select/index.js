@@ -1,10 +1,29 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Select>C</Select>;
-    }
-  }
+  htmlStructure: `
+    <div class="select">
+      <div id="select" class="selectInput border-animation" tabindex="0">
+        <div class="selected">
+          <input
+            type="text"
+            value="Lorem"
+            disabled
+          />
+        </div>
+        <div class="arrow up" />
+      </div>
+      <!-- Conditionally rendered -->
+      <div id="select-dropdown" class="menu show">
+        <span class="option option-hover">
+          <span>Lorem</span>
+        </span>
+        <span class="option">
+          <span>Ipsum</span>
+        </span>
+        <span class="option">
+          <span>Dolor</span>
+        </span>
+      </div>
+    </div>
   `,
   propsData: [
     {

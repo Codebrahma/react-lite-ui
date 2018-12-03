@@ -1,10 +1,29 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <RadioButtonGroup>C</RadioButtonGroup>;
-    }
-  }
+  htmlStructure: `
+    <div>
+      <div class="radio-group">
+        <div class="each-radio" id="radio-button">
+          <label class="customized-radio">
+            <label class="inner checked">
+              <input type="radio">
+            </label>
+          </label>
+          <label class="each-label">Alpha</label>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="radio-group">
+        <div class="each-radio" id="radio-button">
+          <label class="customized-radio">
+            <label class="inner">
+              <input type="radio">
+            </label>
+          </label>
+          <label class="each-label">Alpha</label>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
   `,
   propsData: [
     {

@@ -1,10 +1,13 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Preloader>C</Preloader>;
-    }
-  }
+  htmlStructure: `
+    <div class="loader-wrapper">
+      <div class="circlesLoaderDefault medium">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   `,
   propsData: [
     {

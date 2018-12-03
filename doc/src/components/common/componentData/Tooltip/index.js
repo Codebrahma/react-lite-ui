@@ -1,10 +1,16 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Tooltip>C</Tooltip>;
-    }
-  }
+  htmlStructure: `
+    <div id="tooltip_wrapper" class="tooltip baseContent">
+      <div class="contentWrapper">
+        Look Down
+      </div>
+      <!-- Condiitonally rendered -->
+      <div class="tip" id="tip">
+        <div class="tooltipContent">
+          Normal Tooltip
+        </div>
+      </div>
+    </div>
   `,
   propsData: [
     {

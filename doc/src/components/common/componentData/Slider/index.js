@@ -1,10 +1,8 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <Slider>C</Slider>;
-    }
-  }
+  htmlStructure: `
+    <div>
+      <!-- HTML Content will be added after merging PR #150 -->
+    </div>
   `,
   propsData: [
     {

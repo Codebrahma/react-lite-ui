@@ -1,10 +1,17 @@
 export const componentData = {
-  htmlStructure: 
-  `class Demo extends React.Component {
-    render() {
-      return <ProgressBar>C</ProgressBar>;
-    }
-  }
+  htmlStructure: `
+    <div class="bar">
+      <!-- Conditionally rendered -->
+      <div class="text" aria-label="progress-text">
+        <strong>100%</strong>
+      </div>
+      <div
+        aria-label="progress"
+        class="progress primary"
+        style="width: 40%;"
+      />
+      </div>
+    </div>
   `,
   propsData: [
     {
