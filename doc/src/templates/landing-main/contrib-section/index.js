@@ -56,7 +56,7 @@ class ContributionSection extends Component {
           </Card>
           </div>
         </div>
-        <FooterSection />
+      <FooterSection />
       </div>
     );
   }

@@ -51,7 +51,7 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <Layout>
+      <div>
         <div className="hero-container" role="main">
           <div className="hero-content">
             <img src={liteLogo} alt="react-lite-ui-logo" />
@@ -65,8 +65,10 @@ class IndexPage extends Component {
             ref={(ref) => { this.heroBottom = ref; }}
           />
         </div>
+      <Layout>
         <LandingMain />
       </Layout>
+      </div>
     );
   }
 }
