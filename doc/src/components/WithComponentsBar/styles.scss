@@ -3,11 +3,11 @@
 .with-component-bar {
   .component-sidebar {
     position: fixed;
-    top: 76px;
+    top: 80px;
     bottom: 0;
-    // left: 0;
+    left: 0;
     overflow: auto;
-    width: fit-content;
+    width: 240px;
     padding-top: 25px;
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
     .each-component-item {
@@ -30,8 +30,9 @@
   .component-content {
     font-family: 'Roboto';
     padding-top: 100px;
-    margin-right: 250px;
-    margin-left: 250px;
+    padding-bottom: 100px;
+    margin-right: 240px;
+    margin-left: 260px;
     position: relative;
     .link-to-playground {
       position: absolute;
@@ -118,6 +119,14 @@
   }
 }
 
+@media only screen and (max-width: 1300px) {
+  .with-component-bar {
+    .component-content {
+      margin-right: 75px;
+    }
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .with-component-bar {
     .component-content {
@@ -126,10 +135,18 @@
   }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 992px) {
   .with-component-bar {
     .component-content {
       margin-right: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .with-component-bar {
+    .component-content {
+      padding-top: 150px;
     }
   }
 }
