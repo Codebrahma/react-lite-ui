@@ -2,8 +2,8 @@ import React from 'react';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
 
 import * as components from '../../../../src';
-import { AvatarComponentData } from '../common/componentData';
 
+import tableTheme from './tableTheme.scss';
 const {
   Table,
 } = components.default;
@@ -11,12 +11,12 @@ const {
 const propColumns = [
   { title: 'Prop', key: 'prop', colWidth: '120px' },
   { title: 'Type', key: 'type', colWidth: '100px' },
-  { title: 'Default Value', key: 'defaultValue', colWidth: '120px' },
-  { title: 'Description', key: 'description', colWidth: '350px' },
+  { title: 'Default', key: 'defaultValue', colWidth: '80px' },
+  { title: 'Description', key: 'description', colWidth: '550px' },
 ];
 const themeColumns = [
-  { title: 'Name', key: 'name', colWidth: '200px' },
-  { title: 'Description', key: 'description', colWidth: '400px' },
+  { title: 'Name', key: 'name', colWidth: '250px' },
+  { title: 'Description', key: 'description', colWidth: '600px' },
 ];
 
 class Documentaion extends React.Component {
@@ -36,7 +36,7 @@ class Documentaion extends React.Component {
   );
 
   renderDocsTable = (columns, data) => (
-    <Table columns={columns} data={data} />
+    <Table columns={columns} data={data} theme={tableTheme} />
   );
 
   renderHtml = (htmlStructure) => {
