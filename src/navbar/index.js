@@ -37,7 +37,7 @@ class Navbar extends React.Component {
     return (
       <div className="navbarMobileMenu">
         {children}
-        <span className="icon-menu" />
+        
       </div>
     );
   }
@@ -49,6 +49,7 @@ class Navbar extends React.Component {
       <div className={theme.rightContent}>
         {this.renderDesktopView()}
         {this.renderMobileView()}
+        <span className="icon-menu" />
       </div>
     );
   }
