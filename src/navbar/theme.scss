@@ -95,7 +95,7 @@
 :local(.flat) {
   box-shadow: none;
 }
-.navlinks {
+:local(.navlinks) {
   display: flex;
   align-items: center;
   color: var(--white);
@@ -112,7 +112,7 @@
     }
   }
 }
-.navbarMobileMenu {
+:local(.navbarMobileMenu) {
   display: none;
 }
 
@@ -126,7 +126,8 @@
     background: white;
     color: var(--cool-blue);
   }
-  .navlinks {
+
+  :local(.navlinks) {
     flex-direction: column;
     color: var(--white);
     font-size: 18px;
@@ -137,10 +138,12 @@
       }
     }
   }
-  .navbarMenu {
+
+  :local(.navbarMenu) {
     display: none;
   }
-  .navbarMobileMenu {
+
+  :local(.navbarMobileMenu)  {
     display: flex;
     box-sizing: border-box;
     flex-direction: column;

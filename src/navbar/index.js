@@ -61,17 +61,19 @@ class Navbar extends React.Component {
   }
 
   renderMobileView = () => {
-    const { children } = this.props;
+    const { children, theme } = this.props;
 
+    const navbarMobile = classnames(theme.navbarMobileMenu);
+    const navLinks = classnames(theme.navlinks);
     return (
       <div
-        className="navbarMobileMenu"
+        className={navbarMobile}
         tabIndex={0}
         onBlur={this.hideMenu}
         onMouseEnter={this.blockBlur}
         onMouseLeave={this.blockBlur}
       >
-        <div className="navlinks">
+        <div className={navLinks}>
           {children}
         </div>
       </div>
@@ -79,11 +81,14 @@ class Navbar extends React.Component {
   }
 
   renderDesktopView = () => {
-    const { children } = this.props;
+    const { children, theme } = this.props;
+
+    const navbarMenu = classnames(theme.navbarMenu);
+    const navLinks = classnames(theme.navlinks);
 
     return (
-      <div className="navbarMenu">
-        <div className="navlinks">
+      <div className={navbarMenu}>
+        <div className={navLinks}>
           {children}
         </div>
       </div>
