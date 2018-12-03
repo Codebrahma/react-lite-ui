@@ -5,9 +5,9 @@
   box-sizing: border-box;
   width: 100%;
   height: 81px;
+  height: fit-content;
+  height: -moz-fit-content;
   font-family: 'Roboto';
-  padding-left: 2%;
-  padding-right: 2%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
   .clearfix {
     clear: both;
@@ -27,6 +27,8 @@
 }
 :local(.leftContent),
 :local(.rightContent) {
+  box-sizing: border-box;
+  padding: 2%;
   display: flex;
   align-items: center;
 }
@@ -93,7 +95,7 @@
 :local(.flat) {
   box-shadow: none;
 }
-.navlinks {
+:local(.navlinks) {
   display: flex;
   align-items: center;
   color: var(--white);
@@ -110,28 +112,49 @@
     }
   }
 }
-.navbarMobileMenu {
+:local(.navbarMobileMenu) {
   display: none;
 }
+
+.icon-menu {
+  display: none;
+  outline: none;
+}
 @media only screen and (max-width: 768px) {
-  .navlinks {
+  .icon-menu {
+    display: block;
+    background: white;
+    color: var(--cool-blue);
+  }
+
+  :local(.navlinks) {
     flex-direction: column;
-    color: $original-black;
-    background-color: $secondary-white;
+    color: var(--white);
     font-size: 18px;
     & > * {
       width: 100%;
       &:hover {
-        background-color: var(--cool-blue-21);
+        background: rgba(0, 0, 0, 0.1);
       }
     }
   }
-  .navbarMenu {
+
+  :local(.navbarMenu) {
     display: none;
   }
-  .navbarMobileMenu {
+
+  :local(.navbarMobileMenu)  {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
+    background-color: var(--cool-blue);
     fill: var(--white);
+    padding: 2%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    outline: none;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
   }
 }
