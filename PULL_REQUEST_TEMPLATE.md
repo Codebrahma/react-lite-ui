@@ -15,7 +15,7 @@ other_pr_production | [link]()
 other_pr_master | [link]()
 ##
 ### Related Issues :
-List related PRs against other branches :
+List related Issues against other branches :
 
 ## Todos
 - [ ] Tests
