@@ -3,7 +3,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { findDOMNode } from 'react-dom';
 import { Link } from 'gatsby';
 import { componentList } from '../common/componentList';
 import Button from '../../../../src/button';
@@ -13,8 +12,7 @@ import './styles.scss';
 class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.activeComponent !== prevProps.activeComponent) {
-      // eslint-disable-next-line react/no-string-refs, react/no-find-dom-node
-      findDOMNode(this.refs.scrollInto).scrollIntoViewIfNeeded();
+      document.querySelector('div[data-react-active-component=active]').scrollIntoView();
     }
   }
 
@@ -29,7 +27,7 @@ class WithComponentBar extends React.Component {
             <div
               className={`each-component-item ${activeComponent === component.name ? 'active' : ''}`}
               key={component.name}
-              ref={(activeComponent === component.name) && 'scrollInto'}
+              data-react-active-component={(activeComponent === component.name) ? 'active' : undefined}
               onClick={() => onClickComponent(component.name, component.componentData)}
             >
               {component.name}
