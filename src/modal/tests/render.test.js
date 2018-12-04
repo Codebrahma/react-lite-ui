@@ -18,9 +18,9 @@ describe('Modal render tests', () => {
     }
 
     toggleModal() {
-      this.setState({
-        open: true,
-      });
+      this.setState(prevState => ({
+        open: !prevState.open,
+      }));
     }
 
     render() {
@@ -30,6 +30,7 @@ describe('Modal render tests', () => {
             Click to Open Modal
           </Button>
           <Modal
+            onClose={this.toggleModal}
             title="This is sample modal"
             body={<div>This is modal body</div>}
             footer="This is modal footer"

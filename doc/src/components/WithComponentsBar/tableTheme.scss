@@ -1,0 +1,22 @@
+:local(.tableWrapper) {
+  width: 1028px;
+  @media only screen and (max-width: 992px) {
+    min-width: 100%;
+  }
+}
+:local(.table) {
+  width: 100%;
+}
+:local(.tableHeaderCell) {
+  @media only screen and (max-width: 992px) {
+    &:last-child {
+      min-width: 300px;
+    }
+  }
+}
+
+:local(.tableBodyCell) {
+  &:nth-child(3) {
+    color: #9d94d8;
+  }
+}

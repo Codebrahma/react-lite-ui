@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production --config webpack.prod.js",
-    "build-demo": "npm install && cd docs && npm install && npm run build",
+    "build-demo": "npm install && cd doc && npm install && npm run build",
     "lint": "eslint ./ --ext .jsx --ext .js",
     "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
