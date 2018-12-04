@@ -18,18 +18,19 @@ describe('Modal accessibility tests', () => {
     }
 
     toggleModal() {
-      this.setState({
-        open: true,
-      });
+      this.setState(prevState => ({
+        open: !prevState.open,
+      }));
     }
 
     render() {
+      const { open } = this.state;
       return (
         <div>
           <Button id="button" type="primary" onClick={this.toggleModal}>
             Click to Open Modal
           </Button>
-          <Modal title="This is sample modal" open={this.state.open} />
+          <Modal onClose={this.toggleModal} title="This is sample modal" open={open} />
         </div>
       );
     }

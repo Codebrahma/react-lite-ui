@@ -13,16 +13,16 @@ class Modal extends Component {
     };
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({
-      open: props.open,
-    });
+  static getDerivedStateFromProps(props) {
+    return { open: props.open };
   }
 
   closeModal = () => {
+    const { onClose } = this.props;
     this.setState({
       open: false,
     });
+    onClose();
   };
 
   renderModalTitle = (title) => {
@@ -100,6 +100,7 @@ Modal.propTypes = {
   footer: PropTypes.node,
   title: PropTypes.string,
   closeOnBackdropClick: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
 };
 
 Modal.defaultProps = {

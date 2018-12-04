@@ -18,9 +18,9 @@ describe('Modal edge case tests', () => {
     }
 
     toggleModal() {
-      this.setState({
-        open: true,
-      });
+      this.setState(prevState => ({
+        open: !prevState.open,
+      }));
     }
 
     render() {
@@ -31,6 +31,7 @@ describe('Modal edge case tests', () => {
               Click to Open Modal
             </Button>
             <Modal
+              onClose={this.toggleModal}
               title="This is sample modal"
               body="This is body content from body prop."
               footer="This is modal footer"
