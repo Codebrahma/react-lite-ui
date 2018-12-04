@@ -1,4 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
 
 import * as components from '../../../../src';
@@ -21,10 +23,9 @@ const themeColumns = [
   { title: 'Description', key: 'description', colWidth: '778px' },
 ];
 
-class Documentaion extends React.Component {
-
-  renderBasicComponent = (basicComponent) => (
-    <LiveProvider 
+class Documentation extends React.Component {
+  renderBasicComponent = basicComponent => (
+    <LiveProvider
       scope={{ ...components.default, componentTheme }}
       code={basicComponent}
     >
@@ -41,15 +42,13 @@ class Documentaion extends React.Component {
     <Table columns={columns} data={data} theme={tableTheme} />
   );
 
-  renderHtml = (htmlStructure) => {
-    return (
-      <div className="html-content">
-        <pre>
-          {htmlStructure}
-        </pre>
-      </div>
-    );
-  };
+  renderHtml = htmlStructure => (
+    <div className="html-content">
+      <pre>
+        {htmlStructure}
+      </pre>
+    </div>
+  );
 
   render() {
     const { componentData, activeComponent } = this.props;
@@ -76,8 +75,13 @@ class Documentaion extends React.Component {
           { this.renderDocsTable(themeColumns, componentData.themesData) }
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Documentaion;
+Documentation.propTypes = {
+  componentData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  activeComponent: PropTypes.string.isRequired,
+};
+
+export default Documentation;

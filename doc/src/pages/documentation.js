@@ -1,5 +1,7 @@
 import React from 'react';
-import { navigate } from 'gatsby-link';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
+import { navigate } from 'gatsby';
 import { componentList } from '../components/common/componentList';
 import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
 import Documentation from '../components/WithComponentsBar/Documentation';
@@ -8,21 +10,22 @@ import * as components from '../../../src';
 
 const { Navbar } = components.default;
 
-class DocumentaionPage extends React.Component {
+class DocumentationPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeComponent: 'AutoComplete',
       componentData: AutoCompleteComponentData,
       componentBarVisible: false,
-    }
+    };
   }
-  
+
   componentDidMount() {
     const url = this.props.location.search;
-    const currentUrl = url.substring(url.lastIndexOf('=')+1);
+    const currentUrl = url.substring(url.lastIndexOf('=') + 1);
     const queryComponent = componentList.filter(({ name }) => name.toLowerCase() === currentUrl);
-    if(queryComponent.length) {
+    if (queryComponent.length) {
+      // eslint-disable-next-line react/no-did-mount-set-state
       this.setState({
         activeComponent: queryComponent[0].name,
         componentData: queryComponent[0].componentData,
@@ -31,8 +34,8 @@ class DocumentaionPage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.location.search !== prevProps.location.search) {
-      navigate(`/documentation?component=${this.state.activeComponent.toLowerCase()}`)
+    if (this.props.location.search !== prevProps.location.search) {
+      navigate(`/documentation?component=${this.state.activeComponent.toLowerCase()}`);
     }
   }
 
@@ -42,7 +45,7 @@ class DocumentaionPage extends React.Component {
       activeComponent: name,
       componentData,
       componentBarVisible: false,
-    })
+    });
   }
 
   handleComponentBar = () => {
@@ -54,7 +57,9 @@ class DocumentaionPage extends React.Component {
   render() {
     const { activeComponent, componentData, componentBarVisible } = this.state;
     return (
-      <>
+      <React.Fragment>
+        {/* eslint-disable jsx-a11y/no-static-element-interactions */}
+        {/* eslint-disable jsx-a11y/click-events-have-key-events */}
         <Navbar
           title="react lite ui"
           flat
@@ -68,11 +73,15 @@ class DocumentaionPage extends React.Component {
           activeComponent={activeComponent}
           componentBarVisible={componentBarVisible}
         >
-          <Documentation componentData={componentData} activeComponent={activeComponent}/>
+          <Documentation componentData={componentData} activeComponent={activeComponent} />
         </WithComponentBar>
-      </>
-    )
+      </React.Fragment>
+    );
   }
 }
 
-export default DocumentaionPage;
+DocumentationPage.propTypes = {
+  location: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};
+
+export default DocumentationPage;

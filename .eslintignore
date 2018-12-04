@@ -4,4 +4,4 @@ webpack.config.js
 
 docs/
 coverage/
-doc/
+doc/src/components/common/componentData
