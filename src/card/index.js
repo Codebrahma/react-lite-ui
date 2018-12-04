@@ -5,8 +5,6 @@ import classnames from 'classnames';
 import defaultTheme from './theme.scss';
 import '../globals/fonts.scss';
 
-console.log('dt', defaultTheme);
-
 class Card extends React.Component {
   constructor(props) {
     super(props);
