@@ -1,4 +1,4 @@
 public/
 node_modules/
 
-doc/src/components/common/componentData
+src/components/common/componentData
