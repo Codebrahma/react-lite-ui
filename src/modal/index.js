@@ -13,11 +13,8 @@ class Modal extends Component {
     };
   }
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.open !== state.open) {
-      return { open: props.open };
-    }
-    return null;
+  static getDerivedStateFromProps(props) {
+    return { open: props.open };
   }
 
   closeModal = () => {
