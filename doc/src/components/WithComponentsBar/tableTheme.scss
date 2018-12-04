@@ -14,3 +14,9 @@
     }
   }
 }
+
+:local(.tableBodyCell) {
+  &:nth-child(3) {
+    color: #9d94d8;
+  }
+}
