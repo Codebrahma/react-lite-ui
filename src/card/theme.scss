@@ -2,6 +2,7 @@
 
 :local(.card) {
   display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   background: $original-white;
   border-radius: 3px;
