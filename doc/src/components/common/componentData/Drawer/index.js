@@ -96,7 +96,7 @@ export const componentData = {
         return (
           <div>
               <Button onClick={() => this.handleDrawer(true)} type="primary">click to open drawer</Button>
-              <Drawer open={this.state.open} onClose={() => this.handleDrawer(false)} >
+              <Drawer open={this.state.open} onClose={() => this.handleDrawer(false)} position="right">
                 <div>Item 1</div>
                 <div>Item 2</div>
                 <div>Item 3</div>
