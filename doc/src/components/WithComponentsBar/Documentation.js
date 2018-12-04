@@ -4,6 +4,8 @@ import { LiveProvider, LivePreview, LiveError } from 'react-live';
 import * as components from '../../../../src';
 
 import tableTheme from './tableTheme.scss';
+import componentTheme from '../common/componentData/theme.scss';
+
 const {
   Table,
 } = components.default;
@@ -23,7 +25,7 @@ class Documentaion extends React.Component {
 
   renderBasicComponent = (basicComponent) => (
     <LiveProvider 
-      scope={{ ...components.default }}
+      scope={{ ...components.default, componentTheme }}
       code={basicComponent}
     >
       <div className="code-preview">

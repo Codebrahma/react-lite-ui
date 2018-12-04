@@ -57,7 +57,7 @@ export const componentData = {
           "https://hanslodge.com/images/pTqrL9Rec.jpg",
           "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?cs=srgb&dl=sea-landscape-nature-248797.jpg&fm=jpg"
         ];
-        return <Carousel data={data}/>;
+        return <Carousel data={data} theme={componentTheme} />;
       }
     }
   `,
