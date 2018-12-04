@@ -11,12 +11,12 @@ const {
 const propColumns = [
   { title: 'Prop', key: 'prop', colWidth: '120px' },
   { title: 'Type', key: 'type', colWidth: '100px' },
-  { title: 'Default', key: 'defaultValue', colWidth: '80px' },
-  { title: 'Description', key: 'description', colWidth: '550px' },
+  { title: 'Default', key: 'defaultValue', colWidth: '100px' },
+  { title: 'Description', key: 'description', colWidth: '708px' },
 ];
 const themeColumns = [
   { title: 'Name', key: 'name', colWidth: '250px' },
-  { title: 'Description', key: 'description', colWidth: '600px' },
+  { title: 'Description', key: 'description', colWidth: '778px' },
 ];
 
 class Documentaion extends React.Component {
