@@ -13,7 +13,7 @@
     padding-top: 25px;
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
     .each-component-item {
-      font-size: 24px;
+      font-size: 1.1em;
       line-height: 30px;
       color: $primary-dark-font;
       padding: 10px 5px 10px 16px;
@@ -27,6 +27,18 @@
         background-color: $bright-cyan-20;
         font-weight: bold;
       }
+    }
+    &::-webkit-scrollbar {
+        width: 0.4em;
+
+        &:hover {
+          width: 1em;
+        }
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #47e9f3;
+      border-radius: 5px;
     }
   }
   .component-content {
