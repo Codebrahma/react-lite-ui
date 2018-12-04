@@ -36,10 +36,15 @@
     margin-right: 100px;
     padding-left: 300px;
     position: relative;
-    .link-to-playground {
+    .action-buttons {
+      display: flex;
       position: absolute;
-      right: 10px;
+      right: 0;
       top: 130px;
+      .component-bar-toggler {
+        margin-right: 20px;
+        display: none;
+      }
       a {
         text-decoration: none;
       }
@@ -157,6 +162,11 @@
       padding-left: 20px;
       margin-right: 20px;
       transition: all 0.6s;
+      .action-buttons {
+        .component-bar-toggler {
+          display: inline-block;
+        }
+      }
       .html-structure {
         min-width: 100%;
       }
@@ -164,15 +174,19 @@
   }
 }
 
-@media only screen and (max-width: 528px) {
+@media only screen and (max-width: 768px) {
   .with-component-bar {
     .component-content {
       padding-top: 150px;
-      padding-left: 10px;
-      margin-right: 10px;
-      .link-to-playground {
-        right: 20%;
-      }
+    }
+  }
+}
+
+@media only screen and (max-width: 528px) {
+  .with-component-bar {
+    .component-content {
+      padding-left: 15px;
+      margin-right: 15px;
     }
   }
 }

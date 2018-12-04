@@ -7,9 +7,6 @@ import { componentList } from '../components/common/componentList';
 import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
 import Documentation from '../components/WithComponentsBar/Documentation';
 import { AutoCompleteComponentData } from '../components/common/componentData';
-import * as components from '../../../src';
-
-const { Navbar } = components.default;
 
 class DocumentationPage extends React.Component {
   constructor(props) {
@@ -59,20 +56,11 @@ class DocumentationPage extends React.Component {
     const { activeComponent, componentData, componentBarVisible } = this.state;
     return (
       <Layout>
-        {/* eslint-disable jsx-a11y/no-static-element-interactions */}
-        {/* eslint-disable jsx-a11y/click-events-have-key-events */}
-        <Navbar
-          title="react lite ui"
-          flat
-          position="fixed"
-          leftIcon={
-            <i className={`icon-${componentBarVisible ? 'cross' : 'menu'} menu-mobile`} onClick={this.handleComponentBar} />
-          }
-        />
         <WithComponentBar
           onClickComponent={this.onClickComponent}
           activeComponent={activeComponent}
           componentBarVisible={componentBarVisible}
+          handleComponentBar={this.handleComponentBar}
         >
           <Documentation componentData={componentData} activeComponent={activeComponent} />
         </WithComponentBar>

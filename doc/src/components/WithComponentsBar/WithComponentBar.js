@@ -20,7 +20,7 @@ class WithComponentBar extends React.Component {
 
   render() {
     const {
-      children, onClickComponent, activeComponent, componentBarVisible,
+      children, onClickComponent, activeComponent, handleComponentBar, componentBarVisible,
     } = this.props;
     return (
       <div className="with-component-bar">
@@ -37,7 +37,10 @@ class WithComponentBar extends React.Component {
           ))}
         </aside>
         <div className="component-content">
-          <div className="link-to-playground">
+          <div className="action-buttons">
+            <span className="component-bar-toggler" onClick={handleComponentBar}>
+              <Button bordered>select component</Button>
+            </span>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <Link to={`/playground?component=${activeComponent.toLowerCase()}`}>
               <Button bordered type="primary">Open in playground</Button>
@@ -54,6 +57,7 @@ WithComponentBar.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node]).isRequired,
   onClickComponent: PropTypes.func.isRequired,
   activeComponent: PropTypes.string.isRequired,
+  handleComponentBar: PropTypes.func.isRequired,
   componentBarVisible: PropTypes.bool,
 };
 
