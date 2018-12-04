@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Navbar theme={theme} className="navbar" position="fixed" flat title="React Lite UI" leftIcon={liteLogo}>
+        <Navbar theme={theme} className={`navbar${window.location.pathname !== '/' ? ' navbar-extended' : ''}`} position="fixed" flat title="React Lite UI" leftIcon={liteLogo}>
           <Link to="/documentation" >Documentation</Link>
           <Link to="/usage" >Usage</Link>
           <Link to="/playground" >Playground</Link>
