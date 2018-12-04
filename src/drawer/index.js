@@ -12,10 +12,8 @@ class Drawer extends Component {
     };
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({
-      open: props.open,
-    });
+  static getDerivedStateFromProps(props) {
+    return { open: props.open };
   }
 
   handleClose = () => {
@@ -50,6 +48,7 @@ Drawer.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]),
   className: PropTypes.string,
   position: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
+  // eslint-disable-next-line react/no-unused-prop-types
   open: PropTypes.bool,
   onClose: PropTypes.func,
 };
