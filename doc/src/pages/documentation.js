@@ -2,6 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
+import Layout from '../components/layout';
 import { componentList } from '../components/common/componentList';
 import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
 import Documentation from '../components/WithComponentsBar/Documentation';
@@ -57,7 +58,7 @@ class DocumentationPage extends React.Component {
   render() {
     const { activeComponent, componentData, componentBarVisible } = this.state;
     return (
-      <React.Fragment>
+      <Layout>
         {/* eslint-disable jsx-a11y/no-static-element-interactions */}
         {/* eslint-disable jsx-a11y/click-events-have-key-events */}
         <Navbar
@@ -75,7 +76,7 @@ class DocumentationPage extends React.Component {
         >
           <Documentation componentData={componentData} activeComponent={activeComponent} />
         </WithComponentBar>
-      </React.Fragment>
+      </Layout>
     );
   }
 }
