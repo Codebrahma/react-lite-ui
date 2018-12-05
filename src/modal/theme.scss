@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     align-items: center;
     justify-content: center;
@@ -22,8 +22,9 @@
     box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     background: white;
     width: 50%;
-    height: 50%;
-    position: relative;
+    top: calc(30vh + 2em);
+    height: fit-content;
+    position: fixed;
     flex-flow: column;
     box-sizing: border-box;
 
@@ -63,8 +64,8 @@
 :local(.close) {
     width: fit-content;
     position: absolute;
-    top: 2.5%;
-    right: 2%;
+    right: 0.6em;
+    top: 0.6em;
     cursor: pointer;
     font-size: 0.7rem;
     background-color: black;
