@@ -48,7 +48,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'react-css-themr': '@friendsofreactjs/react-css-themr',
+      'react-css-themr': path.resolve(__dirname, './node_modules/@friendsofreactjs/react-css-themr'),
     },
   },
   plugins: [
