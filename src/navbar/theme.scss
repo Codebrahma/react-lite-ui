@@ -122,12 +122,12 @@
   .icon-menu {
     display: block;
     background: white;
-    color: var(--cool-blue);
+    color: $cool-blue;
   }
 
   :local(.navlinks) {
     flex-direction: column;
-    color: var(--white);
+    color: $white;
     font-size: 18px;
     & > * {
       width: 100%;
@@ -145,8 +145,8 @@
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    background-color: var(--cool-blue);
-    fill: var(--white);
+    background-color: $cool-blue;
+    fill: $white;
     padding: 2%;
     width: 100%;
     position: absolute;
