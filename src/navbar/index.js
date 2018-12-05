@@ -104,7 +104,7 @@ class Navbar extends React.Component {
           {
             typeof title === 'string'
               ? <span className={theme.title}>{title}</span>
-              : title
+              : React.cloneElement(title, { className: classnames(theme.title) })
           }
         </div>
       )

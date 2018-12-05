@@ -12,7 +12,14 @@ import './styles.scss';
 class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.activeComponent !== prevProps.activeComponent) {
-      document.querySelector('div[data-react-active-component=active]').scrollIntoView();
+      const element = document.querySelector('div[data-react-active-component=active]');
+      const { top, height } = element.getBoundingClientRect();
+      const { parentNode } = document.querySelector('div[data-react-active-component=active]');
+      const maxOffset = parentNode.offsetTop + parentNode.offsetHeight;
+      const minOffset = parentNode.offsetTop;
+      if (top + height > maxOffset || top < minOffset) {
+        element.scrollIntoView();
+      }
     }
   }
 
