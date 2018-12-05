@@ -65,5 +65,10 @@
         animation-duration: 0.3s;
         animation-timing-function: linear;
         margin-top: -2px;
+        position: relative;
+        /* Safari only style */
+        @media not all and (min-resolution:.001dpcm) {
+          bottom: 2px;
+        }
     }
 }

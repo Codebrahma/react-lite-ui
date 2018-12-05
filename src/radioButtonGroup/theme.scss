@@ -5,6 +5,13 @@
     position: relative;
     opacity: 0;
     cursor: pointer;
+    margin: 3px;
+  }
+  /* Fixes width issue in safari */
+  @media not all and (min-resolution:.001dpcm) {
+    input {
+      width: 13px;
+    }
   }
   .clearfix {
     clear: both;

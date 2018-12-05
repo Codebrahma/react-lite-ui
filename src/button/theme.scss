@@ -49,7 +49,7 @@
   border-radius: 50%;
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5) !important;
   &:active  {
-    box-shadow: 0 2px 9px 4px var(--very-light-pink-75), 0 2px 4px 2px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 2px 9px 4px $very-light-pink-75, 0 2px 4px 2px rgba(0, 0, 0, 0.5) !important;
   }
   & > * {
     max-height: 30px;
@@ -101,68 +101,68 @@
 }
 
 :local(.primary) {
-    color: var(--white);
-    fill: var(--white);
-    background-color: var(--cool-blue);
+    color: $white;
+    fill: $white;
+    background-color: $cool-blue;
     &:hover {
-        background-color: var(--light-navy);
+        background-color: $light-navy;
     }
 }
 
 :local(.secondary) {
-    color: var(--charcoal-grey);
-    fill: var(--charcoal-grey);
-    background-color: var(--very-light-pink);
+    color: $charcoal-grey;
+    fill: $charcoal-grey;
+    background-color: $very-light-pink;
     &:hover {
-        background-color: var(--brown-grey);
+        background-color: $brown-grey;
     }
 }
 
 :local(.success) {
-    color: var(--white);
-    fill: var(--white);
-    background-color: var(--cool-green);
+    color: $white;
+    fill: $white;
+    background-color: $cool-green;
     &:hover {
-        background-color: var(--darkish-green);
+        background-color: $darkish-green;
     }
 }
 
 :local(.danger) {
-    color: var(--white);
-    fill: var(--white);
-    background-color: var(--dark-hot-pink);
+    color: $white;
+    fill: $white;
+    background-color: $dark-hot-pink;
     &:hover {
-        background-color: var(--cranberry);
+        background-color: $cranberry;
     }
 }
 
 :local(.warning) {
-    color: var(--charcoal-grey);
-    fill: var(--charcoal-grey);
-    background-color: var(--orange-yellow);
+    color: $charcoal-grey;
+    fill: $charcoal-grey;
+    background-color: $orange-yellow;
     &:hover {
-        background-color: var(--golden-brown);
+        background-color: $golden-brown;
     }
 }
 
 :local(.info) {
-    color: var(--white);
-    fill: var(--white);
-    background-color: var(--bright-cyan);
+    color: $white;
+    fill: $white;
+    background-color: $bright-cyan;
     &:hover {
-        background-color: var(--aqua);
+        background-color: $aqua;
     }
 }
 
 :local(.dark) {
-    color: var(--white);
-    fill: var(--white);
-    background-color: var(--battleship-grey);
+    color: $white;
+    fill: $white;
+    background-color: $battleship-grey;
     &:hover {
-        background-color: var(--charcoal-grey);
+        background-color: $charcoal-grey;
     }
     &:active {
-        background-color: var(--charcoal-grey);
+        background-color: $charcoal-grey;
     }
 }
 
@@ -170,98 +170,98 @@
 
 :local(.primaryBordered),
 :local(.primaryBorderless) {
-    color: var(--cool-blue);
-    fill: var(--cool-blue);
-    background-color: var(--white);
+    color: $cool-blue;
+    fill: $cool-blue;
+    background-color: $white;
     &:hover {
-        background-color: var(--cool-blue-21);
+        background-color: $cool-blue-21;
     }
 }
 
 :local(.primaryBordered) {
-    border: 1px solid var(--cool-blue);
+    border: 1px solid $cool-blue;
 }
 
 :local(.secondaryBordered),
 :local(.secondaryBorderless) {
-    color: var(--charcoal-grey);
-    fill: var(--charcoal-grey);
-    background-color: var(--white);
+    color: $charcoal-grey;
+    fill: $charcoal-grey;
+    background-color: $white;
     &:hover {
-        background-color: var(--very-light-pink-50);
+        background-color: $very-light-pink-50;
     }
 }
 
 :local(.secondaryBordered) {
-    border: 1px solid var(--brown-grey);
+    border: 1px solid $brown-grey;
 }
 
 :local(.successBordered),
 :local(.successBorderless) {
-    color: var(--cool-green);
-    fill: var(--cool-green);
-    background-color: var(--white);
+    color: $cool-green;
+    fill: $cool-green;
+    background-color: $white;
     &:hover {
-        background-color: var(--cool-green-20);
+        background-color: $cool-green-20;
     }
 }
 
 :local(.successBordered) {
-    border: 1px solid var(--cool-green);
+    border: 1px solid $cool-green;
 }
 
 :local(.dangerBordered),
 :local(.dangerBorderless) {
-    color: var(--dark-hot-pink);
-    fill: var(--dark-hot-pink);
-    background-color: var(--white);
+    color: $dark-hot-pink;
+    fill: $dark-hot-pink;
+    background-color: $white;
     &:hover {
-        background-color: var(--dark-hot-pink-20);
+        background-color: $dark-hot-pink-20;
     }
 }
 
 :local(.dangerBordered) {
-    border: 1px solid var(--dark-hot-pink);
+    border: 1px solid $dark-hot-pink;
 }
 
 :local(.warningBordered),
 :local(.warningBorderless) {
-    color: var(--orange-yellow);
-    fill: var(--orange-yellow);
-    background-color: var(--white);
+    color: $orange-yellow;
+    fill: $orange-yellow;
+    background-color: $white;
     &:hover {
-        background-color: var(--orange-yellow-20);
+        background-color: $orange-yellow-20;
     }
 }
 
 :local(.warningBordered) {
-    border: 1px solid var(--orange-yellow);
+    border: 1px solid $orange-yellow;
 }
 
 :local(.infoBordered),
 :local(.infoBorderless) {
-    color: var(--bright-cyan);
-    fill: var(--bright-cyan);
-    background-color: var(--white);
+    color: $bright-cyan;
+    fill: $bright-cyan;
+    background-color: $white;
     &:hover {
-        background-color: var(--bright-cyan-20);
+        background-color: $bright-cyan-20;
     }
 }
 
 :local(.infoBordered) {
-    border: 1px solid var(--bright-cyan);
+    border: 1px solid $bright-cyan;
 }
 
 :local(.darkBordered),
 :local(.darkBorderless) {
-    color: var(--battleship-grey);
-    fill: var(--battleship-grey);
-    background-color: var(--white);
+    color: $battleship-grey;
+    fill: $battleship-grey;
+    background-color: $white;
     &:hover {
-        background-color: var(--battleship-grey-20);
+        background-color: $battleship-grey-20;
     }
 }
 
 :local(.darkBordered) {
-    border: 1px solid var(--battleship-grey);
+    border: 1px solid $battleship-grey;
 }

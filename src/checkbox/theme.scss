@@ -10,6 +10,12 @@
         /* Disable the HTML input */
         opacity: 0;
     }
+    /* Fixes width issue in safari */
+    @media not all and (min-resolution:.001dpcm) {
+      input {
+        width: 15px;
+      }
+    }
 }
 
 :local(.label) {

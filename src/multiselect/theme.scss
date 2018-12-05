@@ -34,7 +34,7 @@
     display: inline-flex;
     box-sizing: border-box;
     width: 100%;
-    padding: 2% 5% 0% 5%;
+    padding: 2% 5% 0%;
     cursor: pointer;
     outline: none;
     min-height: fit-content;
@@ -165,6 +165,7 @@
         content: "";
         position: absolute;
         bottom: -2px;
+        left: 0px;
         background-color: $primary-input-active-border !important;
         height: 2px;
         @include inputFocus();

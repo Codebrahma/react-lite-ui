@@ -2,12 +2,18 @@
 :local(.popover) {
     position: relative;
     width: fit-content;
+    width: -moz-fit-content;
     display: flex;
 }
 
 :local(.popoverWrapper) {
     margin: 2% 1%;
     padding: 10px;
+    /*
+     *  Required for IE, (fit-content is not supported in IE)
+     *  In all other browsers 200px will be overwritten by fit-content
+     */
+    min-width: 200px;
     min-width: fit-content;
     min-width: -moz-fit-content;
     display: flex;

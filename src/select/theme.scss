@@ -73,8 +73,8 @@
     border: none;
     border-right: 2px solid grey;
     border-bottom: 2px solid grey;
-    height: 5px;
-    width: 5px;
+    min-height: 5px;
+    min-width: 5px;
     transition: 0.3s ease;
     align-self: center;
 }
@@ -91,9 +91,11 @@
     cursor: pointer;
     color: black;
     font-size: 1em;
+    width: 95%;
     &>input {
         background-color: transparent;
         border: none;
+        width: 100%;
     }
 }
 
