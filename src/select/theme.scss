@@ -10,6 +10,7 @@
     flex-direction: column;
     color: #6c757d;
     @include customScroll();
+    position: relative;
 }
 
 :local(.menu) {
@@ -50,6 +51,9 @@
 :local(.show) {
     overflow-y: auto;
     display: flex;
+    position: absolute;
+    top: 100%;
+    width: 100%;
 }
 
 :local(.selectInput) {
