@@ -1,5 +1,15 @@
 .usage-content {
-  div {
-    color: red;
+  .preview-block {
+    .header {
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .preview-elements {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
   }
 }
