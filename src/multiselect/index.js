@@ -64,6 +64,7 @@ class MultiSelect extends Component {
   };
 
   handleKeyPress = (e) => {
+    e.stopPropagation();
     const { options } = this.props;
     const { input, selected, focus } = this.state;
     const isValid =

@@ -48,10 +48,11 @@ class Select extends Component {
    * Handles key down events on select component for keyboard navigation.
    * @memberof Select
    */
-  handleKeyDown = ({ key }) => {
+  handleKeyDown = (e) => {
+    e.stopPropagation();
     const { focus } = this.state;
     const { options } = this.props;
-    switch (key) {
+    switch (e.key) {
       case 'ArrowDown':
         this.setState(
           prevState => ({
