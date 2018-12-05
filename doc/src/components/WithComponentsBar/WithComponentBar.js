@@ -13,8 +13,11 @@ class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.activeComponent !== prevProps.activeComponent) {
       const element = document.querySelector('div[data-react-active-component=active]');
-      const maxOffset = element.parentNode.offsetTop + element.parentNode.offsetHeight;
-      if (element.getBoundingClientRect().top > maxOffset) {
+      const { top, height } = element.getBoundingClientRect();
+      const { parentNode } = document.querySelector('div[data-react-active-component=active]');
+      const maxOffset = parentNode.offsetTop + parentNode.offsetHeight;
+      const minOffset = parentNode.offsetTop;
+      if (top + height > maxOffset || top < minOffset) {
         element.scrollIntoView();
       }
     }
