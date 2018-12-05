@@ -45,18 +45,21 @@ class Badge extends React.Component {
       theme[`badge-container-${size}`],
     );
     return (
-      <div className={badgeclass}>
-        {children}
-        <span className={classes} id="badge_count">
-          <span
-            ref={(ref) => {
-              this.animRef = ref;
-            }}
-          >
-            {count}
+      <React.Fragment>
+        <div className={badgeclass}>
+          {children}
+          <span className={classes} id="badge_count">
+            <span
+              ref={(ref) => {
+                this.animRef = ref;
+              }}
+            >
+              {count}
+            </span>
           </span>
-        </span>
-      </div>
+        </div>
+        <div className="clearfix" />
+      </React.Fragment>
     );
   }
 }

@@ -33,6 +33,7 @@ class Modal extends Component {
   };
 
   removeModal = () => {
+    const { onClose } = this.props;
     const modalWrapper = getDOMNode(this.modalWrapperRef);
     const modal = getDOMNode(this.modalRef);
     modalWrapper.classList.remove('animation');
@@ -40,6 +41,7 @@ class Modal extends Component {
     this.setState({
       open: false,
     });
+    onClose();
   }
 
   renderModalTitle = (title) => {
