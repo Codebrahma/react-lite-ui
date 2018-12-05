@@ -38,7 +38,7 @@ describe('Badge accessibility tests', () => {
 
   it('Should allow to pass any additional classNames', () => {
     expectedValue = true;
-    actualValue = () => wrappedComponent.find('span');
+    actualValue = () => wrappedComponent.find('span').first();
     wrappedComponent.setProps({ className: 'badge_class' });
     expect(actualValue().hasClass('badge_class')).to.equal(expectedValue);
   });

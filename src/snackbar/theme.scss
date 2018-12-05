@@ -5,6 +5,7 @@
   z-index: 9999;
   width: 100%;
   right: 0;
+  transition: transform 0.4s;
   &.top {
     top: 10%;
     &:not(.active) {

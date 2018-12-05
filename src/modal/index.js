@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import cx from 'classnames';
+import { transitionEndEventName } from '../globals/helper';
 import defaultTheme from './theme.scss';
 import '../globals/fonts.scss';
+
+const getDOMNode = findDOMNode;
 
 class Modal extends Component {
   constructor(props) {
     super(props);
+    this.modalWrapperRef = null;
+    this.modalRef = null;
     this.state = {
       open: props.open,
     };
@@ -18,12 +24,25 @@ class Modal extends Component {
   }
 
   closeModal = () => {
+    const modalWrapper = getDOMNode(this.modalWrapperRef);
+    const modal = getDOMNode(this.modalRef);
+    modalWrapper.classList.add('animation');
+    modal.classList.add('animation');
+    const transitionEnd = transitionEndEventName();
+    modalWrapper.addEventListener(transitionEnd, this.removeModal, false);
+  };
+
+  removeModal = () => {
     const { onClose } = this.props;
+    const modalWrapper = getDOMNode(this.modalWrapperRef);
+    const modal = getDOMNode(this.modalRef);
+    modalWrapper.classList.remove('animation');
+    modal.classList.remove('animation');
     this.setState({
       open: false,
     });
     onClose();
-  };
+  }
 
   renderModalTitle = (title) => {
     const { theme } = this.props;
@@ -35,7 +54,7 @@ class Modal extends Component {
       );
     }
     return null;
-  }
+  };
 
   renderModalFooter = (footer) => {
     const { theme } = this.props;
@@ -47,7 +66,7 @@ class Modal extends Component {
       );
     }
     return null;
-  }
+  };
 
   render() {
     const {
@@ -75,15 +94,28 @@ class Modal extends Component {
       <div
         className={backdrop}
         onClick={closeOnBackdropClick ? this.closeModal : undefined}
+        ref={(ref) => {
+          this.modalWrapperRef = ref;
+        }}
       >
         {open && (
-          <div id="modal" className={classes} onClick={e => e.stopPropagation()}>
+          <div
+            id="modal"
+            className={classes}
+            onClick={e => e.stopPropagation()}
+            ref={(ref) => {
+              this.modalRef = ref;
+            }}
+          >
             {this.renderModalTitle(title)}
             <div className={theme['modal-body']} aria-label="card-body">
               {children || body || null}
             </div>
             {this.renderModalFooter(footer)}
-            <i className={cx(theme.close, 'icon-cross')} onClick={this.closeModal} />
+            <i
+              className={cx(theme.close, 'icon-cross')}
+              onClick={this.closeModal}
+            />
           </div>
         )}
       </div>
