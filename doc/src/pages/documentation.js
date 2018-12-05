@@ -5,7 +5,7 @@ import { navigate } from 'gatsby';
 import Layout from '../components/layout';
 import { componentList } from '../components/common/componentList';
 import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
-import Documentation from '../components/WithComponentsBar/Documentation';
+import Documentation from '../components/documentation/Documentation';
 import { AutoCompleteComponentData } from '../components/common/componentData';
 
 class DocumentationPage extends React.Component {
