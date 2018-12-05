@@ -2,11 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
-
+import { highlightAll } from 'prismjs';
 import * as components from '../../../../src';
-
 import componentTheme from '../common/componentData/theme.scss';
 import './styles.scss';
+import './prism-cb.css';
+
+const PrismJS = require('prismjs/components/prism-jsx.min');
 
 const PreviewBlock = ({ children, header }) => (
   <div className="preview-block">
@@ -23,6 +25,13 @@ const PreviewElements = ({ children }) => (
 
 
 class Usage extends React.Component {
+  componentDidMount() {
+    highlightAll();
+  }
+
+  componentDidUpdate() {
+    highlightAll();
+  }
   renderComponentUsage = componentData => (
     <LiveProvider
       scope={{
@@ -48,10 +57,11 @@ class Usage extends React.Component {
           { this.renderComponentUsage(componentData) }
         </div>
         <div>
-          hello
-          <code>
-            &lt;div&gt;
-          </code>
+          <pre>
+            <code className="language-jsx">
+              { componentData.basicComponent }
+            </code>
+          </pre>
         </div>
       </div>
     );
