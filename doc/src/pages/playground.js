@@ -5,9 +5,9 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { componentList } from '../components/common/componentList';
 import components from '../../../src';
 import componentTheme from '../components/common/componentData/theme.scss';
-
+import Select from '../../../src/select';
 import Layout from '../components/layout';
-import './playground.scss';
+import theme from './playground.scss';
 
 export default class Playground extends Component {
     static propTypes = {
@@ -18,19 +18,43 @@ export default class Playground extends Component {
       super(props);
       this.state = {
         component: componentList[0].componentData,
+        currentComponent: componentList[0].name,
       };
     }
 
     componentDidMount() {
       const query = this.props.location.search;
       const componentName = query.split('=')[1];
-      const component = componentList.filter(comp => comp.name.toLowerCase() === componentName);
+      const component = this.getComponentByName(componentName);
       if (component.length) {
-          this.setState({
-            component: component[0].componentData,
-          });
+        // eslint-disable-next-line react/no-did-mount-set-state
+        this.setState({
+          component: component[0].componentData,
+          currentComponent: component[0].name,
+        });
       }
-      // eslint-disable-next-line react/no-did-mount-set-state
+    }
+
+    getComponentByName = name => componentList.filter(comp => comp.name.toLowerCase() === name.toLowerCase());
+
+    changeComponent = (value) => {
+      const component = this.getComponentByName(value.label)[0].componentData;
+      this.setState({
+        currentComponent: value.label,
+        component,
+      });
+    }
+
+    renderPlaygroundNavigation = () => {
+      const options = componentList.map(comp => ({
+        label: comp.name,
+      }));
+      const { currentComponent } = this.state;
+      return (
+        <div className="playground-navigation">
+          <Select defaultValue={{ label: currentComponent }} options={options} theme={theme} onSelect={this.changeComponent} />
+        </div>
+      );
     }
 
     render() {
@@ -38,12 +62,11 @@ export default class Playground extends Component {
       return (
         <Layout>
           <div className="playround-container">
+            { this.renderPlaygroundNavigation() }
             <LiveProvider code={component.basicComponent} scope={{ ...components, componentTheme }}>
               <LiveError className="playground-error" />
-              <LiveEditor />
-              <div className="playground-preview">
-                <LivePreview />
-              </div>
+              <LiveEditor className="playground-editor" />
+              <LivePreview className="playground-preview" />
             </LiveProvider>
           </div>
         </Layout>
