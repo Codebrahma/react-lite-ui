@@ -37,20 +37,22 @@ export default class Playground extends Component {
     }
 
     componentDidUpdate(prevProps) {
-      if (this.props.location.search !== prevProps.location.search) {
-        navigate(`/playground?component=${this.state.currentComponent.toLowerCase()}`);
+      const { location } = this.props;
+      const { currentComponent } = this.state;
+      if (location.search !== prevProps.location.search) {
+        navigate(`/playground?component=${currentComponent.toLowerCase()}`);
       }
     }
 
     getComponentByName = name => componentList.filter(comp => comp.name.toLowerCase() === name.toLowerCase());
 
-    changeComponent = (value) => {
-      const component = this.getComponentByName(value.label)[0].componentData;
+    changeComponent = ({ label }) => {
+      const component = this.getComponentByName(label)[0].componentData;
       this.setState({
-        currentComponent: value.label,
+        currentComponent: label,
         component,
       });
-      navigate(`/playground?component=${value.label.toLowerCase()}`);
+      navigate(`/playground?component=${label.toLowerCase()}`);
     }
 
     renderPlaygroundNavigation = () => {
