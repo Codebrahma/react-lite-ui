@@ -111,8 +111,19 @@
                 padding: 0;
                 margin: 1rem 3rem;
 
-                &:hover>div {
-                    margin-top: -8rem;
+                @media only screen and (min-width: 630px) {
+                    &:hover>div {
+                        margin-top: -8rem;
+                    }
+                }
+
+            }
+
+            @media (hover: none) {
+                .col {
+                    flex: 1;
+                    padding: 0;
+                    margin: 1rem 3rem;
                 }
             }
         }
