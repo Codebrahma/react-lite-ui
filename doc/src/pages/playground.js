@@ -17,19 +17,20 @@ export default class Playground extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        component: componentList[0],
+        component: componentList[0].componentData,
       };
     }
 
     componentDidMount() {
       const query = this.props.location.search;
       const componentName = query.split('=')[1];
-      const component = componentList.filter(comp => comp.name.toLowerCase() === componentName)[0]
-        .componentData;
+      const component = componentList.filter(comp => comp.name.toLowerCase() === componentName);
+      if (component.length) {
+          this.setState({
+            component: component[0].componentData,
+          });
+      }
       // eslint-disable-next-line react/no-did-mount-set-state
-      this.setState({
-        component,
-      });
     }
 
     render() {
