@@ -8,6 +8,7 @@ import components from '../../../src';
 import componentTheme from '../components/common/componentData/theme.scss';
 import Select from '../../../src/select';
 import Button from '../../../src/button';
+import Preloader from '../../../src/preloader';
 import Layout from '../components/layout';
 import theme from './playground.scss';
 
@@ -20,7 +21,7 @@ export default class Playground extends Component {
       super(props);
       this.state = {
         component: componentList[0].componentData,
-        currentComponent: componentList[0].name,
+        currentComponent: undefined,
       };
     }
 
@@ -73,7 +74,11 @@ export default class Playground extends Component {
       const { currentComponent, prevPage } = this.state;
       return (
         <div className="playground-navigation">
-          <Select defaultValue={{ label: currentComponent }} options={options} theme={theme} onSelect={this.changeComponent} />
+          { currentComponent ? <Select defaultValue={{ label: currentComponent }} options={options} theme={theme} onSelect={this.changeComponent} /> : <Preloader
+            loader="colorCircleLoader"
+            size="small"
+            color="primary"
+          /> }
           <Button onClick={this.navigateBack} bordered >{`Go to ${prevPage}`}</Button>
         </div>
       );
