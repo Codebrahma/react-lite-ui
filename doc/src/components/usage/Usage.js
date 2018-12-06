@@ -14,7 +14,9 @@ const PrismJS = require('prismjs/components/prism-jsx.min');
 const PreviewBlock = ({ children, header }) => (
   <div className="preview-block">
     <div className="header">{header}</div>
-    {children}
+    <div className="pb-content">
+      {children}
+    </div>
   </div>
 );
 

@@ -77,21 +77,32 @@ export const componentData = {
   `,
   componentUsage: `
     class Demo extends React.Component {
+      constructor(props) {
+        super(props);
+        this.style = {
+          chipContent: {
+            display: "grid",
+            gridTemplateColumns: "auto auto auto",
+            gridGap: 20,
+            alignItems: "center"
+          }
+        };
+      }
       render() {
         return (
           <div>
             <PreviewBlock header="Default Chip and clickable chip">
-              <PreviewElements>
+              <div style={this.style.chipContent}>
                 <Chip />
                 <Chip
                   label='labelled'
                   color='primary'
                   handleChipClick={()=>alert('Clicked on Chip')}
                 />
-              </PreviewElements>
+              </div>
             </PreviewBlock>
             <PreviewBlock header="Closable Chips">
-              <PreviewElements>
+              <div style={this.style.chipContent}>
                 <Chip
                   label='closable chip'
                   color='danger'
@@ -102,10 +113,10 @@ export const componentData = {
                   color='info'
                   handleDelete={() => alert('Clicked Delete Button')}
                 />
-              </PreviewElements>
+              </div>
             </PreviewBlock>
             <PreviewBlock header="Avatar Chips, closable and clickable">
-              <PreviewElements>
+              <div style={this.style.chipContent}>
                 <Chip
                   avatar={<Avatar>K</Avatar>}
                   label="alphabet avatar"
@@ -118,10 +129,10 @@ export const componentData = {
                   handleDelete={() => alert('Clicked Delete Button')}
                   handleChipClick={()=>alert('Clicked on Chip')}
                 />
-              </PreviewElements>
+              </div>
             </PreviewBlock>
             <PreviewBlock header="Outlined transparent Chip Component">
-              <PreviewElements>
+              <div style={this.style.chipContent}>
                 <Chip
                   label='outlined closable'
                   color='danger'
@@ -134,21 +145,23 @@ export const componentData = {
                   color='info'
                   outlined
                 />
-              </PreviewElements>
+              </div>
             </PreviewBlock>
             <PreviewBlock header="Sizeable Chips">
-              <Chip
-                size='small'
-                label='small chip'
-              />
-              <Chip
-                size='medium'
-                label='medium chip'
-              />
-              <Chip
-                size='large'
-                label='large chip'
-              />
+              <div style={this.style.chipContent}>
+                <Chip
+                  size='small'
+                  label='small chip'
+                />
+                <Chip
+                  size='medium'
+                  label='medium chip'
+                />
+                <Chip
+                  size='large'
+                  label='large chip'
+                />
+              </div>
             </PreviewBlock>
           </div>
         )

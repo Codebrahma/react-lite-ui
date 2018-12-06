@@ -71,7 +71,7 @@ export const componentData = {
 
       render() {
         return (
-          <div>
+          <PreviewElements>
             {/* Preview Block 1 */}
             <PreviewBlock header="Default Tooltip">
               <Tooltip tooltipText='Normal Tooltip'>Look down</Tooltip>
@@ -80,7 +80,7 @@ export const componentData = {
             <PreviewBlock header="Tooltip at top">
               <Tooltip tooltipText='Top Tooltip' top>Look up</Tooltip>
             </PreviewBlock>
-          </div>
+          </PreviewElements>
         )
       }
     }

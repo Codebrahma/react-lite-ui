@@ -154,15 +154,17 @@ export const componentData = {
               autoClose={false}>
               <span>This is a indefinite snackbar.</span>
             </Snackbar>
-            <div style={{margin: '10px'}}>
-              <Button type="primary" onClick={this.openBottomSnackbar}>Open Bottom Snackbar</Button>
-            </div>
-            <div style={{margin: '10px'}}>
-              <Button type="primary" onClick={this.openTopSnackbar}>Open Top Snackbar</Button>
-            </div>
-            <div style={{margin: '10px'}}>
-              <Button type="primary" onClick={this.openIndefiniteSnackbar}>{this.state.showIndefiniteSnackbar ? 'Close' : 'Open'} indefinite Snackbar</Button>
-            </div>
+            <PreviewElements>
+              <PreviewBlock header="Bottom snackbar">
+                <Button type="primary" onClick={this.openBottomSnackbar}>Open Bottom Snackbar</Button>
+              </PreviewBlock>
+              <PreviewBlock header="Top snackbar">
+                <Button type="primary" onClick={this.openTopSnackbar}>Open Top Snackbar</Button>
+              </PreviewBlock>
+              <PreviewBlock header="Indefinite snackbar">
+                <Button type="primary" onClick={this.openIndefiniteSnackbar}>{this.state.showIndefiniteSnackbar ? 'Close' : 'Open'} indefinite Snackbar</Button>
+              </PreviewBlock>
+            </PreviewElements>
           </div>
         )
       }
