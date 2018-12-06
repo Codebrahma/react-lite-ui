@@ -36,6 +36,11 @@ export default class Playground extends Component {
           component: component[0].componentData,
           currentComponent: component[0].name,
         });
+      } else {
+        // eslint-disable-next-line react/no-did-mount-set-state
+        this.setState({
+          currentComponent: componentList[0].name,
+        });
       }
       // eslint-disable-next-line react/no-did-mount-set-state
       this.setState({
