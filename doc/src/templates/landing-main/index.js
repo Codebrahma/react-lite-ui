@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'gatsby';
 import iphone from '../../images/i-phone-6.svg';
 import ipad from '../../images/i-pad-air.svg';
 import desktop from '../../images/desktop.svg';
@@ -27,7 +29,7 @@ const LandingMain = () => (
     <div className="row">
       <div className="col">
         <p>Designed for all screen sizes.</p>
-        <Button>Take a Tour</Button>
+        <Link to="/usage" ><Button>Take a Tour</Button></Link>
       </div>
     </div>
     <ContributionSection />
