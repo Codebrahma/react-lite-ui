@@ -6,6 +6,7 @@
         padding: 1.5em;
         display: flex;
         flex-flow: row;
+        box-sizing: border-box;
         justify-content: space-around;
 
         .col {
@@ -75,6 +76,10 @@
                 font-weight: bold;
                 letter-spacing: 0.1rem;
             }
+
+            a {
+                text-decoration: none;
+            }
         }
     }
     .contrib-section {
@@ -111,8 +116,19 @@
                 padding: 0;
                 margin: 1rem 3rem;
 
-                &:hover>div {
-                    margin-top: -8rem;
+                @media only screen and (min-width: 630px) {
+                    &:hover>div {
+                        margin-top: -8rem;
+                    }
+                }
+
+            }
+
+            @media (hover: none) {
+                .col {
+                    flex: 1;
+                    padding: 0;
+                    margin: 1rem 3rem;
                 }
             }
         }
@@ -122,6 +138,8 @@
 
             .row {
                 background: white;
+                max-width: 100%;
+                padding: 2% !important;
 
                 .divider {
                     width: 2px;
