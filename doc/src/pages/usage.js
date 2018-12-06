@@ -57,6 +57,7 @@ class UsagePage extends React.Component {
     return (
       <Layout>
         <WithComponentBar
+          page="usage"
           onClickComponent={this.onClickComponent}
           activeComponent={activeComponent}
           componentBarVisible={componentBarVisible}

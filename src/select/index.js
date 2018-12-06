@@ -15,7 +15,7 @@ class Select extends Component {
       Set initially selected option label as empty string and dropdown
       state as closed for initial render.
       */
-      selected: { label: '' },
+      selected: props.defaultValue,
       open: false,
     };
     this.listRef = null;
@@ -228,11 +228,13 @@ Select.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   className: PropTypes.string,
   onSelect: PropTypes.func,
+  defaultValue: PropTypes.oneOfType([PropTypes.object]),
 };
 
 Select.defaultProps = {
   options: [],
   className: '',
+  defaultValue: { label: '' },
   onSelect: value => console.log(value),
 };
 

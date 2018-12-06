@@ -1,0 +1,97 @@
+.playround-container {
+    position: relative;
+    top: 6.3rem;
+}
+
+.playground-error {
+    margin: 0.5em;
+    box-sizing: border-box;
+    padding: 0.5em;
+    background: #d681817a;
+    border-radius: 0.2em;
+    transition: all 5s ease-in-out;
+}
+
+.playground-preview {
+    display: flex;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.prism-code {
+    background-color: #f5f7ff !important;
+}
+
+.playground-navigation {
+    display: flex;
+    padding: 1em;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.token.operator,
+.token.boolean,
+.token.number {
+  color: #c76b29 !important;
+}
+
+.token.property {
+  color: #c08b30 !important;
+}
+
+.token.tag {
+  color: #3d8fd1 !important;
+}
+
+.token.string {
+  color: #22a2c9 !important;
+}
+
+.token.selector {
+  color: #6679cc !important;
+}
+
+.token.attr-name {
+  color: #c76b29 !important;
+}
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #22a2c9 !important;
+}
+
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: #ac9739 !important;
+}
+
+.token.statement,
+.token.regex,
+.token.atrule {
+  color: #22a2c9 !important;
+}
+
+.token.placeholder,
+.token.variable {
+  color: #3d8fd1 !important;
+}
+
+:local(.menu){
+    z-index: 50;
+}
+
+.playground-editor  {
+    &::before {
+        content: '// Edit the code here and preview the changes below.';
+        display: flex;
+        padding: 1rem;
+        font-weight: 600;
+        color: #adb3af;
+        font-size: 1em;
+    }
+}

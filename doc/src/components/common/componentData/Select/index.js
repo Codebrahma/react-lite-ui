@@ -44,6 +44,12 @@ export const componentData = {
       defaultValue: '',
       description: 'Set a class to style the Component',
     },
+    {
+      prop: 'defaultValue',
+      type: 'object',
+      defaultValue: `{ label: '' }`,
+      description: 'Set a default value for the Component',
+    },
   ],  
   themesData: [
     {
