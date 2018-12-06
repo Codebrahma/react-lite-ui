@@ -17,3 +17,59 @@
     box-sizing: border-box;
     padding: 2rem;
 }
+
+.prism-code {
+    background-color: #f5f7ff !important;
+}
+
+.token.operator,
+.token.boolean,
+.token.number {
+  color: #c76b29 !important;
+}
+
+.token.property {
+  color: #c08b30 !important;
+}
+
+.token.tag {
+  color: #3d8fd1 !important;
+}
+
+.token.string {
+  color: #22a2c9 !important;
+}
+
+.token.selector {
+  color: #6679cc !important;
+}
+
+.token.attr-name {
+  color: #c76b29 !important;
+}
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #22a2c9 !important;
+}
+
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: #ac9739 !important;
+}
+
+.token.statement,
+.token.regex,
+.token.atrule {
+  color: #22a2c9 !important;
+}
+
+.token.placeholder,
+.token.variable {
+  color: #3d8fd1 !important;
+}
