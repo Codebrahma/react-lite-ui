@@ -18,3 +18,14 @@
   max-width: 1280px;
   margin: auto;
 }
+
+.active-link {
+  background: transparent;
+  &::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: #e09b2d
+  }
+}
