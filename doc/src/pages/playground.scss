@@ -22,6 +22,12 @@
     background-color: #f5f7ff !important;
 }
 
+.playground-navigation {
+    display: flex;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
 .token.operator,
 .token.boolean,
 .token.number {
@@ -72,4 +78,19 @@
 .token.placeholder,
 .token.variable {
   color: #3d8fd1 !important;
+}
+
+:local(.menu){
+    z-index: 50;
+}
+
+.playground-editor  {
+    &::before {
+        content: '// Edit the code here and preview the changes below.';
+        display: flex;
+        padding: 1rem;
+        font-weight: 600;
+        color: #adb3af;
+        font-size: 1em;
+    }
 }

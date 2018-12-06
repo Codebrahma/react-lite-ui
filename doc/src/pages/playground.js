@@ -8,6 +8,7 @@ import componentTheme from '../components/common/componentData/theme.scss';
 import Select from '../../../src/select';
 import Layout from '../components/layout';
 import theme from './playground.scss';
+import { navigate } from 'gatsby';
 
 export default class Playground extends Component {
     static propTypes = {
@@ -25,13 +26,19 @@ export default class Playground extends Component {
     componentDidMount() {
       const query = this.props.location.search;
       const componentName = query.split('=')[1];
-      const component = this.getComponentByName(componentName);
+      const component = this.getComponentByName(componentName || '');
       if (component.length) {
         // eslint-disable-next-line react/no-did-mount-set-state
         this.setState({
           component: component[0].componentData,
           currentComponent: component[0].name,
         });
+      }
+    }
+
+    componentDidUpdate(prevProps) {
+      if (this.props.location.search !== prevProps.location.search) {
+        navigate(`/playground?component=${this.state.currentComponent.toLowerCase()}`);
       }
     }
 
@@ -43,6 +50,7 @@ export default class Playground extends Component {
         currentComponent: value.label,
         component,
       });
+      navigate(`/playground?component=${value.label.toLowerCase()}`);
     }
 
     renderPlaygroundNavigation = () => {
