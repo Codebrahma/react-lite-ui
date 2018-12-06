@@ -63,7 +63,10 @@ class Usage extends React.Component {
           <span className="sub-title">example code</span>
           <pre>
             <code className="language-jsx">
-              { componentData.componentUsage || componentData.basicComponent }
+              { componentData.componentUsage }
+            </code>
+            <code className="language-css">
+              { componentData.componentUsageTheme }
             </code>
           </pre>
         </div>
