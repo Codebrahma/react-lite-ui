@@ -178,4 +178,3 @@ pre > code.highlight {
 .token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.atrule, .token.attr-value, .token.keyword {
   color: hsla(340, 56%, 58%, 1) !important;
 }
-

@@ -88,6 +88,7 @@ export const componentData = {
           <div>
               <MultiSelect
                 options={options}
+                theme={componentTheme}
               />
           </div>
         )

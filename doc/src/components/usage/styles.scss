@@ -1,8 +1,7 @@
 .usage-content {
   .preview-block {
     .header {
-      font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
       margin-top: 10px;
       margin-bottom: 15px;
     }
@@ -10,6 +9,11 @@
       display: flex;
       flex-wrap: wrap;
       text-align: center;
+    }
+  }
+  .usage-example-code {
+    pre {
+      border-radius: 6px;
     }
   }
 }

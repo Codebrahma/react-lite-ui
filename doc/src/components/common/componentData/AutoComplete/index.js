@@ -86,7 +86,7 @@ export const componentData = {
               { label: 'ipsum' }
           ];
         return (
-          <AutoComplete data={data} />
+          <AutoComplete data={data} theme={componentTheme} />
         )
       }
     }

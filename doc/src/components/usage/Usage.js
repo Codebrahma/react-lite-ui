@@ -8,6 +8,7 @@ import componentTheme from '../common/componentData/theme.scss';
 import './styles.scss';
 import './prism-cb.css';
 
+// eslint-disable-next-line no-unused-vars
 const PrismJS = require('prismjs/components/prism-jsx.min');
 
 const PreviewBlock = ({ children, header }) => (
@@ -56,10 +57,11 @@ class Usage extends React.Component {
         <div className="component mb-10">
           { this.renderComponentUsage(componentData) }
         </div>
-        <div>
+        <div className="usage-example-code">
+          <span className="sub-title">example code</span>
           <pre>
             <code className="language-jsx">
-              { componentData.basicComponent }
+              { componentData.componentUsage || componentData.basicComponent }
             </code>
           </pre>
         </div>
