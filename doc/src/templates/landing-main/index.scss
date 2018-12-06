@@ -6,6 +6,7 @@
         padding: 1.5em;
         display: flex;
         flex-flow: row;
+        box-sizing: border-box;
         justify-content: space-around;
 
         .col {
@@ -133,6 +134,8 @@
 
             .row {
                 background: white;
+                max-width: 100%;
+                padding: 2% !important;
 
                 .divider {
                     width: 2px;

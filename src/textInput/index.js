@@ -7,16 +7,12 @@ import defaultTheme from './theme.scss';
 const TextInput = ({
   additionalClasses,
   theme,
-  width,
   disabled,
   ...others
 }) => {
   const wrapperClasses = classnames(theme.inputWrapper, additionalClasses);
   const innerWrapperProps = {
     className: 'innerWrapper',
-    style: {
-      width: width || '200px',
-    },
   };
   const inputElementProps = {
     ...others,
