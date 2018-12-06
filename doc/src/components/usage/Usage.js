@@ -81,7 +81,7 @@ PreviewBlock.propTypes = {
 };
 
 PreviewElements.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.node]).isRequired,
 };
 
 export default Usage;
