@@ -15,7 +15,7 @@ class Select extends Component {
       Set initially selected option label as empty string and dropdown
       state as closed for initial render.
       */
-      selected: { label: '' },
+      selected: { label: props.defaultValue.label || '' },
       open: false,
     };
     this.listRef = null;
