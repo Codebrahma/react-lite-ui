@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import ProgressBar from '..';
 
 /* eslint-disable no-undef */
-describe('ProgressBar Render tests', () => {
+describe('ProgressBar accessibility tests', () => {
   let wrappedComponent;
   let expectedValueBefore;
   let expectedValueAfter;
