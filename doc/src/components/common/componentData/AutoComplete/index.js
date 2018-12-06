@@ -91,4 +91,45 @@ export const componentData = {
       }
     }
   `,
+  componentUsage: `
+    // Component.js
+
+    class Demo extends React.Component {
+      render() {
+          const data = [
+              { label: 'lorem' },
+              { label: 'ipsum' }
+          ];
+        return (
+          <div>
+            <PreviewElements>
+              <PreviewBlock header="Default autocomplete">
+                { /* Default themed autocomplete */ }
+                <AutoComplete data={data} />
+              </PreviewBlock>
+              <PreviewBlock header="customized autocomplete">
+                { /* Custom themed autocomplete, Refer theme.scss below */ }
+                <AutoComplete data={data} theme={componentTheme} />
+              </PreviewBlock>
+            </PreviewElements>
+          </div>
+        )
+      }
+    }
+  `,
+  componentUsageTheme: `
+    // theme.scss
+
+    :local(.border-animation) {
+      &::after {
+          background-color: chartreuse !important;
+      }
+    }
+    
+    :local(.autocomplete-list-item) {
+      &:hover {
+        background-color: rgba($color: chartreuse, $alpha: 0.2) !important;
+      }
+    }
+  `,
 };
