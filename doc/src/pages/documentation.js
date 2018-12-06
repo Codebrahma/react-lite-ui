@@ -57,6 +57,7 @@ class DocumentationPage extends React.Component {
     return (
       <Layout>
         <WithComponentBar
+          page="documentation"
           onClickComponent={this.onClickComponent}
           activeComponent={activeComponent}
           componentBarVisible={componentBarVisible}

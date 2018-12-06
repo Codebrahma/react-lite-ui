@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import { componentList } from '../common/componentList';
 import Button from '../../../../src/button';
 
@@ -21,6 +21,11 @@ class WithComponentBar extends React.Component {
         element.scrollIntoView();
       }
     }
+  }
+
+  navigateToPlayground = () => {
+    const { page, activeComponent } = this.props;
+    navigate(`/playground?component=${activeComponent.toLowerCase()}`, { state: { prevPage: page } });
   }
 
   render() {
@@ -47,9 +52,7 @@ class WithComponentBar extends React.Component {
               <Button bordered>select component</Button>
             </span>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <Link to={`/playground?component=${activeComponent.toLowerCase()}`}>
-              <Button bordered type="primary">Open in playground</Button>
-            </Link>
+            <Button onClick={this.navigateToPlayground} bordered type="primary">Open in playground</Button>
           </div>
           {children}
         </div>
@@ -64,6 +67,7 @@ WithComponentBar.propTypes = {
   activeComponent: PropTypes.string.isRequired,
   handleComponentBar: PropTypes.func.isRequired,
   componentBarVisible: PropTypes.bool,
+  page: PropTypes.string.isRequired,
 };
 
 WithComponentBar.defaultProps = {

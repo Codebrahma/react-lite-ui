@@ -2,13 +2,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { navigate } from 'gatsby';
 import { componentList } from '../components/common/componentList';
 import components from '../../../src';
 import componentTheme from '../components/common/componentData/theme.scss';
 import Select from '../../../src/select';
+import Button from '../../../src/button';
 import Layout from '../components/layout';
 import theme from './playground.scss';
-import { navigate } from 'gatsby';
 
 export default class Playground extends Component {
     static propTypes = {
@@ -24,7 +25,8 @@ export default class Playground extends Component {
     }
 
     componentDidMount() {
-      const query = this.props.location.search;
+      const { location } = this.props;
+      const query = location.search;
       const componentName = query.split('=')[1];
       const component = this.getComponentByName(componentName || '');
       if (component.length) {
@@ -34,6 +36,10 @@ export default class Playground extends Component {
           currentComponent: component[0].name,
         });
       }
+      // eslint-disable-next-line react/no-did-mount-set-state
+      this.setState({
+        prevPage: location.state === null ? 'documentation' : location.state.prevPage || 'documentation',
+      });
     }
 
     componentDidUpdate(prevProps) {
@@ -55,14 +61,20 @@ export default class Playground extends Component {
       navigate(`/playground?component=${label.toLowerCase()}`);
     }
 
+    navigateBack = () => {
+      const { prevPage, currentComponent } = this.state;
+      navigate(`/${prevPage}?component=${currentComponent.toLowerCase()}`);
+    }
+
     renderPlaygroundNavigation = () => {
       const options = componentList.map(comp => ({
         label: comp.name,
       }));
-      const { currentComponent } = this.state;
+      const { currentComponent, prevPage } = this.state;
       return (
         <div className="playground-navigation">
           <Select defaultValue={{ label: currentComponent }} options={options} theme={theme} onSelect={this.changeComponent} />
+          <Button onClick={this.navigateBack} bordered >{`Go to ${prevPage}`}</Button>
         </div>
       );
     }
