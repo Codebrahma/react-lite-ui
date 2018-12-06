@@ -29,33 +29,34 @@ class RadioButtonGroup extends React.Component {
       theme,
     } = this.props;
 
-    const classNames = cx(styles['radio-group']);
+    const classNames = cx(styles['radio-group'], { inline });
 
     const isChecked = label => label === this.state.currentlyActive ? 'active' : ''; // eslint-disable-line
 
-    return options.map(option => (
-      <React.Fragment key={option.label}>
-        <div className={classNames}>
-          {/* eslint-disable jsx-a11y/click-events-have-key-events */ }
-          { /* eslint-disable jsx-a11y/no-static-element-interactions */ }
-          <div
-            className={cx(styles['each-radio'], { inline })}
-            onClick={(e) => { this.handleRadioBtnChange(e, option); }}
-            id="radio_button"
-          >
-            <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
-              <label className={cx('inner', { checked: isChecked(option.label) })}>
-                <input type="radio" />
+    return (
+      <div className={classNames}>
+        {options.map(option => (
+          <div key={option.label}>
+            {/* eslint-disable jsx-a11y/click-events-have-key-events */ }
+            { /* eslint-disable jsx-a11y/no-static-element-interactions */ }
+            <div
+              className={cx(styles['each-radio'])}
+              onClick={(e) => { this.handleRadioBtnChange(e, option); }}
+              id="radio_button"
+            >
+              <label className={cx(styles['customized-radio'], theme['customized-radio'])}>
+                <label className={cx('inner', { checked: isChecked(option.label) })}>
+                  <input type="radio" />
+                </label>
               </label>
-            </label>
-            <label className={styles['each-label']}>
-              {option.label}
-            </label>
+              <label className={styles['each-label']}>
+                {option.label}
+              </label>
+            </div>
           </div>
-        </div>
-        <div className="clearfix" />
-      </React.Fragment>
-    ));
+        ))}
+      </div>
+    );
   }
 }
 

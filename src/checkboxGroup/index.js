@@ -35,22 +35,23 @@ class CheckboxGroup extends React.Component {
       theme,
     } = this.props;
 
-    const classNames = cx(theme['checkbox-group']);
-    return options.map(option => (
-      <React.Fragment key={option.label}>
-        <div className={classNames}>
-          <div className={cx(theme['each-check'], { inline })}>
-            <Checkbox
-              {...option}
-              checked={this.state.isChecked[option.label]}
-              onClick={this.handleCheckListChange}
-              theme={theme}
-            />
+    const classNames = cx(theme['checkbox-group'], { inline });
+    return (
+      <div className={classNames}>
+        {options.map(option => (
+          <div key={option.label}>
+            <div className={cx(theme['each-check'])}>
+              <Checkbox
+                {...option}
+                checked={this.state.isChecked[option.label]}
+                onClick={this.handleCheckListChange}
+                theme={theme}
+              />
+            </div>
           </div>
-        </div>
-        <div className="clearfix" />
-      </React.Fragment>
-    ));
+        ))}
+      </div>
+    );
   }
 }
 
