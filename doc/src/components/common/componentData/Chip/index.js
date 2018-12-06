@@ -77,92 +77,99 @@ export const componentData = {
   `,
   componentUsage: `
     class Demo extends React.Component {
-      constructor(props) {
-        super(props);
-        this.style = {
-          chipContent: {
-            display: "grid",
-            gridTemplateColumns: "auto auto auto",
-            gridGap: 20,
-            alignItems: "center"
-          }
-        };
-      }
       render() {
         return (
           <div>
-            <PreviewBlock header="Default Chip and clickable chip">
-              <div style={this.style.chipContent}>
+            <PreviewElements>
+              <PreviewBlock header="Default Chip">
                 <Chip />
+              </PreviewBlock>
+              <PreviewBlock header="Labelled Chip">
                 <Chip
                   label='labelled'
                   color='primary'
                   handleChipClick={()=>alert('Clicked on Chip')}
                 />
-              </div>
-            </PreviewBlock>
-            <PreviewBlock header="Closable Chips">
-              <div style={this.style.chipContent}>
+              </PreviewBlock>
+              <PreviewBlock header="Closable Chip">
                 <Chip
                   label='closable chip'
                   color='danger'
                   handleDelete={() => alert('Clicked Delete Button')}
                 />
+                </PreviewBlock>
+              </PreviewElements>
+              <PreviewElements>
+                <PreviewBlock header="Alphabet Avatar">
+                  <Chip
+                    avatar={<Avatar>K</Avatar>}
+                    label="alphabet avatar"
+                    color='warning'
+                  />
+                </PreviewBlock>
+                <PreviewBlock header="Image Avatar">
+                  <Chip
+                    avatar='https://placeimg.com/80/80/people'
+                    label='image avatar'
+                    color='success'
+                    handleDelete={() => alert('Clicked Delete Button')}
+                  />
+                </PreviewBlock>
+                <PreviewBlock header="Avatar and Clickable">
+                  <Chip
+                    avatar='https://placeimg.com/80/80/fruits'
+                    label='one more'
+                    color='info'
+                    handleChipClick={()=>alert('Clicked on Chip')}
+                    handleDelete={() => alert('Clicked Delete Button')}
+                  />
+                </PreviewBlock>
+            </PreviewElements>
+            <PreviewElements>
+              <PreviewBlock header="Outlined Chip">
                 <Chip
-                  label='one more'
-                  color='info'
-                  handleDelete={() => alert('Clicked Delete Button')}
-                />
-              </div>
-            </PreviewBlock>
-            <PreviewBlock header="Avatar Chips, closable and clickable">
-              <div style={this.style.chipContent}>
-                <Chip
-                  avatar={<Avatar>K</Avatar>}
-                  label="alphabet avatar"
-                  color='warning'
-                />
-                <Chip
-                  avatar='https://unsplash.it/50x50'
-                  label='image avatar'
-                  color='success'
-                  handleDelete={() => alert('Clicked Delete Button')}
-                  handleChipClick={()=>alert('Clicked on Chip')}
-                />
-              </div>
-            </PreviewBlock>
-            <PreviewBlock header="Outlined transparent Chip Component">
-              <div style={this.style.chipContent}>
-                <Chip
-                  label='outlined closable'
+                  label='outlined chip'
                   color='danger'
-                  handleDelete={() => alert('Clicked Delete Button')}
                   outlined
                 />
+              </PreviewBlock>
+              <PreviewBlock header="Outlined Avatar">
                 <Chip
-                  avatar='https://unsplash.it/50x50'
+                  avatar='https://placeimg.com/80/80/animals'
                   label='outlined avatar'
                   color='info'
                   outlined
                 />
-              </div>
-            </PreviewBlock>
-            <PreviewBlock header="Sizeable Chips">
-              <div style={this.style.chipContent}>
+              </PreviewBlock>
+              <PreviewBlock header="Outlined closable">
+                <Chip
+                  label='outlined closable'
+                  color='success'
+                  outlined
+                  handleDelete={() => alert('Clicked Delete Button')}
+                />
+              </PreviewBlock>
+            </PreviewElements>
+            <PreviewElements>
+            <PreviewBlock header="Small Chip">
                 <Chip
                   size='small'
                   label='small chip'
                 />
+              </PreviewBlock>
+              <PreviewBlock header="medium chip">
                 <Chip
                   size='medium'
                   label='medium chip'
                 />
+              </PreviewBlock>
+              <PreviewBlock header="large chip">
                 <Chip
                   size='large'
                   label='large chip'
                 />
-              </div>
-            </PreviewBlock>
+              </PreviewBlock>
+            </PreviewElements>
           </div>
         )
       }
