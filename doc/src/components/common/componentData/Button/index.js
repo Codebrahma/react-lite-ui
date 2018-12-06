@@ -138,43 +138,51 @@ export const componentData = {
           <div>
             { /* Preview Block-1 */ }
             <PreviewBlock header="Styled Buttons">
-              <div style={this.style.buttonContainer}>
+              <PreviewElements>
                 <Button>Primary</Button>
                 <Button type="secondary">Secondary</Button>
                 <Button type="success">Success</Button>
-                <Button type="danger">Danger</Button>
-                <Button type="warning">Warning</Button>
-                <Button type="info">Info</Button>
-                <Button type="dark">Dark</Button>
-              </div>
+              </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-2 */ }
             <PreviewBlock header="Bordered Buttons">
-              <div style={this.style.buttonContainer}>
-                <Button bordered>Primary</Button>
-                <Button type="secondary" bordered>Secondary</Button>
-                <Button type="success" bordered>Success</Button>
-              </div>
+              <PreviewElements>
+                <Button bordered type="info">info</Button>
+                <Button type="danger" bordered>danger</Button>
+                <Button type="warning" bordered>warning</Button>
+              </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-3 */ }
             <PreviewBlock header="Borderless Buttons">
-              <div style={this.style.buttonContainer}>
-                <Button type="danger" borderless>Danger</Button>
+              <PreviewElements>
+                <Button type="primary" borderless>Primary</Button>
                 <Button type="warning" borderless>Warning</Button>
-                <Button type="info" borderless>Info</Button>
-              </div>
+                <Button type="dark" borderless>dark</Button>
+              </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-4 */ }
             <PreviewBlock header="Flat Buttons">
-              <div style={this.style.buttonContainer}>
+              <PreviewElements>
                 <Button type="success" flat>Success</Button>
                 <Button type="danger" flat>Danger</Button>
                 <Button type="warning" flat>Warning</Button>
-              </div>
+              </PreviewElements>
             </PreviewBlock>
-            { /* Preview Block-5 */ }
+            { /* Preview Block-5 */}
+            <PreviewBlock header="Buttons with icons and text">
+              <PreviewElements>
+                <Button type="warning" icon="icon-left">
+                  icon left
+                </Button>
+                <Button type="success" icon="icon-right" iconAlignment="right">
+                  icon right
+                </Button>
+                <Button iconButton icon={<MenuIcon />} />
+              </PreviewElements>
+            </PreviewBlock>
+            { /* Preview Block-6 */ }
             <PreviewBlock header="Sizable Buttons">
-              <div style={this.style.buttonContainer}>
+              <PreviewElements>
                 <Button size="small">
                   Small
                 </Button>
@@ -184,21 +192,7 @@ export const componentData = {
                 <Button size="large">
                   Large
                 </Button>
-              </div>
-            </PreviewBlock>
-            { /* Preview Block-5 */ }
-            <PreviewBlock header="Buttons with icons and text">
-              <div style={this.style.buttonContainer}>
-                <Button type="warning" icon="icon-left">
-                  icon left
-                </Button>
-                <Button type="success" icon="icon-right" iconAlignment="right">
-                  icon right
-                </Button>
-              </div>
-            </PreviewBlock>
-            <PreviewBlock header="Icon only button">
-                <Button iconButton icon={<MenuIcon />} />
+              </PreviewElements>
             </PreviewBlock>
           </div>
         );

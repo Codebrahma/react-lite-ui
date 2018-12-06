@@ -95,7 +95,7 @@ export const componentData = {
           { label: 'Zheta' }
         ];
         return (
-          <div>
+          <PreviewElements>
             {/* Preview Block 1 */}
             <PreviewBlock header="Default Checkbox group">
               <CheckboxGroup
@@ -110,7 +110,7 @@ export const componentData = {
                 options={options}
               />
             </PreviewBlock>
-          </div>
+          </PreviewElements>
         )
       }
     }

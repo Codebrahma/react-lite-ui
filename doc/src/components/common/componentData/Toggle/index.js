@@ -89,9 +89,9 @@ export const componentData = {
 
       render() {
         return (
-          <div>
+          <PreviewElements>
             {/* Preview Block 1 */}
-            <PreviewBlock header="Default toggle (without toggable)">
+            <PreviewBlock header="Default toggle (disabled)">
               <Toggle />
             </PreviewBlock>
             {/* Preview Block 2 */}
@@ -101,7 +101,7 @@ export const componentData = {
                 onClick={this.handleToggle}
               />
             </PreviewBlock>
-          </div>
+          </PreviewElements>
         )
       }
     }

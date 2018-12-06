@@ -99,7 +99,7 @@ export const componentData = {
           { label: 'Zheta', value: 'Value-zheta' }
         ];
         return (
-          <div>
+          <PreviewElements>
             {/* Preview Block 1 */}
             <PreviewBlock header="Default RadioButton group">
               <RadioButtonGroup
@@ -114,7 +114,7 @@ export const componentData = {
                 options={options}
               />
             </PreviewBlock>
-          </div>
+          </PreviewElements>
         )
       }
     }

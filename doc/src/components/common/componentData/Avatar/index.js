@@ -67,21 +67,25 @@ export const componentData = {
         );
         return (
           <div>
-            <PreviewBlock header="Simple Avatar with Image">
-              <Avatar image="https://placeimg.com/80/80/animals"/>
-            </PreviewBlock>
-            <PreviewBlock header="Avatar with Alphabets and background colors">
-              <PreviewElements>
-                <Avatar bgColor="orange">R</Avatar>
-                <Avatar theme={componentTheme}>E</Avatar>
-                <Avatar alphabet='A' bgColor="grey"/>
-                <Avatar bgColor="lightBlue">C</Avatar>
-                <Avatar alphabet='T' />
-              </PreviewElements>
-            </PreviewBlock>
-            <PreviewBlock header="Avatar with Icon">
-              <Avatar bgColor="darkBlue"><MenuIcon /></Avatar>
-            </PreviewBlock>
+            <PreviewElements>
+              <PreviewBlock header="Avatar with Alphabets and background colors">
+                <PreviewElements>
+                  <Avatar bgColor="orange">R</Avatar>
+                  <Avatar theme={componentTheme}>E</Avatar>
+                  <Avatar alphabet='A' bgColor="grey"/>
+                  <Avatar bgColor="lightBlue">C</Avatar>
+                  <Avatar alphabet='T' />
+                </PreviewElements>
+              </PreviewBlock>
+            </PreviewElements>
+            <PreviewElements>
+              <PreviewBlock header="Avatars with Image and icon">
+                <PreviewElements>
+                  <Avatar image="https://placeimg.com/80/80/animals"/>
+                  <Avatar bgColor="darkBlue"><MenuIcon /></Avatar>
+                </PreviewElements>
+              </PreviewBlock>
+            </PreviewElements>
           </div>
         )
       }

@@ -93,7 +93,7 @@ export const componentData = {
       }
       render() {
         return (
-          <div>
+          <PreviewElements>
             {/* PreviewBlock 1 */}
             <PreviewBlock header="Normal Checkbox">
               <Checkbox 
@@ -114,7 +114,7 @@ export const componentData = {
                 label='labelled checkbox'
               />
             </PreviewBlock>
-          </div>
+          </PreviewElements>
         )
       }
     }
