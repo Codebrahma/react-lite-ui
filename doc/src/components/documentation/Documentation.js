@@ -7,6 +7,7 @@ import * as components from '../../../../src';
 
 import tableTheme from './tableTheme.scss';
 import componentTheme from '../common/componentData/theme.scss';
+import './styles.scss';
 
 const {
   Table,

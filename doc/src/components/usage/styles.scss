@@ -1,0 +1,19 @@
+.usage-content {
+  .preview-block {
+    .header {
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .preview-elements {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+  }
+  .usage-example-code {
+    pre {
+      border-radius: 6px;
+    }
+  }
+}

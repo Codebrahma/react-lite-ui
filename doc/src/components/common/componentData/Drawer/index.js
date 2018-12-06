@@ -105,5 +105,107 @@ export const componentData = {
         )
       }
     }
-  `
+  `,
+  componentUsage: `
+    class Demo extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          top: false,
+          right: false,
+          bottom: false,
+          left: false,
+        };
+        this.handleDrawer = this.handleDrawer.bind(this);
+      }
+
+      handleDrawer(position, open) {
+        this.setState({
+          [position]: open,
+        });
+      }
+
+      render() {
+        return (
+          <div>
+            <PreviewBlock header="Left and Right positions">
+              <PreviewElements>
+                <div>
+                  <Button 
+                    onClick={() => this.handleDrawer('left', true)}
+                    type="primary"
+                  >
+                    left
+                  </Button>
+                  <Drawer
+                    open={this.state.left}
+                    onClose={() => this.handleDrawer('left', false)}
+                  >
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                  </Drawer>
+                </div>
+                <div>
+                  <Button 
+                    onClick={() => this.handleDrawer('right', true)}
+                    type="primary"
+                  >
+                    right
+                  </Button>
+                  <Drawer
+                    open={this.state.right}
+                    position="right"
+                    onClose={() => this.handleDrawer('right', false)}
+                  >
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                </Drawer>
+                </div>
+              </PreviewElements>
+            </PreviewBlock>
+            <PreviewBlock header="Top and Bottom positions">
+              <PreviewElements>
+                <div>
+                  <Button 
+                    onClick={() => this.handleDrawer('top', true)}
+                    type="primary"
+                  >
+                    top
+                  </Button>
+                  <Drawer
+                    open={this.state.top}
+                    position="top"
+                    onClose={() => this.handleDrawer('top', false)}
+                  >
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                  </Drawer>
+                </div>
+                <div>
+                  <Button 
+                    onClick={() => this.handleDrawer('bottom', true)}
+                    type="primary"
+                  >
+                    bottom
+                  </Button>
+                  <Drawer
+                    open={this.state.bottom}
+                    position="bottom"
+                    onClose={() => this.handleDrawer('bottom', false)}
+                  >
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                  </Drawer>
+                </div>
+              </PreviewElements>
+            </PreviewBlock>
+          </div>
+        )
+      }
+    }
+  `,
 };

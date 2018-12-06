@@ -91,6 +91,7 @@ export const componentData = {
           <div>
             <Select
               options={options}
+              theme={componentTheme}
             />
           </div>
         )

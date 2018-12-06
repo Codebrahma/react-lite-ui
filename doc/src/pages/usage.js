@@ -5,10 +5,10 @@ import { navigate } from 'gatsby';
 import Layout from '../components/layout';
 import { componentList } from '../components/common/componentList';
 import WithComponentBar from '../components/WithComponentsBar/WithComponentBar';
-import Documentation from '../components/documentation/Documentation';
 import { AutoCompleteComponentData } from '../components/common/componentData';
+import Usage from '../components/usage/Usage';
 
-class DocumentationPage extends React.Component {
+class UsagePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,12 +33,12 @@ class DocumentationPage extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.location.search !== prevProps.location.search) {
-      navigate(`/documentation?component=${this.state.activeComponent.toLowerCase()}`);
+      navigate(`/usage?component=${this.state.activeComponent.toLowerCase()}`);
     }
   }
 
   onClickComponent = (name, componentData) => {
-    navigate(`/documentation?component=${name.toLowerCase()}`);
+    navigate(`/usage?component=${name.toLowerCase()}`);
     this.setState({
       activeComponent: name,
       componentData,
@@ -62,15 +62,15 @@ class DocumentationPage extends React.Component {
           componentBarVisible={componentBarVisible}
           handleComponentBar={this.handleComponentBar}
         >
-          <Documentation componentData={componentData} activeComponent={activeComponent} />
+          <Usage componentData={componentData} activeComponent={activeComponent} />
         </WithComponentBar>
       </Layout>
     );
   }
 }
 
-DocumentationPage.propTypes = {
+UsagePage.propTypes = {
   location: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
-export default DocumentationPage;
+export default UsagePage;
