@@ -1,6 +1,11 @@
 @import '../globals/theme';
 
 :local(.radio-group) {
+  display: flex;
+  flex-direction: column;
+  &.inline {
+    flex-direction: row !important;
+  }
   input {
     position: relative;
     opacity: 0;
@@ -13,21 +18,15 @@
       width: 13px;
     }
   }
-  .clearfix {
-    clear: both;
-  }
 }
 
 :local(.each-radio) {
-  &.inline {
-    float: left;
-    margin-right: 25px;
-  }
-  margin-bottom: 15px;
+  padding: 0.4em;
+  box-sizing: border-box;
 }
 
 :local(.each-label) {
-  margin-left: 10px;
+  margin-left: 0.7em;
   cursor: pointer;
 }
 
