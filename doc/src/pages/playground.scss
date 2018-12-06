@@ -1,0 +1,19 @@
+.playround-container {
+    position: relative;
+    top: 6.3rem;
+}
+
+.playground-error {
+    margin: 0.5em;
+    box-sizing: border-box;
+    padding: 0.5em;
+    background: #d681817a;
+    border-radius: 0.2em;
+    transition: all 5s ease-in-out;
+}
+
+.playground-preview {
+    display: flex;
+    box-sizing: border-box;
+    padding: 2rem;
+}
