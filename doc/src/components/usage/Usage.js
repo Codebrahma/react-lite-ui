@@ -76,7 +76,7 @@ Usage.propTypes = {
 };
 
 PreviewBlock.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.node]).isRequired,
   header: PropTypes.string.isRequired,
 };
 
