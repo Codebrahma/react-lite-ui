@@ -93,4 +93,97 @@ export const componentData = {
       type and scrambled it to make a type specimen book.
     </Card>
   `,
+  componentUsage: `
+    //  Component.js
+    
+    class Demo extends React.Component {
+      render() {
+        return (
+          <div>
+            <PreviewBlock header="default card">
+
+            {/* Default Card with expandable content */}
+              <Card
+                header='Card String header'
+                wrapContent
+                expandedContent={
+                  () => <div>
+                    It has survived not only five centuries, but also the 
+                    leap into electronic typesetting, remaining essentially 
+                    unchanged. It was popularised in the 1960s with the 
+                    release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                  </div>
+                }>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy text
+                  ever since the 1500s, when an unknown printer took a galley of
+                  type and scrambled it to make a type specimen book.
+              </Card>
+
+            </PreviewBlock>
+            <PreviewBlock header="Customized cards">
+              <PreviewElements>
+                <div>
+
+                {/* Customized Card with image as content, Refer theme.scss */}
+                  <Card
+                    theme={componentTheme}
+                    header="Am I Cute?"
+                    footer={
+                      <Button href="https://github.com/Codebrahma/react-lite-ui" type="primary" bordered>view more</Button>
+                    }
+                    elevation="medium"
+                  >
+                    <div className="col card-content">
+                      <img src="https://placeimg.com/300/300/animals" alt="travel" />
+                    </div>
+                  </Card>
+
+                </div>
+                <div>
+
+                {/* Customised Card for picture album, Refer theme.scss */}
+                  <Card
+                    theme={componentTheme}
+                    noPadding
+                    footer={
+                      <Button href="https://github.com/Codebrahma/react-lite-ui" type="success" borderless>view more</Button>
+                    }
+                    elevation="medium"
+                  >
+                    <div>
+                      <img src="https://placeimg.com/300/300/nature" alt="travel" />
+                    </div>
+                  </Card>
+
+                </div>
+              </PreviewElements>
+            </PreviewBlock>
+          </div>
+        )
+      }
+    }
+  `,
+  componentUsageTheme: `
+    //  theme.scss
+
+    :local(.card) {
+      z-index: 2;
+      height: fit-content;
+      width: 100%;
+      transition: margin 0.2s ease-in-out;
+    }
+    
+    :local(.cardHeader) {
+      color: #0c549c;
+      text-align: center;
+    }
+    
+    :local(.cardFooter) {
+      justify-content: center;
+      align-self: baseline;
+    }
+  `,
 };
