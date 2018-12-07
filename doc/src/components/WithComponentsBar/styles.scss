@@ -7,8 +7,8 @@
         width: 240px;
         padding-top: 25px;
         overscroll-behavior: contain;
-        -webkit-box-shadow: 4px 0 5px -1px rgba(0,0,0,0.2);
-        box-shadow: 4px 0 5px -1px rgba(0,0,0,0.2);
+        -webkit-box-shadow: 6px 0 6px -2px rgba(0, 0, 0, 0.2);
+        box-shadow: 6px 0 6px -2px rgba(0, 0, 0, 0.2);
         .each-component-item {
             font-size: 1.1em;
             line-height: 30px;
@@ -129,5 +129,12 @@
             padding-left: 15px;
             margin-right: 15px;
         }
+    }
+}
+
+:local(.drawer) {
+    padding: 0;
+    @media only screen and (min-width: 992px) {
+        left: 0 !important;
     }
 }

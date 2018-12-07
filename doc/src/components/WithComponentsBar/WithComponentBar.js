@@ -8,7 +8,7 @@ import { componentList } from '../common/componentList';
 import Button from '../../../../src/button';
 import Drawer from '../../../../src/drawer';
 
-import './styles.scss';
+import theme from './styles.scss';
 
 class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {
@@ -35,7 +35,7 @@ class WithComponentBar extends React.Component {
     } = this.props;
     return (
       <div className="with-component-bar">
-        <Drawer open={componentBarVisible} onClose={onClose} className={`component-sidebar ${componentBarVisible && 'component-sidebar-mobile'}`}>
+        <Drawer theme={theme} open={componentBarVisible} onClose={onClose} className={`component-sidebar ${componentBarVisible ? 'component-sidebar-mobile' : ''}`}>
           {componentList.map(component => (
             <div
               className={`each-component-item ${activeComponent === component.name ? 'active' : ''}`}
