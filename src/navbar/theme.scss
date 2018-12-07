@@ -112,7 +112,7 @@
   }
 }
 :local(.navbarMobileMenu) {
-  display: none;
+  display: hidden;
 }
 
 .icon-menu {
@@ -131,7 +131,6 @@
     color: $white;
     font-size: 18px;
     & > * {
-      width: 100%;
       &:hover {
         background: rgba(0, 0, 0, 0.1);
       }
@@ -143,17 +142,22 @@
   }
 
   :local(.navbarMobileMenu)  {
-    display: flex;
+    height: 0;
+    overflow: hidden;
     box-sizing: border-box;
     flex-direction: column;
     background-color: $cool-blue;
     fill: $white;
-    padding: 2%;
     width: 100%;
     position: absolute;
     left: 0;
     top: 100%;
     outline: none;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  :local(.showMenu) {
+    height: fit-content;
+    padding: 2%;
   }
 }
