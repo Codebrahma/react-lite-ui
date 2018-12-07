@@ -104,13 +104,17 @@ export const componentData = {
           <div>
             <PreviewElements>
               <PreviewBlock header="Default autocomplete">
-                { /* Default themed autocomplete */ }
+
+              {/* Default themed autocomplete */}
                 <AutoComplete data={data} />
-              </PreviewBlock>
+              
+                </PreviewBlock>
               <PreviewBlock header="customized autocomplete">
-                { /* Custom themed autocomplete, Refer theme.scss below */ }
+                
+              {/* Custom themed autocomplete, Refer theme.scss below */}
                 <AutoComplete data={data} theme={componentTheme} />
-              </PreviewBlock>
+              
+                </PreviewBlock>
             </PreviewElements>
           </div>
         )
