@@ -177,5 +177,5 @@ export const componentList = [
     name: 'Tooltip',
     component: Tooltip,
     componentData: TooltipComponentData,
-  }
+  },
 ];
