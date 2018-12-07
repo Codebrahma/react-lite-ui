@@ -4,10 +4,12 @@
   "description": "A set of React UI components",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "docs:dev": "cd doc && npm run develop",
+    "prebuild": "npm run test && rm -rf build && npm run build",
     "build": "webpack --mode production --config webpack.prod.js",
-    "build-demo": "npm install && cd doc && npm install && npm run build",
-    "lint": "eslint ./ --ext .jsx --ext .js",
+    "build:docs": "npm install && cd doc && npm install && npm run build",
+    "lint": "eslint ./ --ext .jsx --ext .js && echo \"eslint: no lint errors!\"",
+    "lint:fix": "eslint ./ --ext .jsx --ext .js --fix && echo \"eslint: all errors fixed!\"",
     "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "postinstall": "gitmoji -i"
@@ -61,6 +63,7 @@
     "nyc": "^13.0.1",
     "optimize-css-assets-webpack-plugin": "^4.0.0",
     "sass-loader": "^7.0.1",
+    "semantic-release": "^15.12.4",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.3.0",
     "webpack": "^4.6.0",
