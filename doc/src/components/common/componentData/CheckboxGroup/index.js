@@ -96,19 +96,25 @@ export const componentData = {
         ];
         return (
           <PreviewElements>
-            {/* Preview Block 1 */}
             <PreviewBlock header="Default Checkbox group">
-              <CheckboxGroup
-                options={options}
-                onClick={this.handleCheckListClick}
-              />
+              <div style={{textAlign: 'left'}}>
+              
+              {/* Default Checkbox group */}
+                <CheckboxGroup
+                  options={options}
+                  onClick={this.handleCheckListClick}
+                />
+              
+              </div>
             </PreviewBlock>
-            {/* Preview Block 2 */}
             <PreviewBlock header="Inline Checkbox group">
+
+            {/* Inlined checkbox group */}
               <CheckboxGroup
                 inline
                 options={options}
               />
+
             </PreviewBlock>
           </PreviewElements>
         )
