@@ -145,7 +145,7 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   theme: defaultTheme,
   defaultActive: 1,
-  navigationButtons: false,
+  navigationButtons: true,
   className: '',
 };
 

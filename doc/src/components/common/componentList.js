@@ -23,6 +23,7 @@ import Slider from '../../../../src/slider';
 import Carousel from '../../../../src/carousel';
 import ProgressBar from '../../../../src/progressbar';
 import Table from '../../../../src/table';
+import Pagination from '../../../../src/pagination';
 
 import {
   CardComponentData,
@@ -49,6 +50,7 @@ import {
   SliderComponentData,
   CarouselComponentData,
   ProgressBarComponentData,
+  PaginationComponentData,
   TableComponentData,
 } from './componentData';
 
@@ -123,6 +125,11 @@ export const componentList = [
     name: 'Navbar',
     component: Navbar,
     componentData: NavbarComponentData,
+  },
+  {
+    name: 'Pagination',
+    component: Pagination,
+    componentData: PaginationComponentData,
   },
   {
     name: 'Popover',
