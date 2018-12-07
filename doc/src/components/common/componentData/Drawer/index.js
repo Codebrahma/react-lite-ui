@@ -116,13 +116,51 @@ export const componentData = {
           bottom: false,
           left: false,
         };
+        this.styles = {
+          dFlex: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+          flexDirColumn: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+          },
+          imageStyle: {
+            width: '40px',
+            height: '40px',
+            marginTop: '1em',
+          }
+        }
         this.handleDrawer = this.handleDrawer.bind(this);
+        this.renderDrawerContent = this.renderDrawerContent.bind(this);
       }
 
       handleDrawer(position, open) {
         this.setState({
           [position]: open,
         });
+      }
+
+      renderDrawerContent() {
+        return (
+          <div style={{textAlign: 'left'}}>
+            <div style={this.styles.dFlex}>
+              <img src={match} alt="logo" style={this.styles.imageStyle}/>
+              <h2 style={{marginLeft: '10px'}}>React Lite UI</h2>
+            </div>
+            <hr />
+            <div style={this.styles.flexDirColumn}>
+              <h5>A set of light weight React Components</h5>
+              <Button borderless href="https://react-lite-ui.netlify.com/documentation">Documentation</Button>
+              <Button borderless href="https://react-lite-ui.netlify.com/usage">Usage</Button>
+              <Button borderless href="https://react-lite-ui.netlify.com/playground">Playground</Button>
+              <Button borderless href="https://github.com/Codebrahma/react-lite-ui">Fork</Button>
+            </div>
+          </div>
+        )
       }
 
       render() {
@@ -143,9 +181,7 @@ export const componentData = {
                   open={this.state.left}
                   onClose={() => this.handleDrawer('left', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerContent()}
                 </Drawer>
 
               </PreviewBlock>
@@ -164,9 +200,7 @@ export const componentData = {
                   position="right"
                   onClose={() => this.handleDrawer('right', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerContent()}
                 </Drawer>
 
               </PreviewBlock>
@@ -187,9 +221,7 @@ export const componentData = {
                   position="top"
                   onClose={() => this.handleDrawer('top', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerContent()}
                 </Drawer>
 
               </PreviewBlock>
@@ -208,11 +240,9 @@ export const componentData = {
                   position="bottom"
                   onClose={() => this.handleDrawer('bottom', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerContent()}
                 </Drawer>
-                
+
               </PreviewBlock>
             </PreviewElements>
           </div>
