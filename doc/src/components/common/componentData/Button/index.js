@@ -139,50 +139,69 @@ export const componentData = {
             { /* Preview Block-1 */ }
             <PreviewBlock header="Styled Buttons">
               <PreviewElements>
+
+              {/* Styled Buttons with 'type' prop */}
                 <Button>Primary</Button>
                 <Button type="secondary">Secondary</Button>
                 <Button type="success">Success</Button>
+
               </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-2 */ }
             <PreviewBlock header="Bordered Buttons">
               <PreviewElements>
+
+              {/* Bordered or Outlined Buttons with 'bordered' prop */}
                 <Button bordered type="info">info</Button>
                 <Button type="danger" bordered>danger</Button>
                 <Button type="warning" bordered>warning</Button>
+
               </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-3 */ }
             <PreviewBlock header="Borderless Buttons">
               <PreviewElements>
+
+              {/* Borderless buttons with 'borderless' prop */}
                 <Button type="primary" borderless>Primary</Button>
                 <Button type="warning" borderless>Warning</Button>
                 <Button type="dark" borderless>dark</Button>
+
               </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-4 */ }
             <PreviewBlock header="Flat Buttons">
               <PreviewElements>
+
+              {/* No box shadow with 'flat' prop */}
                 <Button type="success" flat>Success</Button>
                 <Button type="danger" flat>Danger</Button>
                 <Button type="warning" flat>Warning</Button>
+
               </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-5 */}
             <PreviewBlock header="Buttons with icons and text">
               <PreviewElements>
+
+              {/* Icon and text buttons with 'icon' prop */}
                 <Button type="warning" icon="icon-left">
                   icon left
                 </Button>
                 <Button type="success" icon="icon-right" iconAlignment="right">
                   icon right
                 </Button>
+
+              {/* icon only button with 'iconButton' prop */}
                 <Button iconButton icon={<MenuIcon />} />
+
               </PreviewElements>
             </PreviewBlock>
             { /* Preview Block-6 */ }
             <PreviewBlock header="Sizable Buttons">
               <PreviewElements>
+
+              {/* Control button sizes with 'size' prop */}
                 <Button size="small">
                   Small
                 </Button>
@@ -192,6 +211,7 @@ export const componentData = {
                 <Button size="large">
                   Large
                 </Button>
+                
               </PreviewElements>
             </PreviewBlock>
           </div>
