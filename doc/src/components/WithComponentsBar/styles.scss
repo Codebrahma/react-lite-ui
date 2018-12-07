@@ -11,6 +11,7 @@
     overflow: auto;
     width: 240px;
     padding-top: 25px;
+    overscroll-behavior: contain;
     .each-component-item {
       font-size: 1.1em;
       line-height: 30px;
