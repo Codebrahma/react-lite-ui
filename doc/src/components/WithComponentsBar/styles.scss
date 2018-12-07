@@ -11,6 +11,8 @@
         width: 240px;
         padding-top: 25px;
         overscroll-behavior: contain;
+        -webkit-box-shadow: 4px 0 5px -1px rgba(0,0,0,0.2);
+        box-shadow: 4px 0 5px -1px rgba(0,0,0,0.2);
         .each-component-item {
             font-size: 1.1em;
             line-height: 30px;
