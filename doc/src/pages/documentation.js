@@ -62,6 +62,7 @@ class DocumentationPage extends React.Component {
           activeComponent={activeComponent}
           componentBarVisible={componentBarVisible}
           handleComponentBar={this.handleComponentBar}
+          onClose={this.handleComponentBar}
         >
           <Documentation componentData={componentData} activeComponent={activeComponent} />
         </WithComponentBar>

@@ -62,6 +62,7 @@ class UsagePage extends React.Component {
           activeComponent={activeComponent}
           componentBarVisible={componentBarVisible}
           handleComponentBar={this.handleComponentBar}
+          onClose={this.handleComponentBar}
         >
           <Usage componentData={componentData} activeComponent={activeComponent} />
         </WithComponentBar>

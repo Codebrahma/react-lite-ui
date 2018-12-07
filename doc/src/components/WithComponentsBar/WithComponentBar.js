@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 import { componentList } from '../common/componentList';
 import Button from '../../../../src/button';
+import Drawer from '../../../../src/drawer';
 
 import './styles.scss';
 
@@ -30,11 +31,11 @@ class WithComponentBar extends React.Component {
 
   render() {
     const {
-      children, onClickComponent, activeComponent, handleComponentBar, componentBarVisible,
+      children, onClickComponent, activeComponent, handleComponentBar, componentBarVisible, onClose,
     } = this.props;
     return (
       <div className="with-component-bar">
-        <aside className={`component-sidebar ${componentBarVisible && 'component-sidebar-mobile'}`}>
+        <Drawer open={componentBarVisible} onClose={onClose} className={`component-sidebar ${componentBarVisible && 'component-sidebar-mobile'}`}>
           {componentList.map(component => (
             <div
               className={`each-component-item ${activeComponent === component.name ? 'active' : ''}`}
@@ -45,7 +46,7 @@ class WithComponentBar extends React.Component {
               {component.name}
             </div>
           ))}
-        </aside>
+        </Drawer>
         <div className="component-content">
           <div className="action-buttons">
             <span className="component-bar-toggler" onClick={handleComponentBar}>
@@ -68,6 +69,7 @@ WithComponentBar.propTypes = {
   handleComponentBar: PropTypes.func.isRequired,
   componentBarVisible: PropTypes.bool,
   page: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 WithComponentBar.defaultProps = {
