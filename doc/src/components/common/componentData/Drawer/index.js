@@ -130,12 +130,15 @@ export const componentData = {
           <div>
             <PreviewElements>
               <PreviewBlock header="left drawer">
+
+              {/* Left positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('left', true)}
                   type="primary"
                 >
                   left
                 </Button>
+
                 <Drawer
                   open={this.state.left}
                   onClose={() => this.handleDrawer('left', false)}
@@ -144,14 +147,18 @@ export const componentData = {
                   <div>Item 2</div>
                   <div>Item 3</div>
                 </Drawer>
+
               </PreviewBlock>
               <PreviewBlock header="right drawer">
+
+              {/* Right positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('right', true)}
                   type="primary"
                 >
                   right
                 </Button>
+
                 <Drawer
                   open={this.state.right}
                   position="right"
@@ -161,16 +168,20 @@ export const componentData = {
                   <div>Item 2</div>
                   <div>Item 3</div>
                 </Drawer>
+
               </PreviewBlock>
             </PreviewElements>
             <PreviewElements>
               <PreviewBlock header="top drawer">
+
+              {/* Top positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('top', true)}
                   type="primary"
                 >
                   top
                 </Button>
+
                 <Drawer
                   open={this.state.top}
                   position="top"
@@ -180,14 +191,18 @@ export const componentData = {
                   <div>Item 2</div>
                   <div>Item 3</div>
                 </Drawer>
+
               </PreviewBlock>
               <PreviewBlock header="bottom drawer">
+
+              {/* Bottom positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('bottom', true)}
                   type="primary"
                 >
                   bottom
                 </Button>
+
                 <Drawer
                   open={this.state.bottom}
                   position="bottom"
@@ -197,6 +212,7 @@ export const componentData = {
                   <div>Item 2</div>
                   <div>Item 3</div>
                 </Drawer>
+                
               </PreviewBlock>
             </PreviewElements>
           </div>
