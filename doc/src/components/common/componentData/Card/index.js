@@ -137,7 +137,7 @@ export const componentData = {
                     elevation="medium"
                   >
                     <div className="col card-content">
-                      <img src="https://placeimg.com/300/300/animals" alt="travel" />
+                      <img src="https://placeimg.com/300/300/animals" alt="animals" />
                     </div>
                   </Card>
 
@@ -154,7 +154,7 @@ export const componentData = {
                     elevation="medium"
                   >
                     <div>
-                      <img src="https://placeimg.com/300/300/nature" alt="travel" />
+                      <img src="https://placeimg.com/300/300/nature" alt="nature" />
                     </div>
                   </Card>
 
