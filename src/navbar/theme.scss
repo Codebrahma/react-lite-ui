@@ -112,7 +112,7 @@
   }
 }
 :local(.navbarMobileMenu) {
-  display: hidden;
+  display: none;
 }
 
 .icon-menu {
@@ -142,6 +142,7 @@
   }
 
   :local(.navbarMobileMenu)  {
+    display: flex;
     height: 0;
     overflow: hidden;
     box-sizing: border-box;
