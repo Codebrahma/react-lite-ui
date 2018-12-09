@@ -1,6 +1,8 @@
-:local(.border-animation) {
-  &::after {
-      background-color: chartreuse !important;
+:local(.autocomplete) {
+  :local(.border-animation) {
+    &::after {
+        background-color: chartreuse !important;
+    }
   }
 }
 

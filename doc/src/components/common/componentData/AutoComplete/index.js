@@ -124,9 +124,11 @@ export const componentData = {
   componentUsageTheme: `
     // theme.scss
 
-    :local(.border-animation) {
-      &::after {
-          background-color: chartreuse !important;
+    :local(.autocomplete) {
+      :local(.border-animation) {
+        &::after {
+            background-color: chartreuse !important;
+        }
       }
     }
     
