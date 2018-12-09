@@ -137,5 +137,82 @@ export const componentData = {
         )
       }
     }
+  `,
+  componentUsage: `
+    class Demo extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          openDefault: false,
+          openCustom: false
+        }
+        this.toggleModal = this.toggleModal.bind(this);
+      }
+
+      toggleModal(type) {
+        this.setState(prevState => ({ 
+            [type]: !prevState[type],
+        }));
+      }
+      
+      render() {
+        return (
+          <PreviewElements>
+            <PreviewBlock header="Default Modal Component">
+
+            {/* Default Modal */}
+              <Button
+                type="primary"
+                onClick={() => this.toggleModal('openDefault')}
+              >
+                Default Modal
+              </Button>
+
+              <Modal
+                onClose={() => this.toggleModal('openDefault')}
+                title="This is sample modal"
+                open={this.state.openDefault}
+              >
+                Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard
+                dummy text ever since the 1500s, when an
+                unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
+                It has survived not only five centuries, but
+                also the leap into electronic typesetting,
+                remaining essentially unchanged.
+              </Modal>
+
+            </PreviewBlock>
+            <PreviewBlock header="Custom Modal Component">
+
+            {/* Custom Modal */}
+              <Button
+                type="success"
+                onClick={() => this.toggleModal('openCustom')}
+              >
+                Custom modal
+              </Button>
+
+              <Modal
+                onClose={() => this.toggleModal('openCustom')}
+                title="Mother Nature"
+                body={
+                  () => <div>
+                    <img src="https://placeimg.com/300/300/nature" alt="nature" />
+                  </div>
+                }
+                footer={
+                  () => <Button type="success" borderless>Know more</Button>
+                }
+                open={this.state.openCustom}
+              />
+
+            </PreviewBlock>
+          </PreviewElements>
+        )
+      }
+    }
   `
 };
