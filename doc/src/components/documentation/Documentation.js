@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
 
 import * as components from '../../../../src';
-
+import match from '../../images/match.svg';
 import tableTheme from './tableTheme.scss';
 import componentTheme from '../common/componentData/theme.scss';
 import './styles.scss';
@@ -27,7 +27,7 @@ const themeColumns = [
 class Documentation extends React.Component {
   renderBasicComponent = basicComponent => (
     <LiveProvider
-      scope={{ ...components.default, componentTheme }}
+      scope={{ ...components.default, componentTheme, match }}
       code={basicComponent}
     >
       <div className="code-preview">
