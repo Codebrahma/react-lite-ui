@@ -39,7 +39,7 @@ describe('Menu Render tests', () => {
 
   it('Successfully renders Menu component', () => {
     const expectedValue = 'main-menu';
-    const simulatedValue = wrappedComponent.childAt(0);
+    const simulatedValue = wrappedComponent.childAt(0).childAt(0);
 
     expect(simulatedValue.prop('data-key')).to.equal(expectedValue);
   });
@@ -47,6 +47,7 @@ describe('Menu Render tests', () => {
   it('Successfully renders all menu options inside a Menu component', () => {
     const expectedValue = 5;
     const simulatedValue = wrappedComponent
+      .childAt(0)
       .childAt(0)
       .childAt(0)
       .children().length;
@@ -59,8 +60,10 @@ describe('Menu Render tests', () => {
     const simulatedValue = wrappedComponent
       .childAt(0)
       .childAt(0)
+      .childAt(0)
       .childAt(1)
       .childAt(1)
+      .childAt(0)
       .childAt(0);
 
     expect(simulatedValue.prop('data-key')).to.equal(expectedValue);

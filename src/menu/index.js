@@ -56,7 +56,7 @@ class Menu extends Component {
       children,
       title,
     } = this.props;
-    const menuclass = cx(theme.menu, className, { [theme.mainWrapper]: title === null } );
+    const menuclass = cx(theme.menu, className, { [theme.mainWrapper]: title === null });
     const wrapperClass = cx(theme.wrapper);
     return (
       <div className={wrapperClass} data-key={title || 'main-menu'}>
