@@ -71,39 +71,64 @@ export const componentData = {
     }
   `,
   componentUsage: `
+    //  Component.js
+
     class Demo extends React.Component {
       constructor(props) {
         super(props);
 
         this.state = {
-          toggled: true,
+          toggleOne: true,
+          toggleTwo: true,
         };
         this.handleToggle = this.handleToggle.bind(this);
       }
 
-      handleToggle() {
-        this.setState({
-          toggled: !this.state.toggled,
-        });
+      handleToggle(toggled) {
+        this.setState(prevState => ({
+          [toggled]: !prevState[toggled],
+        }));
       }
 
       render() {
         return (
           <PreviewElements>
-            {/* Preview Block 1 */}
             <PreviewBlock header="Default toggle (disabled)">
-              <Toggle />
-            </PreviewBlock>
-            {/* Preview Block 2 */}
-            <PreviewBlock header="Toggle with switch on (with toggable)">
-              <Toggle 
-                toggled={this.state.toggled}
-                onClick={this.handleToggle}
+
+            {/* Default Toggle */}
+              <Toggle
+                toggled={this.state.toggleOne}
+                onClick={() => this.handleToggle('toggleOne')}
               />
+
+            </PreviewBlock>
+            <PreviewBlock header="Toggle with switch on (with toggable)">
+              
+            {/* Custom Toggle, Refer theme.scss */}
+              <Toggle 
+                toggled={this.state.toggleTwo}
+                onClick={() => this.handleToggle('toggleTwo')}
+                theme={componentTheme}
+              />
+
             </PreviewBlock>
           </PreviewElements>
         )
       }
+    }
+  `,
+  componentUsageTheme: `
+    //  theme.scss
+
+    :local(.toggle) {
+      background-color: burlywood;
+      &:before {
+        background-color: blanchedalmond;
+      }
+    }
+    
+    :local(.toggled) {
+      background-color: chartreuse;
     }
   `,
 };

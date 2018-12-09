@@ -72,13 +72,25 @@ export const componentData = {
       render() {
         return (
           <PreviewElements>
-            {/* Preview Block 1 */}
             <PreviewBlock header="Default Tooltip">
-              <Tooltip tooltipText='Normal Tooltip'>Look down</Tooltip>
+
+            {/* Default Tooltip */}
+              <Tooltip tooltipText='Normal Tooltip'>
+                <span style={{color: 'blue'}}>
+                  Look down
+                </span>
+              </Tooltip>
+
             </PreviewBlock>
-            {/* Preview Block 2 */}
             <PreviewBlock header="Tooltip at top">
-              <Tooltip tooltipText='Top Tooltip' top>Look up</Tooltip>
+
+            {/* Top tooltip */}
+              <Tooltip tooltipText='Top Tooltip' top>
+                <span style={{color: 'blue'}}>
+                  Look up
+                </span>
+              </Tooltip>
+
             </PreviewBlock>
           </PreviewElements>
         )
