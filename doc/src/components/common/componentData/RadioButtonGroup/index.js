@@ -102,17 +102,25 @@ export const componentData = {
           <PreviewElements>
             {/* Preview Block 1 */}
             <PreviewBlock header="Default RadioButton group">
-              <RadioButtonGroup
-                options={options}
-                onClick={this.handleRadioButtonClick}
-              />
+              <div style={{textAlign: 'left'}}>
+
+              {/* Default RadioButtonGroup */}
+                <RadioButtonGroup
+                  options={options}
+                  onClick={this.handleRadioButtonClick}
+                />
+
+              </div>
             </PreviewBlock>
             {/* Preview Block 2 */}
             <PreviewBlock header="Inline RadioButton group">
+
+            {/* Inline RadioButtonGroup */}
               <RadioButtonGroup
                 inline
                 options={options}
               />
+              
             </PreviewBlock>
           </PreviewElements>
         )
