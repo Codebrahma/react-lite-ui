@@ -189,15 +189,19 @@ export const componentData = {
           <div>
             <PreviewElements>
               <PreviewBlock header="Default popover">
+
+              {/* Simple popover with noAction */}
                 <Popover
-                  content="Please confirm to proceed!"
-                  onConfirm={() => alert('Confirmed!!')}
-                  position="right"
+                  content="I am very Simple!"
+                  noAction
                 >
-                  <Button>Click to Proceed</Button>
+                  <Button>Click Me</Button>
                 </Popover>
+
               </PreviewBlock>
               <PreviewBlock header="User defined action">
+
+              {/* Popover with some action */}
                 <Popover
                   content="Are you sure to delete?"
                   actionContent={<Button type="danger">Confirm</Button>}
@@ -210,56 +214,79 @@ export const componentData = {
                     {deleted ? 'deleted' : 'confirm delete'}
                   </Button>
                 </Popover>
+
               </PreviewBlock>
           </PreviewElements>
           <PreviewElements>
             <PreviewBlock header="Popover with various positions">
                 <div style={style.popoverContainer}>
                   <div style={style.dFlex}>
+
+                  {/* Popover with topLeft, top and topRight positions */}
                     <Popover position="topLeft" title="top left" content={content}>
                       <Button>TL</Button>
                     </Popover>
+
                     <Popover position="top" title="top" content={content}>
                       <Button>T</Button>
                     </Popover>
+                    
                     <Popover position="topRight" title="top right" content={content}>
                       <Button>TR</Button>
                     </Popover>
+                  
                   </div>
                   <div style={style.dFlex}>
+
+                  {/* Popover with leftTop and rightTop positions */}
                     <Popover position="leftTop" title="left top" content={content}>
                       <Button>LT</Button>
                     </Popover>
+
                     <Popover position="rightTop" title="right top" content={content}>
                       <Button>RT</Button>
                     </Popover>
+
                   </div>
                   <div style={style.dFlex}>
+
+                  {/* Popover with left and right positions */}
                     <Popover position="left" title="left" content={content}>
                       <Button>L</Button>
                     </Popover>
+
                     <Popover position="right" title="right" content={content}>
                       <Button>R</Button>
                     </Popover>
+
                   </div>
                   <div style={style.dFlex}>
+
+                  {/* Popover with leftBottom and rightBottom positions */}
                     <Popover position="leftBottom" title="left bottom" content={content}>
                       <Button>LB</Button>
                     </Popover>
+
                     <Popover position="rightBottom" title="right bottom" content={content}>
                       <Button>RB</Button>
                     </Popover>
+
                   </div>
                   <div style={style.dFlex}>
+
+                  {/* Popover with bottomLeft, bottom and bottomRight positions */}
                     <Popover position="bottomLeft" title="bottom left" content={content}>
                       <Button>BL</Button>
                     </Popover>
+
                     <Popover position="bottom" title="bottom" content={content}>
                       <Button>B</Button>
                     </Popover>
+
                     <Popover position="bottomRight" title="bottom right" content={content}>
                       <Button>BR</Button>
                     </Popover>
+
                   </div>
                 </div>
               </PreviewBlock>
