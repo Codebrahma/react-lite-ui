@@ -139,6 +139,8 @@ export const componentData = {
     }
   `,
   componentUsage: `
+    //  Component.js
+
     class Demo extends React.Component {
       constructor(props) {
         super(props);
@@ -187,7 +189,7 @@ export const componentData = {
             </PreviewBlock>
             <PreviewBlock header="Custom Modal Component">
 
-            {/* Custom Modal */}
+            {/* Custom Modal, Refer theme.scss */}
               <Button
                 type="success"
                 onClick={() => this.toggleModal('openCustom')}
@@ -196,12 +198,11 @@ export const componentData = {
               </Button>
 
               <Modal
+                theme={componentTheme}
                 onClose={() => this.toggleModal('openCustom')}
                 title="Mother Nature"
                 body={
-                  () => <div>
-                    <img src="https://placeimg.com/300/300/nature" alt="nature" />
-                  </div>
+                  () => <img src="https://placeimg.com/600/400/nature" alt="nature" />
                 }
                 footer={
                   () => <Button type="success" borderless>Know more</Button>
@@ -214,5 +215,15 @@ export const componentData = {
         )
       }
     }
-  `
+  `,
+  componentUsageTheme: `
+    //  theme.scss
+
+    :local(.modal-body) {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  `,
 };
