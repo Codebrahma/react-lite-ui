@@ -35,31 +35,51 @@ export const componentData = {
     <TextInput />
   `,
   componentUsage: `
+    //  Component.js
+
     class Demo extends React.Component {
       render() {
         return (
           <div>
             <PreviewElements>
-              {/* Preview Block 1 */}
               <PreviewBlock header="Default TextInput">
+
+              {/* Default TextInput */}
                 <TextInput />
+
               </PreviewBlock>
-              {/* Preview Block 2 */}
               <PreviewBlock header="Disabled TextInput">
-                <TextInput disabled={true}/>
+
+              {/* Disabled tectInput */}
+                <TextInput disabled={true} />
+
               </PreviewBlock>
             </PreviewElements>
             <PreviewElements>
-              {/* Preview Block 3 */}
-              <PreviewBlock header="Controlled width TextInput">
-                <TextInput width='300px' placeholder="type here..."/>
-              </PreviewBlock>
               <PreviewBlock header="Password TextInput">
-                <TextInput type="password" placeholder="Enter password..."/>          
+
+              {/* Password TextInput */}
+                <TextInput type="password" placeholder="Enter password..."/>
+
+              </PreviewBlock>
+              <PreviewBlock header="Custom  TextInput">
+
+              {/* Custom TextInput, Refer theme.scss */}
+                <TextInput placeholder="type here..." theme={componentTheme} />
+
               </PreviewBlock>
             </PreviewElements>
           </div>
         )
+      }
+    }
+  `,
+  componentUsageTheme: `
+    //  theme.scss
+
+    :local(.inputElement) {
+      + .input-focus {
+        background-color: #c85108;
       }
     }
   `,
