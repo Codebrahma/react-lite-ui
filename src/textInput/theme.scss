@@ -10,7 +10,7 @@
 :local(.inputElement) {
   padding: 0 0 6px 0;
   background-color: var(--input-text-background-color);
-  border-bottom: 2px solid $original-black;
+  border-bottom: 2px solid $input-bottom-border;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -31,6 +31,9 @@
   &:focus + .input-focus {
     width: 100%;
     transition: 0.4s;
+  }
+  &:focus {
+    border-bottom: 2px solid $secondary-input-active-border;
   }
 }
 
