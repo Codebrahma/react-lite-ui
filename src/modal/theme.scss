@@ -19,6 +19,7 @@
   :local(.modal) {
     display: none;
     padding: 2%;
+    padding-bottom: 1%;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     background: white;
     width: 50%;
@@ -41,9 +42,6 @@
     :local(.modal-footer) {
         width: 100%;
         padding: 1% 2%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
         box-sizing: border-box;
     }
 }
@@ -70,4 +68,10 @@
     font-size: 0.7rem;
     background-color: black;
     color: white;
+}
+
+@media only screen and (max-width: 992px) {
+  :local(.modal) {
+    width: 75%;
+  }
 }
