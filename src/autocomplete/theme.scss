@@ -4,7 +4,7 @@
 
 :local(.autocomplete) {
     @include customScroll();
-    width: 20vw;
+    width: 16em;
     font-family: Roboto;
     position: relative;
     :local(.input-container) {
