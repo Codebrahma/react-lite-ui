@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
 class Menu extends Component {
@@ -25,13 +26,13 @@ class Menu extends Component {
             key={`menu-${props.title}-${theme.submenu}`}
             className={theme.wrapper}
           >
-            <div className={theme.submenu}>
+            <div className={cx(theme.submenu)}>
               <span className={theme.menuitem}>
                 <span>{props.title}</span>
                 <div className={theme.arrow} />
               </span>
             </div>
-            {child}
+            {React.cloneElement(child, { theme })}
           </div>
         );
       }
@@ -82,4 +83,4 @@ Menu.defaultProps = {
   title: null,
 };
 
-export default Menu;
+export default themr('CBMenu', defaultTheme)(Menu);
