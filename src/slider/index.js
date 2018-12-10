@@ -145,30 +145,35 @@ class Slider extends React.Component {
     const { theme, disabled, range } = this.props;
     const rootProps = {
       className: theme.slider,
+      'aria-label': 'slider',
       ref: !disabled ? (ref) => {
         this.sliderBar = ref;
       } : undefined,
     };
     const sliderOffsetProps = {
       className: theme['slider-offset'],
+      'aria-label': 'slider-offset',
       ref: !disabled ? (ref) => {
         this.sliderOffset = ref;
       } : undefined,
     };
     const sliderTrackerProps = {
       className: theme['slider-tracker'],
+      'aria-label': 'slider-tracker',
       ref: !disabled ? (ref) => {
         this.sliderTracker = ref;
       } : undefined,
     };
     const leftButtonProps = {
       className: theme['slider-button'],
+      'aria-label': 'slider-button-left',
       onMouseDown: !disabled ? (e) => {
         this.startDrag(e, true);
       } : undefined,
     };
     const rightButtonProps = {
       className: theme['slider-button'],
+      'aria-label': 'slider-button-right',
       onMouseDown: !disabled ? (e) => {
         this.startDrag(e, false);
       } : undefined,
