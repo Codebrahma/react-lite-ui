@@ -43,19 +43,21 @@ class Navbar extends React.Component {
   }
 
   renderRightContent = () => {
-    const { theme } = this.props;
+    const { theme, children } = this.props;
     const { showMenu } = this.state;
 
     return (
       <div className={theme.rightContent}>
         {this.renderDesktopView()}
         {showMenu && this.renderMobileView()}
-        <span
-          tabIndex={0}
-          className="icon-menu"
-          onClick={this.toggleMenu}
-          onBlur={this.hideMenu}
-        />
+        {children && (
+          <span
+            tabIndex={0}
+            className="icon-menu"
+            onClick={this.toggleMenu}
+            onBlur={this.hideMenu}
+          />)
+        }
       </div>
     );
   }

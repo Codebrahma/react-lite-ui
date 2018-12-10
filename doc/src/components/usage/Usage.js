@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
 import { highlightAll } from 'prismjs';
 import * as components from '../../../../src';
+import match from '../../images/match.svg';
 import componentTheme from '../common/componentData/theme.scss';
 import './styles.scss';
 import './prism-cb.css';
@@ -38,7 +39,7 @@ class Usage extends React.Component {
   renderComponentUsage = componentData => (
     <LiveProvider
       scope={{
-        ...components.default, PreviewBlock, PreviewElements, componentTheme,
+        ...components.default, PreviewBlock, PreviewElements, componentTheme, match,
       }}
       code={componentData.componentUsage || componentData.basicComponent}
     >
@@ -63,7 +64,10 @@ class Usage extends React.Component {
           <span className="sub-title">example code</span>
           <pre>
             <code className="language-jsx">
-              { componentData.componentUsage || componentData.basicComponent }
+              { componentData.componentUsage }
+            </code>
+            <code className="language-css">
+              { componentData.componentUsageTheme }
             </code>
           </pre>
         </div>

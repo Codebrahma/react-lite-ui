@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { themr } from 'react-css-themr';
 import cx from 'classnames';
 import defaultTheme from './theme.scss';
 
@@ -25,13 +26,13 @@ class Menu extends Component {
             key={`menu-${props.title}-${theme.submenu}`}
             className={theme.wrapper}
           >
-            <div className={theme.submenu}>
+            <div className={cx(theme.submenu)}>
               <span className={theme.menuitem}>
                 <span>{props.title}</span>
                 <div className={theme.arrow} />
               </span>
             </div>
-            {child}
+            {React.cloneElement(child, { theme })}
           </div>
         );
       }
@@ -54,7 +55,7 @@ class Menu extends Component {
       children,
       title,
     } = this.props;
-    const menuclass = cx(theme.menu, className, { [theme.mainWrapper]: title === null } );
+    const menuclass = cx(theme.menu, className, { [theme.mainWrapper]: title === null });
     const wrapperClass = cx(theme.wrapper);
     return (
       <div className={wrapperClass} data-key={title || 'main-menu'}>
@@ -82,4 +83,4 @@ Menu.defaultProps = {
   title: null,
 };
 
-export default Menu;
+export default themr('CBMenu', defaultTheme)(Menu);

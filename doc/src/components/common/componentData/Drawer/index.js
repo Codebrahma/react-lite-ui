@@ -83,7 +83,52 @@ export const componentData = {
         this.state = {
           open: false,
         };
+        this.styles = {
+          leftRightTitle: {
+            display: 'flex',
+            alignItems: 'center',
+          },
+          leftRightContent: {
+            display: 'flex',
+            flexDirection: 'column',
+          },
+          imageStyle: {
+            width: '40px',
+            height: '40px',
+            marginTop: '1em',
+          },
+          link: {
+            textDecoration: 'none',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            padding: '15px 10px 15px 0',
+            color: '#2c87d7',
+          }
+        }
         this.handleDrawer = this.handleDrawer.bind(this);
+        this.renderDrawerContent = this.renderDrawerContent.bind(this);
+      }
+
+      renderDrawerContent() {
+        const dummyContent = (title, link) => (
+          <a href={link} style={this.styles.link}>{title}</a>
+        );
+        return (
+          <div style={{textAlign: 'left'}}>
+            <div style={this.styles.leftRightTitle}>
+              <img src={match} alt="logo" style={this.styles.imageStyle}/>
+              <h2 style={{marginLeft: '10px'}}>React Lite UI</h2>
+            </div>
+            <hr />
+            <div style={this.styles.leftRightContent}>
+              <h4>A set of light weight React Components</h4>
+              {dummyContent('Documentation', 'https://react-lite-ui.netlify.com/documentation')}
+              {dummyContent('Usage', 'https://react-lite-ui.netlify.com/usage')}
+              {dummyContent('Playground', 'https://react-lite-ui.netlify.com/playground')}
+              {dummyContent('Fork', 'https://github.com/Codebrahma/react-lite-ui')}
+            </div>
+          </div>
+        )
       }
 
       handleDrawer(open) {
@@ -95,11 +140,11 @@ export const componentData = {
       render() {
         return (
           <div>
-              <Button onClick={() => this.handleDrawer(true)} type="primary">click to open drawer</Button>
+              <Button onClick={() => this.handleDrawer(true)} type="primary">
+                <span>{this.state.open ? 'close' : 'open'} Drawer</span>
+              </Button>
               <Drawer open={this.state.open} onClose={() => this.handleDrawer(false)} position="right">
-                <div>Item 1</div>
-                <div>Item 2</div>
-                <div>Item 3</div>
+                {this.renderDrawerContent()}
               </Drawer>
           </div>
         )
@@ -116,7 +161,42 @@ export const componentData = {
           bottom: false,
           left: false,
         };
+        this.styles = {
+          leftRightTitle: {
+            display: 'flex',
+            alignItems: 'center',
+          },
+          topBottomTitle: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+          leftRightContent: {
+            display: 'flex',
+            flexDirection: 'column',
+          },
+          topBottomContent: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            marginTop: '20px',
+          },
+          imageStyle: {
+            width: '40px',
+            height: '40px',
+            marginTop: '1em',
+          },
+          link: {
+            textDecoration: 'none',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            padding: '15px 10px 15px 0',
+            color: '#2c87d7',
+          }
+        }
         this.handleDrawer = this.handleDrawer.bind(this);
+        this.renderDrawerLeftRight = this.renderDrawerLeftRight.bind(this);
+        this.renderDrawerTopBottom = this.renderDrawerTopBottom.bind(this);
       }
 
       handleDrawer(position, open) {
@@ -125,78 +205,127 @@ export const componentData = {
         });
       }
 
+      renderDrawerLeftRight() {
+        const dummyContent = (title, link) => (
+          <a href={link} style={this.styles.link}>{title}</a>
+        );
+        return (
+          <div style={{textAlign: 'left'}}>
+            <div style={this.styles.leftRightTitle}>
+              <img src={match} alt="logo" style={this.styles.imageStyle}/>
+              <h2 style={{marginLeft: '10px'}}>React Lite UI</h2>
+            </div>
+            <hr />
+            <div style={this.styles.leftRightContent}>
+              <h4>A set of light weight React Components</h4>
+              {dummyContent('Documentation', 'https://react-lite-ui.netlify.com/documentation')}
+              {dummyContent('Usage', 'https://react-lite-ui.netlify.com/usage')}
+              {dummyContent('Playground', 'https://react-lite-ui.netlify.com/playground')}
+              {dummyContent('Fork', 'https://github.com/Codebrahma/react-lite-ui')}
+            </div>
+          </div>
+        )
+      }
+
+      renderDrawerTopBottom() {
+        return (
+          <div style={{textAlign: 'left'}}>
+            <div style={this.styles.topBottomTitle}>
+              <img src={match} alt="logo" style={this.styles.imageStyle}/>
+              <h2 style={{marginLeft: '10px'}}>React Lite UI</h2>
+            </div>
+            <hr />
+            <h4 style={{textAlign: 'center'}}>A set of light weight React Components</h4>
+            <div style={this.styles.topBottomContent}>
+              <Button size="medium" borderless href="https://react-lite-ui.netlify.com/documentation">Documentation</Button>
+              <Button size="medium" borderless href="https://react-lite-ui.netlify.com/usage">Usage</Button>
+              <Button size="medium" borderless href="https://react-lite-ui.netlify.com/playground">Playground</Button>
+              <Button size="medium" borderless href="https://github.com/Codebrahma/react-lite-ui">Fork</Button>
+            </div>
+          </div>
+        )
+      }
+
       render() {
         return (
           <div>
             <PreviewElements>
               <PreviewBlock header="left drawer">
+
+              {/* Left positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('left', true)}
                   type="primary"
                 >
                   left
                 </Button>
+
                 <Drawer
                   open={this.state.left}
                   onClose={() => this.handleDrawer('left', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerLeftRight()}
                 </Drawer>
+
               </PreviewBlock>
               <PreviewBlock header="right drawer">
+
+              {/* Right positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('right', true)}
                   type="primary"
                 >
                   right
                 </Button>
+
                 <Drawer
                   open={this.state.right}
                   position="right"
                   onClose={() => this.handleDrawer('right', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerLeftRight()}
                 </Drawer>
+
               </PreviewBlock>
             </PreviewElements>
             <PreviewElements>
               <PreviewBlock header="top drawer">
+
+              {/* Top positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('top', true)}
                   type="primary"
                 >
                   top
                 </Button>
+
                 <Drawer
                   open={this.state.top}
                   position="top"
                   onClose={() => this.handleDrawer('top', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerTopBottom()}
                 </Drawer>
+
               </PreviewBlock>
               <PreviewBlock header="bottom drawer">
+
+              {/* Bottom positioned Drawer */}
                 <Button 
                   onClick={() => this.handleDrawer('bottom', true)}
                   type="primary"
                 >
                   bottom
                 </Button>
+
                 <Drawer
                   open={this.state.bottom}
                   position="bottom"
                   onClose={() => this.handleDrawer('bottom', false)}
                 >
-                  <div>Item 1</div>
-                  <div>Item 2</div>
-                  <div>Item 3</div>
+                  {this.renderDrawerTopBottom()}
                 </Drawer>
+
               </PreviewBlock>
             </PreviewElements>
           </div>

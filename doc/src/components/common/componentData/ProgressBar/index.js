@@ -72,8 +72,50 @@ export const componentData = {
       render() {
         return (
           <div>
-            <ProgressBar progress={this.state.progress} showProgressText={true}/>
+            <ProgressBar progress={this.state.progress} />
           </div>
+        )
+      }
+    }
+  `,
+  componentUsage: `
+    class Demo extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          progress: 0,
+        };
+        this.animate = this.animate.bind(this);
+        this.animate();
+      }
+
+      animate() {
+        setInterval(
+          () => {
+            this.setState(prevState => ({
+              progress: (prevState.progress + 1) % 100,
+            }));
+          },
+          75
+        );
+      }
+      
+      render() {
+        return (
+          <PreviewElements>
+            <PreviewBlock header="default progressbar">
+
+            {/* Default progressbar */}
+              <ProgressBar progress={this.state.progress} />
+              
+            </PreviewBlock>
+            <PreviewBlock header="custom progressbar">
+
+            {/* custom progressbar */}
+              <ProgressBar progress={this.state.progress} type="secondary"/>
+              
+            </PreviewBlock>
+          </PreviewElements>
         )
       }
     }

@@ -1,3 +1,13 @@
-:local(.autocomplete-list) {
-  z-index: 1;
+:local(.autocomplete) {
+  :local(.border-animation) {
+    &::after {
+        background-color: chartreuse !important;
+    }
+  }
+}
+
+:local(.autocomplete-list-item) {
+  &:hover {
+    background-color: rgba($color: chartreuse, $alpha: 0.2) !important;
+  }
 }

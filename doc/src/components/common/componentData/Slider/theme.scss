@@ -1,0 +1,15 @@
+:local(.slider-button) {
+  background-color: #23a393;
+}
+
+:local(.slider-tracker) {
+  background-color: #20716a;
+}
+
+:local(.tooltip) {
+  background-color: #ffc0c2;
+  color: #20716a;
+  div {
+    border-top-color: #ffc0c2;
+  }
+}
