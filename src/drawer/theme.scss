@@ -13,7 +13,7 @@
 :local(.left),
 :local(.right) {
     height: 100%;
-    width: 20%;
+    width: 17em;
     align-self: center;
     top: 0;
 }
@@ -23,7 +23,7 @@
 }
 
 :local(.left-close) {
-    left: -20%;
+    left: -17em;
 }
 
 :local(.right-open) {
@@ -31,13 +31,13 @@
 }
 
 :local(.right-close) {
-    right: -20%;
+    right: -17em;
 }
 
 :local(.top),
 :local(.bottom) {
     width: 100%;
-    height: 30%;
+    height: auto;
     left: 0;
 }
 
@@ -46,7 +46,8 @@
 }
 
 :local(.top-close) {
-    top: -30%;
+    top: 0;
+    margin-top: -100%;
 }
 
 :local(.bottom-open) {
@@ -54,5 +55,6 @@
 }
 
 :local(.bottom-close) {
-    bottom: -30%;
+    bottom: 0;
+    margin-bottom: -100%;
 }
