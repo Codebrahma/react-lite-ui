@@ -22,11 +22,11 @@
 }
 
 :local(.drawer-open) {
-    transform: translateX(0, 0);
+    transform: translateX(0);
 }
 
 :local(.drawer-close) {
-    transform: translateX(-100%, 0)
+    transform: translateX(-100%)
 }
 
 :local(.left),
