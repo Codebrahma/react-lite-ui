@@ -29,7 +29,10 @@ class Pagination extends Component {
     const { theme, total } = this.props;
     const { currentActive } = this.state;
 
-    const steps = [...Array(3).keys()].map((key) => {
+    const steps = [];
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of Array(3).keys()) {
       let page;
 
       if (currentActive > 2) {
@@ -43,7 +46,7 @@ class Pagination extends Component {
       }
       /* eslint-disable jsx-a11y/click-events-have-key-events */
       /* eslint-disable jsx-a11y/no-static-element-interactions */
-      return (
+      steps.push(
         <div
           className={classnames(theme['pagination-steps'], {
             [theme.active]: page === currentActive,
@@ -52,9 +55,8 @@ class Pagination extends Component {
           onClick={() => this.navigate(page)}
         >
           {page}
-        </div>
-      );
-    });
+        </div>);
+    }
 
     return [
       <div
