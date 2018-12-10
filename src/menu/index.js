@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import cx from 'classnames';
-import { themr } from 'react-css-themr';
 import defaultTheme from './theme.scss';
 
 class Menu extends Component {
