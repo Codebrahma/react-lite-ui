@@ -1,14 +1,14 @@
 :local(.select) {
   :local(.border-animation) {
     &::after {
-        background-color: #3b2c85 !important;
+        background-color: #73ff00 !important;
     }
   }
 }
 
 :local(.option) {
   &:hover {
-    background-color: rgba($color: #0b409c, $alpha: 0.4) !important;
+    background-color: rgba($color: #73ff00, $alpha: 0.4) !important;
   }
 }
 
@@ -22,6 +22,6 @@
 }
 
 :local(.selected-option) {
-  background-color: #0b409c;
+  background-color: #73ff00;
   color: #fff;
 }
