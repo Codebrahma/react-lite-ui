@@ -53,7 +53,7 @@ export const componentData = {
     },
     {
       name: 'slider-tracker',
-      description: 'Class used for slider tracking element.',
+      description: 'Class used for slider bar indicating the selected range.',
     },
     {
       name: 'slider-offset',
