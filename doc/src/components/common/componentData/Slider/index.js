@@ -15,7 +15,7 @@ export const componentData = {
       prop: 'range',
       type: 'Boolean',
       defaultValue: 'false',
-      description: 'Prop to render range slider.',
+      description: 'Render range slider when set to `true`',
     },
     {
       prop: 'disabled',
