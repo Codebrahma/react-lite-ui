@@ -18,14 +18,15 @@
     display: flex;
     justify-content: center;
     transition: 0.4s ease-in-out;
-}
-
-:local(.drawer-open) {
     z-index: 1000;
 }
 
+:local(.drawer-open) {
+    transform: translateX(0, 0);
+}
+
 :local(.drawer-close) {
-    z-index: -1000;
+    transform: translateX(-100%, 0)
 }
 
 :local(.left),
