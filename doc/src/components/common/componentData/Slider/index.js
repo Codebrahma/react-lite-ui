@@ -57,7 +57,7 @@ export const componentData = {
     },
     {
       name: 'slider-offset',
-      description: 'Class used for slider offset element, when using range slider.',
+      description: 'Class used for slider offset for lower range when using range slider.',
     },
     {
       name: 'tooltip',
