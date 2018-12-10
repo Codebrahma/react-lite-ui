@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import { themr } from 'react-css-themr';
+import cx from 'classnames';
 import defaultTheme from './theme.scss';
 
 class Menu extends Component {
@@ -55,7 +55,7 @@ class Menu extends Component {
       children,
       title,
     } = this.props;
-    const menuclass = cx(theme.menu, className, { [theme.mainWrapper]: title === null } );
+    const menuclass = cx(theme.menu, className, { [theme.mainWrapper]: title === null });
     const wrapperClass = cx(theme.wrapper);
     return (
       <div className={wrapperClass} data-key={title || 'main-menu'}>

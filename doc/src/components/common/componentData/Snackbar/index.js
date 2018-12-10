@@ -137,32 +137,50 @@ export const componentData = {
       render() {
         return (
           <div>
-            <Snackbar
-              active={this.state.showSnackbar}
-              onClose={this.handleSnackClose}>
-              <span>This is a bottom snackbar.</span>
-            </Snackbar>
-            <Snackbar
-              active={this.state.showTopSnackbar}
-              onClose={this.handleSnackClose}
-              position='top'>
-              <span>This is a top snackbar.</span>
-            </Snackbar>
-            <Snackbar
-              active={this.state.showIndefiniteSnackbar}
-              onClose={this.handleSnackClose}
-              autoClose={false}>
-              <span>This is a indefinite snackbar.</span>
-            </Snackbar>
             <PreviewElements>
               <PreviewBlock header="Bottom snackbar">
-                <Button type="primary" onClick={this.openBottomSnackbar}>Open Bottom Snackbar</Button>
+
+              {/* Bottom Snackbar */}
+                <Button type="primary" onClick={this.openBottomSnackbar}>
+                  Open Bottom Snackbar
+                </Button>
+
+                <Snackbar
+                  active={this.state.showSnackbar}
+                  onClose={this.handleSnackClose}>
+                  <span>This is a bottom snackbar.</span>
+                </Snackbar>
+
               </PreviewBlock>
               <PreviewBlock header="Top snackbar">
-                <Button type="primary" onClick={this.openTopSnackbar}>Open Top Snackbar</Button>
+
+              {/* Top Snackbar */}
+                <Button type="primary" onClick={this.openTopSnackbar}>
+                  Open Top Snackbar
+                </Button>
+
+                <Snackbar
+                  active={this.state.showTopSnackbar}
+                  onClose={this.handleSnackClose}
+                  position='top'>
+                  <span>This is a top snackbar.</span>
+                </Snackbar>
+
               </PreviewBlock>
               <PreviewBlock header="Indefinite snackbar">
-                <Button type="primary" onClick={this.openIndefiniteSnackbar}>{this.state.showIndefiniteSnackbar ? 'Close' : 'Open'} indefinite Snackbar</Button>
+
+              {/* Indefenite Snackbar */}
+                <Button type="primary" onClick={this.openIndefiniteSnackbar}>
+                  <span>{this.state.showIndefiniteSnackbar ? 'Close' : 'Open'} indefinite Snackbar</span>
+                </Button>
+
+                <Snackbar
+                  active={this.state.showIndefiniteSnackbar}
+                  onClose={this.handleSnackClose}
+                  autoClose={false}>
+                  <span>This is a indefinite snackbar.</span>
+                </Snackbar>
+                 
               </PreviewBlock>
             </PreviewElements>
           </div>

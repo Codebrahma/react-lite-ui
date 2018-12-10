@@ -61,7 +61,11 @@ class Modal extends Component {
     if (footer) {
       return (
         <div className={theme['modal-footer']} aria-label="card-footer">
-          {footer}
+          {
+            typeof footer === 'function'
+              ? footer()
+              : footer
+          }
         </div>
       );
     }
@@ -109,7 +113,11 @@ class Modal extends Component {
           >
             {this.renderModalTitle(title)}
             <div className={theme['modal-body']} aria-label="card-body">
-              {children || body || null}
+              {children || (
+                typeof body === 'function'
+                  ? body()
+                  : body
+              ) || null}
             </div>
             {this.renderModalFooter(footer)}
             <i
@@ -128,8 +136,8 @@ Modal.propTypes = {
   className: PropTypes.string,
   open: PropTypes.bool.isRequired,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
-  body: PropTypes.node,
-  footer: PropTypes.node,
+  body: PropTypes.oneOfType([PropTypes.node, PropTypes.element, PropTypes.func]),
+  footer: PropTypes.oneOfType([PropTypes.node, PropTypes.element, PropTypes.func]),
   title: PropTypes.string,
   closeOnBackdropClick: PropTypes.bool,
   onClose: PropTypes.func.isRequired,

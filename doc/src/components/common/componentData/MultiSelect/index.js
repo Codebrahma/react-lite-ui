@@ -88,11 +88,78 @@ export const componentData = {
           <div>
               <MultiSelect
                 options={options}
-                theme={componentTheme}
               />
           </div>
         )
       }
+    }
+  `,
+  componentUsage: `
+    //  Component.js
+
+    class Demo extends React.Component {
+      render() {
+        const options = [
+            { label: 'Lorem' }, 
+            { label: 'Ipsum'}, 
+            { label: 'Dolor' },
+            { label: 'Sit' },
+            { label: 'Amet' },
+            { label: 'Consectetur' },
+            { label: 'Adipiscing' }
+        ];
+        return (
+          <PreviewElements>
+            <PreviewBlock header="default multiselect">
+
+            {/* Default Multiselect Component */}
+              <MultiSelect
+                options={options}
+              />
+            </PreviewBlock>
+
+            <PreviewBlock header="custom Multiselect">
+
+            {/* Customized Multiselect, Refer theme.scss */}
+              <MultiSelect
+                options={options}
+                theme={componentTheme}
+              />
+            </PreviewBlock>
+          </PreviewElements>
+        )
+      }
+    }
+  `,
+  componentUsageTheme: `
+    //  theme.scss
+
+    :local(.select) {
+      :local(.border-animation) {
+        &::after {
+            background-color: #3b2c85 !important;
+        }
+      }
+    }
+    
+    :local(.option) {
+      &:hover {
+        background-color: rgba($color: #0b409c, $alpha: 0.4) !important;
+      }
+    }
+    
+    :local(.selected) {
+      div {
+        background-color: #f0ece2;
+        div {
+          background-color: #f0ece2;
+        }
+      }
+    }
+    
+    :local(.selected-option) {
+      background-color: #0b409c;
+      color: #fff;
     }
   `,
 };

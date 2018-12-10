@@ -127,6 +127,8 @@ export const componentData = {
     <Navbar title="logo" />
   `,
   componentUsage: `
+    //  Coponent.js
+
     class Demo extends React.Component {
       constructor(props) {
         super(props);
@@ -149,28 +151,34 @@ export const componentData = {
 
         return (
           <div>
-            { /* Preview Block-1 */ }
-            <PreviewBlock header="Simple Navbar">
+            <PreviewBlock header="Default Navbar">
+
+            {/* Default Navbar */}
               <Navbar title='navbar'/>
+
             </PreviewBlock>
-            { /* Preview Block-2 */ }
-            <PreviewBlock header="Navbar with icon on left">
-              <Navbar leftIcon={<MenuIcon />} title="logo">
-                <span>home</span>
-                <span>dashboard</span>
-                <span>contact</span>
+            <PreviewBlock header="Navbar with leftIcon">
+
+            {/* Navbar with icon on left set with leftIcon prop */}
+              <Navbar leftIcon={<MenuIcon />} title="logo" />
+
+            </PreviewBlock>
+            <PreviewBlock header="Flat Navbar (No box shadow)">
+
+            {/* Navbar without any box shadow set with flat prop */}
+              <Navbar title="flat" flat />
+              
+            </PreviewBlock>
+            <PreviewBlock header="Responsive Navbar">
+
+            {/* Responsive Navbar by default */}
+              <Navbar title="responsive">
+                <span>responsive</span>
+                <span>navbar</span>
               </Navbar>
+              
             </PreviewBlock>
-            { /* Preview Block-3 */ }
-            <PreviewBlock header="Navbar with title as image or logo and flat (No box-shadow)">
-              <Navbar flat title={<img src="https://picsum.photos/100/30" />}>
-                <span>home</span>
-                <span>dashboard</span>
-                <span>contact</span>
-              </Navbar>
-            </PreviewBlock>
-            { /* Preview Block-4 */ }
-            <PreviewBlock header='Navbar with text title and profile icon on right'>
+            <PreviewBlock header='Custom Navbar with profile icon on right'>
               <div style={{ marginBottom:'5px' }}>
                 <Toggle
                   toggled={this.state.toggled}
@@ -178,13 +186,30 @@ export const componentData = {
                 />
                 <span style={{ marginLeft: '5px' }}>{ this.state.toggled ? 'Logout' : 'Login' }</span>
               </div>
-              <Navbar title="logo" rightIcon={this.state.toggled && <Avatar>c</Avatar>}>
-                <TextInput width="150px" placeholder='search users'/>
-              </Navbar>
+
+              {/* Custom Navbar with icon on right, Refer theme.scss */}
+              <Navbar
+                title="custom"
+                rightIcon={this.state.toggled && <Avatar image="https://placeimg.com/80/80/people" bgColor="grey" />}
+                theme={componentTheme}  
+              />
             </PreviewBlock>
           </div>
         )
       }
     }
+  `,
+  componentUsageTheme: `
+    //  theme.scss
+
+    :local(.innerWrapper) {
+      min-height: 81px;
+      background-color: #4a4a48;
+    }
+    
+    :local(.title) {
+      color: #c19898;
+    }
+    
   `,
 };

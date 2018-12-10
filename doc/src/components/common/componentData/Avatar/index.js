@@ -58,6 +58,8 @@ export const componentData = {
     <Avatar>C</Avatar>
   `,
   componentUsage: `
+    //  Component.js
+
     class Demo extends React.Component {
       render() {
         const MenuIcon = () => (
@@ -70,25 +72,40 @@ export const componentData = {
             <PreviewElements>
               <PreviewBlock header="Avatar with Alphabets and background colors">
                 <PreviewElements>
+
+                {/* Components with differtent backgrounds controlled through props */}
                   <Avatar bgColor="orange">R</Avatar>
-                  <Avatar theme={componentTheme}>E</Avatar>
-                  <Avatar alphabet='A' bgColor="grey"/>
-                  <Avatar bgColor="lightBlue">C</Avatar>
-                  <Avatar alphabet='T' />
-                </PreviewElements>
+                  <Avatar alphabet='E' bgColor="grey"/>
+                  <Avatar bgColor="lightBlue">A</Avatar>
+                  <Avatar alphabet='C' />
+                  
+                  {/* Custom Themed Avatar, Refer theme.scss */}
+                  <Avatar theme={componentTheme}>T</Avatar>
+                
+                  </PreviewElements>
               </PreviewBlock>
             </PreviewElements>
             <PreviewElements>
               <PreviewBlock header="Avatars with Image and icon">
                 <PreviewElements>
+
+                {/* Avatar with image and icon controlled with props */}
                   <Avatar image="https://placeimg.com/80/80/animals"/>
                   <Avatar bgColor="darkBlue"><MenuIcon /></Avatar>
+
                 </PreviewElements>
               </PreviewBlock>
             </PreviewElements>
           </div>
         )
       }
+    }
+  `,
+  componentUsageTheme: `
+    //  theme.scss
+
+    :local(.avatar) {
+      background: green;
     }
   `,
 };

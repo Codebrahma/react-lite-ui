@@ -82,40 +82,57 @@ export const componentData = {
           <div>
             <PreviewElements>
               <PreviewBlock header="Default Chip">
+              
+              {/* Default Chip */}
                 <Chip />
+
               </PreviewBlock>
               <PreviewBlock header="Labelled Chip">
+                
+              {/* Chip label is set with label prop */}
                 <Chip
                   label='labelled'
                   color='primary'
                   handleChipClick={()=>alert('Clicked on Chip')}
                 />
+
               </PreviewBlock>
               <PreviewBlock header="Closable Chip">
+                
+              {/* Chip closable with handleDelete prop */}
                 <Chip
                   label='closable chip'
                   color='danger'
                   handleDelete={() => alert('Clicked Delete Button')}
                 />
+
                 </PreviewBlock>
               </PreviewElements>
               <PreviewElements>
                 <PreviewBlock header="Alphabet Avatar">
+
+                {/* Chip avatar can be set with avatar prop */}
                   <Chip
                     avatar={<Avatar>K</Avatar>}
                     label="alphabet avatar"
                     color='warning'
                   />
+
                 </PreviewBlock>
                 <PreviewBlock header="Image Avatar">
+
+                {/* Chip avatar as an image */}
                   <Chip
                     avatar='https://placeimg.com/80/80/people'
                     label='image avatar'
                     color='success'
                     handleDelete={() => alert('Clicked Delete Button')}
                   />
+
                 </PreviewBlock>
                 <PreviewBlock header="Avatar and Clickable">
+
+                {/* Chip clickable with handleChipClick prop */}
                   <Chip
                     avatar='https://placeimg.com/80/80/fruits'
                     label='one more'
@@ -123,51 +140,70 @@ export const componentData = {
                     handleChipClick={()=>alert('Clicked on Chip')}
                     handleDelete={() => alert('Clicked Delete Button')}
                   />
+
                 </PreviewBlock>
             </PreviewElements>
             <PreviewElements>
               <PreviewBlock header="Outlined Chip">
+
+              {/* Outlined chip can be set with outlined prop */}
                 <Chip
                   label='outlined chip'
                   color='danger'
                   outlined
                 />
+
               </PreviewBlock>
               <PreviewBlock header="Outlined Avatar">
+
+              {/* Outlined chip with an avatar */}
                 <Chip
                   avatar='https://placeimg.com/80/80/animals'
                   label='outlined avatar'
                   color='info'
                   outlined
                 />
+
               </PreviewBlock>
               <PreviewBlock header="Outlined closable">
+
+              {/* Outlined closable chip */}
                 <Chip
                   label='outlined closable'
                   color='success'
                   outlined
                   handleDelete={() => alert('Clicked Delete Button')}
                 />
+
               </PreviewBlock>
             </PreviewElements>
             <PreviewElements>
-            <PreviewBlock header="Small Chip">
+              <PreviewBlock header="Small Chip">
+
+              {/* Small sized chip */}
                 <Chip
                   size='small'
                   label='small chip'
                 />
+
               </PreviewBlock>
               <PreviewBlock header="medium chip">
+                
+              {/* Medium sized chip */}
                 <Chip
                   size='medium'
                   label='medium chip'
                 />
+
               </PreviewBlock>
               <PreviewBlock header="large chip">
+                
+              {/* Large sized chip */}
                 <Chip
                   size='large'
                   label='large chip'
                 />
+                
               </PreviewBlock>
             </PreviewElements>
           </div>
