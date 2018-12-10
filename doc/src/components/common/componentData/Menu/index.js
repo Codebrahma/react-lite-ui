@@ -152,15 +152,17 @@ export const componentData = {
   componentUsageTheme: `
     //  theme.scss
 
-    :local(.menu) {
-      color: #8b79da;
+    :local(.wrapper) {
+      :local(.menu) {
+        color: #8b79da;
+      }
     }
     
     :local(.menuitem) {
       &:hover {
-          background-color: #b3abd69c;
-          color: white;
-  
+        background-color: #b3abd69c;
+        color: white;
+
         :local(.arrow) {
             border-color: white;
         }

@@ -1,5 +1,7 @@
-:local(.menu) {
+:local(.wrapper) {
+  :local(.menu) {
     color: #8b79da;
+  }
 }
 
 :local(.menuitem) {
