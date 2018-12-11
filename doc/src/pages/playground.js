@@ -11,6 +11,7 @@ import Button from '../../../src/button';
 import Preloader from '../../../src/preloader';
 import Layout from '../components/layout';
 import theme from './playground.scss';
+import match from '../images/match.svg';
 
 export default class Playground extends Component {
     static propTypes = {
@@ -95,7 +96,7 @@ export default class Playground extends Component {
         <Layout>
           <div className="playround-container">
             { this.renderPlaygroundNavigation() }
-            <LiveProvider code={component.basicComponent} scope={{ ...components, componentTheme }}>
+            <LiveProvider code={component.basicComponent} scope={{ ...components, componentTheme, match }}>
               <LiveError className="playground-error" />
               <LiveEditor className="playground-editor" />
               <LivePreview className="playground-preview" />
