@@ -74,7 +74,7 @@ class Navbar extends React.Component {
         onMouseLeave={this.blockBlur}
       >
         <div className={navLinks}>
-          {children && typeof children === 'object' ? children.map(child => <div onClick={this.toggleMenu}>{child}</div>) : children}
+          {children && typeof children === 'object' && children.map ? children.map(child => <div onClick={this.toggleMenu}>{child}</div>) : children}
         </div>
       </div>
     );
