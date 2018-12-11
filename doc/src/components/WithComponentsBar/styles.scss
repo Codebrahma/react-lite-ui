@@ -94,13 +94,6 @@
     }
 }
 
-@media screen and (min-width: 992px) {
-    .component-sidebar {
-        transform: translateX(0) !important;
-        -webkit-transform: translateX(0) !important;
-    }
-}
-
 @media only screen and (max-width: 992px) {
     .menu-mobile {
         display: block;
