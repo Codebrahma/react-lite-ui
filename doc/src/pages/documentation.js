@@ -19,9 +19,8 @@ class DocumentationPage extends React.Component {
   }
 
   componentDidMount() {
-    const url = this.props.location.search;
-    const currentUrl = url.substring(url.lastIndexOf('=') + 1);
-    const queryComponent = componentList.filter(({ name }) => name.toLowerCase() === currentUrl);
+    const { search } = this.props.location;
+    const queryComponent = this.getQueryComponent(search);
     if (queryComponent.length) {
       // eslint-disable-next-line react/no-did-mount-set-state
       this.setState({
@@ -32,8 +31,16 @@ class DocumentationPage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.location.search !== prevProps.location.search) {
-      navigate(`/documentation?component=${this.state.activeComponent.toLowerCase()}`);
+    const { search } = this.props.location;
+    if (search !== prevProps.location.search) {
+      const queryComponent = this.getQueryComponent(search);
+      if (queryComponent.length) {
+        // eslint-disable-next-line react/no-did-update-set-state
+        this.setState({
+          activeComponent: queryComponent[0].name,
+          componentData: queryComponent[0].componentData,
+        });
+      }
     }
   }
 
@@ -44,6 +51,12 @@ class DocumentationPage extends React.Component {
       componentData,
       componentBarVisible: false,
     });
+  }
+
+  getQueryComponent = (url) => {
+    const currentUrl = url.substring(url.lastIndexOf('=') + 1);
+    const queryComponent = componentList.filter(({ name }) => name.toLowerCase() === currentUrl);
+    return queryComponent;
   }
 
   handleComponentBar = () => {
