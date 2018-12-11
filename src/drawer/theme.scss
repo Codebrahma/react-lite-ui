@@ -40,21 +40,22 @@
     height: auto;
     left: 0;
 }
+:local(.top) {
+  top: 0;
+}
+:local(.bottom) {
+  bottom: 0;
+}
 
-:local(.top-open) {
-    top: 0;
+:local(.top-open),
+:local(.bottom-open) {
+  transform: translateY(0);
 }
 
 :local(.top-close) {
-    top: 0;
-    margin-top: -100%;
-}
-
-:local(.bottom-open) {
-    bottom: 0;
+  transform: translateY(-100%);
 }
 
 :local(.bottom-close) {
-    bottom: 0;
-    margin-bottom: -100%;
+  transform: translateY(100%);
 }
