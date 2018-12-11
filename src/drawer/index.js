@@ -10,10 +10,17 @@ class Drawer extends Component {
     this.state = {
       open: false,
     };
+    this.drawerRef = null;
   }
 
   static getDerivedStateFromProps(props) {
     return { open: props.open };
+  }
+
+  componentDidUpdate() {
+    if (this.state.open && this.drawerRef !== null) {
+      this.drawerRef.focus();
+    }
   }
 
   handleClose = () => {
@@ -30,14 +37,18 @@ class Drawer extends Component {
     } = this.props;
     const { open } = this.state;
     const classes = cx(theme.drawer, className, theme[position], open ? theme[`${position}-open`] : theme[`${position}-close`]);
-    const containerclass = cx(theme['drawer-container'], theme[`drawer-${open ? 'open' : 'close'}`]);
     return (
-      /* eslint-disable jsx-a11y/click-events-have-key-events */
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
-      <div className={containerclass} onClick={this.handleClose}>
-        <div className={classes}>
-          {children}
-        </div>
+    /* eslint-disable jsx-a11y/click-events-have-key-events */
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
+      <div
+        className={classes}
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        tabIndex={0}
+        // eslint-disable-next-line no-return-assign
+        ref={ref => this.drawerRef = ref}
+        onBlur={this.handleClose}
+      >
+        {children}
       </div>
     );
   }

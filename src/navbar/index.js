@@ -43,29 +43,27 @@ class Navbar extends React.Component {
   }
 
   renderRightContent = () => {
-    const { theme, children } = this.props;
-    const { showMenu } = this.state;
+    const { children, theme } = this.props;
 
     return (
       <div className={theme.rightContent}>
         {this.renderDesktopView()}
-        {showMenu && this.renderMobileView()}
-        {children && (
-          <span
-            tabIndex={0}
-            className="icon-menu"
-            onClick={this.toggleMenu}
-            onBlur={this.hideMenu}
-          />)
-        }
+        {this.renderMobileView()}
+        { children ? <span
+          tabIndex={0}
+          className="icon-menu"
+          onClick={this.toggleMenu}
+          onBlur={this.hideMenu}
+        /> : null}
       </div>
     );
   }
 
   renderMobileView = () => {
     const { children, theme } = this.props;
+    const { showMenu } = this.state;
 
-    const navbarMobile = classnames(theme.navbarMobileMenu);
+    const navbarMobile = classnames(theme.navbarMobileMenu, { [theme.showMenu]: showMenu });
     const navLinks = classnames(theme.navlinks);
     return (
       <div
@@ -76,7 +74,7 @@ class Navbar extends React.Component {
         onMouseLeave={this.blockBlur}
       >
         <div className={navLinks}>
-          {children}
+          {children && typeof children === 'object' ? children.map(child => <div onClick={this.toggleMenu}>{child}</div>) : children}
         </div>
       </div>
     );

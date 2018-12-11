@@ -52,6 +52,12 @@ class DocumentationPage extends React.Component {
     }));
   }
 
+  closeComponentBar = () => {
+    this.setState({
+      componentBarVisible: false,
+    });
+  }
+
   render() {
     const { activeComponent, componentData, componentBarVisible } = this.state;
     return (
@@ -62,6 +68,7 @@ class DocumentationPage extends React.Component {
           activeComponent={activeComponent}
           componentBarVisible={componentBarVisible}
           handleComponentBar={this.handleComponentBar}
+          onClose={this.closeComponentBar}
         >
           <Documentation componentData={componentData} activeComponent={activeComponent} />
         </WithComponentBar>
