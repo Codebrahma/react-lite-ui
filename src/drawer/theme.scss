@@ -13,7 +13,7 @@
 :local(.left),
 :local(.right) {
     height: 100%;
-    width: 20%;
+    width: 17em;
     align-self: center;
     top: 0;
 }
@@ -23,7 +23,7 @@
 }
 
 :local(.left-close) {
-    left: -20%;
+    left: -17em;
 }
 
 :local(.right-open) {
@@ -31,28 +31,31 @@
 }
 
 :local(.right-close) {
-    right: -20%;
+    right: -17em;
 }
 
 :local(.top),
 :local(.bottom) {
     width: 100%;
-    height: 30%;
+    height: auto;
     left: 0;
 }
+:local(.top) {
+  top: 0;
+}
+:local(.bottom) {
+  bottom: 0;
+}
 
-:local(.top-open) {
-    top: 0;
+:local(.top-open),
+:local(.bottom-open) {
+  transform: translateY(0);
 }
 
 :local(.top-close) {
-    top: -30%;
-}
-
-:local(.bottom-open) {
-    bottom: 0;
+  transform: translateY(-100%);
 }
 
 :local(.bottom-close) {
-    bottom: -30%;
+  transform: translateY(100%);
 }
