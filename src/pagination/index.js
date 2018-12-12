@@ -56,6 +56,7 @@ class Pagination extends Component {
           className={classnames(theme['pagination-steps'], {
             [theme.active]: page === currentActive,
           })}
+          data-react-active-page={page === currentActive ? 'active' : undefined}
           key={page}
           onClick={() => this.navigate(page)}
         >
@@ -69,18 +70,20 @@ class Pagination extends Component {
           [theme.active]: currentActive === 1,
         })}
         key={1}
+        data-react-active-page={currentActive === 1 ? 'active' : undefined}
         onClick={() => this.navigate(1)}
       >
         {1}
       </div>,
-      currentActive > 2 ? this.renderDots() : null,
+      currentActive > 2 ? this.renderDots('left') : null,
       steps,
-      currentActive < total - 1 ? this.renderDots() : null,
+      currentActive < total - 1 ? this.renderDots('right') : null,
       <div
         className={classnames(theme['pagination-steps'], {
           [theme.active]: total === currentActive,
         })}
         key={total}
+        data-react-active-page={total === currentActive ? 'active' : undefined}
         onClick={() => this.navigate(total)}
       >
         {total}
@@ -88,10 +91,10 @@ class Pagination extends Component {
     ];
   };
 
-  renderDots = () => {
+  renderDots = (i) => {
     const { theme } = this.props;
     return (
-      <div className={theme.dots}>
+      <div className={theme.dots} key={`dot-${i}`}>
         <span />
         <span />
       </div>
@@ -121,6 +124,7 @@ class Pagination extends Component {
             className={classnames(theme.left, {
               [theme.disabled]: currentActive === 1,
             })}
+            id="prev-button"
             onClick={currentActive !== 1 ? () => this.navigate(-1) : undefined}
           />
         ) : null}
@@ -130,6 +134,7 @@ class Pagination extends Component {
             className={classnames(theme.right, {
               [theme.disabled]: currentActive === total,
             })}
+            id="next-button"
             onClick={
               currentActive !== total ? () => this.navigate(0) : undefined
             }
