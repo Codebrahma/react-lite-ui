@@ -1,15 +1,8 @@
 ---
-name: Issue template
-about: Bug report and feature request template
-title: ''
-labels: ''
-assignees: ''
+
+Issue type: Bug report / feature request
 
 ---
-
-**Is this a bug or feature request?**
-
-Bug / Feature Request.
 
 **Description of the bug or feature request**
 
@@ -17,7 +10,7 @@ A clear and concise description of what the bug / request is.
 
 ---
 
-## If it is a bug : 
+### If it is a bug : 
 
 **describe the steps in order to reproduce the bug**
 
@@ -48,7 +41,7 @@ If applicable, add screenshots to help explain your problem.
  
  ---
  
- ## If it is a feature :
+ ### If it is a feature :
 
 **Is your feature request related to a problem? Please describe.**
 
