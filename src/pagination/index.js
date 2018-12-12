@@ -14,6 +14,8 @@ class Pagination extends Component {
   }
 
   navigate = (page) => {
+    const { onChange } = this.props;
+    const { currentActive } = this.state;
     if (page <= 0) {
       this.setState(prevState => ({
         currentActive: prevState.currentActive + (page === 0 ? 1 : page),
@@ -22,6 +24,9 @@ class Pagination extends Component {
       this.setState({
         currentActive: page,
       });
+    }
+    if (currentActive !== page) {
+      onChange(page);
     }
   };
 
@@ -141,6 +146,7 @@ Pagination.propTypes = {
   total: PropTypes.number.isRequired,
   navigationButtons: PropTypes.bool,
   className: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 Pagination.defaultProps = {
@@ -148,6 +154,7 @@ Pagination.defaultProps = {
   defaultActive: 1,
   navigationButtons: true,
   className: '',
+  onChange: () => {},
 };
 
 export default themr('CBPagination', defaultTheme)(Pagination);
