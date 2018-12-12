@@ -4,12 +4,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
+import { Link } from '@reach/router';
 import { componentList } from '../common/componentList';
 import Button from '../../../../src/button';
 import Drawer from '../../../../src/drawer';
 
 import theme from './styles.scss';
-import { Link } from '@reach/router';
 
 class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {
@@ -32,7 +32,8 @@ class WithComponentBar extends React.Component {
 
   render() {
     const {
-      children, onClickComponent, activeComponent, handleComponentBar, componentBarVisible, onClose, page,
+      children, onClickComponent, activeComponent,
+      handleComponentBar, componentBarVisible, onClose, page,
     } = this.props;
     const toPage = (page === 'documentation') ? 'usage' : 'documentation';
     return (
