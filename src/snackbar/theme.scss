@@ -5,24 +5,29 @@
   z-index: 9999;
   width: 100%;
   right: 0;
+  will-change: transform;
   transition: transform 0.4s;
   &.top {
     top: 10%;
     &:not(.active) {
+      -webkit-transform: translateY(-1000%);
       transform: translateY(-1000%);
     }
 
     &.active {
+      -webkit-transform: translateY(0%);
       transform: translateY(0%);
     }
   }
   &.bottom {
     bottom: 10%;
     &:not(.active) {
+      -webkit-transform: translateY(1000%);
       transform: translateY(1000%);
     }
 
     &.active {
+      -webkit-transform: translateY(0%);
       transform: translateY(0%);
     }
   }
