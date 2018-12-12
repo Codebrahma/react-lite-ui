@@ -89,7 +89,6 @@ class Pagination extends Component {
       <div className={theme.dots}>
         <span />
         <span />
-        <span />
       </div>
     );
   };

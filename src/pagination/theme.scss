@@ -1,5 +1,7 @@
 :local(.pagination) {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 0.2em;
     align-items: center;
     flex-direction: row;
     flex-flow: row;
@@ -8,8 +10,12 @@
 }
 
 :local(.pagination-wrapper) {
-    display: flex;
+    display: grid;
+    grid-gap: 0.2em;
+    grid-auto-flow: column;
+    width: fit-content;
     flex-flow: row;
+    align-items: center;
     flex-direction: row;
     box-sizing: border-box;
     min-height: fit-content;
@@ -17,16 +23,19 @@
 }
 
 :local(.pagination-steps) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     height: 2em;
     width: 2em;
     border: 2px solid #6c757d;
+    border-radius: 50%;
     color: #6c757d;
     font-weight: 900;
-    border-radius: 2px;
     text-align: center;
     cursor: pointer;
+    padding: 1em;
     margin: 1px;
 }
 
@@ -41,8 +50,7 @@
     grid-gap: 0.2em;
     height: 100%;
     align-items: center;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 0 0.2em;
     span {
         height: 0.5em;
         width: 0.5em;
@@ -62,6 +70,10 @@
     justify-content: center;
     height: 2em;
     width: 2em;
+    cursor: pointer;
+    &:hover:after {
+        border-color: #2c87d7 !important;
+    }
     &::after {
         content: '';
         display: block;
@@ -82,9 +94,13 @@
     height: 2em;
     width: 2em;
     transform: scaleX(-1);
+    cursor: pointer;
     &::before {
         content: '';
         display: table;
+    }
+    &:hover:after {
+        border-color: #2c87d7 !important;
     }
     &::after {
         content: '';
