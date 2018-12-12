@@ -52,6 +52,7 @@ import {
   TableComponentData,
 } from './componentData';
 
+// eslint-disable-next-line import/prefer-default-export
 export const componentList = [
   {
     name: 'AutoComplete',
@@ -177,5 +178,5 @@ export const componentList = [
     name: 'Tooltip',
     component: Tooltip,
     componentData: TooltipComponentData,
-  }
+  },
 ];

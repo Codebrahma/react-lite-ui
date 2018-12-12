@@ -4,6 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
+import { Link } from '@reach/router';
 import { componentList } from '../common/componentList';
 import Button from '../../../../src/button';
 import Drawer from '../../../../src/drawer';
@@ -31,8 +32,10 @@ class WithComponentBar extends React.Component {
 
   render() {
     const {
-      children, onClickComponent, activeComponent, handleComponentBar, componentBarVisible, onClose,
+      children, onClickComponent, activeComponent,
+      handleComponentBar, componentBarVisible, onClose, page,
     } = this.props;
+    const toPage = (page === 'documentation') ? 'usage' : 'documentation';
     return (
       <div className="with-component-bar">
         <Drawer theme={theme} open={componentBarVisible} onClose={onClose} className={`component-sidebar ${componentBarVisible ? 'component-sidebar-mobile' : ''}`}>
@@ -56,6 +59,15 @@ class WithComponentBar extends React.Component {
             <Button onClick={this.navigateToPlayground} bordered type="primary">Open in playground</Button>
           </div>
           {children}
+          <div className="component-footer">
+            <span className="sub-title">{toPage}</span>
+            {/* eslint-disable-next-line */}
+            <Link to={`/${toPage}?component=${activeComponent.toLowerCase()}`}>
+              <div className="switch-page">
+                {activeComponent}
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     );

@@ -57,6 +57,7 @@ export default class Playground extends Component {
       }
     }
 
+    // eslint-disable-next-line max-len
     getComponentByName = name => componentList.filter(comp => comp.name.toLowerCase() === name.toLowerCase());
 
     changeComponent = ({ label }) => {
@@ -80,11 +81,21 @@ export default class Playground extends Component {
       const { currentComponent, prevPage } = this.state;
       return (
         <div className="playground-navigation">
-          { currentComponent ? <Select defaultValue={{ label: currentComponent }} options={options} theme={theme} onSelect={this.changeComponent} /> : <Preloader
-            loader="colorCircleLoader"
-            size="small"
-            color="primary"
-          /> }
+          { currentComponent ? (
+            <Select
+              defaultValue={{ label: currentComponent }}
+              options={options}
+              theme={theme}
+              onSelect={this.changeComponent}
+            />
+            ) : (
+              <Preloader
+                loader="colorCircleLoader"
+                size="small"
+                color="primary"
+              />
+            )
+          }
           <Button onClick={this.navigateBack} bordered >{`Go to ${prevPage}`}</Button>
         </div>
       );
@@ -96,7 +107,10 @@ export default class Playground extends Component {
         <Layout>
           <div className="playround-container">
             { this.renderPlaygroundNavigation() }
-            <LiveProvider code={component.basicComponent} scope={{ ...components, componentTheme, match }}>
+            <LiveProvider
+              code={component.basicComponent}
+              scope={{ ...components, componentTheme, match }}
+            >
               <LiveError className="playground-error" />
               <LiveEditor className="playground-editor" />
               <LivePreview className="playground-preview" />

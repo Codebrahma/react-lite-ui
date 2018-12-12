@@ -147,9 +147,9 @@ export const componentData = {
           },
         ];
         return (
-          <PreviewElements>
+          <div>
             <Table columns={columns} data={data} sort />
-          </PreviewElements>
+          </div>
         )
       }
     }

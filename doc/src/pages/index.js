@@ -65,9 +65,9 @@ class IndexPage extends Component {
             ref={(ref) => { this.heroBottom = ref; }}
           />
         </div>
-      <Layout>
-        <LandingMain />
-      </Layout>
+        <Layout>
+          <LandingMain />
+        </Layout>
       </div>
     );
   }
