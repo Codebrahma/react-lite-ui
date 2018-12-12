@@ -29,10 +29,16 @@ class WithComponentBar extends React.Component {
     navigate(`/playground?component=${activeComponent.toLowerCase()}`, { state: { prevPage: page } });
   }
 
+  navigateComponentPage = (toPage) => {
+    const { page, activeComponent } = this.props;
+    navigate(`/${toPage}?component=${activeComponent.toLowerCase()}`, { state: { prevPage: page } });
+  }
+
   render() {
     const {
-      children, onClickComponent, activeComponent, handleComponentBar, componentBarVisible, onClose,
+      children, onClickComponent, activeComponent, handleComponentBar, componentBarVisible, onClose, page,
     } = this.props;
+    const toPage = (page === 'documentation') ? 'usage' : 'documentation';
     return (
       <div className="with-component-bar">
         <Drawer theme={theme} open={componentBarVisible} onClose={onClose} className={`component-sidebar ${componentBarVisible ? 'component-sidebar-mobile' : ''}`}>
@@ -56,6 +62,10 @@ class WithComponentBar extends React.Component {
             <Button onClick={this.navigateToPlayground} bordered type="primary">Open in playground</Button>
           </div>
           {children}
+          <span className="sub-title">{toPage}</span>
+          <Button borderless onClick={() => this.navigateComponentPage(toPage)} size="medium">
+            {activeComponent}
+          </Button>
         </div>
       </div>
     );
