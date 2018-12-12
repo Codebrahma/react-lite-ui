@@ -17,11 +17,11 @@
             font-weight: normal;
             color: $battleship-grey;
             &:hover {
-                background-color: $bright-cyan-20;
+                background-color: rgba(160, 198, 255, 0.77);
                 cursor: pointer;
             }
             &.active {
-                background-color: $bright-cyan-20;
+                background-color: rgba(160, 198, 255, 0.77);
                 font-weight: bold;
             }
         }
@@ -32,7 +32,7 @@
             }
         }
         &::-webkit-scrollbar-thumb {
-            background-color: #47e9f3;
+            background-color: #2b87d7c7;
             border-radius: 5px;
         }
     }
