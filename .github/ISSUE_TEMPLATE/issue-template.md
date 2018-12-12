@@ -60,4 +60,4 @@ A clear and concise description of any alternative solutions or features you've 
 
 **Additional context**
 
-Add any other context about the problem here.
+Add any other context about the issue here.
