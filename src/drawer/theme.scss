@@ -8,6 +8,8 @@
     padding: 1%;
     box-shadow: 0 0 7px 2px rgba(0,0,0,0.21);
     position: fixed;
+    outline: none;
+    will-change: transform;
 }
 
 :local(.left),
@@ -49,13 +51,16 @@
 
 :local(.top-open),
 :local(.bottom-open) {
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
 :local(.top-close) {
+  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
 
 :local(.bottom-close) {
+  -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }

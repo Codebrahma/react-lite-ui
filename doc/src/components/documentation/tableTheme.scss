@@ -16,7 +16,9 @@
 }
 
 :local(.tableBodyCell) {
+  color: #4c4d4e;
+  letter-spacing: 0.2px;
   &:nth-child(3) {
-    color: #9d94d8;
+    color: #6a5bcc;
   }
 }
