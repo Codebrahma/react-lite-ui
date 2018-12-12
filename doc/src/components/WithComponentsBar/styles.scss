@@ -44,6 +44,9 @@
         margin-right: 100px;
         padding-left: 300px;
         position: relative;
+        a {
+          text-decoration: none;
+        }
         .mb-10 {
             margin-bottom: 10px;
             margin-top: 5px;
@@ -75,9 +78,21 @@
                 margin-right: 20px;
                 display: none;
             }
-            a {
-                text-decoration: none;
-            }
+        }
+        .component-footer {
+          display: flex;
+          flex-direction: column;
+          a {
+            width: fit-content;
+            float: left;
+          }
+          .switch-page {
+            color: #5d50c6;
+            padding: 0.8em;
+            font-size: 1.2em;
+            letter-spacing: 0.3px;
+            font-weight: 600;
+          }
         }
     }
 }

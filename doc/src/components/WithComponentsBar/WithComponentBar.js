@@ -9,6 +9,7 @@ import Button from '../../../../src/button';
 import Drawer from '../../../../src/drawer';
 
 import theme from './styles.scss';
+import { Link } from '@reach/router';
 
 class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {
@@ -27,11 +28,6 @@ class WithComponentBar extends React.Component {
   navigateToPlayground = () => {
     const { page, activeComponent } = this.props;
     navigate(`/playground?component=${activeComponent.toLowerCase()}`, { state: { prevPage: page } });
-  }
-
-  navigateComponentPage = (toPage) => {
-    const { page, activeComponent } = this.props;
-    navigate(`/${toPage}?component=${activeComponent.toLowerCase()}`, { state: { prevPage: page } });
   }
 
   render() {
@@ -62,10 +58,15 @@ class WithComponentBar extends React.Component {
             <Button onClick={this.navigateToPlayground} bordered type="primary">Open in playground</Button>
           </div>
           {children}
-          <span className="sub-title">{toPage}</span>
-          <Button borderless onClick={() => this.navigateComponentPage(toPage)} size="medium">
-            {activeComponent}
-          </Button>
+          <div className="component-footer">
+            <span className="sub-title">{toPage}</span>
+            {/* eslint-disable-next-line */}
+            <Link to={`/${toPage}?component=${activeComponent.toLowerCase()}`}>
+              <div className="switch-page">
+                {activeComponent}
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     );
