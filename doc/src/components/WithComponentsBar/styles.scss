@@ -18,12 +18,12 @@
             color: $battleship-grey;
             &:hover {
                 background-color: rgba(160, 198, 255, 0.77);
-                color: whitesmoke;
+                color: #00000074;
                 cursor: pointer;
             }
             &.active {
-                background-color: rgba(160, 198, 255, 0.77);
-                color: whitesmoke;
+                background-color: rgb(134, 182, 255);
+                color: #525356;
                 font-weight: bold;
             }
         }
