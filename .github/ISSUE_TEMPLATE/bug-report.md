@@ -1,9 +1,9 @@
 ---
-name: 
-about: 
-title: 
-labels: 
-assignees: 
+name: Bug report
+about: Report a bug
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
