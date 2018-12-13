@@ -7,3 +7,4 @@ npm-error.log
 /docs/build
 coverage
 .nyc_output
+build
