@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
 import { highlightAll } from 'prismjs';
-import * as components from '../../../../src';
+import * as components from '../../../../lib';
 import match from '../../images/match.svg';
 import componentTheme from '../common/componentData/theme.scss';
 import './styles.scss';

@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 import { Link } from '@reach/router';
 import { componentList } from '../common/componentList';
-import Button from '../../../../src/button';
-import Drawer from '../../../../src/drawer';
+import Button from '../../../../lib/button';
+import Drawer from '../../../../lib/drawer';
 
 import theme from './styles.scss';
 
