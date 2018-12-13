@@ -8,6 +8,12 @@ module.exports = merge(common, {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
+    libraryTarget: 'umd',
   },
   entry: path.resolve(__dirname, 'lib'),
+  externals: [
+    // eslint-disable-next-line quote-props
+    'react',
+    'react-dom',
+  ],
 });
