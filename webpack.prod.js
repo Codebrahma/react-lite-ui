@@ -16,11 +16,11 @@ function getFiles(filePattern) {
 module.exports = merge(common, {
   devtool: 'source-map',
   mode: 'production',
-  entry: getFiles('lib/**/index.js'),
+  entry: getFiles('lib/!(index.js)**/index.js'),
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name]',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs',
   },
   externals: [
     'react',
