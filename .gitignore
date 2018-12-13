@@ -8,3 +8,4 @@ npm-error.log
 coverage
 .nyc_output
 dist
+stats

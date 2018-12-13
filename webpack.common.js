@@ -60,8 +60,11 @@ module.exports = {
   plugins: [
     new BundleAnalyzer({
       analyzerMode: 'static',
+      reportFilename: path.resolve(__dirname, 'stats/bundle_analyzer_stats.html'),
     }),
-    new Visualizer(),
+    new Visualizer({
+      filename: '../stats/visualizer_stats.html',
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
