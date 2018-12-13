@@ -3,7 +3,7 @@ const common = require('./webpack.common.js');
 const path = require('path');
 
 module.exports = merge(common, {
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'build'),

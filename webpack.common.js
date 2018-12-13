@@ -2,6 +2,22 @@ const path = require('path');
 const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const Visualizer = require('webpack-visualizer-plugin');
 
+const prod = process.env.NODE_ENV === 'production';
+
+// Configure style loaders according to environment.
+const cssLoader = prod ?
+  'css-loader' :
+  `${require.resolve('css-loader')}?sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`;
+const sassLoader = prod ?
+  'sass-loader' :
+  `${require.resolve('sass-loader')}?sourceMap`;
+
+const styleLoader = [
+  'style-loader',
+  cssLoader,
+  sassLoader,
+];
+
 module.exports = {
   module: {
     rules: [
@@ -28,11 +44,7 @@ module.exports = {
       {
         test: /\.scss$/,
         include: path.resolve(__dirname, './lib'),
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: styleLoader,
       },
       {
         test: /\.(woff|woff2)$/,
