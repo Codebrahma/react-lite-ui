@@ -9,4 +9,5 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'build'),
     filename: 'build.js',
   },
+  entry: path.resolve(__dirname, 'lib'),
 });
