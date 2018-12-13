@@ -1,5 +1,6 @@
 const path = require('path');
 const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = {
   module: {
@@ -29,8 +30,8 @@ module.exports = {
         include: path.resolve(__dirname, './lib'),
         use: [
           'style-loader',
-          `${require.resolve('css-loader')}?sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`,
-          `${require.resolve('sass-loader')}?sourceMap`,
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
@@ -41,5 +42,6 @@ module.exports = {
   },
   plugins: [
     new BundleAnalyzer(),
+    new Visualizer(),
   ],
 };
