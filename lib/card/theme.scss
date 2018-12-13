@@ -1,0 +1,105 @@
+@import '../globals/theme';
+
+:local(.card) {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: $original-white;
+  border-radius: 3px;
+  padding: 15px 20px;
+  margin: 5px;
+  font-family: Roboto, sans-serif;
+}
+.expandedContent {
+  max-height: 0;
+  overflow: hidden;
+  &.expanded {
+    max-height: 2000px;
+    transition: max-height 1s ease;
+  }
+  &.collapsed {
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
+}
+:local(.noPadding) {
+  padding: 0;
+}
+
+:local(.wrapContent) {
+  display: inline-block;
+}
+
+:local(.elevation-low) {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+:local(.elevation-medium) {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+              0 1px 10px 0 rgba(0, 0, 0, 0.12),
+              0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+:local(.elevation-high) {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+              0 6px 30px 5px rgba(0, 0, 0, 0.12),
+              0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+:local(.cardHeader) {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 0;
+  margin-bottom: 15px;
+}
+
+:local(.cardFooter) {
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1%;
+  font-size: 0.8rem;
+}
+
+:local(.card-actions) {
+  float: left;
+  align-self: center;
+  height: 100%;
+  width: 50%;
+}
+
+:local(.more-icon) {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 1em;
+  &:hover {
+    cursor: pointer;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    border-left: 2px solid #454a4f;
+    border-bottom: 2px solid #454a4f;
+    height: 8px;
+    width: 8px;
+    top: 0.4em;
+    left: 30%;
+    transform: rotate(-45deg);
+    transition: 0.5s ease-in-out;
+  }
+}
+
+:local(.less-icon) {
+  &::after {
+    top: 0.7em;
+    transform: rotate(135deg);
+  }
+}

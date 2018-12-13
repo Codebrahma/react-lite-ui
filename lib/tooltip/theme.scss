@@ -1,0 +1,38 @@
+@import '../globals/theme';
+
+:local(.baseContent) {
+  cursor: pointer;
+}
+
+:local(.tip) {
+  position: relative;
+  cursor: pointer;
+  
+}
+
+:local(.tooltipContent) {
+  background: $secondary-grey;
+  font-size: 14px;
+  position: absolute;
+  top: 20px;
+  padding: 3px 5px;
+  color: $original-white;
+  &:after {
+    content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      transform: rotate(180deg);
+      border-color: $secondary-grey transparent transparent transparent;
+  }
+  &.top {
+    top: -60px;
+    &:after {
+      top: 100%;
+      transform: rotate(0deg);
+    }
+  }
+}
