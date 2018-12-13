@@ -6,7 +6,7 @@
   "scripts": {
     "docs:dev": "cd doc && npm run develop",
     "prebuild": "npm run lint && npm run test && rm -rf build",
-    "build": "webpack --mode production --config webpack.prod.js -p",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "build:docs": "npm install && cd doc && npm install && npm run build",
     "lint": "eslint ./ --ext .jsx --ext .js && echo \"eslint: no lint errors!\"",
     "lint:fix": "eslint ./ --ext .jsx --ext .js --fix && echo \"eslint: all errors fixed!\"",
@@ -49,6 +49,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "chai": "^4.2.0",
     "chai-enzyme": "^1.0.0-beta.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
