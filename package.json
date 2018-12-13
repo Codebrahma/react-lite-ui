@@ -10,7 +10,7 @@
     "build:docs": "npm install && cd doc && npm install && npm run build",
     "lint": "eslint ./ --ext .jsx --ext .js && echo \"eslint: no lint errors!\"",
     "lint:fix": "eslint ./ --ext .jsx --ext .js --fix && echo \"eslint: all errors fixed!\"",
-    "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'src/**/*.test.js'",
+    "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'lib/**/*.test.js'",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "postinstall": "gitmoji -i"
   },
@@ -22,10 +22,10 @@
     "functions": 20,
     "branches": 20,
     "include": [
-      "src/**/*.js"
+      "lib/**/*.js"
     ],
     "exclude": [
-      "src/**/*.test.js"
+      "lib/**/*.test.js"
     ]
   },
   "repository": "https://github.com/Codebrahma/React-Lite-UI.git",
