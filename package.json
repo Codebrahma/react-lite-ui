@@ -2,10 +2,10 @@
   "name": "react-lite-ui",
   "version": "1.0.0",
   "description": "A set of React UI components",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "docs:dev": "cd doc && npm run develop",
-    "prebuild": "npm run lint && npm run test && rm -rf build",
+    "prebuild": "npm run lint && npm run test && rm -rf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "build:docs": "npm install && cd doc && npm install && npm run build",
     "lint": "eslint ./ --ext .jsx --ext .js && echo \"eslint: no lint errors!\"",

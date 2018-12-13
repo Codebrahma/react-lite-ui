@@ -6,8 +6,8 @@ module.exports = merge(common, {
   devtool: 'source-map',
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'build.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
   },
   entry: path.resolve(__dirname, 'lib'),
 });

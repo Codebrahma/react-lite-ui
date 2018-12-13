@@ -3,5 +3,5 @@ webpack.config.js
 coverage/
 doc/src/components/common/componentData
 doc/public/
-build/
+dist/
 .cache/
