@@ -10,7 +10,7 @@
     "build:docs": "npm install && cd doc && npm install && npm run build",
     "lint": "eslint ./ --ext .jsx --ext .js && echo \"eslint: no lint errors!\"",
     "lint:fix": "eslint ./ --ext .jsx --ext .js --fix && echo \"eslint: all errors fixed!\"",
-    "test": "nyc mocha --require babel-core/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'lib/**/*.test.js'",
+    "test": "nyc mocha --require @babel/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'lib/**/*.test.js'",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "postinstall": "gitmoji -i"
   },
@@ -41,6 +41,7 @@
     "@babel/plugin-proposal-class-properties": "^7.2.1",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^8.0.0-beta.6",
     "chai": "^4.2.0",
