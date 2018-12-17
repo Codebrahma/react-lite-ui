@@ -1,12 +1,24 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const Visualizer = require('webpack-visualizer-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-// const devMode = process.env.NODE_ENV !== 'production';
-const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: './src/index.html',
-  filename: './index.html',
-});
+const prod = process.env.NODE_ENV === 'production';
+
+// Configure style loaders according to environment.
+const cssLoader = prod ?
+  'css-loader' :
+  `${require.resolve('css-loader')}?sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`;
+const sassLoader = prod ?
+  'sass-loader' :
+  `${require.resolve('sass-loader')}?sourceMap`;
+
+const styleLoader = [
+  'style-loader',
+  cssLoader,
+  sassLoader,
+];
 
 module.exports = {
   module: {
@@ -33,12 +45,8 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        include: path.resolve(__dirname, './src'),
-        use: [
-          'style-loader',
-          `${require.resolve('css-loader')}?sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`,
-          `${require.resolve('sass-loader')}?sourceMap`,
-        ],
+        include: path.resolve(__dirname, './lib'),
+        use: styleLoader,
       },
       {
         test: /\.(woff|woff2)$/,
@@ -47,11 +55,26 @@ module.exports = {
     ],
   },
   plugins: [
-    htmlWebpackPlugin,
-    // new BundleAnalyzerPlugin(),
-    // new MiniCssExtractPlugin({
-    //   filename: devMode ? '[name].css' : '[name].[hash].css',
-    //   chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    // }),
+    new BundleAnalyzer({
+      analyzerMode: 'static',
+      reportFilename: path.resolve(__dirname, 'stats/bundle_analyzer_stats.html'),
+    }),
+    new Visualizer({
+      filename: '../stats/visualizer_stats.html',
+    }),
   ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        },
+      }),
+    ],
+  },
 };

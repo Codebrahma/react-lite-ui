@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import Navbar from '../../../src/navbar';
+import Navbar from '../../../lib/navbar';
 import liteLogo from '../images/match.svg';
 import theme from './theme.scss';
 

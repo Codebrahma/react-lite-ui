@@ -53,6 +53,8 @@
 :local(.left-control),
 :local(.right-control) {
   z-index: 1;
+  font-size: 2rem;
+  color: white;
   position: absolute;
   top: 45%;
   align-self: center;

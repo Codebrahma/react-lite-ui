@@ -1,5 +1,5 @@
 import React from 'react';
-import TextInput from '../../../../../src/textInput';
+import TextInput from '../../../../../lib/textInput';
 
 const FooterSection = () => (
   <div className="row">

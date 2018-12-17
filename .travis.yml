@@ -11,7 +11,7 @@ install:
   - npm i -g codecov
 
 script:
-  - npm run build-demo
+  - npm run build:docs
   - npm run test
 
 after_success: npm run coverage
