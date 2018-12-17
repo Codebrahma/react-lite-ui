@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { navigate } from 'gatsby';
 import { componentList } from '../components/common/componentList';
-import components from '../../../lib';
+import * as components from '../../../lib';
 import componentTheme from '../components/common/componentData/theme.scss';
 import Select from '../../../lib/select';
 import Button from '../../../lib/button';

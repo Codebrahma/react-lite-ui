@@ -11,7 +11,7 @@ import './styles.scss';
 
 const {
   Table,
-} = components.default;
+} = components;
 
 const propColumns = [
   { title: 'Prop', key: 'prop', colWidth: '120px' },
@@ -27,7 +27,7 @@ const themeColumns = [
 class Documentation extends React.Component {
   renderBasicComponent = basicComponent => (
     <LiveProvider
-      scope={{ ...components.default, componentTheme, match }}
+      scope={{ ...components, componentTheme, match }}
       code={basicComponent}
     >
       <div className="code-preview">

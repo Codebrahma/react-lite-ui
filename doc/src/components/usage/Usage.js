@@ -39,7 +39,7 @@ class Usage extends React.Component {
   renderComponentUsage = componentData => (
     <LiveProvider
       scope={{
-        ...components.default, PreviewBlock, PreviewElements, componentTheme, match,
+        ...components, PreviewBlock, PreviewElements, componentTheme, match,
       }}
       code={componentData.componentUsage || componentData.basicComponent}
     >
