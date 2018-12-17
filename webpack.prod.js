@@ -20,7 +20,7 @@ module.exports = merge(common, {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name]',
-    libraryTarget: 'commonjs',
+    libraryTarget: 'commonjs2',
   },
   externals: [
     'react',
