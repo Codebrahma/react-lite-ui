@@ -14,7 +14,7 @@ function getFiles(filePattern) {
 }
 
 module.exports = merge(common, {
-  devtool: 'source-map',
+  devtool: '',
   mode: 'production',
   entry: getFiles('lib/!(index.js)**/index.js'),
   output: {
