@@ -93,7 +93,7 @@ export const componentData = {
       render() {
         return (
           <PreviewElements>
-            <PreviewBlock header="Default toggle (disabled)">
+            <PreviewBlock header="Default toggle">
 
             {/* Default Toggle */}
               <Toggle
