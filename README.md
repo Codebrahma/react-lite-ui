@@ -25,9 +25,9 @@
 </p>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#usage-">Usage</a> •
+  <a href="#sparkles-key-features">Key Features</a> •
+  <a href="#link-installation">Installation</a> •
+  <a href="#rocket-usage-">Usage</a> •
   <a href="https://react-lite-ui.netlify.com/documentation">Documentation</a>
 </p>
 
@@ -46,6 +46,9 @@
 
 * Clean Design with minimal implementation reducing the code that is shipped to your app with pleasant UI. :sunrise_over_mountains:
 
+* Each component is made light-weight - around half the size of components ( and even less! ) from other popular libraries. :muscle:
+
+<br />
 
 ### :link: Installation: 
 
@@ -55,13 +58,15 @@
 npm install --save react-lite-ui
 ```
 
+<br />
+
 ### :rocket: Usage :
 
 ##
 
 In your `App.js` : 
 
-```
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel } from 'react-lite-ui';
@@ -83,12 +88,123 @@ ReactDOM.render(
 );
 ```
 
+<br />
+
 ### :art: Customisation :
 
 ##
 
+Let's take our `App.js` file, and add a [Card](https://react-lite-ui.netlify.com/documentation?component=card) component to it : 
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Card } from 'react-lite-ui';
+
+class App extends React.Component {
+      render() {
+        return (
+          <Card
+            header="Am I Cute?"
+            footer={
+              <Button href="https://github.com/Codebrahma/react-lite-ui" type="primary" bordered>view more</Button>
+            }
+            elevation="medium"
+          >
+            <div className="col card-content">
+              <img src="https://placeimg.com/300/300/animals" alt="animals" />
+            </div>
+          </Card>
+        );
+      }
+    }
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
+```
+<br />
+
 Create a file named `theme.scss` :
 
+```scss
+:local(.card) {
+      z-index: 2;
+      height: fit-content;
+      width: 100%;
+      transition: margin 0.2s ease-in-out;
+}
+    
+:local(.cardHeader) {
+      color: #0c549c;
+      text-align: center;
+}
+    
+:local(.cardFooter) {
+      justify-content: center;
+      align-self: baseline;
+}
 ```
+<br/>
 
+Don't worry if this doesn't make sense to you. For now, we will add these styles and complete wiring up our styles to the card component. 
+
+Now, in our `App.js` file we will pass a `theme` prop to the `Card` component, like this : 
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Card } from 'react-lite-ui';
+import theme from 'theme.scss';  // Import the styles from theme.scss
+
+class App extends React.Component {
+      render() {
+        return (
+          <Card
+            theme={theme}       // Pass the theme as a prop to the card component here.
+            header="Am I Cute?"
+            footer={
+              <Button href="https://github.com/Codebrahma/react-lite-ui" type="primary" bordered>view more</Button>
+            }
+            elevation="medium"
+          >
+            <div className="col card-content">
+              <img src="https://placeimg.com/300/300/animals" alt="animals" />
+            </div>
+          </Card>
+        );
+      }
+    }
+    
+ ...
 ```
+<br />
+
+So, let's take a look at what we did here : 
+
+* We defined our own styles which we wanted to customize for the component using the `card`, `cardHeader` and `cardFooter` classes.
+
+* Then we passed the styles to the component via the `theme` prop which gets applied to the component's structure.
+
+<br />
+
+The styles that you passed are then combined with the default styles of the component to render your customised component!
+For more info on how to customise and various props that you can pass to your components, please visit the [Documentation page](https://react-lite-ui.netlify.com/documentation).
+
+
+That's all you need to do! And here's our customised card component :
+
+![screenshot](https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/card-screenshot.png)
+
+Pretty easy, right? Want to try out more components?
+
+Simply visit our [Playground page](https://react-lite-ui.netlify.com/playground) to try out the components before using and have fun playing around with them!
+
+### Contributing :
+
+If you want to contribute, please take a look at our [Contribution guidelines]() and raise a PR! We would love contributions!
+
+If you find an issue or have a question, please open an issue [here](https://github.com/Codebrahma/react-lite-ui/issues) and we would love to help you out and keep improving this library! :smile:
+
+Thanks! 
