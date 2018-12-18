@@ -28,12 +28,25 @@
       "lib/**/*.test.js"
     ]
   },
-  "repository": "https://github.com/Codebrahma/React-Lite-UI.git",
-  "license": "ISC",
+  "repository": "https://github.com/Codebrahma/react-lite-ui",
+  "bugs": {
+    "url": "https://github.com/Codebrahma/react-lite-ui/issues"
+  },
+  "license": "MIT",
   "private": false,
   "keywords": [
-    "React",
-    "Components"
+    "react",
+    "components",
+    "light",
+    "weight",
+    "lightweight",
+    "theme",
+    "ui",
+    "kit",
+    "component-library",
+    "ui-kit",
+    "ui-components",
+    "reusable"
   ],
   "author": "Codebrahma",
   "devDependencies": {
