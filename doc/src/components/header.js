@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Navbar from '../../../lib/navbar';
 import liteLogo from '../images/match.svg';
-import theme from './theme.scss';
+import theme from './theme.module.scss';
 
 const Header = ({ location }) => (
   <Navbar theme={theme} className={`navbar${location.pathname !== '/' ? ' navbar-extended' : ''}`} position="fixed" flat title={<Link to="/">React Lite UI</Link>} leftIcon={<Link to="/"><img src={liteLogo} alt="navbar-left-logo" /></Link>}>

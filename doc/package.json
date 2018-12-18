@@ -24,9 +24,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "http-server": "rm -rf ./cache && rm -rf ./public && npm run build && http-server ./public"
   },
   "devDependencies": {
+    "http-server": "^0.11.1",
     "prettier": "^1.14.2"
   },
   "repository": {

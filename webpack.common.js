@@ -44,8 +44,19 @@ module.exports = {
         ],
       },
       {
-        test: /\.module\.scss$/,
-        include: path.resolve(__dirname, './lib'),
+        test: /\.s(a|c)ss$/,
+        include: [
+          path.resolve(__dirname, './lib'),
+          path.resolve(__dirname, './doc'),
+        ],
+        use: styleLoader,
+      },
+      {
+        test: /\.module\.s(a|c)ss$/,
+        include: [
+          path.resolve(__dirname, './lib'),
+          path.resolve(__dirname, './doc'),
+        ],
         use: styleLoader,
       },
       {
