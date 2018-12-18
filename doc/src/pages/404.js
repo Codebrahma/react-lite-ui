@@ -1,10 +1,37 @@
 import React from 'react';
 import Layout from '../components/layout';
+import ghostRider from '../images/404.svg';
+import './404.scss';
+
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="four-o-four-wrapper">
+      <div className="four-o-four-bg">
+        <img src={ghostRider} alt="404 Background" />
+      </div>
+      <div className="four-o-four-content">
+        <h1>Oops!! Misfired</h1>
+        <h3>Arghh!! My head is BURNING!!!!</h3>
+        <p>
+          Can you please take me to one of below locations? Pretty Pleaseeee!!
+        </p>
+        <div className="four-o-four-locations">
+          <a href="https://react-lite-ui.netlify.com">
+            My home
+          </a>
+          <a href="https://react-lite-ui.netlify.com/documentation">
+            Docs Dermatology
+          </a>
+          <a href="https://react-lite-ui.netlify.com/usage">
+            Usage Cosmetology
+          </a>
+          <a href="https://react-lite-ui.netlify.com/playground">
+            MultiSpecs Playground
+          </a>
+        </div>
+      </div>
+    </div>
   </Layout>
 );
 

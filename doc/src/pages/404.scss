@@ -1,0 +1,62 @@
+.four-o-four-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 30px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  .four-o-four-bg {
+    width: 300px;
+    height: 400px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .four-o-four-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #5d597e;
+    padding: 0 10px;
+    p {
+      color: #032c63;
+      &:after {
+        content: '\1F97A';
+        font-size: 20px;
+      }
+    }
+    h1 {
+      color: #e46c6c;
+      margin-top: 0;
+      text-transform: capitalize;
+      &:after {
+        content: '\1F525';
+      }
+    }
+    h3 {
+      &:after {
+        content: '\1F975';
+      }
+    }
+    .four-o-four-locations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      a {
+        min-width: 170px;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #5ba5eb;
+        border-radius: 4px;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: #5ba5eb;
+        &:hover {
+          background-color: rgba($color: #5ba5eb, $alpha: 0.2);
+        }
+      }
+    }
+  }
+}
