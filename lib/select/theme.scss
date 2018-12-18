@@ -64,34 +64,28 @@
     height: 2em;
     padding: 0 2%;
     box-sizing: border-box;
-    flex-direction: row;
+    flex-direction: row !important;
     position: relative;
     justify-content: space-between;
     border-bottom: 2px solid #6c757d;
 }
 
 :local(.arrow) {
-    border: none;
-    border-right: 2px solid grey;
-    border-bottom: 2px solid grey;
-    min-height: 5px;
-    min-width: 5px;
     transition: 0.3s ease;
     align-self: center;
-}
-
-:local(.down) {
-    transform: rotate(45deg);
+    transform-origin: center;
 }
 
 :local(.up) {
-    transform: rotate(-135deg);
+    transform: rotate(180deg);
 }
 
 :local(.selected) {
     cursor: pointer;
     color: black;
     font-size: 1em;
+    display: flex;
+    align-items: center;
     width: 95%;
     &>input {
         background-color: transparent;
