@@ -3,6 +3,7 @@
 .idea/
 node_modules/
 doc/
+test/
 coverage
 .nyc_output
 lib/
