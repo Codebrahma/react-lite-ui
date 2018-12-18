@@ -1,0 +1,32 @@
+# 1.0.0 - beta (2018-12-18)
+
+#### First stable release. 
+
+List of components added :
+
+* [AutoComplete](https://react-lite-ui.netlify.com/documentation?component=autocomplete)
+* [Avatar](https://react-lite-ui.netlify.com/documentation?component=avatar)
+* [Button](https://react-lite-ui.netlify.com/documentation?component=badge)
+* [Badge](https://react-lite-ui.netlify.com/documentation?component=button)
+* [Card](https://react-lite-ui.netlify.com/documentation?component=card)
+* [Carousel](https://react-lite-ui.netlify.com/documentation?component=carousel)
+* [Checkbox](https://react-lite-ui.netlify.com/documentation?component=checkbox)
+* [CheckboxGroup](https://react-lite-ui.netlify.com/documentation?component=checkboxgroup)
+* [Chip](https://react-lite-ui.netlify.com/documentation?component=chip)
+* [Drawer](https://react-lite-ui.netlify.com/documentation?component=drawer)
+* [Menu](https://react-lite-ui.netlify.com/documentation?component=menu)
+* [Modal](https://react-lite-ui.netlify.com/documentation?component=modal)
+* [MultiSelect](https://react-lite-ui.netlify.com/documentation?component=multiselect)
+* [Navbar](https://react-lite-ui.netlify.com/documentation?component=navbar)
+* [Pagination](https://react-lite-ui.netlify.com/documentation?component=pagination)
+* [Popover](https://react-lite-ui.netlify.com/documentation?component=popover)
+* [Preloader](https://react-lite-ui.netlify.com/documentation?component=preloader)
+* [ProgressBar](https://react-lite-ui.netlify.com/documentation?component=progressbar)
+* [RadioButtonGroup](https://react-lite-ui.netlify.com/documentation?component=radiobuttongroup)
+* [Select](https://react-lite-ui.netlify.com/documentation?component=select)
+* [Slider](https://react-lite-ui.netlify.com/documentation?component=slider)
+* [Snackbar](https://react-lite-ui.netlify.com/documentation?component=snackbar)
+* [Table](https://react-lite-ui.netlify.com/documentation?component=table)
+* [TextInput](https://react-lite-ui.netlify.com/documentation?component=textinput)
+* [Toggle](https://react-lite-ui.netlify.com/documentation?component=toggle)
+* [Tooltip](https://react-lite-ui.netlify.com/documentation?component=tooltip)
