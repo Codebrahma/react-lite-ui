@@ -82,12 +82,15 @@ export default class Playground extends Component {
       return (
         <div className="playground-navigation">
           { currentComponent ? (
-            <Select
-              defaultValue={{ label: currentComponent }}
-              options={options}
-              theme={theme}
-              onSelect={this.changeComponent}
-            />
+            <div>
+              <Select
+                defaultValue={{ label: currentComponent }}
+                options={options}
+                theme={theme}
+                onSelect={this.changeComponent}
+              />
+              <span>Select a component from the dropdown to edit it in playground.</span>
+            </div>
             ) : (
               <Preloader
                 loader="colorCircleLoader"
@@ -96,7 +99,7 @@ export default class Playground extends Component {
               />
             )
           }
-          <Button onClick={this.navigateBack} bordered >{`Go to ${prevPage}`}</Button>
+          <Button theme={theme} onClick={this.navigateBack} flat borderless>{`Go to ${prevPage}`}</Button>
         </div>
       );
     }
@@ -111,9 +114,11 @@ export default class Playground extends Component {
               code={component.basicComponent}
               scope={{ ...components, componentTheme, match }}
             >
-              <LiveError className="playground-error" />
-              <LiveEditor className="playground-editor" />
               <LivePreview className="playground-preview" />
+              <div className="playground-error">
+                <LiveError />
+              </div>
+              <LiveEditor className="playground-editor" />
             </LiveProvider>
           </div>
         </Layout>
