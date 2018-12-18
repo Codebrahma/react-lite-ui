@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://travis-ci.org/Codebrahma/react-lite-ui">
-    <img src="https://img.shields.io/travis/Codebrahma/react-lite-ui.svg"
+    <img src="https://img.shields.io/travis/Codebrahma/react-lite-ui/development.svg"
          alt="TravisCI">
   </a>
   <a href="https://david-dm.org/Codebrahma/react-lite-ui">
@@ -28,7 +28,8 @@
   <a href="#sparkles-key-features">Key Features</a> •
   <a href="#link-installation">Installation</a> •
   <a href="#rocket-usage-">Usage</a> •
-  <a href="https://react-lite-ui.netlify.com/documentation">Documentation</a>
+  <a href="https://react-lite-ui.netlify.com/documentation">Documentation</a> •
+  <a href="https://react-lite-ui.netlify.com/">Demo</a>
 </p>
 
 <p align="center">
