@@ -1,21 +1,211 @@
-# react-lite-ui
+<h1 align="center">
+  <br>
+  <a href="https://react-lite-ui.netlify.com/"><img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/logo.png" alt="React Lite UI" width="200"></a>
+  <br>
+  React Lite UI
+  <br>
+</h1>
 
-<!-- Badges -->
-<!-- npm package verson and downloads info can be included once the package is published -->
-<!-- [![npm version](https://badge.fury.io/js/react-lite-ui.svg)](https://badge.fury.io/js/react-lite-ui) -->
-<!-- [![npm downloads](https://img.shields.io/npm/dm/react-lite-ui.svg)](https://www.npmjs.com/package/react-lite-ui) -->
-[![Dependencies](https://img.shields.io/david/Codebrahma/react-lite-ui.svg)](https://david-dm.org/Codebrahma/react-lite-ui)
-[![devDependencies](https://img.shields.io/david/dev/Codebrahma/react-lite-ui.svg)](https://david-dm.org/Codebrahma/react-lite-ui?type=dev)
-[![Travis (.org)](https://img.shields.io/travis/Codebrahma/react-lite-ui.svg)](https://travis-ci.org/Codebrahma/react-lite-ui)
-[![codecov](https://codecov.io/gh/Codebrahma/react-lite-ui/branch/development/graph/badge.svg)](https://codecov.io/gh/Codebrahma/react-lite-ui)
+<h4 align="center">A set of light weight React Components, which are easily customizable and can be bootstrapped in your project.</h4>
 
-A set of React Components, easily customizable and can be bootstrapped in your project.
+<p align="center">
+  <a href="https://travis-ci.org/Codebrahma/react-lite-ui">
+    <img src="https://img.shields.io/travis/Codebrahma/react-lite-ui/development.svg"
+         alt="TravisCI">
+  </a>
+  <a href="https://david-dm.org/Codebrahma/react-lite-ui">
+      <img src="https://img.shields.io/david/Codebrahma/react-lite-ui.svg" alt="dependencies">
+  </a>
+  <a href="https://david-dm.org/Codebrahma/react-lite-ui?type=dev">
+    <img src="https://img.shields.io/david/dev/Codebrahma/react-lite-ui.svg" alt="dev dependencies">
+  </a>
+  <a href="https://codecov.io/gh/Codebrahma/react-lite-ui">
+    <img src="https://codecov.io/gh/Codebrahma/react-lite-ui/branch/development/graph/badge.svg" alt="Codecov">
+  </a>
+</p>
 
-# Advantages:
+<p align="center">
+  <a href="#sparkles-key-features">Key Features</a> •
+  <a href="#link-installation">Installation</a> •
+  <a href="#rocket-usage-">Usage</a> •
+  <a href="https://react-lite-ui.netlify.com/documentation">Documentation</a> •
+  <a href="https://react-lite-ui.netlify.com/">Demo</a>
+</p>
 
-Any DOM element can be customized through SASS.
+<p align="center">
+<img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/higher-res.gif" >
+</p>
 
-You can import indiviual components which doesn't affect the bundle size of your app.
 
-Clean Design with minimal implementation reducing the code that is shipped to your app with pleasent UI.
+### :sparkles: Key Features:
 
+##
+
+* Any DOM element can be customized through a simple SASS file. :tada:
+
+* You can import individual components which doesn't affect the bundle size of your app. :confetti_ball:
+
+* Clean Design with minimal implementation reducing the code that is shipped to your app with pleasant UI. :sunrise_over_mountains:
+
+* Each component is made light-weight - around half the size of components ( and even less! ) from other popular libraries. :muscle:
+
+<br />
+
+### :link: Installation: 
+
+##
+
+```
+npm install --save react-lite-ui
+```
+
+<br />
+
+### :rocket: Usage :
+
+##
+
+In your `App.js` : 
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Carousel } from 'react-lite-ui';
+
+class App extends React.Component {
+      render() {
+        const data = [
+          "https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=wood-landscape-sky-371633.jpg&fm=jpg",
+          "https://hanslodge.com/images/pTqrL9Rec.jpg",
+          "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?cs=srgb&dl=sea-landscape-nature-248797.jpg&fm=jpg"
+        ];
+        return <Carousel data={data} theme={componentTheme} />;
+      }
+    }
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
+```
+
+<br />
+
+### :art: Customisation :
+
+##
+
+Let's take our `App.js` file, and add a [Card](https://react-lite-ui.netlify.com/documentation?component=card) component to it : 
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Card } from 'react-lite-ui';
+
+class App extends React.Component {
+      render() {
+        return (
+          <Card
+            header="Am I Cute?"
+            footer={
+              <Button href="https://github.com/Codebrahma/react-lite-ui" type="primary" bordered>view more</Button>
+            }
+            elevation="medium"
+          >
+            <div className="col card-content">
+              <img src="https://placeimg.com/300/300/animals" alt="animals" />
+            </div>
+          </Card>
+        );
+      }
+    }
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
+```
+<br />
+
+Create a file named `theme.scss` :
+
+```scss
+:local(.card) {
+      z-index: 2;
+      height: fit-content;
+      width: 100%;
+      transition: margin 0.2s ease-in-out;
+}
+    
+:local(.cardHeader) {
+      color: #0c549c;
+      text-align: center;
+}
+    
+:local(.cardFooter) {
+      justify-content: center;
+      align-self: baseline;
+}
+```
+<br/>
+
+Don't worry if this doesn't make sense to you. For now, we will add these styles and complete wiring up our styles to the card component. 
+
+Now, in our `App.js` file we will pass a `theme` prop to the `Card` component, like this : 
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Card } from 'react-lite-ui';
+import theme from 'theme.scss';  // Import the styles from theme.scss
+
+class App extends React.Component {
+      render() {
+        return (
+          <Card
+            theme={theme}       // Pass the theme as a prop to the card component here.
+            header="Am I Cute?"
+            footer={
+              <Button href="https://github.com/Codebrahma/react-lite-ui" type="primary" bordered>view more</Button>
+            }
+            elevation="medium"
+          >
+            <div className="col card-content">
+              <img src="https://placeimg.com/300/300/animals" alt="animals" />
+            </div>
+          </Card>
+        );
+      }
+    }
+    
+ ...
+```
+<br />
+
+So, let's take a look at what we did here : 
+
+* We defined our own styles which we wanted to customize for the component using the `card`, `cardHeader` and `cardFooter` classes.
+
+* Then we passed the styles to the component via the `theme` prop which gets applied to the component's structure.
+
+<br />
+
+The styles that you passed are then combined with the default styles of the component to render your customised component!
+For more info on how to customise and various props that you can pass to your components, please visit the [Documentation page](https://react-lite-ui.netlify.com/documentation).
+
+
+That's all you need to do! And here's our customised card component :
+
+![screenshot](https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/card-screenshot.png)
+
+Pretty easy, right? Want to try out more components?
+
+Simply visit our [Playground page](https://react-lite-ui.netlify.com/playground) to try out the components before using and have fun playing around with them!
+
+### Contributing :
+
+If you want to contribute, please take a look at our [Contribution guidelines]() and raise a PR! We would love contributions!
+
+If you find an issue or have a question, please open an issue [here](https://github.com/Codebrahma/react-lite-ui/issues) and we would love to help you out and keep improving this library! :smile:
+
+Thanks! 
