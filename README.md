@@ -31,6 +31,8 @@
   <a href="https://react-lite-ui.netlify.com/documentation">Documentation</a>
 </p>
 
+![screenshot](https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/liteui-gif.gif)
+
 ##
 
 ### Key Features:
