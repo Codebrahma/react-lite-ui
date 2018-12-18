@@ -31,7 +31,9 @@
   <a href="https://react-lite-ui.netlify.com/documentation">Documentation</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/liteui-gif.gif)
+<p align="center">
+<img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/higher-res.gif" >
+</p>
 
 ##
 
@@ -79,3 +81,10 @@ ReactDOM.render(
 );
 ```
 
+#### Customisation :
+
+Create a file named `theme.scss` :
+
+```
+
+```
