@@ -44,7 +44,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
+        test: /\.module\.scss$/,
         include: path.resolve(__dirname, './lib'),
         use: styleLoader,
       },
