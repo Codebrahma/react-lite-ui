@@ -11,7 +11,7 @@
     box-sizing: border-box;
   }
 
-  .animation {
+  :local(.animation) {
     opacity: 0;
     transition: opacity 0.3s;
   }
