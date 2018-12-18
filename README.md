@@ -35,27 +35,29 @@
 <img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/higher-res.gif" >
 </p>
 
-##
 
-### Key Features:
-
-Any DOM element can be customized through SASS.
-
-You can import indiviual components which doesn't affect the bundle size of your app.
-
-Clean Design with minimal implementation reducing the code that is shipped to your app with pleasent UI.
+### :sparkles: Key Features:
 
 ##
 
-### Installation: 
+* Any DOM element can be customized through a simple SASS file. :tada:
+
+* You can import individual components which doesn't affect the bundle size of your app. :confetti_ball:
+
+* Clean Design with minimal implementation reducing the code that is shipped to your app with pleasant UI. :sunrise_over_mountains:
+
+
+### :link: Installation: 
+
+##
 
 ```
 npm install --save react-lite-ui
 ```
 
-##
+### :rocket: Usage :
 
-### Usage :
+##
 
 In your `App.js` : 
 
@@ -81,7 +83,9 @@ ReactDOM.render(
 );
 ```
 
-#### Customisation :
+### :art: Customisation :
+
+##
 
 Create a file named `theme.scss` :
 
