@@ -34,12 +34,20 @@
 
 .playground-navigation {
     display: flex;
+    flex-direction: row;
     padding: 1em;
     box-sizing: border-box;
     justify-content: space-between;
+    @media only screen and (max-width: 592px){
+      flex-direction: column;
+    }
     & > div {
       display: flex;
       flex-direction: column;
+      @media only screen and (max-width: 592px){
+        margin: 0.2em auto;
+        align-items: center;
+      }
 
       & > span {
         padding: 0.5em 0;
@@ -131,8 +139,9 @@
 
 .playground-editor  {
     margin: 0 10% !important;
+    overflow: scroll;
     &::before {
-        content: '// Edit the code here and preview the changes below.';
+        content: '// Edit the code here and preview the changes above.';
         display: flex;
         padding: 1rem;
         font-weight: 600;
