@@ -1,7 +1,7 @@
+
 <h1 align="center">
-  <br>
-  <a href="https://react-lite-ui.netlify.com/"><img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/logo.png" alt="React Lite UI" width="200"></a>
-  <br>
+  <a href="https://react-lite-ui.netlify.com/"><img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/logo.png" alt="React Lite UI" width="150"></a>
+  <br/>
   React Lite UI
   <br>
 </h1>
@@ -209,3 +209,7 @@ If you want to contribute, please take a look at our [Contribution guidelines]()
 If you find an issue or have a question, please open an issue [here](https://github.com/Codebrahma/react-lite-ui/issues) and we would love to help you out and keep improving this library! :smile:
 
 Thanks! 
+
+### Contributors :
+
+[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/0)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/0)[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/1)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/1)[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/2)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/2)[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/3)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/3)[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/4)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/4)[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/5)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/5)[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/6)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/6)[![](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/images/7)](https://sourcerer.io/fame/prasanna1211/Codebrahma/react-lite-ui/links/7)
