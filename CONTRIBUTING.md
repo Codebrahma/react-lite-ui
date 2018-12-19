@@ -20,7 +20,7 @@ on your pull request :
 ## Code of Conduct
 
 Our team is dedicated towards creating and maintaining an ethical, responsible and positive environment for the community.
-Please go through our code of conduct to read about **some** of the ways in which we can maintain proper communication.
+Please go through our code of conduct to read about some of the ways in which we can maintain proper communication.
 
 ## Getting Started
 
