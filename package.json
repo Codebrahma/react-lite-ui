@@ -25,6 +25,7 @@
       "lib/**/*.js"
     ],
     "exclude": [
+      "lib/slider/*.js",
       "lib/**/*.test.js"
     ]
   },
