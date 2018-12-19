@@ -1,6 +1,7 @@
 :local(.drawer) {
-  padding: 0;
-  height: calc(100% - 100px);
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  height: calc(100% - 100px) !important;
   @media only screen and (min-width: 992px) {
       left: 0 !important;
   }

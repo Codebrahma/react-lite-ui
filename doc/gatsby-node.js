@@ -5,37 +5,3 @@
  */
 
 // You can delete this file if you're not using it
-const path = require('path');
-
-exports.onCreateWebpackConfig = ({
-  actions, stage,
-}) => {
-  const { setWebpackConfig } = actions;
-  const PRODUCTION = stage !== 'develop';
-
-  const sassLoader = PRODUCTION ?
-    'sass-loader' :
-    `${require.resolve('sass-loader')}?sourceMap`;
-
-  const styleLoader = [
-    'style-loader',
-    sassLoader,
-  ];
-
-  setWebpackConfig({
-    module: {
-      rules: [
-        {
-          test: /\.s(a|c)ss$/,
-          include: path.resolve(__dirname, './doc'),
-          use: styleLoader,
-        },
-        {
-          test: /\.module\.s(a|c)ss$/,
-          include: path.resolve(__dirname, './doc'),
-          use: styleLoader,
-        },
-      ],
-    },
-  });
-};
