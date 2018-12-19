@@ -59,7 +59,7 @@ the fork.
 
 If you want to add a new feature to the existing set of functionalities, we recommend you to
 first discuss with the repository maintainers by opening an issue [here](https://github.com/Codebrahma/react-lite-ui/issues).
-Please note that we may add a suggested feature only if it adds value to our [purpose](#purpose) of this project.
+Please note that we may add a suggested feature only if it adds value to our [purpose](#purpose-) of this project.
 
 #### Notes on adding new functionalities :
 
