@@ -59,7 +59,7 @@ the fork.
 
 If you want to add a new feature to the existing set of functionalities, we recommend you to
 first discuss with the repository maintainers by opening an issue [here](https://github.com/Codebrahma/react-lite-ui/issues).
-Please note that we may add a suggested feature only if it adds value to our [vision] of this project.
+Please note that we may add a suggested feature only if it adds value to our [purpose](#purpose) of this project.
 
 #### Notes on adding new functionalities :
 
@@ -68,6 +68,14 @@ After adding a new feature, please go through the following :
 1. Proper tests for the new features have been added and are passing.
 2. All the tests should pass.
 3. Documentation has been updated with new features and instructions of their usage.
+
+## Purpose :
+
+The purpose of this project is to provide a component library and ultimately a UI kit that is
+easier to customise, lightweight and easy to use than any other popular libraries are / have been able to provide.
+The focus is on keeping the components as minimal as possible while providing various options to
+customise which might generally be required in a scalable production code and can decrease the overhead of 
+complicated configurations, code styles or other requirements.
 
 ### Our Responsibilities
 
