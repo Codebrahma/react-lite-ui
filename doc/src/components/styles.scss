@@ -29,3 +29,25 @@
       background: #e09b2d
   }
 }
+
+div[class*=navlinks] {
+  a {
+      &:hover {
+          background: transparent;
+          &::after {
+              content: '';
+              display: block;
+              height: 3px;
+              width: 100%;
+              background: #e09b2d
+          }
+      }
+
+      &::after {
+          content: '';
+          display: block;
+          height: 3px;
+          width: 100%;
+      }
+  }
+}

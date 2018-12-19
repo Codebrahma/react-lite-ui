@@ -5,7 +5,7 @@ import { LiveProvider, LivePreview, LiveError } from 'react-live';
 
 import * as components from '../../../../lib';
 import match from '../../images/match.svg';
-import tableTheme from './tableTheme.scss';
+import tableTheme from './tableTheme.module.scss';
 import componentTheme from '../common/componentData/theme.scss';
 import './styles.scss';
 
