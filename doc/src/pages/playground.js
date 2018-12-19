@@ -10,8 +10,9 @@ import Select from '../../../lib/select';
 import Button from '../../../lib/button';
 import Preloader from '../../../lib/preloader';
 import Layout from '../components/layout';
-import theme from './playground.scss';
 import match from '../images/match.svg';
+import theme from './pgTheme.module.scss';
+import './playground.scss';
 
 export default class Playground extends Component {
     static propTypes = {

@@ -9,7 +9,8 @@ import { componentList } from '../common/componentList';
 import Button from '../../../../lib/button';
 import Drawer from '../../../../lib/drawer';
 
-import theme from './styles.scss';
+import theme from './theme.module.scss';
+import './styles.scss';
 
 class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {

@@ -1,0 +1,27 @@
+:local(.menu){
+  z-index: 50;
+}
+
+:local(.selectInput) {
+  input {
+    font-size: 1.06em;
+  }
+  border-bottom-color: #8a908c;
+}
+
+:local(.option) {
+  padding: 5%;
+}
+
+:local(.border-animation) {
+  &::after {
+    background: #6679cc !important;
+  }
+}
+
+:local(.button) {
+  background-color: transparent;
+  &:hover {
+    background-color: #cecaca8a;
+  }
+}
