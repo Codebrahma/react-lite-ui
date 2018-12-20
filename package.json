@@ -17,14 +17,16 @@
   "nyc": {
     "check-coverage": true,
     "per-file": true,
-    "lines": 20,
-    "statements": 20,
-    "functions": 20,
-    "branches": 20,
+    "statements": 75,
+    "branches": 50,
+    "functions": 50,
+    "lines": 75,
     "include": [
       "lib/**/*.js"
     ],
     "exclude": [
+      "lib/slider/*.js",
+      "lib/globals/*.js",
       "lib/**/*.test.js"
     ]
   },
