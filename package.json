@@ -26,6 +26,7 @@
     ],
     "exclude": [
       "lib/slider/*.js",
+      "lib/globals/*.js",
       "lib/**/*.test.js"
     ]
   },
