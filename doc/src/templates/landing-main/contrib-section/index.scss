@@ -1,6 +1,11 @@
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 790px) {
     .row {
         flex-flow: column !important;
+    }
+
+    .contrib-section > .row > .col {
+      margin-left: 15% !important;
+      margin-right: 15% !important;
     }
 }
 

@@ -8,10 +8,29 @@ import liteLogo from '../images/match.svg';
 import theme from './theme.module.scss';
 
 const Header = ({ location }) => (
-  <Navbar theme={theme} className={`navbar${location.pathname !== '/' ? ' navbar-extended' : ' navbar-animated'}`} position="fixed" flat title={<Link to="/">React Lite UI</Link>} leftIcon={<Link to="/"><img src={liteLogo} alt="navbar-left-logo" /></Link>}>
-    <Link to="/documentation" activeClassName="active-link">Documentation</Link>
-    <Link to="/usage" activeClassName="active-link">Usage</Link>
-    <Link to="/playground" activeClassName="active-link" >Playground</Link>
+  <Navbar
+    theme={theme}
+    className={`navbar${location.pathname !== '/' ? ' navbar-extended' : ' navbar-animated'}`}
+    position="fixed"
+    flat
+    title={<Link to="/">React Lite UI</Link>}
+    leftIcon={<Link to="/"><img src={liteLogo} alt="navbar-left-logo" /></Link>}
+  >
+    <Link
+      to="/documentation"
+      activeClassName="active-link"
+    >Documentation
+    </Link>
+    <Link
+      to="/usage"
+      activeClassName="active-link"
+    >Usage
+    </Link>
+    <Link
+      to="/playground"
+      activeClassName="active-link"
+    >Playground
+    </Link>
     <a href="https://www.github.com/Codebrahma/react-lite-ui/" >
       <svg xmlns="http://www.w3.org/2000/svg" width="69" height="23" viewBox="0 0 69 23">
         <g fill="#FFF" fillRule="evenodd">
