@@ -122,7 +122,7 @@ export const componentData = {
         this.style = {
           buttonContainer: {
             display: "grid",
-            gridTemplateColumns: "auto auto auto",
+            gridTemplateColumns: "repeat(auto-fill, 150px)",
             gridGap: 20,
             alignItems: "center"
           }
@@ -138,7 +138,7 @@ export const componentData = {
           <div>
             { /* Preview Block-1 */ }
             <PreviewBlock header="Styled Buttons">
-              <PreviewElements>
+              <PreviewElements style={this.style.buttonContainer}>
 
               {/* Styled Buttons with 'type' prop */}
                 <Button>Primary</Button>
@@ -149,7 +149,7 @@ export const componentData = {
             </PreviewBlock>
             { /* Preview Block-2 */ }
             <PreviewBlock header="Bordered Buttons">
-              <PreviewElements>
+              <PreviewElements style={this.style.buttonContainer}>
 
               {/* Bordered or Outlined Buttons with 'bordered' prop */}
                 <Button bordered type="info">info</Button>
@@ -160,7 +160,7 @@ export const componentData = {
             </PreviewBlock>
             { /* Preview Block-3 */ }
             <PreviewBlock header="Borderless Buttons">
-              <PreviewElements>
+              <PreviewElements style={this.style.buttonContainer}>
 
               {/* Borderless buttons with 'borderless' prop */}
                 <Button type="primary" borderless>Primary</Button>
@@ -171,7 +171,7 @@ export const componentData = {
             </PreviewBlock>
             { /* Preview Block-4 */ }
             <PreviewBlock header="Flat Buttons">
-              <PreviewElements>
+              <PreviewElements style={this.style.buttonContainer}>
 
               {/* No box shadow with 'flat' prop */}
                 <Button type="success" flat>Success</Button>
@@ -182,7 +182,7 @@ export const componentData = {
             </PreviewBlock>
             { /* Preview Block-5 */}
             <PreviewBlock header="Buttons with icons and text">
-              <PreviewElements>
+              <PreviewElements style={this.style.buttonContainer}>
 
               {/* Icon and text buttons with 'icon' prop */}
                 <Button type="warning" icon="icon-left">
@@ -199,7 +199,7 @@ export const componentData = {
             </PreviewBlock>
             { /* Preview Block-6 */ }
             <PreviewBlock header="Sizable Buttons">
-              <PreviewElements>
+              <PreviewElements style={this.style.buttonContainer}>
 
               {/* Control button sizes with 'size' prop */}
                 <Button size="small">

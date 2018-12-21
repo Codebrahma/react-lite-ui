@@ -21,8 +21,8 @@ const PreviewBlock = ({ children, header }) => (
   </div>
 );
 
-const PreviewElements = ({ children }) => (
-  <div className="preview-elements">
+const PreviewElements = ({ children, style }) => (
+  <div className="preview-elements" style={style} >
     {children}
   </div>
 );
