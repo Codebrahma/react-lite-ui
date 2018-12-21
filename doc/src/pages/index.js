@@ -23,8 +23,10 @@ class IndexPage extends Component {
   setNavbarState = (pageYOffset, innerHeight) => {
     if (pageYOffset > 0.6 * innerHeight) {
       document.getElementsByClassName('navbar')[0].style.transform = 'translateY(0)';
+      document.getElementsByClassName('navbar')[0].style.opacity = 1;
     } else {
       document.getElementsByClassName('navbar')[0].style.transform = 'translateY(-100%)';
+      document.getElementsByClassName('navbar')[0].style.opacity = 0;
     }
   }
 
