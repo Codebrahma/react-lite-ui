@@ -1,0 +1,9 @@
+.button {
+    background: transparent;
+    color: white;
+    border-color: white;
+    &:hover {
+        background: white;
+        color: blue;
+    }
+}

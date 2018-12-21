@@ -27,9 +27,11 @@ div.contrib-section>div:nth-child(3) {
     div {
         display: flex;
         flex-direction: column;
+        color: rgb(228, 228, 228);
+        font-weight: bold;
         align-items: center;
         width: 100%;
-        background-color: #fff;
+        background-color: transparent !important;
         &>* {
             margin-top: 2%;
         }
@@ -39,7 +41,7 @@ div.contrib-section>div:nth-child(3) {
         flex-direction: row;
         background-color: transparent;
         justify-content: center;
-        padding: 1em;
+        width: 100%;
         color: rgb(228, 228, 228);
         & > * {
           margin: 0 0.2em;
