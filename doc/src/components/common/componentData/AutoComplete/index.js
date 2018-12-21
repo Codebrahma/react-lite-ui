@@ -137,5 +137,9 @@ export const componentData = {
         background-color: rgba($color: chartreuse, $alpha: 0.2) !important;
       }
     }
+
+    :local(.item-hover) {
+      background-color: rgba($color: chartreuse, $alpha: 0.2) !important;
+    }
   `,
 };

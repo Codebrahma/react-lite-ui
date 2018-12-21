@@ -9,9 +9,6 @@ class IndexPage extends Component {
   constructor(props) {
     super(props);
     this.heroBottom = null;
-    this.state = {
-      prevPageOffset: 0,
-    };
   }
   componentDidMount() {
     window.addEventListener('scroll', this.registerScroll);
@@ -24,17 +21,13 @@ class IndexPage extends Component {
   }
 
   setNavbarState = (pageYOffset, innerHeight) => {
-    const { prevPageOffset } = this.state;
-    const { opacity } = document.getElementsByClassName('navbar')[0].style;
-    if (this.isInAnimationArea(pageYOffset, innerHeight) && (prevPageOffset > pageYOffset)) {
-      console.log('scrolling up', opacity);
-    } else if (this.isInAnimationArea(pageYOffset, innerHeight) && (prevPageOffset < pageYOffset)) {
-      const calculateOpacity = (0.2 * innerHeight) / (pageYOffset - (0.5 * innerHeight)) / 10;
-      console.log(calculateOpacity);
+    if (pageYOffset > 0.7 * innerHeight) {
+      document.getElementsByClassName('navbar')[0].style.transform = 'translateY(0)';
+      document.getElementsByClassName('navbar')[0].style.opacity = 1;
+    } else {
+      document.getElementsByClassName('navbar')[0].style.transform = 'translateY(-100%)';
+      document.getElementsByClassName('navbar')[0].style.opacity = 0;
     }
-    this.setState({
-      prevPageOffset: pageYOffset,
-    });
   }
 
   // eslint-disable-next-line max-len

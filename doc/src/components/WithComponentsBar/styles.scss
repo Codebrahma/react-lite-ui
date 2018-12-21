@@ -2,7 +2,7 @@
 .with-component-bar {
     .component-sidebar {
         background-color: white;
-        top: 100px;
+        top: 11vh;
         overflow: auto;
         width: 200px;
         padding-top: 25px;
@@ -29,9 +29,6 @@
         }
         &::-webkit-scrollbar {
             width: 0.4em;
-            &:hover {
-                width: 1em;
-            }
         }
         &::-webkit-scrollbar-thumb {
             background-color: #2b87d7c7;
