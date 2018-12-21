@@ -12,6 +12,10 @@
   }
 }
 
+:local(.item-hover) {
+  background: rgba($color: #73ff00, $alpha: 0.4) !important;
+}
+
 :local(.selected) {
   div {
     background-color: #f0ece2;

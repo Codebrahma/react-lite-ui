@@ -144,8 +144,12 @@ export const componentData = {
     
     :local(.option) {
       &:hover {
-        background-color: rgba($color: #0b409c, $alpha: 0.4) !important;
+        background-color: rgba($color: #73ff00, $alpha: 0.4) !important;
       }
+    }
+
+    :local(.item-hover) {
+      background: rgba($color: #73ff00, $alpha: 0.4) !important;
     }
     
     :local(.selected) {

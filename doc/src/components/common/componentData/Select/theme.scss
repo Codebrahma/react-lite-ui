@@ -17,3 +17,7 @@
     color: #73ff00;
   }
 }
+
+:local(.option-hover) {
+  background-color: rgba($color: #73ff00, $alpha: 0.4) !important;
+}
