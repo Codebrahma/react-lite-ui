@@ -1,25 +1,53 @@
-
 @media only screen and (max-width: 630px) {
-  .row {
-      flex-flow: column !important;
-  }
+    .row {
+        flex-flow: column !important;
+    }
 }
 
 @media only screen and (max-width: 530px) {
-  .row {
-      padding: 2rem !important;
-  }
+    .row {
+        padding: 2rem !important;
+    }
 }
 
-
 .col {
-  margin: 1rem !important;
-  flex-flow: column;
+    margin: 1rem !important;
+    flex-flow: column;
 }
 
 .card-content {
-  img {
-      max-width: 100% !important;
-      height: auto;
-  }
+    img {
+        max-width: 100% !important;
+        height: auto;
+    }
+}
+
+div.contrib-section>div:nth-child(3) {
+    flex-direction: column;
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #fff;
+        &>* {
+            margin-top: 2%;
+        }
+    }
+    .bottom-bar {
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+        justify-content: center;
+        padding: 1em;
+        color: rgb(228, 228, 228);
+        & > * {
+          margin: 0 0.2em;
+          color: rgb(228, 228, 228);
+        }
+
+        & > span {
+          color: rgb(196, 50, 5);
+        }
+    }
 }
