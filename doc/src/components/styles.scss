@@ -1,14 +1,17 @@
 .navbar {
   height: 4rem;
-  transform: translateY(-100%);
-  transition: all 0.5s ease-in-out;
-  will-change: transform;
   z-index: 3;
 
   a {
     text-decoration: none;
     color: white;
   }
+}
+
+.navbar-animated {
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .navbar-extended {

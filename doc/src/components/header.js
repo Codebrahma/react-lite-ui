@@ -8,7 +8,7 @@ import liteLogo from '../images/match.svg';
 import theme from './theme.module.scss';
 
 const Header = ({ location }) => (
-  <Navbar theme={theme} className={`navbar${location.pathname !== '/' ? ' navbar-extended' : ''}`} position="fixed" flat title={<Link to="/">React Lite UI</Link>} leftIcon={<Link to="/"><img src={liteLogo} alt="navbar-left-logo" /></Link>}>
+  <Navbar theme={theme} className={`navbar${location.pathname !== '/' ? ' navbar-extended' : ' navbar-animated'}`} position="fixed" flat title={<Link to="/">React Lite UI</Link>} leftIcon={<Link to="/"><img src={liteLogo} alt="navbar-left-logo" /></Link>}>
     <Link to="/documentation" activeClassName="active-link">Documentation</Link>
     <Link to="/usage" activeClassName="active-link">Usage</Link>
     <Link to="/playground" activeClassName="active-link" >Playground</Link>
