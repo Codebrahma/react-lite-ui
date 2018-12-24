@@ -122,7 +122,7 @@ export const componentData = {
         this.style = {
           buttonContainer: {
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, 150px)",
+            gridTemplateColumns: "repeat(auto-fit, 150px)",
             gridGap: 20,
             alignItems: "center"
           }
