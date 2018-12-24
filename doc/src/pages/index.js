@@ -10,6 +10,7 @@ class IndexPage extends Component {
     super(props);
     this.heroBottom = null;
   }
+
   componentDidMount() {
     window.addEventListener('scroll', this.registerScroll);
     // eslint-disable-next-line react/no-find-dom-node
@@ -49,7 +50,8 @@ class IndexPage extends Component {
           <div className="hero-content">
             <img src={liteLogo} alt="react-lite-ui-logo" />
             <div>
-              <h2>React Lite UI</h2><br />
+              <h2>React Lite UI</h2>
+              <br />
               <p>A set of light weight React Components</p>
             </div>
           </div>

@@ -22,7 +22,7 @@ const FeaturesSection = () => (
       <img src={quill} alt="lite-weight" />
       <p>Extremely Lite</p>
     </div>
-  </div >
+  </div>
 );
 
 

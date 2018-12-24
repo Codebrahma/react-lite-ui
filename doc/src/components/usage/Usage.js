@@ -22,7 +22,7 @@ const PreviewBlock = ({ children, header }) => (
 );
 
 const PreviewElements = ({ children, style }) => (
-  <div className="preview-elements" style={style} >
+  <div className="preview-elements" style={style}>
     {children}
   </div>
 );
@@ -36,6 +36,7 @@ class Usage extends React.Component {
   componentDidUpdate() {
     highlightAll();
   }
+
   renderComponentUsage = componentData => (
     <LiveProvider
       scope={{
@@ -88,6 +89,11 @@ PreviewBlock.propTypes = {
 
 PreviewElements.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node]).isRequired,
+  style: PropTypes.oneOfType([PropTypes.object]),
+};
+
+PreviewElements.defaultProps = {
+  style: undefined,
 };
 
 export default Usage;

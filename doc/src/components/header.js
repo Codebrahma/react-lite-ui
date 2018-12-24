@@ -19,19 +19,22 @@ const Header = ({ location }) => (
     <Link
       to="/documentation"
       activeClassName="active-link"
-    >Documentation
+    >
+Documentation
     </Link>
     <Link
       to="/usage"
       activeClassName="active-link"
-    >Usage
+    >
+Usage
     </Link>
     <Link
       to="/playground"
       activeClassName="active-link"
-    >Playground
+    >
+Playground
     </Link>
-    <a href="https://www.github.com/Codebrahma/react-lite-ui/" >
+    <a href="https://www.github.com/Codebrahma/react-lite-ui/">
       <svg xmlns="http://www.w3.org/2000/svg" width="69" height="23" viewBox="0 0 69 23">
         <g fill="#FFF" fillRule="evenodd">
           <text fontFamily="Roboto-Bold, Roboto" fontSize="20" transform="translate(29 -1)">
