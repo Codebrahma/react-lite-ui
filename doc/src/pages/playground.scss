@@ -109,8 +109,8 @@
 }
 
 .playground-editor  {
-    margin: 0 10% !important;
-    overflow: scroll;
+    margin: 0 10% 10% !important;
+    overflow: auto;
     &::before {
         content: '// Edit the code here and preview the changes above.';
         display: flex;

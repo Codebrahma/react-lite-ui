@@ -1,7 +1,7 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
 const path = require('path');
 const glob = require('glob');
+const common = require('./webpack.common.js');
 
 function getFiles(filePattern) {
   const files = {

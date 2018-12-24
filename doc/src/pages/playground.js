@@ -1,7 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import {
+  LiveProvider, LiveEditor, LiveError, LivePreview,
+} from 'react-live';
 import { navigate } from 'gatsby';
 import { componentList } from '../components/common/componentList';
 import * as components from '../../../lib';
@@ -92,13 +94,13 @@ export default class Playground extends Component {
               />
               <span>Select a component from the dropdown to edit it in playground.</span>
             </div>
-            ) : (
-              <Preloader
-                loader="colorCircleLoader"
-                size="small"
-                color="primary"
-              />
-            )
+          ) : (
+            <Preloader
+              loader="colorCircleLoader"
+              size="small"
+              color="primary"
+            />
+          )
           }
           <Button theme={theme} onClick={this.navigateBack} flat borderless>{`Go to ${prevPage}`}</Button>
         </div>
