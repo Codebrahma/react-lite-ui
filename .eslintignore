@@ -1,5 +1,7 @@
-dist/
 node_modules/
 webpack.config.js
-
-docs/
+coverage/
+doc/src/components/common/componentData
+doc/public/
+dist/
+.cache/

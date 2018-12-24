@@ -1,0 +1,26 @@
+@mixin inputFocus() {
+    -o-animation-name: animateFocus;
+    -moz-animation-name: animateFocus;
+    -webkit-animation-name: animateFocus;
+    animation-name: animateFocus;
+    @keyframes animateFocus {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+}
+
+@mixin sectionEntry($duration) {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0, 10px) perspective(200px) rotateX(-2deg);
+    &.enabled {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility $duration, opacity $duration, transform $duration;
+        transform: translate(0, 0);
+    }
+}

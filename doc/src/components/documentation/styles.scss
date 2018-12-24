@@ -1,0 +1,60 @@
+.documentation-content {
+  .props,
+  .themes {
+    overflow-x: auto;
+  }
+  .html-structure {
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 1028px;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    .html-header {
+      display: flex;
+      align-items: center;
+      height: 33px;
+      background-color: #eef1f5;
+      .action-icon {
+        display: inline-block;
+        position: relative;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #edc04a;
+        margin-left: 35px;
+        &:after,
+        &:before {
+          content: '';
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+        }
+        &:after {
+          left: 20px;
+          background-color: #97d272;
+        }
+        &:before {
+          right: 20px;
+          margin-left: 15px;
+          background-color: #ef534a;
+        }
+      }
+      .html-header-content {
+        width: 100%;
+        text-align: center;
+        color: #525356;
+      }
+    }
+    .html-content {
+      background-color: #353b46;
+      color: #e2e7ed;
+      pre {
+        padding: 20px 25px 20px 10px;
+        margin: 0;
+        overflow-X: auto;
+      }
+    }
+  }
+}

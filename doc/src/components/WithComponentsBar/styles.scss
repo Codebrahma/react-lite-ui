@@ -1,0 +1,150 @@
+@import '../common/styles.scss';
+.with-component-bar {
+    .component-sidebar {
+        background-color: white;
+        top: 11vh;
+        overflow: auto;
+        width: 200px;
+        padding-top: 25px;
+        overscroll-behavior: contain;
+        -webkit-box-shadow: 6px 0 6px -2px rgba(0, 0, 0, 0.2);
+        box-shadow: 6px 0 6px -2px rgba(0, 0, 0, 0.2);
+        .each-component-item {
+            font-size: 1.1em;
+            line-height: 30px;
+            color: $primary-dark-font;
+            padding: 10px 5px 10px 16px;
+            font-weight: normal;
+            color: $battleship-grey;
+            &:hover {
+                background-color: rgba(160, 198, 255, 0.77);
+                color: #00000074;
+                cursor: pointer;
+            }
+            &.active {
+                background-color: rgb(134, 182, 255);
+                color: #525356;
+                font-weight: bold;
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 0.4em;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #2b87d7c7;
+            border-radius: 5px;
+        }
+    }
+    .component-content {
+        max-width: 1028px;
+        font-family: 'Roboto';
+        padding-top: 200px;
+        padding-bottom: 100px;
+        margin-right: 100px;
+        padding-left: 300px;
+        position: relative;
+        a {
+          text-decoration: none;
+        }
+        .mb-10 {
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        .component-title {
+            font-size: 26px !important;
+        }
+        .sub-title {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 38px;
+            font-weight: bold;
+            color: #525356;
+            padding: 10px 0;
+            margin-top: 15px;
+            text-transform: capitalize;
+        }
+        .code-preview {
+            .error {
+                color: red;
+            }
+        }
+        .action-buttons {
+            display: flex;
+            position: absolute;
+            right: 0;
+            top: 160px;
+            .component-bar-toggler {
+                margin-right: 20px;
+                display: none;
+            }
+        }
+        .component-footer {
+          display: flex;
+          flex-direction: column;
+          a {
+            width: fit-content;
+            float: left;
+            outline: none;
+          }
+          .switch-page {
+            color: #5d50c6;
+            padding: 0.8em;
+            font-size: 1.2em;
+            letter-spacing: 0.3px;
+            font-weight: 600;
+          }
+        }
+    }
+}
+
+.menu-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .with-component-bar {
+        .component-content {
+            margin-right: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .menu-mobile {
+        display: block;
+    }
+    .with-component-bar {
+        .component-sidebar {
+            -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
+            transition: all 0.6s;
+        }
+        .component-sidebar-mobile {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            transition: all 0.6s;
+        }
+        .component-content {
+            padding-left: 20px;
+            margin-right: 20px;
+            transition: all 0.6s;
+            .action-buttons {
+                .component-bar-toggler {
+                    display: inline-block;
+                }
+            }
+            .html-structure {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 528px) {
+    .with-component-bar {
+        .component-content {
+            padding-left: 15px;
+            margin-right: 15px;
+        }
+    }
+}

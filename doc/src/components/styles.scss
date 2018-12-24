@@ -1,0 +1,59 @@
+.navbar {
+  height: 11vh !important;
+  z-index: 3;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.navbar-animated {
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.navbar-extended {
+  div[class*=innerWrapper] {
+    max-width: 100vw !important;
+  }
+}
+
+#layout {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.active-link {
+  background: transparent;
+  &::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: #e09b2d
+  }
+}
+
+div[class*=navlinks] {
+  a {
+      &:hover {
+          background: transparent;
+          &::after {
+              content: '';
+              display: block;
+              height: 3px;
+              width: 100%;
+              background: #e09b2d
+          }
+      }
+
+      &::after {
+          content: '';
+          display: block;
+          height: 3px;
+          width: 100%;
+      }
+  }
+}

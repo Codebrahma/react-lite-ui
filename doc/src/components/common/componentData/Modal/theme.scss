@@ -1,0 +1,10 @@
+:local(.modal) {
+  top: 10%;
+}
+
+:local(.modal-body) {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

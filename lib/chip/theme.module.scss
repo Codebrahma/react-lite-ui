@@ -1,0 +1,210 @@
+@import '../globals/theme.scss';
+
+:local(.chip) {
+  display:  inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  border: 1px solid $secondary-white;
+  box-sizing: border-box;
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  &.avatarMarginLeft {
+    margin-left: 0.5%;
+  }
+  .icon-cross {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+:local(.clickable) {
+  cursor: pointer;
+  text-decoration: none;
+}
+:local(.label) {
+  text-transform: capitalize;
+  padding: 6px 12px;
+}
+
+:local(.smallAvatar) {
+  overflow: hidden;
+  border-radius: 50%;
+  max-height: 28px;
+  max-width: 28px;
+  object-fit: contain;
+  margin-left: -2%;
+}
+:local(.mediumAvatar) {
+  overflow: hidden;
+  border-radius: 50%;
+  max-height: 36px;
+  max-width: 36px;
+  object-fit: contain;
+  margin-left: -2%;
+}
+:local(.largeAvatar) {
+  overflow: hidden;
+  border-radius: 50%;
+  max-height: 52px;
+  max-width: 52px;
+  object-fit: contain;
+  margin-left: -2%;
+}
+
+:local(.deleteIcon) {
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+
+:local(.smallDelete) {
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  margin: 0 4px;
+}
+:local(.mediumDelete) {
+  width: 19px;
+  height: 19px;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0 6px;
+}
+:local(.largeDelete) {
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 8px;
+}
+
+:local(.small) {
+  font-size: 10px;
+  line-height: 11px;
+  border-radius: 34px;
+  padding: 0;
+  min-width: 55px;
+  height: 22px;
+}
+
+:local(.medium) {
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 34px;
+  padding: 0;
+  min-width: 90px;
+  height: 30px;
+}
+
+:local(.large) {
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 34px;
+  padding: 0;
+  min-width: 105px;
+  height: 45px;
+}
+
+:local(.primary) {
+  color: $original-white;
+  background-color: $secondary-violet;
+  border-color: $secondary-violet;
+}
+
+:local(.secondary) {
+  color: $original-white;
+  background-color: $secondary-grey;
+  border-color: $secondary-grey;
+}
+
+:local(.success) {
+  color: $original-white;
+  background-color: $secondary-green;
+  border-color: $secondary-green;
+}
+
+:local(.danger) {
+  color: $original-white;
+  background-color: $secondary-red;
+  border-color: $secondary-red;
+}
+
+:local(.warning) {
+  color: $secondary-black;
+  background-color: $secondary-yellow;
+  border-color: $secondary-yellow;
+}
+
+:local(.info) {
+  color: $original-white;
+  background-color: $secondary-blue;
+  border-color: $secondary-blue;
+}
+
+:local(.light) {
+  color: $secondary-black;
+  background-color: $secondary-white;
+  border-color: $secondary-white;
+}
+
+:local(.dark) {
+  color: $original-white;
+  background-color: $secondary-black;
+  border-color: $secondary-black;
+}
+
+/* Outlined */
+:local(.primaryOutlined) {
+  color: $secondary-violet;
+  background-color: $original-white;
+  border-color: $secondary-violet;
+}
+
+:local(.secondaryOutlined) {
+  color: $secondary-grey;
+  background-color: $original-white;
+  border-color: $secondary-grey;
+}
+
+:local(.successOutlined) {
+  color: $secondary-green;
+  background-color: $original-white;
+  border-color: $secondary-green;
+}
+
+:local(.dangerOutlined) {
+  color: $secondary-red;
+  background-color: $original-white;
+  border-color: $secondary-red;
+}
+
+:local(.warningOutlined) {
+  color: $secondary-yellow;
+  background-color: $secondary-black;
+  border-color: $secondary-yellow;
+}
+
+:local(.infoOutlined) {
+  color: $secondary-blue;
+  background-color: $original-white;
+  border-color: $secondary-blue;
+}
+
+:local(.lightOutlined) {
+  color: $secondary-white;
+  background-color: transparent;
+  border-color: $secondary-white;
+}
+
+:local(.darkOutlined) {
+  color: $secondary-black;
+  background-color: $original-white;
+  border-color: $secondary-black;
+}

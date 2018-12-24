@@ -1,0 +1,28 @@
+.usage-content {
+  .preview-block {
+    .header {
+      font-size: 1.2em;
+      margin: 0.7em 0.7em 1em;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    .pb-content {
+      padding: 0.7em;
+    }
+  }
+  .preview-elements {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .usage-example-code {
+    pre {
+      border-radius: 6px;
+      line-height: 18px;
+      letter-spacing: 0.4px;
+    }
+  }
+}

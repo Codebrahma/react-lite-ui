@@ -1,0 +1,46 @@
+@import '../globals/theme';
+
+:local(.toggle) {
+  background-color: $secondary-grey;
+  padding: 2px;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+  border-radius: 15px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+  input {
+    /* Disable the HTML input */
+    opacity: 0;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 10%;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $original-white;
+    transition: all 200ms ease-out;
+  }
+}
+
+:local(.toggled) {
+  background-color: $secondary-blue;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 55%;
+    border-radius: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $original-white;
+    transition: all 200ms ease-out;
+  }
+}

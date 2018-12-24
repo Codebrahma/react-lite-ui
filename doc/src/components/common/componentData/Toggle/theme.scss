@@ -1,0 +1,10 @@
+:local(.toggle) {
+  background-color: burlywood;
+  &:before {
+    background-color: blanchedalmond;
+  }
+}
+
+:local(.toggled) {
+  background-color: chartreuse;
+}

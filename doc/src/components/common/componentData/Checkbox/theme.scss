@@ -1,0 +1,18 @@
+:local(.label) {
+  color: #144c52;
+}
+
+:local(.checkbox) {
+  border-color: #6b76ff;
+  .check-item {
+    border-color: #6b76ff !important;
+  }
+}
+
+
+:local(.inverted) {
+  background-color: #0b409c !important;
+  .check-item {
+    border-color: #f18a9b !important;
+  }
+}

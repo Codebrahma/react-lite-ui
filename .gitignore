@@ -1,6 +1,9 @@
+.idea/
 node_modules/
 yarn-error.log
 npm-error.log
-/docs/node_modules
-/docs/build
-/docs/log/*.log
+coverage
+.nyc_output
+/dist
+/stats
+/components
