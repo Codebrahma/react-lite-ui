@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/react-lite-ui',
   siteMetadata: {
     title: 'React Lite UI',
   },
