@@ -45,7 +45,7 @@ export const componentData = {
       {
         prop: 'navigationButtons',
         type: 'boolean',
-        defaultValue: 'false',
+        defaultValue: 'true',
         description: 'Shows navigation buttons when `true`.',
       },
     ],  
@@ -83,15 +83,49 @@ export const componentData = {
       <Pagination total={10}/>
     `,
     componentUsage: `
-    class Demo extends React.Component {
+      //  Component.js
+
+      class Demo extends React.Component {
         render() {
           return (
-            <div>
+            <PreviewElements>
               <PreviewBlock header="Pagination">
-                <Pagination total={10}/>
+                <PreviewElements>
+
+                {/* Default Pagination Component */}
+                  <Pagination total={10}/>
+
+                </PreviewElements>
               </PreviewBlock>
-            </div>
+              <PreviewBlock header="Custom Pagination">
+                <PreviewElements>
+
+                {/* Custom themed Pagination Component, Refer theme.scss below */}
+                  <Pagination total={6} theme={componentTheme} navigationButtons={false}/>
+                
+                </PreviewElements>
+              </PreviewBlock>
+            </PreviewElements>
           )
+        }
+      }
+    `,
+    componentUsageTheme: `
+      //  theme.scss
+
+      :local(.pagination-steps) {
+        border-color: transparent;
+        color: #8047c7;
+      }
+      
+      :local(.active) {
+        color: #ff8600;
+      }
+      
+      :local(.dots) {
+        span {
+          height: 0.3em;
+          width: 0.3em;
         }
       }
     `,
