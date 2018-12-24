@@ -102,7 +102,7 @@ export const componentData = {
               />
 
             </PreviewBlock>
-            <PreviewBlock header="Toggle with switch on (with toggable)">
+            <PreviewBlock header="Custom Toggle">
               
             {/* Custom Toggle, Refer theme.scss */}
               <Toggle 
