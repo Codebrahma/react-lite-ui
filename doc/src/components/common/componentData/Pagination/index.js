@@ -101,7 +101,7 @@ export const componentData = {
                 <PreviewElements>
 
                 {/* Custom themed Pagination Component, Refer theme.scss below */}
-                  <Pagination total={6} theme={componentTheme} navigationButtons={false}/>
+                  <Pagination total={5} theme={componentTheme} navigationButtons={false}/>
                 
                 </PreviewElements>
               </PreviewBlock>
