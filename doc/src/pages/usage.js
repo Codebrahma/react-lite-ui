@@ -19,7 +19,8 @@ class UsagePage extends React.Component {
   }
 
   componentDidMount() {
-    const { search } = this.props.location;
+    const { location } = this.props;
+    const { search } = location;
     const queryComponent = this.getQueryComponent(search);
     if (queryComponent.length) {
       // eslint-disable-next-line react/no-did-mount-set-state
@@ -31,7 +32,8 @@ class UsagePage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { search } = this.props.location;
+    const { location } = this.props;
+    const { search } = location;
     if (search !== prevProps.location.search) {
       const queryComponent = this.getQueryComponent(search);
       if (queryComponent.length) {

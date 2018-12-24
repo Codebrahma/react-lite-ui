@@ -29,7 +29,7 @@ const LandingMain = () => (
     <div className="row">
       <div className="col">
         <p>Designed for all screen sizes.</p>
-        <Link to="/usage" ><Button>Take a Tour</Button></Link>
+        <Link to="/usage"><Button>Take a Tour</Button></Link>
       </div>
     </div>
     <ContributionSection />

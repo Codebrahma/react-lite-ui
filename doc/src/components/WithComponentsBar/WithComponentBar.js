@@ -14,7 +14,8 @@ import './styles.scss';
 
 class WithComponentBar extends React.Component {
   componentDidUpdate(prevProps) {
-    if (this.props.activeComponent !== prevProps.activeComponent) {
+    const { activeComponent } = this.props;
+    if (activeComponent !== prevProps.activeComponent) {
       const element = document.querySelector('div[data-react-active-component=active]');
       const { top, height } = element.getBoundingClientRect();
       const { parentNode } = document.querySelector('div[data-react-active-component=active]');

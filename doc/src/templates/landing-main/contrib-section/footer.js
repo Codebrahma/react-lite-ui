@@ -7,9 +7,15 @@ const FooterSection = () => (
     <div className="row">
       {'Want us to build something for you? '}
       {'Great! We would love to!'}
-      <Button theme={theme} bordered href="https://codebrahma.com/contact/" >Let us know here!</Button>
+      <Button theme={theme} bordered href="https://codebrahma.com/contact/">Let us know here!</Button>
     </div>
-    <div className="row bottom-bar">Made with <span className="heart">❤</span> by<a target="blank" href="https://www.codebrahma.com"><span>Codebrahma</span></a></div>
+    <div className="row bottom-bar">
+Made with
+      <span className="heart">❤</span>
+      {' '}
+by
+      <a target="blank" href="https://www.codebrahma.com"><span>Codebrahma</span></a>
+    </div>
   </div>
 );
 
