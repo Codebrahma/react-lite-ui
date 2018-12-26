@@ -32,6 +32,14 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41862404-5" />
+          <script>
+            {`window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+          
+            gtag('config', 'UA-41862404-1');`}
+          </script>
         </Helmet>
         <Location>
           {({ location }) => <Header location={location} />}
