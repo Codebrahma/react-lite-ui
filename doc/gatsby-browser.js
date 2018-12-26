@@ -5,3 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+exports.onPreRouteUpdate = ({ location }) => {
+  if (window && typeof window.gtag === 'function') {
+    window.gtag('config', 'UA-41862404-1', { page_path: location.pathname });
+  }
+};
