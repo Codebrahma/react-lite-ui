@@ -122,9 +122,9 @@ export const componentData = {
             <hr />
             <div style={this.styles.leftRightContent}>
               <h4>A set of light weight React Components</h4>
-              {dummyContent('Documentation', 'https://react-lite-ui.netlify.com/documentation')}
-              {dummyContent('Usage', 'https://react-lite-ui.netlify.com/usage')}
-              {dummyContent('Playground', 'https://react-lite-ui.netlify.com/playground')}
+              {dummyContent('Documentation', 'https://codebrahma.com/react-lite-ui/documentation')}
+              {dummyContent('Usage', 'https://codebrahma.com/react-lite-ui/usage')}
+              {dummyContent('Playground', 'https://codebrahma.com/react-lite-ui/playground')}
               {dummyContent('Fork', 'https://github.com/Codebrahma/react-lite-ui')}
             </div>
           </div>
@@ -218,9 +218,9 @@ export const componentData = {
             <hr />
             <div style={this.styles.leftRightContent}>
               <h4>A set of light weight React Components</h4>
-              {dummyContent('Documentation', 'https://react-lite-ui.netlify.com/documentation')}
-              {dummyContent('Usage', 'https://react-lite-ui.netlify.com/usage')}
-              {dummyContent('Playground', 'https://react-lite-ui.netlify.com/playground')}
+              {dummyContent('Documentation', 'https://codebrahma.com/react-lite-ui/documentation')}
+              {dummyContent('Usage', 'https://codebrahma.com/react-lite-ui/usage')}
+              {dummyContent('Playground', 'https://codebrahma.com/react-lite-ui/playground')}
               {dummyContent('Fork', 'https://github.com/Codebrahma/react-lite-ui')}
             </div>
           </div>
@@ -237,9 +237,9 @@ export const componentData = {
             <hr />
             <h4 style={{textAlign: 'center'}}>A set of light weight React Components</h4>
             <div style={this.styles.topBottomContent}>
-              <Button size="medium" borderless href="https://react-lite-ui.netlify.com/documentation">Documentation</Button>
-              <Button size="medium" borderless href="https://react-lite-ui.netlify.com/usage">Usage</Button>
-              <Button size="medium" borderless href="https://react-lite-ui.netlify.com/playground">Playground</Button>
+              <Button size="medium" borderless href="https://codebrahma.com/react-lite-ui/documentation">Documentation</Button>
+              <Button size="medium" borderless href="https://codebrahma.com/react-lite-ui/usage">Usage</Button>
+              <Button size="medium" borderless href="https://codebrahma.com/react-lite-ui/playground">Playground</Button>
               <Button size="medium" borderless href="https://github.com/Codebrahma/react-lite-ui">Fork</Button>
             </div>
           </div>

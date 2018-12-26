@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <a href="https://react-lite-ui.netlify.com/"><img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/logo.png" alt="React Lite UI" width="150"></a>
+  <a href="https://codebrahma.com/react-lite-ui/"><img src="https://raw.githubusercontent.com/Codebrahma/react-lite-ui/development/.github/images/logo.png" alt="React Lite UI" width="150"></a>
   <br/>
   React Lite UI
   <br>
@@ -28,8 +28,8 @@
   <a href="#sparkles-key-features">Key Features</a> •
   <a href="#link-installation">Installation</a> •
   <a href="#rocket-usage-">Usage</a> •
-  <a href="https://react-lite-ui.netlify.com/documentation">Documentation</a> •
-  <a href="https://react-lite-ui.netlify.com/">Demo</a>
+  <a href="https://codebrahma.com/react-lite-ui/documentation">Documentation</a> •
+  <a href="https://codebrahma.com/react-lite-ui/">Demo</a>
 </p>
 
 <p align="center">
@@ -70,16 +70,17 @@ In your `App.js` :
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Carousel } from 'react-lite-ui';
+import { Card } from 'react-lite-ui';
 
 class App extends React.Component {
       render() {
-        const data = [
-          "https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=wood-landscape-sky-371633.jpg&fm=jpg",
-          "https://hanslodge.com/images/pTqrL9Rec.jpg",
-          "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?cs=srgb&dl=sea-landscape-nature-248797.jpg&fm=jpg"
-        ];
-        return <Carousel data={data} theme={componentTheme} />;
+        return (
+          <Card
+            header="Card header"
+          >
+            Card content
+          </Card>
+        );
       }
     }
 
@@ -95,7 +96,7 @@ ReactDOM.render(
 
 ##
 
-Let's take our `App.js` file, and add a [Card](https://react-lite-ui.netlify.com/documentation?component=card) component to it : 
+Let's take our `App.js` file, and add a [Card](https://codebrahma.com/react-lite-ui/documentation?component=card) component to it : 
 
 ```jsx
 import React from 'react';
@@ -191,7 +192,7 @@ So, let's take a look at what we did here :
 <br />
 
 The styles that you passed are then combined with the default styles of the component to render your customised component!
-For more info on how to customise and various props that you can pass to your components, please visit the [Documentation page](https://react-lite-ui.netlify.com/documentation).
+For more info on how to customise and various props that you can pass to your components, please visit the [Documentation page](https://codebrahma.com/react-lite-ui/documentation).
 
 
 That's all you need to do! And here's our customised card component :
@@ -200,7 +201,7 @@ That's all you need to do! And here's our customised card component :
 
 Pretty easy, right? Want to try out more components?
 
-Simply visit our [Playground page](https://react-lite-ui.netlify.com/playground) to try out the components before using and have fun playing around with them!
+Simply visit our [Playground page](https://codebrahma.com/react-lite-ui/playground) to try out the components before using and have fun playing around with them!
 
 ### Contributing :
 

@@ -17,16 +17,16 @@ const NotFoundPage = () => (
           Can you please take me to one of below locations? Pretty Pleaseeee!!
         </p>
         <div className="four-o-four-locations">
-          <a href="https://react-lite-ui.netlify.com">
+          <a href="https://codebrahma.com/react-lite-ui">
             My home
           </a>
-          <a href="https://react-lite-ui.netlify.com/documentation">
+          <a href="https://codebrahma.com/react-lite-ui/documentation">
             Docs Dermatology
           </a>
-          <a href="https://react-lite-ui.netlify.com/usage">
+          <a href="https://codebrahma.com/react-lite-ui/usage">
             Usage Cosmetology
           </a>
-          <a href="https://react-lite-ui.netlify.com/playground">
+          <a href="https://codebrahma.com/react-lite-ui/playground">
             MultiSpecs Playground
           </a>
         </div>

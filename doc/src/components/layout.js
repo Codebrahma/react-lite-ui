@@ -27,9 +27,19 @@ const Layout = ({ children }) => (
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
+            { name: 'google-site-verification', content: 'TjZCWzGGmOI0ObQL9a4VYLWjcfh97hFWJgCIalrarNA' },
+            { name: 'google-site-verification', content: 'MEXUwbWS3rNOj0kzZRJhmZRsZO8adSgFgnJp7R_TJBk' },
           ]}
         >
           <html lang="en" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41862404-5" />
+          <script>
+            {`window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+          
+            gtag('config', 'UA-41862404-1');`}
+          </script>
         </Helmet>
         <Location>
           {({ location }) => <Header location={location} />}
