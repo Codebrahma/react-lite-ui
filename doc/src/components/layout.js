@@ -27,6 +27,8 @@ const Layout = ({ children }) => (
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
+            { name: 'google-site-verification', content: 'TjZCWzGGmOI0ObQL9a4VYLWjcfh97hFWJgCIalrarNA' },
+            { name: 'google-site-verification', content: 'MEXUwbWS3rNOj0kzZRJhmZRsZO8adSgFgnJp7R_TJBk' },
           ]}
         >
           <html lang="en" />
