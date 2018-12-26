@@ -81,12 +81,11 @@
         .component-footer {
           display: flex;
           flex-direction: column;
-          a {
+          .switch-page {
+            cursor: pointer;
             width: fit-content;
             float: left;
             outline: none;
-          }
-          .switch-page {
             color: #5d50c6;
             padding: 0.8em;
             font-size: 1.2em;

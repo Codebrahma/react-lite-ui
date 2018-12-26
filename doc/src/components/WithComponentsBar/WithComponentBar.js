@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
-import { Link } from '@reach/router';
 import { componentList } from '../common/componentList';
 import Button from '../../../../lib/button';
 import Drawer from '../../../../lib/drawer';
@@ -27,9 +26,9 @@ class WithComponentBar extends React.Component {
     }
   }
 
-  navigateToPlayground = () => {
+  navigateToPage = (toPage) => {
     const { page, activeComponent } = this.props;
-    navigate(`/playground?component=${activeComponent.toLowerCase()}`, { state: { prevPage: page } });
+    navigate(`/${toPage}?component=${activeComponent.toLowerCase()}`, { state: { prevPage: page } });
   }
 
   render() {
@@ -58,17 +57,14 @@ class WithComponentBar extends React.Component {
               <Button bordered>select component</Button>
             </span>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <Button onClick={this.navigateToPlayground} bordered type="primary">Open in playground</Button>
+            <Button onClick={() => this.navigateToPage('playground')} bordered type="primary">Open in playground</Button>
           </div>
           {children}
           <div className="component-footer">
             <span className="sub-title">{toPage}</span>
-            {/* eslint-disable-next-line */}
-            <Link to={`/${toPage}?component=${activeComponent.toLowerCase()}`}>
-              <div className="switch-page">
-                {activeComponent}
-              </div>
-            </Link>
+            <div className="switch-page" onClick={() => this.navigateToPage(toPage)}>
+              {activeComponent}
+            </div>
           </div>
         </div>
       </div>
