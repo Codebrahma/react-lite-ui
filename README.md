@@ -24,7 +24,7 @@
     <img src="https://img.shields.io/david/dev/Codebrahma/react-lite-ui.svg?style=flat-square" alt="dev dependencies">
   </a>
   <a href="https://codecov.io/gh/Codebrahma/react-lite-ui">
-    <img src="https://codecov.io/gh/Codebrahma/react-lite-ui/branch/development/graph/badge.svg?style=flat-square" alt="Codecov">
+    <img src="https://img.shields.io/codecov/c/github/Codebrahma/react-lite-ui.svg?style=flat-square" alt="Codecov">
   </a>
 </p>
 
