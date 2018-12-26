@@ -9,18 +9,22 @@
 <h4 align="center">A set of light weight React Components, which are easily customizable and can be bootstrapped in your project.</h4>
 
 <p align="center">
+  <a href="https://www.npmjs.com/package/react-lite-ui">
+    <img src="https://img.shields.io/npm/v/react-lite-ui/latest.svg?style=flat-square"
+         alt="TravisCI">
+  </a>
   <a href="https://travis-ci.org/Codebrahma/react-lite-ui">
-    <img src="https://img.shields.io/travis/Codebrahma/react-lite-ui/development.svg"
+    <img src="https://img.shields.io/travis/Codebrahma/react-lite-ui/development.svg?style=flat-square"
          alt="TravisCI">
   </a>
   <a href="https://david-dm.org/Codebrahma/react-lite-ui">
-      <img src="https://img.shields.io/david/Codebrahma/react-lite-ui.svg" alt="dependencies">
+      <img src="https://img.shields.io/david/Codebrahma/react-lite-ui.svg?style=flat-square" alt="dependencies">
   </a>
   <a href="https://david-dm.org/Codebrahma/react-lite-ui?type=dev">
-    <img src="https://img.shields.io/david/dev/Codebrahma/react-lite-ui.svg" alt="dev dependencies">
+    <img src="https://img.shields.io/david/dev/Codebrahma/react-lite-ui.svg?style=flat-square" alt="dev dependencies">
   </a>
   <a href="https://codecov.io/gh/Codebrahma/react-lite-ui">
-    <img src="https://codecov.io/gh/Codebrahma/react-lite-ui/branch/development/graph/badge.svg" alt="Codecov">
+    <img src="https://codecov.io/gh/Codebrahma/react-lite-ui/branch/development/graph/badge.svg?style=flat-square" alt="Codecov">
   </a>
 </p>
 
