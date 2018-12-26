@@ -1,3 +1,5 @@
 [[redirects]]
   from = "/react-lite-ui/*"
-  to = "/:page"
+  to = "/"
+  status = 301
+  query = {documentation = ":path"}
