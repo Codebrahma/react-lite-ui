@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/react-lite-ui"
+  from = "/react-lite-ui/*"
   to = "/"
   state = 302
