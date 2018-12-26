@@ -1,3 +1,4 @@
 [[redirects]]
   from = "/react-lite-ui/*"
-  to = "/*"
+  to = "/:splat"
+  force = true
