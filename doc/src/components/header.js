@@ -10,7 +10,7 @@ import theme from './theme.module.scss';
 const Header = ({ location }) => (
   <Navbar
     theme={theme}
-    className={`navbar${location.pathname !== '/' ? ' navbar-extended' : ' navbar-animated'}`}
+    className={`navbar${location.pathname !== process.env.HOMEPAGE_ROOT_URL_PREFIX ? ' navbar-extended' : ' navbar-animated'}`}
     position="fixed"
     flat
     title={<Link to="/">React Lite UI</Link>}
