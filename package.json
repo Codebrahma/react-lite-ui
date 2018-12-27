@@ -1,6 +1,6 @@
 {
   "name": "react-lite-ui",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "A set of React UI components",
   "main": "dist/index.js",
   "scripts": {
