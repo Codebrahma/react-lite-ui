@@ -3,7 +3,7 @@
 When contributing to this repository, please first discuss the change you wish to make via an issue, 
 with the owners of this repository before making a change. You can open an issue [here](https://github.com/Codebrahma/react-lite-ui/issues).
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+Please note we have a code of conduct, please follow it in all your interactions with the project. You can find it [here](https://github.com/Codebrahma/react-lite-ui/blob/master/CODE_OF_CONDUCT.md).
 
 ## Pull Request Process
 
@@ -16,11 +16,6 @@ Pull Request has been approved and not been merged, you can ask the reviewer to 
 on your pull request : 
     * Ensure there is an issue open which is related to the request. Pull requests without any related issues will not be processed.
     * Check for activity in other issues / pull requests related to your pull request.
-
-## Code of Conduct
-
-Our team is dedicated towards creating and maintaining an ethical, responsible and positive environment for the community.
-Please go through our code of conduct to read about some of the ways in which we can maintain proper communication.
 
 ## Getting Started
 
@@ -77,23 +72,8 @@ The focus is on keeping the components as minimal as possible while providing va
 customise which might generally be required in a scalable production code and can decrease the overhead of 
 complicated configurations, code styles or other requirements.
 
-### Our Responsibilities
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+## Code of Conduct
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
-
-### Scope
-
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
+Our team is dedicated towards creating and maintaining an ethical, responsible and positive environment for the community.
+Please go through our [code of conduct](https://github.com/Codebrahma/react-lite-ui/blob/master/CODE_OF_CONDUCT.md) to read about some of the ways in which we can maintain proper communication.
