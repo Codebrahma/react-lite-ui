@@ -209,7 +209,7 @@ Simply visit our [Playground page](https://codebrahma.com/react-lite-ui/playgrou
 
 ### Contributing :
 
-If you want to contribute, please take a look at our [Contribution guidelines]() and raise a PR! We would love contributions!
+If you want to contribute, please take a look at our [Contribution guidelines](https://github.com/Codebrahma/react-lite-ui/blob/master/CONTRIBUTING.md) and raise a PR! We would love contributions!
 
 If you find an issue or have a question, please open an issue [here](https://github.com/Codebrahma/react-lite-ui/issues) and we would love to help you out and keep improving this library! :smile:
 
