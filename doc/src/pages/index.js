@@ -15,6 +15,8 @@ class IndexPage extends Component {
     window.addEventListener('scroll', this.registerScroll);
     // eslint-disable-next-line react/no-find-dom-node
     ReactDOM.findDOMNode(this).scrollTo(0, 0);
+    document.getElementsByClassName('navbar')[0].style.transform = 'translateY(-100%)';
+    document.getElementsByClassName('navbar')[0].style.opacity = 0;
   }
 
   componentWillUnmount() {
