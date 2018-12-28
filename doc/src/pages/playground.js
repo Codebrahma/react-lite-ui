@@ -52,14 +52,6 @@ export default class Playground extends Component {
       });
     }
 
-    componentDidUpdate(prevProps) {
-      const { location } = this.props;
-      const { currentComponent } = this.state;
-      if (location.search !== prevProps.location.search) {
-        navigate(`/playground?component=${currentComponent.toLowerCase()}`);
-      }
-    }
-
     // eslint-disable-next-line max-len
     getComponentByName = name => componentList.filter(comp => comp.name.toLowerCase() === name.toLowerCase());
 
@@ -76,7 +68,9 @@ export default class Playground extends Component {
 
     navigateBack = () => {
       const { prevPage, currentComponent } = this.state;
+      const { location } = this.props;
       navigate(`/${prevPage}?component=${currentComponent.toLowerCase()}`);
+      window.gtag('config', 'UA-41862404-1', { page_path: `/${location.pathname.replace(new RegExp('/', 'g'), '')}/${currentComponent.toLowerCase()}` });
     }
 
     renderPlaygroundNavigation = () => {
