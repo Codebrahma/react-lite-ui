@@ -64,12 +64,14 @@ export default class Playground extends Component {
     getComponentByName = name => componentList.filter(comp => comp.name.toLowerCase() === name.toLowerCase());
 
     changeComponent = ({ label }) => {
+      const { location } = this.props;
       const component = this.getComponentByName(label)[0].componentData;
       this.setState({
         currentComponent: label,
         component,
       });
       navigate(`/playground?component=${label.toLowerCase()}`);
+      window.gtag('config', 'UA-41862404-1', { page_path: `${location.pathname}/${label.toLowerCase()}` });
     }
 
     navigateBack = () => {
