@@ -1,5 +1,5 @@
 :local(.modal-backdrop) {
-    background: rgba(0,0,0,0.51);
+    background: rgba(0, 0, 0, 0.51);
     position: fixed;
     top: 0;
     left: 0;
@@ -9,18 +9,18 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-  }
+}
 
-  :local(.animation) {
+:local(.animation) {
     opacity: 0;
     transition: opacity 0.3s;
-  }
-  
-  :local(.modal) {
+}
+
+:local(.modal) {
     display: none;
-    padding: 2%;
+    padding: 1%;
     padding-bottom: 1%;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     background: white;
     width: 50%;
     top: calc(30vh + 2em);
@@ -28,17 +28,15 @@
     position: fixed;
     flex-flow: column;
     box-sizing: border-box;
-
+    border-radius: 0.5em;
     :local(.modal-title) {
         padding: 1% 0%;
         font-weight: bold;
         box-sizing: border-box;
     }
-    
     :local(.modal-body) {
         box-sizing: border-box;
     }
-
     :local(.modal-footer) {
         width: 100%;
         padding: 1% 2%;
@@ -46,12 +44,37 @@
     }
 }
 
+:local(.d-block-modal) {
+    display: flex;
+    animation: anim 0.3s linear;
+    @keyframes anim {
+        0% {
+            opacity: 0;
+            -webkit-transform: scale(0.1);
+            -moz-transform: scale(0.1);
+            -ms-transform: scale(0.1);
+            transform: scale(0.1);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+}
+
 :local(.d-block) {
     display: flex;
     animation: fadein 0.3s linear;
     @keyframes fadein {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 }
 
@@ -65,13 +88,10 @@
     right: 0.6em;
     top: 0.6em;
     cursor: pointer;
-    font-size: 0.7rem;
-    background-color: black;
-    color: white;
 }
 
 @media only screen and (max-width: 992px) {
-  :local(.modal) {
-    width: 75%;
-  }
+    :local(.modal) {
+        width: 75%;
+    }
 }
