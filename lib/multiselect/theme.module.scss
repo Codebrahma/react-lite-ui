@@ -99,6 +99,8 @@
     flex-grow: 1;
     padding: 0.2em;
     max-width: fit-content;
+    animation-duration: 0.15s;
+    @include zoomIn();
     div {
         flex-direction: row !important;
         display: flex;
