@@ -34,15 +34,30 @@
 }
 
 :local(.snackbar) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42em;
   background: $cool-blue;
   border-radius: 3px;
   padding: 0.7em 1.2em;
   margin: 0 auto;
   text-align: center;
-  width: 42em;
   box-shadow: 2px 2px 4px #33333352;
   color: $original-white;
+  position: relative;
+}
 
+:local(.snackbarContent) {
+  margin-right: 0.7em;
+}
+
+:local(.close) {
+  color: inherit;
+  cursor: pointer;
+  justify-self: flex-end;
+  position: absolute;
+  right: 1em;
 }
 
 @media only screen and (max-width: 768px) {
