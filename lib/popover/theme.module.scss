@@ -7,7 +7,7 @@
 }
 
 :local(.popoverWrapper) {
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
     margin: 2% 1%;
     padding: 10px;
     /*
@@ -22,15 +22,28 @@
     white-space: nowrap;
     max-width: 100px;
     border-radius: 5px;
-    background-color: $secondary-white;
+    background-color: #ffffff;
     position: absolute;
     outline: none;
+    font-size: 0.9em;
     z-index: 999; // render on top of any content
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    hr {
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+    }
 }
 
 :local(.title) {
     display: inline-block;
-    font-size: 18px;
     font-weight: bold;
     text-transform: capitalize;
     margin-bottom: 10px;
