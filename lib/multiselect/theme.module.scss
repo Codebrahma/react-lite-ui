@@ -77,27 +77,9 @@
 }
 
 :local(.close) {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-    &:before,
-    &:after {
-        position: absolute;
-        content: "";
-        z-index: 2;
-        border-left: 2px solid #aaa;
-        height: 10px;
-    }
-    &:before {
-        transform: rotate(45deg);
-    }
-    &:after {
-        transform: rotate(-45deg);
-    }
+    align-self: center;
+    margin-left: 2%;
 }
 
 :local(.selectInputWrapper) {
@@ -111,18 +93,18 @@
 }
 
 :local(.selected) {
-    min-width: fit-content;
-    padding: 2px;
     box-sizing: border-box;
+    flex-grow: 1;
+    padding: 0.2em;
+    max-width: fit-content;
     div {
         flex-direction: row !important;
         display: flex;
         justify-items: space-between;
-        padding: 0 5% 0 10%;
+        padding: 0.38em;
         background: #eee;
         border-radius: 5px;
         min-width: fit-content;
-        padding: 2px;
         position: relative;
         box-sizing: border-box;
         div {
@@ -148,11 +130,11 @@
     will-change: transform;
 }
 
-:local(.down) {
+:local(.up) {
     transform: rotate(-180deg);
 }
 
-:local(.up) {
+:local(.down) {
     transform: rotate(0deg);
 }
 
