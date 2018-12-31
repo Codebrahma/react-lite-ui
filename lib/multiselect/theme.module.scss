@@ -35,7 +35,7 @@
     display: inline-flex;
     box-sizing: border-box;
     width: 100%;
-    padding: 2% 5% 0%;
+    padding: 5%;
     cursor: pointer;
     outline: none;
     min-height: fit-content;
@@ -142,23 +142,18 @@
 }
 
 :local(.arrow) {
-    align-self: flex-start;
-    border: none;
-    border-right: 2px solid #1a237e;
-    border-bottom: 2px solid #1a237e;
-    height: 5px;
-    width: 5px;
-    margin-right: -5px;
+    align-self: center;
     transition: 0.3s ease;
-    margin-top: 5%;
+    cursor: pointer;
+    will-change: transform;
 }
 
 :local(.down) {
-    transform: rotate(45deg);
+    transform: rotate(-180deg);
 }
 
 :local(.up) {
-    transform: rotate(-135deg);
+    transform: rotate(0deg);
 }
 
 :local(.border-animation) {
