@@ -14,13 +14,14 @@
     max-height: 0;
     overflow: hidden;
     padding-top: 1%;
+    will-change: max-height;
     &.expanded {
         max-height: 2000px;
-        transition: max-height 1s ease;
+        transition: max-height 0.5s ease-in-out;
     }
     &.collapsed {
         max-height: 0;
-        transition: max-height 0.5s ease;
+        transition: max-height 0.5s ease-in-out;
     }
 }
 
@@ -74,10 +75,16 @@
 
 :local(.expand-icon) {
   align-self: center;
-  &:active {
-    background-color: #dddddd54;
-  }
+  transition: transform 0.5s linear;
   width: 100%;
   padding: 1%;
   font-size: 1.36em;
+}
+
+:local(.open) {
+    transform: rotate(180deg);
+}
+
+:local(.close) {
+    transform: rotate(0deg);
 }
