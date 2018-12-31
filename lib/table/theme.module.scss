@@ -45,7 +45,35 @@
 }
 :local(.tableHeadCellContent) {
   justify-content: space-between;
+  :local(.sortableTitle) {
+    cursor: pointer;
+    :local(.hidden) {
+      opacity: 0;
+    }
+    &:hover {
+      :local(.hidden) {
+        opacity: 1;
+      }
+    }
+  }
+  :local(.sortableTitleIcon) {
+    font-size: 0.8em;
+    margin-left: 0.7em;
+  }
 }
+
+:local(.arrow) {
+  transition: all 0.2s linear;
+}
+
+:local(.upArrow) {
+  transform: rotate(0deg);
+}
+
+:local(.downArrow) {
+  transform: rotate(180deg);
+}
+
 :local(.sortArrow) {
   position: relative;
   width: 12px;
