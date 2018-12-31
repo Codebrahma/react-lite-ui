@@ -204,13 +204,20 @@ export const componentData = {
           },
         ];
         return (
-          <PreviewElements>
+          <div>
+            <PreviewBlock header="Table, Sortable with buttons">
 
-          {/* Default table component with sort functionality */}
-            <Table columns={columns} data={data} sort />
-            <Table columns={columns} data={data} sortByTitle />
-            
-          </PreviewElements>
+            {/* Default table component with sort functionality */}
+              <Table columns={columns} data={data} sort />
+              
+            </PreviewBlock>
+            <PreviewBlock header="Table, sortable by clicking header cell">
+
+            {/* Default table component with sort functionality on clicking header */}
+              <Table columns={columns} data={data} sortByTitle />
+              
+            </PreviewBlock>
+          </div>
         )
       }
     }
