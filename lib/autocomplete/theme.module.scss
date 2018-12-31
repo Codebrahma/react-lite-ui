@@ -1,7 +1,6 @@
 @import '../globals/_theme.scss';
 @import '../globals/animations.module.scss';
 @import '../globals/common.scss';
-
 :local(.autocomplete) {
     @include customScroll();
     width: 16em;
@@ -20,8 +19,6 @@
             outline: none;
         }
     }
-
-
     :local(.autocomplete-list) {
         z-index: 1;
         box-sizing: border-box;
@@ -36,9 +33,14 @@
         padding: 2% 0;
         position: absolute;
         background-color: white;
-
         @include sectionEntry(0.25s);
-        
+        :local(.no-results) {
+            display: flex;
+            padding: 2% 5%;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.8em;
+        }
         :local(.autocomplete-list-item) {
             display: block;
             box-sizing: border-box;
@@ -68,8 +70,8 @@
         margin-top: -2px;
         position: relative;
         /* Safari only style */
-        @media not all and (min-resolution:.001dpcm) {
-          bottom: 2px;
+        @media not all and (min-resolution: .001dpcm) {
+            bottom: 2px;
         }
     }
 }
