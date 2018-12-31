@@ -16,10 +16,25 @@
     transition: opacity 0.3s;
 }
 
+:local(.titleWrapper) {
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding: 2%;
+    box-sizing: border-box;
+    hr {
+        border: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #888282ab;
+        bottom: 0;
+        height: 1px;
+    }
+}
+
 :local(.modal) {
     display: none;
-    padding: 1%;
-    padding-bottom: 1%;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     background: white;
     width: 50%;
@@ -36,6 +51,7 @@
     }
     :local(.modal-body) {
         box-sizing: border-box;
+        padding: 2%;
     }
     :local(.modal-footer) {
         width: 100%;
@@ -84,10 +100,14 @@
 
 :local(.close) {
     width: fit-content;
-    position: absolute;
-    right: 0.6em;
-    top: 0.6em;
     cursor: pointer;
+    position: absolute;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    font-size: 20px;
+    color: #1f1e1eab;
 }
 
 @media only screen and (max-width: 992px) {
