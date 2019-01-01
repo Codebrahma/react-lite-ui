@@ -10,7 +10,7 @@
     position: relative;
     opacity: 0;
     cursor: pointer;
-    margin: 3px;
+    margin: 0px;
   }
   /* Fixes width issue in safari */
   @media not all and (min-resolution:.001dpcm) {
@@ -31,10 +31,18 @@
 }
 
 :local(.customized-radio) {
+  display: inline-block;
   border: 3px solid $secondary-grey;
   border-radius: 50%;
   padding: 3px;
+  height: 30px;
+  width: 30px;
+  box-sizing: border-box;
   .inner {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    box-sizing: content-box;
     border-radius: 50%;
     &.checked {
       background: $secondary-blue;
