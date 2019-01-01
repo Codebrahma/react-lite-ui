@@ -64,6 +64,12 @@ export const componentData = {
       defaultValue: 'false',
       description: 'Prop to be sent, If sorting functionality is required.',
     },
+    {
+      prop: 'sortByTitle',
+      type: 'Boolean',
+      defaultValue: 'false',
+      description: 'Prop to be sent, If sorting functionality by clicking column header is required.',
+    },
   ],  
   themesData: [
     {
@@ -105,6 +111,10 @@ export const componentData = {
     {
       name: 'sortArrow',
       description: 'Class used for the sorting arrows in table header cells.',
+    },
+    {
+      name: 'sortableTitle',
+      description: 'Class used for the title when sortByTitle is enabled.',
     },
   ],
   basicComponent: `
@@ -163,7 +173,7 @@ export const componentData = {
       render() {
         const columns = [
           { title: 'Name', key: 'name', colWidth: '150px' },
-          { title: 'Default Value', key: 'defaultValue' },
+          { title: 'Default Value', key: 'defaultValue', colWidth: '180px' },
           { title: 'Description', key: 'description' },
         ];
         const data = [
@@ -194,12 +204,20 @@ export const componentData = {
           },
         ];
         return (
-          <PreviewElements>
+          <div>
+            <PreviewBlock header="Table, Sortable with buttons">
 
-          {/* Default table component with sort functionality */}
-            <Table columns={columns} data={data} sort />
-            
-          </PreviewElements>
+            {/* Default table component with sort functionality */}
+              <Table columns={columns} data={data} sort />
+              
+            </PreviewBlock>
+            <PreviewBlock header="Table, sortable by clicking header cell">
+
+            {/* Default table component with sort functionality on clicking header */}
+              <Table columns={columns} data={data} sortByTitle />
+              
+            </PreviewBlock>
+          </div>
         )
       }
     }
