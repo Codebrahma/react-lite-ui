@@ -2,7 +2,7 @@
 
 @mixin customScroll() {
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
   }
   
   /* Track */
@@ -12,7 +12,8 @@
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: $secondary-grey; 
+    background: $secondary-grey;
+    border-radius: 20px;
   }
   
   /* Handle on hover */
