@@ -53,6 +53,14 @@ export const componentData = {
       name: 'snackbarWrapper',
       description: 'Class used for snackbar wrapper element',
     },
+    {
+      name: 'snackbarContent',
+      description: 'Class used for snackbar content',
+    },
+    {
+      name: 'close',
+      description: 'Class used for indefinite snackbar close icon',
+    },
   ],
   basicComponent: `
     class SnackDisplay extends React.Component {
@@ -106,6 +114,7 @@ export const componentData = {
         this.openTopSnackbar = this.openTopSnackbar.bind(this);
         this.openIndefiniteSnackbar = this.openIndefiniteSnackbar.bind(this);
         this.handleSnackClose = this.handleSnackClose.bind(this);
+        this.handleIndefiniteSnackClose = this.handleIndefiniteSnackClose.bind(this);
       }
 
       openBottomSnackbar() {
@@ -132,6 +141,12 @@ export const componentData = {
           showSnackbar: false,
           showTopSnackbar: false,
         });
+      }
+
+      handleIndefiniteSnackClose() {
+        this.setState({
+          showIndefiniteSnackbar: false,
+        })
       }
 
       render() {
@@ -176,9 +191,9 @@ export const componentData = {
 
                 <Snackbar
                   active={this.state.showIndefiniteSnackbar}
-                  onClose={this.handleSnackClose}
+                  onClose={this.handleIndefiniteSnackClose}
                   autoClose={false}>
-                  <span>This is a indefinite snackbar.</span>
+                  <span>This is a indefinite snackbar. Click x to close.</span>
                 </Snackbar>
                  
               </PreviewBlock>
