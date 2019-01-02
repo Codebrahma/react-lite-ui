@@ -39,7 +39,7 @@
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     background: white;
     width: 50%;
-    top: calc(30vh + 2em);
+    top: calc(20vh + 2em);
     height: fit-content;
     position: fixed;
     flex-flow: column;
@@ -53,6 +53,7 @@
     :local(.modal-body) {
         box-sizing: border-box;
         padding: 2%;
+        text-align: left;
     }
     :local(.modal-footer) {
         width: 100%;
