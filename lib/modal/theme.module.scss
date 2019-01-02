@@ -45,20 +45,43 @@
     flex-flow: column;
     box-sizing: border-box;
     border-radius: 0.3em;
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
     :local(.modal-title) {
         padding: 1% 0%;
         font-weight: bold;
         box-sizing: border-box;
+        display: flex;
+
+        @media only screen and (max-width:500px) {
+            padding: 3%;
+        }
     }
     :local(.modal-body) {
         box-sizing: border-box;
         padding: 2%;
         text-align: left;
+        @media only screen and (max-width:768px) {
+            padding: 3%;
+        }
+
+        @media only screen and (max-width:500px) {
+            padding: 5%;
+            line-height: 1.4em;
+        }
     }
     :local(.modal-footer) {
         width: 100%;
         padding: 1% 2%;
         box-sizing: border-box;
+        @media only screen and (max-width:768px) {
+            padding: 2% 3%;
+        }
     }
 }
 
@@ -101,15 +124,16 @@
 }
 
 :local(.close) {
-    width: fit-content;
-    cursor: pointer;
-    position: absolute;
-    right: 2%;
     display: flex;
-    align-items: center;
+    width: fit-content;
     height: fit-content;
+    position: absolute;
     font-size: 20px;
     color: #1f1e1eab;
+    right: 0.5em;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {
