@@ -20,7 +20,13 @@
 
 :local(.progress) {
     height: 100%;
-    width: 0%;
+    width: 100%;
+    will-change: transform;
+    transform: scaleX(0);
+    position: absolute;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.07s linear;
 }
 
 :local(.primary) {
