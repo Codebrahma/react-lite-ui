@@ -5,9 +5,9 @@ body {
     overflow-x: hidden;
 }
 
-.navbar {
-    transform: translateY(-100%);
-    opacity: 0;
+.navbar-transparent {
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-container {

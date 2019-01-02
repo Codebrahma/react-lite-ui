@@ -9,14 +9,12 @@
 }
 
 .navbar-animated {
-  transform: translateY(-100%);
+  background: transparent;
+  box-shadow: none;
   transition: all 0.5s ease-in-out;
-  will-change: transform;
 }
 
 .navbar-extended {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
   div[class*=innerWrapper] {
     max-width: 100vw !important;
   }
