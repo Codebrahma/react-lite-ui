@@ -1,3 +1,5 @@
+@import '../globals/animations.module.scss';
+
 :local(.pagination) {
     display: grid;
     grid-auto-flow: column;
@@ -16,10 +18,19 @@
     width: fit-content;
     flex-flow: row;
     align-items: center;
+    justify-content: space-between;
     flex-direction: row;
     box-sizing: border-box;
     min-height: fit-content;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:local(.noNavigation) {
+  width: 262px;
+  justify-content: center;
+}
+:local(.withNavigation) {
+  width: 332px;
 }
 
 :local(.pagination-steps) {
@@ -37,6 +48,9 @@
     cursor: pointer;
     padding: 1em;
     margin: 1px;
+    @include zoomIn();
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
 }
 
 :local(.active) {
@@ -51,6 +65,9 @@
     height: 100%;
     align-items: center;
     margin: 0 0.2em;
+    @include zoomIn();
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
     span {
         height: 0.5em;
         width: 0.5em;
