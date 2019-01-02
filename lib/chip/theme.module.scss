@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: space-between;
     height: auto;
-    padding: 2% 0%;
     border: 1px solid $secondary-white;
     box-sizing: border-box;
     overflow: none;
@@ -20,6 +19,7 @@
 
 :local(.chip-avatar) {
     height: 100%;
+    width: 35px;
     display: flex;
     box-sizing: border-box;
     align-items: center;
