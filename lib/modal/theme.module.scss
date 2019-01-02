@@ -56,9 +56,14 @@
         padding: 1% 0%;
         font-weight: bold;
         box-sizing: border-box;
-        display: flex;
-
-        @media only screen and (max-width:500px) {
+        width: 80%;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        text-align: start;
+        
+        @media only screen and (max-width: 500px) {
             padding: 3%;
         }
     }
@@ -66,10 +71,9 @@
         box-sizing: border-box;
         padding: 2%;
         text-align: left;
-        @media only screen and (max-width:768px) {
+        @media only screen and (max-width: 768px) {
             padding: 3%;
         }
-
         @media only screen and (max-width:500px) {
             padding: 5%;
             line-height: 1.4em;
@@ -79,7 +83,7 @@
         width: 100%;
         padding: 1% 2%;
         box-sizing: border-box;
-        @media only screen and (max-width:768px) {
+        @media only screen and (max-width: 768px) {
             padding: 2% 3%;
         }
     }
@@ -130,7 +134,7 @@
     position: absolute;
     font-size: 20px;
     color: #1f1e1eab;
-    right: 0.5em;
+    right: 1em;
     align-items: center;
     align-self: center;
     cursor: pointer;
