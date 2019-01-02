@@ -15,6 +15,7 @@ class IndexPage extends Component {
     window.addEventListener('scroll', this.registerScroll);
     // eslint-disable-next-line react/no-find-dom-node
     ReactDOM.findDOMNode(this).scrollTo(0, 0);
+    document.getElementsByClassName('navbar')[0].style.backgroundImage = 'linear-gradient(110deg, rgba(13, 55, 201, 0), rgba(36, 181, 205, 0) 100%, rgba(52, 66, 122, 0))';
   }
 
   componentWillUnmount() {
@@ -22,10 +23,12 @@ class IndexPage extends Component {
   }
 
   setNavbarState = (pageYOffset, innerHeight) => {
+    const backgroundAlpha = (1 / (0.4 * innerHeight)) * pageYOffset;
+    document.getElementsByClassName('navbar')[0].style.backgroundImage = `linear-gradient(110deg, rgba(13, 55, 201, ${backgroundAlpha}), rgba(36, 181, 205, ${backgroundAlpha}) 100%, rgba(52, 66, 122, ${backgroundAlpha}))`;
     if (pageYOffset > 0.7 * innerHeight) {
-      document.getElementsByClassName('navbar')[0].classList.remove('navbar-transparent');
+      document.getElementsByClassName('navbar')[0].style.boxShadow = '0 0 1px 2px rgba(0,0,0,0.2)';
     } else {
-      document.getElementsByClassName('navbar')[0].classList.add('navbar-transparent');
+      document.getElementsByClassName('navbar')[0].style.boxShadow = 'none';
     }
   }
 

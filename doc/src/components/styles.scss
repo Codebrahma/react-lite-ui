@@ -9,7 +9,8 @@
 }
 
 .navbar-animated {
-  background: transparent;
+  background-image: linear-gradient(110deg, rgba(13, 55, 201, 0), rgba(36, 181, 205, 0) 100%, rgba(52, 66, 122, 0));
+  background-color: none; 
   box-shadow: none;
   transition: all 0.5s ease-in-out;
 }
