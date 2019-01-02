@@ -11,18 +11,13 @@
 }
 
 .expandedContent {
-    max-height: 0;
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 0;
     overflow: hidden;
-    padding-top: 1%;
-    will-change: max-height;
-    &.expanded {
-        max-height: 2000px;
-        transition: max-height 0.5s ease-in-out;
-    }
-    &.collapsed {
-        max-height: 0;
-        transition: max-height 0.5s ease-in-out;
-    }
 }
 
 :local(.noPadding) {
@@ -55,9 +50,13 @@
     margin-bottom: 15px;
 }
 
+:local(.cardContent) {
+    margin-bottom: 0.5em;
+}
+
 :local(.cardFooter) {
     width: 100%;
-    margin-top: 2%;
+    margin-top: 0.2em;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -76,7 +75,6 @@
 :local(.expand-icon) {
   align-self: center;
   transition: transform 0.5s linear;
-  width: 100%;
   padding: 1%;
   font-size: 1.36em;
   cursor: pointer;
