@@ -19,7 +19,7 @@
 
 :local(.chip-avatar) {
     height: 100%;
-    width: 35px;
+    max-width: 2em;
     display: flex;
     box-sizing: border-box;
     align-items: center;
@@ -52,28 +52,20 @@
 :local(.smallAvatar) {
     overflow: hidden;
     border-radius: 50%;
-    max-height: 28px;
-    max-width: 28px;
+    max-width: 2.5em;
     object-fit: contain;
-    margin-left: -2%;
 }
 
 :local(.mediumAvatar) {
     overflow: hidden;
     border-radius: 50%;
-    max-height: 36px;
-    max-width: 36px;
     object-fit: contain;
-    margin-left: -2%;
 }
 
 :local(.largeAvatar) {
     overflow: hidden;
     border-radius: 50%;
-    max-height: 52px;
-    max-width: 52px;
     object-fit: contain;
-    margin-left: -2%;
 }
 
 :local(.deleteIcon) {
