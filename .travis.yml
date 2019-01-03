@@ -11,7 +11,7 @@ install:
   - npm i -g codecov
 
 script:
-  - npm run build:docs
+  - npm install
   - npm run test
 
 jobs:
