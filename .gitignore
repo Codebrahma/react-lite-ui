@@ -1,9 +1,8 @@
-.idea/
-node_modules/
+# Project dependencies
+.cache
+node_modules
 yarn-error.log
-npm-error.log
-coverage
-.nyc_output
-/dist
-/stats
-/components
+
+# Build directory
+/public
+.DS_Store
