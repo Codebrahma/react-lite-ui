@@ -26,7 +26,7 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          - npx semantic-release
+          - npm run build && npx semantic-release
           - curl -X POST --data-urlencode "payload={ \"text\" : \"A new version of `react-lite-ui` was published to NPM :tada:\" }" $RELEASE_NOTIF_URL
 
 after_success: npm run coverage
