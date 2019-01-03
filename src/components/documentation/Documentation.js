@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { LiveProvider, LivePreview, LiveError } from 'react-live';
 
-import * as components from '../../../../lib';
+import * as components from 'react-lite-ui';
 import match from '../../images/match.svg';
 import tableTheme from './tableTheme.module.scss';
 import componentTheme from '../common/componentData/theme.scss';

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../../../../lib/button';
+import Button from 'react-lite-ui/components/button';
 import theme from './footer.module.scss';
 
 const FooterSection = () => (

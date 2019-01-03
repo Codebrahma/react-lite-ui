@@ -5,7 +5,7 @@ import iphone from '../../images/i-phone-6.svg';
 import ipad from '../../images/i-pad-air.svg';
 import desktop from '../../images/desktop.svg';
 import FeaturesSection from './features';
-import Button from '../../../../lib/button';
+import Button from 'react-lite-ui/components/button';
 import ContributionSection from './contrib-section';
 
 import './index.scss';

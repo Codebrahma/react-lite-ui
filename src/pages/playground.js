@@ -6,11 +6,11 @@ import {
 } from 'react-live';
 import { navigate } from 'gatsby';
 import { componentList } from '../components/common/componentList';
-import * as components from '../../../lib';
+import * as components from 'react-lite-ui';
 import componentTheme from '../components/common/componentData/theme.scss';
-import Select from '../../../lib/select';
-import Button from '../../../lib/button';
-import Preloader from '../../../lib/preloader';
+import Select from 'react-lite-ui/components/select';
+import Button from 'react-lite-ui/components/button';
+import Preloader from 'react-lite-ui/components/preloader';
 import Layout from '../components/layout';
 import match from '../images/match.svg';
 import theme from './pgTheme.module.scss';
