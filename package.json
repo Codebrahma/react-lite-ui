@@ -7,7 +7,6 @@
     "docs:dev": "cd doc && npm run develop",
     "prebuild": "rm -rf dist components && npm run lint:fix",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.prod.js",
-    "build:docs": "npm install && cd doc && npm install && npm run build",
     "lint": "eslint ./ --ext .jsx --ext .js && echo \"eslint: no lint errors!\"",
     "lint:fix": "eslint ./ --ext .jsx --ext .js --fix && echo \"eslint: all errors fixed!\"",
     "test": "nyc mocha --require @babel/register --require jsdom-global/register --require test/testSetup.js --require test/ignoreStyles.js 'lib/**/*.test.js'",
