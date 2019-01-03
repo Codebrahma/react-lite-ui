@@ -16,14 +16,14 @@
         content: '';
         display: block;
         height: 100%;
-        width: 7%;
+        width: 9%;
         position: absolute;
         transition: opacity 1s ease;
         opacity: 0;
     }
     &::before {
         left: 0;
-        background-image: linear-gradient(to right, rgba(0,0,0,0.5) 0, 70%, transparent 98%);
+        background-image: linear-gradient(to right, rgba(0,0,0,0.5) 0, 70%, transparent);
         z-index: 1;
     }
     &::after {
