@@ -8,6 +8,7 @@ A basic Carousel component.
 | `data` | `Array` | &nbsp; | An array of image urls or custom children. ( `Required` ) |
 | `interval` | `Number` | `4000` | Set an interval ( in ms ) for switching between carousel items. |
 | `controls` | `Boolean` | `true` | Set boolean for showing / hiding left and right controls. |
+| `pauseOnHover` | `Boolean` | `true` | Set boolean to pause the carousel animation on mouse hover. |
 
 ### Theme
 
