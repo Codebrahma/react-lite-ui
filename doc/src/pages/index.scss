@@ -5,6 +5,11 @@ body {
     overflow-x: hidden;
 }
 
+.navbar {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
 .hero-container {
     display: flex;
     width: 100%;

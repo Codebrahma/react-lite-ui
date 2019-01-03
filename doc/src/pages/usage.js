@@ -47,7 +47,9 @@ class UsagePage extends React.Component {
   }
 
   onClickComponent = (name, componentData) => {
+    const { location } = this.props;
     navigate(`/usage?component=${name.toLowerCase()}`);
+    window.gtag('config', 'UA-41862404-1', { page_path: `${location.pathname}/${name.toLowerCase()}` });
     this.setState({
       activeComponent: name,
       componentData,

@@ -35,13 +35,14 @@
     display: inline-flex;
     box-sizing: border-box;
     width: 100%;
-    padding: 2% 5% 0%;
+    padding: 5%;
     cursor: pointer;
     outline: none;
     min-height: fit-content;
     min-height: -moz-fit-content;
     &:hover {
-        background: rgba(71, 233, 243, 0.2);
+        background: #c4dfe6;
+        color: #6c757d;
     }
     &>span {
         white-space: nowrap;
@@ -51,7 +52,8 @@
 }
 
 :local(.item-hover) {
-    background: rgba(71, 233, 243, 0.2);
+    background: #c4dfe6 !important;
+    color: #6c757d !important;
 }
 
 :local(.show) {
@@ -77,27 +79,9 @@
 }
 
 :local(.close) {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-    &:before,
-    &:after {
-        position: absolute;
-        content: "";
-        z-index: 2;
-        border-left: 2px solid #aaa;
-        height: 10px;
-    }
-    &:before {
-        transform: rotate(45deg);
-    }
-    &:after {
-        transform: rotate(-45deg);
-    }
+    align-self: center;
+    padding-left: 0.25em;
 }
 
 :local(.selectInputWrapper) {
@@ -111,18 +95,20 @@
 }
 
 :local(.selected) {
-    min-width: fit-content;
-    padding: 2px;
     box-sizing: border-box;
+    flex-grow: 1;
+    padding: 0.2em;
+    max-width: fit-content;
+    animation-duration: 0.15s;
+    @include zoomIn();
     div {
         flex-direction: row !important;
         display: flex;
         justify-items: space-between;
-        padding: 0 5% 0 10%;
+        padding: 0.38em;
         background: #eee;
         border-radius: 5px;
         min-width: fit-content;
-        padding: 2px;
         position: relative;
         box-sizing: border-box;
         div {
@@ -138,27 +124,23 @@
 }
 
 :local(.selected-option) {
-    background-color: rgba(71, 233, 243, 0.2);
+    background-color: #66a5ad;
+    color: white;
 }
 
 :local(.arrow) {
-    align-self: flex-start;
-    border: none;
-    border-right: 2px solid #1a237e;
-    border-bottom: 2px solid #1a237e;
-    height: 5px;
-    width: 5px;
-    margin-right: -5px;
+    align-self: center;
     transition: 0.3s ease;
-    margin-top: 5%;
-}
-
-:local(.down) {
-    transform: rotate(45deg);
+    cursor: pointer;
+    will-change: transform;
 }
 
 :local(.up) {
-    transform: rotate(-135deg);
+    transform: rotate(-180deg);
+}
+
+:local(.down) {
+    transform: rotate(0deg);
 }
 
 :local(.border-animation) {
@@ -167,7 +149,7 @@
         position: absolute;
         bottom: -2px;
         left: 0px;
-        background-color: $primary-input-active-border !important;
+        background-color: #c4dfe6 !important;
         height: 2px;
         @include inputFocus();
         animation-duration: 0.5s;

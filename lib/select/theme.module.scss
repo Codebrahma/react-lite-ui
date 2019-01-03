@@ -33,10 +33,10 @@
     width: 100%;
     min-height: fit-content;
     min-height: -moz-fit-content;
-    padding: 2% 5%;
+    padding: 5%;
     cursor: pointer;
     &:hover {
-        background-color: $input-active-item;
+        background-color: #c4dfe6;
     }
     &>span {
         white-space: nowrap;
@@ -46,7 +46,7 @@
 }
 
 :local(.option-hover) {
-    background-color: $input-active-item;
+    background-color: #c4dfe6;
 }
 
 :local(.show) {
@@ -91,6 +91,7 @@
         background-color: transparent;
         border: none;
         width: 100%;
+        font-size: 1em;
     }
 }
 
@@ -100,7 +101,7 @@
         position: absolute;
         bottom: -2px;
         left: 0;
-        background-color: $primary-input-active-border !important;
+        background-color: #c4dfe6 !important;
         height: 2px;
         @include inputFocus();
         animation-duration: 0.5s;

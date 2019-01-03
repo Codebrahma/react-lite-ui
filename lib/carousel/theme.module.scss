@@ -1,68 +1,95 @@
 :local(.carousel-container) {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    &:hover {
+        &::before,
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 9%;
+        position: absolute;
+        transition: opacity 1s ease;
+        opacity: 0;
+    }
+    &::before {
+        left: 0;
+        background-image: linear-gradient(to right, rgba(0,0,0,0.5) 0, 70%, transparent);
+        z-index: 1;
+    }
+    &::after {
+        right: 0;
+        background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0, 70%, transparent);
+    }
 }
 
 :local(.carousel-item) {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  &.active {
-    opacity: 0;
-    transition: 1.5s ease-in-out;
-    position: absolute;
-    left: 0;
-  }
-  &.current {
-    opacity: 1;
-    transition: 1.5s ease-in-out;
-  }
-  & > img {
-    height: 100%;
+    display: flex;
     width: 100%;
-  }
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    &.active {
+        opacity: 0;
+        transition: 1.5s ease-in-out;
+        position: absolute;
+        left: 0;
+    }
+    &.current {
+        opacity: 1;
+        transition: 1.5s ease-in-out;
+    }
+    &>img {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 :local(.dot) {
-  position: absolute;
-  bottom: 10%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  & > span {
-    cursor: pointer;
-    height: 5px;
-    width: 5px;
-    margin: 2px;
-    border: 1px solid white;
-    border-radius: 50%;
-    background-color: transparent;
-    transition: background-color 1.5s ease-in-out;
-    &.active {
-      background-color: white;
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &>span {
+        cursor: pointer;
+        height: 5px;
+        width: 5px;
+        margin: 2px;
+        border: 1px solid white;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: background-color 1.5s ease-in-out;
+        &.active {
+            background-color: white;
+        }
     }
-  }
 }
 
 :local(.left-control),
 :local(.right-control) {
-  z-index: 1;
-  font-size: 2rem;
-  color: white;
-  position: absolute;
-  top: 45%;
-  align-self: center;
-  cursor: pointer;
+    z-index: 1;
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 45%;
+    align-self: center;
+    cursor: pointer;
 }
+
 :local(.left-control) {
-  left: 2%;
+    left: 2%;
 }
+
 :local(.right-control) {
-  right: 2%;
+    right: 2%;
 }

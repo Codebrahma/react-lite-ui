@@ -3,16 +3,16 @@
 }
 
 :local(.checkbox) {
-  border-color: #6b76ff;
+  border-color: #8b104e;
   .check-item {
-    border-color: #6b76ff !important;
+    border-color: #8b104e !important;
   }
 }
 
 
 :local(.inverted) {
-  background-color: #0b409c !important;
+  background-color: #8b104e !important;
   .check-item {
-    border-color: #f18a9b !important;
+    border-color: #fefefe !important;
   }
 }

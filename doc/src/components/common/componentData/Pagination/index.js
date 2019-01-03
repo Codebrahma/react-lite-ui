@@ -78,6 +78,14 @@ export const componentData = {
         name: 'dots',
         description: 'Class used for displaying dots between ends and current portion.',
       },
+      {
+        name: 'withNavigation',
+        description: 'Class used for controlling width of component when navigation buttons are present.',
+      },
+      {
+        name: 'noNavigation',
+        description: 'Class used for controlling width of component when navigation buttons are not present.',
+      },
     ],
     basicComponent: `
       <Pagination total={10}/>

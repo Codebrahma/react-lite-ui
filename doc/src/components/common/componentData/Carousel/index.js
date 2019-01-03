@@ -33,6 +33,12 @@ export const componentData = {
       type: 'Boolean',
       defaultValue: 'true',
       description: 'Set boolean for showing / hiding left and right controls.',
+    },
+    {
+      prop: 'pauseOnHover',
+      type: 'Boolean',
+      defaultValue: 'true',
+      description: 'Set boolean to pause the carousel animation on mouse hover.',
     }
   ],  
   themesData: [

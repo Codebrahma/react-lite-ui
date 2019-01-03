@@ -282,14 +282,15 @@
 :local(.fadeAwayLoader) {
   border-radius: 50%;
   border: 5px solid $secondary-violet;
+  will-change: transform;
   animation: fadeawayDefault 1.5s linear infinite;  
   @keyframes fadeawayDefault {
-    0% { 
-      width: 5px;
-      height: 5px;
+    0% {
+      transform: scale(0.1);
       opacity: 1;
     }
     100% {
+      transform: scale(1);
       margin: 0%;
       opacity: 0;
       filter: hue-rotate(360deg);
@@ -301,11 +302,11 @@
   animation: fadeaway 1.5s linear infinite;  
   @keyframes fadeaway {
     0% { 
-      width: 5px;
-      height: 5px;
+      transform: scale(0.1);
       opacity: 1;
     }
     100% {
+      transform: scale(1);
       margin: 0%;
       opacity: 0;
     }
