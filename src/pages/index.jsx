@@ -12,7 +12,7 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
-    if (window) {
+    if (window.gtag) {
       window.addEventListener('scroll', this.registerScroll);
     }
     // eslint-disable-next-line react/no-find-dom-node
@@ -20,7 +20,7 @@ class IndexPage extends Component {
   }
 
   componentWillUnmount() {
-    if (window) {
+    if (window.gtag) {
       window.removeEventListener('scroll', this.registerScroll);
     }
   }
