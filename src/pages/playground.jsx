@@ -63,7 +63,7 @@ export default class Playground extends Component {
       component,
     });
     navigate(`/playground?component=${label.toLowerCase()}`);
-    if (window) {
+    if (window.gtag) {
       window.gtag('config', 'UA-41862404-1', { page_path: `${location.pathname}/${label.toLowerCase()}` });
     }
   }
@@ -72,7 +72,7 @@ export default class Playground extends Component {
     const { prevPage, currentComponent } = this.state;
     const { location } = this.props;
     navigate(`/${prevPage}?component=${currentComponent.toLowerCase()}`);
-    if (window) {
+    if (window.gtag) {
       window.gtag('config', 'UA-41862404-1', { page_path: `/${location.pathname.replace(new RegExp('/', 'g'), '')}/${currentComponent.toLowerCase()}` });
     }
   }
