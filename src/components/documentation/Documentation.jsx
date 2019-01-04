@@ -57,11 +57,11 @@ class Documentation extends React.Component {
       <div className="documentation-content">
         <span className="sub-title component-title">{activeComponent}</span>
         <div className="component mb-10">
-          { this.renderBasicComponent(componentData.basicComponent) }
+          {this.renderBasicComponent(componentData.basicComponent)}
         </div>
         <span className="sub-title">Props</span>
         <div className="props mb-10">
-          { this.renderDocsTable(propColumns, componentData.propsData) }
+          {this.renderDocsTable(propColumns, componentData.propsData)}
         </div>
         <span className="sub-title">HTML Structure</span>
         <div className="html-structure mb-10">
@@ -73,7 +73,7 @@ class Documentation extends React.Component {
         </div>
         <span className="sub-title">Themes</span>
         <div className="themes mb-10">
-          { this.renderDocsTable(themeColumns, componentData.themesData) }
+          {this.renderDocsTable(themeColumns, componentData.themesData)}
         </div>
       </div>
     );

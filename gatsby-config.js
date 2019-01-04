@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('dotenv').config({
+  // eslint-disable-next-line no-undef
   path: `.env.${process.env.NODE_ENV}`,
 });
 

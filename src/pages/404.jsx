@@ -3,7 +3,6 @@ import Layout from '../components/layout';
 import ghostRider from '../images/404.svg';
 import './404.scss';
 
-
 const NotFoundPage = () => (
   <Layout>
     <div className="four-o-four-wrapper">

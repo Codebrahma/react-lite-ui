@@ -47,7 +47,6 @@ Playground
   </Navbar>
 );
 
-
 Header.propTypes = {
   location: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
