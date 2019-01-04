@@ -25,5 +25,4 @@ const FeaturesSection = () => (
   </div>
 );
 
-
 export default FeaturesSection;

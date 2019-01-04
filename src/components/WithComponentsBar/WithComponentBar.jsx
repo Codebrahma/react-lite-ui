@@ -4,9 +4,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
-import { componentList } from '../common/componentList';
 import Button from 'react-lite-ui/components/button';
 import Drawer from 'react-lite-ui/components/drawer';
+import { componentList } from '../common/componentList';
 
 import theme from './theme.module.scss';
 import './styles.scss';

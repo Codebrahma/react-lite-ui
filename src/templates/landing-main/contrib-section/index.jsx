@@ -4,6 +4,7 @@ import Button from 'react-lite-ui/components/button';
 import engineerImage from '../../../images/engineer.svg';
 import developerImage from '../../../images/man-in-office-desk-with-computer.svg';
 import contributeImage from '../../../images/triple-arrow-merging-to-one.svg';
+// eslint-disable-next-line import/no-named-as-default-member, import/no-named-as-default
 import FooterSection from './footer';
 import theme from './theme.module.scss';
 import './index.scss';

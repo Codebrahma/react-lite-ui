@@ -1,4 +1,4 @@
 public/
 node_modules/
-
+.cache
 src/components/common/componentData

@@ -12,13 +12,17 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.registerScroll);
+    if (window) {
+      window.addEventListener('scroll', this.registerScroll);
+    }
     // eslint-disable-next-line react/no-find-dom-node
     ReactDOM.findDOMNode(this).scrollTo(0, 0);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.registerScroll);
+    if (window) {
+      window.removeEventListener('scroll', this.registerScroll);
+    }
   }
 
   setNavbarState = (pageYOffset, innerHeight) => {
