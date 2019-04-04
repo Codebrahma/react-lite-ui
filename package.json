@@ -4,6 +4,7 @@
   "description": "A set of React UI components",
   "main": "dist/index.js",
   "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --watch --config webpack.config.js --info-verbosiry verbose",
     "prebuild": "rm -rf dist components && npm run lint:fix",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.prod.js",
     "lint": "eslint ./ --ext .jsx --ext .js && echo \"eslint: no lint errors!\"",
