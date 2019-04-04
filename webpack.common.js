@@ -1,8 +1,18 @@
 const path = require('path');
-const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const Visualizer = require('webpack-visualizer-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const glob = require('glob');
+
+function getFiles(filePattern) {
+  const files = {
+    'index.js': path.join(__dirname, 'lib/index.js'),
+  };
+  glob.sync(filePattern).forEach((file) => {
+    files[file.replace('lib/', '../components/')] = path.join(__dirname, file);
+  });
+  console.log({ files });
+  return files;
+}
 
 const prod = process.env.NODE_ENV === 'production';
 
@@ -21,6 +31,12 @@ const styleLoader = [
 ];
 
 module.exports = {
+  entry: getFiles('lib/!(index.js)**/index.js'),
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name]',
+    libraryTarget: 'commonjs2',
+  },
   module: {
     rules: [
       {
@@ -54,15 +70,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new BundleAnalyzer({
-      analyzerMode: 'static',
-      reportFilename: path.resolve(__dirname, 'stats/bundle_analyzer_stats.html'),
-    }),
-    new Visualizer({
-      filename: '../stats/visualizer_stats.html',
-    }),
-  ],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
