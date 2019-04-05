@@ -4,7 +4,6 @@
     flex-direction: column;
     box-sizing: border-box;
     border: 1px solid #a0a1b1;
-    background: $original-white;
     border-radius: 3px;
     font-family: Roboto, sans-serif;
 }
@@ -77,4 +76,7 @@
 
 :local(.close) {
     transform: rotate(0deg);
+}
+:local(.noBorder){
+    border: none;
 }
