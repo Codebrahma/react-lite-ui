@@ -25,7 +25,7 @@ const sassLoader = prod
   : `${require.resolve('sass-loader')}?sourceMap`;
 
 const styleLoader = [
-  'isomorphic-style-loader',
+  'style-loader',
   cssLoader,
   sassLoader,
 ];
