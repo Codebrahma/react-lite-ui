@@ -6,7 +6,6 @@
     border: 1px solid #a0a1b1;
     background: $original-white;
     border-radius: 3px;
-    margin: 5px;
     font-family: Roboto, sans-serif;
 }
 :local(.item){
@@ -17,12 +16,12 @@
    display: flex;
    flex-flow:row;
    color: #a0a1b1;
-   font-size: 18px;
+   font-size: 14px;
    font-weight: 700;
    p{
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
+      margin:0;
+      padding:1%;
+      padding-left:0;
    }
 }
 :local(.color){
@@ -34,6 +33,9 @@
     cursor: pointer;
     :hover{
         color: black;
+    }
+    &:last-child {
+        border-bottom: none;
     }
 }
 :local(.content){
@@ -48,7 +50,8 @@
     }
 }
 :local(.contentText){
-    padding-left: 1em;
+    padding-left: 2%;
+    padding-right: 1%;
 }
 
 :local(.hideContent){
@@ -56,7 +59,6 @@
 }
 :local(.icon){
     align-self: center;
-    // transition: transform 0.5s linear;
     cursor: pointer;
     
 }
@@ -66,9 +68,8 @@
     width: 20px;
     position: relative;
     border-radius: 50%;
-    padding: 1em;
-    padding-bottom: .75em;
-    transition: transform 0.5s linear;
+    padding: 1%; 
+   transition: transform 0.5s linear;
 }
 :local(.open) {
     transform: rotate(90deg);
