@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border: 1px solid #a0a1b1;
+    border: 1px solid $battleship-grey-75;
     border-radius: 3px;
     font-family: Roboto, sans-serif;
 }
@@ -14,7 +14,7 @@
 :local(.heading){
    display: flex;
    flex-flow:row;
-   color: #a0a1b1;
+   color: $battleship-grey-75;
    font-size: 14px;
    font-weight: 700;
    p{
@@ -23,15 +23,15 @@
       padding-left:0;
    }
 }
-:local(.color){
-    color: black;
+:local(.headerActive){
+    color: $original-black;
 }
 :local(.itemWrapper){
-    border-bottom: 1px solid #a0a1b1;
+    border-bottom: 1px solid $battleship-grey-75;
     flex-wrap: wrap;
     cursor: pointer;
     :hover{
-        color: black;
+        color: $original-black;
     }
     &:last-child {
         border-bottom: none;
@@ -41,7 +41,7 @@
     overflow: hidden;
     height: 0;
     transition: height 0.25s ease-out;
-    color: black;
+    color: $original-black;
     cursor: auto;
     p{
         margin-top: 0;
