@@ -12,6 +12,7 @@ A basic accordion component.
 | `className` | `String` | &nbsp; | Set a class to style the Component|
 | `headerClassName` | `String` | &nbsp;| Set a class for the header.|
 | `contentClassName` | `String` | &nbsp;| Set a class for the content.|
+| `allowMultipleExpanded` | `Boolean` | `false`| allows to expend more the one item.|
 
 ### Theme
 
@@ -35,10 +36,10 @@ A basic accordion component.
 ```
 class Demo extends React.Component {
     render() {
-         const items = [
-      {header:'t-1',content:'d-1'},
-      {header:'t-2',content:'d-2},
-    ]
+      const items = [
+          {header:'Lorem Ipsum is simply dummy text of ',content:'Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry'},
+          {header:'printing and typesetting industry',content:'Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry'},
+         ];
       return (
         <div>
             <Accordion data={items} />
