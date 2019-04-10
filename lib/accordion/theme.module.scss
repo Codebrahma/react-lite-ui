@@ -17,11 +17,12 @@
    color: $battleship-grey-75;
    font-size: 14px;
    font-weight: 700;
-   p{
-      margin:0;
-      padding:1%;
-      padding-left:0;
-   }
+}
+:local(.headingText){
+    margin:0;
+    padding:1%;
+    padding-left:0;
+    flex-grow: 1;
 }
 :local(.headerActive){
     color: $original-black;
