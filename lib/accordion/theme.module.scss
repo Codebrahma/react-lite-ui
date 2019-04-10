@@ -48,10 +48,37 @@
         padding-bottom: 1.5%;
     }
 }
-:local(.contentText){
+:local(.contentPadding){
     padding-left: 2%;
     padding-right: 1%;
 }
+@-webkit-keyframes fadeEffectOpen {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeEffectOpen {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+:local(.contentTextOpen){
+    -webkit-animation: fadeEffectOpen 0.75s;
+    animation: fadeEffectOpen 0.75s;
+}
+
+@-webkit-keyframes fadeEffectClose {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes fadeEffectClose {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+:local(.contentTextClose){
+    -webkit-animation: fadeEffectClose 0.25s;
+    animation: fadeEffectClose 0.25s;
+}
+
 
 :local(.hideContent){
     height: 0 !important;
