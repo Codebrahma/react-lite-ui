@@ -6,8 +6,8 @@ A basic accordion component.
 | Name | Type | Default | Description |
 |:-----|:-----|:-----|:-----|
 | `data` | `Array` | &nbsp; | An array of contents for accordion. ( `Required` ) |
-| `headerKey` | `String` | `header` | Set a Key for the header of the accordion. | 
-| `contentKey` | `String` | `content` | Set a Key for the content of the accordion.|
+| `headerKey` | `String` | `header` | specify the key to be used for header from data. | 
+| `contentKey` | `String` | `content` | specify the key to be used for content from data.|
 | `borderless` | `Boolean` | `false` | Prop to render borderless accordion |
 | `className` | `String` | &nbsp; | Set a class to style the Component|
 | `headerClassName` | `String` | &nbsp;| Set a class for the header.|
