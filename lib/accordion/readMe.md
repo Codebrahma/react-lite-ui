@@ -12,14 +12,14 @@ A basic accordion component.
 | `className` | `String` | &nbsp; | Set a class to style the Component|
 | `headerClassName` | `String` | &nbsp;| Set a class for the header.|
 | `contentClassName` | `String` | &nbsp;| Set a class for the content.|
-| `allowMultipleExpanded` | `Boolean` | `false`| allows to expend more the one item.|
+| `allowMultipleExpanded` | `Boolean` | `false`| allows to expand more then one item.|
 
 ### Theme
 
 | Name     | Description|
 |:---------|:-----------|
 | `accordionBody` | Class used for the accordion body.|
-| `itemWrapper` | Class used for the upper container of items in the accordion.|
+| `itemWrapper` | Class used for wrapper element of header and content for each item.|
 | `item` | Class used for the items in the accordion.|
 | `heading` | Class used for the header of the accordion.|
 | `content` | Class used for the content of the accordion.|
