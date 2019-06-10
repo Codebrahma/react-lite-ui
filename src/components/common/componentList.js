@@ -24,6 +24,7 @@ import Carousel from 'react-lite-ui/components/carousel';
 import ProgressBar from 'react-lite-ui/components/progressbar';
 import Table from 'react-lite-ui/components/table';
 import Pagination from 'react-lite-ui/components/pagination';
+import Accordion from 'react-lite-ui/components/accordion';
 
 import {
   CardComponentData,
@@ -52,10 +53,16 @@ import {
   ProgressBarComponentData,
   PaginationComponentData,
   TableComponentData,
+  AccordionComponentData,
 } from './componentData';
 
 // eslint-disable-next-line import/prefer-default-export
 export const componentList = [
+  {
+    name: 'Accordion',
+    component: Accordion,
+    componentData: AccordionComponentData,
+  },
   {
     name: 'AutoComplete',
     component: AutoComplete,

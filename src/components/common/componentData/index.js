@@ -24,3 +24,4 @@ export { componentData as CarouselComponentData } from './Carousel';
 export { componentData as ProgressBarComponentData } from './ProgressBar';
 export { componentData as TableComponentData } from './Table';
 export { componentData as PaginationComponentData } from './Pagination';
+export { componentData as AccordionComponentData } from './Accordion';
