@@ -52,13 +52,13 @@ export const componentData = {
       prop: 'contentClassName',
       type: 'String',
       defaultValue: '',
-      description: 'Set  a class for the content.',
+      description: 'Set a class for the content.',
     },
     {
       prop: 'allowMultipleExpanded',
       type: 'Boolean',
       defaultValue: 'false',
-      description: 'Expand more the one item.',
+      description: 'Expand more than one item.',
     },
   ],
   themesData: [
@@ -108,8 +108,8 @@ export const componentData = {
       class Demo extends React.Component {
         render() {
             const items = [
-              {header:'Lorem Ipsum is simply dummy text of ',content:'Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry',key:'1'},
-              {header:'printing and typesetting industry',content:'Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry',key:'2'},
+              {header:'Label 1',content:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',key:'1'},
+              {header:'Label 2',content:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',key:'2'},
         ]
           return (
             <div>
@@ -123,8 +123,8 @@ export const componentData = {
     class Demo extends React.Component {
       render(){
          const items = [
-          {header:'Lorem Ipsum is simply dummy text of ',content:'Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry',key:'1'},
-          {header:'printing and typesetting industry',content:'Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry',key:'2'},
+          {header:'Label 1',content:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',key:'1'},
+          {header:'Label 2',content:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',key:'2'},
          ];
        return (
          <div>
