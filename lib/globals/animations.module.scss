@@ -1,41 +1,75 @@
 @mixin inputFocus() {
-    -o-animation-name: animateFocus;
-    -moz-animation-name: animateFocus;
-    -webkit-animation-name: animateFocus;
-    animation-name: animateFocus;
-    @keyframes animateFocus {
-        0% {
-            width: 0%;
-        }
-        100% {
-            width: 100%;
-        }
+  -o-animation-name: animateFocus;
+  -moz-animation-name: animateFocus;
+  -webkit-animation-name: animateFocus;
+  animation-name: animateFocus;
+  @keyframes animateFocus {
+    0% {
+      width: 0%;
     }
+    100% {
+      width: 100%;
+    }
+  }
 }
 
 @mixin zoomIn() {
-    -o-animation-name: animateZoom;
-    -moz-animation-name: animateZoom;
-    -webkit-animation-name: animateZoom;
-    animation-name: animateZoom;
-    @keyframes animateZoom {
-        0% {
-            transform: scale(0.1);
-        }
-        100% {
-            transform: scale(1);
-        }
+  -o-animation-name: animateZoom;
+  -moz-animation-name: animateZoom;
+  -webkit-animation-name: animateZoom;
+  animation-name: animateZoom;
+  @keyframes animateZoom {
+    0% {
+      transform: scale(0.1);
     }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 
 @mixin sectionEntry($duration) {
-    visibility: hidden;
-    opacity: 0;
-    transform: translate(0, 10px) perspective(200px) rotateX(-2deg);
-    &.enabled {
-        visibility: visible;
-        opacity: 1;
-        transition: visibility $duration, opacity $duration, transform $duration;
-        transform: translate(0, 0);
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(0, 10px) perspective(200px) rotateX(-2deg);
+  &.enabled {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility $duration, opacity $duration, transform $duration;
+    transform: translate(0, 0);
+  }
+}
+
+@mixin shimmer($duration: 2s) {
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
     }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  @-webkit-keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
 }
