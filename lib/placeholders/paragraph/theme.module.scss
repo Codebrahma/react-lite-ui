@@ -1,0 +1,10 @@
+@import '../../globals/theme';
+
+:local(.styles) {
+  box-shadow: $shadow-light;
+}
+
+:local(.paragraphStyles) {
+  padding: 16px;
+  border-radius: $border-radius-medium;
+}

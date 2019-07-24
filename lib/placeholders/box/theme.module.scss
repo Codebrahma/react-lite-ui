@@ -1,0 +1,29 @@
+@import '../../globals/theme';
+@import '../../globals/animations.module.scss';
+
+:local(.styles) {
+  background: $shimmer-color-light;
+  background-image: linear-gradient(
+    to right,
+    $shimmer-color-light 0%,
+    $shimmer-color-dark 20%,
+    $shimmer-color-light 40%,
+    $shimmer-color-light 100%
+  );
+  background-repeat: no-repeat;
+  //  ****  change here for height ***
+  // background-size: 800px 80px;
+  display: inline-block;
+  position: relative;
+
+  @include shimmer();
+}
+
+:local(.boxStyles) {
+  width: 80px;
+  height: 80px;
+}
+
+:local(.circle) {
+  border-radius: 100px;
+}

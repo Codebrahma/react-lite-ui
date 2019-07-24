@@ -1,0 +1,44 @@
+@import '../../globals/theme';
+@import '../../globals/animations.module.scss';
+
+:local(.styles) {
+  background: $shimmer-color-light;
+  background-image: linear-gradient(
+    to right,
+    $shimmer-color-light 0%,
+    $shimmer-color-dark 20%,
+    $shimmer-color-light 40%,
+    $shimmer-color-light 100%
+  );
+  background-repeat: no-repeat;
+  //  ****  change here for height ***
+  // background-size: 800px 16px;
+  display: block;
+  position: relative;
+
+  margin: 12px 0px;
+
+  @include shimmer();
+}
+
+:local(.lineStyles) {
+  width: 100%;
+  height: 10px;
+  border-radius: 4px;
+}
+
+:local(.lineWidth25) {
+  width: 25%;
+}
+
+:local(.lineWidth50) {
+  width: 50%;
+}
+
+:local(.lineWidth75) {
+  width: 75%;
+}
+
+:local(.lineWidth100) {
+  width: 100%;
+}
