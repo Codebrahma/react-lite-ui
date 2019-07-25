@@ -4,10 +4,9 @@ The box placeholder component.
 
 ### Properties
 
-| Name     | Type     | Default   | Description                          |
-| :------- | :------- | :-------- | :----------------------------------- |
-| `square` | `circle` | &nbsp;    | Shapes of the box default is circle. |
-| `shape`  | `String` | `default` | Prop to set the shape of box.        |
+| Name    | Type     | Default   | Description                   |
+| :------ | :------- | :-------- | :---------------------------- |
+| `shape` | `String` | `default` | Prop to set the shape of box. |
 
 ### Theme
 
