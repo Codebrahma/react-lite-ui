@@ -1,14 +1,5 @@
 @import '../../globals/theme';
 
-:local(.styles) {
-  box-shadow: $shadow-light;
-}
-
-:local(.cardStyles) {
-  border-radius: $border-radius-medium;
-  padding: 16px;
-}
-
 :local(.imageWrapper) {
   display: flex;
   align-items: center;

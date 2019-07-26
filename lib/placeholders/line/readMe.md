@@ -33,3 +33,27 @@ class Demo extends React.Component {
     }
 }
 ```
+
+### You can make a paragraph placeholder by simple wrap line placeholder in a single div.
+
+```
+
+class ParagraphDemo extends React.Component {
+    state = {
+       loading: false,
+    }
+    render() {
+       const {loading} = this.state;
+       return (
+            <div>
+                { loading ? (<div style={{padding:"32px"}}>
+                    <LinePlaceholder theme={linePlaceholderTheme} lineWidth={'75'} />
+                    <LinePlaceholder theme={linePlaceholderTheme} lineWidth={'50'} />
+                    <LinePlaceholder theme={linePlaceholderTheme} lineWidth={'100'} />
+                </div>) : 
+                <div>User Content</div>
+             </div>
+        )
+    }
+}
+```
