@@ -19,20 +19,22 @@ The image card placeholder component.
 
 ```
 
-const Demo = ({ theme, lines, imageShape }) => {
-  const classes = classnames(theme.imageCardStyles);
-
-  const ImageCardProps = {
-    className: classes,
-  };
-
-  return (
-    <div {...ImageCardProps}>
-      <BoxPlaceholder shape={imageShape} />
-      {lines.map(line => (
-        <LinePlaceHolder lineWidth={line} />
-      ))}
-    </div>
-  );
-};
+class Demo extends React.Component {
+    state = {
+       loading: false,
+    }
+    render() {
+       const {loading} = this.state;
+       return (
+            <div>
+                { loading ? <ImageCardPlaceholder 
+                                    theme={imageCardPlaceholderTheme} 
+                                    imageShape={imageShape} 
+                                    lines={linesArray}  
+                                    /> : 
+                <div>User Content</div>
+             </div>
+        )
+    }
+}
 ```

@@ -18,18 +18,18 @@ The card placeholder component.
 
 ```
 
-const Demo = ({ theme, imageShape }) => (
-  <div className={classNames(theme.styles, theme.cardStyles)}>
-    <div className={theme.imageWrapper}>
-      <div className={theme.gutterSpaceHorizontal}>
-        <BoxPlaceholder shape={imageShape} />
-      </div>
-
-      <LinePlaceholder lineWidth="100" />
-    </div>
-
-    <LinePlaceholder lineWidth="75" />
-    <LinePlaceholder lineWidth="50" />
-  </div>
-);
+class Demo extends React.Component {
+    state = {
+       loading: false,
+    }
+    render() {
+       const {loading} = this.state;
+       return (
+            <div>
+                { loading ? <CardPlaceholder theme={cardPlaceholderTheme} imageShape={imageShape} /> : 
+                <div>User Content</div>
+             </div>
+        )
+    }
+}
 ```

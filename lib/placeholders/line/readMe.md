@@ -18,17 +18,18 @@ The line placeholder component.
 
 ```
 
-const Demo = ({ theme, lineWidth }) => {
-  const classes = classnames(
-    theme.styles,
-    theme.lineStyles,
-    theme[`lineWidth${lineWidth}`]
-  );
-
-  const linePlaceholderProps = {
-    className: classes,
-  };
-
-  return <div {...linePlaceholderProps} />;
-};
+class Demo extends React.Component {
+    state = {
+       loading: false,
+    }
+    render() {
+       const {loading} = this.state;
+       return (
+            <div>
+                { loading ? <LinePlaceholder theme={linePlaceholderTheme} lineWidth={'75'} /> : 
+                <div>User Content</div>
+             </div>
+        )
+    }
+}
 ```
