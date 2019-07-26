@@ -16,7 +16,7 @@
   display: inline-block;
   position: relative;
 
-  @include shimmer();
+  @include boxShimmer();
 }
 
 :local(.boxStyles) {

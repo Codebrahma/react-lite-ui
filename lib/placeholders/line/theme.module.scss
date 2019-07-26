@@ -18,7 +18,7 @@
 
   margin: 12px 0px;
 
-  @include shimmer();
+  @include lineShimmer($length: 700px);
 }
 
 :local(.lineStyles) {
@@ -27,18 +27,41 @@
   border-radius: 4px;
 }
 
-:local(.lineWidth25) {
-  width: 25%;
+:local(.lineWidth10) {
+  width: 10%;
 }
 
+:local(.lineWidth20) {
+  width: 20%;
+}
+
+:local(.lineWidth30) {
+  width: 30%;
+}
+
+:local(.lineWidth40) {
+  width: 40%;
+}
 :local(.lineWidth50) {
   width: 50%;
 }
 
-:local(.lineWidth75) {
-  width: 75%;
+:local(.lineWidth60) {
+  width: 60%;
+}
+
+:local(.lineWidth70) {
+  width: 70%;
+}
+
+:local(.lineWidth80) {
+  width: 80%;
+}
+:local(.lineWidth90) {
+  width: 90%;
 }
 
 :local(.lineWidth100) {
   width: 100%;
 }
+

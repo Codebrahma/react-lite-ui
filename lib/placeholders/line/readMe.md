@@ -6,7 +6,7 @@ The line placeholder component.
 
 | Name        | Type     | Default | Description                                       |
 | :---------- | :------- | :------ | :------------------------------------------------ |
-| `lineWidth` | `String` | `100`   | Set the line width of the from [25, 50, 75, 100]. |
+| `lineWidth` | `String` | `100`   | Set the line width of the from 10 to 100 with step of 10. |
 
 ### Theme
 

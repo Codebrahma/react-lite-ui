@@ -6,7 +6,7 @@ The box placeholder component.
 
 | Name    | Type     | Default   | Description                   |
 | :------ | :------- | :-------- | :---------------------------- |
-| `shape` | `String` | `square` | Prop to set the shape of box.  |
+| `shape` | `String` | `square` | Prop to set the shape of box. Circle or Square.  |
 
 ### Theme
 
@@ -65,7 +65,7 @@ class Demo extends React.Component {
        const {loading} = this.state;
        return (
             <div>
-                { loading ? <BoxPlaceholder theme={boxPlaceholderTheme} shape={boxShape} /> : 
+                { loading ? <CustomPlaceholder /> : 
                 <div>User Content</div>
              </div>
         )

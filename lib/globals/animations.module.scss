@@ -42,34 +42,66 @@
   }
 }
 
-@mixin shimmer($duration: 2s) {
+@mixin lineShimmer($length: 80px, $duration: 1s, $timingFunction: linear) {
   animation-duration: $duration;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: placeholderShimmer;
-  animation-timing-function: linear;
+  animation-timing-function:  $timingFunction;
 
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: $duration;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-name: placeholderShimmer;
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function:  $timingFunction;
 
   @keyframes placeholderShimmer {
     0% {
-      background-position: -468px 0;
+      background-position: -700px 0;
     }
     100% {
-      background-position: 468px 0;
+      background-position: 700px 0;
     }
   }
 
   @-webkit-keyframes placeholderShimmer {
     0% {
-      background-position: -468px 0;
+      background-position: -700px 0;
     }
     100% {
-      background-position: 468px 0;
+      background-position: 700px 0;
+    }
+  }
+}
+
+@mixin boxShimmer($length: 80px, $duration: 1s, $timingFunction: linear) {
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: boxPlaceholderShimmer;
+  animation-timing-function:  $timingFunction;
+
+  -webkit-animation-duration: $duration;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: boxPlaceholderShimmer;
+  -webkit-animation-timing-function:  $timingFunction;
+
+  @keyframes boxPlaceholderShimmer {
+    0% {
+      background-position: -80px 0;
+    }
+    100% {
+      background-position: 80px 0;
+    }
+  }
+
+  @-webkit-keyframes boxPlaceholderShimmer {
+    0% {
+      background-position: -80px 0;
+    }
+    100% {
+      background-position: 80px 0;
     }
   }
 }
