@@ -6,7 +6,7 @@ The box placeholder component.
 
 | Name    | Type     | Default   | Description                   |
 | :------ | :------- | :-------- | :---------------------------- |
-| `shape` | `String` | `default` | Prop to set the shape of box. |
+| `shape` | `String` | `square` | Prop to set the shape of box.  |
 
 ### Theme
 
