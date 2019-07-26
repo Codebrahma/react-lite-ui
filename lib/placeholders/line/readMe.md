@@ -1,4 +1,4 @@
-## Navbar
+## Line Placeholder
 
 The line placeholder component.
 

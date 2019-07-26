@@ -1,4 +1,4 @@
-## Navbar
+## Card Placeholder
 
 The card placeholder component.
 
