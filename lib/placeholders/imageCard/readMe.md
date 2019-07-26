@@ -1,4 +1,4 @@
-## Navbar
+## Imagecard Placeholder
 
 The image card placeholder component.
 

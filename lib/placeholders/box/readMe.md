@@ -1,4 +1,4 @@
-## Navbar
+## Box Placeholder
 
 The box placeholder component.
 

@@ -1,4 +1,4 @@
-## Navbar
+## Paragraph Placeholder
 
 The paragrapg placeholder component.
 
