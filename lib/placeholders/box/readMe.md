@@ -18,13 +18,18 @@ The box placeholder component.
 
 ```
 
-const Demo = ({theme, shape}) => {
-    const classes = classnames(theme.styles, theme.boxStyles, theme[shape]);
-
-  const boxPlaceholderProps = {
-    className: classes,
-  };
-
-  return <div {...boxPlaceholderProps} />;
+class Demo extends React.Component {
+    state = {
+       loading: false,
+    }
+    render() {
+       const {loading} = this.state;
+       return (
+            <div>
+                { loading ? <BoxPlaceholder theme={boxPlaceholderTheme} shape={boxShape} /> : 
+                <div>User Content</div>
+             </div>
+        )
+    }
 }
 ```

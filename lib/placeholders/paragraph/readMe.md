@@ -18,19 +18,18 @@ The paragrapg placeholder component.
 
 ```
 
-const Demo = ({ theme, lines }) => {
-  const classes = classnames(theme.styles, theme.paragraphStyles);
-
-  const paragraphPlaceholderProps = {
-    className: classes,
-  };
-
-  return (
-    <div {...paragraphPlaceholderProps}>
-      {lines.map(line => (
-        <LinePlaceholder lineWidth={line} />
-      ))}
-    </div>
-  );
-};
+class Demo extends React.Component {
+    state = {
+       loading: false,
+    }
+    render() {
+       const {loading} = this.state;
+       return (
+            <div>
+                { loading ? <ParagraphPlaceholder theme={paragraphPlaceholderTheme} lines={linesArray} /> : 
+                <div>User Content</div>
+             </div>
+        )
+    }
+}
 ```
