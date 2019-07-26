@@ -7,5 +7,4 @@ coverage
 /dist
 /stats
 /components
-/.prettierrc.json
 /yarn.lock
