@@ -1,0 +1,110 @@
+@import '../globals/theme';
+:local(.accordionBody) {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid $battleship-grey-75;
+    border-radius: 3px;
+    font-family: Roboto, sans-serif;
+}
+:local(.item){
+    display: flex;
+    flex-flow: column;
+}
+:local(.heading){
+   display: flex;
+   flex-flow:row;
+   color: $battleship-grey-75;
+   font-size: 14px;
+   font-weight: 700;
+}
+:local(.headingText){
+    margin:0;
+    padding:1%;
+    padding-left:0;
+    flex-grow: 1;
+}
+:local(.headerActive){
+    color: $original-black;
+}
+:local(.itemWrapper){
+    border-bottom: 1px solid $battleship-grey-75;
+    flex-wrap: wrap;
+    cursor: pointer;
+    :hover{
+        color: $original-black;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+}
+:local(.content){
+    overflow: hidden;
+    height: 0;
+    transition: height 0.25s ease-out;
+    color: $original-black;
+    cursor: auto;
+    p{
+        margin-top: 0;
+        padding-bottom: 1.5%;
+    }
+}
+:local(.contentPadding){
+    padding-left: 2%;
+    padding-right: 1%;
+}
+@-webkit-keyframes fadeEffectOpen {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeEffectOpen {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+:local(.contentTextOpen){
+    -webkit-animation: fadeEffectOpen 0.75s;
+    animation: fadeEffectOpen 0.75s;
+}
+
+@-webkit-keyframes fadeEffectClose {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes fadeEffectClose {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+:local(.contentTextClose){
+    -webkit-animation: fadeEffectClose 0.25s;
+    animation: fadeEffectClose 0.25s;
+}
+
+
+:local(.hideContent){
+    height: 0 !important;
+}
+:local(.icon){
+    align-self: center;
+    cursor: pointer;
+    
+}
+
+  :local(.open), :local(.close) {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    border-radius: 50%;
+    padding: 1%; 
+   transition: transform 0.25s linear;
+}
+:local(.open) {
+    transform: rotate(90deg);
+}
+
+:local(.close) {
+    transform: rotate(0deg);
+}
+:local(.noBorder){
+    border: none;
+}
